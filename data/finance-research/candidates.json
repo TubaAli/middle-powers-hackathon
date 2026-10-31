@@ -1,0 +1,834 @@
+{
+  "dataset": "finance-research-candidates",
+  "observation_date": "2026-10-31",
+  "what_this_is": "Research leads for the Leverage Map + Coalition Builder finance layer. Each record is one holder, one right, one target, one decision context, assessed against a fixed rubric of six model-safety conditions. These are NOT application-ready financing opportunities and NOT a drop-in schema for the prototype: every record has unresolved authority, discretion, reach or window questions, recorded explicitly. No record in this file is a currently existing, enforceable, complete model-safety path.",
+  "what_this_is_not": [
+    "Not a count of enforceable opportunities: no record here has both documented discretion and a verified open window.",
+    "Not authority transfer: selecting a country in the prototype never grants its government the rights recorded here.",
+    "Not a substitute for the retained sources: raw texts stay in .local/finance-evidence/; source_references give per-claim locators into those retained artifacts (indexed in sources.json).",
+    "Not a digest of researcher reports: other researchers' notes are claim indexes, not source evidence; every factual claim below is cited to a retained primary source in sources.json."
+  ],
+  "condition_ids": {
+    "pre_release_testing": "Pre-release testing / evaluator access to the model before deployment.",
+    "incident_reporting": "Notification/reporting duty; scope distinguishes infrastructure security from proposed model-level incident or harm reporting.",
+    "protected_weights": "Custody/control obligations over model weights or keys.",
+    "essential_user_continuity": "Continuity of access or service for essential users if leverage is exercised.",
+    "known_chip_locations": "Known locations/custody of the compute assets (chips, systems) supporting the model.",
+    "local_stop_due_process": "A scoped stop of a specific actor/workload with due process, as opposed to whole-instrument termination."
+  },
+  "condition_status_vocabulary": {
+    "existing_in_draft": "Text exists in a draft, unsigned instrument. Never counts as an existing power: the instrument is not signed or enforceable today.",
+    "existing_evidenced": "Evidenced in a signed/effective instrument. Requires instrument.instrument_status == 'signed'. No condition in this dataset version carries this status.",
+    "proposed_reachable": "A design proposal that could plausibly attach through this right, with no guarantee of acceptance. A proposed clause never lights an existing-power badge.",
+    "outside_instrument_scope": "The reviewed right does not expressly establish this condition; this is not proof that the whole instrument excludes it.",
+    "unknown": "Cannot be determined on the retained evidence; missing text never establishes absence."
+  },
+  "transaction_amount_counting": "Records sharing a transaction_id share one financing; count any shared amount once. The three EuroHPC records share transaction eurohpc-aigf-cft-2026.",
+  "records": [
+    {
+      "id": "eurohpc-incident-notification",
+      "transaction_id": "eurohpc-aigf-cft-2026",
+      "label": "EuroHPC AIGF draft FWC: security-incident notification duty (I.14.6) with termination backstop (II.18.1(p), II.18.3)",
+      "summary": "The draft FWC requires the Contractor to notify Contracting Authorities without delay of security breaches, share ongoing information and notify and implement mitigation/resilience measures (I.14.6). II.18.1(p) and II.18.3 link security breaches to a termination ground and procedure. No executed FWC was located. The express duty concerns infrastructure, systems, data and personnel security; no explicit model-harm taxonomy or direct developer reporting duty was identified. Whether model-originated events fall within general security duties requires interpretation.",
+      "instrument": {
+        "type": "framework contract (public procurement of AI compute access)",
+        "name": "EuroHPC AI Gigafactory CfT EUROHPC-2026/OP/0008 - Annex 3 Model Framework Contract v2",
+        "instrument_status": "draft_unsigned",
+        "transaction_status": "announced",
+        "evidence_type": "contract",
+        "instrument_status_basis": "Portal document type is a draft/model FWC; the text contains '[Contractor's full official name]' placeholders; signature and the first Specific Contract create the obligations. Tenderers confirm prior acceptance of the terms by submitting, which makes the pack adhesive but not signed."
+      },
+      "holder": {
+        "name": "Contracting Authorities: EuroHPC Joint Undertaking and the National Contracting Authorities",
+        "vehicle": null,
+        "jurisdiction": "EU Joint Undertaking plus NCAs of 18 participating states listed in Annex 2 (13 Lot 1 states, 5 Lot 2 states)",
+        "decision_body": null,
+        "state_authority_basis": null,
+        "basis_note": "The JU signs and manages the FWC and Specific Contracts in the name of all Contracting Parties per the tender specifications; the underlying Council Regulation (EU) 2026/150 is NOT in the retained corpus (out of set) and is not verified here."
+      },
+      "target": {
+        "name": "Contractor (the AIGF Consortium, its Coordinator and Hosting Entity)",
+        "jurisdiction": "hosting site must be in an EU Member State (I.24.1(j))",
+          "description": "Obligor of the notification duty. Developer and tenant duties need separate examination of user terms and flow-down provisions, including I.14.3(c)."
+      },
+      "right": "Receive, without delay, notification of any security breach (including cyberattacks, or any other physical or digital breach related to the premises, systems, data or personnel used by any involved entity, even if not directly related to the Union/Participating States-supported activities), ongoing information sharing on the breach and subsequent investigations, and notification plus implementation of a mitigation and resilience plan (draft FWC Article I.14.6, p.20).",
+      "right_status": "documented",
+      "safety_proposal": "Proposal: clarify whether model-originated security incidents fall within I.14.6 and specify reporting evidence. Broader model-harm reporting may require an agreed obligation through a request, Specific Contract or lawful amendment; no such extension is established here.",
+      "rights_vs_proposal_separation": "The documented right is an infrastructure- and service-level security notification duty owed by the Contractor. It is not a model-safety condition and creates no evaluator access, weight custody, tenant duty or model-release control.",
+      "model_safety_path": {
+        "existing_enforceable_complete": false,
+        "basis": "Draft text only; not signed or enforceable today; scope is infrastructure security, not model behaviour."
+      },
+      "finance": {
+        "flow_type": "procurement",
+        "amount": null,
+        "currency": "EUR",
+        "currency_basis": "stated in retained Annex 2 ('EUR 100 million per each FWC')",
+        "amount_basis": "No single awarded amount is established for this call-wide record. Lot 1 Phase 1 ceiling: EUR 100m per FWC, up to 4; Lot 2: EUR 200m per FWC, up to 3. Phase 2 estimated additional ceilings: EUR 400m and 800m per FWC respectively, subject to future funds. Each phase has a 17% IT CAPEX cap. Portal estimated call value: EUR 10bn, not funding paid. These are different scopes, not additive flows. Count any later verified shared transaction amount once.",
+        "payment_status": "conditional",
+        "as_of": "2026-10-31"
+      },
+      "dates": {
+        "announcement_date": "2026-10-26",
+        "signature_date": null,
+        "closing_date": null,
+        "publication_date": "2026-07-30",
+        "next_decision_dates": [
+          "2026-12-03 17:00 Europe/Luxembourg - Lot 2 tender deadline (unchanged per 2026-10-26 portal announcement)",
+          "2027-02-04 17:00 Europe/Luxembourg - Lot 1 tender deadline per the 2026-10-26 portal announcement; the Lot 1 lot record on the same portal page still displays 2026-12-03 17:00 (conflict preserved; do not resolve it)"
+        ],
+        "observation_date": "2026-10-31",
+        "notes": "TED publication 2026-07-30 per portal; FWC document date Ares(2026)9952478, 22/10/2026; call documents re-published on the portal 2026-10-25; Lot 1 deadline-extension announcement headed 'Last update on 26/10/2026 18:11'."
+      },
+      "window": {
+        "status": "conditional",
+        "basis": "The right is exercisable only after FWC signature; no signed FWC was located as of 2026-10-31 and the signed text may differ from this model (the tenderer's Annex II and clarifications become part of the contract per I.1). Pre-award, the only available instrument is a question/clarification to the contracting authority, which fixes the record but creates no obligation.",
+        "dependencies": [
+          "signature of an FWC and its first Specific Contract",
+          "survival of I.14.6 in the signed text (clause numbering should be re-checked at signature; the pack changed on 2026-10-25/26)"
+        ]
+      },
+      "consent": {
+        "threshold": null,
+        "holder_allocation": null,
+        "basis": "Not a consent vote: a unilateral notification duty owed by the Contractor to the Contracting Authorities as such."
+      },
+      "substitutes": null,
+      "conditions": {
+        "pre_release_testing": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "I.13 Technical Validation Tests gate the facility against the tender, not tenant models; nothing entitles the buyer to test, red-team or inspect a tenant's model before release."
+        },
+        "incident_reporting": {
+          "status": "existing_in_draft",
+          "scope": "infrastructure_security",
+          "obligor": "Contractor",
+          "verifier": "Contracting Authorities (recipients); EuroHPC JU conducts Technical Validation Tests and audits access-time use",
+          "deliverable": "Without-delay breach notification, ongoing information sharing, mitigation/resilience plan (I.14.6); service-incident matrix, crisis unit and RCA under Appendix II; monthly major-incident reporting under Appendix III(b)",
+          "remedy": "Termination ground II.18.1(p) via the II.18.3 procedure; service credits/liquidated damages regime (I.23.3 replacing II.15); general damages",
+          "expiry_survival": null,
+          "note": "Express infrastructure/service security duty in the draft. No explicit model-harm reporting taxonomy or direct model-developer reporting duty was identified. A model-originated incident could still implicate general security duties; that boundary needs interpretation."
+        },
+        "protected_weights": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "User-created IP 'shall remain property of each user' (I.20.1, p.24); anchor-customer compute services 'may not be subject to the overall conditions of sovereignty of the AIGF' (specifications p.19). No custody, key or weight obligation in the retained text."
+        },
+        "essential_user_continuity": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No continuity duty toward third-party users of a tenant's model. Instrument-level uptime and transition duties (Appendix II; II.18.3) run to the Contracting Authorities' own services."
+        },
+        "known_chip_locations": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "Not through this right; the draft's location machinery (I.14.3, I.16.3, I.16.5) is recorded in eurohpc-asset-inventory-relocation."
+        },
+        "local_stop_due_process": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No explicit public workload-level stop was identified. II.17.2 includes verification of presumed breach; security-related facts are not categorically excluded. I.15.3 assigns a scoped access restriction to the Contractor. II.18.3 provides Contractor observations on termination, not an established model-stop procedure."
+        }
+      },
+      "verification": {
+        "access": "full",
+        "confidence": "high",
+        "observation_date": "2026-10-31",
+        "basis": "Clause text checked in retained, hashed page-labelled extraction; ceilings and deadlines checked in Annex 2 and portal capture. Bounded by draft status: no executed FWC was located, and any final text must be checked."
+      },
+      "remedies": [
+        "Termination ground: violation of security/confidentiality provisions of Articles I.14 and II.8 (II.18.1(p), p.54), exercised via the II.18.3 procedure - formal notice, 15 days for the Contractor's observations, effect date stated in the notification",
+        "Service credits and liquidated damages regime (I.23.3 replacing II.15, pp.28-30), including delay damages and reporting-delay damages",
+        "General damages for loss caused by breach (II.6.3), capped at three times the relevant Specific Contract, with the cap displaced for gross negligence, wilful misconduct, personal injury, IP claims and where third-party liability is established (II.6.4, pp.39-40)",
+        "Damages on termination including replacement-contractor cost (II.18.4, p.55)",
+        "Court review: General Court, then Court of Justice, exclusive jurisdiction (I.10.2, p.15)"
+      ],
+      "source_references": [
+        {
+          "source_id": "eurohpc-framework",
+          "locator": "I.14.6 (p.20); I.14.3(c) (p.20); I.15.3 (p.21); I.20.1 (p.24); I.23.3/II.15 (pp.28-30); II.6.3-II.6.4 (pp.39-40); II.17.2 (p.52); II.18.1(p) and II.18.3 (p.54); II.18.4 (p.55); I.10.2 (p.15)"
+        },
+        {
+          "source_id": "eurohpc-annex2",
+          "locator": "p.5 Lot 1 EU contribution Phase 1 EUR 100 million per FWC (up to 4 FWC); Phase 2 EUR 400 million per FWC subject to MFF funds; 17% IT CAPEX cap; p.8 Lot 2 figures (EUR 200m / 800m)"
+        },
+        {
+          "source_id": "eurohpc-portal",
+          "locator": "L76-87 Lot 1 deadline-extension announcement (04/02/2027 17:00; Lot 2 unchanged 03/12/2026 17:00); L112-113 estimated total value 10000000000 EUR; L150-155 Lot 1 lot record still displaying 03/12/2026 17:00; L330, L493 Q&A deadline records; L44-47, L98-101 TED references"
+        },
+        {
+          "source_id": "eurohpc-changes",
+          "locator": "corrections lists proving the call pack is v2 with corrections and still moving (specs v1-to-v2; FWC clerical corrections v1-to-v2)"
+        }
+      ],
+      "missing_evidence": [
+        "No executed FWC located in this source set; final annexes, clarifications, terms and numbering require checking",
+        "Council Regulation (EU) 2026/150, GB Decisions 30/2026, 34/2026, 47/2026, the TED notices, the model Joint Procurement Agreement, the Hosting Agreement and the FAQ are all outside the retained corpus (out of set, not refuted)",
+        "The retained portal Q&A capture shows 375 truncated items; no Q&A answering a safety question was observed, but the capture is bounded",
+        "Whether any awarded consortium signs, and on what final text"
+      ]
+    },
+    {
+      "id": "eurohpc-asset-inventory-relocation",
+      "transaction_id": "eurohpc-aigf-cft-2026",
+      "label": "EuroHPC AIGF draft FWC: quarterly asset/system inventory (I.16.3) and PGB prior approval of critical-asset relocation (I.16.5)",
+      "summary": "The draft FWC requires quarterly asset/system inventory information to the Public Governance Body and prior approval for the enumerated changes under I.16.5, including relocation of critical assets outside the Union. Unapproved changes link to termination under II.18. This is draft infrastructure-asset oversight, not an established serial-level chip register or weight-custody right. User IP ownership does not itself exclude weights from general security obligations. No executed agreement was located.",
+      "instrument": {
+        "type": "framework contract (public procurement of AI compute access)",
+        "name": "EuroHPC AI Gigafactory CfT EUROHPC-2026/OP/0008 - Annex 3 Model Framework Contract v2",
+        "instrument_status": "draft_unsigned",
+        "transaction_status": "announced",
+        "evidence_type": "contract",
+        "instrument_status_basis": "Same draft model FWC as record eurohpc-incident-notification: draft/model Annex 3, contractor placeholder, no signed contract located as of 2026-10-31."
+      },
+      "holder": {
+        "name": "Public Governance Body (Commission plus one representative per National Contracting Authority)",
+        "vehicle": null,
+        "jurisdiction": "EU plus participating states",
+        "decision_body": "Public Governance Body voting per I.16.2: the Commission holds 50% of voting rights, indivisible; NCAs share the other 50% in proportion to total financial contributions committed in Specific Contract(s) at the time of the vote; decisions require at least 75% of all voting rights, including votes of absent members. Neither the Commission nor the NCAs can reach 75% alone; absence counts against the mover.",
+        "state_authority_basis": null,
+        "basis_note": "PGB composition and voting verified in the retained draft text (I.16.2, pp.21-22). The underlying Regulation and GB Decisions remain out of set."
+      },
+      "target": {
+        "name": "Contractor (AIGF Consortium, Coordinator and Hosting Entity)",
+        "jurisdiction": "hosting site must be in an EU Member State (I.24.1(j))",
+        "description": "Obligor of the quarterly information duty and the subject of the PGB prior-approval requirement."
+      },
+      "right": "Two linked elements in the draft FWC: (a) the Contractor must provide the Public Governance Body, at least quarterly, information on the progress of the AIGF including an inventory (or update) of the assets and systems of the AIGF, plus any planned or envisaged change to its legal, financial, technical, organisational or ownership situation without undue delay (I.16.3, p.22); (b) explicit prior PGB approval is required for third-country access agreements, substantial changes to legal/financial structure or control including any relocation of critical assets outside the Union and major financial restructuring, and significant change in strategic purpose (I.16.5(a)-(c), p.22). If any of these occur without PGB consent, the Contracting Authorities reserve the right to terminate the FWC and/or a specific contract under Article II.18 (I.16.5 final paragraph).",
+      "right_status": "documented",
+      "safety_proposal": "None attaches through this right. A coalition proposal to use asset-location machinery for compute-transparency about a tenant's training runs would need the I.14.7 request route or Specific Contract SLAs (record eurohpc-additional-security-measures-request); this record's right covers the facility's own assets and control events, not tenants' models.",
+      "rights_vs_proposal_separation": "Documented right: infrastructure-asset transparency and change control over the AIGF itself. Not a model-safety condition: no serial-level asset register, no per-chip movement log, no custody over model weights or keys, and user-created IP remains with users (I.20.1).",
+      "model_safety_path": {
+        "existing_enforceable_complete": false,
+        "basis": "Draft text only; not signed or enforceable today; reaches facility assets and control events, not model behaviour."
+      },
+      "finance": {
+        "flow_type": "procurement",
+        "amount": null,
+        "currency": "EUR",
+        "currency_basis": "stated in retained Annex 2 ('EUR 100 million per each FWC')",
+        "amount_basis": "Call-wide record: no single awarded amount established. EUR 100m is a Lot 1 Phase 1 per-FWC ceiling, not this whole call's amount. Lot 2 has different ceilings; the portal EUR 10bn estimate is not funding paid. See the incident-notification record for scoped figures; count any later verified shared transaction amount once.",
+        "payment_status": "conditional",
+        "as_of": "2026-10-31"
+      },
+      "dates": {
+        "announcement_date": "2026-10-26",
+        "signature_date": null,
+        "closing_date": null,
+        "publication_date": "2026-07-30",
+        "next_decision_dates": [
+          "2026-12-03 17:00 Europe/Luxembourg - Lot 2 tender deadline (unchanged per 2026-10-26 portal announcement)",
+          "2027-02-04 17:00 Europe/Luxembourg - Lot 1 tender deadline per the 2026-10-26 portal announcement; the Lot 1 lot record still displays 2026-12-03 17:00 (conflict preserved)"
+        ],
+        "observation_date": "2026-10-31",
+        "notes": "Same instrument and dates as eurohpc-incident-notification: TED publication 2026-07-30; FWC document date 22/10/2026; portal document list published 25/10/2026; announcement updated 26/10/2026."
+      },
+      "window": {
+        "status": "conditional",
+        "basis": "Both elements are exercisable only after FWC signature; no signed FWC located as of 2026-10-31; the signed text may differ from this model. Pre-award, the available instrument is a clarification/question that fixes the record without creating an obligation.",
+        "dependencies": [
+          "signature of an FWC and first Specific Contract",
+          "for PGB approvals: a PGB decision reaching the 75% voting threshold (I.16.2)",
+          "survival of I.16.3/I.16.5 in the signed text"
+        ]
+      },
+      "consent": {
+        "threshold": "at least 75% of all PGB voting rights, including absent members (I.16.2); Commission 50% indivisible, NCAs 50% by committed contribution",
+        "holder_allocation": "NCAs' voting rights distributed in proportion to total financial contributions committed in Specific Contract(s) at the time of the vote; exact allocations unknown until Specific Contracts commit funds",
+        "basis": "PGB voting verified in retained draft text, pp.21-22. Note: relocation approval (I.16.5(b)) is one of three enumerated prior approvals; it is not a general veto."
+      },
+      "substitutes": null,
+      "conditions": {
+        "pre_release_testing": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "Asset inventory and relocation approval say nothing about testing or evaluator access to models."
+        },
+        "incident_reporting": {
+          "status": "outside_instrument_scope",
+          "scope": "not_established_by_this_right",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "Not through this right; the draft's incident machinery is recorded in eurohpc-incident-notification (I.14.6 and Appendix II)."
+        },
+        "protected_weights": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No explicit weight-custody or evaluator-access right identified. I.20.1 preserves user IP ownership, which does not exclude weights from every security duty; the specifications say anchor services 'may not' be subject to overall sovereignty conditions, not that all duties are waived."
+        },
+        "essential_user_continuity": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "Ex-ante approval of enumerated changes is not a continuity guarantee for any user population."
+        },
+        "known_chip_locations": {
+          "status": "existing_in_draft",
+          "scope": "facility_asset_oversight_partial",
+          "obligor": "Contractor",
+          "verifier": "Public Governance Body (quarterly information recipient)",
+          "deliverable": "Quarterly inventory (or update) of the assets and systems of the AIGF (I.16.3); prior PGB approval for relocation of critical assets outside the Union (I.16.5(b)); exclusive AIGF use of processing units with no transfer without explicit agreement (I.14.3) and end-of-life export limits (I.14.4)",
+          "remedy": "If an enumerated change occurs without PGB consent, the Contracting Authorities may terminate the FWC and/or a specific contract under II.18 (I.16.5 final paragraph), via the II.18.3 procedure",
+          "expiry_survival": null,
+          "note": "Partial and infrastructure-level: no serial-number register, no per-chip movement log, no verification mechanism beyond the unspecified 'inventory'. Existing in draft; not enforceable today."
+        },
+        "local_stop_due_process": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "Denying relocation approval is an ex-ante consent, not a scoped operational stop; the backstop is whole-contract termination (II.18), blunt and expensive."
+        }
+      },
+      "verification": {
+        "access": "full",
+        "confidence": "high",
+        "observation_date": "2026-10-31",
+        "basis": "I.16.2, I.16.3 and I.16.5 read directly in the retained, hashed PDF extraction during this task, including the final-paragraph termination link. Bounded by draft status."
+      },
+      "remedies": [
+        "Unapproved enumerated change (incl. relocation of critical assets outside the Union): right to terminate the FWC and/or a specific contract in accordance with Article II.18 (I.16.5 final paragraph, p.22), via the II.18.3 procedure (15 days for observations)",
+        "Termination damages including replacement-contractor cost (II.18.4, p.55), subject to the II.6.3 liability cap (3x relevant Specific Contract) with II.6.4 displacement",
+        "No remedy specific to a missed quarterly inventory beyond general breach and termination routes"
+      ],
+      "source_references": [
+        {
+          "source_id": "eurohpc-framework",
+          "locator": "I.16.2 (pp.21-22); I.16.3 (p.22); I.16.5(a)-(c) and final paragraph (p.22); I.14.3 and I.14.4 (p.19-20); I.20.1 (p.24); II.18.3 (p.54); II.18.4 (p.55); II.6.3-II.6.4 (pp.39-40)"
+        },
+        {
+          "source_id": "eurohpc-specifications",
+          "locator": "p.19: anchor customers may maintain operational autonomy over their capacity and 'may not be subject to the overall conditions of sovereignty of the AIGF'"
+        },
+        {
+          "source_id": "eurohpc-annex2",
+          "locator": "p.5/p.8 contribution ceilings shared with transaction eurohpc-aigf-cft-2026; NCA lists (13 Lot 1 states, 5 Lot 2 states)"
+        },
+        {
+          "source_id": "eurohpc-portal",
+          "locator": "L76-87 deadline extension announcement; L150-155 Lot 1 lot record deadline conflict; L112-113 estimated total value"
+        }
+      ],
+      "missing_evidence": [
+        "No executed FWC located; final text and numbering require checking",
+        "Serial-level asset granularity: not specified anywhere in the retained text; unknown whether the signed Specific Contracts will specify it",
+        "The underlying Regulation, GB Decisions, Hosting Agreement and JPA are out of set; the PGB's practical operation cannot be verified here",
+        "No example of a PGB relocation-approval decision exists in the retained corpus"
+      ]
+    },
+    {
+      "id": "eurohpc-additional-security-measures-request",
+      "transaction_id": "eurohpc-aigf-cft-2026",
+      "label": "EuroHPC AIGF draft FWC: request power for additional security/public-order measures (I.14.7) plus Specific Contract Art. 11.5 reasonable-effort accommodation",
+      "summary": "Draft I.14.7 lets Contracting Authorities request additional appropriate security/public-order measures. SC 11.5 requires every reasonable effort to accommodate requested additional technical requirements/SLAs. Model-safety use is proposed, not guaranteed: the reach of appropriate measures, required agreement and applicable remedy must be established. II.11.2 constrains amendments. The more explicit worked duty/remedy path is I.14.6 incident notification in the separate record. No executed FWC was located.",
+      "instrument": {
+        "type": "framework contract (public procurement of AI compute access)",
+        "name": "EuroHPC AI Gigafactory CfT EUROHPC-2026/OP/0008 - Annex 3 Model Framework Contract v2",
+        "instrument_status": "draft_unsigned",
+        "transaction_status": "announced",
+        "evidence_type": "contract",
+        "instrument_status_basis": "Same draft model FWC as eurohpc-incident-notification: draft/model Annex 3, contractor placeholder, no signed contract located as of 2026-10-31."
+      },
+      "holder": {
+        "name": "Contracting Authorities: EuroHPC Joint Undertaking and the National Contracting Authorities",
+        "vehicle": null,
+        "jurisdiction": "EU Joint Undertaking plus NCAs of 18 participating states (Annex 2)",
+        "decision_body": null,
+        "state_authority_basis": null,
+        "basis_note": "I.14.7 grants the request power to the Contracting Authorities as such; no PGB vote is required for the request (though the PGB may suggest additional compliance measures under I.16.4). Underlying Regulation out of set."
+      },
+      "target": {
+        "name": "Contractor (AIGF Consortium, Coordinator and Hosting Entity)",
+        "jurisdiction": "hosting site in an EU Member State (I.24.1(j))",
+        "description": "Addressee of the request. A measure aimed at a tenant's model must be executed through the Contractor's user terms (I.15.2) and the narrow eligibility-screening flow-down (I.14.3(c)); the FWC does not prescribe the safety content of those terms."
+      },
+      "right": "Two-part request mechanism in the draft FWC: (a) 'The Contracting Authorities may, at any time, request the Contractor to take additional appropriate measures to ensure that the Union's and National Contracting Authorities' interest on grounds of security or public order are safeguarded. These measures could include, but are not limited to, the appropriate handling of confidential information or limitation of certain entities in specific operational activities of the AIGF.' (I.14.7, p.20); (b) 'The Contracting Authority (-ies) may request the Contractor to implement additional specific technical requirements/SLAs ... throughout the duration of the specific contract. The contractor shall make every reasonable effort to accommodate such requests at no additional cost' (Specific Contract Art. 11.5, p.72; similarly FWC I.4.3(a)).",
+      "right_status": "documented",
+      "safety_proposal": "PROPOSED: request model-related incident reporting or scoped tenant restrictions on security/public-order grounds. SC 11.5 may help specify services, subject to reasonable efforts and lawful procurement limits. Whether a particular request creates an enforceable duty, reaches tenants or supports II.18.1(p) remedies is unresolved. No explicit evaluator-access, weight-custody or release-approval right was identified.",
+      "rights_vs_proposal_separation": "The documented draft right is a request power, with a separate reasonable-effort accommodation provision at Specific Contract level. It does not itself establish acceptance of a proposed model-safety obligation or a unilateral release veto.",
+      "model_safety_path": {
+        "existing_enforceable_complete": false,
+        "basis": "Draft text only; not signed or enforceable today; the right itself is a request power whose compliance duty is unspecified, and the safety use is proposed, not contained in the text."
+      },
+      "finance": {
+        "flow_type": "procurement",
+        "amount": null,
+        "currency": "EUR",
+        "currency_basis": "stated in retained Annex 2 ('EUR 100 million per each FWC')",
+        "amount_basis": "Call-wide record: no single awarded amount established. EUR 100m is a Lot 1 Phase 1 per-FWC ceiling, not this whole call's amount. Lot 2 has different ceilings; the portal EUR 10bn estimate is not funding paid. See the incident-notification record for scoped figures; count any later verified shared transaction amount once.",
+        "payment_status": "conditional",
+        "as_of": "2026-10-31"
+      },
+      "dates": {
+        "announcement_date": "2026-10-26",
+        "signature_date": null,
+        "closing_date": null,
+        "publication_date": "2026-07-30",
+        "next_decision_dates": [
+          "2026-12-03 17:00 Europe/Luxembourg - Lot 2 tender deadline (unchanged per 2026-10-26 portal announcement)",
+          "2027-02-04 17:00 Europe/Luxembourg - Lot 1 tender deadline per the 2026-10-26 portal announcement; the Lot 1 lot record still displays 2026-12-03 17:00 (conflict preserved)"
+        ],
+        "observation_date": "2026-10-31",
+        "notes": "Same instrument and dates as eurohpc-incident-notification. Pre-award action available under the actual text: a clarification question about how I.14.7, I.14.3(c) and Appendix II audit logs apply to anchor-customer capacity and L3 model services creates a dated, citable answer but creates no obligation."
+      },
+      "window": {
+        "status": "conditional",
+        "basis": "I.14.7 applies under the operative FWC; no executed FWC was located in this source set. The published tender provides a pre-award clarification context, not a demonstrated right for a coalition to rewrite the pack.",
+        "dependencies": [
+          "signature of an FWC (request power arises only then)",
+          "for a new standing obligation: an amendment, which II.11.2 constrains against altering initial procurement conditions or causing unequal treatment; routing through SC 11.5 instead gives the Contractor a reasoned basis to decline beyond 'every reasonable effort'",
+          "for SC 11.5: a Specific Contract in force and a request for services"
+        ]
+      },
+      "consent": {
+        "threshold": null,
+        "holder_allocation": null,
+        "basis": "No consent vote: the authorities hold the request power as such. The Contractor's agreement is not needed for the request, but nothing in I.14.7 specifies a compliance duty or deadline; SC 11.5 accommodation is 'every reasonable effort', not an absolute duty."
+      },
+      "substitutes": null,
+      "conditions": {
+        "pre_release_testing": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No explicit evaluator-access, weight-custody or model-release approval right identified. The illustrative measures are non-exhaustive; their full reach is unresolved, not categorically excluded."
+        },
+        "incident_reporting": {
+          "status": "proposed_reachable",
+          "obligor": "Contractor (proposed)",
+          "scope": "model_incidents_proposed",
+          "verifier": "Contracting Authorities (proposed)",
+          "deliverable": "Proposed: model-level incident notification to the Contracting Authorities framed as an additional security/public-order measure under I.14.7, optionally specified as an SC 11.5 SLA",
+          "remedy": "Unresolved: II.18.1(p)/II.18.3 is a possible route only if an enforceable duty and its breach are established; refusal of a request is not automatically such a breach",
+          "expiry_survival": null,
+          "note": "Proposal only: acceptance not guaranteed; grounds must be security or public order; no compliance deadline; proportionality review expected. The existing draft incident machinery (infrastructure scope) is in eurohpc-incident-notification."
+        },
+        "protected_weights": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No explicit weight-custody right identified. User IP ownership and qualified sovereignty language do not establish exclusion from all general security obligations."
+        },
+        "essential_user_continuity": {
+          "status": "outside_instrument_scope",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "The request power reaches restriction/exclusion of entities and activities, not continuity guarantees for user populations; restricting an entity can reduce continuity rather than protect it."
+        },
+        "known_chip_locations": {
+          "status": "proposed_reachable",
+          "obligor": "Contractor (proposed)",
+          "verifier": "Contracting Authorities (proposed)",
+          "deliverable": "Proposed: additional location-reporting measures under the open-ended I.14.7 list ('could include, but are not limited to')",
+          "remedy": "Proposed enforcement via general breach of I.14 and II.18.1(p); not guaranteed",
+          "expiry_survival": null,
+          "note": "Weak proposal: the measure list is open-ended but undefined, acceptance is not guaranteed, and the draft's existing location machinery is already recorded in eurohpc-asset-inventory-relocation (I.14.3, I.16.3, I.16.5)."
+        },
+        "local_stop_due_process": {
+          "status": "proposed_reachable",
+          "obligor": "Contractor (proposed; the Contractor executes any restriction through its user terms I.15.2)",
+          "verifier": "Contracting Authorities (proposed)",
+          "deliverable": "Proposed: 'limitation of certain entities in specific operational activities of the AIGF' requested under I.14.7 - the closest scoped-restriction hook in the draft",
+          "remedy": "Proposed: general breach of I.14 security provisions and II.18.1(p) termination with II.18.3 due process; no automatic sanction",
+          "expiry_survival": null,
+          "note": "Proposal only: a request executed by the Contractor on security/public-order grounds, not an established unilateral public model stop. II.17.2's general breach grounds do not categorically exclude security-related facts. A workload-specific due-process mechanism remains unestablished."
+        }
+      },
+      "verification": {
+        "access": "full",
+        "confidence": "high",
+        "observation_date": "2026-10-31",
+        "basis": "I.14.7 (p.20), SC Art. 11.5 (p.72), II.11.2 (p.45), II.17.2 (p.52), II.18.1(p)/II.18.3 (p.54) read directly in the retained, hashed PDF extraction during this task. The path analysis and its limits follow the retained clause text; the model-safety use is explicitly labelled proposed."
+      },
+      "remedies": [
+        "No remedy specific to I.14.7 in the text: no compliance deadline, no definition of 'appropriate'",
+        "Potential general breach route: II.18.1(p) with II.18.3 procedure, only after establishing that the requested measure creates an enforceable duty and a breach. Refusal alone is not established as sufficient.",
+        "SC Art. 11.5 non-compliance falls to the general breach and SLA/service-credit regime (I.23.3/II.15), not an automatic sanction",
+        "Amendment route (II.11.1 requires writing; II.11.2 forbids changes altering initial procurement conditions or causing unequal treatment) - the textual reason a coalition cannot simply bolt a release veto onto a signed FWC",
+        "Court review: General Court, then Court of Justice (I.10.2)"
+      ],
+      "source_references": [
+        {
+          "source_id": "eurohpc-framework",
+          "locator": "I.14.7 (p.20); I.14.3(c) (p.20); I.15.2 (p.21); I.4.3(a) (p.9); SC Art. 11.5 (p.72); II.11.2 (p.45); II.17.2 (p.52); II.18.1(p), II.18.3 (p.54); II.6.3-II.6.4 (pp.39-40); I.10.2 (p.15)"
+        },
+        {
+          "source_id": "eurohpc-annex2",
+          "locator": "p.5/p.8 contribution ceilings shared with transaction eurohpc-aigf-cft-2026"
+        },
+        {
+          "source_id": "eurohpc-portal",
+          "locator": "L76-87 deadline extension announcement; L150-155 Lot 1 lot record deadline conflict; L330, L493 Q&A deadline records"
+        },
+        {
+          "source_id": "eurohpc-changes",
+          "locator": "corrections lists proving the pack is v2 and still moving; clause numbering must be re-checked at signature"
+        }
+      ],
+      "missing_evidence": [
+        "No executed FWC located; the operative request power and final wording must be checked in any signed agreement",
+        "No example I.14.7 request, no Q&A interpretation, and no definition of 'appropriate measures' in the retained corpus",
+        "Whether a Specific Contract under Art. 11.5 may lawfully carry tenant-isolation and incident-notification SLAs is untested; the retained Q&A capture (375 truncated items) answers no safety question",
+        "The Hosting Agreement and GB access-time conditions (the durable route for binding model developers) are out of set; this record cannot verify any route through them"
+      ]
+    },
+    {
+      "id": "anthropic-credit-consent-gates",
+      "transaction_id": "anthropic-credit-agreement-2026",
+      "label": "Anthropic credit agreement: new-money and amendment consent gates (ss2.21-2.23 lender sole discretion; s9.08 Borrower + Required Lenders)",
+      "summary": "In the Amended and Restated Credit Agreement filed as Exhibit 10.10 to Anthropic's Form S-1, any Lender's election to provide incremental commitments (s2.21), to extend its loans/commitments (s2.22) or to provide refinancing commitments (s2.23) is 'in the sole discretion of such Lender'; otherwise the agreement can be amended or waived only by a writing entered into by the Borrower and the Required Lenders (defined as Lenders representing more than 50% of outstanding loans/commitments), with enumerated matters requiring each directly adversely affected Lender's consent, and s9.08(e) permits additional extensions of credit with Required Lenders, Administrative Agent and Borrower consent. These are NEW-money and amendment gates: no power to block committed, compliant draws. Named arrangers are NOT confirmed lenders (Schedule 2.01 redacted; '[Signature Pages Intentionally Omitted]'). Amount is null on the retained evidence. Present window unknown and borrower-initiated. Evidence: retained_tool_extraction / section_checked - the direct raw fetch returned HTTP 403 and the coordinator recovered a 682,490-character exhibit text; it is retained tool text, not raw HTML.",
+      "instrument": {
+        "type": "amended and restated secured revolving credit agreement",
+        "name": "Anthropic - Amended and Restated Credit Agreement (Exhibit 10.10 to Form S-1 registration statement)",
+        "instrument_status": "signed",
+        "transaction_status": "signed",
+        "evidence_type": "filing",
+        "instrument_status_basis": "The retained text defines 'Closing Date' as September 4, 2026, recites that the agreement amends, restates and replaces the Existing Credit Agreement on the Closing Date (s9.25), and is filed as an exhibit with '[Signature Pages Intentionally Omitted]'. Execution is evidenced by the operative amendment-and-restatement language and its filing status; the signature pages themselves are not retained."
+      },
+      "holder": {
+        "name": "Lenders party to the Credit Agreement (roster not evidenced)",
+        "vehicle": null,
+        "jurisdiction": "U.S. (New York law and New York courts per the retained text, s9.15)",
+        "decision_body": null,
+        "state_authority_basis": null,
+        "roster_note": "Schedule 2.01 'Commitments' is redacted [***] and the filed copy states '[Signature Pages Intentionally Omitted]', so no Lender identity, allocation or count is established by the retained text. Arrangers are defined and named in s1.01 (Morgan Stanley Senior Funding, Inc. as lead left arranger, joint bookrunner and syndication agent; with Barclays Bank PLC, Citibank, N.A., Goldman Sachs Lending Partners LLC, JPMorgan Chase Bank, N.A., Wells Fargo Securities, LLC, Bank of America, N.A., Deutsche Bank Securities Inc., Royal Bank of Canada, UBS Securities LLC, Bank of Montreal, BNP Paribas, Credit Agricole Corporate and Investment Bank, Mizuho Bank, Ltd. among others in arranger/bookrunner/documentation-agent roles), but arranger titles do not establish lender status or allocations, and no nationality tally is asserted from them."
+      },
+      "target": {
+        "name": "Anthropic (Borrower) and the Loan Parties / Guarantors",
+        "jurisdiction": null,
+        "description": "The Borrower requests and consents; Loan Parties include the Guarantors that must not hold Material Intellectual Property outside the Guarantor perimeter (s5.12)."
+      },
+      "right": "Three documented gate mechanisms: (1) lender sole-discretion elections over new money - any Lender's election to increase or provide a Commitment under s2.21 (Incremental Commitments), to extend under s2.22 (Extensions of Loans and Commitments) or to provide refinancing commitments under s2.23 (Refinancing Amendments) 'shall be in the sole discretion of such Lender'; (2) the amendment gate - except as provided in ss2.14, 2.21, 2.22, 2.23 and s9.08(c)-(h), the agreement may be waived, amended or modified only 'pursuant to an agreement or agreements in writing entered into by the Borrower and the Required Lenders' (s9.08(b)), with enumerated matters (e.g. principal, stated maturity, interest/fees) requiring the prior written consent of each Lender directly adversely affected (s9.08(b)(i)); (3) integration and additional-credit mechanics - s9.08(e) permits amendments with the Required Lenders, the Administrative Agent and the Borrower to allow additional extensions of credit, and s9.08(f) lets the Borrower and Administrative Agent (without Lender consent) integrate loans consistent with ss2.21-2.23.",
+      "right_status": "documented",
+      "safety_proposal": "Design proposal: negotiate a safety-reporting covenant in new incremental credit, an extension, refinancing or an agreed amendment. No explicit model-safety covenant was identified in the reviewed provisions. Keyword absence is not proof of no indirect safety reach; s5.05(b) covered-foreign-person notice and s5.12 Material Intellectual Property restrictions are adjacent provisions. A full clause-by-clause policy review was not performed.",
+      "rights_vs_proposal_separation": "Documented rights concern new-money and amendment consent. No explicit model-safety covenant was identified in the reviewed provisions. They do not establish a right to block committed compliant draws or evidence lender willingness to demand safety terms. New obligations require the Borrower and applicable financing parties to agree.",
+      "model_safety_path": {
+        "existing_enforceable_complete": false,
+        "basis": "The gates are evidenced in the filed agreement, but no explicit model-safety covenant was identified in the reviewed provisions; no complete enforceable model-safety route is established. Present window openness is unknown."
+      },
+      "finance": {
+        "flow_type": "debt",
+        "amount": null,
+        "currency": null,
+        "currency_basis": "not established on the retained evidence: the text defines multi-currency mechanics (Dollars, Euro, Australian Dollars, New Zealand Dollars, Sterling) but states no aggregate facility currency or amount",
+        "amount_basis": "amount null: 'SCHEDULE 2.01Commitments[***]' is redacted in the filed exhibit and no aggregate commitment figure appears anywhere in the retained text",
+        "payment_status": "undisclosed",
+        "as_of": "2026-10-31"
+      },
+      "dates": {
+        "announcement_date": null,
+        "signature_date": null,
+        "closing_date": "2026-09-04",
+        "publication_date": null,
+        "next_decision_dates": null,
+        "observation_date": "2026-10-31",
+        "notes": "'Closing Date' is defined in s1.01 of the retained text as September 4, 2026; s9.25 recites amendment and restatement effective on the Closing Date. Signature date not stated ('[Signature Pages Intentionally Omitted]'); S-1 filing date not extracted in this task; no scheduled borrower-initiated new-credit event is known, so next decision dates are unknown rather than absent."
+      },
+      "window": {
+        "status": "conditional",
+        "basis": "Windows open only on a Borrower-requested incremental facility (s2.21), extension (s2.22) or refinancing (s2.23), or on a Borrower + Required Lenders amendment (s9.08(b)); all are undated in the retained text, so whether any window is open at any given time - including now - is unknown. Any Lender's participation in a new-money election is in that Lender's sole discretion.",
+        "dependencies": [
+          "Borrower initiation of new credit or an amendment (the gate is borrower-initiated, not lender-callable)",
+          "for new money: each electing Lender's sole-discretion election; for amendments: Required Lenders (>50% of outstanding loans/commitments) plus the Borrower, with each-affected-Lender consent for enumerated matters",
+          "holder arithmetic cannot be computed: Schedule 2.01 allocations are redacted, so which lenders constitute Required Lenders is unknown"
+        ]
+      },
+      "consent": {
+        "threshold": "Required Lenders = Lenders holding outstanding Incremental Term Loans and Revolving Facility Commitments representing more than 50% of the aggregate (s1.01 definition, retained text); each Lender directly adversely affected for enumerated matters (s9.08(b)(i)); each electing Lender's sole discretion for ss2.21-2.23 new money",
+        "holder_allocation": null,
+        "basis": "Threshold verified in retained text; allocation unknown because Schedule 2.01 is redacted and signature pages are omitted. Null allocation cannot become zero or an assumed majority."
+      },
+      "substitutes": null,
+      "conditions": {
+        "pre_release_testing": {
+          "status": "unknown",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No safety-labeled provision found by literal keyword scan of the retained text, but a clause-by-clause policy review was not performed, so absence of indirect reach is not proven. Nothing evidences any testing/evaluator-access covenant."
+        },
+        "incident_reporting": {
+          "status": "proposed_reachable",
+          "obligor": "Borrower (proposed)",
+          "scope": "model_incidents_proposed",
+          "verifier": "Administrative Agent / Lenders (proposed)",
+          "deliverable": "Proposed: a safety-reporting covenant attached to a Borrower-initiated incremental/extension/refinancing or a Borrower + Required Lenders amendment; note the existing s5.05(b) notice duty to the Administrative Agent on becoming a 'covered foreign person' under the Outbound Investment Rules as an adjacent, non-safety information covenant",
+          "remedy": "Proposed only: would ride the general covenant-default machinery, which was not extracted in this task (missing evidence, not asserted absent)",
+          "expiry_survival": null,
+          "note": "The sole documented route to any safety content is prospective new paper; nothing in the retained text imposes it today."
+        },
+        "protected_weights": {
+          "status": "unknown",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "s5.12 pins Material Intellectual Property inside the Guarantor perimeter (no transfers to non-Guarantor Subsidiaries) - indirectly relevant to asset location but not a weight-custody safety condition; clause-by-clause review not performed."
+        },
+        "essential_user_continuity": {
+          "status": "unknown",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No continuity concept evidenced in the retained text; not assessed clause-by-clause."
+        },
+        "known_chip_locations": {
+          "status": "unknown",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No chip-location covenant identified in the reviewed provisions. Credit agreements can contain operational covenants; this review does not establish their absence throughout the instrument."
+        },
+        "local_stop_due_process": {
+          "status": "unknown",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No stop mechanism identified in the sections checked; clause-by-clause review not performed, so absence is not proven."
+        }
+      },
+      "verification": {
+        "access": "partial",
+        "confidence": "medium",
+        "observation_date": "2026-10-31",
+        "basis": "retained_tool_extraction / section_checked: the direct raw fetch of the exhibit returned HTTP 403 and no raw HTML is retained; the coordinator recovered a 682,490-character pre-skill webfetch text (hashed in sources.json). This task re-checked directly in that retained text: s2.21/s2.22/s2.23 headings and the 'sole discretion of such Lender' elections; s9.08(b) (Borrower + Required Lenders amendment gate; enumerated each-Lender matters), s9.08(e), s9.08(f); s9.25; s1.01 definitions ('Closing Date' = September 4, 2026; 'Required Lenders' >50%; 'Arrangers'); s5.05(b) covered-foreign-person notice; s5.12 Material IP; 'SCHEDULE 2.01Commitments[***]'; '[Signature Pages Intentionally Omitted]'; plus a literal keyword scan of the full retained text for safety terms. Reduced provenance grade: tool output, not re-downloadable bytes; clause-by-clause review not performed."
+      },
+      "remedies": [
+        "Leverage is ex ante, not remedial: sole-discretion elections over new money and consent gates over amendments; no remedy specific to a safety demand is claimed",
+        "The general covenant-default machinery (events of default, acceleration) was not extracted in this task - recorded as missing evidence, not asserted absent",
+        "s9.08(b)(i) protects each directly adversely affected Lender on enumerated economic matters; nothing in the retained text constrains a refusal to lend beyond market terms"
+      ],
+      "source_references": [
+        {
+          "source_id": "anthropic-credit-tool-text",
+          "locator": "s2.21 'Incremental Commitments' and s2.22 'Extensions of Loans and Commitments' and s2.23 'Refinancing Amendments' (each: election 'in the sole discretion of such Lender'); s9.08(b) incl. (b)(i), (e), (f); s9.25 Amendment and Restatement; s1.01 definitions 'Closing Date' (September 4, 2026), 'Required Lenders' (>50%), 'Arrangers'; s5.05(b) covered-foreign-person notice; s5.12 Material Intellectual Property; 'SCHEDULE 2.01Commitments[***]'; '[Signature Pages Intentionally Omitted]'; keyword scan of the full retained text"
+        }
+      ],
+      "missing_evidence": [
+        "Lender roster and allocations: the filed schedule is redacted and signatures omitted. Obtain the schedule or another authoritative disclosure of current holdings before computing coalition consent thresholds",
+        "Raw exhibit bytes: direct fetch returned HTTP 403; retained evidence is a tool text extraction (reduced provenance), and the S-1 body was not read in this task",
+        "Facility amount and utilization: no aggregate figure in the retained text; financial definitions (Consolidated Total Assets, Liquidity) not extracted - unknown, not recorded as absent",
+        "Clause-by-clause policy review for indirectly safety-relevant provisions beyond s5.05(b) and s5.12",
+        "Whether any s2.21/2.22/2.23 event is currently live (window openness) - undated in the text; borrower financing plans unknown",
+        "Arranger-to-lender mapping: arranger titles do not establish lender status; no bank nationality tally is asserted (deliberately excluded)"
+      ]
+    },
+    {
+      "id": "canada-cohere-staged-equity",
+      "transaction_id": "canada-cohere-equity-2026",
+      "label": "Canada to Cohere: announced staged equity investment of up to $1.6 billion (vehicle unnamed; no instrument located)",
+      "summary": "Canada announced staged equity investment of up to $1.6bn in Cohere on 29 October 2026. CAD is inferred from context; the source uses '$'. The investing vehicle, executed terms and future-stage discretion remain unknown. Reporting concerns company commitments, with jobs and investment as non-exhaustive examples. CAISI cooperation is among the announced commitments, but no specific model-safety deliverable or enforcement terms were identified. Signing alone would not settle whether later draws have conditions or remedies.",
+      "instrument": {
+        "type": "announced staged equity investment (no instrument located)",
+        "name": "Government of Canada equity investment in Cohere (Prime Minister's news release, 29 October 2026)",
+        "instrument_status": "unknown",
+        "transaction_status": "announced",
+        "evidence_type": "official_release",
+        "instrument_status_basis": "The release says 'commitment', 'planned' and 'will be made'; no subscription or shareholders agreement, signatory or executed instrument has been located on the raw record."
+      },
+      "holder": {
+        "name": "Government of Canada (announced by the Prime Minister)",
+        "vehicle": null,
+        "jurisdiction": "Canada",
+        "decision_body": null,
+        "state_authority_basis": "Prime Minister's news release (official release, 2026-10-29); no statute, appropriation or vehicle instrument is cited in the release",
+        "vehicle_note": "No investing vehicle is named anywhere in the release: 'CDEV', 'Development Investment' and 'Corporation' have zero occurrences in the retained HTML. CDEV is NOT established as the investor: the retained CDEV Act documents a statutory Crown agent with purpose-scoped natural-person capacity (s.9), best-interests-of-Canada and commercial-manner duties (s.10(2)), power to invest including by acquiring shares or securities (s.11(b)), investee-information privilege with four disclosure limbs (s.21(1)-(2)) and Minister-determined authorized capital (s.22) - but capacity is not identity, and if another vehicle (e.g. BDC, a new fund) is the investor, the CDEV Act analysis does not apply to it."
+      },
+      "target": {
+        "name": "Cohere (Toronto-founded AI company; the release refers to a 'recent merger' with Aleph Alpha)",
+        "jurisdiction": "Canada (Canadian incorporation and headquarters are company undertakings in the release, not observed facts)",
+        "description": "Recipient of the announced staged equity investment. The merger's closing/approval status is not evidenced on the raw record; the release's 'recent merger' phrasing is consistent with completion but does not evidence it."
+      },
+      "right": null,
+      "right_status": "unknown",
+      "safety_proposal": "Design proposal only, requiring the company's written assent: attach a safety/integrity covenant or reporting undertaking to the staged investment. Equity can carry operational covenants only with the company's agreement; the announcement contains no veto, reserved matter, consent right or board seat (string searches for 'veto', 'board' and 'consent' return zero hits in the retained release), so nothing evidences any government power to impose terms unilaterally.",
+      "rights_vs_proposal_separation": "The release announces company commitments and regular reporting 'including jobs and investment in Canada'. Those examples are non-exhaustive; CAISI cooperation is also among the commitments. The exact reporting implementation and enforceability are not established by the announcement. No specific government veto, verified safety deliverable, cure period or funding remedy was identified.",
+      "model_safety_path": {
+        "existing_enforceable_complete": false,
+        "basis": "No executed instrument located; no governance right, safety condition or consequence appears in the raw release; company undertakings are company commitments, not government powers."
+      },
+      "finance": {
+        "flow_type": "equity",
+        "amount": 1600000000,
+        "currency": "CAD",
+        "currency_basis": "inferred - the release states only '$1.6 billion' (L72) and 'approximately $1.6 billion' (L93) with no currency unit ('CAD' has zero occurrences); a Canadian federal release implies CAD, but the unit is unstated in the source and must not be presented as stated",
+        "amount_basis": "ceiling, not a paid or committed figure: 'up to $1.6 billion', hedged as 'up to approximately $1.6 billion' in quick facts; made in stages with the tranche schedule undisclosed; co-investors NVIDIA, Bell and Schwarz Group are named without amounts and the 'including' list is non-exhaustive, so no co-investor amount may be invented",
+        "payment_status": "announced",
+        "as_of": "2026-10-31"
+      },
+      "dates": {
+        "announcement_date": "2026-10-29",
+        "signature_date": null,
+        "closing_date": null,
+        "publication_date": "2026-10-29",
+        "next_decision_dates": null,
+        "observation_date": "2026-10-31",
+        "notes": "No tranche dates, no stage schedule, no decision dates anywhere in the release. 'Regular' reporting cadence is undefined. Any future-stage decision dates are unknown, not absent."
+      },
+      "window": {
+        "status": "unknown",
+        "basis": "No executed instrument was located. Signing or closing alone does not determine later discretion: one agreement may have unconditional staged calls, conditional draws, remedy-linked withholding or amendment rights; separate subscriptions may also be precommitted. The announcement does not resolve the architecture or draw conditions. Unsigned status alone would not prove every term remains negotiable.",
+        "dependencies": [
+          "locating the subscription/shareholders agreement, or a ministerial statement naming the vehicle, the tranche architecture and the draw conditions",
+          "if CDEV or any vehicle is later identified, its own statute and any appropriation constraints apply"
+        ]
+      },
+      "consent": {
+        "threshold": null,
+        "holder_allocation": null,
+        "basis": "No governance, board, veto or consent right appears in the release; allocation of any board or information rights is unknown because no instrument exists on the record."
+      },
+      "substitutes": null,
+      "conditions": {
+        "pre_release_testing": {
+          "status": "unknown",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No instrument text; missing text cannot establish that a clause is absent."
+        },
+        "incident_reporting": {
+          "status": "proposed_reachable",
+          "obligor": "Cohere (proposed, assent-only)",
+          "scope": "model_incidents_proposed",
+          "verifier": "unknown (the release names no reporting recipient)",
+          "deliverable": "Proposed: safety milestones or incident reporting carried inside the announced staged reporting machinery, which runs against all five company commitments with jobs and investment named as non-exhaustive examples",
+          "remedy": "None stated in the release; 'hold the company accountable' is announced reporting language, not an enumerated remedy, cure period or consequence",
+          "expiry_survival": null,
+          "note": "Requires terms still to be fixed (window unknown) and the company's written assent. No incident-reporting duty appears in the raw text, and the announced reporting has no verification standard, cadence or recipient."
+        },
+        "protected_weights": {
+          "status": "unknown",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No instrument text; not assessable."
+        },
+        "essential_user_continuity": {
+          "status": "unknown",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "No instrument text; not assessable."
+        },
+        "known_chip_locations": {
+          "status": "unknown",
+          "obligor": null,
+          "verifier": null,
+          "deliverable": null,
+          "remedy": null,
+          "expiry_survival": null,
+          "note": "The company's 'at least $1.7 billion to additional computing infrastructure in Canada by 2030' is an investment undertaking, not a location-custody covenant; no instrument text exists to assess."
+        },
+        "local_stop_due_process": {
+          "status": "proposed_reachable",
+          "obligor": "Cohere (proposed, assent-only)",
+          "verifier": null,
+          "deliverable": "Proposed: an operational covenant in the subscription/shareholders agreement - reachable only with the company's written agreement",
+          "remedy": "None stated; would depend on unlocated instrument terms",
+          "expiry_survival": null,
+          "note": "Equity cannot impose operational terms without the company's assent; no raw evidence exists of any operational covenant, so this is proposal-only with the practical pessimism preserved."
+        }
+      },
+      "verification": {
+        "access": "full",
+        "confidence": "high",
+        "observation_date": "2026-10-31",
+        "basis": "PM news release HTML retained and hashed (sources.json); operative text read in full in the retained extraction; absences verified this task by string search on the retained HTML/extraction: 'CDEV'/'Development Investment'/'Corporation' (0 hits), 'revenue' (0), 'veto' (0), 'board' (0), 'consent' (0), 'CAD' (0). CDEV Act capacity strings checked directly in the retained consolidated text. High confidence in what the release says; low confidence in anything beyond it - no instrument, vehicle or terms exist on the raw record."
+      },
+      "remedies": [
+        "None stated in the release. 'Hold the company accountable' is announced reporting language, not an enumerated remedy: no cure period, consequence, verification standard or enforcement mechanism appears anywhere in the retained text"
+      ],
+      "source_references": [
+        {
+          "source_id": "canada-cohere",
+          "locator": "L71-73 commitment, amount, co-investors; L77-82 five company undertakings (jobs; $1.7bn compute; incorporation/headquarters; research partnerships; CAISI cooperation); L83 staging and reporting sentence; L93 quick facts ('up to approximately $1.6 billion', 'made in stages'); L95 Aleph Alpha merger phrasing"
+        },
+        {
+          "source_id": "cdev-act",
+          "locator": "L161 s.9 capacity (purpose-scoped); L171 s.10(2) best interests of Canada and commercial manner; L183 s.11(b) investing incl. shares or securities; L281 s.21(1) investee-information privilege; L285-297 s.21(2) four disclosure limbs; L303/L307 s.22 authorized capital and Consolidated Revenue Fund subscriptions - cited only for CDEV's documented capacity, never as identification of the investor"
+        }
+      ],
+      "missing_evidence": [
+        "Investing vehicle, signatory, tranche schedule, board/governance rights and any executed instrument - nothing on the raw record",
+        "Currency unit (source states only '$'); any FX presentation must be flagged as inferred",
+        "Whether the commitment already closed within Cohere's reported initial financing round (reported-only counter-signal, unverified in retained sources)",
+        "Safety content beyond the CAISI cooperation undertaking: CAISI's 2026 powers are not established from primary sources here; the $50m/ISED launch description traces to a November 2024 release not retained in this corpus",
+        "Merger closing/approval status: the release's 'recent merger' phrasing is the only raw fact; completion is neither verified nor refuted",
+        "Tranche architecture and draw conditions - which of the four architectures applies, and what conditions attach to each draw"
+      ]
+    }
+  ],
+  "exclusions": {
+    "note": "The following were deliberately NOT asserted anywhere in this dataset because no retained primary source supports them:",
+    "excluded": [
+      "state control of private companies implied from investment exposure or headquarters alone",
+      "rankings or tiers of government power",
+      "aggregate national share or weighted national-control percentages of any market",
+      "bank nationality counts or tallies (including any non-US bank count derived from arranger titles)",
+      "implied low-cost substitution: the existence of alternative financing channels is never priced as inexpensive or costless; the substitutes field is left null on every record rather than guessed"
+    ],
+    "substitutes_field": "Explicitly null on every record: no retained source evidences substitute cost or availability."
+  }
+}

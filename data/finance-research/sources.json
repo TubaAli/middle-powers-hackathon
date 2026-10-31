@@ -1,0 +1,152 @@
+{
+  "dataset": "finance-research-sources",
+  "observation_date": "2026-10-31",
+  "purpose": "Compact index of retained primary sources for the finance-research candidate records. Derived from .local/finance-evidence/retrieval-manifest.json (2026-10-31). Raw source texts are retained only in the git-ignored .local/finance-evidence/ directory and are NOT reproduced in this dataset.",
+  "evidence_directory": ".local/finance-evidence/",
+  "access_status_vocabulary": {
+    "raw_download": "File fetched directly from the primary URL (curl/HTTPS with normal TLS verification) and retained byte-for-byte; extraction retained alongside.",
+    "rendered_dom": "Browser-rendered DOM innerText captured from the primary page; secondary to retained PDFs for clause text.",
+    "retained_tool_extraction": "Text retained from a tool-mediated retrieval of the primary URL. NOT raw HTML: the direct raw fetch failed, and the retained artifact is the tool's text output, not the original bytes.",
+    "not_retained": "Direct fetch attempt failed; no raw bytes retained. Documents an access limitation, never usable as evidence of a document's absence."
+  },
+  "verification_vocabulary": {
+    "section_checked": "Cited sections/locators were read in the retained extraction during this task (2026-10-31) before being cited by any candidate record.",
+    "string_checked": "Cited strings and their occurrence counts were checked in the retained extraction during this task (2026-10-31).",
+    "not_relied": "Not used as evidence for any candidate record (retained-and-hashed artifacts kept only for provenance, or access-limitation records documenting a failed fetch)."
+  },
+  "sources": [
+    {
+      "id": "eurohpc-framework",
+      "name": "eurohpc-framework.pdf",
+      "title": "EuroHPC AI Gigafactory CfT EUROHPC-2026/OP/0008 - Annex 3 Model Framework Contract v2 (draft, Ares(2026)9952478, 22/10/2026, 86 pp.)",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/docs/bc712395-692d-41ab-aa25-8e254ae86eb2-CN/CfT%20AIGF%20-%20Annex%203%20-%20Model%20FWC%20v2_V2.pdf",
+      "sha256": "773c9456913f6d7b594bd82df01c18158d971d9e5497fd1f53643e6e6dc9cd0f",
+      "bytes": 1014745,
+      "access": "raw_download",
+      "verification": "section_checked",
+      "observed": "2026-10-31",
+      "document_date": "2026-10-22",
+      "extraction": "eurohpc-framework.txt (page-labelled, retained in evidence directory)",
+      "notes": "Draft model FWC, not a signed contract; no contractor is named. Sections checked this task: I.14.6 and I.14.7 (p.20), I.15.3 (p.21), I.16.2-I.16.5 (pp.21-22), I.20.1 (p.24), II.6.3-II.6.4 (pp.39-40), II.11.2 (p.45), II.15/I.23.3 (pp.28-30, 30), II.17.2 (p.52), II.18.1(p) and II.18.3 (p.54), II.18.4 (p.55), Specific Contract Art. 11.5 (p.72)."
+    },
+    {
+      "id": "eurohpc-specifications",
+      "name": "eurohpc-specifications.pdf",
+      "title": "EuroHPC AI Gigafactory CfT - Tender Specifications v2 (Ares(2026)9990852, 23/10/2026, 135 pp.)",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/docs/bc712395-692d-41ab-aa25-8e254ae86eb2-CN/CfT%20AIGF%20-%20Tender%20Specifications%20v2_V1.pdf",
+      "sha256": "d64a3d7ab6938392b61e23c7901b1981088c1adf09d6eada10edc4ad1b8d86c7",
+      "bytes": 1645165,
+      "access": "raw_download",
+      "verification": "section_checked",
+      "observed": "2026-10-31",
+      "document_date": "2026-10-23",
+      "extraction": "eurohpc-specifications.txt (page-labelled, retained in evidence directory)",
+      "notes": "Mandatory requirements and award criteria; scored criteria are not contract obligations. Section checked this task: p.19 anchor-customer operational-autonomy / sovereignty exemption. Cited only for that exemption and for Phase 2 conditionality, which is independently stated in Annex 2."
+    },
+    {
+      "id": "eurohpc-changes",
+      "name": "eurohpc-changes.pdf",
+      "title": "EuroHPC AI Gigafactory CfT - History of changes in Call documents (Ares(2026)9990862, 23/10/2026, 3 pp.)",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/docs/bc712395-692d-41ab-aa25-8e254ae86eb2-CN/History%20of%20changes%20in%20Call%20documents_V1.pdf",
+      "sha256": "228cebb0a0fe0bb1b90789227c95f340bb6f33d3fbb4656a059842aa9bb66f8b",
+      "bytes": 355727,
+      "access": "raw_download",
+      "verification": "section_checked",
+      "observed": "2026-10-31",
+      "document_date": "2026-10-23",
+      "extraction": "eurohpc-changes.txt (page-labelled, retained in evidence directory)",
+      "notes": "Checked this task: lists corrections to the Tender Specifications v1-to-v2 and clerical-error corrections to the FWC v1-to-v2; evidences that the call pack is still moving. Version control on the portal is otherwise unreliable (portal labels the specifications 'Version 1' while the change log describes a v1-to-v2 correction)."
+    },
+    {
+      "id": "eurohpc-annex2",
+      "name": "eurohpc-annex2.pdf",
+      "title": "EuroHPC AI Gigafactory CfT - Annex 2, participating states and contributions (Ares(2026)7487282, 30/07/2026, 8 pp.)",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/docs/bc712395-692d-41ab-aa25-8e254ae86eb2-CN/CfT%20AIGF%20-%20Annex%202_V1.pdf",
+      "sha256": "4e934dee3e3042690e0af88b8a0195288f6b9cef382a3bff0f5456d1864b97b0",
+      "bytes": 437213,
+      "access": "raw_download",
+      "verification": "section_checked",
+      "observed": "2026-10-31",
+      "document_date": "2026-07-30",
+      "extraction": "eurohpc-annex2.txt (page-labelled, retained in evidence directory)",
+      "notes": "Checked this task: Lot 1 p.5 EU contribution Phase 1 EUR 100 million per FWC (up to 4 FWC), Phase 2 estimated max additional EUR 400 million per FWC subject to availability of Union funds in the next MFF, each phase capped at 17% of the respective AIGF IT CAPEX; Lot 2 p.8 EUR 200 million / 800 million; NCA lists for 13 Lot 1 states and 5 Lot 2 states."
+    },
+    {
+      "id": "eurohpc-portal",
+      "name": "eurohpc-portal.txt",
+      "title": "EuroHPC funding portal - rendered page for CfT EUROHPC-2026/OP/0008 (captured 2026-10-31)",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/bc712395-692d-41ab-aa25-8e254ae86eb2-CN",
+      "sha256": "5880352ef86e55eaf3172d860198d7f120ab739a48bcc8cab6aafc131520f710",
+      "bytes": 28593,
+      "access": "rendered_dom",
+      "verification": "section_checked",
+      "observed": "2026-10-31",
+      "document_date": null,
+      "extraction": "browser rendered DOM innerText (this file); not a manifest-grade byte capture of the underlying HTML",
+      "notes": "Used for dates, deadlines, document versions, TED references and the (truncated) Q&A list; never for clause text. Checked this task: announcement of the Lot 1 deadline extension ('Last update on 26/10/2026 18:11'; new Lot 1 deadline 04/02/2027 17:00 Europe/Luxembourg; Lot 2 unchanged 03/12/2026 17:00) at lines 76-87; estimated total value 10000000000 EUR at lines 112-113; Lot 1 record still displaying deadline 03/12/2026 17:00 at lines 150-155 (conflict preserved); TED references at lines 40-47, 98-101; Q&A deadline records at lines 330, 493."
+    },
+    {
+      "id": "cdev-act",
+      "name": "cdev-act.html",
+      "title": "Canada Development Investment Corporation Act (consolidated, current to 2026-09-30, last amended 2026-06-14)",
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/C-3.43/FullText.html",
+      "sha256": "a1f5bd03e5138f375dc9a56f2554fefc4703d7ff1c344284d2e3336b71f17681",
+      "bytes": 42768,
+      "access": "raw_download",
+      "verification": "string_checked",
+      "observed": "2026-10-31",
+      "document_date": "2026-09-30",
+      "extraction": "cdev-act.txt (retained in evidence directory; strings cross-checked against the HTML)",
+      "notes": "Primary law for CDEV's capacity only. Cited for: s.7 agent of His Majesty (L153), s.9 natural-person capacity, purpose-scoped (L161), s.10(2) best interests of Canada and commercial manner (L171), s.11(b) investing incl. shares/securities (L183), s.21(1) investee-information privilege (L281) with four s.21(2) disclosure limbs (L285-297), s.22(1) authorized capital (L303), s.22(2) subscriptions out of the Consolidated Revenue Fund (L307). Nowhere mentions Cohere or this investment."
+    },
+    {
+      "id": "canada-cohere",
+      "name": "canada-cohere.html",
+      "title": "Prime Minister of Canada news release, 29 October 2026, Montréal: Canada announces landmark investment in Cohere",
+      "url": "https://www.pm.gc.ca/en/news/news-releases/2026/10/29/canada-announces-landmark-investment-cohere-scale-secure-sovereign-ai",
+      "sha256": "35f0180a86e89f03aec7510140a542fd69c46e6d96bb61a311218f80a2045763",
+      "bytes": 47435,
+      "access": "raw_download",
+      "verification": "section_checked",
+      "observed": "2026-10-31",
+      "document_date": "2026-10-29",
+      "extraction": "canada-cohere.txt (retained in evidence directory; operative text read in full, 102 lines)",
+      "notes": "Cited lines: commitment and amount L71-73; five company undertakings L77-82; staging and reporting L83; quick facts L93; Aleph Alpha merger phrasing L95. Absences verified this task by string search on the retained HTML and extraction: 'CDEV', 'Development Investment', 'Corporation' (0 hits), 'revenue' (0), 'veto' (0), 'board' (0), 'consent' (0), 'CAD' (0 - no currency unit anywhere)."
+    },
+    {
+      "id": "anthropic-credit-raw-fetch",
+      "name": "anthropic-credit.html",
+      "title": "SEC EDGAR - Anthropic EX-10.10 credit agreement exhibit (direct raw fetch: FAILED)",
+      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/exhibit1010-sx1.htm",
+      "sha256": null,
+      "bytes": null,
+      "access": "not_retained",
+      "verification": "not_relied",
+      "observed": "2026-10-31",
+      "document_date": null,
+      "extraction": null,
+      "notes": "Direct raw fetch returned 'HTTP Error 403: Forbidden' (retrieval-manifest.json). Access limitation only: the 403 is not evidence that the filing is absent, and no raw exhibit bytes are retained in this repository. Use source anthropic-credit-tool-text for the retained tool text."
+    },
+    {
+      "id": "anthropic-credit-tool-text",
+      "name": "anthropic-credit-tool-text.txt",
+      "title": "Anthropic Amended and Restated Credit Agreement (EX-10.10) - retained pre-skill webfetch text (682,490 characters)",
+      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/exhibit1010-sx1.htm",
+      "sha256": "28a843501360aa0facaaacec9538640f249635446d0e6e37f2fb191dabeea83a",
+      "bytes": 687285,
+      "access": "retained_tool_extraction",
+      "verification": "section_checked",
+      "observed": "2026-10-31",
+      "document_date": null,
+      "extraction": "single-block text; locators use section headings and definitions, not page numbers",
+      "notes": "Retained tool extraction, NOT raw HTML: the direct raw fetch of the same URL returned HTTP 403 (see anthropic-credit-raw-fetch), and the coordinator recovered this 682,490-character text of the exhibit via a pre-skill webfetch. Treated as retained primary-source text at reduced provenance grade (tool output, not re-downloadable bytes). Sections checked this task: Section 2.21 'Incremental Commitments', Section 2.22 'Extensions of Loans and Commitments', Section 2.23 'Refinancing Amendments' (headings plus 'in the sole discretion of such Lender' elections); Section 9.08(b), (e), (f); Section 9.25; Section 1.01 definitions ('Closing Date' shall mean September 4, 2026; 'Required Lenders' >50% definition; 'Arrangers'); Section 5.05(b) covered-foreign-person notice; Section 5.12 Material Intellectual Property; 'SCHEDULE 2.01Commitments[***]'; '[Signature Pages Intentionally Omitted]'; literal keyword scan of the full retained text for safety terms."
+    }
+  ],
+  "not_included": {
+    "reason": "sources.json indexes only entries present in .local/finance-evidence/retrieval-manifest.json (9 entries: 4 EuroHPC PDFs, CDEV Act, Canada-Cohere release, the failed Anthropic raw fetch, the retained Anthropic tool text, and the EuroHPC portal capture).",
+    "excluded_examples": [
+      "exa-search-docs.html, exa-contents-docs.html, exa-research-docs.html (vendor API documentation retained during the method comparison in research_notes/Finance decision rights followup/METHOD.md; not in the manifest and not candidate evidence)",
+      "all page-labelled .txt extractions of the retained PDFs/HTML (derivatives of the hashed originals, retained in the evidence directory for locator use)"
+    ]
+  }
+}

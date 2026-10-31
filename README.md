@@ -9,3 +9,4 @@ This is our workspace for the [Middle Powers: AI Safety Hackathon](https://mangr
 - [Finance layer handoff](reports/Finance%20layer%20handoff.md): proposed Coalition Builder fields, evidence rules and design corrections.
 - [Transaction-level follow-up](reports/Finance%20decision%20rights%20followup.md): EuroHPC contract path, Anthropic new-credit limits and Cohere's unknown funding conditions.
 - [Clarification questions](reports/Finance%20clarification%20questions.md): precise next evidence requests for team use; not sent.
+- [Finance research records](data/finance-research/README.md): five candidate rights, nine source/access entries, explicit scope and unknowns, and a local validator.
