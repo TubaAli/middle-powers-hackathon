@@ -123,3 +123,17 @@ Sources: [signed-in hackathon page](https://try.mangrove.one/hackathons/92b5e028
 - **Risk:** a game can oversimplify and hurt our rigour score. Mitigation: every card sourced, and an honest debrief.
 - **Scope if we build it:** 3 missions on top of the existing views. That fits before the Nov 1 16:00 deadline.
 - **Open to the team:** keep or cut? Which finance cards are solid enough to use?
+
+## Oct 31: Tuba is trying a game format on branch `orbit-accord`
+- **Heads-up to the team:** Tuba is prototyping a game version on a separate branch, [`orbit-accord`](https://github.com/TubaAli/middle-powers-hackathon/tree/orbit-accord). `main` and the live site are unchanged.
+- **Concept: "Orbit Accord"**
+  - Countries are planets in a solar system, each ruled by a sovereign who stands for its government or policymakers.
+  - You pick a planet and see its AI powers (chips, data centres, etc.) and how much of the world's AI depends on it (%).
+  - You choose a goal from a preset list of common government AI goals, mostly the six safety conditions.
+  - You negotiate with other planets to build a coalition. Middle powers accept more easily than the two superpowers.
+  - You can sweeten deals with non-AI powers (food, medicine, energy, minerals, capital).
+  - **Score:** how much of the goal you achieve, plus the leverage your coalition holds.
+- **Built from:** the `main` data (`data/*.json`: supply-chain shares, the six conditions, law windows). It follows the limits on the "Sources & limits" page and the judging notes above.
+  - The debrief will show the assumed causal effect, whose consent is needed, and the evidence gaps.
+  - Winning a mission is not real-world safety impact.
+- **Feedback welcome:** which finance cards from Grisha's research are solid enough to use as negotiation chips?
