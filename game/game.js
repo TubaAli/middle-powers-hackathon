@@ -103,15 +103,11 @@ function deals(t) {
   out.push({ label: 'Just ask', sub: 'Words only' });
   return out.slice(0, 3);
 }
-function doDeal(t, offer) {
-  const pct = odds(t, offer);
+function rollDeal(t, offer) {
+  const pct = odds(t, offer), ok = Math.random() * 100 < pct;
   g.asked.add(t);
-  if (Math.random() * 100 < pct) {
-    if (offer.token) g.tokens[offer.token]--;
-    g.coalition.push(t);
-    toast(`${planet(t).name} joins your accord! (${pct}%)`, 'good');
-  } else toast(`${planet(t).name} declines (${pct}%). Try next month.`, 'bad');
-  closeOverlay();
+  if (ok) { if (offer.token) g.tokens[offer.token]--; g.coalition.push(t); }
+  return { ok, pct };
 }
 
 // ---------- Monthly council: 3–4 moves built from the data ----------
@@ -201,19 +197,68 @@ function endMonth() {
   if (g.turn >= MONTHS.length) return finish();
   openCouncil();
 }
+// ---------- Meeting: anime envoys talk, you pick a leverage point, a letter answers (meeting.js) ----------
 function openTalk(t) {
   g.phase = 'talk';
-  const p = planet(t), inAcc = g.coalition.includes(t), asked = g.asked.has(t);
+  const p = planet(t), me = planet(g.me), inAcc = g.coalition.includes(t), asked = g.asked.has(t);
   const tops = L.stages.filter((st) => (st.share[t] ?? 0) >= 15).sort((a, b) => b.share[t] - a.share[t]).slice(0, 2);
   const ds = inAcc || asked ? [] : deals(t);
-  g.deals = ds; g.talkTo = t;
-  showOverlay(`
-    <div class="talk-head"><span class="orb" style="${orbBg(p)}"></span><div><h2>${esc(p.name)}</h2><div class="muted small">${esc(p.title)} · ${esc(country(t))}${p.super ? ' · superpower' : ''}</div></div></div>
-    <div class="stats"><span>AI on them <b>${pct(weighted([t], false))}</b></span>${tops.map((st) => `<span>${esc(st.name)} <b>${Math.round(st.share[t])}%</b></span>`).join('')}
-      <span>Needs ${needs(t).map(icon).join(' ') || '—'}</span></div>
-    ${inAcc ? '<p class="lede">Already in your accord. ✨</p>' : asked ? '<p class="lede">You already asked this month.</p>' :
-      `<div class="moves">${ds.map((d, i) => `<button class="move deal" data-deal="${i}"><span class="ic">${d.promise ? '🔗' : d.token ? icon(d.token) : '💬'}</span><div><span class="pct">${odds(t, d)}%</span><b>${esc(d.label)}</b><span>${esc(d.sub)}</span></div></button>`).join('')}</div>`}
-    <div class="foot"><span class="muted small">${ds.length ? 'Join my accord? Pick an offer (1–3).' : ''}</span><button class="btn ghost" id="leave">Leave (Esc)</button></div>`);
+  const goal = goalOf(g.goals[0]), need = needs(t);
+  const withThem = pct(weighted([...g.coalition, t])), now = pct(weighted(g.coalition));
+  const actor = (q) => ({ k: q.k, name: q.name, title: q.title, color: q.color, envoy: CAST[q.k].name });
+  const facts = [`${esc(p.name)}: <b>${pct(weighted([t], false))}</b> of AI supply`,
+    ...tops.map((st) => `${esc(st.name)} <b>${Math.round(st.share[t])}%</b>`),
+    `Needs ${need.map(icon).join(' ') || '—'}`, `Your accord <b>${now}</b> → with them <b>${withThem}</b>`];
+  const script = [];
+  if (inAcc) script.push({ who: 'them', mood: 'happy', pop: '♪', text: `Partner! ${p.name} stands with your accord. Go win the others.` });
+  else if (asked) script.push({ who: 'them', mood: 'flat', pop: '…', text: 'We already gave you our answer this month. Come back next month, envoy.' });
+  else {
+    script.push({ who: 'them', mood: p.super ? 'flat' : 'happy', text: p.super
+      ? `${p.name} carries ${pct(weighted([t], false))} of the world's AI. Speak quickly, envoy of ${me.name}.`
+      : `Welcome to ${p.name}.${tops[0] ? ` We make ${Math.round(tops[0].share[t])}% of the world's ${tops[0].name}.` : ''} What brings you here?` });
+    script.push({ who: 'me', mood: 'happy', text: `I'm building an accord for ${goal.short.toLowerCase()}. With you in it, we'd hold ${withThem} of AI supply, up from ${now}.` });
+    const conds = goalConds();
+    script.push({ who: 'them', mood: p.super ? 'think' : 'flat', pop: '?', text:
+      t === 'US' && conds.some((n) => [1, 5, 6].includes(n)) ? 'Rules like that slow our labs, and our labs lead. Why should we tie our own hands?'
+      : t === 'CN' && conds.some((n) => n !== 2) ? 'Your accord looks like a club against us. Convince me it is not.'
+      : need.length ? `Our people are short of ${need.map((n) => `${icon(n)} ${pname(n).toLowerCase()}`).join(' and ')}. What do you bring to the table?`
+      : 'We hold strong cards already. What would we gain?' });
+    script.push({ choice: true });
+  }
+  Meeting.open({
+    month: MONTHS[g.turn], me: actor(me), them: actor(p), facts, script,
+    ask: `How do you persuade ${p.name}? Pick your leverage (1–${ds.length}).`,
+    deals: ds.map((d) => ({ label: esc(d.label), sub: esc(d.sub), pct: odds(t, d) })),
+    onChoose: (i) => rollDeal(t, ds[i]),
+    afterChoice: (i, res) => {
+      const d = ds[i];
+      const line = d.token ? `We'll send ${icon(d.token)} ${pname(d.token).toLowerCase()}. ${need.includes(d.token) ? 'You need it more than we do.' : 'Take it as goodwill.'}`
+        : d.promise ? `We make ${Math.round(stage(d.promise).share[g.me])}% of the world's ${stage(d.promise).name}. Join us, and it stays open to you.`
+        : 'No trade. Join because it is the safe thing to do.';
+      return [
+        { who: 'me', mood: 'flat', text: line },
+        { think: true },
+        res.ok ? { who: 'them', mood: 'happy', pop: '!', other: 'happy', text: `…Agreed. ${p.name} will join your accord. Our letter will follow.` }
+               : { who: 'them', mood: 'sad', pop: '…', other: 'sad', text: `I'm sorry, envoy. Not this time. Our letter will explain.` },
+      ];
+    },
+    get letter() {
+      if (!this.result) return null;
+      const d = this.chosen, ok = this.result.ok;
+      return {
+        body: ok
+          ? [`On your proposal for <b>${esc(goal.short.toLowerCase())}</b>: ${esc(p.name)} <b>joins your accord</b>.`,
+             `Together our worlds now hold <b>${pct(weighted(g.coalition))}</b> of the AI supply chain. ${d.label === 'Just ask' ? 'You asked plainly, and we respect that.' : `Your offer (${d.label.replace(/^(Offer|Promise) /, '')}) answered what we needed.`}`]
+          : [`On your proposal for <b>${esc(goal.short.toLowerCase())}</b>: ${esc(p.name)} <b>declines</b> for now.`,
+             p.super ? 'A superpower gives up freedom of action slowly. Bring a stronger accord, or stronger leverage.' : 'Your offer did not yet outweigh our own interests. Our door stays open next month.'],
+        foot: `Chance was ${this.result.pct}%. Odds are illustrative game rules; AI shares from gszep's model.`,
+      };
+    },
+    onClose: (res) => {
+      g.phase = 'fly';
+      if (res) toast(res.ok ? `${p.name} joins your accord! (${res.pct}%)` : `${p.name} declines (${res.pct}%). Try next month.`, res.ok ? 'good' : 'bad');
+    },
+  });
 }
 
 function finish() {
@@ -404,8 +449,6 @@ function wire() {
     if (g.phase === 'fly' && (k === ' ' || k === 'Enter') && g.near) openTalk(g.near);
     else if (g.phase === 'fly' && k === 'n') { g.timeLeft = 0; }
     else if (g.phase === 'council' && /^[1-4]$/.test(k)) pickMove(Number(k) - 1);
-    else if (g.phase === 'talk' && /^[1-3]$/.test(k) && g.deals?.[Number(k) - 1]) doDeal(g.talkTo, g.deals[Number(k) - 1]);
-    else if (g.phase === 'talk' && k === 'Escape') closeOverlay();
   });
   window.addEventListener('keyup', (e) => { keys[e.key.length === 1 ? e.key.toLowerCase() : e.key] = false; });
   $('#world').addEventListener('pointerdown', (e) => { if (g.phase === 'fly') world.aim = { x: e.clientX, y: e.clientY }; });
@@ -416,8 +459,6 @@ function wire() {
     else if (b.dataset.era) { g.era = P.eras.find((x) => x.id === b.dataset.era); renderSetup(); }
     else if (b.id === 'start') start();
     else if (b.dataset.move) pickMove(Number(b.dataset.move));
-    else if (b.dataset.deal) doDeal(g.talkTo, g.deals[Number(b.dataset.deal)]);
-    else if (b.id === 'leave') closeOverlay();
     else if (b.id === 'again') location.reload();
   });
 }

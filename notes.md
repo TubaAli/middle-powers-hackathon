@@ -373,3 +373,4 @@ Sources: [signed-in hackathon page](https://try.mangrove.one/hackathons/92b5e028
   - Deadlines: 3 Dec 2026 (Lot 2) and 4 Feb 2027 (Lot 1).
 - 2026-10-31: Game published on Pages at /game (orbit-accord merged into main); main app nav links to it.
 - 2026-10-31 (Tuba): Pulled teammates' 32-route model. Plain read of `#basis=model`: x = feasibility 0–100 (readiness 40%, timing 30%, coordination 30%), y = potential safety impact 0–100 (reach 40%, relevance 30%, remedy 30%); each factor is a 0–1 team judgement, unknown = 0.5. IndiaAI compute gate = impact 73.5 (3rd of 32) and feasibility 65.5, the best combination among the high-impact routes, so it sits near the top-right.
+- 2026-10-31 (Tuba): Built anime meeting scenes into Orbit Accord: Space on a planet opens a visual-novel meeting (animated envoys, seasonal room, data chips), you choose a leverage point, they react, and a sealed letter returns Approved/Declined. Inspired by the 'Before Geneva' concept art.
