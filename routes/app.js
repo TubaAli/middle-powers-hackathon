@@ -151,6 +151,8 @@ async function main() {
     readHash(); if (!state.route) state.route = data.replay?.routeId || data.routes[0].id;
     wire(); render();
   } catch(error) {
+    $('#loading').hidden = false;
+    $('#workspace').hidden = true;
     $('#loading').textContent = `Could not load the route data: ${error.message}. Serve the repository over HTTP and try reloading.`;
     $('#loading').setAttribute('role','alert');
   }

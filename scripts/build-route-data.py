@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """Build the dated public snapshot from reviewed research cards; no network calls."""
 import json
+import argparse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ORDER = ['eurohpc', 'procurement', 'evaluation', 'finance-compute']
 
 
-def build():
+def build(preview_eurohpc=False):
     routes = []
-    for name in ORDER:
+    for name in (['eurohpc'] if preview_eurohpc else ORDER):
         path = ROOT / 'data' / 'route-research' / f'{name}.json'
         if not path.exists():
             raise SystemExit(f'Missing reviewed route shard: {path}')
@@ -41,4 +42,6 @@ def build():
 
 
 if __name__ == '__main__':
-    build()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--preview-eurohpc', action='store_true', help='Local layout preview with only the EuroHPC card; do not publish this snapshot')
+    build(parser.parse_args().preview_eurohpc)
