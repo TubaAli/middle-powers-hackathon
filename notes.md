@@ -159,3 +159,12 @@ Sources: [signed-in hackathon page](https://try.mangrove.one/hackathons/92b5e028
   - You fly your planet with the arrow keys and press Space near another planet to negotiate.
   - Each month opens a council with 3–4 moves built from our data: table a bill when your law window is open, license your chokepoint, stockpile your biggest dependency, build data centres, summit tour.
   - Details: [game/README.md](https://github.com/TubaAli/middle-powers-hackathon/blob/orbit-accord/game/README.md).
+
+## Oct 31: teammate idea: "Routes to AI Safeguards" (Tuba's plain-words summary)
+- **What it is:** a chart of possible safety moves for middle-power governments.
+  - **Easy ↔ hard** to do.
+  - **Small ↔ big** safety effect.
+  - **Colour:** one country alone, a group of middle powers, or one that needs the big powers too.
+- **Click a move to see:** who acts → with what tool → which safeguard → how it's checked → what happens if it's broken.
+- **Key test:** is acting *together* actually better than acting alone?
+- **First examples:** EU computing tenders, Asia-Pacific buying and testing, Canada's investment terms, Taiwan's computing access, and conditions on new loans. These are mostly ideas, not proven powers yet.
