@@ -1,0 +1,1 @@
+{"name":"browser-image-generation","private":true,"version":"0.1.0","type":"module","exports":"./index.js","dependencies":{"@opencode/plugin":"*"}}
