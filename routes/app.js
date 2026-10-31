@@ -52,6 +52,8 @@ function renderPlot(routes) {
   }
   for (const route of routes) {
     const pos = positions.get(route.id), isSelected = route.id === state.route;
+    const frontier = !routes.some(other => other.impact >= route.impact && other.feasibility >= route.feasibility && (other.impact > route.impact || other.feasibility > route.feasibility));
+    if (frontier) svg += `<circle cx="${pos.x}" cy="${pos.y}" r="19" fill="none" stroke="#16223a" stroke-width="1.5" stroke-dasharray="3 3"><title>No visible route scores higher on one axis without scoring lower on the other. Editorial judgments, not a recommendation.</title></circle>`;
     svg += `<g class="plot-dot ${route.coordination}${isSelected ? ' selected':''}" transform="translate(${pos.x} ${pos.y})" role="button" tabindex="0" data-route="${esc(route.id)}" aria-label="${esc(`${number(route)}. ${route.title}. Feasibility ${route.feasibility} of 5, impact ${route.impact} of 5. ${COORDINATION[route.coordination]}. ${route.confidence} evidence confidence.`)}" aria-pressed="${isSelected}"><title>${esc(route.title)} — select to inspect evidence</title><circle r="12" style="fill-opacity:${confidenceOpacity[route.confidence]}"/><text y="3.5" text-anchor="middle">${number(route)}</text></g>`;
     if (isSelected) svg += `<text x="${pos.x}" y="${pos.y-22}" class="point-name" text-anchor="middle">${esc(route.shortLabel)}</text>`;
   }

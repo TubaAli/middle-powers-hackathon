@@ -1,0 +1,142 @@
+{
+  "routes": [
+    {
+      "id": "sg-agent-data-leakage-deployment-gate",
+      "title": "Use SG AISI agent data-leakage evaluations as a Singapore government deployment gate",
+      "shortLabel": "SG agent eval gate",
+      "coordination": "national",
+      "countries": ["Singapore"],
+      "region": "Asia-Pacific",
+      "mechanism": "Evaluation",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 2,
+      "feasibility": 4,
+      "impactRange": [1, 3],
+      "feasibilityRange": [3, 5],
+      "impactRationale": "Editorial judgment, not a measured effect: a working gate would force remediation of the data-handling failures the SG-KR evaluation documents (runs that were fully correct yet 0% safe on safety criteria), but only for one country's deployments and only for bounded, non-adversarial leakage risk. Voluntary publication of test results does not by itself reduce risk; the effect depends on the gate actually blocking deployments, and it does not reach adversarial or frontier risks.",
+      "feasibilityRationale": "Editorial judgment: existing evaluation capability and guidance recommending pre-deployment testing give a national gate a comparatively direct starting point. The rating assumes deploying agencies can lawfully adopt the proposed rule. Their authority and agreement, named-model reporting, thresholds, procurement compatibility and re-testing capacity still require confirmation; IMDA's coordination role alone does not establish control over every deployment.",
+      "actor": "IMDA, the overall government agency for the Singapore AISI (baseline policy and international AI-safety engagements), with the Digital Trust Centre running the technical testing; public-sector deploying agencies would be the gate's first users.",
+      "obligor": "Vendors and integrators whose AI agents are offered for Singapore government deployment. Extending the gate to private-sector deployments would need legal authority not located in these sources.",
+      "instrument": "No binding instrument located. Proposed: an administrative deployment rule or procurement condition making passage of a standardized agent data-leakage evaluation a precondition for deploying agents in defined government workflows. The existing layer is voluntary: IMDA's Model AI Governance Framework for Agentic AI (v1.5, May 2026) recommends pre-deployment agent testing, and IMDA's Starter Kit describes the testing process.",
+      "safeguard": "A deploy-time data-handling gate: before an agent runs in covered government workflows, it must pass realistic 12-task data-leakage evaluations with correctness and safety scored separately, and no/low-tolerance failure modes fixed and re-tested rather than averaged away.",
+      "verification": "SG AISI/DTC runs its existing open-source pipeline (built with KR AISI, published on the sgaisi GitHub) against the system as deployed - realistic MCP tool environments, task-specific LLM-judge rubrics plus sampled human validation - and records named pass/fail results against pre-set thresholds.",
+      "remedy": "Deployment deferred or denied until leakage failures are remediated and re-tested; post-deployment re-evaluation triggered by model or tool changes, following the framework's continuous-testing recommendation.",
+      "window": "Unknown. Evaluation capability and voluntary guidance are documented, but the reviewed sources fix no adoption or procurement decision date.",
+      "evidenceSummary": "The Singapore AISI (IMDA plus the NTU-hosted Digital Trust Centre) co-authored a June 2026 joint evaluation with the Korea AISI showing that none of three tested agents achieved fully correct and fully safe execution across 12 realistic tasks, and that high task completion does not imply safe data handling. IMDA's agentic-AI governance framework already recommends testing agents for safety and security before deployment, and IMDA, GovTech, CSA and Google have sandbox-tested computer-use agents for public-sector use cases. What is missing is the gate itself: no reviewed source makes evaluation results a condition of deployment.",
+      "gap": "No instruction, tender clause or service standard was located that conditions agent deployment on evaluation results. Current joint-testing practice anonymizes models, which a public gate could not rely on without change. The evaluations cover bounded, non-adversarial workflows, not prompt-injection or red-team attacks; in the January 2026 companion exercise human and LLM judges disagreed on about 18% of sampled safety judgements; and no settled standard exists for pass/fail thresholds.",
+      "nextQuestion": "Does any Singapore instruction, government tender or assurance-sandbox pilot already require AISI-style testing before an agent is deployed in government - and if so, are results tied to a pass/fail deployment decision or only advisory?",
+      "incentives": ["Government buyers gain deploy-time evidence on a documented failure mode instead of trusting vendor claims.", "Vendors face one published testing bar with an open-source pipeline rather than bespoke agency demands.", "IMDA's stated goal of trusted adoption is served by demonstrating agents can handle Singapore's data before deployment.", "Gate results would create named-system evidence that the AISI network could reuse for shared practices."],
+      "constraints": ["Current evaluations anonymize models, which cannot support public pass/fail accountability without a practice change.", "Leakage evaluations measure bounded, non-adversarial workflows; they do not cover adversarial attacks or frontier risks.", "Judge-based scoring needs human validation and remains partly subjective; threshold-setting has no settled standard.", "Binding deployments outside government would require legal authority not located in these sources."],
+      "pairId": "evaluation",
+      "pairRole": "national",
+      "sources": [
+        {
+          "title": "SG AISI and KR AISI, An Evaluation of Data Leakage Risks in Tool-Using LLM Agents in Realistic Scenarios",
+          "url": "https://sgaisi.sg/wp-api/wp-content/uploads/2026/06/SG_KR_AISI_Agent_Evaluation_Data_Leakage_2026.pdf",
+          "locator": "Abstract; results, SG AISI runs (100% C&S 16.7-58.3%) and KR AISI runs (15.0-35.0%); Section X Conclusion (fully correct runs that were 0% safe).",
+          "claim": "Across three tested agents, none achieved fully correct and fully safe execution across 12 realistic tasks; correctness and safety diverged (one scenario: 100% correct, 0% safe), so task success alone cannot certify safe data handling.",
+          "observed": "2026-10-31",
+          "published": "2026-06-16",
+          "access": "primary-read"
+        },
+        {
+          "title": "Singapore AI Safety Institute - About Us",
+          "url": "https://sgaisi.sg/about-us/",
+          "locator": "'Our Work' (Technical Testing, Agentic AI testing); 'Who We Are' (IMDA; Digital Trust Centre).",
+          "claim": "IMDA is the overall government agency for the Singapore AISI, responsible for baseline policy and international AI-safety engagements; the DTC (NTU-hosted, funded by an NRF/IMDA grant from October 2022) drives technical testing, including agent data-leakage evaluations conducted with the Korea AI Safety Institute.",
+          "observed": "2026-10-31",
+          "published": null,
+          "access": "primary-read"
+        },
+        {
+          "title": "IMDA, Model AI Governance Framework for Agentic AI (Version 1.5)",
+          "url": "https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf",
+          "locator": "'Implement technical controls and processes': 'Pre-deployment, test agents for safety and security'; case study 'Google x Singapore Government: Testing computer use agents' (pp. 40-41). Version 1.5 published 20 May 2026, updated 5 June 2026.",
+          "claim": "Singapore's national agentic-AI guidance recommends testing agents for safety and security before deployment and continuous testing afterwards, and documents a Google-CSA-GovTech-IMDA sandbox testing computer-use agents for public-sector use cases; it is guidance and creates no deployment obligation or gate.",
+          "observed": "2026-10-31",
+          "published": "2026-05-20",
+          "access": "primary-read"
+        },
+        {
+          "title": "Singapore AI Safety Red Teaming Challenge 2026 Report (IMDA)",
+          "url": "https://www.imda.gov.sg/assets/04a3e3ba-6b33-4ca7-ad89-deb5a315dc04.pdf",
+          "locator": "IMDA foreword; Executive Summary (14 partner institutes, 80+ experts); Takeaways; Conclusion. Cover dated June 2026; posted on sgaisi.sg 7 July 2026.",
+          "claim": "IMDA convened experts from 14 partner institutes to test Gen AI apps for data leakage across languages, finding inconsistent security behaviour and inadequate multilingual protections, and frames testing as an essential complement to governance frameworks rather than a certification.",
+          "observed": "2026-10-31",
+          "published": "2026-07-07",
+          "access": "primary-read"
+        }
+      ]
+    },
+    {
+      "id": "sg-kr-jp-shared-eval-evidence-protocol",
+      "title": "Singapore-Korea-Japan shared agent-evaluation evidence protocol feeding national deployment gates",
+      "shortLabel": "SG-KR-JP eval protocol",
+      "coordination": "middle-power",
+      "countries": ["Singapore", "South Korea", "Japan"],
+      "region": "Asia-Pacific",
+      "mechanism": "Evaluation",
+      "status": "Proposed",
+      "confidence": "Low",
+      "impact": 3,
+      "feasibility": 2,
+      "impactRange": [2, 4],
+      "feasibilityRange": [1, 3],
+      "impactRationale": "Editorial judgment, not a measured effect: evaluation evidence recognized across three significant AI markets would apply the same deploy-time data-handling pressure to more vendors and could seed the shared reporting standards the evaluation community says are missing. The measured failure mode remains operational data leakage in bounded workflows, not frontier or catastrophic risk; wider coverage is not observed risk reduction.",
+      "feasibilityRationale": "Editorial judgment: the technical relationships exist through joint exercises, but this review did not establish the proposed binding protocol, shared thresholds, recognition arrangement or national deployment gates. The SG-KR report shows independent pipelines producing different scores on the same scenarios; recognition would need additional standardization and government agreement.",
+      "actor": "The three national AISIs - Singapore AISI (IMDA/Digital Trust Centre), Korea AISI and Japan AISI - working through the International Network for Advanced AI Measurement, Evaluation and Science (NAAIMES); each national government retains its own deployment authority.",
+      "obligor": "Agent vendors and integrators deploying across the three countries' public sectors; any obligation would arise through each country's own gate, not from the network, which has no legal mandate.",
+      "instrument": "No instrument located. Proposed: a protocol defining common agent data-leakage evaluation suites, a shared reporting format and agreed thresholds, and each country's acceptance of the others' evaluation evidence at its national deployment gate. Recognition is proposed, not established: the reviewed documents record voluntary technical cooperation only.",
+      "safeguard": "One recognized set of realistic agent data-leakage evaluations accepted by three national deployment gates, harmonizing no/low-tolerance failure modes so that a vendor which fixes leakage once satisfies three markets instead of negotiating three bespoke regimes.",
+      "verification": "Each institute runs the common open pipeline (the SG-KR agent-testing pipeline) in its own environment on the same scenarios, cross-validates samples with the other institutes, and publishes results in a shared format against agreed thresholds; each national gate then checks that evidence before deployment approval.",
+      "remedy": "Failure anywhere in the shared suite blocks or defers deployment at any participating gate until remediation and re-test; failure patterns would be disclosed to the vendor with re-testing evidence shared across the three.",
+      "window": "Unknown. The reviewed sources give no decision date for recognition or national deployment gates. Shared thresholds and recognition would require further agreement; a completion year cannot be inferred from the publication dates of technical guidance.",
+      "evidenceSummary": "The cooperation substrate is documented: institutes from Singapore, Japan and South Korea joined the third NAAIMES joint testing exercise on agentic safety (July 2025), whose sensitive-information-leakage and fraud strand Singapore led; the SG-KR bilateral exercise produced a shared 12-task leakage methodology, a joint June 2026 report and an open pipeline; a Singapore-Japan-UK-led multilingual exercise (February 2025) ran prompts across ten languages with Korean contributions and called for pre-standardized evaluation criteria; and NAAIMES' first best-practice document (July 2026) anticipates that governments will require high-quality evaluators. No reviewed document establishes shared thresholds, result recognition or deployment gates.",
+      "gap": "The reviewed evidence documents voluntary technical cooperation with anonymized models. This review did not locate an agreed evidence protocol, shared thresholds, mutual recognition or the proposed national deployment gates. The same scenarios scored differently in the SG and KR pipelines, so cross-acceptance would require further standardization. The network's February 2025 disclaimer states its tests do not establish that a system is safe or appropriate for release.",
+      "nextQuestion": "Is there any NAAIMES or ministerial commitment - trilateral or network-wide - to move from joint testing to officially shared or accepted evaluation results for deployment decisions, and does any of the three governments have a deployment gate that could accept such evidence?",
+      "incentives": ["Vendors avoid running similar leakage tests three times for three markets; one recognized evidence set lowers compliance cost.", "Institutes already share pipelines and scenarios, so a protocol would formalize existing practice rather than start from zero.", "Three markets jointly exert more vendor pull than Singapore alone, raising the cost of shipping leaky agents into the region.", "Harmonized thresholds could lift the regional floor and seed the shared reporting standards the evaluation community says are missing."],
+      "constraints": ["Each of the three governments must first adopt a national deployment gate; the protocol multiplies the national route's missing step by three.", "The same scenarios produced materially different scores in the SG and KR pipelines; reproducibility limits how far results can be recognized without heavy standardization.", "Anonymized-model practice conflicts with the named evidence a gate needs; current exercises publish methodology, not verdicts.", "NAAIMES has no legal mandate; recognition would rest on separate administrative acts across three different legal systems.", "The network's own first best-practice document (July 2026) explicitly excludes agentic evaluations from its scope."],
+      "pairId": "evaluation",
+      "pairRole": "coordinated",
+      "sources": [
+        {
+          "title": "SG AISI and KR AISI, An Evaluation of Data Leakage Risks in Tool-Using LLM Agents in Realistic Scenarios",
+          "url": "https://sgaisi.sg/wp-api/wp-content/uploads/2026/06/SG_KR_AISI_Agent_Evaluation_Data_Leakage_2026.pdf",
+          "locator": "Results: 'Despite attempts to align testing environments between both institutes, the scores ... displayed variance, showing the difficulty of reproducibility on the same test dataset using independently built pipelines'; Section X Conclusion.",
+          "claim": "The two institutes aligned scenarios and evaluation objectives but built independent pipelines, and their scores diverged - a direct obstacle to any cross-country recognition of evaluation evidence without further standardization.",
+          "observed": "2026-10-31",
+          "published": "2026-06-16",
+          "access": "primary-read"
+        },
+        {
+          "title": "International Joint Testing Exercise: Agentic Testing - Evaluation Report (Leakage of Sensitive Information, Fraud and Cybersecurity Threats)",
+          "url": "https://sgaisi.sg/wp-api/wp-content/uploads/2025/07/International-Joint-Testing-Exercise_3JT-Eval-Report-v2.pdf",
+          "locator": "Title page ('including representatives from Singapore, Japan, Australia, Canada, European Commission, France, Kenya, South Korea and the United Kingdom'); Introduction (p. 2).",
+          "claim": "AISIs and government-mandated offices including Singapore, Japan and South Korea jointly tested agentic safety across nine languages, with the sensitive-information-leakage and fraud strand led by Singapore AISI; the stated focus was methodological - building common best practices for testing agents, not certifying systems.",
+          "observed": "2026-10-31",
+          "published": "2025-07-17",
+          "access": "primary-read"
+        },
+        {
+          "title": "NAAIMES Best Practice Guidance Document: Automated Evaluation of Large Language Models",
+          "url": "https://sgaisi.sg/wp-api/wp-content/uploads/2026/07/NAAIMES-Best-Practice-Document.pdf",
+          "locator": "Section A.1 'Introduction and purpose' (membership: Australia, Canada, EU, France, Japan, Kenya, Republic of Korea, Singapore, UK, US); Section A.2 'Scope' (agentic evaluations and red-team testing out of scope).",
+          "claim": "The network, formerly the International Network of AI Safety Institutes, exists to build internationally recognized approaches to measuring advanced AI, anticipates that governments will require high-quality evaluators, and has begun publishing shared evaluator guidance - but its first document covers automated capability evaluations only and explicitly excludes agentic evaluations.",
+          "observed": "2026-10-31",
+          "published": "2026-07-23",
+          "access": "primary-read"
+        },
+        {
+          "title": "Improving Methodologies for AI Model Evaluations Across Global Languages (International Network of AI Safety Institutes blogpost)",
+          "url": "https://sgaisi.sg/resources/improving-methodologies-for-ai-model-evaluations-across-global-languages/",
+          "locator": "Introduction (lead authors Singapore, Japan, United Kingdom); 'Key Takeaways' 2-3; testing-overview disclaimer paragraph.",
+          "claim": "Singapore, Japan and the UK led a network joint testing exercise with Korean-language contributions; it called for pre-determined standardization of evaluation criteria and consistent evaluation infrastructure, while stating that the tests 'should not be interpreted as an indication of whether any evaluated AI system or subcomponent thereof is safe or appropriate for release'.",
+          "observed": "2026-10-31",
+          "published": "2025-02-10",
+          "access": "primary-read"
+        }
+      ]
+    }
+  ]
+}

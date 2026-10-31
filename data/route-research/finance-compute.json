@@ -1,0 +1,185 @@
+{
+  "dataset": "route-research-finance-compute",
+  "observationDate": "2026-10-31",
+  "schemaNote": "Axes are ordinal editor judgments (1-5) with judgment ranges (impactRange/feasibilityRange), not probabilities, confidence intervals or measured risk reduction; broad reach does not imply success. confidence grades the mechanism evidence, never the impact. All safeguards in this file are proposed; no route here documents an executed model-safety covenant. pairId and pairRole are null: no pairing was assigned within this file.",
+  "notes": [
+    "Region vocabulary (Asia-Pacific | Europe | Cross-regional) has no Americas value. The Canada-centered route is recorded as Cross-regional by elimination - its obligor group also spans Canada and Germany through Cohere's announced Aleph Alpha merger - and the Anthropic route as Cross-regional because its multinational lender roster is unknown. The vocabulary limit is flagged here rather than hidden.",
+    "countries anchors each route to jurisdictions evidenced on the record: primarily the acting government (Canada, Taiwan); for the Anthropic route the borrower/governing-law jurisdiction (United States), because lender nationalities are redacted and no tally is asserted. Germany appears in the Canada route's obligor text via the merger, not as an actor.",
+    "Anthropic evidence is the retained tool-extracted exhibit text at reduced provenance grade: the direct raw fetch returned HTTP 403 and was not re-downloaded per coordinator instruction; the cited sections were re-checked directly in the retained text this session, and its SHA-256 and byte size match data/finance-research/sources.json.",
+    "Canada evidence: the retained, hashed PM release was read in full and its SHA-256 and byte size re-verified this session. Absence claims were re-verified by string search: 'CDEV', 'Development Investment', 'veto', 'CAD' have zero hits; the only 'board'/'consent' hits in the raw HTML are page chrome ('modal_keyboard', 'gtag consentMode'), not operative text; the single 'condition' occurrence is a ministerial quote about entrepreneurs, not an investment term.",
+    "Taiwan evidence: the official English text of the Artificial Intelligence Basic Act (promulgated 2026-01-14) was fetched from law.nstc.gov.tw and read in full this session. No local copy is retained (retention would write outside this task's file ownership). Specific grant terms are not inferred from its articles, per coordinator instruction.",
+    "Rejected assumptions, none carried into any record: CDEV as the investing vehicle (unnamed in the release); CAD as a stated currency (inferred from a '$' figure only); a lender right to withhold compliant committed draws (none exists); arranger titles as lender status, or any bank-nationality tally (roster redacted); Taiwan exercising control over TSMC or any corporate chip supply (no assumed chip control); specific compute-grant terms from Basic Law articles (enabling provisions only); open decision windows inferred from announcements or undated gates (all recorded as unknown, not open).",
+    "No categorical zero-safeguard claims are made from absence: unlocated instruments, redacted schedules and missing program texts are recorded as unknown; absence of evidence is never treated as evidence of absence.",
+    "No impact is measured. impact and feasibility are ordinal editor judgments for plot placement, with ranges expressing genuine uncertainty; the six-condition rubric of data/finance-research was not re-scored here."
+  ],
+  "routes": [
+    {
+      "id": "canada-cohere-equity-safety-covenant",
+      "title": "Canada attaches a model-safety covenant to future stages of its announced equity investment in Cohere",
+      "shortLabel": "Canada Cohere covenant",
+      "coordination": "national",
+      "countries": ["Canada"],
+      "region": "Cross-regional",
+      "mechanism": "Finance",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 2,
+      "feasibility": 3,
+      "impactRange": [1, 3],
+      "feasibilityRange": [2, 4],
+      "impactRationale": "Editor judgment, not a measured effect. If implemented, the covenant binds one named frontier-adjacent company group (Cohere, whose announced merger with Aleph Alpha spans Canada and Germany) with up to roughly $1.6 billion of staged public money behind it. That is a concrete obligor, but one company in one investment, with no release-control power, an unknown remedy and an existing voluntary CAISI cooperation undertaking that shrinks the marginal safety addition. The upside is a replicable sovereign-investment template for other middle powers; the downside is reporting-only terms with no operational content.",
+      "feasibilityRationale": "A single government designing terms for its own staged equity needs no coalition, and the announcement itself supplies the attachment points: staged funding, a regular-reporting architecture and an existing CAISI cooperation undertaking. What holds feasibility at mid-scale is the missing instrument: no vehicle, subscription agreement, tranche architecture or draw condition is on the record, so whether any future stage is actually conditional (rather than precommitted or unconditional) is unknown, and any covenant needs Cohere's written assent.",
+      "actor": "Government of Canada (announced by the Prime Minister; the investing legal vehicle is unnamed - CDEV is not established as the holder)",
+      "obligor": "Cohere (Toronto-founded; the release also describes a recent merger with Germany's Aleph Alpha, so the obligor group spans two jurisdictions)",
+      "instrument": "Announced staged equity investment of up to $1.6 billion in Cohere (29 October 2026, alongside private investors including NVIDIA, Bell and Schwarz Group; co-investor amounts unstated). The release says only '$', so CAD is inferred, not stated. No subscription or shareholders agreement has been located; 'made in stages' with 'regular reporting' is the only documented structure.",
+      "safeguard": "Proposed: a model-safety covenant attached to future equity stages - for example defined safety-milestone or incident-reporting deliverables to the government or the Canadian AI Safety Institute (formalizing the company's announced undertaking to keep working with CAISI), an evaluation-access right, and an evidence standard with a stated consequence for non-delivery.",
+      "verification": "The release announces 'regular reporting on progress against the company's commitments, including jobs and investment in Canada' - with no recipient, cadence, evidence standard or safety deliverable. The reporting sentence is non-exhaustive ('including'), so a verification design (e.g. CAISI-delivered evaluation reports) is part of the proposal, not the record.",
+      "remedy": "None stated. 'Hold the company accountable' is announced reporting language, not an enumerated remedy, cure period or draw-stop. Withholding a later tranche would require the unlocated instrument to make future draws conditional; present discretion over later stages is unknown, not assumed.",
+      "window": "No tranche schedule, decision dates or stage architecture appear in the release. The investment was announced 2026-10-29 and may be in implementation now, but whether any future-stage terms remain negotiable - or are already fixed - is unknown. Recorded as unknown, not open.",
+      "evidenceSummary": "The retained, hashed PM release (read in full this session; SHA-256 and byte size re-verified against data/finance-research/sources.json) documents: an equity investment 'up to $1.6 billion', 'made in stages', with 'regular reporting' and 'hold the company accountable' language; five company undertakings, including to 'keep working with the Canadian AI Safety Institute to champion the safe development and use of advanced AI' and to commit at least $1.7 billion to additional computing infrastructure in Canada by 2030; and the Aleph Alpha merger. String searches on the operative text confirm zero occurrences of 'CDEV', 'Development Investment', 'veto', 'board', 'consent' and 'CAD' (the only raw-HTML hits for 'board'/'consent' are page chrome: 'modal_keyboard', 'gtag consentMode'). The retained CDEV Act documents a plausible vehicle's statutory capacity (s.11(b) investing in shares or securities; s.21 investee-information privilege) but never mentions Cohere.",
+      "gap": "No executed investment instrument was located in this review. Investing vehicle, signatory, tranche architecture, draw conditions, governance or information rights, explicit currency unit and safety deliverables remain unknown. CDEV is not established as the investor; the announced stages may be unconditional, conditional or precommitted. The CAISI cooperation undertaking has no located operating terms.",
+      "nextQuestion": "Which legal vehicle holds the staged investment, and what conditions govern later-stage draws - unconditional staged calls, conditional tranches with certifications, or precommitted subscriptions? Locate the subscription/shareholders agreement or a ministerial statement naming the vehicle and tranche conditions.",
+      "incentives": [
+        "Sovereign-AI framing: the release justifies the investment as securing Canadian AI sovereignty, giving the government a stated interest in defined deliverables for public money.",
+        "The announcement already contains an accountability architecture - staged funding plus regular reporting - that a safety covenant could specify rather than invent.",
+        "Cohere's announced undertaking to keep working with CAISI provides a safety counterpart and a hook the covenant could formalize with deliverables and standards.",
+        "A worked sovereign-equity covenant would be a replicable template for other middle powers negotiating AI investments."
+      ],
+      "constraints": [
+        "No located instrument: the covenant requires Cohere's written assent - equity cannot impose operational terms unilaterally - and the vehicle, signatory and tranche terms are unknown.",
+        "The release contains no veto, board, consent or governance right (string-verified zero hits in the operative text) and no remedy, cure period or draw-stop; 'hold the company accountable' is reporting language.",
+        "CDEV is not established as the investor; if another vehicle or a new fund invests, the CDEV Act analysis does not apply and that vehicle's statute and appropriation constraints govern instead.",
+        "Terms may already be fixed: 'made in stages' does not establish that later stages are discretionary; present discretion is unknown and must not be assumed either way.",
+        "Currency is unstated ('$' only): any CAD figure must be flagged as inferred. The post-merger group structure (Aleph Alpha) complicates which entity bears covenants and under which law."
+      ],
+      "sources": [
+        {
+          "title": "Prime Minister of Canada news release: Canada announces landmark investment in Cohere to scale secure, sovereign AI (29 October 2026)",
+          "url": "https://www.pm.gc.ca/en/news/news-releases/2026/10/29/canada-announces-landmark-investment-cohere-scale-secure-sovereign-ai",
+          "locator": "L71-73 commitment, amount, co-investors; L77-82 five company undertakings (jobs; $1.7bn compute by 2030; Canadian incorporation and headquarters; research partnerships; CAISI cooperation); L83 staged investment with regular reporting and 'hold the company accountable'; L93 'up to approximately $1.6 billion... made in stages'; L95 Aleph Alpha merger",
+          "claim": "Canada announced a staged equity investment of up to $1.6 billion in Cohere, made in stages with regular reporting on company commitments including continued work with the Canadian AI Safety Institute; the release names no investing vehicle, no draw conditions, no remedy and no currency unit.",
+          "observed": "2026-10-31",
+          "published": "2026-10-29",
+          "access": "primary-read"
+        },
+        {
+          "title": "Canada Development Investment Corporation Act (consolidated, current to 2026-09-30)",
+          "url": "https://laws-lois.justice.gc.ca/eng/acts/C-3.43/FullText.html",
+          "locator": "s.9 capacity (L161); s.10(2) best interests of Canada and commercial manner (L171); s.11(b) investing including shares or securities (L183); s.21(1)-(2) investee-information privilege and disclosure limbs (L281, L285-297); s.22 authorized capital and Consolidated Revenue Fund subscriptions (L303, L307)",
+          "claim": "Documents the statutory capacity of CDEV only - purpose-scoped capacity, investing in shares or securities, investee-information privilege and CRF subscriptions; it does not identify CDEV as the Cohere investor (the release contains zero mentions of CDEV).",
+          "observed": "2026-10-31",
+          "published": "2026-09-30",
+          "access": "primary-read"
+        }
+      ],
+      "pairId": null,
+      "pairRole": null
+    },
+    {
+      "id": "taiwan-public-compute-safety-conditions",
+      "title": "Taiwan attaches model-safety conditions to access to publicly supported AI compute under the AI Basic Law",
+      "shortLabel": "Taiwan public compute",
+      "coordination": "national",
+      "countries": ["Taiwan"],
+      "region": "Asia-Pacific",
+      "mechanism": "Compute",
+      "status": "Proposed",
+      "confidence": "Low",
+      "impact": 2,
+      "feasibility": 3,
+      "impactRange": [1, 3],
+      "feasibilityRange": [2, 4],
+      "impactRationale": "Editor judgment, not a measured effect. Conditions on Taiwan's public compute bind only that compute's users, whose identity, scale and frontier relevance are unknown, so direct impact on frontier-model safety is plausibly small. The upside runs through Article 16's internationally interoperable risk taxonomy (definitions other jurisdictions could adopt) and the route's value as a replicable national template. No reach to global frontier developers is evidenced, and this route claims no semiconductor leverage.",
+      "feasibilityRationale": "Editorial judgment: a national support programme could be a relatively direct route if an authorized administrator can set future access conditions. But no applicable programme, budget, access policy or user base was established here. Recipient agreements, budget rules and existing commitments may constrain changes. The Act's implementation timetable does not establish a compute-programme negotiation window.",
+      "actor": "Government of Taiwan (the National Science and Technology Council is the central competent authority under Article 2; the Ministry of Digital Affairs leads the risk taxonomy under Article 16; the Executive Yuan convenes the National AI Strategic Committee under Article 6)",
+      "obligor": "Recipients and users of Taiwan's public AI compute and support measures - none identified in this evidence set",
+      "instrument": "Proposed: conditions attached to access to publicly supported AI compute (subsidies, funding, infrastructure and support measures of the kind Article 10 authorizes and Article 11 mandates for emerging-AI development and testing). The Artificial Intelligence Basic Act (promulgated 2026-01-14) is the enabling statute; it contains no compute-program terms and none may be inferred.",
+      "safeguard": "Proposed: safety conditions on public-compute access - for example pre-release testing records, model-incident reporting, or disclosure against the Article 16 interoperable AI risk taxonomy, with Article 5-style advisory machinery and MODA assessment/verification tools as candidate verification infrastructure.",
+      "verification": "Not established on the record. Article 10 requires an annual performance-report system with regular public announcement of results and evaluation opinions for AI support policies, and Articles 5 and 16 point to MODA-provided assessment/verification tools and an interoperable taxonomy that could define evidence - but no compute-program verification mechanism exists in the evidence.",
+      "remedy": "Not established: the Basic Law contains no program-level draw-stop, cure period or enforcement mechanism. Article 16(3) requires the circumstances listed in Article 5(1) to be restricted or prohibited 'in accordance with the law' - a duty on future risk-based regulation, not a program remedy. Any remedy would be designed into future program terms.",
+      "window": "Dated legislative hooks, unknown program calendar. The Act took effect on promulgation, 2026-01-14 (Article 20), and Article 18 requires non-complying laws, regulations and administrative measures to be enacted, amended or repealed within two years of the effective date - by 2028-01-14. That is a documented window for implementing acts; whether any public-compute program decision falls inside it is unknown.",
+      "evidenceSummary": "The official English text of Taiwan's Artificial Intelligence Basic Act (NSTC laws system; promulgated 2026-01-14, effective the same day per Article 20) was fetched and read in full this session. Article 10 has the government handle subsidies, commissions, funding, investments, incentives and fiscal measures for AI, with an annual public performance-report system; Article 16 has the Ministry of Digital Affairs promote an AI risk taxonomy interoperable with international frameworks and assist industry competent authorities with risk-based management regulations, with Article 16(3) requiring Article 5(1) circumstances to be restricted or prohibited by law; Article 19 requires government agencies using AI in duties or services to conduct risk assessments and plan response measures; Articles 2, 5, 6, 11, 18 and 20 supply the competent-authority assignment, high-risk advisory machinery, National AI Strategic Committee, development/testing support measures, the two-year implementing window and the effective date. No article specifies compute-program grant terms or access conditions.",
+      "gap": "No public-compute program document exists in this evidence set: whether Taiwan operates subsidized AI compute, at what scale, for whom, under what access terms and budget, is unknown. The Basic Law's articles are enabling and duty provisions - specific grant terms are not inferred from them. Which agency will run any compute program, and what the framework provisions mean in practice, depend on implementing acts not yet located. confidence is Low for this reason: the law is promulgated and primary-read, but the route's operative instrument is absent from the record, not merely unstudied.",
+      "nextQuestion": "Which Taiwanese program actually allocates public AI compute, at what scale and to whom, and on what published access terms - and does the Article 18 two-year window (to 2028-01-14) include any compute-support or subsidy regulation now in draft? Obtain program guidelines or budget lines to see whether safety conditions could attach.",
+      "incentives": [
+        "A freshly promulgated Basic Law with a dated two-year implementing window (Article 18, to 2028-01-14) creates institutional momentum and a deadline for designing support-program rules now.",
+        "A national programme could offer a direct policy channel if its administrator has authority and applicable agreements permit the proposed conditions.",
+        "Article 16's interoperable-risk-taxonomy mandate supplies ready-made definitions any compute-access condition could reference, easing international legibility.",
+        "Article 10's annual public performance-report system creates a standing transparency mechanism that could carry safety-condition reporting."
+      ],
+      "constraints": [
+        "Specific grant terms may not be inferred from the Basic Law: Articles 10, 16 and 19 are enabling and duty provisions, and no compute-program access condition exists on the record.",
+        "No assumed chip control: nothing in this route rests on Taiwan controlling TSMC, chip exports or any corporate chip supply; the leverage is public compute access only, and no program document evidences its scale or users.",
+        "Public AI compute programs are unevidenced here: existence, budget, users and substitutability are unknown, and no evidence suggests frontier labs depend on Taiwanese public compute.",
+        "Framework-law limits: the Basic Law operates through later regulations and program design (Article 18 window to 2028-01-14), so its practical force depends on implementing acts not yet made.",
+        "Article 19's risk assessments bind the government's own use of AI, not private developers; extending conditions to external compute users is design work, not existing law."
+      ],
+      "sources": [
+        {
+          "title": "Taiwan - Artificial Intelligence Basic Act (promulgated 14 January 2026)",
+          "url": "https://law.nstc.gov.tw/EngLawContent.aspx?id=10099&lan=E",
+          "locator": "Article 2 (NSTC as central competent authority); Article 5 (high-risk advisory notices; MODA assessment/verification tools); Article 6 (National AI Strategic Committee); Article 10 (subsidies, commissions, funding, investments, incentives, fiscal measures; annual performance reports); Article 11 (support and subsidy measures for emerging-AI development/testing); Article 16 incl. 16(3) (MODA risk taxonomy interoperable with international frameworks; risk-based management regulations; restriction/prohibition per Article 5(1)); Article 18 (two-year implementing window); Article 19 (government risk assessments for AI use in duties/services); Article 20 (effective on promulgation)",
+          "claim": "The promulgated Basic Law authorizes government AI support measures (subsidies, funding, investments, fiscal incentives, annual performance reports), requires MODA's internationally interoperable risk taxonomy and government-use risk assessments, and sets a two-year implementing window - but specifies no compute-program grant or access terms.",
+          "observed": "2026-10-31",
+          "published": "2026-01-14",
+          "access": "primary-read"
+        }
+      ],
+      "pairId": null,
+      "pairRole": null
+    },
+    {
+      "id": "anthropic-new-credit-lender-safety-covenant",
+      "title": "Multinational lenders negotiate a model-safety covenant into new Anthropic credit (incremental facilities, extensions, refinancings or agreed amendments)",
+      "shortLabel": "Lender safety covenant",
+      "coordination": "broader",
+      "countries": ["United States"],
+      "region": "Cross-regional",
+      "mechanism": "Finance",
+      "status": "Documented mechanism",
+      "confidence": "Medium",
+      "impact": 3,
+      "feasibility": 2,
+      "impactRange": [2, 4],
+      "feasibilityRange": [1, 3],
+      "impactRationale": "Editor judgment, not a measured effect. A negotiated covenant would reach a frontier developer through enforceable credit-documentation machinery and could set a precedent that standardizes safety reporting across AI-lab lending - the strongest direct-reach candidate of this set. But the scope would be whatever the parties agree (possibly reporting-only), it can attach only to new paper with no holdback of committed draws, and the marginal safety gain over whatever Anthropic already does voluntarily (not evidenced here) is unknown.",
+      "feasibilityRationale": "Editorial judgment: the filed credit-agreement text documents negotiating gates, but a covenant needs borrower initiation or agreement. Lender holdings are redacted, so voting arithmetic cannot be established; alternative lenders may substitute for unwilling new-money providers. No live negotiation or supportive coalition was identified. The broader-agreement colour reflects the need for commercial parties including the US borrower, not a claim that every lender must agree.",
+      "actor": "Lenders party to Anthropic's amended and restated credit agreement (multinational syndicate; roster and allocations unknown - Schedule 2.01 is redacted and the named arrangers are not confirmed lenders, so no nationality tally is asserted)",
+      "obligor": "Anthropic PBC (Borrower), with the Loan Parties and Guarantors reached through the Material Intellectual Property perimeter (s.5.12)",
+      "instrument": "Amended and Restated Credit Agreement dated as of September 4, 2026 (Exhibit 10.10 to Anthropic's Form S-1; New York law per s.9.15). Documented gates: any Lender's election to provide incremental commitments (s.2.21), to extend its loans/commitments (s.2.22) or to provide Replacement Revolving Facility Commitments (s.2.23: 'may elect or decline, in its sole discretion') is in that Lender's sole discretion; amendments otherwise require a writing entered into by the Borrower and the Required Lenders - Lenders holding more than 50% of outstanding Incremental Term Loans and Revolving Facility Commitments (s.1.01, s.9.08(b)) - with each directly adversely affected Lender's consent for enumerated matters (s.9.08(b)(i)).",
+      "safeguard": "Proposed: a model-safety covenant - e.g. safety-incident reporting to the Administrative Agent, evaluation-evidence delivery, or notification duties - negotiated into new incremental credit, an extension, a refinancing amendment, or an agreed s.9.08 amendment. Never a holdback of compliant committed draws, which the agreement does not permit.",
+      "verification": "A proposed covenant would ride existing reporting-covenant mechanics; s.5.05(b)'s covered-foreign-person notice to the Administrative Agent is an adjacent, documented information covenant. No safety covenant or verification standard exists in the reviewed text: a literal keyword scan of the retained text found no safety-labeled provision, and a clause-by-clause policy review was not performed, so indirect reach is unproven, not disproven.",
+      "remedy": "Ex ante only: refusing to elect new money or withholding amendment consent. No remedial power over existing compliant loans is claimed. The general covenant-default machinery (events of default, acceleration) was not extracted in this task - recorded as missing, not asserted absent. s.9.08(b)(i) protects each directly adversely affected Lender on enumerated economic fundamentals.",
+      "window": "Unknown: the s.2.21/s.2.22/s.2.23 gates open only on Borrower-initiated new credit, and s.9.08 amendments need the Borrower plus Required Lenders. The retained text dates no such event - the Closing Date, 2026-09-04, is the only relevant documented date - so whether any window is open at any given time, including now, is unknown.",
+      "evidenceSummary": "The retained tool-extracted text of the filed exhibit (682,490 characters; the direct raw fetch returned HTTP 403 and was not re-downloaded per coordinator instruction; SHA-256 and byte size re-verified against data/finance-research/sources.json this session) documents: 'AMENDED AND RESTATED CREDIT AGREEMENT dated as of September 4, 2026, among ANTHROPIC, PBC, as the Borrower'; sole-discretion lender elections in s.2.21 and s.2.22 ('any election to do so shall be in the sole discretion of such Lender') and s.2.23 ('may elect or decline, in its sole discretion'); the s.9.08(b) amendment gate ('pursuant to an agreement or agreements in writing entered into by the Borrower and the Required Lenders'); the Required Lenders definition (>50%); 'SCHEDULE 2.01Commitments[***]' and '[Signature Pages Intentionally Omitted]'. Named arrangers span several jurisdictions, but arranger titles do not establish lender status. confidence is Medium: the gates are documented in signed-instrument text, but at reduced provenance grade with a redacted roster.",
+      "gap": "Lender roster and allocations are redacted, so consent arithmetic is impossible; the facility amount is absent from the retained text; window openness is unknown; whether any lender, government or coalition has appetite for safety terms is wholly unevidenced; and the evidence is retained tool text at reduced provenance grade (raw bytes not retained; the S-1 body was not read).",
+      "nextQuestion": "Who actually holds the commitments (obtain Schedule 2.01 or an authoritative allocation disclosure), and is any Borrower-initiated incremental, extension or refinancing event live or foreseeable? Without both, consent arithmetic and window claims stay unknowable.",
+      "incentives": [
+        "Every new-money election is already in each lender's sole discretion, so a safety-motivated lender can condition its own participation without any statute or charter change.",
+        "The documented amendment machinery (Borrower plus Required Lenders) supplies a lawful, ordinary route to add a covenant.",
+        "A negotiated precedent in one frontier lab's facility could standardize safety reporting across AI credit markets as other labs syndicate.",
+        "Banks' risk-management incentives could favor information covenants if they believe model-safety incidents threaten borrower value or collateral."
+      ],
+      "constraints": [
+        "Borrower agreement is essential: gates are Borrower-initiated (ss.2.21-2.23) or require the Borrower plus Required Lenders (s.9.08(b)); nothing lets lenders impose terms on an already compliant committed draw.",
+        "Consent arithmetic is impossible: Schedule 2.01 is redacted and signature pages omitted, so who constitutes the Required Lenders (>50%) is unknown; named arrangers are not confirmed lenders and no nationality tally is asserted.",
+        "Each lender elects individually at sole discretion; a safety-motivated minority cannot block a facility that other lenders fund.",
+        "Window unknown: no Borrower-initiated new-credit event is dated or evidenced as live; the leverage is prospective negotiating position, not demonstrated bargaining strength.",
+        "No middle-power government actor is evidenced: the route runs through commercial banks whose incentives and any policy influence are speculation here; Anthropic's financing alternatives are unpriced and must never be treated as cheap substitutes."
+      ],
+      "sources": [
+        {
+          "title": "Anthropic PBC - Amended and Restated Credit Agreement, Exhibit 10.10 to Form S-1 (retained tool-extracted text; direct raw fetch returned HTTP 403)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/exhibit1010-sx1.htm",
+          "locator": "ss.2.21-2.23 sole-discretion elections (s.2.23: 'may elect or decline, in its sole discretion'); s.9.08(b)-(b)(i) amendment gate; s.1.01 definitions (Required Lenders >50%; Closing Date September 4, 2026; Arrangers); s.5.05(b) covered-foreign-person notice; s.5.12 Material Intellectual Property; 'SCHEDULE 2.01Commitments[***]'; '[Signature Pages Intentionally Omitted]'; full-text keyword scan for safety terms",
+          "claim": "The signed credit agreement documents that lenders participate in new credit, extensions and refinancings only at their sole discretion and that amendments require the Borrower plus Required Lenders - the negotiating gates a proposed safety covenant would ride, with no right to withhold compliant committed draws and a redacted lender schedule.",
+          "observed": "2026-10-31",
+          "published": null,
+          "access": "partial"
+        }
+      ],
+      "pairId": null,
+      "pairRole": null
+    }
+  ]
+}

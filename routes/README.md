@@ -11,6 +11,9 @@ decision brief; on mobile, selecting a point brings the brief into view. The
 brief links to `details.html` for the full mechanism, assessment, gaps and
 claim-level sources. Filters and paired comparisons expand on request.
 The green upper-right zone is a direction to look, not an endorsed shortlist.
+Dotted rings mark non-dominated visible routes: no other visible route has at
+least as high a rating on both axes and a higher one on either. They describe
+the current editorial scores, not recommendations or measured superiority.
 
 - Plots ordinal implementation feasibility against potential impact **if adopted**.
 - Colours routes by international coordination requirements; source confidence

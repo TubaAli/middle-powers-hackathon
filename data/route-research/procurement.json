@@ -1,0 +1,165 @@
+{
+  "routes": [
+    {
+      "id": "jp-procurement-safety-evidence",
+      "title": "Japan: safety-evidence requirements in national government AI procurement",
+      "shortLabel": "Japan procurement gate",
+      "coordination": "national",
+      "countries": ["Japan"],
+      "region": "Asia-Pacific",
+      "mechanism": "Procurement",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 3,
+      "feasibility": 4,
+      "impactRange": [2, 4],
+      "feasibilityRange": [3, 5],
+      "impactRationale": "Editorial judgment, not measured risk reduction: evidence requirements could make evaluation, incident reporting and model-change notice conditions for covered government purchases. The platform's intended reach of approximately 180,000 officials indicates potential coverage, not purchasing power or vendor dependence. Wider adoption could spread the practice, but public-sector scope, domestic-model emphasis and the unknown baseline limit the claimed impact.",
+      "feasibilityRationale": "Editorial judgment: one government's existing procurement platform and AISI-assisted governance standard give this proposal a comparatively direct administrative starting point. The rating is conditional on a lawful future tender or amendment. Current call terms, budget authority, vendor capacity, remedies and the AISI evaluation-to-policy operating mechanism were not established. Published rollout milestones are not evidence that procurement conditions remain open for negotiation.",
+      "actor": "Japan's Digital Agency (builds and operates the whole-of-government platform Gen-nai, runs its rolling foundation-model procurements, published the Gen-nai Standard); ministry CAIOs administer agency-side use; AISI Japan as technical evaluator.",
+      "obligor": "Vendors of foundation models and AI systems bidding into Gen-nai and successor government AI contracts — under current calls principally developers of domestically built Japanese models; the standard's required appropriate selection of domestic and foreign foundation models keeps foreign models in scope for platform eligibility.",
+      "instrument": "Proposed call specifications and contract conditions in Digital Agency AI procurements. The Gen-nai Standard is a documented government-side starting point, not an existing vendor covenant. The controlling procurement rules and whether amendments are permitted need review.",
+      "safeguard": "Vendor-side safety-evidence requirements as conditions of award and continued platform eligibility: pre-deployment safety-evaluation evidence or AISI testing access, incident reporting to government, and notice of material model changes. This extends the standard's existing government-side duties (foundation-model evaluation/selection system, high-risk determination sheet with CAIO reporting, human-in-the-loop, shadow-AI ban) across the contract line to the vendor. The safeguard is new: no fetched document imposes such duties on vendors.",
+      "verification": "Proposed: AISI-assisted evaluation evidence informs Digital Agency model selection and ministry risk determinations. AISI cooperation on the governance standard is documented. Assignment, capacity, evidence access and an operating vendor-evaluation process remain to be confirmed.",
+      "remedy": "Proposed: non-selection, suspension or termination where lawfully provided in the tender and signed contract, with notice and cure terms. Existing contract remedies were not reviewed; no AISI veto is established.",
+      "window": "Unknown procurement decision window. Published programme milestones include an agent-environment rollout targeted around December 2026 and wider use in FY2027. These do not establish an open tender, amendment right or available budget. Retrieve current call documents before treating this as an actionable opportunity.",
+      "evidenceSummary": "Four primary sources read 2026-10-31 document the machinery this route extends: (1) the Digital Agency operates Gen-nai for ~180,000 national officials with full-scale FY2027 rollout funded by ministry budgets, frames procurement and use of domestically developed AI as serving safe use and Japan's AI autonomy, and runs rolling calls (domestic-LLM call 2025-12-02, results 2026-03-06; pre-announcement 2026-05-29; domestic foundation models trialled on domestic cloud from 2026-07-10); (2) the Gen-nai Standard (2026-10-20), drafted with AISI, binds three government-side roles and requires a foundation-model evaluation/selection system and a risk-based approach under the AI Procurement and Utilization Guideline with a high-risk determination sheet and CAIO reporting; (3) the standard's governance diagram places the procurement guideline inside the AI Act-based framework covering policy through practice, and its quoted Basic Plan excerpt has the government lead proper procurement to raise the reliability and transparency of AI used across Japanese society; (4) the Second AI Basic Plan (2026-07-14) commits to AISI evaluation capabilities and to mechanisms translating evaluation results into policy, regulation and operations, with annual updates. No fetched document shows safety-evidence conditions in any call or any vendor duty in the standard — the safeguard is proposed, the mechanism documented.",
+      "gap": "Call documents for the 2025-12-02 call and the 2026-05-29 pre-announcement were not retrieved, so existing conditions and the next call's open/closed status are unknown; the AI Procurement and Utilization Guideline's own text, issuer, date and binding force were not located (referenced only inside the standard's overview); the AISI evaluation-to-policy mechanism has no located operating instrument; vendor capacity and willingness to supply evaluation evidence are unexamined; no quantified government AI spend was located to size the buyer lever.",
+      "nextQuestion": "Do the Gen-nai domestic-model call documents and the coming FY2027 full-scale-use tender contain safety-evaluation, incident-reporting or model-change conditions, and does the AI Procurement and Utilization Guideline bind vendors or only government users? Retrieving the call PDFs and the guideline text is the discriminating next step.",
+      "incentives": [
+        "Vendors could gain access to a government platform intended for approximately 180,000 officials; spending and vendor dependence are not quantified.",
+        "The Digital Agency could connect its reliability and transparency goals to evidence requirements in future lawful procurements.",
+        "AISI Japan gains an operating channel for its evaluations, which the Second AI Basic Plan commits to wire into policy and operations.",
+        "The domestic-model preference gives Japanese LLM developers a commercial reason to accept evaluation conditions in exchange for stable government demand."
+      ],
+      "constraints": [
+        "The Gen-nai Standard binds government users, ministry administrators and Digital Agency developers — not vendors; obligating vendors requires new call and contract text, so the safeguard's status is proposed.",
+        "Current calls target domestically developed models, so the immediate obligor set is Japanese model developers; foreign labs are reached only through the standard's domestic-and-foreign model-selection duty.",
+        "The route rests on the government's own contracting authority; Japan's AI Act imposes no lab obligations and no penalties (team-verified read of the Cabinet Office overview), and competitive-procurement and budget rules still apply.",
+        "AISI Japan has no veto, and its evaluation-to-policy translation mechanism is a Basic Plan commitment, not an operating pipeline.",
+        "Baseline unverified: existing call documents were not read, so the route cannot claim to add to conditions whose presence is unknown."
+      ],
+      "sources": [
+        {
+          "title": "Digital Agency release: Gen-nai Standard published and AI-agent environments launched",
+          "url": "https://www.digital.go.jp/policies/genai/agent-safety-standard",
+          "locator": "Release paragraphs on the two agent environments, the standard's three roles, AISI cooperation, the model-case positioning and OSS Ver.2.0; attachment links to overview and full-standard PDFs.",
+          "claim": "Published 2026-10-20: the Digital Agency provides two AI-agent environments to ~180,000 government officials (agent chat from 2026-10-20; 源内工房 targeted ~Dec 2026); the Gen-nai Standard defines duties per role — users (officials), administrators, developers (Digital Agency staff) — and was drafted with the cooperation of AISI; it is offered as a model case for local governments and private businesses; Gen-nai OSS Ver.2.0, usable/modifiable/redistributable by anyone under a commercial-use licence, is slated for ~Feb 2027.",
+          "observed": "2026-10-31",
+          "published": "2026-10-20",
+          "access": "primary-read"
+        },
+        {
+          "title": "Digital Agency: Government AI Gen-nai main policy page",
+          "url": "https://www.digital.go.jp/policies/genai",
+          "locator": "Overview; 推進施策・取組内容 (3) 国内大規模言語モデル（LLM）開発支援; 展開スケジュール; press-release list (page last updated 2026-10-30).",
+          "claim": "All ~180,000 national officials are to use generative AI in FY2026; the Digital Agency frames procurement and use of domestically developed AI as promoting safe, secure AI use and Japan's AI autonomy (日本のAI自律性確保); rolling procurements are dated — domestic-LLM public call 2025-12-02 (results 2026-03-06), pre-announcement of a domestic foundation-model call 2026-05-29, trial of domestic foundation models on domestic cloud from 2026-07-10 — with full-scale use from FY2027 (Release 3.0) funded by participating ministries' budgets following spring-summer 2026 budget requests.",
+          "observed": "2026-10-31",
+          "published": null,
+          "access": "primary-read"
+        },
+        {
+          "title": "Gen-nai Standard formulation/publication overview (Digital Agency PDF)",
+          "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/b033337d-dad1-4493-9316-d929597e4667/4c25aead/20261020_policies_genai_guideline_01.pdf",
+          "locator": "Slides: 源内基準の全体構造 1-2/1-3; 利用者（政府職員）が遵守すべき基本原則; 重層的なAIガバナンス体制の整備; quoted Second AI Basic Plan and Digital Priority Program excerpts. Full text extracted via download.",
+          "claim": "The standard's principles include establishing a foundation-model evaluation and selection system (基盤モデルの評価・選定体制の確立) and appropriate selection of domestic and foreign foundation models; user duties adopt a risk-based approach based on the AI Procurement and Utilization Guideline, with a high-risk determination sheet and CAIO reporting, human-in-the-loop (no direct copying of unverified AI output into official documents) and a shadow-AI ban; the governance diagram states the AI Act is the basis with basic plan, priority program and procurement guideline linked to cover policy through practice; the quoted Basic Plan excerpt commits the government to lead proper procurement and utilization so that AI used across Japanese society is reliable and transparent.",
+          "observed": "2026-10-31",
+          "published": "2026-10-20",
+          "access": "primary-read"
+        },
+        {
+          "title": "Summary of Japan's Second AI Basic Plan (Cabinet Office PDF)",
+          "url": "https://www8.cao.go.jp/cstp/ai/ai_plan/aiplan_g_eng_20260714.pdf",
+          "locator": "Strategic Pillar 3 (Lead AI Governance) key points; Four Principles; Strategic Pillar 1 reference on GENAI. Full text extracted via download.",
+          "claim": "Cabinet decision 2026-07-14: establish and enhance AISI's technical evaluation capabilities for AI model assessment, traceability, guardrails and crisis-time information sharing, while creating mechanisms to translate evaluation results into policy, regulatory and operational improvements; lead AI-governance development through the AISI International Network; convene an AI Summit in Japan at an early opportunity; update the Basic Plan annually and proactively review legal, regulatory and policy frameworks including the AI Act; advance Government AI through agentic AI and active use of Japan-developed models, supporting local-government adoption via GENAI open-sourcing.",
+          "observed": "2026-10-31",
+          "published": "2026-07-14",
+          "access": "primary-read"
+        }
+      ],
+      "pairId": "procurement",
+      "pairRole": "national"
+    },
+    {
+      "id": "jp-kr-sg-procurement-profile",
+      "title": "Compatible AI procurement safety profile across Japan, Korea and Singapore",
+      "shortLabel": "APAC procurement profile",
+      "coordination": "middle-power",
+      "countries": ["Japan", "South Korea", "Singapore"],
+      "region": "Asia-Pacific",
+      "mechanism": "Procurement",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 4,
+      "feasibility": 3,
+      "impactRange": [3, 5],
+      "feasibilityRange": [2, 4],
+      "impactRationale": "Editorial judgment, not measured risk reduction: one shared evidence bar would gate three public-sector markets at once, and mutual recognition would give vendors a single evaluation covering Japanese-, Korean- and regional-language failure modes that English-centric testing under-serves, while removing each government's incentive to undercut the others' safety asks as they compete for AI-leadership positioning. Bounded above by genuine cross-acceptance of substantive AISI evaluations becoming a regional default; bounded below by a paperwork harmonization that adds formats without new testing or reach beyond government sales.",
+      "feasibilityRationale": "Editorial judgment: joint AISI workshops and evaluation exercises offer a technical starting point. Governmental obstacles remain: this review did not locate mutual recognition of evaluation results for procurement, Singapore's whole-of-government procurement anchor, or authorization by the three governments for cross-acceptance. Different legal bases and multiple agencies add coordination costs. Technical cooperation does not establish procurement authority.",
+      "actor": "The three governments' AI-procurement and safety-institute authorities acting together: Japan's Digital Agency with AISI Japan; Korea's MSIT with its statutory AI Safety Institute (AI Basic Act Art. 12; the Public Procurement Service's role is unverified); Singapore's IMDA/GovTech with the Singapore AISI (Digital Trust Centre) — Singapore's whole-of-government AI procurement policy has not been located.",
+      "obligor": "Vendors of AI models and systems selling into the three governments' public-sector AI markets — foundation-model developers and integrators, and through them the labs whose models they deploy.",
+      "instrument": "Proposed common procurement clauses and an agreed evaluation-evidence recognition arrangement, adopted through each government's lawful procurement process. Technical guidance is a starting point, not contracting authority. Controlling procurement instruments in all three jurisdictions remain to be examined.",
+      "safeguard": "Proposed: a shared pre-deployment safety-evidence package covering Japanese-, Korean- and regional-language failure modes, accepted for covered purchases by all three governments, with compatible incident-reporting and model-change-notice clauses. No such recognition arrangement or common clause set was located in this review; absence from this evidence set does not establish absence across APAC.",
+      "verification": "Proposed: participating institutes evaluate against an agreed protocol, with procurement authorities accepting the results. Workshops and joint tests support technical feasibility, but neither evaluation equivalence nor procurement acceptance is established.",
+      "remedy": "Proposed: remedies expressly included in each jurisdiction's lawful tender and contract, potentially including non-selection or suspension. No common remedy, delisting power or executed clause set was located.",
+      "window": "No common procurement decision window was established. Published workshops and evaluation reports document cooperation, not government consent or open procurement negotiations. Retrieve current tenders and named decision-makers in each country.",
+      "evidenceSummary": "The reviewed primary sources document Japan-Korea AISI technical cooperation and Singapore's joint testing and evaluation activity. These provide a possible technical foundation for compatible evidence requirements, not an agreed purchasing arrangement. The shared procurement profile, recognition rules and government assent remain proposals. Korean statutory claims in the earlier working note were not re-verified against the amended controlling text and are not relied on here to establish procurement authority.",
+      "gap": "Singapore's whole-of-government AI procurement policy was not located. Korea's Public Procurement Service standards and amended AI Basic Act were not examined in this pass. Acceptance of foreign AISI evaluations for covered purchases is not established by these sources. Whether current tenders reference network evaluation formats is unknown. The operative procurement terms and government consent require direct verification.",
+      "nextQuestion": "Can the three institutes convert NAAIMES joint-testing methods into a shared evidence format that procurement officers accept — and does each government have a live procurement instrument to host it? First discriminating retrievals: Singapore's GovTech/IMDA procurement requirements, Korea's Public Procurement Service AI standards, and the Gen-nai call documents.",
+      "incentives": [
+        "Vendors run one evaluation for three government markets instead of three duplicated ones, and gain a reason to test Japanese-, Korean- and regional-language failure modes that English-centric testing misses.",
+        "Governments could reduce duplicated testing and improve public-sector assurance if they agree on substantive evidence requirements.",
+        "A common evidence package could reduce vendor compliance work; savings and acceptance remain unmeasured.",
+        "The institutes gain uptake for methods they already co-produce — JAI-Trust, joint-testing formats, NAAIMES evaluator guidance.",
+        "Japan's planned AI Summit and Korea's APEC PPSTI chairmanship 2026-27 (team-verified) give each government a visible deliverable."
+      ],
+      "constraints": [
+        "Mutual recognition for the proposed procurement route was not established by the sources reviewed.",
+        "Singapore's procurement-side anchor is missing: no whole-of-government AI procurement policy has been located in team research to date.",
+        "Three different legal bases — Korea's binding statute, Japan's guideline and contract machinery, Singapore's voluntary frameworks — must be bridged by a clause set rather than harmonized law, risking a lowest-common-denominator profile.",
+        "Multiple agencies per country must consent; there is no single contract hook comparable to Japan's Gen-nai platform.",
+        "Institute cooperation to date is technical and voluntary; nothing fetched shows any government has authorized cross-acceptance of evaluations for procurement."
+      ],
+      "sources": [
+        {
+          "title": "AISI Japan: Japan and Korea AISIs hold First Joint Technical Workshop",
+          "url": "https://aisi.go.jp/activity/activity_international/261016/",
+          "locator": "Overview and Day 2 sections (Japanese text with English translation below); published 2026-10-16 per URL slug and team-verified read.",
+          "claim": "Japan and Korea's AI Safety Institutes held their first joint technical workshop on 2026-10-08/09 with 30 researchers and engineers, aiming to lay the foundation for ongoing information sharing and collaboration; sessions covered evaluation methods that account for multilingual and multicultural factors, Japan's JAI-Trust generative-AI safety/security benchmark project, and Korea's multimodal red-teaming.",
+          "observed": "2026-10-31",
+          "published": "2026-10-16",
+          "access": "primary-read"
+        },
+        {
+          "title": "Singapore AI Safety Institute: Resources page",
+          "url": "https://sgaisi.sg/resources/",
+          "locator": "Entries for the NAAIMES Best Practice Guidance Document (report, Jul 23, 2026), the SG-KR AISI joint evaluation of data-leakage risks in tool-using LLM agents (report, Jun 16, 2026), the 2026 Singapore Consensus and the 2026 Red Teaming Challenge report.",
+          "claim": "The AISI network, now styled the International Network for Advanced AI Measurement, Evaluation and Science (NAAIMES), released its first Best Practice Guidance Document on automated evaluation of large language models (Jul 2026) to support the third-party evaluator ecosystem; the Singapore and Korea AISIs jointly published an evaluation of data-leakage risks in tool-using LLM agents across 12 realistic tasks (Jun 2026), finding that task correctness alone is insufficient to assess agent safety; the page also lists the 2026 Singapore Consensus from the International Scientific Exchange and a 14-country red-teaming challenge.",
+          "observed": "2026-10-31",
+          "published": null,
+          "access": "primary-read"
+        },
+        {
+          "title": "MSIT press release: Basic Act on AI passed at the National Assembly's plenary session",
+          "url": "https://www.msit.go.kr/eng/bbs/view.do?sCode=eng&mPid=2&mId=4&bbsSeqNo=42&nttSeqNo=1071",
+          "locator": "Third bullet (Safe and Trustworthy Foundation for High-Risk AI and Generative AI); first bullet (framework and AI Safety Institute); effective-date paragraph.",
+          "claim": "Korea's AI Basic Act (passed 2024-12-26, taking effect January 2026) establishes the AI Safety Institute as a specialized organization to protect citizens' lives, bodies and property from AI risks (Art. 12); imposes obligations ensuring transparency (Art. 31), safety (Art. 32) and operator responsibility (Art. 34) on high-risk and generative AI; and provides a legal basis for government support of voluntary private AI safety and trustworthiness verification and certification (Art. 30) and AI impact assessments (Art. 35).",
+          "observed": "2026-10-31",
+          "published": "2024-12-26",
+          "access": "primary-read"
+        },
+        {
+          "title": "MDDI press release: Singapore announces new AI safety initiatives (AI Action Summit, Paris)",
+          "url": "https://www.mddi.gov.sg/newsroom/singapore-announces-new-ai-safety-initiatives/",
+          "locator": "Paragraphs 3(a)-(c).",
+          "claim": "Singapore (11 Feb 2025): as co-lead of the AISI network's Testing and Evaluation Track, it released a Joint Testing Report with Japan assessing whether guardrails hold in non-English settings across 10 languages (including Japanese and Korean) and five harm categories; launched the Global AI Assurance Pilot (AI Verify Foundation + IMDA), a testbed convening testing vendors with deployers of real GenAI applications to shape assurance standards and grow the third-party assurance market; and published the Red Teaming Challenge Evaluation Report 2025, a consistent cross-language/culture methodology from 50+ participants across nine APAC countries.",
+          "observed": "2026-10-31",
+          "published": "2025-02-11",
+          "access": "primary-read"
+        }
+      ],
+      "pairId": "procurement",
+      "pairRole": "coordinated"
+    }
+  ]
+}
