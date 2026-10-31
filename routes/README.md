@@ -6,6 +6,12 @@ server from the repository root (`python3 -m http.server 8765`) and open
 
 ## What it does
 
+The map leads with potential impact and feasibility. Each point opens a short
+decision brief; on mobile, selecting a point brings the brief into view. The
+brief links to `details.html` for the full mechanism, assessment, gaps and
+claim-level sources. Filters and paired comparisons expand on request.
+The green upper-right zone is a direction to look, not an endorsed shortlist.
+
 - Plots ordinal implementation feasibility against potential impact **if adopted**.
 - Colours routes by international coordination requirements; source confidence
   is a separate visual channel, never a success probability.

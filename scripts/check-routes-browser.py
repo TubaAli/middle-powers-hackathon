@@ -26,8 +26,12 @@ async def check(url, screenshot):
             count = len(data['routes'])
             assert count >= 8, count
             assert await page.locator('.plot-dot').count() == count
-            await page.locator('[data-detail="evidence"]').click()
+            evidence_url = await page.locator('.brief-links a').last.get_attribute('href')
+            await page.goto(url + evidence_url, wait_until='networkidle')
             assert await page.locator('.source-card').count() >= 1
+            await page.locator('#back').click()
+            await page.locator('#workspace').wait_for(state='visible')
+            await page.locator('.filter-disclosure summary').click()
             await page.locator('#search').fill('no-matching-route-xyz')
             assert await page.locator('#empty').is_visible()
             assert await page.locator('.plot-dot').count() == 0
@@ -39,6 +43,7 @@ async def check(url, screenshot):
             assert await page.locator('.route-row:visible').count() == len(middle)
             await page.locator('#reset').click()
             first_pair = next(r['pairId'] for r in data['routes'] if r['pairId'])
+            await page.locator('.comparison > summary').click()
             await page.locator(f'[data-pair="{first_pair}"]').click()
             assert await page.locator('.pair-line').count() == 1
             assert await page.locator('.pair-summary button').count() == 2
@@ -65,6 +70,11 @@ async def check(url, screenshot):
             await page.set_viewport_size({'width': 390, 'height': 844})
             overflow = await page.evaluate('document.documentElement.scrollWidth > innerWidth + 1')
             assert not overflow, 'Mobile horizontal overflow'
+            for route in data['routes']:
+                await page.locator(f'.plot-index [data-route="{route["id"]}"]').click()
+                height = await page.locator('#route-detail').evaluate('(el) => el.getBoundingClientRect().height')
+                assert height <= 760, (route['id'], height)
+            await page.locator('#show-list').scroll_into_view_if_needed()
             await page.locator('#show-list').click()
             assert await page.locator('.route-row:visible').count() == count
             assert not errors, errors

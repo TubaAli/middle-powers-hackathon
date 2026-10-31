@@ -1,4 +1,5 @@
 import { COORDINATION, validateDataset, filterRoutes, displayRoutes, comparePair, safeUrl } from './model.mjs';
+import { briefs } from './briefs.mjs';
 
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[ch]));
@@ -35,6 +36,7 @@ function renderPlot(routes) {
     positions.set(route.id, { x:x(route.feasibility) + (index - (ties.length - 1) / 2) * 30, y:y(route.impact) });
   }
   let svg = `<svg viewBox="0 0 740 520" aria-label="Feasibility versus potential safety impact" role="group"><defs><marker id="arrow-head" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#087f78"/></marker></defs><rect x="94" y="41" width="600" height="400" rx="4" class="plot-bound"/>`;
+  svg += '<rect x="454" y="41" width="240" height="160" class="focus-zone"/><text x="680" y="60" text-anchor="end" class="focus-label">HIGHER IMPACT + FEASIBILITY ↗</text>';
   for (let i = 0; i <= 5; i++) svg += `<line x1="${94 + i * 120}" y1="41" x2="${94 + i * 120}" y2="441" class="grid-line"/><line x1="94" y1="${41 + i * 80}" x2="694" y2="${41 + i * 80}" class="grid-line"/>`;
   for (let i = 1; i <= 5; i++) svg += `<text class="axis-text" x="${x(i)}" y="463" text-anchor="middle">${i}</text><text class="axis-text" x="78" y="${y(i) + 4}" text-anchor="end">${i}</text>`;
   svg += `<text class="axis-title" x="394" y="495" text-anchor="middle">Implementation feasibility →</text><text class="axis-text" x="96" y="480">Harder to implement</text><text class="axis-text" x="694" y="480" text-anchor="end">More achievable</text><text class="axis-title" transform="translate(24 241) rotate(-90)" text-anchor="middle">Potential safety impact if implemented →</text><text class="axis-text" x="94" y="25">Broader potential benefit · conditional on adoption</text>`;
@@ -63,11 +65,10 @@ function renderList(routes) {
 
 function renderDetail(route) {
   if (!route) { $('#route-detail').innerHTML = '<h2>No matching route</h2><p>Reset the filters to explore the full sample.</p>'; return; }
-  const chain = [['Actor',route.actor],['Instrument',route.instrument],['Obligor',route.obligor],['Safeguard',route.safeguard],['Verification',route.verification],['Remedy',route.remedy],['Decision window',route.window]];
-  const routeBody = `<dl class="route-chain">${chain.map(([key,value]) => `<div><dt>${esc(key)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl><div class="gap"><strong>Next discriminating question</strong>${esc(route.nextQuestion)}</div>`;
-  const evidenceBody = `<h3>What the evidence establishes</h3><p>${esc(route.evidenceSummary)}</p><div class="gap"><strong>What remains unresolved</strong>${esc(route.gap)}</div>${route.sources.map(source => `<article class="source-card">${sourceLink(source)}<p>${esc(source.claim)}</p><small>${esc(source.locator)}<br>Published: ${esc(source.published || 'not established')} · Checked: ${esc(source.observed)} · ${esc(source.access)}</small></article>`).join('')}`;
-  const assessmentBody = `<h3>Why feasibility is ${route.feasibility}/5</h3><p>${esc(route.feasibilityRationale)}</p><h3>Why potential impact is ${route.impact}/5</h3><p>${esc(route.impactRationale)}</p><h3>Shared incentives</h3><ul>${route.incentives.map(text => `<li>${esc(text)}</li>`).join('')}</ul><h3>Costs and obstacles</h3><ul>${route.constraints.map(text => `<li>${esc(text)}</li>`).join('')}</ul><p class="small">These are editor-assigned ordinal judgments. Ranges are plausible disagreement, not calibrated forecasts. Coordination carries no automatic bonus.</p>`;
-  $('#route-detail').innerHTML = `<div class="detail-top"><span class="coord-tag ${route.coordination}"><i class="dot"></i>${esc(COORDINATION[route.coordination])}</span><span>ROUTE ${String(number(route)).padStart(2,'0')}</span></div><h2>${esc(route.title)}</h2><p class="detail-location">${esc(route.countries.join(' · '))} &nbsp; / &nbsp; ${esc(route.mechanism)}</p><span class="status">${esc(route.status)}</span><span class="status">${esc(route.confidence)} evidence confidence</span><p class="detail-safeguard">${esc(route.safeguard)}</p><div class="score-grid">${['feasibility','impact'].map(axis => `<div class="score"><b>${route[axis]}<small> / 5</small></b><span>${axis === 'impact' ? 'Potential impact' : 'Implementation feasibility'}</span><small>Judgment range ${route[axis+'Range'].join('–')}</small></div>`).join('')}</div><div class="detail-tabs" role="tablist" aria-label="Route detail"><button role="tab" data-detail="route" aria-selected="${state.tab === 'route'}">The route</button><button role="tab" data-detail="evidence" aria-selected="${state.tab === 'evidence'}">Evidence (${route.sources.length})</button><button role="tab" data-detail="assessment" aria-selected="${state.tab === 'assessment'}">Assessment</button></div><div class="detail-body" role="tabpanel">${state.tab === 'evidence' ? evidenceBody : state.tab === 'assessment' ? assessmentBody : routeBody}</div><div class="detail-footer"><span>Reviewed ${esc(data.observed)} · research lead</span><button id="copy-link">Copy route link</button></div>`;
+  const brief = briefs[route.id];
+  const url = `details.html?${new URLSearchParams({route:route.id, stage:state.stage})}`;
+  const link = (section, text) => `<a href="${esc(url)}#${section}">${esc(text)}</a>`;
+  $('#route-detail').innerHTML = `<div class="detail-top"><span class="coord-tag ${route.coordination}"><i class="dot"></i>${esc(COORDINATION[route.coordination])}</span></div><h2>${esc(brief?.[0] || route.shortLabel)}</h2><p class="brief-status">${esc(route.status)} · ${link('sources', `${route.confidence} evidence confidence`)}</p><p class="brief-proposal">${esc(brief?.[1] || route.safeguard)}</p><div class="score-grid">${['feasibility','impact'].map(axis => `<div class="score"><b>${route[axis]}<small> / 5</small></b><span>${link('assessment', axis === 'impact' ? 'Potential impact' : 'Feasibility')}</span></div>`).join('')}</div><p class="brief-caveat"><strong>${state.stage === 'before' && route.id === data.replay?.routeId ? 'Initial lead · ' : 'The catch · '}</strong>${esc(state.stage === 'before' && route.id === data.replay?.routeId ? 'Reconstructed view before contract review. The duty and remedy were not yet established.' : brief?.[2] || route.gap)} ${link('gaps','What needs checking?')}</p><p class="brief-links">${link('mechanism','Who acts, and how')} · ${link('sources','Read the evidence')}</p><div class="detail-footer"><span>Proposed safety outcome</span><button id="copy-link">Copy route link</button></div>`;
 }
 
 function renderPair(routes) {
@@ -102,6 +103,7 @@ function selectRoute(id) {
     for (const field of ['search','coordination','mechanism','region']) { state[field] = ''; $(`#${field}`).value = ''; }
   }
   state.route = id; state.tab = 'route'; render();
+  if (matchMedia('(max-width:760px)').matches) $('#route-detail').scrollIntoView({block:'start'});
 }
 
 function wire() {
