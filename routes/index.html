@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Routes to safeguards · Middle Powers</title>
-  <meta name="description" content="Compare safety routes by potential resource coverage and the agreements they need. Inspect the numbers, assumptions and sources.">
+  <meta name="description" content="Compare 32 safety routes with evidence-informed feasibility and potential impact estimates. Inspect assumptions, imputations and sources.">
   <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="quantitative.css">
 </head>
 <body>
   <a class="skip" href="#explorer">Skip to map</a>
   <header class="masthead"><a class="brand" href="./"><span class="brand-mark">↗</span> MIDDLE POWERS <span class="brand-sub">/ SAFEGUARDS</span></a><nav><a href="coordinate-evidence.html">Retrieved evidence</a><a href="research.html">Before Geneva</a><a href="../game/">Coalition game</a><a href="../">Supply chain</a></nav></header>
   <main class="q-main">
-    <section class="q-intro"><div><h1>Routes to safer AI</h1><p>What could a policy cover, and who must agree?</p></div><p id="sample-count" class="small">Loading the research…</p></section>
+    <section class="q-intro"><div><h1>Routes to safer AI</h1><p>Which routes look feasible, and what could they accomplish?</p></div><p id="sample-count" class="small">Loading the research…</p></section>
     <section id="explorer">
       <div id="load-status" role="status">Loading routes and calculation inputs…</div>
       <div id="q-workspace" hidden>
-        <div class="q-controls"><label>Compare coverage within<select id="basis"></select></label><details class="q-filters"><summary>Filter routes</summary><div><label>Country<select id="country"><option value="">All countries</option></select></label><label>Find a route<input id="search" type="search" placeholder="Country, policy or institution"></label><button id="reset" type="button">Reset</button></div></details></div>
+        <div class="q-controls"><label>Comparison view<select id="basis"></select></label><details class="q-filters"><summary>Filter routes</summary><div><label>Country<select id="country"><option value="">All countries</option></select></label><label>Find a route<input id="search" type="search" placeholder="Country, policy or institution"></label><button id="reset" type="button">Reset</button></div></details></div>
         <div class="legend"><span><i class="dot national"></i> One jurisdiction</span><span><i class="dot middle-power"></i> Middle powers together</span><span><i class="dot broader"></i> Broader agreement</span></div>
         <div class="q-layout">
           <div>
@@ -24,10 +24,10 @@
           </div>
           <aside id="q-detail" class="route-detail" aria-label="Selected route"></aside>
         </div>
-        <section class="q-sample"><h2>Browse the whole sample <span id="list-count" class="small"></span></h2><p class="small">Routes without a comparable coverage denominator remain visible here.</p><div id="q-list" class="q-list"></div></section>
+        <section class="q-sample"><h2>Browse the whole sample <span id="list-count" class="small"></span></h2><p class="small">Every route appears in the model view. Coverage-only comparisons use matched resource pools.</p><div id="q-list" class="q-list"></div></section>
       </div>
     </section>
-    <section id="calculation" class="q-method"><h2>What the numbers mean</h2><div><h3>Potential coverage</h3><p>Covered allocation ÷ total allocation in the selected pool, if the proposed terms are agreed. Different pools are shown separately. This is reach, not harm prevented.</p><h3>Agreement index</h3><p>Support among required parties ÷ (1 + minimum unresolved handoffs). Missing consent gives a range. Any required party’s confirmed objection blocks that path. An incomplete path may need more parties.</p><p class="small">This is an explicit comparison model, not a calibrated forecast. General policy support is recorded separately from agreement to the safeguard.</p><a href="research.html?view=numbers">Measurement research</a> · <a href="estimates.html">Earlier 1–5 estimates</a> · <a href="../data/routes-quantitative.json">Download inputs</a></div></section>
+    <section id="calculation" class="q-method"><h2>What the numbers mean</h2><div><div id="model-method"><h3>Evidence-informed model · all 32 routes</h3><p>These continuous 0–100 indices are weighted editorial assessments based on the retrieved 31 October 2026 evidence. They are not measured impact, probabilities, or a new empirical dataset. Comparisons across different safety outcomes depend on judgment.</p><p><strong>Feasibility:</strong> 40% authority/operational readiness + 30% timing before Geneva + 30% manageable coordination. <strong>Potential safety impact if adopted:</strong> 40% possible reach + 30% safety relevance + 30% ability to enforce a remedy.</p><p>Each factor uses a 0–1 rubric. Missing factors receive a neutral 0.5 prior. There is no automatic bonus for coalition size or source count. The selected route shows its rationale, exact factor scores, imputations and linked evidence.</p><p>The shaded sensitivity box varies each assessed factor by ±0.15 and each imputed factor by ±0.30, with fixed weights and scores clipped to 0–1. It is not a statistical confidence interval and does not capture all model uncertainty. Small deterministic noise and collision offsets move only the drawn circles; the cross and displayed numbers retain the original scores.</p><a href="../data/route-placement-model.json">Download model inputs and rubrics</a> · <a href="coordinate-evidence.html">Inspect retrieved evidence</a></div><div id="coverage-method" hidden><h3>Potential coverage</h3><p>Covered allocation ÷ total allocation in the selected pool, if the proposed terms are agreed. Different pools are shown separately. This is reach, not harm prevented.</p><h3>Agreement index</h3><p>Support among required parties ÷ (1 + minimum unresolved handoffs). Missing consent gives a range. Any required party’s confirmed objection blocks that path. An incomplete path may need more parties.</p><p class="small">This is an explicit comparison model, not a calibrated forecast. General policy support is recorded separately from agreement to the safeguard.</p><a href="research.html?view=numbers">Measurement research</a> · <a href="estimates.html">Earlier 1–5 estimates</a> · <a href="../data/routes-quantitative.json">Download inputs</a></div></div></section>
   </main>
   <footer><span>Middle Powers · AI-assisted research and code</span><span id="observed"></span><a href="https://github.com/TubaAli/middle-powers-hackathon">Research & source</a></footer>
   <script type="module" src="quantitative.js"></script>

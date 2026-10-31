@@ -12,7 +12,8 @@ try {
   const ref=ids=>(ids||[]).map(id=>`<a href="#source-${encodeURIComponent(id)}">[${r.sources.findIndex(s=>s.id===id)+1}]</a>`).join(' ');
   const para=(h,text)=>`<h3>${h}</h3><p>${esc(text)}</p>`;
   document.title=`${r.shortLabel} · Calculations and evidence`;
-  document.querySelector('#back').href=`./#${new URLSearchParams({route:r.id,...(c?{basis:c.basisId}:{}),...(assumption===null?{}:{assume:assumption})})}`;
+  const returnBasis=p.get('basis')==='model'?'model':data.bases.some(b=>b.id===p.get('basis'))?p.get('basis'):c?.basisId;
+  document.querySelector('#back').href=`./#${new URLSearchParams({route:r.id,...(returnBasis?{basis:returnBasis}:{}),...(assumption===null?{}:{assume:assumption})})}`;
   let html=`<p class="eyebrow">${esc(r.countries.join(' · '))} · ${esc(data.observed)}</p><h1>${esc(r.title)}</h1><p>${esc(r.status)} · ${esc(r.confidence)} evidence confidence</p><p>${esc(r.safeguard)}</p>`;
    html+=`<p><a class="coordinate-evidence-link" href="coordinate-evidence.html?route=${encodeURIComponent(r.id)}">Retrieved inputs, source details and remaining gaps for this route →</a></p>`;
    html+=`<section id="coverage" class="q-calc"><h2>Potential coverage</h2>${c?`<p><strong>${c.numerator.toLocaleString()} ÷ ${c.denominator.toLocaleString()} = ${c.value.toFixed(4)}</strong> ${ref(c.sourceIds)}</p><p>Unit: ${esc(c.unit)}<br>Pool: ${esc(c.basisLabel)}<br>Period: ${esc(c.period)}<br>State: ${esc(c.stage)}</p><p>${esc(c.interpretation)}</p>`:'<p>A comparable numerator and denominator have not been established. The map leaves this quantity unknown.</p>'}</section>`;

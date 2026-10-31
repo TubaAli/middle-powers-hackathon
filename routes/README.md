@@ -6,11 +6,26 @@ server from the repository root (`python3 -m http.server 8765`) and open
 
 ## What it does
 
-The default map uses calculated 0–1 quantities: potential coverage within a
-named resource pool and an agreement index. Different resource denominators
-are separate views. Missing coverage stays unknown; all candidates remain
-browsable by country. Each selected route opens a short brief with links to
-`quantitative-details.html` for its calculations, decision path and evidence.
+The default map places all 32 routes using an **evidence-informed editorial
+model**, approved on 31 October 2026. Feasibility and potential safety impact
+are continuous weighted indices on 0–100, not probabilities or measured harm
+reduction. `data/route-placement-model.json` contains six-factor rubrics, weights,
+each route's assessments, explicit nulls and x/y reasoning. Nulls use the neutral
+0.5 prior. All assessments are judgments; retrieved facts inform them rather
+than directly measuring the axes. Each card links to its retrieved evidence.
+
+`placement.mjs` calculates scores and factor-wise sensitivity bounds (±0.15 for
+assessed factors, ±0.30 for imputed factors, clipped to 0–1 before weighting).
+The bounds are scenario sensitivity, not statistical confidence. Deterministic
+3px noise plus collision separation keeps all circles visible. Positions are
+computed once over the full sample, so filtering and reloads do not move them.
+Selected points show a cross at their true score and a line to the drawn mark.
+No noise is added to scores, factor inputs or downloads.
+
+The selector retains **coverage-only views** with matched resource denominators
+and the agreement index. These remain separate from the all-route model;
+missing empirical coverage stays unknown. Existing `#basis=...` links preserve
+their chosen view; `#basis=model` opens the complete model explicitly.
 
 Coverage is a matched numerator / denominator, conditional on adoption, not
 measured harm prevention. The agreement index is support share / (1 + minimum
@@ -20,9 +35,13 @@ visitor assumption. Incomplete agreement paths may need more parties.
 
 Build with `python3 scripts/build-quantitative-data.py`; the default page reads
 `data/routes-quantitative.json`. The builder strips legacy numeric scores.
-Run `node --test routes/metrics.test.mjs` and
+Run `node --test routes/metrics.test.mjs routes/placement.test.mjs` and
 `python3 scripts/check-quantitative-browser.py --url http://127.0.0.1:8765/routes/`
 (the latter needs installed Playwright and an authorized CDP browser on 9222).
+For the all-route view, run `scripts/check-placement-browser.py` with the same
+Python environment and optional `--url`. It checks all 32 point selections,
+stable filter/reload positions, mobile factor tables, coverage-view switching
+and round-trip navigation from the detailed calculations.
 
 ## Earlier estimates
 

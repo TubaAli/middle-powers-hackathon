@@ -1,5 +1,16 @@
 # Leverage Map + Coalition Builder: design
 
+## All-route placement model (31 October 2026)
+
+Grisha approved placing the complete sample using evidence-informed estimates,
+reasonable imputation where inputs are missing, and small display noise to avoid
+overlap. The default is now all 32 routes. The six-factor model and its limitations
+are documented in `routes/README.md` and `data/route-placement-model.json`.
+The model uses the retrieved snapshot, explicitly separates judgments from
+facts, imputes missing factors at 0.5, and shows sensitivity rather than claiming
+calibrated uncertainty. Noise affects only drawn marks. The matched-pool views
+below remain available as a separate comparison mode.
+
 ## Implementing quantitative comparison
 
 The default route view now uses potential coverage within a named resource pool

@@ -1,5 +1,30 @@
 # Discussion notes
 
+## All 32 routes on the default plot, 31 October 2026
+
+Grisha approved evidence-informed coordinates, reasonable missing-data imputation
+and a little display noise. The default now plots every route using a documented
+six-factor editorial model. The retrieved evidence snapshot is linked per route
+and pinned by SHA256; it is not reclassified as measured feasibility or impact.
+Of 192 factor entries, 23 across 14 routes use the explicit neutral 0.5 prior.
+Other entries are evidence-informed judgments, not observed axis measurements.
+
+Feasibility weights readiness/timing/coordination at 40/30/30; potential impact
+weights scope/safety relevance/remedy at 40/30/30. Cards expose factors, rationales,
+imputations and sensitivity bands. The bands are not confidence intervals.
+Stable display-only noise and collision separation produce a maximum 36.48px
+offset in the 740×510 SVG; selected routes show their true coordinate cross.
+The matched-pool comparisons remain available separately and keep their three
+LUMI points and one AIGF point. Existing coverage deep links retain their view;
+`routes/#basis=model` explicitly opens the complete model.
+
+Local acceptance: all 32 keyboard selections, every country filter, search/reset,
+stable positions after reload/filter, mobile expanded factor tables, all three
+view modes and detail-page round trips passed without page errors. The existing
+coverage browser regression passed, as did all 11 metric/placement unit tests.
+Desktop and mobile screenshots were visually checked. Public acceptance follows
+publication; the browser checker supports the live URL.
+
 ## Retrieved coordinate evidence: local integration, 31 October 2026
 
 Public acceptance completed by the parent at implementation commit `7634a96`:
