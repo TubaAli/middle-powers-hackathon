@@ -1,6 +1,6 @@
 # Discussion notes
 
-## Safeguard stress tests: locally checked, 31 October 2026
+## Safeguard stress tests: publicly checked, 31 October 2026
 
 The [stress-test view](routes/stress-tests.html) adds deeper evidence, retained
 disagreement and next tests for all 32 routes. The five factual shards contain
@@ -33,7 +33,18 @@ collapsed-source expansion, filters, report and 22 download links, with no
 page errors or horizontal overflow. Six screenshots were inspected; mobile
 heading spacing was corrected and acceptance rerun. See the
 [build and headless test commands](routes/README.md#research-stress-tests).
-Public acceptance is still pending; the parent will publish and check it.
+Public acceptance passed at
+https://tubaali.github.io/middle-powers-hackathon/routes/stress-tests.html.
+Implementation `35d4ff9` deployed through the succeeding notes-only commit
+`1728ee6`, which superseded the earlier Pages run. The parent checked the live
+site in isolated headless Chrome at 1440px and 390px: 64 keyboard selections,
+64 selector selections, 30 scenario/numeric checks, 64 source-link checks,
+query reload and source filters passed. All 22 downloads and the full report
+returned HTTP 200; there were no page errors or horizontal overflow. Seven live
+files byte-matched the local committed files: `routes/stress-tests.html`,
+`routes/stress-tests.js`, `routes/stress-tests.css`, `data/stress-tests.json`,
+`reports/Safeguard proposal stress tests.md`, `routes/index.html` and
+`routes/quantitative.js`.
 
 Next discriminating question: can a named owner supply current authority,
 amendable terms, meaningful exposed activity and an affordable test in which
