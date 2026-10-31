@@ -143,3 +143,7 @@ Sources: [signed-in hackathon page](https://try.mangrove.one/hackathons/92b5e028
   - **Team input wanted:**
     - Should a game mode go into the submission?
     - Which finance research items could become negotiation cards? Only records marked "documented", per the finance handoff.
+- **Update: game v2 on `orbit-accord`.** It's now real-time and fits one laptop screen.
+  - You fly your planet with the arrow keys and press Space near another planet to negotiate.
+  - Each month opens a council with 3–4 moves built from our data: table a bill when your law window is open, license your chokepoint, stockpile your biggest dependency, build data centres, summit tour.
+  - Details: [game/README.md](https://github.com/TubaAli/middle-powers-hackathon/blob/orbit-accord/game/README.md).
