@@ -1,5 +1,52 @@
 # Discussion notes
 
+## Retrieved coordinate evidence: local integration, 31 October 2026
+
+[The evidence browser](routes/coordinate-evidence.html) now joins all seven
+regional ledgers to the same 32 map route IDs. The deterministic snapshot has
+379 fact records: 305 numeric scalars, 38 structured values, three text values
+and 33 null values. These are heterogeneous inputs, not 305 measured outcomes.
+Its 242 source records (including the measurement ledger) and 193 retrieval
+records are not counts of independent sources. Original researcher facts,
+source locators, gaps and search references are preserved without assigning
+coordinates or averaging unrelated measures.
+
+Technical integration solved structured-value handling, regional reference
+resolution, source/date/locator display, shareable route and axis filters,
+expandable retrieval queries, downloadable derived files and checksum receipts.
+The method panel distinguishes earlier access notes from the recovered
+DGI/B-READY/GovTech/Enterprise Survey inputs. Country capacity indices and
+allocation records are not calibrated route probabilities, payments or metered
+usage. This is a bounded retrieval snapshot, not a source-exhaustion claim.
+
+**Correction to the earlier Kenya status below:** the follow-up recovered the
+Act from an official KenTrade-hosted copy and parts of ODPC biometric/DPIA
+guidance through indexed primary text. The current Kenya card now cites these
+sources and the sixty-day submission lead time, which is not an approval-time
+guarantee. Original endpoint failures remain recorded; historical research
+notes are unchanged. The current service-charter table, selected deployment,
+accepted AI test annex, complete approvals and matched coverage remain gaps.
+Kenya's confidence remains Low; coverage and handoff bound remain null and
+consents remain unknown. Regeneration changed only the Kenya card: all 32
+coverage inputs, consent states, completeness flags and handoff bounds were
+checked unchanged.
+
+Local acceptance passed for every route, every x/y/context filter, query/hash
+deep links and reload, text search/reset/empty state, all 32 detail-page links,
+expanded 390px layout and zero page errors. A mobile screenshot was inspected.
+The default map regression check passed with a largest brief of 589.375px and
+zero page errors. All 13 model/metric tests and the Geneva validator (14 negative
+cases) passed. The new evidence validator passed lossless-record, reference,
+finite-value, safe-link and checksum checks plus 18 negative cases. The separately
+owned report then arrived and passed the strict linked-file check and local
+HTTP 200 check. All 35 derived-file download links and four browser assets also
+returned HTTP 200. No commit, push or public-deployment claim is made by this
+integration helper.
+
+Next discriminating evidence remains an exact signed safeguard decision with
+a complete approval set, a matched eligible-activity inventory and witnessed
+failure/remedy/retest evidence; more numerical context alone cannot supply it.
+
 ## Expanded quantitative sample: integration checks
 
 The assembled sample contains 32 proposed routes spanning 33 named middle-power

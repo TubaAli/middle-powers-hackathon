@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retrieved evidence · Routes to safeguards</title>
+  <meta name="description" content="Source-linked inputs, retrieval gaps and downloadable data for 32 safeguard routes. No estimated coordinates.">
+  <link rel="stylesheet" href="coordinate-evidence.css">
+</head>
+<body>
+  <header><a href="./">← Routes to safeguards</a><nav><a href="#methods">Cross-route data</a><a href="../reports/Route%20coordinate%20evidence.md">Research report</a></nav></header>
+  <main>
+    <h1>What we retrieved</h1>
+    <p>Feasibility (x), reach (y) and context. <strong>No new coordinates or safety-effect estimates.</strong></p>
+    <p id="counts" role="status">Loading evidence…</p>
+    <details><summary>Inputs, not measured safety outcomes</summary><p class="note">Numbers include legal clocks, funding ceilings, plans, survey responses and operational records—not interchangeable measured outcomes. Source-record counts are not counts of independent sources. Retrieval is bounded, not exhaustive. The existing map is unchanged.</p><p id="value-types"></p></details>
+    <form id="filters" hidden>
+      <label>Find a route or input<input id="search" type="search" placeholder="Country, route, claim or source"></label>
+      <label>Route<select id="route"><option value="">All 32 routes</option></select></label>
+      <label>Input type<select id="axis"><option value="">All inputs</option><option value="x">x · Feasibility inputs</option><option value="y">y · Reach inputs</option><option value="context">Context only</option></select></label>
+      <button type="reset">Reset</button>
+    </form>
+    <p id="results-count" aria-live="polite"></p>
+    <div id="results"></div>
+    <section id="methods"><h2>Cross-route datasets and method</h2><div id="method-content"></div></section>
+    <section><h2>Download and reproduce</h2><p><a href="../data/coordinate-evidence.json" download>Complete normalized evidence JSON</a> · <a href="../scripts/build-coordinate-evidence.py">Assembly script</a> · <a href="../scripts/check-coordinate-evidence.mjs">Validator</a></p><p>Derived inputs retain definitions and source/byte receipts. Allocations are not payments or metered use; country indices are not calibrated route probabilities.</p><details><summary>Input files, receipts and checksums</summary><div id="downloads"></div></details></section>
+  </main>
+  <footer>Middle Powers · AI-assisted research and code · Source observations: <span id="observed"></span></footer>
+  <script type="module" src="coordinate-evidence.js"></script>
+</body>
+</html>

@@ -26,6 +26,37 @@ Run `node --test routes/metrics.test.mjs` and
 
 ## Earlier estimates
 
+## Retrieved coordinate evidence
+
+`coordinate-evidence.html` is a separate, mobile-friendly evidence browser for
+all 32 map routes. Filter by route, text or x/y/context; inspect exact source
+locators, retrieval queries, gap status and limitations. Share a selection with
+`?route=kenya-biometric-dpia-evidence-gate&axis=x` (hash parameters also work).
+The first non-context inputs are visible; remaining inputs and sources expand.
+This ordering is not an evidence-strength score. Numerical records include
+plans, legal thresholds, dates and context, not just measured outcomes.
+
+Build with `python3 scripts/build-coordinate-evidence.py` after the quantitative
+snapshot. The deterministic, lossless `data/coordinate-evidence.json` includes
+regional source/search scopes, method findings, file hashes and download links.
+It does not estimate or change coordinates. Source record totals do not imply
+independent sources. Research owners retain their original ledgers unchanged.
+
+Run `node scripts/check-coordinate-evidence.mjs` for coverage, scoped references,
+value types, finite values, URL safety, lossless normalization, file hashes and
+negative cases. Optional browser acceptance uses the already-installed Python
+Playwright environment and authorized CDP session:
+
+```sh
+COORDINATE_BROWSER_PYTHON=/path/to/existing/python node scripts/check-coordinate-evidence.mjs --browser http://127.0.0.1:8765/routes/coordinate-evidence.html
+```
+
+No dependency installation or new browser profile is needed. Browser acceptance
+checks every route, all axis filters, query/hash deep links, search/reset,
+all quantitative-detail links, expanded 390px layout and page errors.
+
+## Earlier estimates (preserved view)
+
 The following describes `estimates.html`, which preserves the original eight
 routes, ordinal assessments, comparison arrows and reconstructed replay.
 
