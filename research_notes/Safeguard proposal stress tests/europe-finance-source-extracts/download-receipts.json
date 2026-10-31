@@ -1,0 +1,58 @@
+[
+  {
+    "id": "aisi-incident",
+    "url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+    "httpStatus": "200",
+    "accessed": "2026-10-31",
+    "sha256": "70a5dc2a751cc4bcd286e2180d4ec4f9dd695281032dbcce605bbd6850a8f71b"
+  },
+  {
+    "id": "joint-agent-testing",
+    "url": "https://sgaisi.sg/resources/international-joint-testing-exercise-agentic-testing/",
+    "httpStatus": "200",
+    "accessed": "2026-10-31",
+    "sha256": "6791b39e3c63352a059161ef2c455f216501a8ec325888348b62a4e383a83dc4"
+  },
+  {
+    "id": "joint-pilot",
+    "url": "https://sgaisi.sg/resources/a-pilot-testing-exercise-from-the-international-network-of-ai-safety-institutes/",
+    "httpStatus": "200",
+    "accessed": "2026-10-31",
+    "sha256": "442c327032b0182bf4fec105326b95cc7bee8f64065d953dbea1dae474258e14"
+  },
+  {
+    "id": "canada-pm",
+    "url": "https://www.pm.gc.ca/en/news/news-releases/2026/10/29/canada-announces-landmark-investment-cohere-scale-secure-sovereign-ai",
+    "httpStatus": "200",
+    "accessed": "2026-10-31",
+    "sha256": "dfe7510827f53e66ff88884f442f49ce4dec8350dc50d7f1afe3878e30ca588e"
+  },
+  {
+    "id": "canada-speech",
+    "url": "https://www.pm.gc.ca/en/news/speeches/2026/10/29/prime-minister-carney-announces-landmark-investment-cohere-scale-secure",
+    "httpStatus": "200",
+    "accessed": "2026-10-31",
+    "sha256": "c9d8a48f612e54b65d27c0fab461fac213f7f5f1d00b549f78790408ac3c0496"
+  },
+  {
+    "id": "lumi-access",
+    "url": "https://docs.lumi-supercomputer.eu/firststeps/accessLUMI/",
+    "httpStatus": "200",
+    "accessed": "2026-10-31",
+    "sha256": "d72b0cb4775e2e3bded64f3523306444c406bd131634d8ec6968d891e7866143"
+  },
+  {
+    "id": "belgium-access",
+    "url": "https://www.enccb.be/GettingAccess",
+    "httpStatus": "200",
+    "accessed": "2026-10-31",
+    "sha256": "764b1849cc9f5a673703b5a519ae009fcec2b2f859c99ac6c4173e902cb5dd3f"
+  },
+  {
+    "id": "credit",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/exhibit1010-sx1.htm",
+    "httpStatus": "403",
+    "accessed": "2026-10-31",
+    "sha256": "6ca0f8cf8383b911f4f50aebd7c297d1b9eea52bc5f5d6671b85ab1b017f221f"
+  }
+]

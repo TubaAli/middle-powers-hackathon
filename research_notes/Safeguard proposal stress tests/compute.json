@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "scope": "Adversarial test of IndiaAI compute-subsidy conditions; bounded Taiwan ADI and Türkiye 1711 comparators. Only the three assigned routes. Retrieval-first and viewpoint-diverse analysis informed by the two requested repositories; no persona testimony, installations, model-score changes, contacts, or signed-pilot claims.",
+  "observedDate": "2026-10-31",
+  "routes": [
+    {
+      "routeId": "indiaai-subsidy-evaluation-gate",
+      "headline": "A credible prospective subsidy condition, but stopping the subsidy is not stopping the workload",
+      "assessment": "qualified",
+      "newEvidence": [
+        {"claim": "FACT — E2E's implementation documentation says IndiaAI-SKU services continue running after project expiry at E2E prices; subsidy exhaustion likewise stops the discount, not necessarily the service. This is a documented ordinary-expiry path, not evidence of deliberate safety circumvention.", "sourceIds": ["compute-e2e"], "locator": "Billing / Important Consideration; Platform Service final note"},
+        {"claim": "FACT — E2E separates subsidised compute/storage from discounted platform services, describes storage upfront charges irrespective of use, and applies overlapping same-SKU projects in first-come order. A project approval value is therefore not a meter reading or government settlement, and an account-level total can misattribute the affected service.", "sourceIds": ["compute-e2e"], "locator": "Compute and Storage; Disk and SFS Billing Model Conversion; Multiple IndiaAI Projects Handling"},
+        {"claim": "FACT — The linked end-user policy assigns policy updates to IndiaAI and project/subsidy evaluation frameworks to PMEC. It also permits account monitoring and data collection. Its existing access controls and revocability do not specify a model-harm evaluation threshold or adjudication/appeal process.", "sourceIds": ["compute-policy"], "locator": "§§4.6, 5.1–5.2, 6, 7; physical pp14–20"},
+        {"claim": "REPORT — ThePrint's original interviews include Prathosh A.P.'s criticism of affordability, delay and fragmented compute, alongside support for the mission, and a startup applicant reporting a move to AWS. Treat these as attributed experiences, not representative measurements. Its 304-approval snapshot and language of payments must not replace the repository's 303-record allocation audit or a settlement ledger.", "sourceIds": ["compute-print", "compute-portal", "compute-policy"], "locator": "ThePrint: 'Not worth it', 'The frontier problem', 'The start-ups'; portal counter; policy §8(f)"},
+        {"claim": "FACT — The portal offers a separate early-stage-startup category requiring experience and a senior-official letter, while the regular-startup category lists revenue/funding conditions. Consequently, saying that every startup must satisfy the regular funding threshold would overgeneralise; the alternative route still has a substantive endorsement burden.", "sourceIds": ["compute-portal"], "locator": "Are You Eligible? Startups & MSMEs and Early Stage Startups"},
+        {"claim": "RESEARCH RESULT — Qi et al. report that both adversarial and benign fine-tuning can degrade safety alignment in the models they studied. This supports testing the actual post-tuning version rather than relying on a base-model certificate; it does not estimate 2026 Indian deployment risk or the causal effect of a subsidy condition.", "sourceIds": ["compute-qi"], "locator": "Abstract; 2023 study, not a current-model audit"}
+      ],
+      "supports": [
+        "INFERENCE — Existing policy-update and project-evaluation channels make a narrow prospective condition more plausible than an entirely new regulator. The next task is to map the exact test into a current executed provider instrument; a policy power is not itself proof of contractual flow-down.",
+        "INFERENCE — Provider SKU/project mechanics make a concrete end-to-end pilot feasible to specify: approval ID, provisioned service, meter, customer invoice, provider claim, government payment and evaluator decision can be joined.",
+        "PROPOSAL — A public evaluator subsidy could turn the gate into a useful service for constrained applicants rather than merely another eligibility hurdle. Its funder and usable budget are unresolved."
+      ],
+      "challenges": [
+        "INFERENCE — A gate on subsidy payment alone has a documented commercial continuation path. Withholding future public support and suspending a specified service are different remedies and need separately stated authority.",
+        "ANALYTICAL LENS, provider — A new model-evaluation duty can entail engineering, dispute and SLA costs beyond ordinary cloud security. No current executed contract establishing acceptance of that duty was retrieved.",
+        "ANALYTICAL LENS, applicant/access — Extra approval delay can consume the activation window or impose unused-reservation charges. Independent labs may leave the scheme first, reducing oversight while better-funded users buy ordinary compute. Actual elasticity is unknown.",
+        "ANALYTICAL LENS, privacy — Monitoring authority is not proof that raw training data, prompts or model weights need to be centralised. A public/private evaluator may have commercial conflicts even after submitting a declaration.",
+        "ANALYTICAL LENS, harm reduction — A submitted report can improve paperwork without changing unsafe behaviour. A base-model pass can be invalidated by fine-tuning; an in-platform hold cannot recall previously exported weights or govern an unrelated offshore deployment."
+      ],
+      "unknowns": [
+        "NOT RETRIEVED — Current executed provider agreement, its incorporated security annex and amendments, delegation/signatory record, selected user's award terms, and lawful treatment of sunk reservations.",
+        "NOT RETRIEVED — Actual provider subsidy claims, accepted invoices and treasury settlement dates matched to project/SKU metering. Public allocations and press descriptions of money received are not payment evidence.",
+        "UNDISCLOSED IN READ SOURCES — Evaluator appointments, compensation/conflict controls, applicant compliance cost, queue-time distribution, appeal outcomes and workload continuation after a safety hold.",
+        "INACCESSIBLE — Direct fetches of the original procurement corrigendum, AISI partnership call and AISI FAQ returned HTTP403. Search leads about security-amendment powers and evaluator funding are not admitted as verified findings. No proposition relies on their unexamined detailed answers.",
+        "UNSEARCHED IN THIS BOUNDED PASS — A systematic cloud-price/egress comparison, all provider contracts, procurement-law case law and an exhaustive current technical-evaluation literature review.",
+        "FUTURE — A pilot outcome before Geneva, 21–22 June 2027, has not occurred at this cutoff."
+      ],
+      "decisionTest": "Before advocating rollout, require one genuinely future award, the operative provider agreement and a written competent-authority decision distinguishing a funding hold from a service hold. Then stage a harmless failed-test fixture and a subsidy-expiry fixture; inspect whether the same model/workload continues under ordinary billing. Reconcile meter, invoice, provider claim and payment separately. If continuation is permitted, describe the route as conditional public support, not a release veto.",
+      "ideas": [
+        {
+          "title": "Two-switch enforcement and settlement rehearsal",
+          "proposal": "Pilot one future IndiaAI project with separately specified subsidy and service-control states. Use a harmless fixture to test failed evaluation, cure, appeal, expiry and conversion to a commercial SKU. Record out-of-platform continuation as a declared scope limit rather than infer compliance from stopped payments.",
+          "owner": "Proposed: IndiaAI's authorised policy/procurement owner, one empanelled provider and one consenting future awardee; no party selected or consenting.",
+          "mechanism": "Prospective award schedule plus confirmed provider flow-down; reconcile approval ID → SKU → provisioned instance → metered use → customer invoice → accepted subsidy claim → payment date. Address overlapping project precedence explicitly.",
+          "safetyDemand": "For one defined model/version, no supported deployment of a pre-agreed critical-failure fixture pending remediation. A service stop is included only if its separate contractual authority is established.",
+          "verification": "Witness control-plane state, billing state and inference availability before/after the fixture; record leakage to ordinary billing and previously exported copies. Verify restoration after retest. Report exercised controls separately from real-world harm reduction.",
+          "remedy": "Hold the next eligible allocation/subsidy release under signed terms; implement a scoped service hold only if authorised; provide notice, independent review and a retest path. Do not retroactively refuse already valid consumed-service invoices.",
+          "deadline": "Proposed: authority/instrument decision by 2027-01-31; rehearsal and settlement follow-up by 2027-05-31; report at 2027-06-21/22.",
+          "dependencies": ["Executed terms and delegated authority", "Provider billing/control-plane cooperation", "Project-specific safe fixture", "Notice/cure rules and reservation-cost allocation", "Meter and settlement access"],
+          "whyBetter": "Directly tests the newly retrieved commercial-continuation path instead of equating subsidy revocation with an off-switch.",
+          "sourceIds": ["compute-e2e", "compute-policy"]
+        },
+        {
+          "title": "Fund a post-tuning evaluator service, with an access-cost stop rule",
+          "proposal": "Provide a small consenting cohort with funded independent post-tuning tests and reusable evidence templates. Pilot in shadow mode before making the test a condition. Compare incremental queue time, applicant staff hours, retest cost, harmful-response failures and benign-task performance to each applicant's baseline; do not presume randomisation or causal identification.",
+          "owner": "Proposed: IndiaAI/AISI programme owner with an evaluator not developing the tested model; applicant and provider participation required.",
+          "mechanism": "A separately funded evaluation work package and prospective renewal condition, using model hashes and local execution of tests. Selection/conflict disclosures, recusal and second-review rights must precede assignment.",
+          "safetyDemand": "Detect and correct safety regression after fine-tuning for a predeclared misuse class, such as assistance with credential-theft fraud, using safe simulated tasks in relevant Indian languages. Do not infer reduced fraud incidents from a benchmark change alone.",
+          "verification": "Version-pinned held-out tests, blind second review of disputed results, paired pre/post remediation runs, benign-task false-positive checks, and a minimal signed result artifact. Keep raw private training data local unless separately necessary and authorised.",
+          "remedy": "Correction/retest before future supported deployment; abandon or redesign mandatory gating if measured access burden exceeds a pre-agreed cohort tolerance or no reproducible safety improvement appears. The tolerance must be negotiated, not invented here.",
+          "deadline": "Proposed: protocol and cost tolerance by 2027-02-28; shadow results and go/no-go by 2027-05-31.",
+          "dependencies": ["Evaluator budget, appointment and conflicts policy", "Locally relevant validated test set", "Consent for minimal evidence sharing", "A feasible renewal window", "Baseline applicant cost/latency records"],
+          "whyBetter": "Tests both substantive safety value and the documented affordability/delay objection; targets changed models rather than rewarding a reusable base-model certificate.",
+          "sourceIds": ["compute-print", "compute-portal", "compute-qi"]
+        }
+      ],
+      "scoreImplications": [
+        {"factor": "readiness", "implication": "Qualified, not automatically raised", "reason": "Policy-update responsibility is explicit, but mapping model-safety obligations to current executed provider terms is unresolved.", "sourceIds": ["compute-policy"]},
+        {"factor": "remedy", "implication": "Downside challenge to an off-switch interpretation", "reason": "Commercial continuation is documented after ordinary expiry; a safety-triggered stop needs separate authority and engineering.", "sourceIds": ["compute-e2e"]},
+        {"factor": "reach", "implication": "Keep allocation reach separate from behavioural reach", "reason": "Subsidy/project/SKU accounting and applicant substitution complicate the covered workload denominator.", "sourceIds": ["compute-e2e", "compute-print"]},
+        {"factor": "timing", "implication": "Require operational timing evidence", "reason": "Approval rules coexist with reported delay, endorsement burdens and user reservation exposure.", "sourceIds": ["compute-policy", "compute-print", "compute-portal"]},
+        {"factor": "relevance", "implication": "Can be made more specific, not proven higher", "reason": "Post-tuning regression is a demonstrated technical failure mode, whereas generic reporting is not harm prevention.", "sourceIds": ["compute-qi"]}
+      ]
+    },
+    {
+      "routeId": "taiwan-public-compute-safety-conditions",
+      "headline": "Existing origin restrictions and open-publication incentives require a narrowly scoped post-tuning gate",
+      "assessment": "qualified",
+      "newEvidence": [
+        {"claim": "FACT — The 2026 rules prohibit China-origin/Chinese-funded open models and interfaces such as API/MCP in platform training/inference, and connections to mainland China/Hong Kong/Macao remote IP locations. These are specific existing controls; they do not establish model-harm testing or coverage of work on other clouds.", "sourceIds": ["compute-tw-rules"], "locator": "§7(2)(1), items 2 and 5; physical p8"},
+        {"claim": "FACT — Training review rewards willingness to put models and datasets on Hugging Face or GitHub; inference review rewards publishing datasets/code. User content/results remain user-owned, and the platform withdraws access and clears storage after expiry.", "sourceIds": ["compute-tw-rules"], "locator": "§6 review tables, physical pp6–7; §7(2)(2) item1 and §7(2)(3), physical p9"},
+        {"claim": "FACT — The privacy consent form describes collecting names, telephone numbers, email addresses and titles for the programme, with purpose/territorial limits. It is not an explicit unrestricted authorisation to disclose training corpora or end-user prompts to a new evaluator.", "sourceIds": ["compute-tw-rules"], "locator": "Annex1 personal-data notice, physical p10"}
+      ],
+      "supports": ["INFERENCE — Explicit controls and consequences give a prospective appendix a concrete implementation perimeter. A post-tuning release checklist can complement the existing open-publication incentive."],
+      "challenges": [
+        "ANALYTICAL LENS, openness — A blanket no-export or secrecy requirement conflicts with rewarded model sharing; frame a short pre-publication safety check rather than presume all open release is unsafe.",
+        "ANALYTICAL LENS, sovereignty versus harm — A provenance restriction can be enforced while an allowed-origin model remains unsafe. Test origin-rule compliance and actual model behaviour as separate outcomes.",
+        "INFERENCE — Storage clearing and access withdrawal cannot withdraw user-owned results already downloaded or published. Remedies are strongest before release/expiry and within the platform.",
+        "ANALYTICAL LENS, privacy — Reusing three-year logs does not eliminate the need to define evaluator access, redaction and retention for new evidence."
+      ],
+      "unknowns": [
+        "NOT RETRIEVED — Operator agreement, prospective 2027 adopted terms/budget and exact amendment delegation. The existing dossier's closed 2026 window is not reopened by these findings.",
+        "UNDISCLOSED IN READ RULES — Actual checks of restricted model origin, downloaded/published model inventory, evaluator cost or harm reductions.",
+        "UNSEARCHED — Representative Taiwanese SME views and court treatment of these clauses; views above are analytical lenses.",
+        "FUTURE — No pre-Geneva safety pilot or adopted 2027 condition is established."
+      ],
+      "decisionTest": "Find one future training award whose applicant intends to publish a tuned model. Confirm that authority/operator/applicant accept a version-linked pre-publication test, its privacy protocol and funding. Demonstrate a hold and retest before publication; record exported versions, rather than claim the platform can revoke public copies.",
+      "ideas": [
+        {
+          "title": "Safe-publication checkpoint instead of an origin proxy",
+          "proposal": "For one genuinely future ADI training cohort, pair the existing open-sharing incentive with a version-linked post-tuning safety result. Record model origin separately from behaviour and release status.",
+          "owner": "Proposed: ADI, its appointed future operator, a consenting awardee and an evaluator with declared conflicts.",
+          "mechanism": "Prospective award appendix and publication checklist; fund the evaluation within the award plan and require local execution where data are sensitive.",
+          "safetyDemand": "Before supported public release, evaluate a declared misuse regression and privacy-leakage test on the final tuned version; fix specified critical findings without a blanket prohibition on open models.",
+          "verification": "Model hash, dated test artifact, local synthetic privacy canaries, independent retest and public-release timestamp. Preserve minimal evidence before storage clearing.",
+          "remedy": "Hold only authorised remaining support/access before release, with cure and retest; no claim to recall already published weights.",
+          "deadline": "Proposed: only if an authorised next-cycle award is available by 2027-03-31, complete release/retest evidence by 2027-05-31; otherwise report the missed decision window.",
+          "dependencies": ["Next-cycle award and operator authority", "Applicant publication plan", "Evaluator/data-access agreement", "Funded test budget", "Preservation of evidence before expiry"],
+          "whyBetter": "Resolves a real tension between open-publication incentives and safety holds, and prevents provenance restrictions being mistaken for demonstrated harmlessness.",
+          "sourceIds": ["compute-tw-rules", "compute-qi"]
+        }
+      ],
+      "scoreImplications": [
+        {"factor": "readiness", "implication": "Operational controls strengthened; new-condition authority still qualified", "reason": "Detailed use restrictions exist, but do not establish consent to the proposed appendix.", "sourceIds": ["compute-tw-rules"]},
+        {"factor": "remedy", "implication": "Limit to remaining access/support", "reason": "Users own results and can publish; storage deletion is not recall of exported models.", "sourceIds": ["compute-tw-rules"]},
+        {"factor": "relevance", "implication": "Require behavioural outcome separate from origin compliance", "reason": "Origin restrictions and publication incentives are not safety evaluation results.", "sourceIds": ["compute-tw-rules", "compute-qi"]}
+      ]
+    },
+    {
+      "routeId": "turkiye-1711-safety-work-package",
+      "headline": "Useful conflict-of-interest restrictions, but a funded research partner is not automatically independent assurance",
+      "assessment": "qualified",
+      "newEvidence": [
+        {"claim": "FACT — Programme eligibility excludes related customer/provider entities, companies owned by academics at the participating university from the technology-provider SME role, and declaring university academics as SME employees. These are concrete separation controls, not proof of evaluator independence.", "sourceIds": ["compute-tr-programme"], "locator": "Kimler Başvurabilir?; FAQ"},
+        {"claim": "FACT — Call §6.2 says YZE does not claim project intellectual-property rights and is not a party to the participants' output/property agreement; it nevertheless expects data/model/solution sharing with ownership protected. Evaluation access therefore requires an explicit rights-preserving arrangement.", "sourceIds": ["compute-tr-call"], "locator": "§6.2, physical pp5–6 / printed pp4–5"},
+        {"claim": "FACT — The website explains that quarterly technical reports go to YZE by the following month-end, with two further weeks for YZE's assessment to TEYDEB. Monitoring cadence alone does not guarantee a reviewed report before 21–22 June 2027.", "sourceIds": ["compute-tr-programme"], "locator": "İzleme ve Sonuçlandırma"},
+        {"claim": "FACT — The call permits cooperation-agreement signature by project-contract signature, but its earlier IP paragraph and website FAQ still refer to pre-application agreement. This textual inconsistency reinforces the need for a project-specific authorised determination, rather than treating an unsigned agreement as unlimited scope-change permission.", "sourceIds": ["compute-tr-call", "compute-tr-programme"], "locator": "Call §6.2 versus §15.2; FAQ Projenin fikri mülkiyet hakları kime ait olur?"}
+      ],
+      "supports": ["INFERENCE — Existing separation and rights rules give a costed acceptance-test package a more credible starting point than an undefined independent audit.", "INFERENCE — An agreed interim deliverable can use the monitoring channel if the review lag is budgeted explicitly."],
+      "challenges": [
+        "ANALYTICAL LENS, evaluator — University and YZE participation combine development/ecosystem and assessment incentives. Formal non-affiliation does not remove dependence on project success or guarantee blinded retesting.",
+        "ANALYTICAL LENS, commercial customer — A delayed acceptance can impose costs while a provider has already incurred eligible expenses. Allocate remediation costs and distinguish contractual acceptance from grant eligibility.",
+        "FACT/INFERENCE — The FAQ says ordinary project failure does not require repayment, while intentional termination grounds can trigger recovery. A failed safety test must not be silently reclassified as fraud or automatic clawback.",
+        "INFERENCE — A domestic customer solution and its acceptance test are a narrower harm pathway than control over upstream frontier-model release."
+      ],
+      "unknowns": [
+        "NOT RETRIEVED — One selected but unsigned 2026 award, its permissible scope revisions, current executed cooperation agreement and accepted expense ledger.",
+        "UNDISCLOSED — Any separate independent retester, evaluation findings, customer deployment inventory or actual remediation/payment decisions.",
+        "UNSEARCHED — Exhaustive Turkish procurement-law interpretation, private consortium objections and actual signature dates.",
+        "FUTURE — A 2027 call or Geneva outcome cannot be inferred from annual recurrence."
+      ],
+      "decisionTest": "Identify one eligible project with a still-lawful change window. Obtain a written TÜBİTAK determination reconciling the signature clauses, a ring-fenced test budget and separate acceptance/retest rights. Specify an interim submission date allowing the following-month and YZE review lag before Geneva.",
+      "ideas": [
+        {
+          "title": "Customer acceptance with a separately appointed retester",
+          "proposal": "Add a funded safety acceptance package to one permissible 1711 customer solution, with the development university producing evidence and a non-developing reviewer adjudicating critical disputes.",
+          "owner": "Proposed: customer-led consortium and TÜBİTAK/TEYDEB, with YZE's monitoring role and a separate retester defined in writing.",
+          "mechanism": "Costed work package, rights-preserving data/test annex, conflict checks and a written customer acceptance condition; keep eligible grant expense and contractual product acceptance separate.",
+          "safetyDemand": "Choose one deployment-specific harm before testing—for example unsafe recommendations in an industrial decision-support application—and require critical failure correction before customer production acceptance. Do not apply a generic chatbot refusal test to every project.",
+          "verification": "Version-pinned test cases, protected customer data or synthetic fixtures, independent replay of disputed failures, customer acceptance record and an interim report transmitted through the actual monitoring workflow.",
+          "remedy": "Customer non-acceptance and correction/retest under agreed terms; any grant withholding or recovery only on independently established programme grounds.",
+          "deadline": "Proposed: project/window confirmation by 2027-01-31; evidence package by 2027-04-30, allowing May transmission and early-June review before 2027-06-21/22.",
+          "dependencies": ["Identified eligible project", "Written scope-change permission", "All relevant partner rights and signatures", "Separate retester and funding", "Deployment-specific harm definition"],
+          "whyBetter": "Uses the actual customer leverage point and report lag, while avoiding the unsupported assumptions that a university partner is independent or that test failure triggers clawback.",
+          "sourceIds": ["compute-tr-call", "compute-tr-programme"]
+        }
+      ],
+      "scoreImplications": [
+        {"factor": "coordination", "implication": "Keep independence handoffs visible", "reason": "Existing related-party restrictions help, but a non-developing retester adds a real agreement/cost.", "sourceIds": ["compute-tr-programme", "compute-tr-call"]},
+        {"factor": "timing", "implication": "Budget review lag and resolve conflicting signature text", "reason": "Quarterly cadence is not a June-ready assessment and the document contains different signature formulations.", "sourceIds": ["compute-tr-programme", "compute-tr-call"]},
+        {"factor": "remedy", "implication": "Do not upgrade to automatic safety clawback", "reason": "Ordinary failure is distinguished from intentional grounds for recovery; customer acceptance is the more precise proposed lever.", "sourceIds": ["compute-tr-programme"]}
+      ]
+    }
+  ],
+  "sources": [
+    {"id":"compute-policy","url":"https://compute.indiaai.gov.in/files/end-user-policy.pdf","title":"IndiaAI End-User Policy for AI Services on the Cloud","published":"2025-02 (month only)","eventDate":null,"accessed":"2026-10-31","access":"read","locator":"§§4.6–9, physical pp14–22; local PDF and PDFKit extraction","whatItSupports":"Policy/PMEC authority, monitoring, privacy language, billing and reservation exposure; not executed new safety conditions or payment records."},
+    {"id":"compute-e2e","url":"https://docs.e2enetworks.com/docs/tir/indiaai/","title":"E2E Cloud IndiaAI Documentation","published":null,"eventDate":"Page says last updated 2026-08-11; update is not contract signature","accessed":"2026-10-31","access":"read","locator":"Billing; Compute and Storage; Platform Service; Multiple IndiaAI Projects Handling","whatItSupports":"Provider's stated project/SKU billing and commercial-continuation behaviour; not a witnessed safety hold or government payment."},
+    {"id":"compute-corrigendum","url":"https://indiaai.s3.ap-south-1.amazonaws.com/docs/corrigendum-I.pdf","title":"IndiaAI RFE pre-bid queries and responses, corrigendum I (retrieval lead)","published":null,"eventDate":null,"accessed":"2026-10-31","access":"inaccessible","locator":"Direct Python fetch HTTP403; potential Security Requirements amendment clause requires retrieval","whatItSupports":"Access gap only. Security-amendment and bidder-objection leads not admitted as verified evidence."},
+    {"id":"compute-portal","url":"https://compute.indiaai.gov.in/login","title":"IndiaAI Compute Portal","published":null,"eventDate":"Footer last updated 2026-10-14","accessed":"2026-10-31","access":"read","locator":"Are You Eligible?; How to Apply; FAQs; 303 end-user counter","whatItSupports":"Public eligibility pathways and displayed counter, not audited unique users or metered use."},
+    {"id":"compute-print","url":"https://theprint.in/tech/indiaai-mission-9-model-builders-get-rs-1058-cr-of-govts-compute-subsidy-researchers-only-rs-10-cr/3076401/","title":"IndiaAI Mission: 9 model builders get Rs1,058cr of govt's compute subsidy, researchers only Rs10cr","published":"2026-10-20","eventDate":"Portal snapshot stated as 2026-10-08; interview dates mostly unspecified","accessed":"2026-10-31","access":"read","locator":"Original interviews: Not worth it; The frontier problem; The start-ups","whatItSupports":"Attributed affordability, latency and substitution objections, plus support for mission. Not representative estimates; allocation totals/payment language not adopted."},
+    {"id":"compute-aisi-call","url":"https://indiaai.s3.ap-south-1.amazonaws.com/docs/sg-call-for-partnerships-indiaai-safety-institute.pdf","title":"IndiaAI Safety Institute Call for Partnership with Academic and R&D Organisations (retrieval lead)","published":null,"eventDate":null,"accessed":"2026-10-31","access":"inaccessible","locator":"Direct Python fetch HTTP403","whatItSupports":"Access gap only; evaluator funding, conflicts terms and appointment not established from this document."},
+    {"id":"compute-aisi-faq","url":"https://indiaai.s3.ap-south-1.amazonaws.com/docs/aisi-faqs.pdf","title":"IndiaAI Safety Institute FAQ","published":null,"eventDate":null,"accessed":"2026-10-31","access":"inaccessible","locator":"Direct webfetch HTTP403","whatItSupports":"Access limitation only; no substantive reliance."},
+    {"id":"compute-qi","url":"https://arxiv.org/abs/2310.03693","title":"Qi et al., Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To!","published":"2023-10-05","eventDate":"Experiments reported in 2023 paper; individual dates unspecified","accessed":"2026-10-31","access":"partial","locator":"Abstract read; full experimental replication not performed","whatItSupports":"Post-tuning safety-regression failure mode in studied models, not 2026 prevalence or causal policy effectiveness."},
+    {"id":"compute-tw-rules","url":"https://aipower.dginfra.gov.tw/front/filePush?pFolder=content&pName=%E6%95%B8%E7%99%BC%E9%83%A8%E6%95%B8%E4%BD%8D%E7%94%A2%E6%A5%AD%E7%BD%B2%20115%E5%B9%B4%E7%AE%97%E5%8A%9B%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E7%94%B3%E8%AB%8B%E9%A0%88%E7%9F%A5.pdf","title":"ADI 115-year compute platform application rules","published":"2026-08-14","eventDate":null,"accessed":"2026-10-31","access":"read","locator":"§§5–7, physical pp5–9; Annex1 p10; PDFKit extraction retained","whatItSupports":"Origin/IP restrictions, publication incentives, content ownership, expiry and personal-data notice; not witnessed compliance or future amendment consent."},
+    {"id":"compute-tr-call","url":"https://tubitak.gov.tr/sites/default/files/2026-09/1711_YZE_2026_Cagri_Metni_Guncel.pdf","title":"TÜBİTAK 1711-YZE-2026 updated call","published":null,"eventDate":"September2026 URL path, not proof of publication day; application deadline 2026-10-02","accessed":"2026-10-31","access":"read","locator":"§6.2, §6.3, §7.2, §§14–15; PDFKit extraction retained","whatItSupports":"Rights and monitoring architecture, signature-text tension and limited revision opportunity; not an executed consortium agreement."},
+    {"id":"compute-tr-programme","url":"https://tubitak.gov.tr/tr/destekler/sanayi/ulusal-destek-programlari/1711-yapay-zeka-ekosistem-cagrisi","title":"TÜBİTAK 1711 programme page and FAQs","published":null,"eventDate":"2026 call closed 2026-10-02","accessed":"2026-10-31","access":"read","locator":"Kimler Başvurabilir?; İzleme ve Sonuçlandırma; repayment and IP FAQs","whatItSupports":"Related-party restrictions, actual specified reporting lag and distinction between project failure and recovery grounds."},
+    {"id":"compute-deeper","url":"https://github.com/nraford7/deeper-research","title":"deeper-research README","published":null,"eventDate":null,"accessed":"2026-10-31","access":"read","locator":"Raw main README: retrieval-first evidence gate, disagreement preservation and provenance","whatItSupports":"Method inspiration only; software not installed/run and its cited performance claims not independently validated."},
+    {"id":"compute-studio","url":"https://github.com/nraford7/agent-studio","title":"Agent Studio v2 README","published":null,"eventDate":null,"accessed":"2026-10-31","access":"read","locator":"GitHub master README: distinct viewpoints versus factual correctness; simulation limits","whatItSupports":"Analytical-lens method only; no persona panel or subagents used. Initial raw main URL404 was resolved by reading master repository."}
+  ],
+  "searches": [
+    {"query":"IndiaAI Safety Institute expression interest FAQ independent evaluation intellectual property confidentiality","date":"2026-10-31","result":"Identified partnership call and FAQ leads; direct source access403. No funding terms or appointed independent evaluator established from these documents.","sourceIds":["compute-aisi-call","compute-aisi-faq"]},
+    {"query":"IndiaAI compute empanelment 2026 agreement change terms payment SOP","date":"2026-10-31","result":"Identified original RFE clarification as an amendment-authority lead; direct fetch403. No current executed provider agreement or settlement ledger.","sourceIds":["compute-corrigendum"]},
+    {"query":"Direct retrieval: E2E IndiaAI provider documentation; IndiaAI portal and policy","date":"2026-10-31","result":"Read live provider implementation and eligibility pathways; downloaded policy and extracted26pages. Found commercial continuation and storage/accounting complications.","sourceIds":["compute-e2e","compute-portal","compute-policy"]},
+    {"query":"Direct retrieval: ThePrint October20 IndiaAI original stakeholder interviews","date":"2026-10-31","result":"Read article in full. Preserved attributed complaints/support; rejected treating approval tables as payment data and left304/303 snapshot mismatch unresolved.","sourceIds":["compute-print"]},
+    {"query":"Direct retrieval: Qi et al.2310.03693 abstract","date":"2026-10-31","result":"Read abstract for post-tuning failure mode. No current-model generalisation or numerical policy-effect claim.","sourceIds":["compute-qi"]},
+    {"query":"Direct retrieval: ADI115-year application rules, §6 review and §7 conditions","date":"2026-10-31","result":"Downloaded and extracted15pages; found origin restrictions, publication incentives and expiry/data provisions. Bounded comparator, not a new award-ledger census.","sourceIds":["compute-tw-rules"]},
+    {"query":"Direct retrieval: TÜBİTAK1711 current programme and updated call","date":"2026-10-31","result":"Read programme and extracted16-page call. Found related-party controls, review lag and signature-text tension; no unsigned project identified.","sourceIds":["compute-tr-programme","compute-tr-call"]},
+    {"query":"Direct retrieval: nraford7/deeper-research and nraford7/agent-studio README","date":"2026-10-31","result":"Read both; agent-studio raw main404 resolved to master. Used retrieval-first provenance and explicit analytical lenses; no installation or simulated testimony.","sourceIds":["compute-deeper","compute-studio"]}
+  ]
+}

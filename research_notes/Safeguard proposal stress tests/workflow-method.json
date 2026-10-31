@@ -1,0 +1,52 @@
+{
+  "observed": "2026-10-31",
+  "status": "Upstream documents read; bounded native adaptation designed. No upstream pipeline, panel, interviews or external model family executed in this audit.",
+  "sources": [
+    {
+      "repository": "https://github.com/nraford7/agent-studio",
+      "commit": "6f6a37258e4e33401b7b0f10a2c9634adffebd60",
+      "commit_date": "2026-10-17T17:30:56Z",
+      "retrieval": "GitHub commit/tree APIs plus raw.githubusercontent.com at pinned commit; full bytes retrieved, relevant text read",
+      "paths_read": ["README.md", "SKILL.md", "references/hard-rules.md", "references/synthesis-modes.md", "references/evidence-gate.md", "docs/research/Persona-Construction-Playbook.md", "methodologies/kernel.md"],
+      "scope_limit": "Did not verify the empirical persona literature cited by this repository; its rules are attributed workflow prescriptions, not established efficacy findings. Did not read every linked reference or run its validators."
+    },
+    {
+      "repository": "https://github.com/nraford7/deeper-research",
+      "commit": "d49d27c75d94ee57c19cd062269e2d5f1c96cd67",
+      "commit_date": "2026-09-28T07:20:34Z",
+      "retrieval": "GitHub commit/tree APIs plus raw.githubusercontent.com at pinned commit; full README/SKILL bytes retrieved; retrieval, synthesis, verification and limitation sections read",
+      "paths_read": ["README.md", "SKILL.md", "references/squad-audit.md", "docs/superpowers/specs/2026-08-27-source-selection-protocol-design.md"],
+      "scope_limit": "Source-selection protocol is a design specification explicitly deferring pipeline integration; no assertion that its full coverage matrix is wired into the current pipeline. No runtime adapter or scripts executed."
+    }
+  ],
+  "execution_receipt": {
+    "model": "openai/gpt-6-astra-ultrafast (harness supplied identity)",
+    "native_subagents_spawned_here": 0,
+    "stakeholder_interviews": 0,
+    "exa_calls": 0,
+    "paperqa_calls": 0,
+    "cross_family_reviews": 0,
+    "repos_installed": 0,
+    "paid_external_calls": 0,
+    "executed": ["Read saved model, implementation and evidence report", "Read pinned upstream methodology", "Standard-library deterministic model sensitivity audit"],
+    "not_executed": ["Upstream evidence_gate.py", "Upstream citation/number verification scripts", "Scholarly graph chase", "Sealed baseline and lens panel", "Independent source-checking agent", "Blind comparison judge", "Embedding diversity scoring", "Stakeholder interviews"]
+  },
+  "adaptation": {
+    "native_equivalents": ["Retrieve sources before claim synthesis", "Retain raw/source excerpts, URL, locator and dates", "Separate source-backed fact from analyst inference", "Explicit scope checklist then source-gap refutation", "Code-derived model scenarios with immutable baseline", "Next-round isolated baseline and lenses using host subagents if authorised", "Dissent-preserving synthesis and point-level retention ledger"],
+    "non_equivalences": ["Native web retrieval is not Exa", "Local analysis is not PaperQA", "Same-provider subagents are not independent model families", "Logical prompt separation is not operating-system access isolation", "Scenario weights are not stakeholder elicitation", "Analytical lenses are not interviews, institutional positions or consent", "Manual source checking is not passing upstream automated gates", "No saturation or complete-literature claim without completed required retrieval lanes"]
+  },
+  "next_round": {
+    "status": "proposed, not executed",
+    "baseline": "One fresh plain assistant, same frozen evidence and neutral question; short recommendation, disconfirming evidence, unknowns, next test; cannot see lens outputs or this audit's conclusions.",
+    "lenses": [
+      {"id":"delivery", "priority":"A binding, staffed, operational safeguard by 21 June 2027", "counterpressure":"Fast local pilot may miss consequential scale"},
+      {"id":"frontier-risk", "priority":"Causal reduction in severe frontier-AI failure, including displacement", "counterpressure":"Broad potential without actionable authority may deliver nothing"},
+      {"id":"rights-accountability", "priority":"Contestability, affected-person rights and enforceable remedies", "counterpressure":"Formal compliance can displace substantive risk reduction"},
+      {"id":"international-scale", "priority":"Additional cross-border adoption and deduplicated exposure", "counterpressure":"Coordination burden, free riding and shared supplier substitution"}
+    ],
+    "isolation": "Each receives identical frozen sources and own brief, no baseline or peer output; write separate output; coordinator hashes and closes all before synthesis. Same-model limitations disclosed.",
+    "synthesis": "Compare to baseline; retain strongest supported dissent and unique findings; separate factual disagreement from values and scope; no averaging of recommendations; explicit kept/dropped/refuted point ledger.",
+    "comparison": "Mask baseline/panel labels for a human comparison using source fidelity, discriminating tests, decision relevance and an unsupported-authority harm check. Quality and coverage separately; no panel-benefit claim before comparison.",
+    "limits": "At most four generating lenses, one baseline, one source/refutation checker and one synthesis; no debate; one targeted gap-fill round. Cross-family reviewer only if explicitly available and permitted, otherwise report absent."
+  }
+}

@@ -1,0 +1,135 @@
+
+PAGE 1
+ENA Response to Ofgem
+Consultation on AI Technical
+Sandbox
+March 2026
+PAGE 2
+ENA Response to Ofgem consultation on Ofgem AI Technical Sandbox consultation
+March 2026
+Introduction
+Energy Networks Association (ENA) represents the companies that operate and maintain the electricity network
+infrastructure in the UK and Ireland. Serving over 30 million homes and businesses in every part of the country,
+they are responsible for the transmission (long-distance, high voltage) and distribution (shorter-distance, lower
+voltage) network of overhead lines and underground cables that keep our lights on, our homes warm and our
+businesses running. ENA welcomes the opportunity to respond on behalf of its electricity transmission and
+distribution network operator members to Ofgem’s Consultation on the AI Technical Sandbox. For reference,
+the full list of ENA members can be found at https://www.energynetworks.org/about/members.
+Eligibility and participation
+Q1. Do you agree with the proposed eligibility criteria for lead Participants (licensees, market
+participants, and operators of essential services) and the encouragement of partnerships with
+technology providers, academia, and other innovators? Please explain your reasoning.
+Networks broadly support the proposed eligibility criteria focusing on licensees, market participants, and
+operators of essential services, as this ensures regulatory accountability and access to operational data.
+• It would be helpful for Ofgem to explicitly recognise iDNOs and other network operators as eligible lead
+participants.
+• Partnerships with technology providers, academia, and innovators are strongly supported, but clear
+accountability frameworks are required where multiple parties are involved.
+• Networks emphasise the importance of establishing structured and curated datasets, with data-owning
+organisations playing a key role in enabling AI use cases.
+• Consideration should be given to ensuring the model does not inadvertently restrict innovation or
+participation.
+Use case selection
+Q2. Are the proposed use case selection criteria (including commercial neutrality, innovation, sector
+impact, regulatory uncertainty, testability, governance, and data access) appropriate and sufficient to
+ensure a fair and transparent process? Are there other criteria, safeguards, or considerations we
+should include?
+Networks agree that the proposed criteria provide a strong foundation, with the following enhancements:
+• Greater emphasis on whole-system value and cross-network use cases.
+• Clearer focus on consumer outcomes and system resilience.
+• Explicit requirements around data readiness, governance, and cyber security by design.
+• Inclusion of standards-based frameworks (interfaces, governance, metrics, tooling) to support scalable
+solutions.
+• Consideration of agentic AI approaches, including governed orchestration of multiple AI agents and the
+need for interoperability.
+│ 2
+PAGE 3
+ENA Response to Ofgem consultation on Ofgem AI Technical Sandbox consultation
+March 2026
+Alignment with other initiatives
+Q3. Is the proposed approach for the AI Technical Sandbox clearly distinct and complementary to other
+initiatives such as Ofgem’s AI Reg Lab, Energy Regulation Sandbox, Future Regulation Sandbox, UKRI-
+funded and SIF/NIA initiatives, NESO, FCA regulatory sandbox experience, and DSIT AI Growth Lab?
+Are there other relevant initiatives or examples of best practice that Ofgem should consider, and if so,
+which ones?
+Networks support alignment with existing initiatives but highlight the need for clearer positioning:
+• Greater clarity on how the sandbox interacts with SIF, NIA, and other innovation routes, avoiding
+duplication.
+• Clear pathways for sandbox outputs to feed into other programmes and support scaling.
+• Recognition that programmes such as SIF/NIA could provide curated datasets and support technical
+delivery of use cases.
+• Stronger linkage to NESO-led work and wider sector digitalisation initiatives.
+• Consideration of best practice from other sectors, including cohort-based approaches and structured
+delivery models.
+Engagement and governance
+Q4. Does the proposed governance structure (steering group, working groups, open forums) provide
+sufficient oversight, transparency, and opportunities for stakeholder engagement? Are there other
+mechanisms or safeguards that should be included to ensure effective governance and knowledge
+sharing?
+Networks are supportive of the proposed governance structure, with the following considerations:
+• Further clarity is required on Steering Group composition to assess whether it is balanced.
+• Networks should have appropriate representation, with recruitment undertaken in a fair and transparent
+manner.
+• Greater clarity on decision-making processes and use case selection in practice is needed.
+• Clear mechanisms for managing conflicts of interest.
+• Strong emphasis on transparent knowledge sharing across the sector.
+• Additional clarity on the purpose and scope of the sandbox would support more detailed input on
+governance and use case selection.
+Timelines and next steps
+Q5. Are the proposed next steps for developing and launching the pilot clear, and is there anything
+further we should consider as we refine the timeline?
+The proposed timeline is broadly achievable, subject to early clarity:
+• Early publication of application guidance and evaluation criteria would be beneficial.
+• Consideration of pre-application engagement sessions or clinics.
+• Clear articulation of data access pathways and requirements.
+• The 12-month pilot is appropriate, but risks around setup time and onboarding should be considered.
+│ 3
+PAGE 4
+ENA Response to Ofgem consultation on Ofgem AI Technical Sandbox consultation
+March 2026
+Ethics and responsible AI
+Q6. Does the consultation and proposed pilot sufficiently address ethical considerations (fairness,
+transparency, responsible use, consumer trust) in line Ofgem’s AI guidance? Are there further steps we
+should take to embed ethics and safety in the sandbox?
+Networks support the proposed ethical approach, with further strengthening suggested:
+• Introduction of risk-based safety tiers for different use cases.
+• Stronger emphasis on human-in-the-loop oversight, particularly for operational decisions.
+• Clear expectations for fairness testing, particularly in areas such as connections and curtailment.
+• Further clarity on data protection, cyber security, and operational system risks.
+Stakeholder support
+Q7. Do you have suggestions for how Ofgem can best support stakeholders throughout the pilot and
+beyond?
+To support effective participation, networks suggest:
+• Provision of curated datasets and standardised testing environments, where appropriate.
+• Clear evaluation frameworks and KPIs.
+• Development of template legal and governance documentation.
+• Support for shared tools, components, and knowledge libraries.
+• Use of existing engagement forums, with the role of testing environments aligned to the sandbox’s
+purpose.
+General Feedback
+Q8. Do you have any other comments, suggestions, or concerns regarding the proposed pilot, the
+consultation process, or the expected outcomes? Please provide evidence, examples, or reasoning to
+support your responses wherever possible.
+Networks are supportive of the sandbox concept and its potential to drive innovation, with the following points
+noted:
+• The sandbox provides a valuable mechanism to test AI safely before deployment.
+• Care should be taken to manage risks around data use, unintended system impacts, and uneven
+participation.
+• The sandbox offers an opportunity to demonstrate the value of improved data maturity, without full
+system complexity.
+• There is strong potential to explore reuse and interoperability principles, particularly for agentic AI.
+• Priority use cases of interest include:
+o AI-assisted connections and queue management
+o LV hosting capacity forecasting under uncertainty
+o Proactive outage planning and customer communications
+│ 4
+PAGE 5
+Energy Networks Association
+4 More London Riverside
+London SE1 2AU
+t. +44 (0)20 4599 7700
+w. energynetworks.org
+@EnergyNetworks
+© ENA 2026
+Energy Networks Association Limited is a company registered in England & Wales No. 04832301
+Registered office: 4 More London Riverside, London, SE1 2AU

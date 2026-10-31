@@ -1,0 +1,703 @@
+
+--- PDF page 1 ---
+End-User Policy for AI Services on the Cloud
+End-User Policy
+for
+AI Services on the Cloud
+IndiaAI – IBD
+Digital India Corporation (DIC)
+Ministry of Electronics and Information Technology
+Electronics Niketan Annexe,
+6 CGO Complex, Lodhi Road
+New Delhi-110003
+India
+February 2025
+i
+--- PDF page 2 ---
+End-User Policy for AI Services on the Cloud
+This Page is Intentionally Left Blank
+ii
+--- PDF page 3 ---
+End-User Policy for AI Services on the Cloud
+Table of Contents
+Glossary of Terms .......................................................................................................................... v
+1. IndiaAI Mission .................................................................................................................... 1
+2. 3. 4. 5. 6. IndiaAI empaneled AI cloud services ................................................................................ 2
+Eligibility for using IndiaAI empaneled AI services on cloud ....................................... 3
+3.1 Researchers, Research Group and Academic Faculties .......................................... 3
+3.2 IndiaAI Fellowship Awardees..................................................................................... 3
+3.3 Students ......................................................................................................................... 4
+3.4 Startups & MSMEs ....................................................................................................... 4
+3.5 Central and State Government ministries and departments/ PSUs / Government
+Section 8 firms or registered societies / Government agencies & entities ....................... 5
+3.6 Early-stage startup (pre-revenue / funding) ............................................................ 6
+3.7 Early-stage researchers ............................................................................................... 6
+3.8 Project details ............................................................................................................... 6
+End user workflow and approval process ......................................................................... 7
+4.1 End User registration with official / institute ID .................................................... 7
+4.2 User submits documents for eligibility criteria check ............................................ 7
+4.3 User submits project proposal ................................................................................... 8
+4.4 GPU allocation based on GPU hours, GPUs and subsidy sought .......................... 8
+4.5 GPU hours sought by user are equal to or below 5000 GPU hours, with max 50
+GPUs requested and user has not sought subsidy ............................................................... 8
+4.6 GPU hours sought by registered user are greater than 5000 GPU hours or GPUs
+sought is greater than 50 or end user has sought subsidy ................................................. 8
+Governance structure and implementing entities ......................................................... 10
+5.1 IndiaAI IBD ................................................................................................................. 10
+5.2 PMEC Committee ....................................................................................................... 10
+5.3 Verification entities for user eligibility approval ................................................... 10
+Monitoring and Leakage prevention ............................................................................... 12
+6.1 Input checks ................................................................................................................ 12
+6.2 Process checks ............................................................................................................ 12
+6.3 Transparency and tools ............................................................................................. 12
+iii
+--- PDF page 4 ---
+End-User Policy for AI Services on the Cloud
+7. 9. A. Accessibility and Usage ..................................................................................................... 14
+8. Payment Terms ................................................................................................................... 15
+Terms and Conditions ....................................................................................................... 16
+Annexure I: Sample form for applying for IndiaAI empaneled AI services .......... 17
+i. iii. Online Registration Form (This only needs to be filled the first time) .................. 17
+ii. Project Details ................................................................................................................. 18
+Estimated Bill of Materials ....................................................................................... 19
+iv
+--- PDF page 5 ---
+End-User Policy for AI Services on the Cloud
+Glossary of Terms
+AI Artificial Intelligence
+APAAR Automated Permanent Academic Account Registry
+BOM Bill of Materials
+CA Chartered Accountant
+CEO Chief Executive Officer
+CoE Centre of Excellence
+DIC Digital India Corporation
+DPIIT Department for Promotion of Industry and Internal Trade
+GPU Graphics Processing Unit
+HOD Head of Department
+IAIC IndiaAI Innovation Centre
+IBD Independent Business Division
+INR Indian Rupee
+IP Internet Protocol
+JS Joint Secretary
+LLP Limited Liability Partnership
+MD Mission Director
+ML Machine Learning
+MSH MeitY Startup Hub
+MSME Micro, Small and Medium Enterprises
+OCR Optical Character Recognition
+v
+--- PDF page 6 ---
+End-User Policy for AI Services on the Cloud
+OTP One-Time Password
+PG Postgraduate
+PMEC Program Monitoring and Evaluation Committee
+PPP Public-Private Partnership
+PSU Public Sector Undertaking
+UG Undergraduate
+VM Virtual Machine
+vi
+--- PDF page 7 ---
+End-User Policy for AI Services on the Cloud
+AI cloud services End-User Policy
+IndiaAI recognizes the rising demand for AI compute resource across industries and
+remains committed to promoting adoption of artificial intelligence to ensure global
+competitiveness. To democratize access to AI computing resources, IndiaAI has
+empaneled AI services on cloud and intends to offer AI compute infrastructure to
+policy outlines the guidelines for accessing and leveraging the empaneled AI services on
+academia, MSMEs, startups, research community, governments, public sector agencies
+and other entities registered and approved by IndiaAI. This AI cloud services end-user
+cloud.
+IndiaAI recognizes the evolving legal and regulatory environment surrounding AI and
+anticipates this policy will evolve. Users should regularly review and revisit this policy to
+stay abreast of any changes in the policy.
+1. IndiaAI Mission
+The IndiaAI Mission aims to create a robust ecosystem that accelerates AI innovation
+through strategic initiatives and collaborations spanning both public and private
+domains. By democratizing access to computing resources, enhancing data quality,
+nurturing homegrown AI expertise, attracting top talent, fostering industry partnerships,
+supporting startup ventures, promoting socially impactful AI projects, and emphasizing
+ethical practices, the mission seeks to foster responsible and inclusive growth within
+India’s AI landscape. Towards this, Ministry of Electronics, and Information Technology,
+MeitY, has established IndiaAI Independent Business Division (IndiaAI) under Digital
+India Corporation for implementing the IndiaAI mission
+The IndiaAI mission is poised to catalyse the AI ecosystem through its seven key pillars
+as mentioned below:
+a) IndiaAI Compute: Public AI cloud infrastructure will be set up in a PPP model
+with 10,000 or more GPU capacity. Further, an AI marketplace will be designed to
+offer AI as a service and pre-trained models to AI innovators.
+b) IndiaAI Innovation Centre (IAIC): The AI Innovation centre will develop and
+deploy indigenous Large Multimodal Models (LMMs) that will be trained on India-
+specific data.
+c) IndiaAI Datasets Platform: The IndiaAI Datasets Platform will be developed
+to improve access, quality, and use of public sector datasets to make it AI ready.
+d) IndiaAI Application Development Initiative: The IndiaAI Application
+Development Initiative will develop, scale, and promote the adoption of impactful
+AI solutions to effectively tackle significant problem statements.
+1
+--- PDF page 8 ---
+End-User Policy for AI Services on the Cloud
+e) IndiaAI FutureSkills: IndiaAI FutureSkills will mitigate barriers to entry into
+AI programs by focusing on all levels of higher education in AI. Further, Data and
+AI Labs will be set up in Tier 2 and Tier 3 cities across India, to impart
+foundational-level courses in Data and AI.
+f) g) IndiaAI Startup Financing: A spectrum of startup development stages starting
+from product development to commercialization will be supported.
+Safe & Trusted AI: This pillar will enable the implementation of Responsible AI
+projects including the development of indigenous tools and frameworks, self-
+assessment checklists for innovators, and other guidelines and governance
+frameworks
+For democratizing access to AI infrastructure critical for innovation and ensuring global
+competitiveness, IndiaAI is looking to empanel AI services on cloud and offer the services
+to academia, MSMEs, startups, research community, governments, public sector agencies
+and other entities approved by IndiaAI.
+2. IndiaAI empaneled AI cloud services
+The empanelled AI services on cloud being offered include –
+a) AI compute Instances - A VM instance equipped with a single AI compute unit
+or more than one AI compute unit instances with peer-to-peer connectivity.
+b) Network Services – Data transfer services that allow end users to access to
+public internet for both ingress and egress operations.
+c) Storage Services – Cloud-based services that allow users to store and manage
+data, files, and other digital assets. Following storage types would be offered –
+I. High Speed Block Storage / File Storage
+II. Object Storage
+d) AI platforms and other services – AI platform is a collection of software,
+tools, libraries, frameworks, services (including MLOps, LLMOps), workspaces
+and processes that allow developers and operations teams to design, develop,
+deploy and maintain AI applications. Other services include all those cloud services
+that are not part of the AI platform and that are used in developing foundational
+models or fine tuning the models or building the applications. E.g. PaaS services,
+AI services for translation, transliteration, OCR services, audio processing services,
+etc. All cloud services available on the empanelled agencies’ platform can be
+accessed by end users under this service type.
+2
+--- PDF page 9 ---
+End-User Policy for AI Services on the Cloud
+3. Eligibility for using IndiaAI empaneled AI services on cloud
+End users need to meet the below criteria and submit requested documents / data on the
+IndiaAI cloud portal to register and use the empaneled services.
+3.1 Researchers, Research Group and Academic Faculties
+This category applies to Independent AI researchers and AI researchers and faculty
+affiliated to academic institutions. This category also includes PhD students who have
+been awarded the IndiaAI fellowship
+Criteria Documents / Data to be provided
+during registration
+• The lead / sole researcher or faculty should
+have an h index greater than or equal to
+5
+OR
+• The lead / sole researcher or faculty should
+have published in a journal in ML/AI
+or allied domains with impact factor
+greater than 2.5
+Lead researcher / Sole researcher or
+Faculty profile -
+• Google Scholar profile with h-index /
+ORCID profile / Scopus Author ID
+• Profile of the AI researcher with the h-
+index, track of publication records
+(National / International AI journals /
+conferences) and experience in AI/ML
+and allied domains
+OR
+• The lead / sole researcher or faculty should
+have published research papers with
+minimum 150 citations (consolidated) in
+ML/AI or allied domains
+3.2 IndiaAI Fellowship Awardees
+This category applies to students in various UG/PG courses who are an IndiaAI fellowship
+awardee.
+Criteria Documents / Data to be provided
+during registration
+Students should be selected as a part of
+IndiaAI fellowship (Active fellowship)
+• Apaar ID against which fellowship was
+granted
+3
+--- PDF page 10 ---
+End-User Policy for AI Services on the Cloud
+• Email issued to student by IndiaAI
+confirming their fellowship against
+nomination
+3.3 Students
+This category applies to students in various K-12/UG/PG courses who are not IndiaAI
+fellowship awardees.
+Criteria Documents / Data to be provided
+during registration
+Students with projects in AI/ML
+• Apaar ID
+• Profile of the student with major/minor
+subjects, track of publication records
+(National / International AI journals /
+conferences) and/or projects in AI/ML
+and allied domains
+• Endorsement by appointed academic
+faculty verifier and endorser or IndiaAI
+CEO
+3.4 Startups & MSMEs
+This category applies to startups & MSMEs who are DPIIT registered and have either
+generated revenue or raised funds
+Criteria Documents / Data to be provided
+during registration
+Must be registered as a startup under the
+Startup India initiative or recognized by the
+Department for Promotion of Industry and
+Internal Trade (DPIIT)
+1. Valid DPIIT startup recognition
+certificate along with DPIIT ID
+2. Certificate of Incorporation as per
+Companies Act, 1956 or 2013
+OR
+LLP Act 2008/ Partnership Act, 1932
+OR
+A partnership firm registered under
+Indian LLP act 2008 and subsequent
+amendments thereto
+4
+--- PDF page 11 ---
+End-User Policy for AI Services on the Cloud
+OR
+A registered sole proprietorship (As per
+latest applicable Shops and
+Establishment Act)
+Experience in AI / ML
+Startup’s profile along with one or more of
+the below may be submitted in support of
+this criteria
+1. Citations for projects executed in the
+AI/ML space
+2. Patent certificates for patents secured
+in the field of AI/ML
+3. Resumes of director(s) /partner(s)
+including education qualification,
+professional experience, publications in
+reputed journals and other relevant
+experience.
+4. Awards / Recognition received by the
+startup
+Startup should have an annual revenue of INR
+50-200 Lacs
+OR
+Funding of INR 100 Lacs and above
+1. Work orders/ client certificates in
+support of ongoing / completed AI
+projects towards meeting the criteria
+2. OR
+Self-undertaking with details of funding
+received through equity investments or
+loan towards meeting this criterion with
+supporting documents
+3.5 Central and State Government ministries and departments/ PSUs /
+Government Section 8 firms or registered societies / Government
+agencies & entities
+This category applies to government entities willing to leverage the IndiaAI compute
+infrastructure
+Criteria Documentary Proof
+Government Approval for AI related project
+Letter of request from Director / Managing
+Director / General Manager / Authorized
+officer
+5
+--- PDF page 12 ---
+End-User Policy for AI Services on the Cloud
+3.6 Early-stage startup (pre-revenue / funding)
+This category applies to pre-revenue / funding startups.
+Criteria Documents / Data to be provided
+during registration
+Expertise in AI research.
+• Relevant experience - Founder(s) /
+permanent staff with experience of 4 years
+(In AI or similar domain) / research
+experience
+• Endorsement by CEO IndiaAI / JS rank
+officer and above
+3.7 Early-stage researchers
+This category applies to early-stage researchers who do not meet the criteria for research
+groups in 3.1
+Criteria Documents / Data to be provided
+during registration
+Academic credentials and work done in AI/ML
+and allied fields.
+• Apaar ID
+• Profile of the AI researcher with the h-
+index, track of publication records
+(National / International AI journals /
+conferences) and experience in AI/ML and
+allied domains
+• Endorsement – Head of Institute /
+Registrar / Head of Department /
+Research Guide / CEO IndiaAI
+3.8 Project details
+Apart from the above, interested & eligible end users need to provide details of the project
+for which they intend to use the empaneled AI cloud services. This should be submitted
+on an online form on the IndiaAI cloud portal. The format of the form would be as per
+Annexure I.
+6
+--- PDF page 13 ---
+End-User Policy for AI Services on the Cloud
+4. End user workflow and approval process
+Fig 4.1 – Compute Approval and Allocation Workflow
+The above diagram depicts the workflow for applying for and accessing the IndiaAI cloud
+services. The following sections describe each step of the flow in detail -
+4.1 End User registration with official / institute ID
+To access the IndiaAI compute platform users would be required to register on the
+IndiaAI compute portal with their name, institute / organization email address and
+mobile number. Email address and mobile number would be verified with an OTP.
+4.2 User submits documents for eligibility criteria check
+Users registering on the portal would be required to mandatorily submit the below
+details to verify their profile as part of the documents sought for establishing eligibility
+for access the IndiaAI compute infrastructure and approving their profile.
+a. APAAR ID for UG/PG students
+b. DPIIT recognition for startups
+c. Udhyam ID for MSMEs
+d. Google Scholar ID with h-index / ORCID ID / Scopus Author ID for researchers
+7
+--- PDF page 14 ---
+End-User Policy for AI Services on the Cloud
+e. IndiaAI fellowship awardee
+These IDs would be verified electronically, and specific data fields required for further
+eligibility checks would be fetched.
+4.3 User submits project proposal
+User submits project proposal in the format outline in Annexure I. Complete details
+for the project as sought in the annexure, including the project BOQ need to be
+submitted.
+4.4 GPU allocation based on GPU hours, GPUs and subsidy sought
+GPU allocation workflow would be determined based on the user’s eligibility criteria,
+GPU hours and no. of GPUs sought and whether the user has sought subsidy or not.
+4.5 GPU hours sought by user are equal to or below 5000 GPU hours, with
+max 50 GPUs requested and user has not sought subsidy
+• Researcher - In such a scenario, if a researcher has an h-index of greater than 5
+or have greater than 150 citations, they would be allocated GPU instances
+automatically, based on availability.
+• IndiaAI Fellowship awardee – In case the end user requesting compute is an
+IndiaAI Fellowship awardee (B.Tech / M.Tech / PhD) they would be allocated GPU
+instances automatically, based on availability.
+• Students, Early-stage Researchers & Faculties – The application from
+other students and researchers would be verified and endorsed on a digital
+platform (IndiaAI compute portal) by a verification and endorsement faculty/ies
+appointed by the institute.
+• Startups including early-stage startups – The applications from startups,
+including early-stage startups would be reviewed by MSH CoEs appointed by
+IndiaAI for this activity.
+In case the documents submitted by the end user towards meeting the eligibility
+criteria have not been verified and approved, they would be done at this stage.
+Eligibility documents would be verified once every 2 years.
+4.6 GPU hours sought by registered user are greater than 5000 GPU hours
+or GPUs sought is greater than 50 or end user has sought subsidy
+• Users can only seek requests under this workflow if their profile is already
+approved on the platform for accessing AI compute.
+8
+--- PDF page 15 ---
+End-User Policy for AI Services on the Cloud
+• Requests received between the 1st and the 25th of the month would be collated and
+submitted to the Program Monitoring and Evaluation Committee (PMEC) for
+review.
+• PMEC would meet twice to review and process the applications received (Last week
+of the running month and first week of the next month).
+• Applications would be reviewed based on a project evaluation framework and
+subsidy allotment framework devised by the PMEC.
+• Project may be evaluated for capacity and subsidy allotment based on the below
+parameters –
+Project parameters
+o Clarity in project description
+o Nature of Project – Research (Fundamental / Applied) / Application Dev
+o Similar projects done elsewhere (Project uniqueness)
+o National Importance project (May impact 10,00,000 or more citizens when
+deployed or May lead to an economic impact of 500 crores or more)
+o Critical sector / social good alignment (Aligned to SDGs)
+Research / Dev Team experience
+o Patents granted / applied for in AI/ML or allied research area
+o Publications (h-index) for any team member
+o Work orders in AI/ML (Value more than 5 Lac) for applying entity
+o Professional Experience in AI/ML for any team member
+o Past performance/ experience on IndiaAI Compute cloud
+• Based on the above, PMEC would take a decision to allocate the sought capacity
+(Go / No Go) and/or award subsidy between 0 to 50%
+• The list of projects awarded capacity and the subsidy percentage approved would
+be published by PMEC on the 10th of the next month.
+9
+--- PDF page 16 ---
+End-User Policy for AI Services on the Cloud
+5. Governance structure and implementing entities
+5.1 IndiaAI IBD
+IndiaAI Independent Business Division (IndiaAI) has been incorporated under Digital
+India Corporation for implementing the IndiaAI mission. IndiaAI mission will be
+responsible for implementation of this end user policy and making any updates to the
+policy in the future,
+5.2 PMEC Committee
+IndiaAI will constitute a Program Monitoring and Evaluation Committee (PMEC) to
+monitor and make any recommendations to IndiaAI on the IndiaAI compute platform.
+PMEC would review the requests from the end users to consume the empaneled AI
+services on cloud and approve the suitable applications above a pre-defined limit
+(Greater than 5000 GPU hours or more than 50 GPUs requested) or applications
+seeking a subsidy on their cloud BOM.
+PMEC would create a project evaluation and a subsidy allotment framework to review
+and evaluate the requesting entity’s credentials and project proposal and determine if
+their AI compute request should be approved. Additionally, they will also determine
+the quantum of subsidy that would be allocated to each requesting party.
+A subsidy maximum up to 40% will be provided to the eligible end users which will be
+borne by IndiaAI mission. PMEC will decide on the subsidy amount on the user
+proposals after evaluation.
+5.3 Verification entities for user eligibility approval
+IndiaAI would appoint verification entities specific to the entity type to evaluate and
+determine if their profile may be approved for accessing AI compute on the platform
+in the future. These entities would also review approve any non-subsidy compute
+requests lesser than 5000 GPU hours or requiring less than 50 GPUs. Below are the
+verification authorities for each entity type –
+a. For researchers with h-index greater than or equal to 5 or more than 150 citations,
+compute requests would be auto approved post verification.
+b. For IndiaAI fellowship students, requests would be auto approved post verification
+with the IndiaAI fellowship database.
+c. For other students and researchers, requests would be verified and approved on a
+digital platform (IndiaAI compute portal) by a verification and endorsement
+faculty authorized by their academic institute. Faculties and/or institute staff may
+submit a request to be onboarded on the IndiaAI compute portal as a verification
+10
+--- PDF page 17 ---
+End-User Policy for AI Services on the Cloud
+and endorsement faculty along with an endorsement letter from the HOD /
+Director / Dean / Registrar or equivalent.
+d. An exception committee would be setup
+e. For startups including early-stage startups, requests would be reviewed and
+approved by the 49 MeitY Startup Hub CoEs. Requests from the startups would be
+forwarded to the applicable CoE based on their geographic location or industry
+domain.
+11
+--- PDF page 18 ---
+End-User Policy for AI Services on the Cloud
+6. Monitoring and Leakage prevention
+Below tools and checks would be implemented to ensure that the empaneled AI services
+are not misused for any purpose apart from the intended use for which approval has been
+sought by the project team-
+6.1 Input checks
+Input Checks would be carried out while onboarding end users as a part of eligibility
+criteria to ensure credibility
+a. Past experience in AI – Work orders, founders resume, researcher profile
+b. Technical Team Size and Profile – Resumes of team members and
+experience
+c. d. Previous experience with GPU usage – Cloud invoices for IndiaAI cloud
+Approval from authorized personnel (In case above credentials are not present)
+i. Endorsement from appointed faculty officer for academic researchers
+ii. IndiaAI fellowship letter
+iii. Letter from Director / MD / Authorized officer for Govt entity with
+justification
+e. Validate use case / proposed implementation with experts (PMEC)
+6.2 Process checks
+These are security controls that would be implemented while end users are leveraging the
+empaneled services to prevent misuse
+a. IP address whitelisting for instances to prevent misuse and unauthorized
+access
+b. Login only with secure authentication mechanisms - Multi-factor
+authentication and user activity logging
+c. Role based access controls
+d. Geofencing
+6.3 Transparency and tools
+Tools and practices would be implemented to ensure transparency in the onboarding
+process and track any misuse
+a. Public end user list with details of infrastructure and subsidy allocated to end
+users for transparency
+12
+--- PDF page 19 ---
+End-User Policy for AI Services on the Cloud
+b. Periodic audits of projects and infrastructure by PMEC
+c. Frequent logging of utilization metrics to examine deviation (unexpected
+increase or decrease in load / constant load)
+d. Use of tools for log monitoring and visualizing utilization
+13
+--- PDF page 20 ---
+End-User Policy for AI Services on the Cloud
+7. Accessibility and Usage
+a. Access & permission - Subject to the usage policy, IndiaAI may grant limited,
+personal, nonexclusive, revocable, non-transferable permission to access and use the
+AI compute resource solely for academic, research and scientific purposes related to
+the end user’s project (and not for service bureau, time-sharing or similar services).
+User shall not exceed the scope of access to use the AI compute resources, and user
+shall not provide User’s Account information to another User for any reason,
+including, without limitation, in order for such other User to access additional features
+if any. Users are not permitted to use the access provided on behalf of third parties
+without the written consent of competent IndiaAI authority.
+b. Accessibility and maintenance of resources - CSPs shall be solely responsible
+for providing, maintaining, and ensuring the compatibility of all hardware, software,
+electrical and other physical requirements necessary for user’s accessibility to the AI
+cloud services including ensuring uptime as per notified SLAs
+c. Service unavailability and non-accessibility - User understands and agrees that
+IndiaAI would not be responsible for ensuring availability and accessibility to the
+empaneled AI cloud services. Empaneled agencies would be solely responsible for
+ensuring availability and accessibility as per the SLAs defined in the AI cloud services
+empanelment RFE.
+d. Account - In order to access the AI compute resource, user may be required to
+register with IndiaAI and select a username and password (a User’s “Account”). This
+account shall be used only by User, and User may not share or otherwise disclose
+User’s Account information to any other party. User shall be responsible for the
+security, confidentiality, and integrity of User’s Account, any authorized or
+unauthorized access and use of User’s account by any person, and all information that
+User receives, transmits through or stores using or through the access. If, at any time,
+User learns or suspects that User’s Account information was disclosed or made known
+to any person other than User, User agrees to immediately notify IndiaAI. User agrees
+to keep User’s Account information current. User agrees not to access the allocated
+compute resource through any technology or means other than through User’s
+Account.
+e. f. Monitoring - IndiaAI reserves the right to monitor User accounts.
+Privacy - User agrees that IndiaAI may collect, store, and use data about Users, User’s
+system, and User’s use of the AI Compute resource.
+14
+--- PDF page 21 ---
+End-User Policy for AI Services on the Cloud
+8. Payment Terms
+a. IndiaAI would make the payments for the utilized AI services of the approved projects
+from the end users to the extent of the approved subsidy subject to the conditions laid
+in section 5 (“Terms and conditions”).
+b. End users would have to bear the additional costs over and above the amount
+subsidized by IndiaAI. End users need to make payments to the empaneled AI cloud
+service provider as per the service provider’s billing and payment cycle.
+c. For the AI compute, network services, storage services, and AI platform, the prices
+published as per the empaneled rate list would be used for billing based on the actual
+consumption.
+d. For the ‘Other AI services’, the prices would be continuously updated in-line with the
+changes in the list price published for general public and the discovered discount rate.
+The updated prices on the day would be considered for billing based on the actual
+consumption. Empaneled AI service cloud providers may choose to bill the end users
+at a discount rate higher than the empaneled discount rate. Any other AI services that
+are not listed during empanelment but added subsequently and are being offered at
+the discount rate mentioned in the financial proposal, would be paid at the actual
+discounted rate.
+e. The subsidy component for each of the service is calculated using the approved
+subsidy percentage applied on the actual discounted price offered for the project (+
+service) request.
+f. IndiaAI would make payments for the subsidy component of services quarterly in a
+post-paid manner to the empaneled AI cloud services provider
+g. IndiaAI would not be responsible for payment of any cloud services consumed by the
+end user beyond the maximum approved list of services/value. IndiaAI would not be
+responsible for the payment of any cloud services consumed which are not empaneled
+as part of this empanelment or any cloud services which IndiaAI has not received /
+approved for an end user. These would be borne by end users
+h. Approvals for using the IndiaAI empaneled cloud services would have a validity of 30
+calendar days. End users need to mandatorily start using their approved services
+within this period. IndiaAI would not make payments for any expired approvals /
+requests.
+i. IndiaAI would not make any payments towards unused reserved AI compute instance
+and the empaneled agency should invoice the end-user for the entire amount
+15
+--- PDF page 22 ---
+End-User Policy for AI Services on the Cloud
+9. Terms and Conditions
+a. b. c. d. e. End users can submit project specific requests for accessing the IndiaAI empaneled
+AI cloud services on the IndiaAI cloud portal. These requests would be evaluated and
+approved / rejected by a Program Monitoring and Evaluation Committee. For each
+request and the service, IndiaAI would pay the approved subsidy percentage directly
+to the service provider
+The project/service request approvals would have a validity of 23 calendar days before
+which the end users are expected to consume the services. The users would be notified
+of the expiry and will be given a grace period of additional one week in case they have
+started the project but couldn’t complete the full utilization. All the unutilized
+approvals would expire automatically. In case of services reserved (reserved instances)
+for greater than 1 month period, the end users need to start consuming their services
+before the end of the 30-day approval period.
+IndiaAI wouldn’t pay the subsidy for any unused capacity for e.g, in case of a reserved
+instance, IndiaAI would pay subsidy to the extent of utilized hours, the cost of the
+unused reserved AI compute would be borne by the end-user.
+IndiaAI wouldn’t pay the subsidy for the services from the expired project (+service)
+requests.
+A service request would expire if the empaneled AI cloud services provider isn’t able
+to provision AI compute within a stipulate time period. A demand of upto 100 AI
+compute hours shall be met immediately, upto 500 AI compute hours shall be met
+within 2 days and demand of more than 500 hours of AI compute shall be met within
+7 days.
+16
+--- PDF page 23 ---
+End-User Policy for AI Services on the Cloud
+A. Annexure I: Sample form for applying for IndiaAI empaneled AI services
+i. Online Registration Form (This only needs to be filled the first time)
+• Name as per Aadhar
+• Designation
+• Official Email ID
+• Communication Address
+• Mobile number
+• Applying as - Individual / Organization
+• If, Individual - Independent or Academic researcher / IndiaAI Fellowship Student
+Researchers
+i) Profile (Resume) of the AI researcher with the track of publication records
+(National / International AI journals / conferences)
+ii) Google Scholar ID / ORCID / h-index / Research Interest Score
+iii) Link to public GitHub repo
+iv) Affiliated Organization Name
+v) Affiliated Organization Address
+vi) Affiliated Organization Type – Private Entity / R&D Firm / Independent
+Researcher
+IndiaAI Fellowship student
+i) Letter issued to student by IndiaAI confirming their fellowship against nomination
+ii) University Name
+iii) College Name
+iv) Roll No
+v) Course/ Degree being pursued
+vi) Course Duration
+vii) Expected Year of Graduation
+• If, Organization - Government entity / PSU/ Govt. Section 8 firms or societies /
+Startup / MSME
+17
+--- PDF page 24 ---
+End-User Policy for AI Services on the Cloud
+Government entity / PSU/ Govt. Section 8 firms or societies
+i) Organization Name
+ii) Organization Address
+iii) Government Order or equivalent for AI based project(s) / initiative(s) for which
+the entity is seeking access to AI services from IndiaAI cloud OR Letter of request
+from Director / Managing Director / Authorized officer
+Startup
+i) Startup Name
+ii) Startup Communication Address
+iii) Valid DPIIT startup recognition certificate
+iv) Certificate of Incorporation as per Companies Act, 1956 or 2013
+v) OR LLP Act 2008/ Partnership Act, 1932 OR a partnership firm registered under
+Indian LLP act 2008 and subsequent amendments thereto / OR a registered sole
+proprietorship (Shops and Establishment Act)
+vi) Shareholding pattern certificate from CA (In case the firm is registered)
+vii) Domain of Expertise
+viii) Work orders or client certificates in support of ongoing / completed AI projects in
+last 5 years (optional)
+ix) Patent certificates for patents secured in the field of AI/ML (optional)
+x) Resumes with previous relevant experience of director(s) /partner(s)
+ii. Project Details
+Details of Project / Initiative proposed to be executed with IndiaAI empaneled AI
+cloud services
+Project / Initiative Title:
+Description:
+18
+--- PDF page 25 ---
+End-User Policy for AI Services on the Cloud
+New Project / Renewal:
+Technical Approach:
+Envisioned Impact / End Benefit:
+Industry Domain:
+Project Start Date: Project End Date:
+Team Leader / Individual Researcher Name:
+Team Leader / Individual Researcher Area of Expertise:
+Previous Projects:
+Team Members Name & Role (Apart from Team Leader):
+Summary of Team Member’s Previous Experience:
+Funding Source:
+Funds budgeted for infrastructure:
+iii. Estimated Bill of Materials
+Quantity
+(in hours
+Price per unit
+S
+Service
+AI cloud service
+/ kb /
+as per rate
+No.
+code
+description
+days), as
+chart
+applicable
+19
+Cost
+--- PDF page 26 ---
+End-User Policy for AI Services on the Cloud
+Signature of Applicant:
+Name of Applicant:
+Designation:
+Date:
+Place:
+20

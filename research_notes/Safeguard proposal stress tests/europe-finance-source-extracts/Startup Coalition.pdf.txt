@@ -1,0 +1,250 @@
+
+PAGE 1
+www.startupcoalition.io
+Ofgem: AI Technical Sandbox
+March 2026
+ABOUT STARTUP COALITION
+Startup Coalition is the policy voice of UK tech startups and scaleups in Westminster. Since
+2010, we have worked to engage on behalf of tech startups in public policy debates in the
+UK across a range of critical priority issues including access to finance, immigration and
+skills, and technology regulation.
+We fight for a policy environment that enables early-stage British tech companies to grow,
+scale and compete globally. We have over 4000 startups in our network and have been
+instrumental in building proactive coalitions of businesses and investors on issues that are
+integral to the health of the UK’s startup ecosystem.
+The Startup Coalition works directly with the Government across a range of issues. We
+represent the startup community on the Smart Data Council.
+GENERAL REMARKS
+Startup Coalition welcomes the opportunity to respond to the consultation on the AI
+Technical Sandbox. We recognise and support the Government’s intention to create a
+controlled environment where AI applications can be tested against real operational
+challenges. However, for the startup community, the current regulatory framework in the
+energy sector often feels like a legacy fortress – one that celebrates innovation in theory but
+restricts it in practice through high barriers to entry and a "whack-a-mole" approach to digital
+reform.
+At its core, this consultation is not simply about testing software. It is about how the UK
+intends to build the digital nervous system of its future energy infrastructure. In an economy
+increasingly defined by the transition to Net Zero, AI is no longer a peripheral efficiency tool;
+it is the foundational technology required to manage a flexible, decarbonised grid. Yet, for the
+UK’s most promising scaleups, the cost of regulatory friction and the inability to access
+"real-world" testing environments are now binding constraints on growth. The difficulty of
+validating new technologies in live settings means that even technically superior solutions
+face a "Valley of Death,
+" where they fail to move beyond proof-of-concept, not due to a lack
+of merit, but due to a lack of a bridge to the grid.
+The UK currently faces a stark innovation challenge. While we possess a world-leading
+ecosystem of AI and climate-tech startups, the energy sector remains structurally tilted
+toward established, asset-heavy incumbents. This creates a fundamental policy
+contradiction: the Government looks to startups to deliver growth and decarbonisation, yet
+the regulatory "front door" is often locked behind a gatekeeper dynamic where innovators
+must seek permission from the very incumbents they seek to disrupt. If the objective of the
+AI Technical Sandbox is truly to unlock the potential of the UK’s innovation ecosystem, then
+it must move beyond a "corporate-led" model of participation.
+1
+PAGE 2
+A well-designed sandbox must be more than a regulatory experiment; it must be a credible
+signal to founders and investors that the UK is open for digital business. This requires a
+"startup-by-default" mindset, one that provides direct access to high-fidelity system data,
+removes the need for corporate "sponsors" to lead pilots, and ensures that a successful trial
+isn't just a technical win, but a fast-track to market-wide deployment. Without this, the
+sandbox risks becoming an experimentation playground for the status quo rather than a
+launchpad for the future of the UK energy system.
+CONSULTATION RESPONSE
+Eligibility and participation
+Q1. Do you agree with the proposed eligibility criteria for lead Participants (licensees,
+market participants, and operators of essential services) and the encouragement of
+partnerships with technology providers, academia, and other innovators? Please
+explain your reasoning.
+Startup Coalition disagrees with the current proposal to restrict "Lead Participant" status
+exclusively to licensees and established market participants. This restriction creates a
+significant structural barrier by establishing a gatekeeper dynamic where innovative AI
+startups are forced to secure a "corporate sponsor" before they can even access the testing
+environment. In many tech-adjacent sectors, the most transformative solutions come from
+"outsider" firms that challenge the status quo; requiring a startup to partner with a potentially
+risk-averse incumbent introduces a conflict of interest that may filter out truly disruptive
+innovations.
+Furthermore, the timeline for a startup to negotiate a partnership agreement with a large
+utility often exceeds 6 to 9 months, which is incompatible with the 18-month funding cycles
+typical of venture-backed startup and scaleup. To foster a truly competitive and innovative
+market, Ofgem should amend the criteria to allow technology providers to act as Lead
+Participants, with the regulator facilitating the necessary system access.
+Use case selection
+Q2. Are the proposed use case selection criteria (including commercial neutrality,
+innovation, sector impact, regulatory uncertainty, testability, governance, and data
+access) appropriate and sufficient to ensure a fair and transparent process? Are there
+other criteria, safeguards, or considerations we should include?
+While the proposed criteria are broadly appropriate, we believe they lack sufficient emphasis
+on "Software-as-Infrastructure" and commercial velocity. Current regulatory frameworks in
+the energy sector tend to reward capital-intensive hardware projects over more efficient,
+software-led optimisation tools; therefore, selection criteria must explicitly value digital
+solutions that can achieve grid-scale impacts without the need for traditional "concrete and
+steel" investments. We also have concerns that a strict interpretation of "Commercial
+Neutrality" could inadvertently penalise startups attempting to prove the commercial viability
+of a new business model to potential investors.
+2
+PAGE 3
+By adding a "Speed to Market" criterion, Ofgem can ensure the sandbox prioritises solutions
+that are ready to be deployed across the wider grid within a year of the pilot's conclusion.
+Alignment with other initiatives
+Q3. Is the proposed approach for the AI Technical Sandbox clearly distinct and
+complementary to other initiatives such as Ofgem’s AI Reg Lab, Energy Regulation
+Sandbox, Future Regulation Sandbox, UKRI-funded and SIF/NIA initiatives, NESO,
+FCA regulatory sandbox experience, and DSIT AI Growth Lab? Are there other
+relevant initiatives or examples of best practice that Ofgem should consider, and if so,
+which ones?
+The consultation outlines useful links between the AI Technical Sandbox and other initiatives
+such as the AI Regulatory Laboratory, the Energy Regulation Sandbox, and the Future
+Regulation Sandbox. However, the effectiveness of this ecosystem will depend on clear
+progression and intersection pathways between these mechanisms. From a startup
+perspective, the key question is what happens after a sandbox trial succeeds. If a
+technology demonstrates value during the sandbox phase but requires regulatory flexibility,
+operational deployment, or rule changes to scale, there should be a clear route to the next
+stage.
+We also recommend that Ofgem clearly define how successful projects can progress from
+the AI Technical Sandbox into live trials, regulatory experimentation, or commercial
+deployment. Without this progression pathway, there is a risk that innovative projects remain
+stuck in pilot phases rather than contributing to meaningful system change. This would also
+maximise the market-building capacity of the sandbox and demonstrate the regulator’s
+commitment to economic growth.
+Engagement and governance
+Q4. Does the proposed governance structure (steering group, working groups, open
+forums) provide sufficient oversight, transparency, and opportunities for stakeholder
+engagement? Are there other mechanisms or safeguards that should be included to
+ensure effective governance and knowledge sharing?
+The proposed governance structure is solid in theory, but requires mandated representation
+for the startup and scaleup community to prevent "incumbent capture.
+" Traditional energy
+sector governance is often optimised for large corporations with dedicated "Regulatory
+Affairs" departments, which can inadvertently exclude the voices of lean, high-growth
+companies that do not have the headcount to attend multiple long-form consultative
+sessions. To ensure that the sandbox remains agile and responsive to the rapid iteration
+cycles of AI development, Ofgem must reserve seats on the Steering Group specifically for
+active technology founders or senior engineers from the startup ecosystem.
+Additionally, we advocate for "Asynchronous Governance" models, utilising digital platforms
+for ad-hoc updates and feedback rather than relying solely on working groups and other
+formal feedback fora. This approach ensures that transparency is inclusive and that the
+sandbox outcomes reflect the priorities of the innovators building the future energy system,
+rather than just the incumbents maintaining the current one. Startup founders do not have
+3
+PAGE 4
+infinite time available to spend in regulatory working groups.
+Timelines and next steps
+Q5. Are the proposed next steps for developing and launching the pilot clear, and is
+there anything further we should consider as we refine the timeline?
+While the proposed steps are clear, the timeline must prioritise "administrative velocity" to
+align with the extreme financial and operational pressures faced by early-stage companies.
+Long "dead periods" between the application phase, selection, and the commencement of
+testing represent an existential risk for startups that operate on limited runways. We
+recommend that Ofgem implement a "Rolling Admission" or "Fast-Track" model for
+companies that have already secured private venture capital, as this funding serves as a
+robust external validation of the technology’s potential and investor readiness.
+To further reduce friction, the regulator should provide pre-approved, standardised legal
+templates and participation agreements. Negotiating bespoke liability and intellectual
+property terms for a temporary trial is a significant drain on a startup's limited legal and
+financial resources; providing "off-the-shelf" terms would allow companies to enter the
+sandbox in weeks rather than months, maximising the 12-month pilot window.
+Ethics and responsible AI
+Q6. Does the consultation and proposed pilot sufficiently address ethical
+considerations (fairness, transparency, responsible use, consumer trust) in line with
+Ofgem’s AI guidance? Are there further steps we should take to embed ethics and
+safety in the sandbox?
+Startup Coalition believes that while the consultation rightly highlights crucial ethical
+considerations, the approach to implementing them must reflect the pace of the technology it
+seeks to regulate. We must recognise that speed and innovation are critical to delivering
+positive outcomes for the energy sector; unnecessarily delaying the deployment of AI that
+could optimise the grid, lower bills, and accelerate Net Zero carries its own risks.
+If the sandbox defaults to traditional,
+"document-heavy" compliance, it risks stifling the very
+innovation it seeks to foster. Onerous requirements for lengthy narrative ethics assessments
+disproportionately favour large incumbents with extensive compliance departments and act
+as an administrative "founder tax" on lean startup teams. To ensure the sandbox is
+accessible and effective, we must shift the paradigm from subjective, narrative-based
+compliance to rigorous, technical verification.
+To achieve this,
+"ethical concerns" should be approached as technical parameters that
+require precise, quantifiable metrics rather than subjective, qualitative reviews. Terms like
+"fairness" and "transparency" should be translated into measurable thresholds such as
+statistical parity across demographic datasets, bounded error rates, or specific algorithmic
+explainability scores. Startups should be empowered to prove the safety and fairness of their
+models with data, rather than documentation. Instead of asking a founder to write an
+extensive report on responsible use, Ofgem should embed "Responsible AI" directly into the
+sandbox’s technical infrastructure by providing automated testing suites. By running models
+4
+PAGE 5
+against standardised, regulator-held datasets, participants can detect bias or safety issues in
+an objective, data-driven manner.
+Furthermore, Ofgem should embrace modern, tech-native methods for startups to
+demonstrate their ethical compliance and safety. Instead of relying solely on traditional pre-
+and post-test narrative reviews, the sandbox could adopt the following mechanisms:
+●
+●
+●
+●
+"Compliance-as-Code" Test Suites: Instead of asking founders to write extensive
+reports on responsible use, Ofgem should provide open-source ethical test scripts.
+Startups can plug these directly into their Continuous Integration/Continuous
+Deployment (CI/CD) pipelines to automatically check models for bias and safety
+thresholds with every code update.
+Standardised "Model Cards": Ofgem should accept machine-readable Model Cards,
+concise, auto-generated summaries akin to "nutritional labels" that explicitly list a
+model's training data bounds, performance limitations, and tested bias metrics in
+place of bespoke, narrative ethics impact assessments.
+"Golden Dataset" Benchmarking: Ofgem should provide a standardised, synthetic
+dataset containing known edge-cases and bias traps. Startups can objectively
+demonstrate fairness simply by running their algorithm against this dataset and
+submitting the output logs.
+API Telemetry & Read-Only Dashboards: Rather than static, point-in-time reviews,
+startups could provide Ofgem with read-only access to a live metrics dashboard. This
+gives the regulator real-time, quantifiable proof of the model's safety metrics and
+"data drift" as it operates within the sandbox.
+Stakeholder support
+Q7. Do you have suggestions for how Ofgem can best support stakeholders
+throughout the pilot and beyond?
+For startups developing new technologies, the most important question when considering
+participation in a regulatory sandbox is what happens after the experiment ends. While
+sandboxes are valuable for generating technical and regulatory learning, their impact is
+limited if successful trials do not translate into real-world deployment.
+Ofgem can therefore best support startups by ensuring that the AI Technical Sandbox
+provides clear and credible pathways from experimentation to adoption.
+Where sandbox trials demonstrate clear benefits for consumers or the energy system,
+Ofgem should consider how the outcomes can inform regulatory guidance, market
+frameworks, and operational practices across the sector. Startups often struggle not
+because their technologies lack technical viability, but because there is no clear mechanism
+through which regulators and market actors translate successful experimentation into
+regulatory clarity or market uptake.
+Providing visibility on how successful projects can progress beyond the sandbox will
+significantly improve confidence among innovators and investors. This could include
+outlining how sandbox learnings may inform future regulatory guidance, identifying routes
+into other regulatory mechanisms such as live trials where appropriate, or highlighting
+5
+PAGE 6
+opportunities for further collaboration with system operators, networks, and market
+participants.
+Greater transparency around these pathways would help ensure that sandbox participation
+is seen not only as a regulatory experiment, but as a meaningful step toward deployment
+within the energy system.
+By focusing on clear routes from testing to adoption, Ofgem can ensure that the AI Technical
+Sandbox becomes not only a valuable regulatory learning tool, but also a practical
+mechanism for enabling startups to contribute to the future of the UK energy system.
+General feedback
+Q8. Do you have any other comments, suggestions, or concerns regarding the
+proposed pilot, the consultation process, or the expected outcomes? Please provide
+evidence, examples, or reasoning to support your responses wherever possible.
+Startup Coalition strongly supports the creation of the AI Technical Sandbox and believes it
+has the potential to play an important role in enabling innovation in the UK energy system.
+However, we must emphasise that the sandbox’s success should not be measured solely by
+the total number of trials conducted or reports produced. Instead, the initiative should be
+evaluated based on whether it tangibly improves the ability of startups to test and deploy
+innovative technologies within the live energy system, and the degree to which it increases
+the economic growth opportunity of energy innovation in the UK. Many startups can
+demonstrate technical value in isolation but struggle to access the operational environments,
+regulated counterparties, and procurement opportunities needed to scale their solutions into
+viable businesses.
+If designed effectively, this sandbox can help close this critical gap by providing structured
+opportunities for testing and deep regulatory engagement that would otherwise be
+inaccessible to small firms. Ensuring that the sandbox remains truly accessible to startups
+and early-stage innovators will therefore be essential to its ultimate impact. By removing the
+traditional barriers of entry and providing a clear "path to reform" for successful pilots, Ofgem
+can help unlock the full potential of the UK’s innovation ecosystem to support a more
+efficient, resilient, and decarbonised energy system.
+6

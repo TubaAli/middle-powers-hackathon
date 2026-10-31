@@ -1,0 +1,863 @@
+
+PAGE 1
+OFFICIAL
+Decision
+AI technical sandbox consultation outcome
+Publication date: 3 June 2026
+Contact: Jonathan Thurlwell
+Team: Emerging Technologies Team
+Email: EmergingTechnologies@ofgem.gov.uk
+1
+OFFICIAL
+PAGE 2
+OFFICIAL
+© Crown copyright 2026
+The text of this document may be reproduced (excluding logos) under and in
+accordance with the terms of the Open Government Licence.
+Without prejudice to the generality of the terms of the Open Government Licence, the
+material that is reproduced must be acknowledged as Crown copyright and the
+document title of this document must be specified in that acknowledgement.
+This publication is available at www.ofgem.gov.uk. Any enquiries regarding the use and
+re-use of this information resource should be sent to psi@nationalarchives.gsi.gov.uk.
+2
+OFFICIAL
+PAGE 3
+OFFICIAL
+Contents
+Executive summary ............................................................................................. 4
+Purpose and scope .................................................................................................. 4
+Summary of consultation feedback ........................................................................... 4
+Ofgem’s decision ..................................................................................................... 5
+1. Introduction .................................................................................................... 6
+Context and related publications .............................................................................. 6
+Decision-making stages ........................................................................................... 9
+2. Consultation outcome and Ofgem’s response ................................................ 10
+Response themes .................................................................................................. 11
+3. Proposed Approach ....................................................................................... 13
+Purpose and scope ................................................................................................ 13
+Delivery model ....................................................................................................... 13
+Infrastructure and testing environment .................................................................... 13
+Data approach ....................................................................................................... 13
+Governance and assurance .................................................................................... 13
+Use case selection and prioritisation ....................................................................... 14
+Outputs and learning .............................................................................................. 14
+Pathways to implementation .................................................................................. 14
+Pilot delivery milestones ......................................................................................... 14
+Next steps ............................................................................................................. 14
+Send us your feedback ...................................................................................... 16
+Appendix 1. Consultation respondents ......................................................... 17
+Appendix 2. Consultation questions and responses ....................................... 18
+3
+OFFICIAL
+PAGE 4
+OFFICIAL
+Executive summary
+Purpose and scope
+Ofgem consulted on the proposed design of an artificial intelligence (AI) technical
+sandbox to support the safe and responsible adoption of AI within the energy sector.
+The AI technical sandbox is a structured pilot through which selected participants test
+defined AI use cases in a controlled testing environment that is separate from live
+operational systems and does not affect real consumers or energy services, using
+agreed data and evaluation criteria to generate evidence on system behaviour, risks
+and regulatory implications.
+The sandbox does not constitute regulatory approval or endorsement of any solution.
+Participation does not imply that a use case is compliant with regulatory requirements
+or suitable for deployment, and any outcomes from testing are intended to inform,
+rather than determine, future regulatory or operational decisions.
+For the purposes of this pilot, ‘technical testing’ refers to the structured evaluation of AI
+systems in a bounded environment using representative data and defined scenarios.
+This includes assessing AI system behaviour, outputs, performance and explainability
+under controlled conditions, alongside testing elements of data pipelines and
+evaluating integration approaches and operational processes in a simulated or
+representative context.
+The objective of the AI technical sandbox pilot is to support responsible innovation in
+the energy sector while protecting consumers, maintaining system resilience and
+generating practical evidence to inform future regulatory guidance and policy.
+For the purposes of this pilot, ‘technical testing’ refers to the structured evaluation of AI
+systems in a bounded environment using representative data and defined scenarios.
+This includes assessing AI system behaviour, outputs, performance and explainability
+under controlled conditions, alongside testing elements of data pipelines and
+evaluating integration approaches and operational processes in a simulated or
+representative context.
+Summary of consultation feedback
+Consultation responses demonstrated strong support for the creation of an AI technical
+sandbox, with stakeholders recognising the value of a structured, regulator-led
+mechanism to test AI use cases under controlled conditions.
+Respondents emphasised the importance of generating structured and meaningful
+evidence, including the need to assess AI systems within end-to-end workflows as far
+as feasible within a controlled environment, rather than focusing solely on model
+performance. Stakeholders broadly supported the proposed objectives, eligibility
+model, use case selection approach and governance framework.
+4
+OFFICIAL
+PAGE 5
+OFFICIAL
+Feedback focused primarily on implementation detail, including the need for clear
+participation guidance, strong data governance and assurance, a risk‑based and
+proportionate approach to governance and safeguards, with more rigorous
+requirements for AI use cases affecting critical national infrastructure or system‑critical
+operations, clarity on timelines and expectations, and the importance of embedding
+ethical and responsible AI considerations throughout the pilot.
+Ofgem’s decision
+Having considered the consultation responses and Ofgem’s statutory duties, Ofgem
+has decided to proceed with establishing the AI technical sandbox as a 12-month pilot.
+The pilot refers to the overall programme window within which Ofgem may run one or
+more time-limited sandbox testing rounds, rather than a continuously open testing
+environment. This approach is intended to provide flexibility, enable learning between
+phases, and manage cost and risk appropriately.
+The pilot is expected to commence in late Autumn 2026, once participation guidance
+has been published and governance arrangements are in place. Following this, the
+initial testing rounds will be undertaken as part of the pilot, reflecting a phased and
+structured approach to delivery.
+During the pilot, Ofgem will monitor progress and reflect on learning from sandbox
+activity as part of its wider AI and innovation work.
+Any decisions on future development, expansion or longer-term arrangements will be
+subject to further consideration and appropriate governance. Ofgem intends to publish
+a summary of lessons learned following the conclusion of the pilot, expected by the end
+of 2027, to support transparency and contribute to wider cross-sector learning.
+5
+OFFICIAL
+PAGE 6
+OFFICIAL
+1. Introduction
+1.1 This document sets out the context for Ofgem’s decision following the AI
+technical sandbox consultation. It explains how the consultation fits within
+Ofgem’s wider approach to AI and innovation, outlines related publications, and
+describes the stages of the decision-making process from consultation to
+outcome.
+Context and related publications
+1.2 1.3 1.4 1.5 1.6 1.7 1.8 The AI technical sandbox is intended to complement, rather than replace, existing
+Ofgem initiatives within the broader innovation and regulatory landscape. These
+include the AI regulatory laboratory (AI Reg Lab), the Energy Regulation Sandbox,
+and the proposed Future Regulation Sandbox.
+Ofgem has continued to operationalise the AI Reg Lab as a practical mechanism
+for licensees and their innovation partners to test real or hypothetical AI use cases
+against Ofgem’s AI guidance and the wider regulatory framework. Ofgem has also
+committed to publishing AI Reg Lab high-level findings to support transparency
+and shared learning.
+Recent government announcements further reinforce the relevance of the AI
+Technical Sandbox and the wider direction of travel for AI regulation in the UK. In
+particular, the 2026 King’s Speech set out plans to legislate for the creation of the
+AI Growth Lab, a cross-economy regulatory sandbox intended to enable AI
+products and services to be tested in real-world environments under controlled
+regulatory conditions.
+This reflects a broader policy shift towards enabling innovation through structured
+experimentation and evidence-based regulatory reform. The AI Growth Lab is
+expected to allow targeted, time-limited modifications to existing regulatory
+requirements, with learnings from sandbox activity informing potential future
+changes to regulatory frameworks.
+Ofgem will continue to monitor developments relating to the AI Growth Lab and
+wider government sandboxing initiatives. The AI technical sandbox is designed to
+operate in a complementary manner, providing sector-specific technical testing
+and evidence generation within the energy context, while contributing to broader
+cross-economy learning on AI deployment and regulation.
+These developments sit alongside continued cross‑government and
+cross‑regulator interest in the use of sandboxes and structured testing to enable
+responsible innovation, reflecting the wider policy direction towards
+evidence‑based approaches to AI governance.
+To support clarity for stakeholders, Table 1: Overview of Ofgem AI and innovation
+regulatory tools below summarises the key features of Ofgem’s main AI and
+innovation regulatory tools and how they are intended to be used.
+6
+OFFICIAL
+PAGE 7
+OFFICIAL
+Initiative Purpose Environment
+type
+Primary focus When to
+engage
+AI technical
+sandbox
+Test and
+evaluate AI use
+cases in a safe
+testing
+environment
+without
+affecting real
+consumers or
+energy services
+Testing
+environment
+separate from
+live systems
+Technical
+testing and
+evidence
+When
+developing AI
+and needing
+structured
+testing
+AI Reg Lab Explore
+regulatory and
+ethical
+questions
+relating to AI
+Analytical,
+exploratory
+Regulatory
+understanding
+and responsible
+AI outcomes
+When seeking
+clarity on
+regulatory or
+ethical issues
+Energy
+Regulation
+Sandbox
+Enable live trials
+with regulatory
+flexibility
+Live, in-market Real-world
+testing and
+innovation
+When testing
+solutions
+requiring rule
+flexibility
+Future
+Regulation
+Sandbox
+Test potential
+rulebook
+changes before
+formal adoption
+Pre-regulatory Policy and rule
+development
+When informing
+future
+regulatory
+frameworks
+Table 1 Overview of Ofgem AI and innovation regulatory tools
+1.9 1.10 The consultation builds on Ofgem’s earlier call for input on the AI technical
+sandbox, which sought initial views on the need for a technical sandbox, potential
+value, eligibility, governance and alignment with other initiatives. Feedback from
+the call for input and wider engagement informed the development of the
+proposed 12‑month pilot set out in the consultation.
+Together, these publications and engagement activities reflect Ofgem’s approach
+to supporting innovation through structured testing, evidence‑gathering and
+proportionate oversight, while ensuring that AI deployment in the energy sector
+remains safe, ethical and in the interests of consumers.
+7
+OFFICIAL
+PAGE 8
+OFFICIAL
+Phase Indicative timing Description
+Publication of decision June 2026 Publication of consultation
+outcome and next steps
+Participation guidance Autumn 2026 Publication of participation
+guidance and application
+materials
+Pilot launch Targeting late Autumn 2026
+(subject to readiness of
+participation guidance,
+governance arrangements
+and delivery capability)
+Pilot commencement and
+mobilisation of the AI
+technical sandbox,
+including establishment of
+governance, delivery
+capability and readiness for
+participation and testing
+activity.
+Testing rounds Within 12‑month pilot One or more structured
+testing phases, subject to
+readiness and learning
+Review and learning Ongoing during pilot Monitoring, evaluation and
+reflection to inform future
+decisions
+Publish pilot learnings End of 2027 Lessons learned following
+pilot
+Table 2 Indicative timeline for AI technical sandbox pilot
+8
+OFFICIAL
+PAGE 9
+OFFICIAL
+Decision-making stages
+1.11 1.12 1.13 1.14 1.15 The decision‑making process for the AI technical sandbox pilot followed four
+stages:
+Stage 1 Consultation open: 26 January 2026
+Stage 2 Consultation close: 20 March 2026
+Stage 3 Responses reviewed: March to May 2026
+Stage 4 Consultation outcome (decision): 03 June 2026
+During the consultation period, Ofgem received 32 responses from a broad range
+of stakeholders across the energy sector, including licensees, market
+participants, operators of essential services, technology providers, system
+bodies, academic institutions and representative organisations.
+Responses were assessed on their merits and considered alongside Ofgem’s
+statutory duties, existing regulatory framework and wider strategic objectives,
+including Ofgem’s evolving approach following the Ofgem Review to strengthen
+protections for energy consumers and enhance the focus on outcomes, as
+reflected in Ofgem’s published AI guidance.
+These considerations include recent updates reflected in Ofgem’s published AI
+guidance, updated on 13 May 2026, which further clarifies expectations in areas
+such as explainability, transparency, and the management of AI-related risks,
+alongside broader expectations on responsible AI outcomes, governance and
+proportionality.
+This document represents the outcome of that process and sets out Ofgem’s
+decision on the establishment and design of the AI technical sandbox pilot.
+9
+OFFICIAL
+PAGE 10
+2. 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 10
+OFFICIAL
+Consultation outcome and Ofgem’s response
+This section summarises the feedback received in response to the consultation
+on the proposed AI technical sandbox pilot and explains Ofgem’s decision in
+response to that feedback.
+The AI technical sandbox is a structured, pilot through which selected
+participants test defined AI use cases in a controlled testing environment that is
+separate from live operational systems and does not affect real consumers or
+energy services. Testing is carried out using agreed data and evaluation criteria to
+generate evidence on system behaviour, risks and regulatory implications.
+The sandbox does not constitute regulatory approval or endorsement of any
+solution. Participation does not imply that a use case is compliant with regulatory
+requirements or suitable for deployment, and any outcomes from testing are
+intended to inform, rather than determine, future regulatory or operational
+decisions.
+Ofgem received 32 responses, listed in Appendix 1, from a broad range of
+stakeholders across the energy sector, including licensees, market participants,
+operators of essential services, technology providers, system bodies, academic
+institutions and representative organisations. Detailed responses to individual
+consultation questions are provided in Appendix 2.
+Respondents expressed strong support for the creation of an AI technical sandbox
+and recognised its potential value in enabling responsible innovation, improving
+regulatory understanding of AI, and supporting consumer and system outcomes.
+While views differed on specific aspects of design and delivery, feedback focused
+primarily on implementation detail rather than the overall case for the sandbox.
+Respondents expressed strong support for the creation of an AI technical sandbox
+and recognised its potential value in enabling responsible innovation, improving
+regulatory understanding of AI, and supporting consumer and system outcomes.
+While views differed on specific aspects of design and delivery, feedback focused
+primarily on implementation detail rather than the overall objective or case for the
+sandbox.
+OFFICIAL
+PAGE 11
+OFFICIAL
+Response themes
+2.9 Respondents provided detailed input on the design and delivery of the sandbox.
+Key themes emerging from consultation responses are summarised in Table 3
+Response themes below.
+Theme Detail
+Strong support
+for a controlled,
+evidence-led
+sandbox
+Respondents consistently supported the creation of a controlled
+environment to test AI use cases in a safety-critical and highly
+regulated sector. The importance of generating robust, decision-
+grade evidence was emphasised, including the need to evaluate
+systems in realistic conditions rather than through demonstration-
+only activity.
+Focus on real-
+world testing
+and system-
+level behaviour
+There was strong emphasis on assessing AI systems within end-to-
+end operational workflows, including their interaction with existing
+processes, data flows and operational constraints. Respondents
+highlighted the importance of understanding system behaviour in
+real-world environments and ensuring visibility of decision pathways
+and outcomes
+Data access and
+synthetic data
+as critical
+enabler
+Data availability was consistently identified as a key constraint to
+effective testing. Respondents emphasised the importance of
+enabling the use of representative or synthetic datasets to support
+safe and timely experimentation, reduce data-sharing barriers and
+allow testing of edge cases and rare scenarios.
+Flexible,
+proportionate
+delivery and
+infrastructure
+Respondents highlighted the need for a flexible and proportionate
+delivery model, including access to appropriate testing
+environments where required. There was also emphasis on avoiding
+dependency on specific providers and ensuring interoperability to
+support participation across the sector.
+Governance,
+assurance and
+risk
+management
+Respondents supported the proposed governance structure but
+emphasised the need for strong technical expertise, clear
+accountability and proportionate assurance arrangements. There
+was particular focus on risk management, including system
+autonomy, potential impacts of failure and data sensitivity,
+alongside the need for operational safeguards and incident
+response processes.
+Auditability,
+transparency
+The importance of auditability and traceability of system behaviour
+was consistently highlighted, alongside support for approaches to
+11
+OFFICIAL
+PAGE 12
+OFFICIAL
+Theme Detail
+and continuous
+assurance
+continuous assurance, including ongoing monitoring, testing and
+validation throughout the AI lifecycle.
+Clear pathways
+to
+implementation
+Respondents emphasised the need for clear pathways from
+sandbox testing to real-world deployment, including alignment with
+licences, industry codes and market arrangements. The importance
+of effective routing between the sandbox and other initiatives was
+also highlighted.
+Phased delivery,
+learning and
+practical
+feasibility
+There was strong support for a phased, cohort-based approach to
+delivery, allowing Ofgem to test the sandbox model, incorporate
+learning and refine the approach before scaling activity.
+Respondents also highlighted the importance of structured learning,
+reusable outputs and a focus on consumer outcomes, ethics and
+trust.
+Table 3 Response themes
+2.10 2.11 2.12 Overall, consultation responses demonstrate broad support for the AI technical
+sandbox and a consistent emphasis on the importance of rigorous, real-world
+testing supported by robust governance, practical delivery mechanisms and clear
+pathways to implementation. These insights have informed Ofgem’s decision to
+proceed with a pilot that is proportionate, evidence-led and designed to evolve
+based on learning
+In reaching its decisions, Ofgem has considered consultation responses
+alongside its statutory duties, existing regulatory framework and wider innovation
+objectives, including expectations set out in Ofgem’s published AI guidance.
+Ofgem has decided to proceed with establishing the AI technical sandbox as a
+pilot programme, broadly as proposed in the consultation. Rather than making
+fundamental changes to the pilot design, Ofgem will address stakeholder
+feedback through targeted refinements to participation guidance, assurance
+expectations, application materials and delivery and mobilisation arrangements.
+12
+OFFICIAL
+PAGE 13
+OFFICIAL
+3. Proposed Approach
+3.1 The sandbox operates as a controlled testing environment and does not provide a
+mechanism for regulatory approval or endorsement.
+Purpose and scope
+3.2 The AI technical sandbox supports structured testing and validation of AI use
+cases in a controlled environment, generating structured and practical evidence
+to inform regulatory development and support safe deployment within the energy
+sector.
+3.3 To support this, while detailed design will be set out in participation guidance, the
+pilot will include one or more structured testing rounds, comprising application
+and selection, onboarding and mobilisation, testing in a controlled sandbox
+environment, evaluation against agreed success criteria, and the sharing of high-
+level learning. This phased approach is intended to ensure that testing is
+structured, proportionate and capable of generating meaningful evidence within
+the scope of the pilot.
+Delivery model
+3.4 The sandbox will be delivered using a phased and proportionate approach. Initial
+delivery will focus on a limited number of high-value use cases, grouped into
+cohorts and supported through structured testing phases to enable focused
+collaboration, iterative development and early learning. The pilot is designed to
+support learning and adaptation.
+Infrastructure and testing environment
+3.5 Ofgem intends to adopt a flexible, provider-enabled approach to sandbox
+infrastructure, enabling access to appropriate technical environments without
+requiring significant upfront investment. Infrastructure and tooling will be
+proportionately scaled based on the needs of individual use cases, and may
+include access to provisioned or supported environments where appropriate
+Data approach
+3.6 The sandbox will support the use of representative, anonymised and synthetic
+datasets to enable safe and timely testing, reduce data-sharing barriers and
+support evaluation across a range of scenarios. Where appropriate, participants
+may use operational data subject to governance, security and legal requirements,
+including data minimisation, access controls and lifecycle management.
+Governance and assurance
+3.7 The sandbox will be supported by governance arrangements designed to provide
+robust oversight while enabling effective delivery. A risk-based approach to
+13
+OFFICIAL
+PAGE 14
+OFFICIAL
+assurance will be applied, including explicit assessment of AI risk profiles,
+validation under controlled conditions, monitoring during testing, and clear
+incident response and escalation processes. Auditability and traceability of
+system behaviour will be emphasised.
+Use case selection and prioritisation
+3.8 Use case selection will focus on proposals that provide meaningful sector value
+and are suitable for testing within a controlled environment. Proposals will be
+assessed against criteria including sector relevance, regulatory uncertainty,
+testability, data readiness and potential consumer benefit, with consideration of
+transferability and scalability.
+Outputs and learning
+3.9 A key objective is to generate structured, evidence-based outputs that support
+sector-wide learning. Participants will produce documentation of use case
+design, testing methodologies and outcomes, including evidence of behaviour,
+performance and associated risks and controls. Ofgem will publish aggregated
+and non-confidential learning.
+Pathways to implementation
+3.10 From the outset, use cases will consider how outcomes may translate into
+implementation, including changes to licences, industry codes, market services
+or regulatory frameworks. Ofgem will support alignment and routing between the
+AI technical sandbox and other relevant initiatives to provide a pathway from
+evidence generation to regulatory or operational change.
+Pilot delivery milestones
+3.11 Further indicative milestones include targeting: (i) publication of participation
+guidance in Autumn 2026, (ii) opening of applications in late Autumn 2026; and (iii)
+initial testing rounds commencing from early 2027.
+3.12 While detailed design will be set out in participation guidance, the pilot is
+expected to include one or more structured testing rounds comprising application
+and selection, onboarding and mobilisation, testing in a controlled sandbox
+environment, evaluation against agreed success criteria, and the sharing of high-
+level learning. This phased approach is intended to ensure that testing is
+structured, proportionate and capable of generating meaningful evidence within
+the scope of the pilot.
+Next steps
+3.13 Ofgem will publish participation guidance and application materials ahead of
+opening applications. Governance arrangements will be confirmed prior to pilot
+14
+OFFICIAL
+PAGE 15
+OFFICIAL
+launch, alongside delivery processes covering onboarding, mobilisation, testing
+phases, evaluation and learning dissemination.
+15
+OFFICIAL
+PAGE 16
+OFFICIAL
+Send us your feedback
+We believe that consultation is at the heart of good policy development. We are keen to
+receive your comments about this decision. We would also like to get your answers to
+these questions:
+• Do you have any comments about the quality of this document?
+• Do you have any comments about its tone and content?
+• Was it easy to read and understand? Or could it have been better written?
+• Are its conclusions balanced?
+• Did it make reasoned recommendations?
+• Do you have any further comments?
+Please send your feedback to stakeholders@ofgem.gov.uk.
+16
+OFFICIAL
+PAGE 17
+OFFICIAL
+Appendix 1. Consultation respondents
+A1.1 The following organisations provided responses to the AI technical sandbox
+consultation and have consented to their response being published.
+A1.2 Responses are listed in alphabetical order.
+• Arqua Pty
+• bigspark
+• CurrentWorks
+• DNV Services UK Limited
+• Energy Networks Association (ENA)
+• Energy UK
+• Kaluza
+• Lantrix Limited
+• National Grid
+• Northern Gas Networks (NGN)
+• Octopus Energy
+• POWWR
+• Retail Energy Code (RECCO)
+• Rhizome Data
+• Sagittal AI
+• Scotia Gas Networks (SGN)
+• SP Electricity North West Ltd (ENWL)
+• SSEN Transmission
+• Startup Coalition
+• UK Power Network
+• University of Strathclyde
+• Wales & West Utilities (WWU)
+• WeBuild-AI
+17
+OFFICIAL
+PAGE 18
+Appendix 2. OFFICIAL
+Consultation questions and responses
+Q1. Eligibility and participation
+What we asked
+Are the proposed eligibility criteria for lead participants appropriate, and should
+partnerships with technology providers, academia and other innovators be
+encouraged?
+What stakeholders told us
+Respondents generally supported the proposed eligibility approach,
+emphasising the importance of regulatory accountability, enforceability, access
+to operational data, and sector‑wide learning. Respondents noted that limiting
+lead participation to regulated or regulated‑adjacent energy‑sector entities
+helped manage risks associated with AI and ensured appropriate oversight.
+A number of respondents argued that eligibility should be broadened to allow
+technology providers or startups to act as lead participants. These respondents
+highlighted potential barriers to innovation and the importance of enabling
+early‑stage or specialist AI developers to participate meaningfully. Ofgem notes
+this feedback and recognises the potential value of alternative or
+complementary engagement approaches to support participation from a
+broader range of innovators, which will be considered as part of its wider AI and
+innovation work.
+Respondents also emphasised the importance of clear governance and
+accountability arrangements between lead participants and partners, including
+clarity on roles, data responsibilities and assurance expectations.
+Ofgem’s response and decision
+Ofgem has decided to retain the proposed eligibility model for the pilot. Lead
+applicants will be licensees, market participants, and operators of essential
+services, with partnerships encouraged with technology providers, academia,
+and other innovators.
+Ofgem recognises the importance of technology partners in developing and
+testing AI systems. For the purposes of this pilot, a “technology partner” refers to
+an organisation providing technical expertise, tools, platforms or services to
+support the design, development, testing or evaluation of AI systems within a
+sandbox use case, operating under the sponsorship and accountability of a lead
+participant. Ofgem will facilitate participation by technology partners through
+clearer articulation of partnership models, including roles and responsibilities,
+expectations on collaboration with lead participants, and guidance on how
+18
+OFFICIAL
+PAGE 19
+OFFICIAL
+non‑lead partners can contribute meaningfully to use cases while operating
+under the accountability framework of the sandbox.
+For this initial pilot, Ofgem considers that requiring a regulated or
+regulated‑adjacent lead participant provides an appropriate and proportionate
+basis for accountability, governance and assurance. This reflects a phased
+approach in which Ofgem will prioritise robust oversight for the initial pilot, while
+keeping participation arrangements under review in light of evidence gathered
+through delivery.
+This approach balances innovation with regulatory assurance, consumer
+protection, access to operational datasets and effective governance. To address
+feedback raised by respondents, Ofgem will provide clearer guidance on
+partnership models, roles and responsibilities, and how non‑lead partners can
+participate meaningfully in sandbox projects.
+19
+OFFICIAL
+PAGE 20
+OFFICIAL
+Q2. Use‑case selection criteria
+What we asked
+Are the proposed use case selection criteria appropriate and sufficient, and are
+there other criteria or safeguards we should include?
+What stakeholders told us
+Respondents broadly supported the proposed selection criteria, including
+commercial neutrality, innovation, sector impact, regulatory uncertainty,
+testability, and governance.
+Respondents emphasised the importance of strong assurance, including data
+readiness, cybersecurity, evaluation metrics, reproducibility, and clear success
+criteria.
+Stakeholders highlighted that testability and data arrangements are critical to
+credible evaluation and asked for greater clarity on how these considerations
+would be applied in practice, including the role of representative or synthetic
+data where appropriate.
+Ofgem’s response and decision
+Ofgem has decided to retain the proposed selection criteria for the AI technical
+sandbox pilot.
+For the purposes of this pilot, use case selection will take into account whether
+proposals are capable of meaningful testing in a bounded, controlled testing
+environment, including the ability to articulate evaluation approaches and
+success boundaries, alongside proportionate and appropriate approaches to
+data. This may include the use of representative or synthetic data where
+appropriate, particularly for safety‑critical or sensitive use cases.
+These considerations do not represent additional selection criteria, nor do they
+mandate specific technical methods or data sources. Rather, they reflect how
+Ofgem will exercise judgement when applying the existing criteria to ensure
+selected use cases are deliverable, safe and capable of generating useful
+learning within the scope of the pilot.
+This approach maintains consistency with the consultation while ensuring that
+projects selected for the pilot are practical, proportionate, and capable of
+delivering meaningful learning.
+Further detail on evidence expectations, data considerations and evaluation
+approaches will be set out in participation guidance and application
+documentation ahead of opening applications.
+20
+OFFICIAL
+PAGE 21
+OFFICIAL
+Q3. Alignment with other initiatives
+What we asked
+Is the proposed approach for the AI technical sandbox clearly distinct from and
+complementary to other relevant initiatives, and are there other initiatives or
+examples of best practice that Ofgem should consider?
+What stakeholders told us
+Respondents generally welcomed Ofgem’s intention to align the AI technical
+sandbox with other initiatives and asked for clarity on how different mechanisms
+relate and how outputs might be routed.
+Stakeholders emphasised the need to avoid duplication and confusion,
+particularly for smaller organisations, and to ensure participation does not imply
+endorsement or guaranteed progression.
+Ofgem’s response and decision
+Ofgem agrees that clear positioning of the AI technical sandbox within the wider
+landscape of regulatory and innovation activity is essential.
+The AI technical sandbox pilot is intended to complement, rather than duplicate,
+existing initiatives by focusing on technical testing and evaluation of AI use
+cases in a bounded, controlled testing environment context.
+In doing so, the sandbox provides a structured mechanism for industry and
+Ofgem to develop practical evidence on the benefits, risks and regulatory
+implications of AI use in the energy sector, helping to reduce regulatory
+uncertainty and inform future regulatory approaches while protecting
+consumers, market integrity and energy system security.
+Participation in the AI technical sandbox does not imply regulatory approval or
+endorsement and does not create a guaranteed pathway into other initiatives.
+Where proposals are better suited to alternative mechanisms, Ofgem may
+signpost participants accordingly, while maintaining clear boundaries to avoid
+duplication or confusion.
+21
+OFFICIAL
+PAGE 22
+OFFICIAL
+Q4. Engagement and governance
+What we asked
+Does the proposed governance structure provide sufficient oversight,
+transparency and stakeholder engagement, and are there additional
+mechanisms or safeguards that should be included?
+What stakeholders told us
+There was broad support for the proposed governance arrangements, including
+the establishment of a representative Steering Group, regular reporting, and the
+publication of learning. Respondents emphasised the importance of clear roles,
+conflict‑of‑interest management and transparency in decision‑making.
+Respondents also highlighted the importance of incorporating appropriate
+technical expertise within governance structures to support effective oversight
+of AI systems.
+Ofgem’s response and decision
+Ofgem has decided to proceed with the proposed governance and engagement
+approach for the AI technical sandbox pilot.
+Roles, responsibilities and escalation routes will be set out in participation
+guidance and supporting documentation. Governance will be applied in a risk-
+based and proportionate manner, calibrated to the nature, scale and complexity
+of individual use cases, rather than applied uniformly across the pilot.
+Subject to appropriate confidentiality and intellectual property protections,
+Ofgem will seek to share learning at a sector level to support transparency and
+inform regulatory understanding.
+22
+OFFICIAL
+PAGE 23
+OFFICIAL
+Q5. Timelines and next steps
+What we asked
+Are the proposed next steps for developing and launching the pilot clear, and is
+there anything further we should consider as we refine the timeline?
+What stakeholders told us
+Respondents broadly considered the proposed timeline appropriate, while
+requesting greater clarity on mobilisation, onboarding and application
+processes.
+Respondents also requested greater clarity on application processes, including
+entry requirements, selection timelines and expectations for participation.
+Respondents emphasised the importance of balancing pace with robust
+governance, safeguards and clarity before testing begins.
+Ofgem’s response and decision
+Ofgem will proceed with establishing the AI technical sandbox as a 12‑month
+pilot, with an initial launch targeted for late Autumn 2026, subject to readiness of
+participation guidance, governance arrangements and delivery capability.
+The AI technical sandbox will operate as a 12‑month pilot programme window
+rather than a continuously open testing environment. Within this period, Ofgem
+expects to open the sandbox to applications and to run one or more time‑limited
+testing rounds, subject to readiness, capacity and learning from earlier activity.
+This approach is intended to provide flexibility, manage cost and risk, and enable
+reflection between testing phases.
+During the pilot, Ofgem will monitor progress and gather learning from sandbox
+activity. Ofgem will reflect on learning from the pilot as part of its wider AI and
+innovation work, including consideration of potential future development of the
+sandbox.
+Further detail on mobilisation, onboarding, milestones and reporting will be set
+out in participation guidance and supporting documentation ahead of opening
+applications.
+Any decisions on future development, expansion or longer‑term arrangements
+will be subject to separate consideration and appropriate governance.
+23
+OFFICIAL
+PAGE 24
+OFFICIAL
+Q6. Ethics and responsible AI
+What we asked
+Does the proposed pilot sufficiently address ethical considerations in line with
+Ofgem’s AI guidance, and are there further steps needed to embed ethics and
+safety?
+What stakeholders told us
+Respondents broadly supported the consultation’s emphasis on ethics and
+responsible AI and welcomed alignment with Ofgem’s existing AI guidance.
+Stakeholders highlighted the importance of embedding ethical considerations
+throughout the lifecycle of sandbox trials, with assurance proportionate to risk.
+Respondents emphasised the need for practical, operational assurance
+covering data protection, bias, explainability, security and consumer impacts,
+particularly where AI is applied in safety‑critical or system‑critical contexts.
+Stakeholders also highlighted the importance of embedding ethical
+considerations within governance arrangements to ensure ongoing oversight and
+accountability throughout sandbox activity.
+Ofgem’s response and decision
+Ofgem agrees that ethical considerations are central to the design and operation
+of the AI technical sandbox pilot.
+The sandbox aligns with Ofgem’s existing work on ethical AI, including the AI Reg
+Lab and published guidance on ethical AI use in the energy sector.
+Ethical considerations will be integrated into use‑case selection, governance
+and evaluation arrangements. Participants will be expected to demonstrate how
+ethical risks have been identified and considered, with the depth of ethical
+assurance proportionate to the nature, scale and risk profile of each use case.
+To support this, Ofgem will apply proportionate pre‑ and post‑test review points,
+aligned to the risk profile of each use case, to assess ethical and safety
+considerations including fairness, transparency, data protection, security and
+consumer outcomes.
+The pilot will support learning on the practical application of ethical AI outcomes
+in energy‑sector contexts, while avoiding unnecessary additional prescription
+beyond existing legal and regulatory obligations.
+24
+OFFICIAL
+PAGE 25
+OFFICIAL
+Q7. Stakeholder support
+What we asked
+Do you have suggestions for how Ofgem can best support stakeholders
+throughout the pilot and beyond?
+What stakeholders told us
+Respondents emphasised the importance of Ofgem providing clear guidance,
+transparent processes and ongoing engagement throughout the pilot.
+Stakeholders emphasised the value of practical clarity and accessible
+engagement, including regular updates on progress, opportunities for technical
+and regulatory dialogue, and mechanisms to share learning across the sector.
+Stakeholders also emphasised the importance of guidance being clear,
+accessible and practical to support effective participation.
+Respondents suggested mechanisms such as working groups or open forums to
+supplement formal governance structures, while cautioning that Ofgem should
+not take on a technical or commercial advisory role.
+Ofgem’s response and decision
+Ofgem agrees that effective and proportionate stakeholder support is important
+for delivering the pilot successfully.
+Support will be provided through clarity, engagement and transparency,
+including participation guidance and supporting information ahead of opening
+applications.
+During the pilot, Ofgem will maintain structured engagement with participants
+and the wider sector consistent with the governance arrangements, which may
+include working groups and open engagement forums where appropriate, while
+remaining within Ofgem’s role as a regulator and not acting as a technical or
+commercial adviser.
+Ofgem will provide updates on progress and, subject to appropriate
+confidentiality and intellectual property protections, intends to share high‑level
+learning at a sector level to support wider understanding and dialogue on
+responsible AI use in the energy sector.
+Ofgem will continue to refine its approach to stakeholder support over time,
+informed by learning from the pilot and ongoing engagement with participants
+and the wider sector, while remaining consistent with its role as a regulator.
+25
+OFFICIAL
+PAGE 26
+OFFICIAL
+Q8. General feedback
+What we asked
+Do you have any other comments, suggestions, or concerns regarding the
+proposed pilot, the consultation process, or the expected outcomes?
+What stakeholders told us
+Respondents reiterated requests for greater clarity on application processes,
+proportionality of requirements, particularly for smaller organisations, and the
+importance of maintaining commercial neutrality.
+Respondents also highlighted the importance of coordination across related
+initiatives. Respondents also signalled ongoing interest in engaging with the pilot
+as it develops.
+Ofgem’s response and decision
+Ofgem welcomes the breadth of feedback received and the strong level of
+engagement from across the sector.
+General feedback reinforces Ofgem’s decision to proceed with a pilot
+programme that enables learning while maintaining appropriate safeguards and
+regulatory control. As set out in earlier sections, Ofgem has addressed
+stakeholder feedback through refinements to participation guidance, assurance
+expectations and delivery detail.
+Where suggestions relate to future expansion or longer‑term arrangements,
+Ofgem notes that the sandbox is deliberately framed as a time‑limited pilot and
+that any future decisions will be subject to separate consideration and
+appropriate governance.
+26
+OFFICIAL

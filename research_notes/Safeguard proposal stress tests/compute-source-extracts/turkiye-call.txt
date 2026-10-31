@@ -1,0 +1,522 @@
+
+--- PDF page 1 ---
+—
+TÜBİTAK
+TEKNOLOJİ VE YENİLİK DESTEK
+PROGRAMLARI BAŞKANLIĞI (TEYDEB)
+YENİLİK DESTEK PROGRAMI
+1711 - Yapay Zekâ Ekosistem Çağrısı - 2026
+--- PDF page 2 ---
+1711-YZE-2026
+Bu çağrı duyurusu, Yenilik Destek Programı Uygulama Esasları Yönergesi çerçevesinde
+yapılmaktadır. Çağrıda belirtilmeyen hususlar için Yenilik Destek Programı Uygulama Esasları
+Yönergesi ve ilgili diğer TÜBİTAK mevzuatı hükümleri geçerli olacaktır.
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı 1/15
+--- PDF page 3 ---
+1. Çağrı Kodu
+1711-YZE-2026
+2. Çağrı Başlığı
+1711 - Yapay Zekâ Ekosistem Çağrısı - 2026
+3. Ön Bilgi ve Çağrı Gerekçesi
+Bu destek programı, üniversite/kamu araştırma merkez ve enstitülerindeki bilgi birikiminden
+faydalanılarak, Türkiye’de yerleşik ve proje sonuçlarını Türkiye’de uygulamayı taahhüt eden
+şirketlerimizin geliştirdiği yapay zekâ teknolojilerinin; yapay zekâ çözümlerine kendi
+bünyelerinde ihtiyaç duyan şirketlerimizin ihtiyaçları doğrultusunda ürün ya da çözümlere
+dönüştürülmesine katkı sağlamayı amaçlamaktadır. Yapay Zekâ Enstitüsü (YZE) bu
+kapsamda geliştirilen çözümlerin temel entegrasyonundan ve oluşan bilgi birikiminin
+ekosisteme hızlı bir şekilde aktarılmasından sorumlu olacaktır. YZE altındaki iş analiz birimleri
+ve transfer laboratuvarları, her bir proje sonucunda kazanılan bilgi birikiminin ekosistemdeki
+diğer şirketlere ve diğer sektörlere aktarımında görev alacaktır. İş analiz birimleri, benzer
+projelerden elde edilen kazanımları ve öğrenilmiş dersleri projeler arasında
+yaygınlaştırabilecektir. Transfer laboratuvarları, projeler sonucunda YZE’ye aktarılan bilgi
+birikimleri ile; genelleştirilmiş çözümler kataloğu, anonimleştirilmiş kullanım senaryoları veri
+tabanı, öğrenilmiş dersler ve iletişim platformu, tekrar kullanılabilir yazılım kütüphaneler gibi
+yardımcı araçlar geliştirebilecek ve bunları Türkiye yapay zeka ekosisteminin gelişimi için
+kullandırabilecektir.
+4. Çağrı Hedefleri
+Bu destek modelinde, yapay zekâ çözümlerine ihtiyaç duyan şirketlerimizin, teknoloji sağlayıcı
+olarak en az bir şirket, bu konuda tecrübeli en az bir üniversite araştırma laboratuvarı/merkezi
+ya da kamu araştırma merkezi/enstitüsü ve TÜBİTAK Yapay Zekâ Enstitüsü ile konsorsiyum
+oluşturmaları hedeflenmektedir. Kendi sektöründe çözülmesi gereken bir problem için yapay
+zekâ çözümüne ihtiyaç duyan şirketlerimiz, konsorsiyum üyesi olacak ortakları kendileri
+bulabileceği gibi; bu ihtiyacını daha hızlı ve verimli bir şekilde çözebilmek için Yapay Zekâ
+Enstitüsü’nden destek alabilecektir.
+5. Beklenen Etki
+Bu destek programının, Türkiye Yapay Zekâ Ekosistemini harekete geçirecek bir katalizör
+görevi üstlenmesi ve farklı açılardan katkı sağlaması beklenmektedir. Öncelikle,
+(1) sanayinin ihtiyaç duyduğu yapay zekâ çözümlerinin teknoloji sağlayıcısı şirketlerimiz
+tarafından geliştirilmesi,
+(2) hali hazırda üniversite/kamu araştırma merkezlerinde yerleşmiş olan yapay zekâ
+alanındaki bilgi birikiminin şirketlerimize aktarılması,
+(3) yapay zekâ ekosistemi kapsamında benzer çözümlere ihtiyaç duyan şirketlere,
+gerçekleştirilen çözüm hakkında farkındalık oluşturulması,
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı 2/15
+--- PDF page 4 ---
+(4) yapay zekâ ekosisteminde var olan KOBİ ve girişimci kurumların desteklenmesi,
+(5) yapay zekâ ekosistem aktörlerinin aktif bir iş birliği modeline yönlendirilmesi,
+(6) ihtiyaç sahibi şirketlerimize yapay zekâ alanındaki deneyimin ve bilgi birikiminin,
+teknoloji sağlayıcı firmalarca ve Yapay Zekâ Enstitüsü aracılığıyla sürekli olarak
+aktarılmasının sağlanması ve
+(7) yapay zekâ alanında araştırmacı insan kaynağının yetiştirilmesi hedeflenmektedir.
+6. Çağrı Kapsamı
+Bu program kapsamında ilk aşamada dört öncelikli alan desteklenecektir. Bu öncelikli alanlar
+(1) Akıllı Üretim Sistemleri,
+(2) Akıllı Tarım, Gıda ve Hayvancılık,
+(3) Finans Teknolojileri,
+(4) İklim Değişikliği ve Sürdürülebilirlik
+(5) Akıllı Eğitim Teknolojileri
+olarak belirlenmiştir.
+Akıllı Üretim Sistemleri alanında yapılacak başvuruların, sanayide Dijital Dönüşümün geldiği
+seviyeyi yapay zekâ teknolojileri ile yükseltmesi beklenmektedir. Projede geliştirilecek
+çözümler ile ihtiyaç sahibi firmaya verimlilik artışı, iş hacminin büyümesi, maliyet
+optimizasyonu, kalite iyileştirilmesi, üretim planlama optimizasyonu, ürün tasarımı iyileştirme
+gibi kazanımların uygulamaya aktarılması hedeflenmektedir.
+Gıda arzının ve güvenliğinin gittikçe artan kritik önemi dolayısıyla Akıllı Gıda, Tarım ve
+Hayvancılık alanında geliştirilecek yapay zekâ temelli çözümlerin sektöre önemli faydalar
+getirmesi beklenmektedir. Bir diğer öncelikli alan olan Finans Teknolojileri alanında
+Türkiye’nin yüksek olgunluk seviyesinin, geliştirilecek çözümlerin finans sistemine
+entegrasyonunu kolaylaştırması beklenmektedir. E-Ticaret sektörünün karşılaştığı gerçek
+saha problemlerinin çözümüne yönelik yapay zekâ Ar-Ge çözümleri ve sektörde
+oluşan/oluşacak büyük veri üzerinde yapılabilecek yapay zekâ uygulamaları da bu tematik
+alanda değerlendirilecektir. İklim değişikliğinin etkileri artan bir ivmeyle ülkemizde yaşamı
+olumsuz yönde etkilemektedir. Özellikle enerji, üretim, ulaşım ve şehircilik alanında kullanılan
+fosil yakıtlar bu değişikliğin başlıca nedenidir. İklim değişikliğine sebep olan faktörleri
+azaltmaya ve iklim değişikliği adaptasyonuna yönelik çalışmalarda yapay zekâdan
+faydalanmak bu çağrının kapsamına girmektedir. Bu amaçla gerçekçiliği yüksek iklim
+modelleri, enerji verimliliğinin arttırılması, yenilenebilir enerji kaynaklarının verimini arttıracak
+yöntemler, her türlü üretimde karbon ve su ayak izini azaltacak önlemler, atık yönetimi,
+sürdürülebilirlik ve bunlara benzer çalışmalarda yapay zekâ çözümlerinin geliştirilmesi
+hedeflenmektedir. Birçok sektörde olduğu gibi, Eğitim sektörünün geleceği de güncel
+gelişmeler doğrultusunda yapay zekâ ağırlıklı dijital teknolojilere evirilmektedir. Akıllı eğitim
+teknolojileri kapsamında, öğrenme sürecinin kişiselleştirilmesi, eğitimde kalite ve verimlilik
+artışının sağlanması, akıllı öğrenme teknolojilerinin geliştirilmesi, öğrenci-eğitimci arasındaki
+karşılıklı iletişim etkinliğinin artırılmasını sağlayacak akıllı sınıf uygulamalarının geliştirilmesi,
+hedeflenmektedir. Ülkemizin On Birinci Kalkınma Planında, eğitim sistemine ilişkin veri
+tabanlarının bütünleştirilerek eğitsel veri ambarı oluşturulacağı ve verilerin yapay zekâ
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı 3/15
+--- PDF page 5 ---
+teknolojileriyle işleneceği belirtilmektedir. Bu sayede, eğitimde planlama ve yönetim sistemleri
+veriye dayalı hale gelerek, eğitimde sürekli iyileşme hedeflenmektedir. Saha uygulamaları,
+tanıtım portalleri ve model fabrikalar sayesinde elde edilen çözümlerin görünür kılınması
+amaçlanmaktadır. Başvuruların tematik alanlara uyumluluğu ve proje/konsorsiyum kurgusu
+oluşturulması konularında YZE ile görüşülmesi gerekmektedir. YZE ile gerçekleştirilecek olan
+görüşmede, başvuru yapılacak olan projenin kurgusu, yapay zekâ alanında geliştirilecek olan
+çözüm ve yapay zekâ ekosistemine sağlanacak olan kazanımlar ele alınmaktadır. Başvuru
+öncesinde ele alınan bu konular, konsorsiyum tarafından Niyet Beyan Formu’na işlenerek
+YZE’ye iletilmesi gerekmektedir. Ayrıca, YZE ile mutabakata varılan Niyet Beyan Formu’nun
+nihai hâli ise proje önerisi ekinde sunulmalıdır.
+6.1. Konsorsiyum Yapısı:
+Bu destek modelinde yapay zekâ çözümlerine ihtiyaç duyan şirketlerimizin, teknoloji sağlayıcı
+olarak en az bir KOBİ statüsünde şirket, proje konusunda tecrübeli en az bir üniversite
+araştırma laboratuvarı/merkezi ya da kamu araştırma merkezi/enstitüsü ve TÜBİTAK Yapay
+Zekâ Enstitüsü ile konsorsiyum oluşturmaları beklenmektedir. Mümkünse söz konusu sektöre
+doğrudan etkisi olan bir kamu kuruluşu da düzenleyici, denetleyici, teşvik edici olması
+açısından iştirakçi olarak konsorsiyum içerisinde yer alabilir.
+Bu çağrının hedeflerinden birisi, projelerden elde edilen bilgi birikiminin (fikri sınai haklara söz
+konusu olmayan bilginin veya işbirliği sözleşmesinde tanımlanacak hakların korunarak)
+Yapay Zekâ Enstitüsü’nde toplanmasıdır. Bu kapsamda, müşteri kuruluştan A1 – Proje Ön
+Bilgileri bölümünde iş birliğine ilişin kabul ve taahhüt beyanı alınacaktır.
+Bu çağrı kapsamında geliştirilen projeler için TÜBİTAK ULAKBİM hesaplama altyapısından
+avantajlı şekilde yararlanılabilecektir. Hesaplama/depolama kaynakları ve ücretlendirme
+kriterlerine ilişkin bilgilere TRUBA ücretli kullanım sayfası adresinden ulaşılabilirsiniz.
+Proje başvurusu yapacak konsorsiyumun yapısında asgari bileşenler olarak:
+ Müşteri Kuruluş olarak:
+o Büyük ölçekli kuruluşun veya
+o KOBİ’nin
+ Teknoloji Sağlayıcı Kurum/Kuruluşlar olarak:
+o Yapay zekâ teknolojileri üzerine çalışan en az bir KOBİ’nin ve
+o En az bir üniversite araştırma laboratuvarının/merkezinin ya da kamu
+araştırma merkezinin/enstitüsünün
+ Ar-Ge’ye destek olmak ve katalizör görevi üstlenmek üzere Yapay Zekâ Enstitüsü’nün
+bulunması beklenmektedir.
+Çağrıya, Müşteri Kuruluşun ihtiyacı doğrultusunda, Teknoloji Sağlayıcı Kurum/Kuruluşların
+yapacağı çalışmaları kapsayan bir Ar-Ge proje önerisi sunulacaktır. Teknoloji Sağlayıcı
+Kurum/Kuruluşlar, Ar-Ge çalışmalarını yürüterek ürünü (veya süreci) geliştirecektir. Müşteri
+Kuruluşun, ihtiyacını ortaya koyarak; gerekli verileri ve çalışma ortamını sağlaması
+beklenmektedir.
+6.2 Fikri ve Sınai Mülkiyet Hakları
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı 4/15
+--- PDF page 6 ---
+Projenin yürütülmesinde görev alan kurum/kuruluşlar ve kuruluşlar ile projede görevli kişiler
+arasındaki fikri ve sınaî ürünler üzerindeki hak sahipliği, kurum, kuruluş ve kişiler arasında
+ilgili mevzuat doğrultusunda başvuru öncesinde yapacakları iş birliği sözleşmesi ile belirlenir.
+Proje çıktıları ve ürün sahipiliği konusunda tarafların kendi aralarında yapacakları sözleşmede
+YZE taraf olarak yer almayacaktır. YZE proje çalışmalarından fikri ve sınai hak talep
+etmemektedir.
+Çağrıda desteklenen her bir proje sonucunda elde edilen veri setlerinin, çözüm
+yaklaşımlarının ve geliştirilen modellerin sahiplik haklar korunarak, ekosistemdeki diğer
+şirketlere ve diğer sektörlere aktarımı kapsamında Yapay Zekâ Enstitüsü görev alacak olup
+bu kapsamdaki çalışmalara tüm paydaşların projelerde elde edilecek veri, model ve çözüm
+yaklaşımına ilişkin paylaşımları proje kapsamında sağlaması beklenmektedir.
+6.3 Çağrıya Özgü Tanımlar
+Bu alanda geçmeyen tanımlar için Yenilik Destek Programı Uygulama Esasları
+Yönergesindeki tanımlar geçerli olacaktır.
+6.3.1 İş birliği sözleşmesi: Müşteri ve Tedarikçi Kurum/Kuruluş(lar) arasında
+imzalanan, TÜBİTAK’a sunulan; projenin kapsamı, tanımı, tarafların sorumlulukları, fikri
+hakların paylaşımı ve hukuki uyuşmazlıkların çözümü gibi konularda, bu Uygulama
+Esasları ve bağlı mevzuatta düzenlenmeyen hususlara ilişkin hükümleri belirleyen
+sözleşmeyi,
+6.3.2 Niyet beyan formu: Proje başvuru öncesinde, YZE ile yapılan görüşmeler
+sonunda doldurulup YZE’ye iletilecek ve başvuru esnasında proje önerisi ekinde
+sunulacak formu,
+6.3.3 GYK: Grup Yürütme Kurulunu,
+6.3.4 Müşteri kuruluş: Ar-Ge’ye dayalı çözüme ihtiyacı olan, bu ihtiyacının karşılanması
+amacıyla Tedarikçi Kurum/Kuruluşla işbirliği sözleşmesini imzalayan, sektörüne ve
+ölçeğine bakılmaksızın, Türkiye’de yerleşik sermaye şirketlerini,
+6.3.5 Kabul edilen bütçe: Projede önerilen bütçenin değerlendirilmesi neticesinde
+destek kapsamına alınan toplam tutarı,
+6.3.6 Kabul edilen harcama tutarı: Dönem raporunun değerlendirilmesi neticesinde
+kabul edilen harcama ve gider kalemlerine ilişkin toplam tutarı,
+6.3.7 İştirakçi: Desteğe konu proje veya faaliyetin yürütülmesi sürecinde veya
+sonucunda, doğrudan fayda veya menfaat elde etmeden yararlanıcıya projenin
+yürütülmesinde katkıda bulunan (teknik ve mali destek sağlama, uzmanlık aktarımı vb.)
+kurum ve/veya ilgili kişi,
+6.3.8 Teknoloji sağlayıcı kuruluş: Müşteri Kuruluş ile işbirliği anlaşması yapan ve proje
+kapsamında Ar-Ge çalışmalarında yer alan Türkiye’de yerleşik KOBİ ölçeğinde sermaye
+şirketleri,
+6.3.9 Teknoloji sağlayıcı kurum: Müşteri Kuruluş ile işbirliği anlaşması yapan ve proje
+kapsamında Ar-Ge çalışmalarında yer alan üniversite araştırma
+laboratuvarları/merkezleri ve kamu araştırma merkezleri/enstitüleri,
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı 5/15
+--- PDF page 7 ---
+6.3.10 Ticarileşme izleme süresi: Proje destek süresi bittikten sonra başlayan ve en
+fazla 60 ay olan ancak gerektiğinde proje bazında TÜBİTAK tarafından değiştirilebilen,
+proje çıktılarının ticarileşme durumunun takibi amacıyla kullanılan süreyi,
+6.3.11 Ticarileşme planı: Proje destek süresinin son döneminde kuruluş̧ tarafından
+sunulan ve proje çıktısının ticarileşmesi için yapılmış veya proje tamamlandıktan sonra
+yapılması planlanan çalışmaları ve açıklamaları içeren belgeyi,
+6.3.12 Ticarileşmeden sorumlu kuruluş: Proje ortaklarının başvuru aşamasında
+belirleyeceği ve projenin ticarileşme aşamasının ana sorumlusu olan kuruluşu,
+6.3.13 YZE: TÜBİTAK BİLGEM’e bağlı olan Yapay Zekâ Enstitüsü’nü,
+ifade eder.
+1. Proje Bütçesi Üst Sınırı
+Başvurulan projelerin bütçesi Genel Gider, Proje Teşvik İkramiyesi ve Kurum Hissesi hariç
+en fazla 10.000.000 TL (on milyon Türk Lirası) olacaktır.
+2. Proje Süresi Üst Sınırı
+2.1. Proje süresi toplamda en fazla 24 ay olacaktır.
+2.2. Destek süresi tamamlanan projelerin ticarileşme aşamaları da proje sözleşmesinde
+açıklanacak süreç çerçevesinde izlenecektir.
+3. Desteklenen ve Desteklenmeyen Gider Kalemleri
+3.1. Teknoloji Sağlayıcı Kurum/Kuruluşların aşağıdaki giderleri desteklenir:
+3.1.1. Sermaye şirketleri
+a) Personel giderleri.
+b) Seyahat giderleri.
+c) Danışmanlık giderleri (ayrıca bkz. 10.3.).
+ç) Hizmet alımı giderleri (ayrıca bkz. 10.3.)
+d) Alet, teçhizat, yazılım, yayın alım giderleri.
+e) Malzeme ve sarf giderleri
+3.1.2. Üniversite/Araştırma Merkezleri
+a) Personel giderleri.
+b) Bursiyer giderleri
+c) Seyahat giderleri.
+c) Danışmanlık giderleri (ayrıca bkz. 10.3.).
+ç) Hizmet alımı giderleri (ayrıca bkz. 10.3.)
+d) Alet, teçhizat, yazılım, yayın alım giderleri.
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı 6/15
+--- PDF page 8 ---
+e) Malzeme ve sarf giderleri
+f) Kurum Hissesi (Yenilik Destek Programı Uygulama Esasları Yönergesinin 95.
+Maddesine göre tespit edilen oranda) .
+3.2. Müşteri Kuruluşun aşağıdaki giderleri desteklenir:
+a) Projede teknolojinin geliştirilmesinde yapılacak Ar-Ge faaliyetlerine katılması
+durumunda sadece geliştirilecek teknolojinin şirket bünyesine kazandırılması için
+harcayacağı işgücü desteklenecektir. Bu desteğin üst sınırı 18 adam-ay işgücünü
+geçmeyecektir. Müşteri kuruluşun bu amaçla talep edeceği destek miktarı da toplam proje
+bütçesi kapsamında değerlendirilecektir.
+b) Mali müşavirlik ücretleri
+3.3. Desteklenmeyen giderler: Yenilik Destek Programı Uygulama Esasları Yönergesinde
+belirtilenleri ve aşağıdaki giderleri TÜBİTAK desteklemeyecektir:
+a) Proje ortaklarının birbirinden aldığı danışmanlık ve hizmet giderleri desteklenmez.
+b) 5520 sayılı Kurumlar Vergisi Kanunu ve ilgili mevzuat hükümlerine göre Müşteri ya
+da Teknoloji Sağlayıcı Kuruluş için ilişkili kişi kapsamında olan kuruluşlardan alınan
+danışmanlık ve hizmet giderleri desteklenmez.
+c) Ticarileşme sürecindeki faaliyetlere ilişkin giderler desteklenmez.
+4. Destek Oranı
+4.1. Çağrı kapsamında desteklenen projeler dönemsel desteklemeye esas harcama
+tutarına uygulanacak destek oranları ile desteklenir.
+4.2. Müşteri Kuruluş büyük ölçekli kuruluş ise; izleme aşamasında dönem raporunda
+Teknoloji Sağlayıcı Kuruluş(lar) tarafından beyan edilen giderin %20’sini
+Teknoloji Sağlayıcı Kuruluş(lar)a öder. TÜBİTAK giderleri değerlendirir ve belirleyeceği
+“kabul edilen harcama tutarının” %60’ını Teknoloji Sağlayıcı Kuruluş(lar)a hibe destek
+olarak verir. Kalan kısmı Teknoloji Sağlayıcı Kuruluş(ların) kendisi karşılamış olur.
+4.3. Müşteri Kuruluş KOBİ ise; izleme aşamasında dönem raporunda Teknoloji
+Sağlayıcı Kuruluş(lar) tarafından beyan edilen giderin %10’unu Teknoloji Sağlayıcı
+Kuruluş(lar)a öder. TÜBİTAK giderleri değerlendirir ve belirleyeceği “kabul edilen
+harcama tutarının” %70’ini Teknoloji Sağlayıcı Kuruluş(lar)a hibe destek olarak verir.
+Kalan kısmı Teknoloji Sağlayıcı Kuruluşu(ların) kendisi karşılamış olur.
+4.4. Müşteri Kuruluş izleme aşamasında dönem raporunda personel giderini (Bakınız
+Madde 10.2) TÜBİTAK’a sunabilir. TÜBİTAK gideri değerlendirir ve belirleyeceği “kabul
+edilen harcama tutarının” %60’ını Müşteri Kuruluşa hibe destek olarak verir. Kalan
+kısmı Müşteri Kuruluş kendisi karşılamış olur.
+4.5. Destek oranı, genel bütçe kapsamındaki kamu idareleri ile özel bütçeli idareler ve
+vakıf üniversiteleri, eğitim ve araştırma hastanesi, kamu araştırma merkez ve
+enstitüleri için %100’dür. TÜBİTAK dönemlerde beyan edilen harcamaları değerlendirir
+ve “kabul edilen harcama tutarını” belirler. TÜBİTAK kabul edilen harcama tutarını hibe
+destek olarak verir. Kamu idareleri, özel bütçeli idareler, vakıf üniversiteleri, eğitim ve
+araştırma hastaneleri ile kamu araştırma merkez ve enstitülerinin toplam bütçesi önerilen
+proje bütçesinin %25’ini geçemez.
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı 7/15
+--- PDF page 9 ---
+5. Destek Ödeme Şekli
+5.1. 5.2. 5.3. 5.4. 5.5. Müşteri Kuruluş; harcama ve giderler ile proje faaliyetlerinin uygunluğunu dönemsel
+olarak değerlendirir ve Teknoloji Sağlayıcı Kuruluş(lar) ile mutabık kaldıktan sonra,
+dönemsel harcama tutarının kendi payına düşen kısmını 11.2 ve 11.3 maddesinde
+belirtilen koşul ve oranları dikkate alarak Teknoloji Sağlayıcı Kuruluş(lar)a öder. Mali
+Müşavir (MM) raporu tarihine kadar Teknoloji Sağlayıcı Kuruluşun(ların) banka
+hesabına yatırır, ardından dönem raporu TÜBİTAK’a sunulur.
+TÜBİTAK, Dönem raporunu değerlendirir ve Teknoloji Sağlayıcı Kuruluş(lar) için Kabul
+Edilen Harcama Tutarlarını1 belirler.
+TÜBİTAK, Kabul Edilen Harcama Tutarlarına, işbu çağrının 11. başlığında sunulmuş
+olan destek oranlarını uygulayarak kurumlara/kuruluşlara ödeme yapar.
+İşbu çağrının 10.2 maddesi kapsamında Müşteri kuruluş tarafından harcama beyanı
+yapılırsa TÜBİTAK, Müşteri Kuruluş için Kabul Edilen Harcama Tutarına 11.4
+maddesinde belirtilen destek oranını uygulayarak Müşteri Kuruluşa öder. (Kalan tutar
+Müşteri Kuruluş tarafından karşılanır.)
+Bu çağrı kapsamında talep edilmesi durumunda sermaye şirketlerine teminat karşılığı
+ön ödeme yapılabilir. Ön ödeme oranı en fazla kabul edilen bütçenin %25 olarak
+uygulanacaktır.
+1 Kabul edilen harcama tutarı; proje faaliyetleri ve karar yazısı ile bildirilen desteklenecek giderler doğrultusunda, ilgili
+mevzuat hükümleri ve izleyici görüşleri dikkate alınarak belirlenir.
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı 8/15
+--- PDF page 10 ---
+6. Çağrı Takvimi
+Çağrı Takvimi aşağıda verilmiştir:
+1711 YZE 2026 Çağrı Takvimi
+Çağrının açılış tarihi 15 Haziran 2026
+Kuruluş Bazlı Ön Kayıt son tarihi 1, 2, 3,
+4 28 Eylül 2026, saat: 23:59
+Proje Başvurularının PRODİS
+üzerinden alınmaya başlanması 4 15 Haziran 2026
+Çağrı kapanış tarihi 5 2 Ekim 2026, saat 23:59
+Proje başvurularındaki eksik
+belgelerin tamamlanması 6
+İş birliği Sözleşmesi, gerekli görülmesi durumunda
+ilgili proje ile karşılaştırma dokümanı ve gerekli
+görülen diğer bilgilere ilişkin eksikler istendiği
+tarihten itibaren TÜBİTAK’ın belirlediği tarihe kadar
+tamamlanır.
+NOTLAR:
+1. Başvuru yapabilmek için kuruluş bazlı ön kayıt belgelerinin Müşteri Kuruluş ve bütün Tedarikçi Kuruluşlar
+tarafından TÜBİTAK’a ulaştırılması gerekir. Belirtilen tarih, gerekli evrakların TÜBİTAK’a evrak girişinin
+yapılacağı son tarihtir. Ön kayıt evrakları süresi içinde TÜBİTAK’a ulaşmayan başvurular işleme alınmaz.
+Üniversite/araştırma merkezlerinin kuruluş bazlı ön kayıt işlemi yaptırmayacaklardır. Üniversite
+/araştırma merkezleri “Kamu_kurum_ve_kuruluslari_ile_universiteler_icin_on_kayit_kilavuzu”nda yer
+alan açıklamalara göre yetkilendirme işlemlerini yapacaklardır. PRODİS’te kaydı olmayan veya kuruluş
+yetkilileri eksik/hatalı olan üniversite/araştırma merkezlerinin ön kayıt son tarihine kadar dilekçe ile
+TEYDEB’e başvurması gerekmektedir.
+2. Daha önce kuruluş bazlı ön kayıt onayı alan kuruluşlar tekrar kuruluş bazlı ön kayıt yaptırmayacak ve
+ön kayıt evrakı göndermeyecektir.
+3. Kuruluş bazlı ön kayıt sürecini anlatan kullanıcı kılavuzu Firma Kullanıcılarının ve Firma Ön Kayıt
+Sorumlusunun ana sayfasında yer almaktadır. Kuruluş bazlı ön kayıt sürecine ilişkin soru/sorunlarınız
+için teydeb.onkayit@tubitak.gov.tr adresi ile iletişime geçebilirsiniz.
+4. Proje önerisinin PRODİS’ten gönderilmeye başlanacağı tarihtir. Gönderim için kuruluş bazlı ön kayıt
+onayı gerekir. Proje başvurusu Müşteri Kuruluş tarafından PRODİS üzerinden yapılır ve Tedarikçi kurum
+ve kuruluşlar ortak olarak eklenir.
+5. Proje önerisinin PRODİS’ten gönderileceği son tarihtir.
+6. TÜBİTAK’ın, tespit ettiği eksikliklerin giderilmesini istediği durumda, düzeltme için azami süredir.
+PRODİS’te açılan revizyonun tamamlanma süresini ifade eder. Sürenin uzatılması kuruluş tarafından
+gerekçeli olarak talep edilmesi halinde ayrıca değerlendirilir.
+7. Başvuru Yapabilecek Kuruluşlar
+7.1. Teknoloji Sağlayıcı Kurum(lar)/Kuruluş(lar) KOBİ ölçeğinde sermaye şirketleri ve
+üniversite araştırma laboratuvarları/merkezleri ya da kamu araştırma
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı 9/15
+--- PDF page 11 ---
+merkezleri/enstitüleri olacaktır. Müşteri Kuruluş KOBİ ya da Büyük ölçekli sermaye
+şirketi olabilir1
+.
+7.2. 5520 sayılı Kurumlar Vergisi Kanunu ve ilgili mevzuat hükümlerine göre ilişkili kişi
+kapsamında olan kuruluşlar, Müşteri Kuruluş ve Teknoloji Sağlayıcı Kuruluş olarak aynı
+projede yer almaz.
+7.3. Projede görev alacak Akademisyen, eğer şirketi varsa; hem üniversitede hem de şirket
+adına aynı anda projede görev alamaz. Aynı üniversitede başka bir Akademisyenin görev
+alması durumunda, KOBİ ve Üniversite’nin sorumlulukları ve çalıştırdıkları personel farklı
+olmalıdır. İş tanımları, sorumlulukları ve faaliyetlerinin çıktıları, başvuru belgesinde detaylı
+olarak belirtilmelidir. Akademisyenin şirketinin projede Teknoloji Sağlayıcı KOBİ olarak
+görev alması bulunduğu Üniversite’nin projeye ortak olarak katılmasına engel teşkil
+etmez. Teknoloji Sağlayıcı KOBİ’nin ortakları ve çalışanları, Teknoloji Sağlayıcı
+Üniversite’nin ve Yürütücü Kuruluş’un proje ekibinde yer alamaz ve proje kapsamında
+görev üstlenemez.
+7.4. Projede konsorsiyum üyesi olarak yer alan Üniversite (Teknoloji Sağlayıcı Kurum) en
+az YZ geliştirme ile ilgili (veri analizi, modelleme, geliştirme) bir iş paketinden sorumlu
+olması, Teknoloji Sağlayıcı KOBİ’nin YZ geliştirme veya uygulamaya alma ile ilgili en
+az bir iş paketinden sorumlu olması gerekmektedir.
+8. Başvuru Yöntemi
+8.1. Proje başvuruları tek aşamalı yapılacaktır (Ön Proje Başvurusu yapılmaz).
+8.2. Ön kayıt işlemi (kuruluş bazlı ön kayıt yapılacaktır) süreçleri tamamlandıktan sonra
+proje önerisi PRODİS üzerinden e-imza ile TÜBİTAK’a gönderilir.
+8.3. Proje başvurusu öncesi konsorsiyumun Yapay Zekâ Enstitüsü ile iletişime geçerek çağrı
+alanlarına uygunluk vb. konularında YZE ile görüşmesi ve Niyet Beyan Formu’ nu YZE’ye
+iletmesi gerekmektedir.
+9. Çağrıya Başvuru Koşulları
+9.1. Çağrıya, bir Müşteri Kuruluş ve Teknoloji Sağlayıcı Kurum/Kuruluşlar olarak Yapay zekâ
+üzerine çalışan en az bir KOBİ ölçeğinde sermaye şirketi ve en az bir üniversite araştırma
+laboratuvarı/merkezi ya da kamu araştırma merkezi/enstitüsü oluşturacakları
+konsorsiyum ile başvuru yapacaktır. Başvuruyu yürütücü olarak Müşteri Kuruluş olarak
+yapacaktır. İş birliği sözleşmesinde ticarileşmeden sorumlu kuruluş da belirtilir2. TÜBİTAK
+projenin Ticarileşme Aşamasında ticarileşmeden sorumlu kuruluşun faaliyetlerini göz
+önünde bulundurur.
+1 TÜBİTAK Açık Bilim Politikası doğrultusunda, TEYDEB'in desteklediği tamamlanmış projelere ilişkin veriler
+PRODİS'ten paylaşılmaya başlanmıştır. Yeni işbirliklerinin oluşturulmasına yardımcı olmak amacıyla TEYDEB ana web
+sayfası olan https://eteydeb.tubitak.gov.tr/teydebanasayfa.htm linki üzerinden “Tamamlanmış Projeler” seçeneği
+kullanılarak, projelere ilişkin bilgilere ve kullanım kılavuzuna erişilebilmektedir.
+2 Müşteri ve Tedarikçi Kuruluşun proje çıktısını birlikte ticarileştirecek olması durumunda dahi kuruluşlardan biri
+ticarileşmeden sorumlu olarak belirtilir.
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı
+10/15
+--- PDF page 12 ---
+9.2. 9.3. 9.4. 9.5. Kuruluşların kendi bünyesinde üretmekte olduğu veya daha önce ürettiği bir ürünün
+aynısının Teknoloji Sağlayıcı Kuruluş(lar) tarafından üretilmesine yönelik projeler için
+başvuru yapılmaz.
+Başvurulan projelerde, Müşteri Kuruluşta ve Teknoloji Sağlayıcı Kuruluşlarda proje
+konusu ile ilgili en az lisans derecesine sahip asgari bir proje personelinin bulunması
+zorunludur. Bu şartı sağlamayan projeler için başvuru yapılmaz. TÜBİTAK bu koşulla
+ilgili değerlendirmeyi aşağıdaki şekilde yapar:
+9.3.1. Teknoloji Sağlayıcı Kuruluşta projede yürütülecek Ar-Ge çalışmaları ile teknik
+açıdan uyumlu bir lisans mezunu1 bulunması gereklidir.
+9.3.2. Müşteri Kuruluşta ise projede yürütülecek çalışmaların takibini, projenin
+yönetimini ve eş güdümünü sağlayabilmek için yeterli düzeyde uyumlu bir
+alanda bir lisans mezunu bulunması gereklidir.
+9.3.3. Projenin konusuna göre uygun Lisans mezunu içeren proje ekipleri
+oluşturulmalıdır.
+9.3.4. TÜBİTAK gerekli görmesi halinde proje personellerine ilişkin revizyon açabilir.
+Revizyon TÜBİTAK’ın belirlediği tarihe kadar tamamlanır. Kuruluş tarafından
+gerekçeli olarak revizyonda süre uzatımı talep edilmesi durumu ayrıca
+değerlendirilerek kuruluşa değerlendirme sonucu iletilir.
+Konsorsiyumlarda görev alacak teknoloji sağlayıcı KOBİ’ler üniversitelerde görev alan
+akademik personelleri çalışan olarak beyan edemezler.
+Başvuru koşulunu sağlamayan ve çağrı duyurusunda belirtilen süre içerisinde başvuru
+sahibi tarafından eksik belgeleri tamamlanmayan proje önerileri, teknolojik yeterlilik
+değerlendirmesine alınmaksızın (hakem değerlendirme süreci başlatılmaksızın)
+doğrudan ret önerisiyle GYK değerlendirmesine sunulur.
+10. İş Birliği Yapısı
+10.1. Proje başvurusu, Müşteri Kuruluş ve Teknoloji Sağlayıcı Kurum(lar)/Kuruluş(lar)
+tarafından tek bir proje başvurusu halinde, ortak olarak sunulur.
+10.2. Proje kapsamındaki Ar-Ge çalışmalarını Teknoloji Sağlayıcı Kurum/Kuruluşların
+yürütmesi beklenir. Müşteri Kuruluşun Ar-Ge çalışmalarında kısmen de olsa görev
+alması durumunda, 9.2. Madde de belirtilen sınırlamalar dâhilinde, bu çalışmalar
+projede gösterilebilir.
+11. Kısmi Destek Uygulaması
+Yenilik Destek Programı Uygulama Esasları Yönergesinin 24’üncü maddesinde belirtildiği
+şekilde kısmi destek uygulaması yapılır. Kısmi destek oranında projenin süresi dikkate alınır.
+1 TÜBİTAK, proje konusuyla ilgili deneyimleri bulunan ancak farklı bir alanda lisans eğitimi almış olan çalışanların
+projeye uygunluğunu dikkate alabilir.
+11/15
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı
+--- PDF page 13 ---
+12. Proje Değerlendirme Sistematiği
+12.1. Projeler, Yenilik Destek Programı Uygulama Esasları Yönergesinin 5’inci
+Kısımının, 2’inci Bölümü (Panel ile Değerlendirme ve Karar) çerçevesinde değerlendirilir.
+12.2. Panel değerlendirmesi çevrimiçi olarak yapılır.
+12.3. Projeye ilişkin sunum yapması ve bilgi alınması için proje başvurusu sahibi panele
+davet edilir.
+13. Proje Değerlendirme Ölçütleri
+13.1. Projeler aşağıdaki üç boyut altında değerlendirilir:
+1) Projenin teknolojik ve/veya teknik yeterliliği
+ Projenin endüstriyel Ar-Ge içeriği, teknoloji düzeyi ve yenilikçi yönü
+2) Projenin Yapılabilirliği
+ Proje planı ve kuruluşun altyapısının uygunluğu
+3) Projenin Etkisi
+ Proje çıktılarının ekonomik yarara ve ulusal kazanıma dönüşe bilirliği
+13.2. Çağrı için alt eşik değer, 100 üzerinden 60 olacaktır. Panel ortalama puanı eşik değerin
+altında kalan projeler reddedilir. Eşik ve Eşik üstü puan alan projelerin değerlendirme
+süreçlerine devam edilir.
+13.3. Aşağıdaki kritik tespitlerin yapılması durumunda ise proje teknolojik yeterlilik
+değerlendirmesine alınmaksızın (panel değerlendirme süreci başlatılmaksızın)
+reddedilir.
+Kritik tespit 1. Projedeki tüm Ar-Ge faaliyetleri proje başvurusundan önce kuruluş
+tarafından tamamlanmış olup, kuruluşun çözmesi gereken teknik/teknolojik
+bir problem bulunmamaktadır.
+Kritik tespit 2. Kuruluşun Ar-Ge çalışmalarına katkısı yoktur. Projedeki Ar-Ge çalışmaları
+hizmet alınan kurum/kuruluş tarafından yapılacaktır.
+Kritik tespit 3. Proje çıktısının, teknik/teknolojik/yasal/hukuki açıdan yapılabilme,
+kullanılabilme veya endüstriyel uygulamaya dönüşme olasılığı yoktur.
+Kritik tespit 4. Proje endüstriyel Ar-Ge içermeyen ve sadece üretim/laboratuvar altyapısı
+oluşturmaya yönelik yatırım amaçlı bir projedir.
+Kritik tespit 5. Kuruluşta, proje konusu ile ilgili en az lisans derecesine sahip herhangi bir
+proje personeli yoktur.
+a. Proje konusundan farklı bir alanda lisans eğitimi olan çalışanların
+özgeçmişlerinde proje konusu ile deneyimlerini sunmaları durumunda
+deneyimlerinin yeterliliği de dikkate alınacaktır.
+b. Firmada çalışıyor olmasına rağmen mevcut proje ekibinde sunulmamış
+personel bulunması veya TÜBİTAK tarafından gerekli görülmesi halinde
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı
+12/15
+--- PDF page 14 ---
+proje personellerine ilişkin revizyon açılabilir. Revizyonun TÜBİTAK’ın
+belirlediği tarihe kadar tamamlanması gerekir. TÜBİTAK tarafından
+belirlenen süreler içerisinde başvuru sahibi tarafından revizyonları
+tamamlanmayan proje önerileri, doğrudan ret önerisiyle GYK
+değerlendirmesine sunulur. Kuruluş tarafından gerekçeli olarak
+revizyonda süre uzatımı talep edilmesi durumu ayrıca değerlendirilerek
+kuruluşa değerlendirme sonucu iletilir.
+Kritik tespit 6. Proje önerisi çağrıya uygun değildir. (Çağrıda belirtilen şartları sağlamayan,
+niyet beyan formunun boş yüklenmesi vb.)
+Kritik tespit 7. Proje önerisi daha önce TÜBİTAK Destek Programlarına sunulmuş ve
+reddedilmiştir. Daha önce sunulmuş olan projenin ret gerekçelerine yönelik
+değişiklik yapılmadan proje tekrar sunulmuştur.
+Kritik tespit 8. Proje önerisinde sunulan bilgiler projenin değerlendirilebilmesi için
+yetersizdir, kısıtlı düzeyde bilgi sunulmuştur.
+Kritik tespit 9. Projede gerçekleştirilecek Ar-Ge faaliyetleri ile sunulan gider kalemleri nitelik
+ve nicelik olarak uyumlu değildir, gerçekçi bir bütçe planlaması
+yapılmamıştır. Bütçe kalemlerinin büyük çoğunluğu Ar-Ge çalışmalarına
+katkısı olmayan gereksiz ve fazla taleplerden oluşmaktadır.
+13.4. Panel değerlendirmesi sonrasında projenin değerlendirme puanı, eşik değerden
+yüksek olsa dahi ilgili Grup Yürütme Kurulu yukarıda belirtilen kritik tespitlere göre
+projenin desteklenmemesini önerebilir.
+14. İzleme
+14.1. Takvim yılı içerisinde iki dönem tanımlanmıştır. Birinci dönem 1 Ocak – 30 Haziran,
+ikinci dönem 1 Temmuz – 31 Aralık tarih aralıklarını kapsar. Projede yapılan çalışmalar,
+projenin öngörülen hedefe göre ilerleme durumu ve proje giderleri, Dönem Raporları
+ile TÜBİTAK’a sunulur.
+14.2. Sermaye Şirketleri Dönem Raporunu, Yenilik Destek Programı Uygulama Esasları
+Yönergesi çerçevesinde TÜBİTAK’a sunar.
+14.3. Üniversite ve Araştırma Merkezleri Dönem Raporunu, Yenilik Destek Programı
+Uygulama Esasları Yönergesi çerçevesinde TÜBİTAK’a sunar.
+14.4. Projenin son döneminde, Dönem Raporuna ilave olarak Proje Sonuç Raporu sunulur.
+14.5. Dönem Raporunda aşağıdaki belgeler olacaktır:
+i. Teknik rapor
+ii. Mali Müşavirlik Proje Harcamaları Değerlendirme Raporu (Sermaye Şirketleri ve
+Vakıf Üniversiteleri tarafından sunulur)
+iii. Gider Formları
+14.6. Projeler; dönem raporu, izleyici görüşleri ve proje önerisi dikkate alınarak izlenir.
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı
+13/15
+--- PDF page 15 ---
+14.7. Ticarileşme dönemi proje sözleşmesi çerçevesinde destek bitiş tarihinde (ek süre
+verilmesi halinde ek süre dâhil) başlatılacak ve mevzuat çerçevesinde 1. 3. ve 5. Yılda
+firma tarafından sunulacak ticarileşme raporları marifetiyle takip edilecektir.
+14.8. Projelerde, ilgili destek programı kapsamında gerçekleştirilecek rutin izleme
+faaliyetlerine ilave olarak 3’er aylık periyotlarda idari ve teknik gelişmeler takip
+edilecektir. Bu amaçla Yapay Zekâ Enstitüsü tarafından hazırlanan raporlar TEYDEB
+Başkanlığına iletilecektir. Program kapsamında desteklenen konsorsiyumların bu
+raporlama sürecinde YZE’ye ve TEYDEB’e talep edilen bilgileri sunması
+beklenmektedir.
+15. Başvuru İçin Gerekli Belgeler
+15.1. Ön kayıt1: TÜBİTAK, gereken basılı evrakları, başvuru sahiplerinin PRODİS'ten alacağı
+ön kayıt formunda (formun çıktısında) belirtir.
+15.2. Proje Başvurusu: Proje önerisi TÜBİTAK’a PRODİS üzerinden ve yalnızca çevrimiçi
+gönderilir ve aşağıdakileri içerir:
+I. Proje Önerisi
+II. Niyet Beyan Formu
+III. İşbirliği Sözleşmesi (Proje önerisinin ekidir, proje başvurusu gönderilirken
+imzalanması zorunlu değildir ancak kabul edilen projeler için proje
+sözleşmesi imzalanana kadar hem Müşteri hem de Tedarikçi kurum/kuruluş
+tarafından imzalanmalıdır.)
+Bilgi İçin:
+TÜBİTAK Yapay Zekâ Enstitüsü ile irtibat için
+(Konsorsiyum Yapılanması, İş Birliği Protokolleri/Sözleşmeleri ve Teknik Konular ile ilgili bilgi)
+yze.iletisim@tubitak.gov.tr
+TÜBİTAK Teknoloji ve Yenilik Destek Programları Başkanlığı
+(Bürokratik ve İdari Konular ile ilgili bilgi)
+Ön Kayıt Birimi ile irtibat için
+teydeb.onkayit@tubitak.gov.tr
+TEYDEB ile irtibat için
+1 Daha önce kuruluş bazlı ön kayıt onayı alan kuruluşlar, tekrar ön kayıt yaptırmayacak ve evrak göndermeyecektir.
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı
+14/15
+--- PDF page 16 ---
+1711@tubitak.gov.tr
+ULAKBİM ile irtibat için
+trubaservis@ulakbim.gov.tr
+15/15
+TÜBİTAK 1711 Yapay Zekâ Ekosistem 2026 Çağrısı

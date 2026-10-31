@@ -1,0 +1,98 @@
+
+PAGE 1
+AI technical sandbox– Energy UK response to Ofgem
+consultation
+20 March 2026
+About Energy UK
+Energy UK is the trade association for the energy industry, representing companies
+investing billions of pounds to secure our country’s current and future energy needs.
+From growing start-ups to major electricity generators, grid and infrastructure
+developers and energy suppliers, our members are driving change across power,
+heat, transport and flexibility.
+We provide a collective voice for the sector working with governments, regulators,
+charities and other organisations to provide crucial insight that shapes policy, offers
+solutions and promotes best practice.
+Our broad view across the whole system supports evidence-based positions which
+are not tied to particular technologies, and are focused on delivering strategic
+benefits for people, businesses and the economy.
+We champion initiatives such as our Vulnerability Commitment, which pushes
+suppliers to go beyond regulation to support customers with additional needs, and
+TIDE, the industry's drive for greater inclusion and diversity. Through our Young
+Energy Professionals Forum, we support the development of future leaders.
+We are equally committed to our team and are proud to be recognised as a ‘Gold’
+Investors in People employer.
+Energy UK welcomes Ofgem’s work to better understand how artificial
+intelligence technologies could be used in the energy sector and provides
+several recommendations to maximise the success and value of the AI
+Technical Sandbox.
+We recognise that given the rapid advancements in artificial intelligence (AI)
+technologies, it is right that Ofgem is considering how to best mitigate any direct
+harms to customers, and support responsible AI adoption in the energy industry. We
+would like to thank Ofgem for considering our initial feedback to its earlier call for
+input.
+To support the design of the AI Technical Sandbox (the Sandbox), we have outlined
+key areas for improvement, to ensure it proves valuable to the sector and customers.
+At least in the pilot phase, the Sandbox should have a clear, narrow focus.
+While the consultation document outlines the aims and expected outcomes of the
+Sandbox, the breadth and high-level nature of the list makes it difficult to determine
+practically what the Sandbox will focus on. If the main priority is to stress-test new AI
+1
+PAGE 2
+i
+systems against existing regulatory oversight, to inform targeted regulatory
+modifications (if necessary), we recommend that this is made more explicit. This
+should then support more tailored design details to deliver this, and ensure a clear,
+narrow focus. For example, this could include a clear scope of what use cases
+Ofgem would consider eligible for the Sandbox, and details on how this would work
+in practice. This would also allow stakeholders to provide more detailed feedback on
+the Sandbox plans, and inform if and how they develop applications to the Sandbox.
+We also note this resource, A Capability Architecture for Data Ecosystems, which
+provides a shared terminology for the different data capabilities the sector will need
+to design, build, and operate a collaborative, AI-enabled smart energy system. Using
+this framework alongside the Sandbox could make it easier for the sector to
+collectively:
+• Identify which capabilities should be prioritised and tested first.
+• Decide whether a roadmap of multiple pilots over a year would be valuable.
+• Agree which capability areas should be tested during that pilot, and in what
+order.
+Alternatively, we suggest that the Sandbox could be used as a mechanism for Ofgem
+to encourage businesses to focus on a particular area where it has identified that AI
+innovation could hold real value for customers. For example, Ofgem could choose to
+focus on decarbonisation or sustainability, and push the sector forward in developing
+AI solutions in these areas. This would align with a focus on the opportunities of AI,
+not just the risks, and exploring the value of new AI innovations for customers, rather
+than just the implications for regulations.
+Further information and consideration of timelines is needed.
+Given the rapid nature of advancements in AI technologies, 12 months is too long for
+an initial pilot. Application, involvement, and sharing learnings would all need to be
+fast paced to prove useful to participants and the broader sector.
+One possible alternative would be to consider a prioritised roadmap of multiple pilots
+within a 12-month period. For example:
+• Four 12-week pilot periods spread across the year.
+• Each 12-week phase focusing on a different theme or capability area.
+We also note that there is a lack of clarity in the consultation document on timelines
+for the pilot. For example, when it is likely to start, how long the actual testing phase
+is expected to take, and other milestones.
+Further technical and legal detail on other elements of the Sandbox is needed.
+Specific information on how the Sandbox will work practically is needed, including on
+the technical and legal elements. This would provide stakeholders with more
+confidence to apply to the Sandbox. For example, details on technical specifications
+of the testing environment, data residency and transference, and practically how IP
+and confidentiality information will be protected. This would support stakeholders to
+2
+PAGE 3
+i
+undertake the necessary legal and security assessments, as they would with any
+third party.
+Furthermore, definitions are needed for representative and real-world data, to
+provide clarity on what kind of data is expected to be used during Sandbox. The
+consultation document implies that both would be used in the Sandbox, or that these
+can be used interchangeably, despite these being two different data sets. The data
+being used will influence how representative the results are, as well as the security
+and legal aspects of the Sandbox.
+If you have any questions about this response or wish to engage with Energy
+UK and its members, we would welcome further engagement.
+Kind regards,
+Isabella Darin
+Policy Manager
+3

@@ -1,0 +1,237 @@
+
+PAGE 1
+LUMI General Terms of Use
+Title of document LUMI General Terms of Use
+Date of last change 10.02.2026
+Version 2.0
+Status Approved
+Related documents LUMI Export restrictions and sanctions
+LUMI Resource cut-off policy
+1. Use of the services is intended for research and innovation purposes, unless otherwise
+agreed in advance
+2. Research results should be public
+3. Registering an account and becoming a User
+4. As a User, you are responsible for the use of the Account and Services
+5. User and Project management
+6. User Content
+7. Processing Personal Data in User Content
+8. Only limited backups are taken and not guaranteed
+9. Service level declaration and limited warranty
+10. How and when are User Accounts terminated?
+11. Resource allocations cut-off policies
+12. Changes to these Terms
+13. General
+Thank you for using LUMI services for research (the "Services"). By registering a LUMI
+user account ("Account") or using any of the Services referred to in these General Terms
+of Use ("Terms"), you (the "User") are agreeing to these Terms. Please read them
+carefully.
+In these terms “LUMI” means the hosting entity, CSC – IT Center for Science Ltd
+(representing the LUMI consortium and LUMI partners as applicable).
+For some services, additional terms or requirements may apply. These additional terms
+are available in connection to the relevant services. The additional terms become part of
+your agreement with LUMI if you use those services.
+www.lumi-supercomputer.eu contact@lumi-supercomputer.eu 1
+PAGE 2
+1. Use of the services is intended for research and
+innovation purposes, unless otherwise agreed in
+advance
+The use of LUMI Services shall be open to users from the public and private sectors.
+The User can only use the Services for the purposes for which they have been granted.
+The purpose is defined before an Account is opened for the User. The purpose may be
+specified when approving an application for the User’s Account or in a research plan,
+objectives, proposal, contract, or other definition of scope.
+Use of the Services may involve additional license terms or conditions set by third parties.
+For example, software or hardware manufacturers or third-party funding authorities may
+limit the use of services for research purposes only or based on the nationality or affiliation
+of Users. In cases where additional license terms are applied, LUMI will make the terms
+available to the User or they will be otherwise presented to the User.
+Users are responsible for ensuring that their use of the Services is in compliance with any
+applicable laws including international law, export restrictions, sanctions and other
+restrictions, and any applicable regulations and license terms. The User agrees to adhere
+to the content of the Export restrictions and sanctions annexed to these Terms.
+2. Research results should be public
+Unless otherwise agreed or specified, e.g., in a contract for industrial or other commercial
+use, research results must be released publicly, preferably for peer review.
+The User agrees to cite in publications and presentations that the Services provided by the
+EuroHPC Joint Undertaking and the LUMI Consortium countries have been used to
+produce the results. How to cite LUMI in a publication https://www.lumi-
+supercomputer.eu/acknowledgement/.
+The User commits to follow good research practices.
+3. Registering an account and becoming a User
+To use some of the Services you must apply for an Account as described on the LUMI
+web pages. Requirements of User authentication methods, including the accepted identity
+federations, are described in LUMI Authentication Policy. LUMI reserves the right to reject
+a User application.
+Access to Accounts is controlled by credentials, for example username and passwords.
+www.lumi-supercomputer.eu contact@lumi-supercomputer.eu 2
+PAGE 3
+You must use an email address provided by your organization (e.g. university or company)
+as your primary contact information. Please contact LUMI if you do not have an email
+address provided by your organization.
+LUMI maintains a customer register and a customer register information sheet in
+accordance with the General Data Protection Regulation (GDPR) (Regulation (EU)
+2016/679) and national data protection regulation. The Privacy notice for processing of
+user data on the LUMI Service contains a detailed description.
+LUMI requires User contact details to notify users about changes to these terms, service
+interruptions, service information, and other important issues.
+Users are responsible for keeping their contact details up to date at all times.
+LUMI is entitled to publish general information about the User and the purpose for which
+the user rights have been granted. These are: the user's name, organization, science
+area, project name, description and resource usage. We may transfer your data outside of
+the EU/EEA only in connection with services provided by third-parties for example to
+comply with software license agreements, in compliance with Chapter V of the GDPR on
+transfer of personal data to third countries or international organisations.
+4. As a User, you are responsible for the use of the
+Account and Services
+Do not:
+• Share your credentials, leave them unprotected for others to see, or neglect any
+security responsibilities defined in the relevant service description.
+• Misuse or abuse any LUMI or third-party service or property, including intellectual
+property such as copyright, or act in violation of any licence terms.
+• Interfere with the use of Services by other users or compromise the privacy or security
+of other users.
+• Misuse or abuse User Content, credentials, or other confidential information.
+• Send or transmit harassing, abusive, libellous, obscene, or unsolicited (spam)
+communications or distribute malicious content.
+• Tamper with or deliberately disrupt system resources or network traffic to the Services.
+• Attempt to breach or circumvent any administrative or security controls.
+• Engage in any activity which is illegal under local, national or international law.
+Users agree to notify LUMI promptly if their account has been used without permission, if
+their credentials have been lost or stolen, or if they notice any breach to the Terms of Use.
+Users agree to exercise all reasonable care when accessing the Services.
+www.lumi-supercomputer.eu contact@lumi-supercomputer.eu 3
+PAGE 4
+Users are liable, even after the user account has been terminated, for damage and costs
+to LUMI:
+• as a result of violating these Terms.
+• as a result of violating 3rd party licensing terms.
+5. User and Project management
+You need a LUMI Project ("Project") to use some of the Services. Allocation of resources
+is based on Projects.
+Every Project has a User who is also the Principal Investigator (PI) of the Project. Project
+may also have a named co-PI to whom the PI has delegated the same rights as the PI.
+• The PI serves as a primary contact person between the project and LUMI.
+• The PI can add or request LUMI to add Users to Projects and remove them and is
+responsible for keeping the list of Project members up to date at all times.
+• The PI is responsible for ensuring that the identity of each User added to the Project is
+vetted.
+A Project is valid for a fixed time period as communicated in connection with the
+admission. LUMI will notify the members of the Project before the expiration date of the
+Project upon which the User’s Account may be terminated.
+Projects are encouraged to use their resources in a balanced way during their whole
+project lifecycle and start to use the resource early in the project lifetime. If certain amount
+of resources have not been used in the half-way mark of the project, the unused resources
+will be cut to the limits detailed in the LUMI Cut-off Policy.
+Upon request, the PI must report on the progress of the Project and the use of the
+Services.
+6. User Content
+User Content ("Content") means the User's data, software, servers, systems, or processes
+that use or interact with the Services.
+The User is responsible for the Content stored in, or transmitted via, LUMI's Services and
+that it complies with all applicable laws and regulations, data policies, and with the
+provisions included in these Terms. If the Content includes sensitive or confidential
+information, the User is responsible for making sure that the Service used to handle the
+data complies with the required security measures, by examining the Service Description
+documents. The User gives LUMI the right to access Content to secure the accessibility,
+www.lumi-supercomputer.eu contact@lumi-supercomputer.eu 4
+PAGE 5
+the quality and the security, which includes, for example, keeping the information on
+LUMI’s IT service platform, automated monitoring for intrusion detection, taking backups,
+copying/moving Content, or reproducing faults. At all times, LUMI protects the
+confidentiality of Content as permitted by law.
+No ownership rights or intellectual property rights of Content are transferred when using
+the Services, if not otherwise agreed.
+Users are responsible for sharing of their Content according to the Project's and their own
+requirements. For example, if a User leaves a Project, they should ensure they transfer
+Project Content to another User of that Project.
+Upon request, we will make a reasonable effort to provide the User with a copy of the
+Content (to which the User has ownership or intellectual property rights) after account
+cancellation or termination. The User must make this request within 90 days of
+cancellation or termination and provide LUMI with a location to store the copy of Content.
+Copies of Content may technically remain on Backup Storage, but access to the data will
+be strictly restricted.
+7. Processing Personal Data in User Content
+If Content contains personal data or special categories of data (i.e. sensitive personal
+data), referring to the GDPR articles 4(1) and 9(1), the User has to ensure that the service
+intended to process the data complies with the security level required for this kind of data.
+In such a case, the User commits to take care of the Data Controller’s responsibilities as
+described in applicable data protection legislation. LUMI acts as a Processor of the
+personal data. The User and LUMI will execute LUMI’s Data Processing Terms and will
+execute the description of processing activities which together to govern such processing
+activities.
+LUMI offers an IT service platform according to the service descriptions and these Terms
+of Use for the Users to process their Content on their own account. LUMI implements and
+maintains the measures required by the security of the processing according to the service
+descriptions and the certified security system.
+8. Only limited backups are taken and not guaranteed
+LUMI takes backup copies of some Content. This is defined in the relevant service
+description. However, LUMI gives no guarantee for restoring any Content and declines any
+liability for lost files or data for any reason.
+www.lumi-supercomputer.eu contact@lumi-supercomputer.eu 5
+PAGE 6
+LUMI recommends that Users maintain an up-to-date copy of their Content by other
+means if they cannot afford to lose it.
+9. Service level declaration and limited warranty
+Use of the Services is at the User’s own risk, and LUMI is not liable for any loss or injury.
+This also includes loss or injury caused by possible erroneous results. LUMI does not give
+any warranty or representation as to the availability, error- or interruption-free operation, or
+suitability for any purposes (general or particular) of the Service. LUMI also does not give
+any warranty that communications to or from the Service is completely secure. LUMI
+expressly disclaims any such express or implied warranties.
+However, LUMI aims to follow industry best practice service management and security
+measures.
+LUMI reserves the right to modify and terminate any Service at any time. LUMI may from
+time to time make changes to any interfaces made available to the Service.
+10. How and when are User Accounts terminated?
+The LUMI Account is valid for a fixed time period, starting from the day when the Account
+is opened. LUMI will notify Users well before the expiration date of the Account.
+The right to use LUMI Services ends when the original purpose is no longer valid or the
+User has parted from the User's affiliated organization. The PI of the Project makes the
+decision whether the User can continue the use of Services when affiliated to a new
+organization. If the User is the PI of the Project, they must contact the party who has made
+the allocation decision for the Project in order to verify their eligibility.
+The User Account and associated Content will be handled according to the corresponding
+service descriptions and their terms of use. LUMI will notify the User about their expired
+Account via the contact information provided by the User before deleting User Content and
+Account.
+The User Account can be terminated or suspended by LUMI without notice:
+• In the event of any unauthorized use of the Services.
+• If LUMI has a justified reason to suspect that the Services are used contrary to these
+Terms.
+You can terminate your user account by giving notice to the LUMI Helpdesk. If no legal
+requirements are pending, the User Account and associated Content will be deleted
+(though some information may remain in backups).
+www.lumi-supercomputer.eu contact@lumi-supercomputer.eu 6
+PAGE 7
+LUMI will retain and use general User information as described in the LUMI Customer
+Register Privacy Policy.
+11. Resource allocations cut-off policies
+LUMI is adhering to the EUROHPC JU decision to apply a cut-off policy for their resource
+allocation if projects do not consume their allocated resources early enough. The model for
+implementing cuts can be found in the LUMI cut-off policy document.
+• Timely communications are put in place, with a minimum of one month notifications
+to ensure early information and opportunities to react and further plan on both user
+and resource allocators side
+The same policies are implemented for the national and the EuroHPC JU Projects. By
+introducing the cut-off, users are encouraged to either start using resources early enough
+to be able to consume the majority of their allocation or inform resource allocator about
+their inability to use the allocated resources, in which case the resource allocation decision
+could be revised and some of the resources could be re-allocated to other projects.
+By endorsing cut-offs, as noted in section 5, a balanced use of the allocation is
+encouraged, for the purpose of avoiding the risks and issues brought on by planning the
+use in the closing months of their projects. More information on project types affected, cut-
+off percentages and communication timeframes are to be found in the LUMI Cut-off Policy
+document.
+12. Changes to these Terms
+LUMI reserves the right to change these Terms from time to time by notifying the User at
+least two weeks in advance of the amendment becoming effective. If the User continues to
+use the Services after the stated effective date of the amended Terms, the User is deemed
+to have accepted the amendment.
+13. General
+These Terms of Use may be published in several languages. In case of discrepancy the
+English language version shall prevail.
+These Terms are governed by Finnish law. The District Court of Helsinki will have
+exclusive jurisdiction to deal with any dispute which may arise out of or in connection with
+these Terms or the User’s use of the Services, unless otherwise has been agreed (in, e.g.
+an agreement with the User’s home organization).
+www.lumi-supercomputer.eu contact@lumi-supercomputer.eu 7
