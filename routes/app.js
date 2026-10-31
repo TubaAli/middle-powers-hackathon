@@ -97,7 +97,12 @@ function render() {
   renderPlot(visible); renderList(visible); renderDetail(visible.find(r => r.id === state.route)); renderPair(all); renderReplay(); writeHash();
 }
 
-function selectRoute(id) { state.route = id; state.tab = 'route'; render(); }
+function selectRoute(id) {
+  if (!filterRoutes(displayRoutes(data, state.stage), state).some(route => route.id === id)) {
+    for (const field of ['search','coordination','mechanism','region']) { state[field] = ''; $(`#${field}`).value = ''; }
+  }
+  state.route = id; state.tab = 'route'; render();
+}
 
 function wire() {
   for (const field of ['search','coordination','mechanism','region']) $(`#${field}`).addEventListener(field === 'search' ? 'input':'change', event => { state[field] = event.target.value; render(); });
@@ -120,6 +125,7 @@ function wire() {
       state.view = 'map'; render(); return;
     }
     if (event.target.id === 'copy-link') {
+      writeHash();
       try { await navigator.clipboard.writeText(location.href); event.target.textContent = 'Link copied'; }
       catch { event.target.textContent = 'Copy the URL from your address bar'; }
     }
@@ -136,7 +142,10 @@ function wire() {
     for (const field of ['search','coordination','mechanism','region']) { state[field]=''; $(`#${field}`).value=''; }
     render();
   });
-  window.addEventListener('hashchange', () => { readHash(); render(); });
+  window.addEventListener('hashchange', () => {
+    if (['#method', '#updates', '#explorer'].includes(location.hash)) return;
+    readHash(); render();
+  });
 }
 
 async function main() {

@@ -4,6 +4,8 @@
 
 On 31 October, Grisha approved the route-level plot described in [DESIGN.md](DESIGN.md#approved-direction-routes-to-safeguards-31-october-2026), and asked us to build it. Compare potential safety impact against implementation feasibility; colour by national, middle-power coordination or broader-coalition requirements. Keep evidence confidence independent. Pair national/coordinated proposals to test the coordination hypothesis rather than assume it. EuroHPC is one worked route among a diverse set. The first build will demonstrate source-backed evidence updates; continuous literature discovery is a later capability, not a claim about the static demo.
 
+Implementation WIP is pushed in `d086b56` and `7654291`: standalone explorer under `routes/`, ordinal plot, filters, evidence detail, paired comparison, shareable state and source-review replay. `scripts/build-route-data.py` assembles the runtime snapshot. Model tests pass; the single-card local layout/replay preview was exercised, and a mobile overflow fix was added. Three independent investigations own procurement, evaluation and finance/compute input cards. The complete snapshot, integrated browser checks and live-site delivery are pending; the explorer is not yet linked from the landing page. Grisha reiterated that these intermediate steps should keep being committed and pushed.
+
 A summary of the brainstorm so far. The full idea list is in [ideas.md](ideas.md).
 
 ## Context
