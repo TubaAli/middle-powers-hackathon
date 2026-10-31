@@ -1,5 +1,7 @@
 # Adversary review: authority and inference audit of cohere-stages.md and anthropic-credit.md
 
+> Subsequent integration update: the coordinator recovered and hashed the earlier full tool-extracted Anthropic exhibit text and checked the key new-credit passages against it. Direct raw-HTML retrieval remains blocked; see METHOD.md for the distinct provenance classes. This review's statements about no retained exhibit text describe its original input state. Signing a staged investment would not itself prove all future discretion is gone: conditions, certifications, remedies and amendment possibilities must still be read. The integrated data preserves unknown stage discretion and omits unverified bank-nationality counts.
+
 > Independent refutation pass under the METHOD.md discipline (nraford7/deeper-research raw-source retention and independent-attempt-to-refute rules). The upstream Deeper Research pipeline remains **blocked** (dispatch preflight exit 20; no Exa call made), so this review is **not** a completed upstream pass either — it is the manual raw-source discipline only. Provisional researcher output; **not approved application data**.
 
 **Role:** independent raw-source verification, owner-assigned. **Observation date:** 31 October 2026.

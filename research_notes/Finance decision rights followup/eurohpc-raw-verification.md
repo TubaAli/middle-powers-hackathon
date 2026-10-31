@@ -1,5 +1,7 @@
 # EuroHPC AI Gigafactory contract text: raw-source verification of the tender memo
 
+> Integration qualifications: the portal capture subsequently received a URL/hash manifest entry (see METHOD.md). Retained user IP ownership does not itself exclude weights from all general security obligations; the supported finding is that an explicit custody/evaluator-access right was not identified. I.14.7 and SC 11.5 are request/reasonable-effort provisions, so the integrated worked path uses I.14.6's explicit notification duty instead. Whether refusal of a particular additional-measures request is a remediable breach is not established here. This is a draft contract throughout, not a signed or operational safeguard.
+
 Observation date: **31 October 2026**. Bounded, source-set verification of `eurohpc-tender.md` (the GLM note). Every clause locator below was read in the retained PDFs or their page-labelled extractions in `.local/finance-evidence/`.
 
 **What this is not.** This is not a completed Deeper Research run. The upstream `nraford7/deeper-research` dispatch preflight returned exit 20 (no Exa key or compatible endpoint); no Exa call or spend occurred. This file applies only the retention, provenance and refutation discipline described in `METHOD.md`. The prior memo is treated as a list of claims to test, never as evidence.
