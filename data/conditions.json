@@ -3,8 +3,9 @@
   "source": "gszep, \"Six safety conditions for upcoming laws\" (2026)",
   "source_url": "https://gszep.com/en/blog/six-safety-conditions-for-upcoming-laws/",
   "scoring": "Team heuristic, not from the source. Each condition is backed by one or more levers. A 'host' lever means the law binds whatever is hosted on the bloc's territory: its strength is the bloc's combined share of that stage. A 'chokepoint' lever means the bloc can attach the condition to exports of an input the world needs: its strength is the bloc's share of the strongest such stage. A condition's score is the strongest of its levers.",
-  "thresholds": { "credible": 50, "partial": 25 },
-  "limits": "Market share is not leverage by itself: a share only bites if the bloc acts together, the input is hard to replace, and the bloc will accept the cost of using it. The thresholds are a judgement call, shown so readers can disagree."
+  "thresholds": { "strong": 50, "some": 25 },
+  "labels": { "strong": "Strong supply-chain basis", "some": "Some supply-chain basis", "weak": "Weak supply-chain basis" },
+  "limits": "This is a scenario, not a measure of enforceable bargaining power. Market share only bites if the bloc acts together, the input is hard to replace, a body has legal authority to attach the condition, and the bloc will accept the cost of using it. None of that is modelled here. The thresholds are a judgement call, shown so readers can disagree."
  },
  "conditions": [
   {
