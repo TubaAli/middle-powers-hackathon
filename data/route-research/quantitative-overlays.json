@@ -1,0 +1,192 @@
+{
+  "overlays": [
+    {
+      "id": "eurohpc-incident-protocol",
+      "quantitative": {
+        "coverage": {
+          "basisId": "aigf-phase1-design",
+          "basisLabel": "AIGF Phase 1 tender design",
+          "numerator": 220000,
+          "denominator": 220000,
+          "unit": "H100-equivalent accelerators",
+          "period": "Phase 1 minimum tender design observed 2026-10-31",
+          "stage": "planned procurement envelope",
+          "sourceIds": ["eur-eu-spec", "eur-eu-fwc"],
+          "interpretation": "Coverage of entire scoped minimum design if all contracts adopt protocol; not installed/protected capacity or fraction of global compute.",
+          "derivation": "Four Lot 1 facilities × 25,000 plus three Lot 2 facilities × 40,000 = 220,000 minimum planned equivalents. Numerator is the same full design only under the explicit all-contracts-adopt proposal, not an observed safeguarded amount.",
+          "conditions": ["All seven intended facilities and both lots must adopt a legally valid protocol with applicable tenant evidence rights.", "The one-facility Geneva pilot is not the whole-route numerator; a pilot alone must not inherit 220,000 coverage.", "No signed contract, installed capacity, actual allocation hours or evidence flow-down is established by this envelope."],
+          "value01": 1
+        },
+        "coverageLimitation": "Conditional proposed scope only. The minimum planned design is a matched tender resource pool, not an operational protected numerator. Additional built capacity, market-led off-take, tenant evidence and actual public-access hours are not measured. Compare only with the same basis, period, unit and stage.",
+        "agreements": {
+          "scope": "Whole Phase 1 proposal, with the Geneva graph's minimum connected one-facility subpath as a lower bound: EuroHPC JU, at least one matching national purchaser and one contractor. Full seven-facility party inventory is unresolved.",
+          "actors": [
+            {"id": "eurohpc-ju", "name": "EuroHPC Joint Undertaking", "role": "Award/funding approval, lawful scope clarification and authorised contract execution", "consent": "unknown", "alignment": "unknown", "sourceIds": ["eur-eu-spec", "eur-eu-fwc"], "note": "The Geneva executive and governing-board nodes are organs of one institution, not two independent partners. Draft duties are not acceptance of the proposed protocol."},
+            {"id": "national-purchaser", "name": "At least one matching national purchaser — identity unresolved", "role": "National budget commitment and joint-procurement/contract mandate", "consent": "unknown", "alignment": "unknown", "sourceIds": ["eur-eu-spec", "eur-eu-portal"], "note": "Source graph establishes a separate required purchaser for the minimum facility path; actual participating states, appropriation chains and full-envelope roster remain unverified."},
+            {"id": "contractor", "name": "At least one AIGF contractor — not selected", "role": "Execute framework and first specific contract with the valid protocol", "consent": "unknown", "alignment": "unknown", "sourceIds": ["eur-eu-fwc", "eur-eu-spec"], "note": "Minimum one-facility contractor role, not seven assumed independent contractors. Consortium membership and necessary tenant agreements may add institutions; those identities and relationships are unresolved."}
+          ],
+          "complete": false,
+          "institutionLowerBound": 3,
+          "handoffsLowerBound": 2,
+          "sourceIds": ["eur-eu-spec", "eur-eu-fwc", "eur-eu-portal"],
+          "limitations": ["The source graph's N=3 minimum one-facility path implies at least N−1 = 2 external decision/contract transfers in any connected implementation; the whole envelope cannot require fewer, but may require substantially more. This is neither an exact handoff count nor a full approval denominator.", "Framework and specific contracts are instruments, not extra institutions. Tenant evidence rights, national approvals, consortium parties and all seven facility awards remain incomplete.", "Lot 2 deadline is 3 December 2026; Lot 1 is 4 February 2027 in the retained extension announcement. Neither is an executed agreement or a guaranteed completion date. No exact-protocol consent is recorded."]
+        }
+      },
+      "sources": [
+        {"id": "eur-eu-spec", "title": "AI Gigafactory tender specifications v2", "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/docs/bc712395-692d-41ab-aa25-8e254ae86eb2-CN/CfT%20AIGF%20-%20Tender%20Specifications%20v2_V1.pdf", "published": "2026-10-23", "observed": "2026-10-31", "access": "retained-primary-PDF-extraction-read", "locator": "Sections 3.d–f pp.11–17; anchor exceptions pp.6–7,19; retained extraction lines 470–789", "claim": "Planned minimum capacity, budget ceilings, market-led off-take, setup up to 18 months after signature, operational-readiness audit and payments."},
+        {"id": "eur-eu-fwc", "title": "Model Framework Contract v2", "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/docs/bc712395-692d-41ab-aa25-8e254ae86eb2-CN/CfT%20AIGF%20-%20Annex%203%20-%20Model%20FWC%20v2_V2.pdf", "published": "2026-10-22", "observed": "2026-10-31", "access": "retained-primary-PDF-extraction-read; not re-downloaded", "locator": "I.14.3–7 pp.19–20; I.15.2 p.21; II.11.2 p.45; II.18.1(p), II.18.3 pp.54–55; retained hash in finance ledger", "claim": "Security notification/mitigation, end-user terms, restrictions on amendments and termination procedure; draft only."},
+        {"id": "eur-eu-portal", "title": "EUROHPC/2026/OP/0008 portal announcement", "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/bc712395-692d-41ab-aa25-8e254ae86eb2-CN", "published": "2026-10-26", "eventDate": "2026-10-26", "observed": "2026-10-31", "access": "retained-primary-DOM-read; live retrieval app-shell only", "locator": ".local/finance-evidence/eurohpc-portal.txt lines 76–89,112–113,149–157; SHA256 in data/finance-research/sources.json", "claim": "Lot 1 extended to February 4; Lot 2 December 3 unchanged; national budget reason; estimated EUR 10bn, not expenditure."}
+      ]
+    },
+    {
+      "id": "jp-procurement-safety-evidence",
+      "quantitative": {
+        "coverage": null,
+        "coverageLimitation": "No matched version-bound contracted resource or eligible-workflow denominator. Gen-nai survey use and proposed test-question counts do not measure this route's procurement coverage.",
+        "agreements": {
+          "scope": "The Geneva linked scenario's smallest Digital Agency-only deployment under a new FY2027 supplier agreement. Other consuming ministries and external upstream providers add conditional gates.",
+          "actors": [
+            {"id": "jp-digital-agency", "name": "Digital Agency", "role": "Set lawful specification, execute procurement and authorise versioned operational release", "consent": "unknown", "alignment": "unknown", "sourceIds": ["apac-jp-plan"], "note": "Merges policy, contracting and operational-release nodes from the source graph. Existing requested safety submissions are not acceptance of new version-binding and incident/retest terms."},
+            {"id": "jp-supplier", "name": "Selected domestic-model supplier — legal entity not yet identified", "role": "Accept supply terms, evidence access and agreed notification/remedy duties", "consent": "unknown", "alignment": "unknown", "sourceIds": ["apac-jp-old", "apac-jp-plan"], "note": "One eligible supplier is the minimum; alternative bidders are not all necessary coalition partners."}
+          ],
+          "complete": false,
+          "institutionLowerBound": 2,
+          "handoffsLowerBound": 1,
+          "sourceIds": ["apac-jp-plan", "apac-jp-old"],
+          "limitations": ["Source graph gives N=2 distinct institutions for the minimum connected agency/supplier path, requiring at least N−1 = 1 external procurement/acceptance transfer. This is not a signature total, completion rate or probability.", "Final tender, delegation, supplier identity, upstream permissions and budget/security approvals remain unverified; other ministries are outside the minimal scope.", "November 2026–April 2027 milestones are changeable month-level plans. Historical call closure is not a current window; existing safety submissions must not be described as absent."]
+        }
+      },
+      "sources": [
+        {"id": "apac-jp-plan", "title": "Annex 2: FY2027 domestic model call plan", "url": "https://www.digital.go.jp/assets/contents/node/information/field_ref_resources/207cadc2-c218-42f6-92ec-c0eda476b49c/05201362/20260529_news_genai_outline_02.pdf", "published": "2026-05-29", "eventDate": "2026-11/2027-04", "observed": "2026-10-31", "access": "primary PDF text read, 2 pages; verified through in-memory macOS PDFKit extraction after generic PDF fetch failure", "locator": "Page 1 sections 1–2; page 2 sections 3–4", "claim": "Safety/tool-use/supply-term submissions and separate procurement for paid provision. Planned sequence: November call, December close/screen, January evaluation/notice, February results/bid, March award, April use. Plan explicitly changeable; day deadlines and amendment rights not established."},
+        {"id": "apac-jp-old", "title": "Closed domestic LLM trial call", "url": "https://www.digital.go.jp/news/1b093bba-a4c8-4001-8a92-ff3667a69198", "published": "2025-12-02", "eventDate": "2025-12-02/2026-01-31", "observed": "2026-10-31", "access": "primary full HTML read", "locator": "Conditions; call period; closure note", "claim": "Trial conditions already require comparative benchmarks, safety explanation, secure government-cloud operation, free FY2026 supply and consent to partial publication. Page body says January 30 deadline while closure note and later announcement use January 31; neither is current."}
+      ]
+    },
+    {
+      "id": "jp-kr-sg-procurement-profile",
+      "quantitative": {
+        "coverage": null,
+        "coverageLimitation": "No shared purchaser resource inventory or matched eligible procurement denominator. Japan's national pilot cannot be extrapolated into three-country coverage.",
+        "agreements": {
+          "scope": "Existing three-country procurement-profile proposal; no exact linked Geneva agreement scenario.",
+          "actors": [],
+          "complete": false,
+          "institutionLowerBound": null,
+          "handoffsLowerBound": null,
+          "sourceIds": [],
+          "limitations": ["No counterpart graph in the existing Geneva scenarios. Do not multiply Japan's agency/supplier lower bound or treat three country names as three mandatory independent institutions.", "Actual adopting purchasers, lawful common-profile authority, suppliers and accepted agreements remain unknown. Empty actors means unresearched here, not no necessary actors."]
+        }
+      },
+      "sources": []
+    },
+    {
+      "id": "sg-agent-data-leakage-deployment-gate",
+      "quantitative": {
+        "coverage": null,
+        "coverageLimitation": "No government-wide eligible application inventory or signed gate coverage. The voluntary sandbox's application count is not national government coverage.",
+        "agreements": {
+          "scope": "Existing Singapore government deployment-gate proposal, not the new individual purchaser-backed sandbox gate.",
+          "actors": [],
+          "complete": false,
+          "institutionLowerBound": null,
+          "handoffsLowerBound": null,
+          "sourceIds": [],
+          "limitations": ["The Geneva purchaser-backed scenario explicitly does not establish a government-wide mandate or adopting authority; it is not an agreement-graph counterpart for this route.", "No authority or consent count is transferred from the voluntary sandbox. Empty actors means unresolved institutional path, not absence of necessary agreements."]
+        }
+      },
+      "sources": []
+    },
+    {
+      "id": "sg-kr-jp-shared-eval-evidence-protocol",
+      "quantitative": {
+        "coverage": null,
+        "coverageLimitation": "No common resource pool or matched population for national gates. Cross-lab agreement/test success is not regional resource coverage or official recognition.",
+        "agreements": {
+          "scope": "Existing Singapore–Korea–Japan shared evidence protocol feeding national deployment gates; no exact linked Geneva agreement scenario.",
+          "actors": [],
+          "complete": false,
+          "institutionLowerBound": null,
+          "handoffsLowerBound": null,
+          "sourceIds": [],
+          "limitations": ["No counterpart graph establishes the recognition authorities, national adopters or evaluator permissions for this regional endpoint.", "Optional cross-lab replication in a purchaser pilot is a different endpoint. Neither three countries nor technical collaboration supplies a complete approval denominator."]
+        }
+      },
+      "sources": []
+    },
+    {
+      "id": "canada-cohere-equity-safety-covenant",
+      "quantitative": {
+        "coverage": null,
+        "coverageLimitation": "Still-uncommitted subscriptions and amounts actually subject to executed evidence conditions in the same agreement are unknown. The announced staged equity ceiling and fundraise target are not a matched negotiable resource denominator.",
+        "agreements": {
+          "scope": "One actually negotiable public-equity stage with a CAISI evidence covenant, or mutually agreed amendment; not the entire announced investment.",
+          "actors": [
+            {"id": "ca-investor", "name": "Canadian public investing counterparty — identity unknown", "role": "Establish lawful funds and retained discretion; execute prospective covenant or agreed amendment", "consent": "unknown", "alignment": "unknown", "sourceIds": ["fin-ca-pm"], "note": "The investing vehicle and signature delegation are unlocated. Political sponsorship is not a separate demonstrated transaction gate."},
+            {"id": "ca-company", "name": "Cohere", "role": "Accept covenant-bearing instrument and confidential evaluation access", "consent": "unknown", "alignment": "support", "sourceIds": ["fin-ca-pm", "fin-cohere-round"], "note": "General cooperation and sovereign-AI growth support only. CEO and internal board approvals are not counted as separate institutions; possible outside reserved-matter holders remain conditional and unidentified."}
+          ],
+          "complete": false,
+          "institutionLowerBound": 2,
+          "handoffsLowerBound": 1,
+          "sourceIds": ["fin-ca-pm", "fin-cohere-round", "fin-ca-caisi-authority"],
+          "limitations": ["Source graph gives N=2 indispensable counterparties, requiring at least N−1 = 1 external agreement transfer for a connected instrument. This does not establish execution or a complete consent set.", "CAISI evaluation delivery is also necessary for this design; its delivery body may be inside the same public institution, so no extra independent institution is counted until identified. Funding, capacity and protocol acceptance remain unknown.", "Unlocated shareholder reserved matters may add external consents. Announced cooperation is not acceptance of release-delay remedies, and a staged payment is not necessarily a still-negotiable commitment.", "No next legally negotiable stage date is established. January selection and February–May testing are researcher-proposed checkpoints, not corporate deadlines."]
+        }
+      },
+      "sources": [
+        {"id": "fin-ca-pm", "title": "Canada announces landmark investment in Cohere", "url": "https://www.pm.gc.ca/en/news/news-releases/2026/10/29/canada-announces-landmark-investment-cohere-scale-secure-sovereign-ai", "published": "2026-10-29", "eventDate": "2026-10-29", "observed": "2026-10-31", "access": "Retained primary HTML/text indexed in data/finance-research/sources.json; announcement, not agreement", "locator": "Retained canada-cohere.txt lines 71–83, 93–95. Dollar currency not explicit. 2030 is an announced compute target, not a stage deadline.", "claim": "Staged public equity ceiling and announced Canadian compute/accountability commitments; investing instrument and executed amount unknown."},
+        {"id": "fin-cohere-round", "title": "Cohere Announces Series E Fundraise Targeting CAD $7 Billion", "url": "https://www.prnewswire.com/news-releases/cohere-announces-series-e-fundraise-targeting-cad-7-billion-to-meet-surging-global-demand-for-secure-sovereign-ai-302923951.html", "published": "2026-10-29", "eventDate": "2026-10-29", "observed": "2026-10-31", "access": "Company-issued release, full text read through webfetch; not independent verification", "locator": "Opening paragraph; paragraph beginning 'Cohere has seen rapid growth'; CFO and Schwarz Group statements. No final-close deadline stated.", "claim": "Initial close announced; target and customer/ARR claims; alternative investor presence but not priced substitution."},
+        {"id": "fin-ca-caisi-authority", "title": "Canadian Artificial Intelligence Safety Institute — official mandate", "url": "https://ised-isde.canada.ca/site/ised/en/canadian-artificial-intelligence-safety-institute", "published": null, "observed": "2026-10-31", "access": "Current primary ISED page read; page modified2026-07-08", "locator": "Introductory mandate and Our work; individual evaluation signatory not identified. July8 modification date is not an exact publication or decision date.", "claim": "ISED leads CAISI, leveraging NRC and CIFAR; government-directed research/testing functions do not establish an investment veto."}
+      ]
+    },
+    {
+      "id": "taiwan-public-compute-safety-conditions",
+      "quantitative": {
+        "coverage": null,
+        "coverageLimitation": "No executed appendix GPU-hours divided by all allocated GPU-hours in the same award cohort, nor an equivalent separate inference-token pair. The wider programme budget, heterogeneous GPU stock and firm-participation target do not measure this policy's pool.",
+        "agreements": {
+          "scope": "One recipient pilot through the documented externally operated ADI programme, via a lawful future award or voluntary addendum; 2027 architecture, funding and appointment require confirmation.",
+          "actors": [
+            {"id": "tw-authority", "name": "Administration for Digital Industries, Ministry of Digital Affairs", "role": "Approve lawful prospective award terms and operator instructions", "consent": "unknown", "alignment": "support", "sourceIds": ["fin-tw-rules", "fin-tw-platform", "fin-tw-alignment"], "note": "Support is for trustworthy sovereign AI and adoption, not an accepted safety appendix. Programme approval role is documented. Political ministry sponsorship is not separately counted without a demonstrated approval requirement."},
+            {"id": "tw-operator", "name": "Taiwan Web Service Corporation", "role": "Implement access, monitoring and agreed evidence/remedy workflow", "consent": "unknown", "alignment": "unknown", "sourceIds": ["fin-tw-rules"], "note": "Named 2026 operator; 2027 appointment and service contract are unverified. Existing authorised instruction or a mutually agreed amendment must cover extra duties."},
+            {"id": "tw-recipient", "name": "At least one participating domestic company — not selected", "role": "Accept prospective safety appendix or voluntary addendum", "consent": "unknown", "alignment": "unknown", "sourceIds": ["fin-tw-rules"], "note": "One separate recipient is the minimum; every additional independent company adds its own acceptance. General terms do not prove acceptance of retrospective burdens."}
+          ],
+          "complete": false,
+          "institutionLowerBound": 3,
+          "handoffsLowerBound": 2,
+          "sourceIds": ["fin-tw-rules", "fin-tw-platform"],
+          "limitations": ["The documented external-operator architecture has N=3 necessary institutions, requiring at least N−1 = 2 external award/delivery transfers for a connected pilot. This lower bound is conditional on retaining that architecture, not an exact signature count.", "Budget-approval institutions are conditional upstream gates and are not collapsed into these three. Lawful usable resources, 2027 service contract, recipient identity and delegated powers remain unverified.", "A review after the closed 30 October 2026 application cutoff is not an opportunity to rewrite accepted terms. Future dates and any current-recipient notification and assent must be obtained."]
+        }
+      },
+      "sources": [
+        {"id": "fin-tw-rules", "title": "115-year compute platform application rules, 14 August 2026", "url": "https://aipower.dginfra.gov.tw/front/filePush?pFolder=content&pName=%E6%95%B8%E7%99%BC%E9%83%A8%E6%95%B8%E4%BD%8D%E7%94%A2%E6%A5%AD%E7%BD%B2%20115%E5%B9%B4%E7%AE%97%E5%8A%9B%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%E7%94%B3%E8%AB%8B%E9%A0%88%E7%9F%A5.pdf", "published": "2026-08-14", "observed": "2026-10-31", "access": "Primary PDF fetched into memory; all 15 physical pages text-extracted with macOS PDFKit; no local raw retention", "locator": "Physical p3 allocation conversion/tier table and duration; pp5–6 approvals; pp8–9 section 7 use rules, log retention and remedies; p11 consent; pp13–14 reporting due 30 calendar days after expiry. No per-user notification read.", "claim": "Quantified entitlements, existing recipient obligations and administrative enforcement perimeter."},
+        {"id": "fin-tw-platform", "title": "ADI 115-year compute platform application page", "url": "https://aipower.dginfra.gov.tw/front/index", "published": null, "observed": "2026-10-31", "access": "Full current primary programme page read through webfetch", "locator": "Section 2 items 1, 4, 5 and service contacts. ROC115=2026. Web cutoff includes seconds; PDF rounds to minutes. Website controls updates per PDF cover.", "claim": "Application cutoff, tentative reviews, authority/operator and intended domestic beneficiaries."},
+        {"id": "fin-tw-alignment", "title": "DevDays Asia 2026: ADI and MODA policy statements", "url": "https://web.moda.gov.tw/ADI/news/latest-news/20676", "published": "2026-09-21", "eventDate": "2026-09-21", "observed": "2026-10-31", "access": "Primary dated official event account read; updated2026-09-22", "locator": "Deputy minister remarks; government-track Director-General remarks; event and publication are historical, not future deadlines.", "claim": "Names Lin and Deputy Minister Hou; general support for trustworthy AI, sovereignty and adoption, not pilot consent."}
+      ]
+    },
+    {
+      "id": "anthropic-new-credit-lender-safety-covenant",
+      "quantitative": {
+        "coverage": null,
+        "coverageLimitation": "Executed new commitments with the covenant and all executed new commitments in the same transaction are unknown. Redacted allocations, contractual headroom, arranger names and national GDP cannot provide the matched pool.",
+        "agreements": {
+          "scope": "A borrower-confirmed live new-credit transaction or applicable agreed amendment; no such current transaction has been verified.",
+          "actors": [
+            {"id": "an-borrower", "name": "Anthropic PBC", "role": "Agree a new-credit covenant or applicable written amendment", "consent": "unknown", "alignment": "unknown", "sourceIds": ["fin-an-exhibit"], "note": "Borrower assent is indispensable; no unilateral new safety condition on compliant committed draws."}
+          ],
+          "complete": false,
+          "institutionLowerBound": null,
+          "handoffsLowerBound": null,
+          "sourceIds": ["fin-an-exhibit"],
+          "limitations": ["The source graph leaves N null. Actual lenders are an unresolved roster, not a single institution; their commitments, credit committees and applicable consent threshold cannot be counted from arranger names.", "The administrative agent's indispensable role depends on the selected instrument and may overlap with a lender. No extra independent institution is guessed.", "New-money elections differ from amendment voting. Strictly more than 50% Required Lenders is not a measured coalition holding or approval probability, and affected-lender exceptions may apply.", "No live borrowing window, accepted covenant or complete signatory list is verified. January selection and later testing are project proposals only. Retained contract extraction has reduced provenance."]
+        }
+      },
+      "sources": [{"id": "fin-an-exhibit", "title": "Anthropic amended and restated credit agreement, retained tool extraction", "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/exhibit1010-sx1.htm", "published": null, "eventDate": "2026-09-04", "observed": "2026-10-31", "access": "Reduced provenance: retained tool text, not raw SEC bytes; prior raw fetch403. SHA256 and bytes rechecked in the original research task: 28a843501360aa0facaaacec9538640f249635446d0e6e37f2fb191dabeea83a; 687285 bytes", "locator": "Sections2.21–2.23, 9.08; Required Lenders and Closing Date definitions; redacted Schedule2.01. Matched passages reread in original research. EventDate is historical contractual closing, not a future negotiation deadline.", "claim": "Conditional commercial consent machinery; no verified live future transaction or allocation schedule."}]
+    }
+  ],
+  "bases": [
+    {
+      "id": "aigf-phase1-design",
+      "label": "AIGF Phase 1 tender design",
+      "unit": "H100-equivalent accelerators",
+      "description": "The 220,000-equivalent minimum planned design in the Phase 1 tender: four Lot 1 facilities at 25,000 plus three Lot 2 facilities at 40,000. A full-envelope proposal is conditionally 220,000/220,000 only if every relevant contract adopts the protocol. This is not installed or protected capacity, public-access hours, global compute or a common denominator for other policies. Observation 2026-10-31; stage: planned procurement envelope."
+    }
+  ]
+}

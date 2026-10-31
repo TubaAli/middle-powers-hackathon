@@ -1,0 +1,150 @@
+{
+  "routes": [
+    {
+      "id": "lumi-belgium-safety-appendix",
+      "title": "Attach safety evidence to Belgian compute awards",
+      "shortLabel": "Belgian compute conditions",
+      "brief": ["Belgian compute conditions", "Propose an incident-and-evaluation appendix for Belgium's 7.4% LUMI allocation envelope.", "No adoption is documented; the full quota is an upper envelope, not measured protected compute."],
+      "coordination": "national",
+      "countries": ["Belgium"],
+      "region": "Europe",
+      "mechanism": "Compute",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 5],
+      "feasibilityRange": [1, 5],
+      "impactRationale": "Legacy compatibility placeholder only: provisional 2/2 ratings and full ordinal ranges are not new measurements. Proposed reporting could expose failures during funded AI work; neither risk reduction nor the AI share of this quota is measured.",
+      "feasibilityRationale": "Legacy compatibility placeholder only, with no inferred precision. Award terms, operator implementation and recipient acceptance must be agreed; current approval-specific alignment is unknown.",
+      "actor": "Belgian allocation bodies, represented operationally by VSC and CECI, working with CSC as LUMI host. Their authority to amend the whole Belgian programme remains unverified.",
+      "obligor": "Participating recipient organisation and its PI/users; CSC would implement only the agreed service-side checks.",
+      "instrument": "Proposed prospective award appendix plus compatible LUMI service terms. The existing Terms of Use are a contractual starting point, not evidence that this appendix is adopted.",
+      "safeguard": "Require an AI-use declaration; for in-scope work, a pre-run evaluation plan, incident notification, retained evidence and evaluation access under agreed confidentiality protections. Define scope and acceptance criteria before award.",
+      "verification": "Pilot one consenting recipient: allocator checks the signed appendix; CSC's designated internal reviewer checks the evaluation record and exercises a simulated incident report. Record actual covered allocation separately from the 7.4% envelope.",
+      "remedy": "Negotiate a proportionate pause-and-cure procedure for appendix breaches. Existing Terms section 10 concerns unauthorised use or suspected Terms breaches; it does not independently establish this proposed model-safety remedy.",
+      "window": "As observed 2026-10-31, Belgium lists regular cut-offs of 2 March, 1 June and 5 October 2026, all past. Preparatory/development submissions are continuous with monthly review; that is a possible pilot channel, not evidence of authority or an announced 2027 regular round.",
+      "evidenceSummary": "BE-ACCESS identifies the 7.4% total-time quota. LUMI-ACCESS names operational allocators and project registration. LUMI-TERMS identifies the host and existing contractual framework. No source documents acceptance of the proposed safeguard.",
+      "gap": "The whole-quota amendment signatories, funder approvals, binding evaluation-access rights and eligible AI usage are unknown. A small pilot cannot claim coverage of the whole Belgian quota.",
+      "nextQuestion": "Which Belgian decision-makers can approve a prospective appendix, and will CSC and one recipient agree to test its evidence and pause procedure?",
+      "incentives": ["Proposal: allocators gain auditable evidence about funded AI work.", "Proposal: recipients gain a predictable evidence checklist and a defined cure process."],
+      "constraints": ["Belgian national control of allocation does not imply unilateral control of the Finnish host.", "Recipient IP, personal data and research-publication obligations require compatible terms.", "Belgium is already inside the national 50% pool; never add this route to that pool."],
+      "pairId": "lumi-national-evidence",
+      "pairRole": "national",
+      "sources": [
+        {"id":"BE-ACCESS","title":"EuroCC Belgium: Getting access","url":"https://www.enccb.be/GettingAccess","locator":"Getting compute time on LUMI; Belgian cut-offs and preparatory/development submissions","claim":"Belgium has 7.4% of total LUMI compute time. Listed regular cut-offs are 2 March, 1 June and 5 October 2026; preparatory/development proposals receive monthly review.","observed":"2026-10-31","published":null,"access":"primary-read"},
+        {"id":"LUMI-ACCESS","title":"LUMI documentation: Access to LUMI","url":"https://docs.lumi-supercomputer.eu/firststeps/accessLUMI/","locator":"Project invitation paragraphs; Resource Allocator table, Belgium and Finland rows","claim":"A resource allocator creates a project and invites its PI. Belgium's operational resource allocators are VSC and CECI; use requires acceptance of LUMI Terms.","observed":"2026-10-31","published":null,"access":"primary-read"},
+        {"id":"LUMI-TERMS","title":"LUMI General Terms of Use, version 2.0","url":"https://lumi-supercomputer.eu/wp-content/uploads/2026/03/LUMI-General-Terms-of-Use_2026.pdf","locator":"pp.1–7, preamble and sections 1, 4–6, 10–12; last changed 10 February 2026","claim":"CSC is the host contracting entity; supplementary service terms can apply. Existing duties concern permitted purpose, security and reporting; proposed model evaluations require agreed scope.","observed":"2026-10-31","published":"2026-02-10","access":"primary-read"}
+      ],
+      "quantitative": {
+        "coverage": {"basisId":"lumi-total-allocation","basisLabel":"LUMI total allocation","numerator":7.4,"denominator":100,"unit":"percentage points of total LUMI allocation","period":"allocation scheme observed 2026-10-31","stage":"potential allocation envelope","sourceIds":["BE-ACCESS"],"interpretation":"proposed coverage if all relevant terms agreed; not protected compute or risk reduction"},
+        "agreements": {
+          "scope":"Declared minimal whole-Belgian-channel design plus one recipient pilot: VSC and CECI each transmit agreed award conditions to CSC, and CSC transmits the service appendix to one recipient institution. This three-transfer design is not a verified legal approval chain and the pilot does not implement the entire envelope.",
+          "actors": [
+            {"id":"vsc","name":"Vlaams Supercomputer Centrum (VSC)","role":"Belgian resource allocator","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Operational role documented; programme amendment authority and safeguard consent unverified."},
+            {"id":"ceci","name":"Consortium des Equipements de Calcul Intensif (CECI)","role":"Belgian resource allocator","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Consortium representation is not a complete list of legally necessary institutional signatories."},
+            {"id":"csc","name":"CSC – IT Center for Science Ltd.","role":"Host and proposed internal evidence reviewer","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-TERMS"],"note":"Operator identified; reviewer capacity and new service conditions are proposals."},
+            {"id":"pilot-recipient","name":"One pilot recipient institution (not yet identified)","role":"Award recipient; PI/users accept applicable terms","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Necessary proposed counterparty, not a claimed participant. No independent external reviewer is assumed."}
+          ],
+          "complete":false,"handoffsLowerBound":3,"sourceIds":["BE-ACCESS","LUMI-ACCESS","LUMI-TERMS"],
+          "limitations":"Three is a declared design lower bound, not observed handoffs, duration or probability. Consortium constituent institutions and Belgian funder/governance approvals are unresolved. The national coordination label describes the policy channel, not absence of foreign operator agreement. Unknown consent cannot be read as rejection or approval."
+        }
+      }
+    },
+    {
+      "id": "lumi-eurohpc-evaluation-access",
+      "title": "Set evidence conditions on EuroHPC compute access",
+      "shortLabel": "EuroHPC access conditions",
+      "brief": ["EuroHPC access conditions", "Propose evaluation access and incident evidence across EuroHPC's half of LUMI allocation.", "This is a prospective award-and-service agreement, not an existing model-safety veto."],
+      "coordination":"broader","countries":["EU institutions","EuroHPC participating states"],"region":"Europe","mechanism":"Compute","status":"Proposed","confidence":"Medium",
+      "impact":2,"feasibility":2,"impactRange":[1,5],"feasibilityRange":[1,5],
+      "impactRationale":"Legacy compatibility placeholder only: provisional 2/2 and full ordinal ranges are not new measurements. The numerical input is a quota share, not model coverage or risk reduction.",
+      "feasibilityRationale":"Legacy compatibility placeholder only, with no inferred precision. EuroHPC decision authority, CSC implementation and recipient acceptance are unresolved for the proposed terms.",
+      "actor":"EuroHPC Joint Undertaking as allocation-channel decision-maker, with CSC as operator and operational resource allocator.",
+      "obligor":"Consenting recipient institution and its PI/users, with CSC responsible for agreed operator-side verification.",
+      "instrument":"Proposed prospective EuroHPC award conditions paired with an operator-approved service appendix; the precise EuroHPC approval procedure needs verification.",
+      "safeguard":"For declared AI work, obtain evaluation access, a reproducible evidence package and incident notification before further agreed compute tranches. Non-AI projects would still declare applicability; the quota contains an unknown mix of workloads.",
+      "verification":"One-recipient pilot: EuroHPC specifies acceptance criteria, CSC's designated internal reviewer tests access to an evaluation artifact and a simulated incident record, and the recipient demonstrates correction before a proposed next tranche.",
+      "remedy":"Propose withholding the next agreed tranche until deficiencies are cured. This requires prospective conditions and a defined review process; neither a universal release veto nor automatic forfeiture follows from existing capacity cut-offs.",
+      "window":"Negotiate for a future eligible award before acceptance. The Users in Europe page lists several access modes but this review establishes no particular open amendment window or 2027 deadline.",
+      "evidenceSummary":"LUMI-SPLIT places half the allocation in EuroHPC's channel; EU-ACCESS identifies its access calls. LUMI-ACCESS distinguishes EuroHPC decisions from CSC's operational project role. Current safety-condition adoption is unlocated.",
+      "gap":"Internal EuroHPC approvals, governing allocation policy, cost of verification and authority to attach these specific conditions need checking. One consenting pilot cannot establish channel-wide adoption.",
+      "nextQuestion":"Will EuroHPC identify the approval instrument for prospective evaluation-access conditions and authorise CSC to trial a precisely scoped appendix with one recipient?",
+      "incentives":["Proposal: one common condition could reduce inconsistent evidence requests across EuroHPC access calls.","Proposal: recipient projects get explicit acceptance criteria before committing workloads."],
+      "constraints":["An EU-level institution must agree; national governments alone do not implement this route.","Work can migrate to other compute providers; substitution is unmeasured.","The 50% pool is disjoint from the national pool but is not 50% of AI training or global compute."],
+      "pairId":null,"pairRole":null,
+      "sources":[
+        {"id":"LUMI-SPLIT","title":"LUMI: Get Started","url":"https://lumi-supercomputer.eu/get-started/","locator":"Introductory allocation paragraphs; EuroHPC card update shown as 28 October 2026","claim":"Half the resources use national allocation mechanisms and half are allocated by EuroHPC. Accounting distinguishes GPU, CPU and storage hours.","observed":"2026-10-31","published":null,"access":"primary-read"},
+        {"id":"EU-ACCESS","title":"LUMI: Users in Europe","url":"https://lumi-supercomputer.eu/get-started-2021/users-in-europe/","locator":"EuroHPC JU Access Calls and AI Factory access headings","claim":"EuroHPC manages access calls including benchmark, development, regular and extreme-scale modes. The page does not itself give a specific policy-amendment deadline.","observed":"2026-10-31","published":"2026-10-28","access":"primary-read"},
+        {"id":"LUMI-ACCESS","title":"LUMI documentation: Access to LUMI","url":"https://docs.lumi-supercomputer.eu/firststeps/accessLUMI/","locator":"EuroHPC JU rows in resource allocator table","claim":"CSC is the operational resource allocator for EuroHPC projects; the portal changed for projects allocated after 15 April 2026.","observed":"2026-10-31","published":null,"access":"primary-read"},
+        {"id":"LUMI-TERMS","title":"LUMI General Terms of Use, version 2.0","url":"https://lumi-supercomputer.eu/wp-content/uploads/2026/03/LUMI-General-Terms-of-Use_2026.pdf","locator":"Preamble; sections 5, 6, 10 and 12","claim":"Existing Terms govern projects, content and suspension. Infrastructure content access is not a general independent-model-evaluation entitlement.","observed":"2026-10-31","published":"2026-02-10","access":"primary-read"},
+        {"id":"LUMI-CUTOFF","title":"LUMI Resource cut-off policy, version 1.0","url":"https://lumi-supercomputer.eu/wp-content/uploads/2026/03/LUMI-Resource_cut-off_policy_2026.pdf","locator":"p.1, scope and cut-off bullets","claim":"The policy addresses underconsumption in non-industrial regular/extreme-scale projects in both pools; it is not a model-safety sanction.","observed":"2026-10-31","published":"2026-02-10","access":"primary-read"}
+      ],
+      "quantitative":{
+        "coverage":{"basisId":"lumi-total-allocation","basisLabel":"LUMI total allocation","numerator":50,"denominator":100,"unit":"percentage points of total LUMI allocation","period":"allocation scheme observed 2026-10-31","stage":"potential allocation envelope","sourceIds":["LUMI-SPLIT"],"interpretation":"proposed coverage if all relevant terms agreed; not protected compute or risk reduction"},
+        "agreements":{
+          "scope":"Declared minimal channel design plus one recipient pilot: EuroHPC transmits agreed award conditions to CSC; CSC transmits the service appendix to the recipient. CSC supplies the internal reviewer, so no separate external evaluation institution is assumed.",
+          "actors":[
+            {"id":"eurohpc-ju","name":"EuroHPC Joint Undertaking","role":"Allocation-channel decision-maker","consent":"unknown","alignment":"unknown","sourceIds":["EU-ACCESS","LUMI-SPLIT"],"note":"Its responsible governing or delegated approval bodies for these conditions remain unverified."},
+            {"id":"csc","name":"CSC – IT Center for Science Ltd.","role":"Operator, operational allocator and proposed internal reviewer","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS","LUMI-TERMS"],"note":"Counted once despite multiple roles; acceptance of safety duties is not documented."},
+            {"id":"pilot-recipient","name":"One pilot recipient institution (not yet identified)","role":"Award recipient; PI/users accept applicable terms","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Proposed counterparty only; additional recipients would add agreements at rollout."}
+          ],
+          "complete":false,"handoffsLowerBound":2,"sourceIds":["EU-ACCESS","LUMI-ACCESS","LUMI-TERMS"],
+          "limitations":"Two transfers describe a proposed minimum workflow, not legally verified sufficiency or actual elapsed effort. EuroHPC governance, member-state/funder dependencies and any separate data-rights holders remain unresolved. No institutional consent, opposition or approval probability is inferred."
+        }
+      }
+    },
+    {
+      "id":"lumi-national-evidence-protocol",
+      "title":"Share a safety-evidence protocol across national quotas",
+      "shortLabel":"National compute coalition",
+      "brief":["National compute coalition","Extend the Belgian-style evidence appendix across the national half of LUMI allocation.","All national channels must participate to reach 50%; Belgium's 7.4% is already included."],
+      "coordination":"middle-power","countries":["Belgium","Czech Republic","Denmark","Estonia","Finland","Iceland","Netherlands","Norway","Poland","Sweden","Switzerland"],"region":"Europe","mechanism":"Compute","status":"Proposed","confidence":"Medium",
+      "impact":2,"feasibility":2,"impactRange":[1,5],"feasibilityRange":[1,5],
+      "impactRationale":"Legacy compatibility placeholder only: provisional 2/2 and full ordinal ranges are not new measurements. Shared evidence may make findings reusable across awards, but broader quota coverage does not establish better safety outcomes.",
+      "feasibilityRationale":"Legacy compatibility placeholder only, with no inferred precision. Multiple national policies must accommodate the same appendix; no coordination bonus or probability is assigned.",
+      "actor":"National LUMI allocation channels jointly, through their listed operational allocators and the yet-to-be-confirmed competent policy signatories; CSC implements agreed common service-side checks.",
+      "obligor":"Consenting recipient institutions and PI/users in participating national channels; shared evidence access is limited to the parties and purposes actually agreed.",
+      "instrument":"Proposed common prospective award appendix, retained in each national allocation policy, plus compatible CSC service terms and evidence-sharing arrangements.",
+      "safeguard":"Use the Belgian-route AI declaration, evaluation plan, incident evidence and evaluation-access requirements with a shared schema and acceptance criteria. Recognise prior evidence only where scope and version match; avoid automatic recognition of stale results.",
+      "verification":"First demonstrate one recipient's evidence package can be checked against the common schema by CSC's designated internal reviewer. Separately audit each channel's adoption and actual covered awards before claiming rollout coverage.",
+      "remedy":"Each adopting channel would agree its own pause-and-cure procedure; CSC implements only compatible accepted service actions. A shared schema does not create mutual legal authority or automatic cross-channel exclusion.",
+      "window":"Prospective national awards, on each channel's own schedule. No synchronised amendment round or common 2027 deadline was established. Belgium's continuous preparatory channel is a possible pilot, not a timetable for the coalition.",
+      "evidenceSummary":"LUMI-SPLIT establishes the national half and local policies. LUMI-ACCESS lists eleven national channels and operational organisations. The coalition and its shared safety appendix are proposals, with no documented adoption.",
+      "gap":"Operational allocator names are not a complete legal approval set. Danish university partners, consortium constituents, funder authority, recipient rights and cross-border evidence permissions require identification.",
+      "nextQuestion":"Can the listed allocators identify their competent signatories and agree one shared evidence schema without changing each other's award authority?",
+      "incentives":["Proposal: compatible evidence packages reduce duplicate preparation when projects seek different national awards.","Proposal: allocators can compare incident handling while retaining their own award decisions."],
+      "constraints":["National policies differ and each participating allocation channel needs agreement.","The 50% assumes all national channels; no sourced shares support a smaller coalition's numerical envelope here.","Belgium is nested within this pool. Pairing is a scope comparison, not a controlled experiment in coordination."],
+      "pairId":"lumi-national-evidence","pairRole":"coordinated",
+      "sources":[
+        {"id":"LUMI-SPLIT","title":"LUMI: Get Started","url":"https://lumi-supercomputer.eu/get-started/","locator":"National-resource allocation paragraphs","claim":"The national pool is half the LUMI resources, divided by contributions and allocated through local policies.","observed":"2026-10-31","published":null,"access":"primary-read"},
+        {"id":"LUMI-ACCESS","title":"LUMI documentation: Access to LUMI","url":"https://docs.lumi-supercomputer.eu/firststeps/accessLUMI/","locator":"Complete national Resource Allocator table","claim":"The table lists Belgium, Czech Republic, Denmark, Estonia, Finland, Iceland, Netherlands, Norway, Poland, Sweden and Switzerland, with operational allocator organisations. It does not establish all legally necessary amendment signatories.","observed":"2026-10-31","published":null,"access":"primary-read"},
+        {"id":"LUMI-TERMS","title":"LUMI General Terms of Use, version 2.0","url":"https://lumi-supercomputer.eu/wp-content/uploads/2026/03/LUMI-General-Terms-of-Use_2026.pdf","locator":"Preamble; sections 6, 10 and 12","claim":"CSC acts as host; new evidence-sharing and service conditions need compatible contractual scope.","observed":"2026-10-31","published":"2026-02-10","access":"primary-read"},
+        {"id":"BE-ACCESS","title":"EuroCC Belgium: Getting access","url":"https://www.enccb.be/GettingAccess","locator":"Quota and application schedule paragraphs","claim":"The Belgian 7.4% is part of total LUMI allocation, nested within the national half, not additional to it.","observed":"2026-10-31","published":null,"access":"primary-read"}
+      ],
+      "quantitative":{
+        "coverage":{"basisId":"lumi-total-allocation","basisLabel":"LUMI total allocation","numerator":50,"denominator":100,"unit":"percentage points of total LUMI allocation","period":"allocation scheme observed 2026-10-31","stage":"potential allocation envelope","sourceIds":["LUMI-SPLIT"],"interpretation":"proposed coverage if all relevant terms agreed; not protected compute or risk reduction"},
+        "agreements":{
+          "scope":"Declared minimal all-national-channel design with one recipient pilot: each of eleven non-CSC listed allocator representatives transmits compatible conditions to CSC; CSC performs its Finnish allocator/operator roles internally and transmits the appendix to one recipient. Twelve cross-institution transfers are a design lower bound; grouped entities are unresolved rather than a complete institutional denominator.",
+          "actors":[
+            {"id":"vsc","name":"Vlaams Supercomputer Centrum (VSC)","role":"Belgian allocation representative","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Policy signatory authority unverified."},
+            {"id":"ceci","name":"Consortium des Equipements de Calcul Intensif (CECI)","role":"Belgian allocation representative","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Constituent institutional approvals unknown; not a resolved single-institution denominator."},
+            {"id":"vsb","name":"VSB Technical University of Ostrava","role":"Czech allocation representative","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Policy signatory authority unverified."},
+            {"id":"deic","name":"DeiC – Danish e-infrastructure Cooperation","role":"Danish allocation representative","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Source additionally names consortium universities; their identities and independent approvals are unresolved and omitted from the count."},
+            {"id":"etais","name":"ETAIS","role":"Estonian allocation representative","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Infrastructure consortium; constituent signatories unresolved, not a resolved single-institution denominator."},
+            {"id":"csc","name":"CSC – IT Center for Science Ltd.","role":"Finnish allocator, host and proposed internal reviewer","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS","LUMI-TERMS"],"note":"One institution counted once; internal role transfers do not add handoffs."},
+            {"id":"university-iceland","name":"University of Iceland","role":"Icelandic allocation representative","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Policy signatory authority unverified."},
+            {"id":"surf","name":"SURF","role":"Dutch allocation representative","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Policy signatory authority unverified."},
+            {"id":"sigma2","name":"UNINETT Sigma2 AS (name as listed)","role":"Norwegian allocation representative","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Current legal name and policy signatory authority need confirmation."},
+            {"id":"plgrid","name":"PLGrid Consortium (Cyfronet+)","role":"Polish allocation representative","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Constituent institutional approvals unknown; not a resolved single-institution denominator."},
+            {"id":"naiss","name":"NAISS","role":"Swedish allocation representative","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"Legal signatory and policy approval chain unverified."},
+            {"id":"eth-zurich","name":"ETH Zürich, through CSCS","role":"Swiss allocation representative","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"CSCS/ETH is counted once; internal delegations unverified."},
+            {"id":"pilot-recipient","name":"One pilot recipient institution (not yet identified)","role":"Award recipient; PI/users accept applicable terms","consent":"unknown","alignment":"unknown","sourceIds":["LUMI-ACCESS"],"note":"A pilot counterparty only. Full rollout requires other recipients and is not measured by this count."}
+          ],
+          "complete":false,"handoffsLowerBound":12,"sourceIds":["LUMI-ACCESS","LUMI-TERMS"],
+          "limitations":"The thirteen listed entries include unresolved representative bodies, not thirteen proven independently authorised legal signatories. Never use their count as a complete agreement denominator. Twelve transfers are inferred from the declared hub-and-recipient workflow, not observed or legally mandated. Additional universities, consortium members, funders, data-rights holders and rollout recipients may add dependencies. All approval-specific consent and alignment remain unknown."
+        }
+      }
+    }
+  ]
+}
