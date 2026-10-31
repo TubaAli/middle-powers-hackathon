@@ -82,7 +82,7 @@ function renderNumbers() {
   const dated = sorted(upcoming.filter(w => w.date || w.start));
   const broad = upcoming.filter(w => !w.date && !w.start);
   $('#numbers-view').innerHTML = `
-    <h2>Five measured examples</h2><p>These describe economic exposure, capacity or existing tests. They do not measure the proposed safeguards’ effects.</p>
+    <h2>Five source-backed numbers</h2><p>These describe economic exposure, planned capacity or existing tests. They do not measure the proposed safeguards’ effects.</p>
     <div class="measure-grid">${data.examples.map(e => `<article class="measure">
       <span class="small">${e.kind === 'proxy' ? 'Proxy measure' : 'Context only'}</span><h3>${esc(e.label)} ${refs(e.sourceIds)}</h3>
       <p class="value">${esc(e.displayValue)}</p>
