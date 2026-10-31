@@ -86,3 +86,8 @@ Source: organizer message pasted by Grisha on 31 October 2026. The year below fo
 - **Matrix:** each condition × jurisdiction, with the bloc's first chance to act.
   - For the chip trio (NL+JP+KR): Japan's review (31 Oct, rough) for conditions 1–3, and EuroHPC Lot 2 (3 Dec) for conditions 4–6.
 - **Caveat:** dates are openings, not delivery plans. Only the EuroHPC dates are independently checked. Singapore sits under "Others" in the supply data, so it can't be picked as a bloc member yet.
+
+## Oct 31: repo public, live site
+- **The repo is now public.** The site is live on GitHub Pages from `main` at https://tubaali.github.io/middle-powers-hackathon/
+- **Before going public:** we scanned the full history. No tokens or keys were found. The only semi-private item is the Mangrove team-page link above, which needs a login to open.
+- **Every push to `main` now updates the live site.**

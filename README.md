@@ -4,6 +4,7 @@ This is our workspace for the [Middle Powers: AI Safety Hackathon](https://mangr
 
 - [ideas.md](ideas.md): the event summary, the landscape research and all ideas.
 - [notes.md](notes.md): discussion notes and the current shortlist.
+- **Live site: https://tubaali.github.io/middle-powers-hackathon/**
 - [index.html](index.html): the Leverage Map prototype. Run `python3 -m http.server` in this folder and open http://localhost:8000. Data is in [data/](data/).
 - [RESEARCH-STATUS.md](RESEARCH-STATUS.md): live research allocation, source coverage and handoff status.
 - [Financial leverage synthesis](reports/Financial%20leverage%20for%20safer%20AI.md): financing flows, Anthropic filing evidence and coalition decision rights (31 October 2026).
