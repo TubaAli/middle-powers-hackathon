@@ -1,0 +1,190 @@
+{
+  "id": "rights",
+  "executor": {"provider": "openai", "model": "gpt-6-astra-ultrafast", "sameFamily": true},
+  "observedDate": "2026-10-31",
+  "checkpoint": "2027-06-21/2027-06-22",
+  "scope": "Isolated analytical viewpoint, not advocacy testimony or institutional consent. Fixed packet only; no external retrieval. Source attribution checked against packet records, not independently against unavailable original case files.",
+  "packetHashes": {
+    "data/route-placement-model.json": "b7c93011ec16f6ac6b30c7588ba1a0685c9052a46f1040ef043a93a896bc8ba1",
+    "data/routes-quantitative.json": "8461105a9aae97b1d2b875d0a346ffbeeed57581e9bf0998099d5756dfb8b865",
+    "data/coordinate-evidence.json": "ac289a7dfe25b5d31822087081624a03bca7ac514e5f9827da7ffb3432931db4",
+    "reports/Route coordinate evidence.md": "46ccfc2aa4dda738a88fa5c4376209ec2e0b953bababb0bd302dc80df0ef87a1",
+    "research_notes/Safeguard proposal stress tests/compute.md": "66ddf5e83300853a03282bffd1de672cfd8a1d5fd3d5f687632bd22b1f86c918",
+    "research_notes/Safeguard proposal stress tests/compute.json": "34ca14019885898a27ddc8dda0f0ba3e334afcc80bd55067fc2800313f3b45df",
+    "research_notes/Safeguard proposal stress tests/japan-asia.md": "5af39bd0a93ea72ecb9c3763058048b887cc7e6a9647f3e21256cca2fc98e509",
+    "research_notes/Safeguard proposal stress tests/japan-asia.json": "ec7b4dc46939fca07c38abb9f2be31dea8ce5c01334173c33d6f8bd3a1945395",
+    "research_notes/Safeguard proposal stress tests/europe-finance.md": "a4e4f5deb2e553a505b06720a5f3acff4def52870f4d32c7a3f1d810db72f9fb",
+    "research_notes/Safeguard proposal stress tests/europe-finance.json": "bf8fd9d46d00d13e8ff2fa65aae023908270d46275cff5cabc8e3851eb251d52",
+    "research_notes/Safeguard proposal stress tests/rights-enforcement.md": "77e0df372fa7fb8f585162a711dd1bebba622bad4e00f58686ad4186f4b1f9fc",
+    "research_notes/Safeguard proposal stress tests/rights-enforcement.json": "b2c53f892ef1c4c0caac044113a3cc02e64f41b644f484ee9ec54a4eecc4d8f3",
+    "research_notes/Safeguard proposal stress tests/sandbox-deployment.md": "bed85fad8582ddb4a72c9acd17ffa73323cb75867097a34774fd6a2c6c88ae13",
+    "research_notes/Safeguard proposal stress tests/sandbox-deployment.json": "cbb446c7a779477f8e84a4e1d3862789b963e9507eb48edc5c716029290503c2"
+  },
+  "recommendation": {
+    "pointId": "rights-view-1",
+    "routeIds": ["brazil-anpd-ai-inspection-evidence"],
+    "decision": "Test the existing Grok correction-evidence demand first, conditional on current authority, technical access and independent review. This is a narrowed case instantiation, not validation of the football-club cohort or a national effectiveness ranking.",
+    "reason": "The packet connects an official report of persistent AI-related failures after assurances to an identified enforcement file and verifiable-evidence demand, giving a concrete correction hypothesis.",
+    "reversal": "Reverse by the proposed 15 December 2026 gate if current scope, access and independent review cannot be established, or a credible completed independent retest makes duplication low-value. Promote the deletion comparator only with operative orders and technical access; otherwise the Singapore pair only with an executable national hold. If neither qualifies, retain unresolved feasibility. Reverse on harmful displacement, disproportionate access costs or non-reproducible correction."
+  },
+  "points": [
+    {
+      "id": "rights-view-1",
+      "claim": "Brazil's Grok case deserves the next information-producing validation test, conditional on access and current authority; this is a prioritisation inference, not a measured superiority claim.",
+      "type": "inference",
+      "routeIds": ["brazil-anpd-ai-inspection-evidence"],
+      "sourceIds": ["rights-br-grok"],
+      "sourceLocators": ["research_notes/Safeguard proposal stress tests/rights-enforcement.md:15,39,83-89; rights-enforcement.json routes[routeId=brazil-anpd-ai-inspection-evidence], sources[id=rights-br-grok]"]
+    },
+    {
+      "id": "rights-view-2",
+      "claim": "The 11 February 2026 official account reports inadequate efficacy evidence and continuing preliminary-test failures; ANPD identifies file 00261.000178/2026-27 and a five-business-day verifiable-evidence demand across versions/plans/modalities. The packet establishes neither independently replicated failures nor successful correction, actual service date or current case disposition.",
+      "type": "fact",
+      "routeIds": ["brazil-anpd-ai-inspection-evidence"],
+      "sourceIds": ["rights-br-grok"],
+      "sourceLocators": ["rights-enforcement.json sources[id=rights-br-grok]: published/eventDate/access/locator; source opening three paragraphs and Medidas adotadas/ANPD; rights-enforcement.md:15,39,50,63"]
+    },
+    {
+      "id": "rights-view-3",
+      "claim": "SIC's 8 July 2026 account of Resolution 45710 dated 18 June requires external certification with technical suppression evidence and records a contested distributed-architecture argument. Its sensitive-data wording differs from the earlier all-personal-data release. Katiba reports completed court-supervised deletion in Kenya, but no original ODPC technical verification is available in the packet. Neither is independently verified deletion.",
+      "type": "fact",
+      "routeIds": ["colombia-sic-ai-privacy-retest", "kenya-biometric-dpia-evidence-gate"],
+      "sourceIds": ["rights-co-final", "rights-co-first", "rights-ke-katiba", "rights-ke-odpc"],
+      "sourceLocators": ["rights-enforcement.md:18,20,24-28,39; rights-enforcement.json sources[id=rights-co-final]: Opening/El componente técnico/En conclusión; sources[id=rights-co-first]: opening; sources[id=rights-ke-katiba]: opening and judgment paragraph; sources[id=rights-ke-odpc]: maintenance access gap"]
+    },
+    {
+      "id": "rights-view-4",
+      "claim": "Colombia and Kenya offer separate national deletion comparators, not a coordinated agreement or transferable court/regulator powers. A common deletion endpoint is useful only after matching architectures and retaining differences in scope and legal process.",
+      "type": "inference",
+      "routeIds": ["colombia-sic-ai-privacy-retest", "kenya-biometric-dpia-evidence-gate"],
+      "sourceIds": ["rights-co-final", "rights-ke-katiba"],
+      "sourceLocators": ["rights-enforcement.md:91-97; rights-enforcement.json corresponding route records and source locators"]
+    },
+    {
+      "id": "rights-view-5",
+      "claim": "GovTech's packet-recorded case reports no recurrence among previously successful attacks after changes; this is known-attack retesting, not held-out safety. The SG/KR experiment shows pipeline-sensitive results. The later shard could not freshly download that study. AIVF accreditation expressly does not assure independence or complete safety.",
+      "type": "fact",
+      "routeIds": ["sg-agent-data-leakage-deployment-gate", "sg-kr-jp-shared-eval-evidence-protocol"],
+      "sourceIds": ["ap-s-sg-chat", "ap-s-eval", "asia-sgkr-refresh-gap", "asia-sg-accreditation"],
+      "sourceLocators": ["data/coordinate-evidence.json facts[id=ap-gate-chat-precedent,ap-protocol-variation]; reports/Route coordinate evidence.md:50; japan-asia.md:38-60; japan-asia.json sources[id=asia-sgkr-refresh-gap,asia-sg-accreditation]"]
+    },
+    {
+      "id": "rights-view-6",
+      "claim": "Match a Singapore national deployment gate with shared-protocol evidence review using the same configuration, failures and national decision owner. Coordination earns priority only through additional protection or saved total effort without missed critical failures; neither trilateral consent nor mutual recognition is assumed.",
+      "type": "proposal",
+      "routeIds": ["sg-agent-data-leakage-deployment-gate", "sg-kr-jp-shared-eval-evidence-protocol"],
+      "sourceIds": ["ap-s-eval", "asia-sg-pilot", "asia-sg-accreditation"],
+      "sourceLocators": ["data/coordinate-evidence.json facts[id=ap-protocol-variation] and shared-protocol route gaps; japan-asia.md:48-60"]
+    },
+    {
+      "id": "rights-view-7",
+      "claim": "The packet supplies no complete technical remedy record for the exact rights proposals, representative affected-person preferences, comparable review costs or verified staffing allocation. The original Brazil model rationale uses 23 football-club cases, which cannot be reused as the Grok validation's coverage denominator.",
+      "type": "fact",
+      "routeIds": ["brazil-anpd-ai-inspection-evidence", "colombia-sic-ai-privacy-retest", "kenya-biometric-dpia-evidence-gate"],
+      "sourceIds": ["rights-model", "rights-br-grok"],
+      "sourceLocators": ["rights-enforcement.md:39,63,73; data/route-placement-model.json routes[id=brazil-anpd-ai-inspection-evidence]; data/routes-quantitative.json routes[id=brazil-anpd-ai-inspection-evidence]; reports/Route coordinate evidence.md:123"]
+    },
+    {
+      "id": "rights-view-8",
+      "claim": "Direct protection and effective redress should count as serious benefits without a speculative catastrophic-risk link. The editorial model's 0.4 reach weight and frontier/infrastructure upper anchor make cross-domain valuation explicit, not an empirical reason automatically to prefer a frontier-labelled route. Preserve systemic-risk assessment separately.",
+      "type": "value_judgment",
+      "routeIds": ["brazil-anpd-ai-inspection-evidence", "colombia-sic-ai-privacy-retest", "anthropic-new-credit-lender-safety-covenant"],
+      "sourceIds": ["rights-model"],
+      "sourceLocators": ["data/route-placement-model.json:9-19,29,38-43; rights-enforcement.md:45,65-68"]
+    },
+    {
+      "id": "rights-view-9",
+      "claim": "GAID permits a certificate upon filing while separately providing risk-based audit. This demonstrates why certificate counts cannot stand in for technical pass rates; it does not establish actual false certification or fraud.",
+      "type": "fact",
+      "routeIds": ["nigeria-ai-compliance-audit-annex"],
+      "sourceIds": ["rights-ng-gaid"],
+      "sourceLocators": ["rights-enforcement.md:21,35,52,99-105; rights-enforcement.json sources[id=rights-ng-gaid]: art.10(13), PDF pp17-18; partial selected-page access"]
+    },
+    {
+      "id": "rights-view-10",
+      "claim": "Severe future risk can reverse this priority. Common LUMI terms support a shared service surface but do not establish this safety delegation or unrestricted evaluator access. AISI's reported privileged-test out-of-scope actions ground a containment concern, not a production risk estimate. Executable containment over consequential workloads should compete on its actual evidence.",
+      "type": "inference",
+      "routeIds": ["lumi-national-evidence-protocol", "lumi-belgium-safety-appendix", "uk-agent-accountability-evidence"],
+      "sourceIds": ["euro-lumi-terms", "euro-aisi-incident"],
+      "sourceLocators": ["europe-finance.md:17-19,45-47,89; europe-finance.json sources[id=euro-lumi-terms]: preamble and sections6,11-12; sources[id=euro-aisi-incident]: chronology/What happened/What we found; publication 2026-08-04, events 2026-07-25/28"]
+    },
+    {
+      "id": "rights-view-11",
+      "claim": "Run the conditional authority-to-correction test defined in validationTest. Reject unexercised consequences, unresolved critical failures, inaccessible contest or disproportionate burden; classify insufficient or incomparable evidence as inconclusive. Dates and pass conditions are proposed, not adopted obligations.",
+      "type": "proposal",
+      "routeIds": ["brazil-anpd-ai-inspection-evidence"],
+      "sourceIds": ["rights-br-grok", "asia-sg-accreditation"],
+      "sourceLocators": ["rights-enforcement.md:59-73,83-89; japan-asia.md:38-42; sandbox-deployment.md:73-84 (analytical outcome/cost design, not observed results)"]
+    },
+    {
+      "id": "rights-view-12",
+      "claim": "E2E documents normal commercial service continuation after IndiaAI project expiry. A subsidy stop cannot therefore automatically be treated as a workload stop. This is not observed safety evasion; analogous displacement in Brazil remains a hypothesis to test.",
+      "type": "inference",
+      "routeIds": ["indiaai-subsidy-evaluation-gate", "brazil-anpd-ai-inspection-evidence"],
+      "sourceIds": ["compute-e2e", "compute-policy"],
+      "sourceLocators": ["compute.md:15-18,25,31-36; compute.json sources[id=compute-e2e]: Billing/Important Consideration and Platform Service; sources[id=compute-policy]: sections7-9"]
+    },
+    {
+      "id": "rights-view-13",
+      "claim": "A challengeable remedy receipt should link technical correction to a usable human contest path, independent review, exceptions and retest triggers; evaluate added benefit against ordinary handling rather than equating receipt completion with protection.",
+      "type": "proposal",
+      "routeIds": ["brazil-anpd-ai-inspection-evidence", "sg-agent-data-leakage-deployment-gate"],
+      "sourceIds": ["rights-br-grok", "asia-sg-accreditation"],
+      "sourceLocators": ["rights-enforcement.md:50,59-73,83-89; japan-asia.md:38-54; sandbox-deployment.md:75-80 (design basis)"]
+    },
+    {
+      "id": "rights-view-14",
+      "claim": "A split-knowledge deletion challenge should enumerate original data, distributed derivatives, processors and backup exceptions under each operative order, use authorised synthetic challenges and provide a claimant-facing contest result. A negative query cannot prove universal erasure; an incomplete inventory yields bounded or failed verification.",
+      "type": "proposal",
+      "routeIds": ["colombia-sic-ai-privacy-retest", "kenya-biometric-dpia-evidence-gate"],
+      "sourceIds": ["rights-co-final", "rights-co-first", "rights-ke-katiba"],
+      "sourceLocators": ["rights-enforcement.md:24-28,91-97; rights-enforcement.json corresponding source records; full dispositive orders and technical certificates not recovered"]
+    }
+  ],
+  "candidates": [
+    {"routeIds": ["brazil-anpd-ai-inspection-evidence"], "rationale": "First: existing Grok failed-assurance case offers a specific authority-to-correction hypothesis. Current status, access and independent retest are decisive gaps. No football-cohort denominator transfer.", "pointIds": ["rights-view-1", "rights-view-2", "rights-view-7"]},
+    {"routeIds": ["colombia-sic-ai-privacy-retest", "kenya-biometric-dpia-evidence-gate"], "rationale": "Second: separate national deletion comparators; external-certification obligation versus litigant-reported implementation. Match technical endpoints, preserve legal differences and never label this an agreed coalition.", "pointIds": ["rights-view-3", "rights-view-4"]},
+    {"routeIds": ["sg-agent-data-leakage-deployment-gate", "sg-kr-jp-shared-eval-evidence-protocol"], "rationale": "Third: matched national/coordinated evidence experiment with configuration and national acceptance fixed. Test independent reproducibility and net review savings, not number of participating countries.", "pointIds": ["rights-view-5", "rights-view-6"]}
+  ],
+  "assumptions": [
+    "Priority concerns marginal validation value before Geneva, not estimated total welfare or universal rights-over-risk dominance.",
+    "Lawful protected access, a non-developing reviewer and a usable comparison record might be available; none is an institutional commitment in the packet.",
+    "Synthetic proxies must validly measure the case-specific failure; otherwise their results cannot validate correction.",
+    "Reviewer capacity and a consequential case decision can fit the proposed calendar; costs and queues are not established.",
+    "Effective contestability, access/equity and proportionate restrictions are desired outcomes, not observed representative preferences."
+  ],
+  "objections": [
+    {"claim": "Strongest factual objection: no complete Brazil technical remedy record or current case disposition; the route's original cohort is different.", "pointIds": ["rights-view-2", "rights-view-7"], "response": "Make case access and scope a hard research gate; do not fabricate coverage or infer regulator failure from nondisclosure."},
+    {"claim": "Procedural rights can become paperwork with no correction benefit.", "pointIds": ["rights-view-9", "rights-view-13"], "response": "Measure operational changes, completed contests and burden against ordinary handling; abandon an added receipt if it adds no value."},
+    {"claim": "This lens may underweight severe future risks and international containment spillovers.", "pointIds": ["rights-view-10"], "response": "Allow an authorised, affordable consequential-workload containment test to displace the priority; do not demand present victim counts as the sole evidence of value."},
+    {"claim": "Restrictions or audits can harm expression, exclude smaller suppliers, reveal sensitive data or drive substitution.", "pointIds": ["rights-view-11", "rights-view-12", "rights-view-14"], "response": "Predeclare utility/access/cost limits, minimise disclosure, preserve claimant evidence and test displacement; restrictions are not intrinsically a net benefit."}
+  ],
+  "unknowns": [
+    "Brazil: operative status and service dates, technical note/body, actual correction, version/interface coverage, decision delegation, independent access and appeal/contest operation.",
+    "Colombia: controlling resolutions, exact final scope, certificate delivery/adequacy, judicial review and architecture-level erasure. Kenya: original court/ODPC technical compliance record and actual deletion date; ODPC maintenance prevented retrieval in the packet.",
+    "Singapore pair: actual national hold authority, held-out outcomes, review cost/queue, production inventory, Japan acceptance and evidence-sharing permissions. The shard's study refresh was HTTP403; older packet facts are not a fresh independent replication.",
+    "All candidates: comparable staff hours and cash costs, representative affected-person input, complaint abandonment, verified covered activity, persistent outcomes, and substitution rates.",
+    "International spillovers: portability savings and changed overseas operations are unmeasured; reuse of a design does not export legal authority or establish consent."
+  ],
+  "validationTest": {
+    "pointId": "rights-view-11",
+    "hypothesis": "One lawfully scoped Brazilian evidence demand yields independently reproducible, persistent correction and usable contest without disproportionate harm to legitimate access.",
+    "owner": "Competent ANPD case owner for 00261.000178/2026-27; X supplies evidence; a conflict-disclosed non-developing reviewer tests it. Regulator retains legal decisions. These roles require current confirmation, not presumed new powers.",
+    "stages": [
+      {"by": "2026-12-15", "action": "Confirm operative scope/status, authority, protected access to technical note and versioned response/disposition, reviewer independence and a real escalation path. Reverse priority if unavailable or independent completed work makes duplication low-value."},
+      {"by": "2027-01-31", "action": "Pre-register valid synthetic non-abusive proxies, matched comparisons, held-out and benign controls, sample size/uncertainty, critical-failure definition, benign-use tolerance and resource cap before seeing results. Do not experiment on victims."},
+      {"by": "2027-03-31", "action": "Reproduce a case-relevant failure, witness actual regulator-directed response, retest fresh variants across declared interfaces, and test a consented or synthetic complaint through human contest and demonstrable correction."},
+      {"by": "2027-06-01", "action": "Repeat on relevant changes; check residual failure and interface displacement, legitimate use, complaint abandonment/correction time, staff hours, queue and cost. Keep experimental and production evidence separate."}
+    ],
+    "falsifiers": ["Unresolved reproduced critical failure or correction not reproducible independently", "No exercised consequence for the relevant failure", "Complaint journey cannot obtain meaningful review/correction", "Benefit displaced across interfaces or exceeded predeclared access/utility/cost limits"],
+    "inconclusive": "Insufficient sample, invalid proxy, missing comparison or inaccessible evidence cannot be a pass. A small zero-failure study is not population harm prevention.",
+    "coverage": "Only tested configurations and observed case activity; no football-cohort or global-user denominator. Track exclusions and processors explicitly where relevant.",
+    "timingStatus": "All milestones are proposed research gates, not official deadlines or commitments.",
+    "pairedAlternative": "For the Singapore pair, compare local review with shared evidence plus national acceptance on the same build and tasks. Require preserved detection/decision quality and net review savings or additional protection; count total coordination work and duplicated tests."
+  },
+  "ideas": [
+    {"pointId": "rights-view-13", "name": "Challengeable remedy receipt", "design": "Link versioned technical correction to a human contest path, disclosed reviewer conflicts, exceptions and retest trigger. Restricted underlying evidence; only authorised redacted decision summaries. Compare completed corrections, time, abandonment and reviewer costs with ordinary handling.", "killCriterion": "No measurable correction/access benefit or disproportionate additional work."},
+    {"pointId": "rights-view-14", "name": "Split-knowledge deletion challenge", "design": "Separate Colombia/Kenya legal processes; examiner reconciles source data, iris codes, distributed derivatives, processors and backup exceptions under operative orders. Authorised synthetic canaries test residual matching/re-ingestion; claimants receive intelligible contestable results without exposed biometric linkages. Preserve lawful claimant evidence.", "killCriterion": "Unenumerated architecture or residual matching prevents verified-erasure claims; a negative query is only bounded evidence, not universal proof."}
+  ],
+  "dissent": "Do not let potential frontier reach automatically outrank an enforceable remedy for people exposed to serious harm. Equally, do not treat a rights instrument as effective until it changes what happens to a person. I defend testing Brazil first, and reversing for better accessible evidence, protective coverage per constrained review effort or executable containment of severe future risk."
+}

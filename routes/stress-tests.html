@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stress tests · Routes to safeguards</title>
+  <meta name="description" content="New evidence, retained dissent and testable next steps for all 32 safeguard routes. Separate sensitivity analysis of the original editorial scores.">
+  <link rel="stylesheet" href="stress-tests.css">
+</head>
+<body>
+  <header><a href="./#basis=model">← Routes to safeguards</a><nav><a href="#perspectives">Perspectives</a><a href="#ideas">Next tests</a><a href="../reports/Safeguard%20proposal%20stress%20tests.md">Full report</a></nav></header>
+  <main>
+    <p class="eyebrow">Research follow-up · 31 October 2026</p>
+    <h1>Test the safeguard,<br> not just the score.</h1>
+    <p class="lead">Start with Japan’s authority and cost check. Keep Brazil’s correction test and a matched LUMI trial as serious alternatives.</p>
+    <p>No route yet establishes the complete chain from authority to demonstrated protection. The original plot stays unchanged.</p>
+    <p id="loading" role="status">Loading 32 routes…</p>
+    <div id="app" hidden>
+      <section aria-labelledby="explore-title">
+        <h2 id="explore-title">Explore the evidence</h2>
+        <form id="filters">
+          <label>Find a route<input id="search" type="search" placeholder="Country, route or finding"></label>
+          <label class="route-label">Select a route<select id="route"></select></label>
+          <button type="reset">Reset</button>
+        </form>
+        <p id="count" class="meta" aria-live="polite"></p>
+        <div id="route-content"></div>
+      </section>
+      <section aria-labelledby="sensitivity-title">
+        <p class="eyebrow">Original score sensitivity · NOT empirical new measurements</p>
+        <h2 id="sensitivity-title">What changes when priorities change?</h2>
+        <p>These scenarios reweight the <em>original</em> six editorial factors. New research is not converted into scores. Proxy labels cannot measure missing rights, frontier or international outcomes.</p>
+        <div class="controls">
+          <label>Analyst weight scenario<select id="scenario"></select></label>
+          <label>Prior for missing factors<select id="prior"><option value="0.25">0.25</option><option value="0.5" selected>0.50 · original</option><option value="0.75">0.75</option></select></label>
+        </div>
+        <div class="comparison"><div id="plot"></div><div><h3 id="comparison-title"></h3><div id="coordinates" aria-live="polite"></div><p class="meta">Outline = original score; solid = scenario. Other dots are all 32 scenario scores. Overlapping points are available in the route selector. No display noise is added here.</p><details><summary>Weights, ranks and Pareto meaning</summary><div id="weights"></div><p>Ranks use the audit-only preference U = 0.5x + 0.5y. Ties share competition rank. This is not a probability, measured impact, policy ranking or coalition causal effect.</p><p>Non-dominated means no other score is at least as high on both axes and strictly higher on one. It is not a recommendation. The full audit includes sensitivity boxes, removal tests and additional preference weights.</p></details></div></div>
+      </section>
+      <section id="perspectives"><h2>Keep the disagreement</h2><p>One plain baseline, four isolated analytical lenses. Same model family, not stakeholder interviews or institutional positions.</p><div id="viewpoints"></div><details><summary>What the lenses added—and did not</summary><div id="baseline-comparison"></div></details><details><summary>Point-by-point retention ledger</summary><div id="coverage"></div></details></section>
+      <section id="ideas"><h2>Eight hypotheses to test next</h2><p>Proposed tests, not funded or approved pilots. Open a test for its owner, instrument, falsifier and next step.</p><div id="idea-list"></div></section>
+      <section id="methods"><h2>Method and downloads</h2><details><summary>How Agent Studio / deeper-research were adapted</summary><div id="method"></div></details><details><summary>Limitations and source-check status</summary><div id="limitations"></div></details><details><summary>Full report, audit, source ledgers and execution receipt</summary><p><a href="../reports/Safeguard%20proposal%20stress%20tests.md">Read the full report</a> · <a href="../data/stress-tests.json" download>Download this public view</a> · <a href="../scripts/build-stress-test-data.py">Deterministic builder</a></p><ul id="downloads"></ul></details></section>
+    </div>
+  </main>
+  <footer>Middle Powers · AI-assisted research and code · Original model preserved</footer>
+  <script type="module" src="stress-tests.js"></script>
+</body>
+</html>

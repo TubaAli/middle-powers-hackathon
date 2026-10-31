@@ -1,0 +1,2220 @@
+{
+  "observedDate": "2026-10-31",
+  "definition": "All stable point IDs from the plain baseline and four lens briefs. Retained is not necessarily in the executive summary; merged denotes substantively carried into a combined finding/design. Not-in-summary points retain exact input text and locators. No unsupported point is silently refuted.",
+  "points": [
+    {
+      "pointId": "baseline-1",
+      "inputFile": "baseline.json",
+      "claim": "Japan deserves the next bounded validation test because its directly checked release process and packet-reported procurement window connect more essential operational links than the shortlisted alternatives. Value demonstrated protection and service continuity alongside feasible timing, cost and potential reuse; do not mechanically rank editorial scores.",
+      "type": "value_judgment",
+      "routeIds": [
+        "jp-procurement-safety-evidence",
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol",
+        "sg-agent-data-leakage-deployment-gate",
+        "sg-kr-jp-shared-eval-evidence-protocol"
+      ],
+      "sourceIds": [
+        "asia-jp-standard",
+        "ap-s-jp-plan",
+        "euro-lumi-terms",
+        "placement-model"
+      ],
+      "sourceLocators": [
+        "japan-asia-source-extracts/jp-standard.txt: physical pp36–37, section4-3",
+        "data/coordinate-evidence.json: jp-procurement-safety-evidence, fact ap-jp-window (plan, not completed procurement)",
+        "europe-finance-source-extracts/lumi-terms.pdf.txt: preamble, sections6,11–12",
+        "data/route-placement-model.json: description and factor definitions"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F10",
+        "jsonPointer": "/findings/9",
+        "reportHeading": "The lenses sharpen tests without outperforming the baseline by fiat"
+      },
+      "reason": "Keep the baseline recommendation as the decision spine, not a ranking."
+    },
+    {
+      "pointId": "baseline-2",
+      "inputFile": "baseline.json",
+      "claim": "The saved Gen-nai standard requires prior approval by the responsible authorised decision-maker and another Gen-nai developer's technical review for production changes; it assigns recovery including rollback and calls for migration testing and necessary-function continuity. This is normative operational design, not an independently witnessed release hold or an external audit.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "asia-jp-standard"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-standard.txt: physical pp8–9,36–38; section4-3; standard dated2026-10-20"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Same normative authority correction appears in other lenses."
+    },
+    {
+      "pointId": "baseline-3",
+      "inputFile": "baseline.json",
+      "claim": "In the saved consultation, Graffer objects that upstream updates/retirement can defeat pre-release checks, and Graffer/Rakuten object to evidence they cannot access. Government replies distinguish negotiated reasonable disclosure and nonmandatory evidence examples, while retaining stronger expectations for important systems. These are attributed submissions and replies, not observed frequency estimates or proof of signed rights.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "asia-jp-comments"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-comments.txt: physical pp38,46–47,69; publication day not established in packet"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Keep real supplier objection and government counterposition."
+    },
+    {
+      "pointId": "baseline-4",
+      "inputFile": "baseline.json",
+      "claim": "DS-920 asks planners to consider contract-checklist provisions and risk-specific additions; independent internal/external testing and red teaming are example methods. It does not prove a universally signed external-certification obligation.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence",
+        "jp-kr-sg-procurement-profile"
+      ],
+      "sourceIds": [
+        "asia-jp-guideline"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-guideline.txt: physical pp40–41, sections6.3.2(4)–(5),6.3.3(1); provisional English translation dated2026-06-12"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Testing examples are not universal signed duties."
+    },
+    {
+      "pointId": "baseline-5",
+      "inputFile": "baseline.json",
+      "claim": "LUMI's saved approved terms name CSC representing consortium/partners as applicable, incorporate additional service terms, apply a common national/EuroHPC resource cut-off policy and require at least two weeks' notice for changes. Section6 limits content access to service purposes and protects confidentiality/IP; section10 addresses unauthorised use or suspected terms breaches. None proves internal delegation for the proposed safety annex or unrestricted outside-evaluator access.",
+      "type": "fact",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt: pp1,4–7; preamble, sections6,10–12; last change2026-02-10"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F4",
+        "jsonPointer": "/findings/3",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Preserve common terms and explicit rights limitations. Post-lens SC-02 corrects source publication metadata only:2026-02-10 remains the last-change date; no change to this point or the frozen input."
+    },
+    {
+      "pointId": "baseline-6",
+      "inputFile": "baseline.json",
+      "claim": "A common host-service implementation could make the LUMI matched pair competitive with Japan without eleven separate policy rewrites. Compare identical obligations and verify delegation rather than giving coordination an automatic penalty or bonus. Allocation envelopes are nested potential scope, not observed protected consumption.",
+      "type": "inference",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms",
+        "eu-national-quota",
+        "quantitative-routes"
+      ],
+      "sourceLocators": [
+        "europe-finance-source-extracts/lumi-terms.pdf.txt: preamble, sections6,11–12",
+        "data/coordinate-evidence.json: lumi-national-evidence-protocol, eu-national-quota and eu-national-countries",
+        "data/routes-quantitative.json: pairId lumi-national-evidence; original prospective award-appendix instruments"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F4",
+        "jsonPointer": "/findings/3",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Shared-host variant is material, but already present in baseline."
+    },
+    {
+      "pointId": "baseline-7",
+      "inputFile": "baseline.json",
+      "claim": "The Singapore national/shared-evidence pair is a credible third candidate given packet-reported remediation and independently implemented bilateral pipelines. Known-attack retest is not held-out protection, technical accreditation is not independence or release authority, and three-country evidence acceptance remains unestablished. Primary Singapore pages/study were not re-read here; the refresh explicitly records a study download403.",
+      "type": "inference",
+      "routeIds": [
+        "sg-agent-data-leakage-deployment-gate",
+        "sg-kr-jp-shared-eval-evidence-protocol"
+      ],
+      "sourceIds": [
+        "ap-s-sg-chat",
+        "ap-s-eval",
+        "asia-sg-accreditation",
+        "asia-sgkr-refresh-gap"
+      ],
+      "sourceLocators": [
+        "data/coordinate-evidence.json: ap-gate-chat-precedent, ap-gate-eval-result, ap-protocol-variation and associated gaps (secondary records of primary claims)",
+        "research_notes/Safeguard proposal stress tests/japan-asia.json: sources asia-sg-accreditation and asia-sgkr-refresh-gap; routes' unknowns"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F6",
+        "jsonPointer": "/findings/5",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Keep Singapore alternative and inherited access/held-out limits."
+    },
+    {
+      "pointId": "baseline-8",
+      "inputFile": "baseline.json",
+      "claim": "Brazil's Grok corrective-evidence demand is the important minority alternative for direct rights protection: the packet attributes an actual failed-assurance finding and named preventive demand to ANPD. Access to the current technical case record could outrank a prospective procurement test. The baseline has only secondary packet access to this claim; full note, current disposition and successful retest remain unknown. Historical sanction duration does not measure this preventive action.",
+      "type": "value_judgment",
+      "routeIds": [
+        "brazil-anpd-ai-inspection-evidence"
+      ],
+      "sourceIds": [
+        "rights-br-grok",
+        "la-br-annual"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/rights-enforcement.json: Brazil newEvidence and unknowns; source rights-br-grok; reported publication2026-02-11; file00261.000178/2026-27, note1/2026/FIS/CGF/ANPD(0239948)",
+        "reports/Route coordinate evidence.md: Brazil table row (historical sanctions, different procedure); original Grok passage not independently inspected here"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F5",
+        "jsonPointer": "/findings/4",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Brazil minority is baseline content, not a newly discovered lens alternative."
+    },
+    {
+      "pointId": "baseline-9",
+      "inputFile": "baseline.json",
+      "claim": "Finance's broad potential scope does not outweigh the missing discretionary financing event and exact evidence/remedy rights. India's provider-described commercial continuation separates a subsidy hold from a workload stop. These comparisons rely on packet summaries rather than newly inspected primary finance/provider passages.",
+      "type": "inference",
+      "routeIds": [
+        "canada-cohere-equity-safety-covenant",
+        "anthropic-new-credit-lender-safety-covenant",
+        "indiaai-subsidy-evaluation-gate"
+      ],
+      "sourceIds": [
+        "euro-canada-speech",
+        "euro-credit",
+        "compute-e2e"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/europe-finance.json: finance newEvidence/unknowns and source access caveats (SEC raw403; retained tool extraction not re-read here)",
+        "research_notes/Safeguard proposal stress tests/compute.json: India newEvidence/unknowns and compute-e2e Billing/Platform Service reference"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F8",
+        "jsonPointer": "/findings/7",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Finance in F8; India support/workload separation separately retained in F3/I2."
+    },
+    {
+      "pointId": "baseline-10",
+      "inputFile": "baseline.json",
+      "claim": "Swissgrid is a credible bounded fallback test but the packet lacks its pilot authority and model-specific exposure. Sandbox company qualification, training deliverables and graduation cannot independently establish a system-level hold. These do not displace the shortlist absent the missing operational join.",
+      "type": "inference",
+      "routeIds": [
+        "ch-electricity-operator-fallback",
+        "uae-dubai-agentic-assurance-gate",
+        "thailand-aigpc-sandbox-gate"
+      ],
+      "sourceIds": [
+        "euro-swissgrid",
+        "sandbox-ae-seal",
+        "sandbox-th-tender"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/europe-finance.json: Swissgrid newEvidence/unknowns, secondary operator account",
+        "research_notes/Safeguard proposal stress tests/sandbox-deployment.json: UAE and Thailand newEvidence/unknowns, secondary summaries of primary announcement and TOR"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F7",
+        "jsonPointer": "/findings/6",
+        "reportHeading": "All 32 proposals retain an explicit assessment and next test"
+      },
+      "reason": "Programme-object distinction in F7; Swissgrid alternative retained in F9 and route registry."
+    },
+    {
+      "pointId": "baseline-11",
+      "inputFile": "baseline.json",
+      "claim": "Judge success by additional meaningful protection over current review, affordable recurring effort, useful service, correction/redress and measurable covered activity. Report false holds, bypass and cross-border substitution separately. National deployments, resource shares and test runs are incommensurate denominators; local control does not establish worldwide supplier control or causal harm reduction.",
+      "type": "value_judgment",
+      "routeIds": [
+        "jp-procurement-safety-evidence",
+        "lumi-national-evidence-protocol",
+        "sg-agent-data-leakage-deployment-gate"
+      ],
+      "sourceIds": [
+        "placement-model",
+        "asia-jp-standard",
+        "coordinate-report"
+      ],
+      "sourceLocators": [
+        "data/route-placement-model.json: description, reach/relevance/remedy definitions",
+        "japan-asia-source-extracts/jp-standard.txt: pp8–9,36–38",
+        "reports/Route coordinate evidence.md: route-specific missing joins and scope discussion; treated as secondary synthesis"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F9",
+        "jsonPointer": "/findings/8",
+        "reportHeading": "Eight follow-up designs can falsify the attractive stories"
+      },
+      "reason": "Outcome, cost, utility and displacement standards apply across designs."
+    },
+    {
+      "pointId": "baseline-12",
+      "inputFile": "baseline.json",
+      "claim": "Reverse the priority if Japan lacks a lawful configuration hold, sufficient version/test evidence, affordable independent review or useful fallback, or if additional checks fail to improve existing review. Prefer LUMI upon demonstrated common delegation/rights and a costed two-channel test; prefer Singapore upon real release authority and second-recipient evidence reuse that saves total effort without missed failures.",
+      "type": "proposal",
+      "routeIds": [
+        "jp-procurement-safety-evidence",
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol",
+        "sg-agent-data-leakage-deployment-gate",
+        "sg-kr-jp-shared-eval-evidence-protocol"
+      ],
+      "sourceIds": [
+        "asia-jp-comments",
+        "asia-jp-standard",
+        "euro-lumi-terms",
+        "asia-sgkr-refresh-gap"
+      ],
+      "sourceLocators": [
+        "japan-asia-source-extracts/jp-comments.txt: pp38,69",
+        "japan-asia-source-extracts/jp-standard.txt: pp9,36–37",
+        "europe-finance-source-extracts/lumi-terms.pdf.txt: sections6,10–12",
+        "japan-asia.json: shared-protocol unknowns; proposals are baseline decision rules, not source claims"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "idea",
+        "id": "I1",
+        "jsonPointer": "/ideas/0",
+        "reportHeading": "I1 — Japan: compare added assurance with compliant ordinary review"
+      },
+      "reason": "Japanese reversal conditions retained; affirmative LUMI/SG alternatives retained in I3/I4."
+    },
+    {
+      "pointId": "baseline-13",
+      "inputFile": "baseline.json",
+      "claim": "Run one cost-capped Gen-nai staging release/retirement rehearsal through its actual authorised pipeline: blind existing and independent review of clean, faulty and repaired builds; seed a tool-side disclosure/action defect; observe hold, fallback, correction and fresh retest. Set rights, utility, error and burden thresholds in advance; failure of authority or improvement stops scaling. A staging pass alone is not operational coverage or harm reduction.",
+      "type": "proposal",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "asia-jp-standard",
+        "asia-jp-comments",
+        "asia-jp-guideline"
+      ],
+      "sourceLocators": [
+        "japan-asia-source-extracts/jp-standard.txt: pp9,36–38",
+        "japan-asia-source-extracts/jp-comments.txt: pp38,69",
+        "japan-asia-source-extracts/jp-guideline.txt: pp40–41; experimental design and milestones proposed by baseline"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "idea",
+        "id": "I1",
+        "jsonPointer": "/ideas/0",
+        "reportHeading": "I1 — Japan: compare added assurance with compliant ordinary review"
+      },
+      "reason": "Keep baseline rehearsal and refine ordinary-compliance comparator."
+    },
+    {
+      "pointId": "baseline-14",
+      "inputFile": "baseline.json",
+      "claim": "Follow up with a confidential configuration/test/decision receipt reused by one second purchaser, retaining separate national acceptance and context tests. Measure total reviewer effort and additional protected activity; stop reuse if translation/retest burden or missed defects erases its benefit.",
+      "type": "proposal",
+      "routeIds": [
+        "jp-procurement-safety-evidence",
+        "sg-kr-jp-shared-eval-evidence-protocol"
+      ],
+      "sourceIds": [
+        "asia-jp-comments",
+        "asia-jp-standard",
+        "ap-s-eval"
+      ],
+      "sourceLocators": [
+        "japan-asia-source-extracts/jp-comments.txt: p69",
+        "japan-asia-source-extracts/jp-standard.txt: pp9,36–37",
+        "data/coordinate-evidence.json: ap-protocol-variation (secondary; study not re-read)"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "idea",
+        "id": "I4",
+        "jsonPointer": "/ideas/3",
+        "reportHeading": "I4 — Portable evidence: publish reasons for non-recognition"
+      },
+      "reason": "Receipt is a baseline design; lenses refine its refusal/change fields."
+    },
+    {
+      "pointId": "baseline-15",
+      "inputFile": "baseline.json",
+      "claim": "Follow up with an identical-obligation LUMI comparison: Belgian-only award processing versus a lawfully delegated common host annex with a second national channel. Measure approval delay, total staff effort, scoped pause/restart, disclosure burden and off-platform migration, preserving national authority and avoiding quota double-counting.",
+      "type": "proposal",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms",
+        "eu-national-quota"
+      ],
+      "sourceLocators": [
+        "europe-finance-source-extracts/lumi-terms.pdf.txt: preamble, sections6,10–12",
+        "data/coordinate-evidence.json: eu-national-quota; existing pair implemented through a proposed shared-service variant"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "idea",
+        "id": "I3",
+        "jsonPointer": "/ideas/2",
+        "reportHeading": "I3 — LUMI: test equal protection through two allocation channels"
+      },
+      "reason": "Equal-obligation two-channel comparison already existed in baseline."
+    },
+    {
+      "pointId": "implementation-1",
+      "inputFile": "lens-implementation.json",
+      "claim": "Gen-nai specifies empowered prior approval, another-developer review and rollback/recovery; its high-severity vulnerability hold does not establish an independent external model-safety gate.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "asia-jp-standard"
+      ],
+      "sourceLocators": [
+        "japan-asia.json sources[asia-jp-standard]; physical pp36-40, sections4-3/4-5",
+        "japan-asia-source-extracts/jp-standard.txt lines1099-1132,1206-1249, directly checked"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Preserve another-developer versus external-independence distinction."
+    },
+    {
+      "pointId": "implementation-2",
+      "inputFile": "lens-implementation.json",
+      "claim": "KDDI's JPY499983000 and NTT Data's JPY390000000 awards identify rollout and verification work through March2027; these are not marginal safety costs, actual payments, completed delivery or a staffing roster.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "ap-s-jp-april",
+        "ap-s-jp-may",
+        "ap-s-final-jp-rollout",
+        "ap-s-jp-plan"
+      ],
+      "sourceLocators": [
+        "coordinate-evidence.json route jp-procurement-safety-evidence facts ap-jp-final-award-delivery-scope,ap-jp-window",
+        "April sheet1 row108 columnI; May sheet1 row10 columnI; rollout p23; plan p2",
+        "Route coordinate evidence.md lines25-29"
+      ],
+      "status": "not-in-summary",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Historical award amounts remain in this point and prior evidence report; they are not marginal cost or staffing evidence, so no numerical repetition in synthesis."
+    },
+    {
+      "pointId": "implementation-3",
+      "inputFile": "lens-implementation.json",
+      "claim": "The consultation records downstream upstream-information/control objections and reasonable-scope official responses; important-system obligations were retained despite upstream-change objections. This is attributed evidence, not measured SME exclusion.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "asia-jp-comments"
+      ],
+      "sourceLocators": [
+        "japan-asia.md lines14,21,29-31; japan-asia.json sources[asia-jp-comments]; physical pp38,46-47,69"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Real supplier access objection is retained without claiming representative SME exclusion."
+    },
+    {
+      "pointId": "implementation-4",
+      "inputFile": "lens-implementation.json",
+      "claim": "DS-920 permits risk-specific procurement provisions and encourages startup access; independent/red-team testing examples are not a universal external certification mandate.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "asia-jp-guideline"
+      ],
+      "sourceLocators": [
+        "japan-asia.md lines13,16; physical pp40-41 sections6.3.2-6.3.3"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Retain risk-specific procurement and nonmandatory examples."
+    },
+    {
+      "pointId": "implementation-5",
+      "inputFile": "lens-implementation.json",
+      "claim": "Singapore's three-month testing target is not a completion distribution or buyer veto; tester accreditation explicitly does not guarantee independence or complete safety.",
+      "type": "fact",
+      "routeIds": [
+        "sg-purchaser-sandbox-release-gate"
+      ],
+      "sourceIds": [
+        "apac-sg-sandbox",
+        "asia-sg-accreditation"
+      ],
+      "sourceLocators": [
+        "routes-quantitative.json route sg-purchaser-sandbox-release-gate sources[apac-sg-sandbox], journey/eligibility",
+        "japan-asia.json sources[asia-sg-accreditation], introductory disclaimer"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F6",
+        "jsonPointer": "/findings/5",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Retain accreditation limits; three-month programme target retained in the source point, not treated as measured delivery."
+    },
+    {
+      "pointId": "implementation-6",
+      "inputFile": "lens-implementation.json",
+      "claim": "CSC's common LUMI terms may permit lower-duplication implementation, but particular delegation and evaluator access must be established; existing cut-off rules are not exercised safety sanctions.",
+      "type": "inference",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms",
+        "euro-belgium-access"
+      ],
+      "sourceLocators": [
+        "europe-finance.md lines17-27,35; LUMI terms preamble,sections6,11-12; Belgian preparatory/monthly review paragraphs"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F4",
+        "jsonPointer": "/findings/3",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Common terms do not establish delegation."
+    },
+    {
+      "pointId": "implementation-7",
+      "inputFile": "lens-implementation.json",
+      "claim": "ANPD reported persistent Grok failures after claimed safeguards and demanded verifiable correction evidence; this is neither current case status nor verified successful correction, nor an outcome for the separate football cohort.",
+      "type": "fact",
+      "routeIds": [
+        "brazil-anpd-ai-inspection-evidence"
+      ],
+      "sourceIds": [
+        "rights-br-grok"
+      ],
+      "sourceLocators": [
+        "rights-enforcement.md lines15,50,83-89; primary account opening and ANPD sections,11February2026"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F5",
+        "jsonPointer": "/findings/4",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Keep Grok-specific scope and unknown current correction."
+    },
+    {
+      "pointId": "implementation-8",
+      "inputFile": "lens-implementation.json",
+      "claim": "Prefer a reversible discriminating implementation test while valuing meaningful exposure, service continuity and supplier access; administrative convenience alone is insufficient.",
+      "type": "value_judgment",
+      "routeIds": [
+        "jp-procurement-safety-evidence",
+        "sg-purchaser-sandbox-release-gate"
+      ],
+      "sourceIds": [],
+      "sourceLocators": [
+        "This viewpoint's explicit value choice, not a sourced stakeholder consensus"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F9",
+        "jsonPointer": "/findings/8",
+        "reportHeading": "Eight follow-up designs can falsify the attractive stories"
+      },
+      "reason": "A tractable but inconsequential pilot does not satisfy the objective."
+    },
+    {
+      "pointId": "implementation-9",
+      "inputFile": "lens-implementation.json",
+      "claim": "Test one workflow with two eligible supplier paths, actual staff/cost commitments and a seeded version-change failure requiring hold, correction, fresh retest and usable fallback.",
+      "type": "proposal",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "asia-jp-standard",
+        "asia-jp-comments",
+        "asia-jp-guideline"
+      ],
+      "sourceLocators": [
+        "Design anchors: Gen-nai sections4-3/4-5; consultation pp38,46-47,69; DS-920 pp40-41",
+        "Detailed proposed protocol in companion lens-implementation.md"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "idea",
+        "id": "I1",
+        "jsonPointer": "/ideas/0",
+        "reportHeading": "I1 — Japan: compare added assurance with compliant ordinary review"
+      },
+      "reason": "Two eligible supplier paths and named cost capacity add useful operational detail; numeric utility proposal not adopted."
+    },
+    {
+      "pointId": "implementation-10",
+      "inputFile": "lens-implementation.json",
+      "claim": "A proportionate costed acceptance pack and a common receipt with local decisions could reduce duplication; test savings and exclusion rather than assuming them.",
+      "type": "proposal",
+      "routeIds": [
+        "jp-procurement-safety-evidence",
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "asia-jp-comments",
+        "asia-jp-guideline",
+        "euro-lumi-terms"
+      ],
+      "sourceLocators": [
+        "consultation pp38,46-47,69; DS-920 pp40-41; LUMI preamble,sections6,11-12"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "idea",
+        "id": "I4",
+        "jsonPointer": "/ideas/3",
+        "reportHeading": "I4 — Portable evidence: publish reasons for non-recognition"
+      },
+      "reason": "Cost ledger also retained in I1 and every idea; common receipt must demonstrate savings."
+    },
+    {
+      "pointId": "frontier-1",
+      "inputFile": "lens-frontier.json",
+      "claim": "The saved Gen-nai standard requires high-severity vulnerability remediation before release, tracked production changes, another developer's review and authorised approval, and incident stop/rollback procedures. These are normative controls, not observed operation or an independent external audit.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "asia-jp-standard"
+      ],
+      "sourceLocators": [
+        "japan-asia-source-extracts/jp-standard.txt lines 1206-1249; physical pp39-40, section4-5(1),(3),(7),(9)"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Existing normative security/release controls retained as comparator."
+    },
+    {
+      "pointId": "frontier-2",
+      "inputFile": "lens-frontier.json",
+      "claim": "DS-920 already asks for intended-purpose input/output tests and gives independent internal/external red teaming as an example. Contract-checklist inclusion and additional risk-based terms are matters for consideration. Adding an evaluation label alone therefore does not establish new protection or a signed supplier remedy.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "asia-jp-guideline"
+      ],
+      "sourceLocators": [
+        "japan-asia-source-extracts/jp-guideline.txt lines 1393-1398 and 1411-1434; physical pp40-41, sections6.3.2(5),6.3.3(1)"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Testing is not new merely because it is relabelled."
+    },
+    {
+      "pointId": "frontier-3",
+      "inputFile": "lens-frontier.json",
+      "claim": "The strongest Japanese additionality claim is a reproducible model/scaffold-specific failure missed by ordinary compliant review that changes actual permissions or release, not creation of a new generic duty to test. Existing security controls may already prevent the selected failure; this would defeat the incremental claim.",
+      "type": "inference",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "asia-jp-standard",
+        "asia-jp-guideline"
+      ],
+      "sourceLocators": [
+        "jp-standard.txt lines1206-1249",
+        "jp-guideline.txt lines1411-1434"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "idea",
+        "id": "I1",
+        "jsonPointer": "/ideas/0",
+        "reportHeading": "I1 — Japan: compare added assurance with compliant ordinary review"
+      },
+      "reason": "Fully compliant ordinary review sharpens the baseline additionality test."
+    },
+    {
+      "pointId": "frontier-4",
+      "inputFile": "lens-frontier.json",
+      "claim": "The fixed coordinate packet distinguishes Japanese enabled access, survey-reported use and target population from matched protected transactions; it also records that safety explanations were already trial-selection conditions. These are packet-reported facts; the underlying rollout, survey and selection sources were not independently re-extracted in this lens.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence"
+      ],
+      "sourceIds": [
+        "ap-s-final-jp-rollout",
+        "ap-s-final-jp-survey",
+        "ap-s-final-jp-selection"
+      ],
+      "sourceLocators": [
+        "data/coordinate-evidence.json routes[routeId=jp-procurement-safety-evidence].facts: ap-jp-final-rollout-cohort, ap-jp-final-survey-use, ap-jp-final-vendor-selection",
+        "reports/Route coordinate evidence.md lines25-29"
+      ],
+      "status": "not-in-summary",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Enabled-user and survey distinctions remain in this point and the prior report; no programme-total proxy is used for pilot scope."
+    },
+    {
+      "pointId": "frontier-5",
+      "inputFile": "lens-frontier.json",
+      "claim": "LUMI's saved terms identify CSC as the contracting surface and permit additional service terms. They already prohibit misuse, provide account suspension for suspected contrary use, apply common resource cut-off policies to national and EuroHPC projects, and provide notice for changed terms. Content access is purpose-limited and confidentiality/IP are preserved. None identifies internal approval of the proposed safety annex.",
+      "type": "fact",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms"
+      ],
+      "sourceLocators": [
+        "europe-finance-source-extracts/lumi-terms.pdf.txt lines24-32,84-101,127-150,185-200,208-229; physical pp1,3-7"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F4",
+        "jsonPointer": "/findings/3",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Shared contracting surface and content limits retained."
+    },
+    {
+      "pointId": "frontier-6",
+      "inputFile": "lens-frontier.json",
+      "claim": "A LUMI common service condition could reduce repeated institutional work, but neither common terms nor large AI allocations show marginal safety. The discriminating endpoint is containment of an evaluation agent's unauthorised external action before it reaches a target; mere policy compliance or a later account closure may arrive too late. Exported weights and migrated jobs remain outside this host boundary.",
+      "type": "inference",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms"
+      ],
+      "sourceLocators": [
+        "lumi-terms.pdf.txt sections4,6,10-12; especially lines147-150 on content copies following termination"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "idea",
+        "id": "I3",
+        "jsonPointer": "/ideas/2",
+        "reportHeading": "I3 — LUMI: test equal protection through two allocation channels"
+      },
+      "reason": "Prevent effect before external sink, not only eventual account closure; keep ordinary-control comparator."
+    },
+    {
+      "pointId": "frontier-7",
+      "inputFile": "lens-frontier.json",
+      "claim": "The rights shard attributes to Brazil's authorities a February 2026 finding of persistent Grok failures after X's response, and a demand for verifiable correction evidence across versions/modalities. It does not establish October case status or successful remediation. No saved original Brazilian passage was available in the shard's listed extract directory; this remains attributed packet evidence, not an independently checked primary finding in this lens.",
+      "type": "fact",
+      "routeIds": [
+        "brazil-anpd-ai-inspection-evidence"
+      ],
+      "sourceIds": [
+        "rights-br-grok"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/rights-enforcement.md lines15,50,83-89",
+        "rights-enforcement.json sources[id=rights-br-grok]"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F5",
+        "jsonPointer": "/findings/4",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Keep attributed Brazil finding and missing original technical record."
+    },
+    {
+      "pointId": "frontier-8",
+      "inputFile": "lens-frontier.json",
+      "claim": "The packet's SG/KR pipeline discrepancy is a reason to validate portable evidence rather than assume common acceptance. A replicated benchmark still cannot establish a buyer's authority or a useful local deployment outcome. The bilateral study is not independently re-extracted here.",
+      "type": "inference",
+      "routeIds": [
+        "sg-kr-jp-shared-eval-evidence-protocol"
+      ],
+      "sourceIds": [
+        "ap-s-eval",
+        "asia-jp-guideline"
+      ],
+      "sourceLocators": [
+        "data/coordinate-evidence.json routes[routeId=sg-kr-jp-shared-eval-evidence-protocol].facts[id=ap-protocol-variation]",
+        "reports/Route coordinate evidence.md line51",
+        "jp-guideline.txt lines1415-1434"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "idea",
+        "id": "I4",
+        "jsonPointer": "/ideas/3",
+        "reportHeading": "I4 — Portable evidence: publish reasons for non-recognition"
+      },
+      "reason": "Replication does not create national authority."
+    },
+    {
+      "pointId": "frontier-9",
+      "inputFile": "lens-frontier.json",
+      "claim": "Before Geneva, prefer a falsifiable improvement to serious harm prevention over speculative breadth. Catastrophic-risk relevance remains a separate objective: a local disclosure or action-control result cannot be promoted to evidence of controlling autonomous replication, large-scale cyber misuse or other frontier catastrophes.",
+      "type": "value_judgment",
+      "routeIds": [
+        "jp-procurement-safety-evidence",
+        "lumi-national-evidence-protocol",
+        "brazil-anpd-ai-inspection-evidence"
+      ],
+      "sourceIds": [],
+      "sourceLocators": [
+        "Analytical value choice; no empirical source or consensus claim"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F9",
+        "jsonPointer": "/findings/8",
+        "reportHeading": "Eight follow-up designs can falsify the attractive stories"
+      },
+      "reason": "Serious local prevention must not be renamed catastrophic-risk reduction."
+    },
+    {
+      "pointId": "frontier-10",
+      "inputFile": "lens-frontier.json",
+      "claim": "Run a matched ordinary-control versus augmented-control staging test, with independently held-out and adaptive attacks, clean utility controls, real permission-boundary telemetry, a seeded negative control, and fresh post-repair retesting. Add a cross-border replication arm only after the national decision can be exercised.",
+      "type": "proposal",
+      "routeIds": [
+        "jp-procurement-safety-evidence",
+        "sg-kr-jp-shared-eval-evidence-protocol"
+      ],
+      "sourceIds": [
+        "asia-jp-standard",
+        "asia-jp-guideline"
+      ],
+      "sourceLocators": [
+        "Design response to jp-standard.txt lines1206-1249 and jp-guideline.txt lines1411-1434; thresholds below are proposed, not source facts"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "idea",
+        "id": "I1",
+        "jsonPointer": "/ideas/0",
+        "reportHeading": "I1 — Japan: compare added assurance with compliant ordinary review"
+      },
+      "reason": "Adaptive held-out design, tool-side outcomes and precision are substantive refinements; I4 carries optional replication."
+    },
+    {
+      "pointId": "rights-view-1",
+      "inputFile": "lens-rights.json",
+      "claim": "Brazil's Grok case deserves the next information-producing validation test, conditional on access and current authority; this is a prioritisation inference, not a measured superiority claim.",
+      "type": "inference",
+      "routeIds": [
+        "brazil-anpd-ai-inspection-evidence"
+      ],
+      "sourceIds": [
+        "rights-br-grok"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/rights-enforcement.md:15,39,83-89; rights-enforcement.json routes[routeId=brazil-anpd-ai-inspection-evidence], sources[id=rights-br-grok]"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F10",
+        "jsonPointer": "/findings/9",
+        "reportHeading": "The lenses sharpen tests without outperforming the baseline by fiat"
+      },
+      "reason": "Preserve Brazil-first dissent without majority voting."
+    },
+    {
+      "pointId": "rights-view-2",
+      "inputFile": "lens-rights.json",
+      "claim": "The 11 February 2026 official account reports inadequate efficacy evidence and continuing preliminary-test failures; ANPD identifies file 00261.000178/2026-27 and a five-business-day verifiable-evidence demand across versions/plans/modalities. The packet establishes neither independently replicated failures nor successful correction, actual service date or current case disposition.",
+      "type": "fact",
+      "routeIds": [
+        "brazil-anpd-ai-inspection-evidence"
+      ],
+      "sourceIds": [
+        "rights-br-grok"
+      ],
+      "sourceLocators": [
+        "rights-enforcement.json sources[id=rights-br-grok]: published/eventDate/access/locator; source opening three paragraphs and Medidas adotadas/ANPD; rights-enforcement.md:15,39,50,63"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F5",
+        "jsonPointer": "/findings/4",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Retain dated official account and unknown current outcome."
+    },
+    {
+      "pointId": "rights-view-3",
+      "inputFile": "lens-rights.json",
+      "claim": "SIC's 8 July 2026 account of Resolution 45710 dated 18 June requires external certification with technical suppression evidence and records a contested distributed-architecture argument. Its sensitive-data wording differs from the earlier all-personal-data release. Katiba reports completed court-supervised deletion in Kenya, but no original ODPC technical verification is available in the packet. Neither is independently verified deletion.",
+      "type": "fact",
+      "routeIds": [
+        "colombia-sic-ai-privacy-retest",
+        "kenya-biometric-dpia-evidence-gate"
+      ],
+      "sourceIds": [
+        "rights-co-final",
+        "rights-co-first",
+        "rights-ke-katiba",
+        "rights-ke-odpc"
+      ],
+      "sourceLocators": [
+        "rights-enforcement.md:18,20,24-28,39; rights-enforcement.json sources[id=rights-co-final]: Opening/El componente técnico/En conclusión; sources[id=rights-co-first]: opening; sources[id=rights-ke-katiba]: opening and judgment paragraph; sources[id=rights-ke-odpc]: maintenance access gap"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F5",
+        "jsonPointer": "/findings/4",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Preserve differing legal scope and completion evidence tiers."
+    },
+    {
+      "pointId": "rights-view-4",
+      "inputFile": "lens-rights.json",
+      "claim": "Colombia and Kenya offer separate national deletion comparators, not a coordinated agreement or transferable court/regulator powers. A common deletion endpoint is useful only after matching architectures and retaining differences in scope and legal process.",
+      "type": "inference",
+      "routeIds": [
+        "colombia-sic-ai-privacy-retest",
+        "kenya-biometric-dpia-evidence-gate"
+      ],
+      "sourceIds": [
+        "rights-co-final",
+        "rights-ke-katiba"
+      ],
+      "sourceLocators": [
+        "rights-enforcement.md:91-97; rights-enforcement.json corresponding route records and source locators"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "idea",
+        "id": "I6",
+        "jsonPointer": "/ideas/5",
+        "reportHeading": "I6 — Colombia and Kenya: challenge deletion across derivatives"
+      },
+      "reason": "Separate national comparators, not a coalition or pooled population."
+    },
+    {
+      "pointId": "rights-view-5",
+      "inputFile": "lens-rights.json",
+      "claim": "GovTech's packet-recorded case reports no recurrence among previously successful attacks after changes; this is known-attack retesting, not held-out safety. The SG/KR experiment shows pipeline-sensitive results. The later shard could not freshly download that study. AIVF accreditation expressly does not assure independence or complete safety.",
+      "type": "fact",
+      "routeIds": [
+        "sg-agent-data-leakage-deployment-gate",
+        "sg-kr-jp-shared-eval-evidence-protocol"
+      ],
+      "sourceIds": [
+        "ap-s-sg-chat",
+        "ap-s-eval",
+        "asia-sgkr-refresh-gap",
+        "asia-sg-accreditation"
+      ],
+      "sourceLocators": [
+        "data/coordinate-evidence.json facts[id=ap-gate-chat-precedent,ap-protocol-variation]; reports/Route coordinate evidence.md:50; japan-asia.md:38-60; japan-asia.json sources[id=asia-sgkr-refresh-gap,asia-sg-accreditation]"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F6",
+        "jsonPointer": "/findings/5",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Known-attack retest and accreditation are not held-out safety/independence."
+    },
+    {
+      "pointId": "rights-view-6",
+      "inputFile": "lens-rights.json",
+      "claim": "Match a Singapore national deployment gate with shared-protocol evidence review using the same configuration, failures and national decision owner. Coordination earns priority only through additional protection or saved total effort without missed critical failures; neither trilateral consent nor mutual recognition is assumed.",
+      "type": "proposal",
+      "routeIds": [
+        "sg-agent-data-leakage-deployment-gate",
+        "sg-kr-jp-shared-eval-evidence-protocol"
+      ],
+      "sourceIds": [
+        "ap-s-eval",
+        "asia-sg-pilot",
+        "asia-sg-accreditation"
+      ],
+      "sourceLocators": [
+        "data/coordinate-evidence.json facts[id=ap-protocol-variation] and shared-protocol route gaps; japan-asia.md:48-60"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "idea",
+        "id": "I4",
+        "jsonPointer": "/ideas/3",
+        "reportHeading": "I4 — Portable evidence: publish reasons for non-recognition"
+      },
+      "reason": "Hold configuration and national authority fixed; test net benefit."
+    },
+    {
+      "pointId": "rights-view-7",
+      "inputFile": "lens-rights.json",
+      "claim": "The packet supplies no complete technical remedy record for the exact rights proposals, representative affected-person preferences, comparable review costs or verified staffing allocation. The original Brazil model rationale uses 23 football-club cases, which cannot be reused as the Grok validation's coverage denominator.",
+      "type": "fact",
+      "routeIds": [
+        "brazil-anpd-ai-inspection-evidence",
+        "colombia-sic-ai-privacy-retest",
+        "kenya-biometric-dpia-evidence-gate"
+      ],
+      "sourceIds": [
+        "rights-model",
+        "rights-br-grok"
+      ],
+      "sourceLocators": [
+        "rights-enforcement.md:39,63,73; data/route-placement-model.json routes[id=brazil-anpd-ai-inspection-evidence]; data/routes-quantitative.json routes[id=brazil-anpd-ai-inspection-evidence]; reports/Route coordinate evidence.md:123"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F5",
+        "jsonPointer": "/findings/4",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "No Grok denominator transfer from football cohort; retain capacity and access gaps."
+    },
+    {
+      "pointId": "rights-view-8",
+      "inputFile": "lens-rights.json",
+      "claim": "Direct protection and effective redress should count as serious benefits without a speculative catastrophic-risk link. The editorial model's 0.4 reach weight and frontier/infrastructure upper anchor make cross-domain valuation explicit, not an empirical reason automatically to prefer a frontier-labelled route. Preserve systemic-risk assessment separately.",
+      "type": "value_judgment",
+      "routeIds": [
+        "brazil-anpd-ai-inspection-evidence",
+        "colombia-sic-ai-privacy-retest",
+        "anthropic-new-credit-lender-safety-covenant"
+      ],
+      "sourceIds": [
+        "rights-model"
+      ],
+      "sourceLocators": [
+        "data/route-placement-model.json:9-19,29,38-43; rights-enforcement.md:45,65-68"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F5",
+        "jsonPointer": "/findings/4",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Direct-rights valuation is explicit, not a measured superiority finding."
+    },
+    {
+      "pointId": "rights-view-9",
+      "inputFile": "lens-rights.json",
+      "claim": "GAID permits a certificate upon filing while separately providing risk-based audit. This demonstrates why certificate counts cannot stand in for technical pass rates; it does not establish actual false certification or fraud.",
+      "type": "fact",
+      "routeIds": [
+        "nigeria-ai-compliance-audit-annex"
+      ],
+      "sourceIds": [
+        "rights-ng-gaid"
+      ],
+      "sourceLocators": [
+        "rights-enforcement.md:21,35,52,99-105; rights-enforcement.json sources[id=rights-ng-gaid]: art.10(13), PDF pp17-18; partial selected-page access"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F7",
+        "jsonPointer": "/findings/6",
+        "reportHeading": "All 32 proposals retain an explicit assessment and next test"
+      },
+      "reason": "Certificate upon filing is not technical success or evidence of fraud."
+    },
+    {
+      "pointId": "rights-view-10",
+      "inputFile": "lens-rights.json",
+      "claim": "Severe future risk can reverse this priority. Common LUMI terms support a shared service surface but do not establish this safety delegation or unrestricted evaluator access. AISI's reported privileged-test out-of-scope actions ground a containment concern, not a production risk estimate. Executable containment over consequential workloads should compete on its actual evidence.",
+      "type": "inference",
+      "routeIds": [
+        "lumi-national-evidence-protocol",
+        "lumi-belgium-safety-appendix",
+        "uk-agent-accountability-evidence"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms",
+        "euro-aisi-incident"
+      ],
+      "sourceLocators": [
+        "europe-finance.md:17-19,45-47,89; europe-finance.json sources[id=euro-lumi-terms]: preamble and sections6,11-12; sources[id=euro-aisi-incident]: chronology/What happened/What we found; publication 2026-08-04, events 2026-07-25/28"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F9",
+        "jsonPointer": "/findings/8",
+        "reportHeading": "Eight follow-up designs can falsify the attractive stories"
+      },
+      "reason": "Severe-future-risk containment remains a legitimate competitor; rights-first choice is reversible."
+    },
+    {
+      "pointId": "rights-view-11",
+      "inputFile": "lens-rights.json",
+      "claim": "Run the conditional authority-to-correction test defined in validationTest. Reject unexercised consequences, unresolved critical failures, inaccessible contest or disproportionate burden; classify insufficient or incomparable evidence as inconclusive. Dates and pass conditions are proposed, not adopted obligations.",
+      "type": "proposal",
+      "routeIds": [
+        "brazil-anpd-ai-inspection-evidence"
+      ],
+      "sourceIds": [
+        "rights-br-grok",
+        "asia-sg-accreditation"
+      ],
+      "sourceLocators": [
+        "rights-enforcement.md:59-73,83-89; japan-asia.md:38-42; sandbox-deployment.md:73-84 (analytical outcome/cost design, not observed results)"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "idea",
+        "id": "I5",
+        "jsonPointer": "/ideas/4",
+        "reportHeading": "I5 — Brazil: make the remedy receipt challengeable"
+      },
+      "reason": "Preserve authority, correction, contest, persistence and inconclusive outcomes."
+    },
+    {
+      "pointId": "rights-view-12",
+      "inputFile": "lens-rights.json",
+      "claim": "E2E documents normal commercial service continuation after IndiaAI project expiry. A subsidy stop cannot therefore automatically be treated as a workload stop. This is not observed safety evasion; analogous displacement in Brazil remains a hypothesis to test.",
+      "type": "inference",
+      "routeIds": [
+        "indiaai-subsidy-evaluation-gate",
+        "brazil-anpd-ai-inspection-evidence"
+      ],
+      "sourceIds": [
+        "compute-e2e",
+        "compute-policy"
+      ],
+      "sourceLocators": [
+        "compute.md:15-18,25,31-36; compute.json sources[id=compute-e2e]: Billing/Important Consideration and Platform Service; sources[id=compute-policy]: sections7-9"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F3",
+        "jsonPointer": "/findings/2",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Normal India expiry supports only a conditional displacement hypothesis; I5 tests interfaces separately."
+    },
+    {
+      "pointId": "rights-view-13",
+      "inputFile": "lens-rights.json",
+      "claim": "A challengeable remedy receipt should link technical correction to a usable human contest path, independent review, exceptions and retest triggers; evaluate added benefit against ordinary handling rather than equating receipt completion with protection.",
+      "type": "proposal",
+      "routeIds": [
+        "brazil-anpd-ai-inspection-evidence",
+        "sg-agent-data-leakage-deployment-gate"
+      ],
+      "sourceIds": [
+        "rights-br-grok",
+        "asia-sg-accreditation"
+      ],
+      "sourceLocators": [
+        "rights-enforcement.md:50,59-73,83-89; japan-asia.md:38-54; sandbox-deployment.md:75-80 (design basis)"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "idea",
+        "id": "I5",
+        "jsonPointer": "/ideas/4",
+        "reportHeading": "I5 — Brazil: make the remedy receipt challengeable"
+      },
+      "reason": "Completed human contest journey adds detail beyond baseline generic redress."
+    },
+    {
+      "pointId": "rights-view-14",
+      "inputFile": "lens-rights.json",
+      "claim": "A split-knowledge deletion challenge should enumerate original data, distributed derivatives, processors and backup exceptions under each operative order, use authorised synthetic challenges and provide a claimant-facing contest result. A negative query cannot prove universal erasure; an incomplete inventory yields bounded or failed verification.",
+      "type": "proposal",
+      "routeIds": [
+        "colombia-sic-ai-privacy-retest",
+        "kenya-biometric-dpia-evidence-gate"
+      ],
+      "sourceIds": [
+        "rights-co-final",
+        "rights-co-first",
+        "rights-ke-katiba"
+      ],
+      "sourceLocators": [
+        "rights-enforcement.md:24-28,91-97; rights-enforcement.json corresponding source records; full dispositive orders and technical certificates not recovered"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "idea",
+        "id": "I6",
+        "jsonPointer": "/ideas/5",
+        "reportHeading": "I6 — Colombia and Kenya: challenge deletion across derivatives"
+      },
+      "reason": "Deletion challenge includes architecture inventory and intelligible claimant result."
+    },
+    {
+      "pointId": "international-1",
+      "inputFile": "lens-international.json",
+      "claim": "The Belgian/LUMI national pair deserves the next validation test because common host implementation may avoid repeated policy rewrites, subject to proving delegation and equal protection; neither scope nor benefit is yet demonstrated.",
+      "type": "inference",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms",
+        "euro-lumi-access"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt: preamble lines 24–32; sections 10–12 lines 185–229",
+        "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-access.html: introductory common-terms requirement and Resource Allocator table",
+        "data/route-placement-model.json: corresponding route factors are editorial judgments, not measured effects"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F10",
+        "jsonPointer": "/findings/9",
+        "reportHeading": "The lenses sharpen tests without outperforming the baseline by fiat"
+      },
+      "reason": "Preserve LUMI-first dissent and its value-of-information basis."
+    },
+    {
+      "pointId": "international-2",
+      "inputFile": "lens-international.json",
+      "claim": "LUMI Terms v2.0 names CSC as representative host, permits supplementary service terms, provides terms-breach suspension, applies a shared utilisation cut-off policy and specifies at least two weeks' amendment notice. It does not identify internal authority for the proposed safety annex.",
+      "type": "fact",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt: page 1 preamble; page 6 section 10; page 7 sections 11–12; last-change date 10.02.2026"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F4",
+        "jsonPointer": "/findings/3",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Common contracting surface is not internal safety delegation."
+    },
+    {
+      "pointId": "international-3",
+      "inputFile": "lens-international.json",
+      "claim": "LUMI content-access rights are purpose-limited to service accessibility, quality and security, with confidentiality and retained user IP; personal-data processing has its own responsibilities. Unrestricted external model evaluation is not granted by these passages.",
+      "type": "fact",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol",
+        "lumi-eurohpc-evaluation-access"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt: pages 4–5 sections 6–7, lines 127–165"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F4",
+        "jsonPointer": "/findings/3",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Purpose-limited evidence access is the strongest factual objection."
+    },
+    {
+      "pointId": "international-4",
+      "inputFile": "lens-international.json",
+      "claim": "Belgium's 7.4% allocation is inside the national 50% envelope; preparatory applications are continuously accepted with monthly review. These are not current protected AI use. The coordinate packet reports missing joined usage and incompatible raw GPU accounting definitions.",
+      "type": "fact",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-belgium-access",
+        "eu-be-instructions",
+        "eu-caar"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/belgium-access.html: Getting compute time on LUMI; allocation split, 2026 dates and preparatory paragraph (directly checked)",
+        "data/coordinate-evidence.json: routes[lumi-belgium-safety-appendix].facts eu-be-prep, eu-be-billing and gaps; routes[lumi-national-evidence-protocol].gaps; routes[lumi-eurohpc-evaluation-access].facts eu-ju-strategic (packet-level reliance)"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F4",
+        "jsonPointer": "/findings/3",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Nested allocation envelope and past cutoffs cannot become protected activity."
+    },
+    {
+      "pointId": "international-5",
+      "inputFile": "lens-international.json",
+      "claim": "The 2024 international pilot reports resolving parsing/token-limit discrepancies through shared code/logs and explicitly frames itself as methodological. The 2025 agent exercise reports distributed translation/annotation and judge/environment limitations. Neither is a binding acceptance regime or demonstrated deployment benefit.",
+      "type": "fact",
+      "routeIds": [
+        "sg-agent-data-leakage-deployment-gate",
+        "sg-kr-jp-shared-eval-evidence-protocol",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-joint-pilot",
+        "euro-joint-agents"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/joint-pilot.html: Testing Overview, Methodology and Finding 1; published 2024-11-20, exercise October–November 2024",
+        "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/joint-agent-testing.html: participant translation/annotation, judge-LLM and cybersecurity environment limitations; published 2025-07-17, exercise dates not inferred"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F6",
+        "jsonPointer": "/findings/5",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Keep both debugging value and correlated-error risk."
+    },
+    {
+      "pointId": "international-6",
+      "inputFile": "lens-international.json",
+      "claim": "Graffer/Rakuten's Japanese submissions identify upstream disclosure limits, while the government preserves negotiated reasonable disclosure and retains stronger change-checking language despite an upstream retirement objection. This records a substantive acceptance trade-off, not a universal supplier position.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence",
+        "jp-kr-sg-procurement-profile"
+      ],
+      "sourceIds": [
+        "asia-jp-comments"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-comments.txt: PHYSICAL PAGE 38 upstream changes/retirement; PHYSICAL PAGE 69 item 8, Graffer/Rakuten and government reply; physical pages 46–47 supporting-information examples"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "Keep government/supplier disagreement without exporting it to other stakeholders."
+    },
+    {
+      "pointId": "international-7",
+      "inputFile": "lens-international.json",
+      "claim": "Gen-nai specifies authorised production-change approval, another developer's review, modular migration preparation and restricted logging. These requirements support a credible national alternative, but do not prove independent certification, exercised enforcement or successful failover.",
+      "type": "fact",
+      "routeIds": [
+        "jp-procurement-safety-evidence",
+        "jp-kr-sg-procurement-profile"
+      ],
+      "sourceIds": [
+        "asia-jp-standard"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-standard.txt: PHYSICAL PAGES 8–9 and 36–37, section 4-3; source record published 2026-10-20"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "finding",
+        "id": "F2",
+        "jsonPointer": "/findings/1",
+        "reportHeading": "The plotted advantage depends on preferences and untested mechanisms"
+      },
+      "reason": "National option remains credible, with normative not witnessed controls."
+    },
+    {
+      "pointId": "international-8",
+      "inputFile": "lens-international.json",
+      "claim": "Prioritise learning whether shared implementation adds distinct governed activity at unchanged protection and acceptable burden. Country count and consensus have no independent safety value, and national protections should not wait for harmonisation.",
+      "type": "value_judgment",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [],
+      "sourceLocators": [
+        "Explicit analytical value assumption; not an institutional position or empirical result"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F10",
+        "jsonPointer": "/findings/9",
+        "reportHeading": "The lenses sharpen tests without outperforming the baseline by fiat"
+      },
+      "reason": "Prioritise additional distinct bound activity while preserving national exit."
+    },
+    {
+      "pointId": "international-9",
+      "inputFile": "lens-international.json",
+      "claim": "Fragmented gates may duplicate effort and encourage channel shopping; shared administration may reduce that inside one host but cannot stop external substitution. Harmonisation can also delay protection, dilute standards or propagate common measurement error. These effects and coalition incentives are unmeasured hypotheses.",
+      "type": "inference",
+      "routeIds": [
+        "lumi-national-evidence-protocol",
+        "sg-kr-jp-shared-eval-evidence-protocol",
+        "jp-kr-sg-procurement-profile"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms",
+        "euro-joint-pilot",
+        "euro-joint-agents",
+        "asia-jp-comments"
+      ],
+      "sourceLocators": [
+        "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt: sections 6 and 10–12 establish the bounded service perimeter, not external control",
+        "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/joint-pilot.html: Finding 1",
+        "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/joint-agent-testing.html: judge/environment limitations",
+        "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-comments.txt: PHYSICAL PAGES 38,69"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "finding",
+        "id": "F6",
+        "jsonPointer": "/findings/5",
+        "reportHeading": "Deeper retrieval changes the mechanism, not just confidence"
+      },
+      "reason": "Harmonisation dilution, delay and channel-shopping are hypotheses, not measured effects; I3 tests them."
+    },
+    {
+      "pointId": "international-10",
+      "inputFile": "lens-international.json",
+      "claim": "Run one two-channel equal-safeguard crossover test: establish lawful delegation by 15 January 2027; exercise scoped hold/cure/retest, measure complete burden and deduplicated useful activity, and issue a decision receipt by 31 May. Reverse the shared preference on missing rights, dilution, excessive delay, duplicate-only scope or channel bypass.",
+      "type": "proposal",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms",
+        "euro-belgium-access",
+        "euro-joint-pilot"
+      ],
+      "sourceLocators": [
+        "Design basis only: saved lumi-terms.pdf.txt sections 6–7,10–12; belgium-access.html preparatory paragraph; joint-pilot.html Finding 1, all under research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/",
+        "Proposed dates and pass/reversal criteria are analytical choices, not official commitments"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "idea",
+        "id": "I3",
+        "jsonPointer": "/ideas/2",
+        "reportHeading": "I3 — LUMI: test equal protection through two allocation channels"
+      },
+      "reason": "Counterbalanced crossover, complete burden and channel transfer sharpen baseline design."
+    },
+    {
+      "pointId": "international-11",
+      "inputFile": "lens-international.json",
+      "claim": "Use a common containment annex with separate allocator acceptance records: one version-bound manifest, purpose-limited examiner permissions, explicit local additions, and scoped pause/cure/restart checks across participating channels.",
+      "type": "proposal",
+      "routeIds": [
+        "lumi-belgium-safety-appendix",
+        "lumi-national-evidence-protocol"
+      ],
+      "sourceIds": [
+        "euro-lumi-terms",
+        "euro-lumi-access"
+      ],
+      "sourceLocators": [
+        "Design basis: research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt preamble, sections 6–7,10–12; lumi-access.html Resource Allocator table"
+      ],
+      "status": "merged",
+      "target": {
+        "kind": "idea",
+        "id": "I3",
+        "jsonPointer": "/ideas/2",
+        "reportHeading": "I3 — LUMI: test equal protection through two allocation channels"
+      },
+      "reason": "Common containment annex with local records implements the matched experiment."
+    },
+    {
+      "pointId": "international-12",
+      "inputFile": "lens-international.json",
+      "claim": "Use a portable technical receipt plus a visible non-recognition register, preserving each buyer's decision, stronger tests, version/language/permission binding, upstream-change fallback and aggregate exception/burden reporting.",
+      "type": "proposal",
+      "routeIds": [
+        "sg-agent-data-leakage-deployment-gate",
+        "sg-kr-jp-shared-eval-evidence-protocol",
+        "jp-procurement-safety-evidence",
+        "jp-kr-sg-procurement-profile"
+      ],
+      "sourceIds": [
+        "euro-joint-pilot",
+        "euro-joint-agents",
+        "asia-jp-comments",
+        "asia-jp-standard"
+      ],
+      "sourceLocators": [
+        "Design basis: saved joint-pilot.html Finding 1 and joint-agent-testing.html translation/judge limitations in europe-finance-source-extracts",
+        "Design basis: saved jp-comments.txt physical pp38,69 and jp-standard.txt physical pp8–9,36–37 in japan-asia-source-extracts; both directories under research_notes/Safeguard proposal stress tests/"
+      ],
+      "status": "retained",
+      "target": {
+        "kind": "idea",
+        "id": "I4",
+        "jsonPointer": "/ideas/3",
+        "reportHeading": "I4 — Portable evidence: publish reasons for non-recognition"
+      },
+      "reason": "Visible non-recognition reasons sharpen the baseline portability design."
+    }
+  ],
+  "routes": [
+    {
+      "routeId": "indiaai-subsidy-evaluation-gate",
+      "assessment": "qualified",
+      "headline": "A credible prospective subsidy condition, but stopping the subsidy is not stopping the workload",
+      "decisionTest": "Before advocating rollout, require one genuinely future award, the operative provider agreement and a written competent-authority decision distinguishing a funding hold from a service hold. Then stage a harmless failed-test fixture and a subsidy-expiry fixture; inspect whether the same model/workload continues under ordinary billing. Reconcile meter, invoice, provider claim and payment separately. If continuation is permitted, describe the route as conditional public support, not a release veto.",
+      "unknowns": [
+        "NOT RETRIEVED — Current executed provider agreement, its incorporated security annex and amendments, delegation/signatory record, selected user's award terms, and lawful treatment of sunk reservations.",
+        "NOT RETRIEVED — Actual provider subsidy claims, accepted invoices and treasury settlement dates matched to project/SKU metering. Public allocations and press descriptions of money received are not payment evidence.",
+        "UNDISCLOSED IN READ SOURCES — Evaluator appointments, compensation/conflict controls, applicant compliance cost, queue-time distribution, appeal outcomes and workload continuation after a safety hold.",
+        "INACCESSIBLE — Direct fetches of the original procurement corrigendum, AISI partnership call and AISI FAQ returned HTTP403. Search leads about security-amendment powers and evaluator funding are not admitted as verified findings. No proposition relies on their unexamined detailed answers.",
+        "UNSEARCHED IN THIS BOUNDED PASS — A systematic cloud-price/egress comparison, all provider contracts, procurement-law case law and an exhaustive current technical-evaluation literature review.",
+        "FUTURE — A pilot outcome before Geneva, 21–22 June 2027, has not occurred at this cutoff."
+      ],
+      "inputFile": "compute.json",
+      "inputLocator": "routes[routeId=indiaai-subsidy-evaluation-gate]",
+      "findingIds": [
+        "F1",
+        "F3"
+      ],
+      "ideaIds": [
+        "I2"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "taiwan-public-compute-safety-conditions",
+      "assessment": "qualified",
+      "headline": "Existing origin restrictions and open-publication incentives require a narrowly scoped post-tuning gate",
+      "decisionTest": "Find one future training award whose applicant intends to publish a tuned model. Confirm that authority/operator/applicant accept a version-linked pre-publication test, its privacy protocol and funding. Demonstrate a hold and retest before publication; record exported versions, rather than claim the platform can revoke public copies.",
+      "unknowns": [
+        "NOT RETRIEVED — Operator agreement, prospective 2027 adopted terms/budget and exact amendment delegation. The existing dossier's closed 2026 window is not reopened by these findings.",
+        "UNDISCLOSED IN READ RULES — Actual checks of restricted model origin, downloaded/published model inventory, evaluator cost or harm reductions.",
+        "UNSEARCHED — Representative Taiwanese SME views and court treatment of these clauses; views above are analytical lenses.",
+        "FUTURE — No pre-Geneva safety pilot or adopted 2027 condition is established."
+      ],
+      "inputFile": "compute.json",
+      "inputLocator": "routes[routeId=taiwan-public-compute-safety-conditions]",
+      "findingIds": [
+        "F1"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "turkiye-1711-safety-work-package",
+      "assessment": "qualified",
+      "headline": "Useful conflict-of-interest restrictions, but a funded research partner is not automatically independent assurance",
+      "decisionTest": "Identify one eligible project with a still-lawful change window. Obtain a written TÜBİTAK determination reconciling the signature clauses, a ring-fenced test budget and separate acceptance/retest rights. Specify an interim submission date allowing the following-month and YZE review lag before Geneva.",
+      "unknowns": [
+        "NOT RETRIEVED — One selected but unsigned 2026 award, its permissible scope revisions, current executed cooperation agreement and accepted expense ledger.",
+        "UNDISCLOSED — Any separate independent retester, evaluation findings, customer deployment inventory or actual remediation/payment decisions.",
+        "UNSEARCHED — Exhaustive Turkish procurement-law interpretation, private consortium objections and actual signature dates.",
+        "FUTURE — A 2027 call or Geneva outcome cannot be inferred from annual recurrence."
+      ],
+      "inputFile": "compute.json",
+      "inputLocator": "routes[routeId=turkiye-1711-safety-work-package]",
+      "findingIds": [
+        "F1"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "jp-procurement-safety-evidence",
+      "assessment": "qualified",
+      "headline": "A real platform approval gate exists, but independent assurance and supplier disclosure cannot be inferred from it.",
+      "decisionTest": "Select one live model/application contract and obtain its signed acceptance schedule plus release delegation. Introduce a consented synthetic leakage failure and an upstream-version-retirement scenario in staging. Require the authorised official to record hold, fallback and fresh-test decisions. Disconfirm the apparent Japan advantage if evidence cannot be obtained on time, the fallback cannot perform the required service, or the workload simply moves to an ungated service. Count successfully gated activity and utility, not access-enabled staff.",
+      "unknowns": [
+        "NOT LOCATED: executed Gen-nai supplier acceptance schedule, liability/termination provisions and amendment powers for the proposed exact gate.",
+        "FUTURE/UNOBSERVED: actual FY2027 final tender changes, marginal independent-testing prices and measured acceptance delay.",
+        "NOT LOCATED: a witnessed AI-safety failed-release hold, version-pinned upstream service guarantee, operational migration test or gated-token ledger.",
+        "UNMEASURED: displacement to departmental tools or offshore APIs and lost service utility."
+      ],
+      "inputFile": "japan-asia.json",
+      "inputLocator": "routes[routeId=jp-procurement-safety-evidence]",
+      "findingIds": [
+        "F1",
+        "F2",
+        "F9",
+        "F10"
+      ],
+      "ideaIds": [
+        "I1",
+        "I4"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "jp-kr-sg-procurement-profile",
+      "assessment": "qualified",
+      "headline": "Portable evidence is more defensible than a common approval or common contractual remedy.",
+      "decisionTest": "Have one purchaser per jurisdiction independently decide on the same completed evidence packet. Count additional tests, untranslated requirements, legal exceptions and review hours. Disconfirm a coalition advantage if total work/delay exceeds separate national preparation without finding additional material failures or expanding genuinely bound activity.",
+      "unknowns": [
+        "NOT LOCATED: trilateral contracting adoption, mutual-recognition instrument, national acceptance owners, priced translation/retest burden or comparable purchase ledger.",
+        "UNOBSERVED: exact institutional consent; no Korean supplier position is inferred from the inaccessible candidate PDF."
+      ],
+      "inputFile": "japan-asia.json",
+      "inputLocator": "routes[routeId=jp-kr-sg-procurement-profile]",
+      "findingIds": [
+        "F1",
+        "F2",
+        "F6"
+      ],
+      "ideaIds": [
+        "I4"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "sg-agent-data-leakage-deployment-gate",
+      "assessment": "qualified",
+      "headline": "Test the whole agent and preserve utility; a safe-looking refusal or known-attack retest can mislead.",
+      "decisionTest": "Pin model, agent scaffold, permissions, retrieval data and evaluator versions. Run clean tasks, known attacks and independently authored held-out attacks; inspect tool traces. Compare leakage, unauthorised actions, clean-task completion, cost and time. Require an authorised failed-test hold before calling the route operational.",
+      "unknowns": [
+        "NOT LOCATED: binding agency release delegation, actual blocked production release, gate-specific price/queue time and held-out leakage outcomes.",
+        "UNMEASURED: useful completed tasks lost to the safeguard and migration to other tools."
+      ],
+      "inputFile": "japan-asia.json",
+      "inputLocator": "routes[routeId=sg-agent-data-leakage-deployment-gate]",
+      "findingIds": [
+        "F1",
+        "F6",
+        "F10"
+      ],
+      "ideaIds": [
+        "I4"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "sg-kr-jp-shared-eval-evidence-protocol",
+      "assessment": "qualified",
+      "headline": "A shared negative-control and execution manifest can test interoperability without pretending to harmonise law.",
+      "decisionTest": "Replicate the same manifest in two laboratories, then change one field at a time (tool scope, language, retrieval snapshot, judge or execution cap). Predeclare decision-disagreement and cost criteria. Reject portability for any deployment whose acceptance changes materially under an undocumented field or whose missing local tests dominate the reused work.",
+      "unknowns": [
+        "ACCESS-LIMITED IN THIS REFRESH: the SG/KR PDF returned HTTP 403 to direct download; its exact counts remain attributed to the existing repository dossier, not a new extraction.",
+        "NOT LOCATED: Japanese acceptance, three national recognition instruments, common-cost experiment, mutual confidential-evidence terms or observed policy effect."
+      ],
+      "inputFile": "japan-asia.json",
+      "inputLocator": "routes[routeId=sg-kr-jp-shared-eval-evidence-protocol]",
+      "findingIds": [
+        "F1",
+        "F6",
+        "F10"
+      ],
+      "ideaIds": [
+        "I4"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "sg-purchaser-sandbox-release-gate",
+      "assessment": "qualified",
+      "headline": "Tester accreditation is a useful competence signal, explicitly not an independence or safety guarantee.",
+      "decisionTest": "For one sandbox application, independently check evaluator conflicts and competence scope, attach purchaser acceptance criteria before testing, and witness a failed-test hold. Compare quoted versus actual test effort and clean-task performance. Disconfirm readiness if no purchaser can legally or operationally hold the release despite a negative report.",
+      "unknowns": [
+        "NOT LOCATED: actual purchaser hold clause, first blocked launch, itemised tester quote, completion-time distribution or deployment activity affected.",
+        "NOT ESTABLISHED: publication date of the live accredited-tester page; observed at cutoff only."
+      ],
+      "inputFile": "japan-asia.json",
+      "inputLocator": "routes[routeId=sg-purchaser-sandbox-release-gate]",
+      "findingIds": [
+        "F1",
+        "F6"
+      ],
+      "ideaIds": [
+        "I4"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "kr-safety-case-incident-rehearsal",
+      "assessment": "unresolved",
+      "headline": "Final notice remains unresolved; a candidate supplier submission could not be independently read.",
+      "decisionTest": "Before making a statutory-compliance claim, obtain the promulgated notice and an applicability determination for one operator. If these remain unavailable, label the work voluntary and test only evidence-preservation, escalation and a consented tool-disable action, with timestamped authority and recovery records. Disconfirm legal readiness if the intended operator is out of scope or the supposed incident clock has no operative source.",
+      "unknowns": [
+        "NOT LOCATED: final promulgated Article 32 notice, official number/effective date and operative incident deadlines.",
+        "NOT LOCATED: named covered operator, actual regulator interpretation, compliant submission, completed drill and correction evidence.",
+        "SOURCE GAP: named civil-society counter-submission on this exact safety notice was not recovered; do not substitute anonymous Japanese comments or industry advocacy for it."
+      ],
+      "inputFile": "japan-asia.json",
+      "inputLocator": "routes[routeId=kr-safety-case-incident-rehearsal]",
+      "findingIds": [
+        "F1"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "eurohpc-incident-protocol",
+      "assessment": "qualified",
+      "headline": "A delegated common contract is plausible, but governance votes and procurement-amendment limits constrain scope",
+      "decisionTest": "Obtain an authorised written answer distinguishing clarification of I.14-I.15 duties from a material II.11 amendment, plus one contractor-approved tenant drill and a documented procurement timetable. Fail the pre-Geneva operational claim if only an unsigned template exists.",
+      "unknowns": [
+        "AUTHORITY: actual national contracting authorities, their mandates and the legal route for the precise proposed annex.",
+        "SCHEDULE/ACCESS: correcting tender notice and revised question cutoff not recovered in this pass; no new operational date established.",
+        "POPULATION/OUTCOME: installed covered capacity, tenant inventory, signed terms and observed drills absent."
+      ],
+      "inputFile": "europe-finance.json",
+      "inputLocator": "routes[routeId=eurohpc-incident-protocol]",
+      "findingIds": [
+        "F1"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "lumi-belgium-safety-appendix",
+      "assessment": "qualified",
+      "headline": "A Belgian pilot remains useful, but is not demonstrably the fastest route to a common service condition",
+      "decisionTest": "Ask for a written division of powers between Belgian award conditions and CSC service conditions. Compare time and cost for one Belgian appendix against the common-service design below, holding safeguard and workload constant.",
+      "unknowns": [
+        "AUTHORITY: VSC/CECI and funder delegation for a new award obligation; CSC approval of exact service changes.",
+        "POPULATION: current AI recipients and consumed hours under Belgian awards.",
+        "FUTURE_DECISION: recipient acceptance and subsequent regular-award calendar."
+      ],
+      "inputFile": "europe-finance.json",
+      "inputLocator": "routes[routeId=lumi-belgium-safety-appendix]",
+      "findingIds": [
+        "F1",
+        "F4",
+        "F10"
+      ],
+      "ideaIds": [
+        "I3"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "lumi-eurohpc-evaluation-access",
+      "assessment": "qualified",
+      "headline": "Common evaluation has empirical benefits, but independent access rights and evaluator containment are prerequisites",
+      "decisionTest": "Two authorities should independently decide the same version-bound evidence package under agreed criteria, preserve disagreements, and record whether a concrete award/access decision accepts the result. A successful benchmark run alone fails this test.",
+      "unknowns": [
+        "AUTHORITY: award-policy power to mandate external evaluation and recipient/IP permissions.",
+        "POPULATION: contemporary eligible AI jobs, models and consumed resources.",
+        "OUTCOME: no recipient authority's binding acceptance of a common report was located; no measured saved compliance hours."
+      ],
+      "inputFile": "europe-finance.json",
+      "inputLocator": "routes[routeId=lumi-eurohpc-evaluation-access]",
+      "findingIds": [
+        "F1",
+        "F4"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "lumi-national-evidence-protocol",
+      "assessment": "strengthened",
+      "headline": "The clearest undervaluation candidate: test a common host condition rather than assuming eleven national policy rewrites",
+      "decisionTest": "Obtain the CSC/consortium decision rule for one common service annex. If it can be approved once, compare that actual approval graph with national award rewrites; if it requires all channel approvals, retain the coordination penalty. Do not substitute the two-week notification floor for the decision duration.",
+      "unknowns": [
+        "AUTHORITY: CSC/consortium internal amendment delegation and reserved matters.",
+        "FUTURE_DECISION: consent to exact common requirements and cross-border evidence sharing.",
+        "POPULATION/OUTCOME: compliant project/job inventory, compliance costs, substitution and successful remedies."
+      ],
+      "inputFile": "europe-finance.json",
+      "inputLocator": "routes[routeId=lumi-national-evidence-protocol]",
+      "findingIds": [
+        "F1",
+        "F4",
+        "F9",
+        "F10"
+      ],
+      "ideaIds": [
+        "I3"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "ch-electricity-operator-fallback",
+      "assessment": "qualified",
+      "headline": "Operational experience supports a drill, but in-house development did not remove human and organisational dependencies",
+      "decisionTest": "Have the actual control-room owner attest the current model boundary and replay rights; compare the same fault episodes with current and proposed controls, including operator workload and false fallback cost.",
+      "unknowns": [
+        "AUTHORITY: named pilot signatory and control-room acceptance.",
+        "POPULATION: model-controlled dispatch episode count and current software configuration.",
+        "OUTCOME: fallback recovery distribution, operator workload and benign interventions; operator self-report is not independent validation."
+      ],
+      "inputFile": "europe-finance.json",
+      "inputLocator": "routes[routeId=ch-electricity-operator-fallback]",
+      "findingIds": [
+        "F1",
+        "F9"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "uk-energy-staged-autonomy-assurance",
+      "assessment": "qualified",
+      "headline": "Actual stakeholder disagreement supports short reusable trials, while the decision retains an accountable lead and no deployment approval",
+      "decisionTest": "Recover one signed participation plan with an accountable lead and a bounded first test period. Require an explicit downstream decision owner and locally calibrated fallback threshold; report pilot evidence separately from permission to deploy.",
+      "unknowns": [
+        "SCHEDULE: actual selected cohort and signed participation timetable.",
+        "AUTHORITY: operational deployment/fallback owner beyond sandbox oversight.",
+        "POPULATION/OUTCOME: affected assets, dispatch episodes, baseline, cost and recovery data."
+      ],
+      "inputFile": "europe-finance.json",
+      "inputLocator": "routes[routeId=uk-energy-staged-autonomy-assurance]",
+      "findingIds": [
+        "F1",
+        "F9"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "uk-agent-accountability-evidence",
+      "assessment": "strengthened",
+      "headline": "A documented evaluation-origin incident supplies a concrete accountability test; ICO adoption remains a separate outcome",
+      "decisionTest": "Use synthetic versions of the reported incident patterns to test whether reviewers can identify the accountable owner and whether controls block external actions while preserving permitted tasks. Separately observe whether ICO guidance adopts any result.",
+      "unknowns": [
+        "FUTURE_DECISION: consenting deployer and ICO incorporation of the specific findings.",
+        "AUTHORITY: relevant controller/deployer/provider roles for selected personal-data workflow.",
+        "OUTCOME: independently scored responsibility reconstruction, prevention, false refusals and evidence minimisation."
+      ],
+      "inputFile": "europe-finance.json",
+      "inputLocator": "routes[routeId=uk-agent-accountability-evidence]",
+      "findingIds": [
+        "F1",
+        "F9"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "canada-cohere-equity-safety-covenant",
+      "assessment": "unresolved",
+      "headline": "Staged investment offers a hypothesis, but the PM's claim that terms are secured weakens the assumption that stages remain negotiable",
+      "decisionTest": "Recover a signed term sheet or authoritative investor confirmation identifying a genuinely discretionary uncommitted stage, its decision holder and date. If all stages are committed subject only to fixed milestones, reclassify this as a negotiated amendment proposal rather than an open unilateral leverage window.",
+      "unknowns": [
+        "NONDISCLOSURE/AUTHORITY: investing legal entity, subscription/shareholder documents, board or reserved-matter rights, cure/default and actual authorised signatories.",
+        "FUTURE_DECISION/SCHEDULE: discretionary versus committed stages and dates before Geneva.",
+        "POPULATION: entity/model/operational perimeter including international group operations.",
+        "OUTCOME: no executed safety covenant or observed withheld stage retrieved."
+      ],
+      "inputFile": "europe-finance.json",
+      "inputLocator": "routes[routeId=canada-cohere-equity-safety-covenant]",
+      "findingIds": [
+        "F1",
+        "F8"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "anthropic-new-credit-lender-safety-covenant",
+      "assessment": "qualified",
+      "headline": "New-facility consent may need fewer parties than a syndicate amendment, but proprietary-information exceptions and substitution constrain safety leverage",
+      "decisionTest": "Identify an actual borrower-initiated event, draft the exact safety clause and have counsel map it to 2.21/2.22/2.23 and 9.08 with all required parties. Obtain lender allocations only where that selected path requires them; check alternative financing before asserting bargaining power.",
+      "unknowns": [
+        "NONDISCLOSURE: lender allocations and current usage; raw SEC curl returned 403, while tool extraction supplied the clause text.",
+        "FUTURE_DECISION/SCHEDULE: no dated post-cutoff incremental, extension or replacement negotiation recovered.",
+        "AUTHORITY: exact amendment/class-consent route and evidence-access carveout for the proposed term.",
+        "OUTCOME/POPULATION: covered models/entities, marginal change over voluntary practices and exercised remedy."
+      ],
+      "inputFile": "europe-finance.json",
+      "inputLocator": "routes[routeId=anthropic-new-credit-lender-safety-covenant]",
+      "findingIds": [
+        "F1",
+        "F8"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "brazil-anpd-ai-inspection-evidence",
+      "assessment": "strengthened",
+      "headline": "Grok supplies an actual failure-to-correction evidence demand, stronger than an inspection-programme promise",
+      "decisionTest": "Recover the named file's actual demand, response and subsequent technical finding. Strengthen remedy only if a versioned independent retest shows the prohibited failure materially reduced and records the action on residual failures.",
+      "unknowns": [
+        "Current status and any later modification of the February measure; full technical note; receipt and response dates; independently verified successful retest; affected-user denominator; staff-hours.",
+        "No football-club case file was recovered in this pass. Do not represent the Grok file as a football-cohort result."
+      ],
+      "inputFile": "rights-enforcement.json",
+      "inputLocator": "routes[routeId=brazil-anpd-ai-inspection-evidence]",
+      "findingIds": [
+        "F1",
+        "F5",
+        "F9",
+        "F10"
+      ],
+      "ideaIds": [
+        "I5"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "mexico-public-sector-impact-assessment",
+      "assessment": "qualified",
+      "headline": "An internal accountable owner is in the law, but recommendations remain nonbinding and exemptions are broad",
+      "decisionTest": "Obtain one named body's committee resolution, legally delegated release decision and recorded art.73 applicability determination; demonstrate an actual privacy failure changes the deployment decision.",
+      "unknowns": [
+        "No fresh completed AI assessment or remedy case recovered; current operational receiving/signing unit and later amendments remain unverified.",
+        "No identified deployment, signed internal hold, exemption determination or effective remedy to affected people."
+      ],
+      "inputFile": "rights-enforcement.json",
+      "inputLocator": "routes[routeId=mexico-public-sector-impact-assessment]",
+      "findingIds": [
+        "F1"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "chile-high-risk-data-impact-assessment",
+      "assessment": "qualified",
+      "headline": "Live legislative uncertainty still prevents a confident enforceable-by-Geneva claim",
+      "decisionTest": "Require promulgated commencement text, operational delegated signer and a dated eligible assessment before describing this as an enforceable pre-Geneva route.",
+      "unknowns": [
+        "Final transmitted text, subsequent enactment, actual staffed authority, selected high-risk system and accepted assessment remain unresolved.",
+        "No fresh completed enforcement case was recovered."
+      ],
+      "inputFile": "rights-enforcement.json",
+      "inputLocator": "routes[routeId=chile-high-risk-data-impact-assessment]",
+      "findingIds": [
+        "F1"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "colombia-sic-ai-privacy-retest",
+      "assessment": "strengthened",
+      "headline": "Final administrative Worldcoin decision demands externally certified deletion with technical evidence",
+      "decisionTest": "Retrieve the ordered external certificate and match every data location and iris-code derivative to the deletion scope; test residual matching and re-ingestion, and obtain SIC's acceptance or deficiency finding.",
+      "unknowns": [
+        "External certificate, its technical methodology and actual deletion date; all processor/nodes/backup coverage; full appeal decision; later judicial challenge; current compliance status.",
+        "No verified harmed-user count or causal reduction estimate."
+      ],
+      "inputFile": "rights-enforcement.json",
+      "inputLocator": "routes[routeId=colombia-sic-ai-privacy-retest]",
+      "findingIds": [
+        "F1",
+        "F5"
+      ],
+      "ideaIds": [
+        "I6"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "south-africa-popia-ai-linkage-review",
+      "assessment": "qualified",
+      "headline": "Signed WhatsApp notice demonstrates an evidence obligation, but is not a section-57 linkage precedent",
+      "decisionTest": "First establish both statutory linkage conditions for the actual project; separately recover the WhatsApp report and disposition as an enforcement analogue, without transferring its authority or timeline to prior authorisation.",
+      "unknowns": [
+        "Receipt date, appeal/stay status, implementation report, successful safeguards verification; a named section-57 AI linkage applicant.",
+        "Regulator litigation index read but does not resolve this case; its silence is not proof of no appeal."
+      ],
+      "inputFile": "rights-enforcement.json",
+      "inputLocator": "routes[routeId=south-africa-popia-ai-linkage-review]",
+      "findingIds": [
+        "F1"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "kenya-biometric-dpia-evidence-gate",
+      "assessment": "strengthened",
+      "headline": "Litigant reports completed court-supervised deletion; this is stronger than a DPIA count but still needs technical corroboration",
+      "decisionTest": "Obtain ODPC's court-filed verification and the corresponding compliance disposition; reconcile collection inventory and derivatives to the ordered scope before claiming technically verified completion.",
+      "unknowns": [
+        "Original judgment and later compliance ruling; ODPC verification report; technical deletion scope/method; dates of actual completion; current appeal/restart status.",
+        "No fresh ODPC reviewed-DPIA register or representative review-time distribution recovered."
+      ],
+      "inputFile": "rights-enforcement.json",
+      "inputLocator": "routes[routeId=kenya-biometric-dpia-evidence-gate]",
+      "findingIds": [
+        "F1",
+        "F5"
+      ],
+      "ideaIds": [
+        "I6"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "nigeria-ai-compliance-audit-annex",
+      "assessment": "qualified",
+      "headline": "GAID already contains concrete risk-based audit, rights and stop/modify assessments; the annex must prove additionality",
+      "decisionTest": "Take an obligated controller's actual CAR/DPIA and ask whether an independently seeded material failure changes its final assessment and is corrected on retest; compare cost and findings with its ordinary audit.",
+      "unknowns": [
+        "Actual accepted AI annex and held-out retest; selected obligated controller/DPCO; evaluator conflict management and hours/cost; completed IDPM approval; 2027-specific variations.",
+        "No independently verified false-CAR incidence or successful technical remediation rate."
+      ],
+      "inputFile": "rights-enforcement.json",
+      "inputLocator": "routes[routeId=nigeria-ai-compliance-audit-annex]",
+      "findingIds": [
+        "F1",
+        "F7"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "rwanda-ai-dpia-security-retest",
+      "assessment": "unresolved",
+      "headline": "Rights-facing duties broaden the test target, but no implementation case was recovered",
+      "decisionTest": "Obtain a completed in-scope DPIA and supervisory disposition; reproduce one security or erroneous-profile defect and verify the user can obtain correction under the applicable duty.",
+      "unknowns": [
+        "DPIA guide body, review register and measured turnaround; named eligible workflow; accepted test and remedy; actual technical capacity and affected-user outcomes."
+      ],
+      "inputFile": "rights-enforcement.json",
+      "inputLocator": "routes[routeId=rwanda-ai-dpia-security-retest]",
+      "findingIds": [
+        "F1"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "uae-dubai-agentic-assurance-gate",
+      "assessment": "qualified",
+      "headline": "Supplier certification creates an entry point, but neither a seal nor independent assurance establishes a release veto",
+      "decisionTest": "Before counting adoption, produce one service-specific acceptance instrument naming the person who can deny action permissions, an assessor outside the build team, and a witnessed failed-test hold. Falsified if the same failing version can be released by programme sponsorship alone.",
+      "unknowns": [
+        "NOT LOCATED AFTER BOUNDED SEARCH: named independent assurer, independence/conflict policy, signed acceptance schedule and actual held release.",
+        "UNDISCLOSED IN READ PROGRAMME PAGE: cohort service IDs, actual readiness/review costs and dated deployment decisions; not a claim that these are legally confidential.",
+        "FUTURE: before-Geneva test results and public-service harm reduction."
+      ],
+      "inputFile": "sandbox-deployment.json",
+      "inputLocator": "routes[routeId=uae-dubai-agentic-assurance-gate]",
+      "findingIds": [
+        "F1",
+        "F7"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "saudi-cst-ai-sandbox-stop-rule",
+      "assessment": "qualified",
+      "headline": "Real CST deployment history does not establish an AI stop-rule; SDAIA offers a stronger adjacent case-selection pool",
+      "decisionTest": "Obtain a specific CST AI participant plan and customer release authority. If unavailable, investigate SDAIA as an explicitly separate route, not a silent replacement. Falsifier: neither regulator nor service owner can impose or observe an operational restriction after a critical failure.",
+      "unknowns": [
+        "NOT LOCATED AFTER SEARCH: CST participant-level AI failures, corrective notices, signed test plans and full-rollout authorisations.",
+        "UNDISCLOSED IN READ SDAIA REGISTER: failed/withdrawn applications, incident logs, underlying acceptance criteria, assessor independence and user volumes.",
+        "UNSEARCHED: complete individual customer contracts for all six SDAIA graduates; no institutional consent inferred.",
+        "FUTURE: January 2027 monetisation track and proposed retest outcomes."
+      ],
+      "inputFile": "sandbox-deployment.json",
+      "inputLocator": "routes[routeId=saudi-cst-ai-sandbox-stop-rule]",
+      "findingIds": [
+        "F1",
+        "F7"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "indonesia-bpom-dpia-gate",
+      "assessment": "strengthened",
+      "headline": "MORADA supplies a concrete internal submission gate, but its automated rejection is a price check, not an AI safety hold",
+      "decisionTest": "Can the authorised Pusdatin/buying-unit workflow owner reject or correct an AI-extracted specification before it becomes an approved procurement input? A planted missing clearance or materially altered specification must fail closed; retain the original source document and authorised correction.",
+      "unknowns": [
+        "NOT LOCATED: signed delegation, actual MORADA rejection/override logs, applicable project template and release acceptance.",
+        "UNRESOLVED IN PRIOR PASS, NOT RE-VERIFIED HERE: full PP 33/2026 and its relationship to the selected gate.",
+        "UNDISCLOSED IN READ ARTICLE: provider/model, processing data categories, number of AI-extracted specifications and error rate.",
+        "FUTURE: authorised injected-document and correction experiment."
+      ],
+      "inputFile": "sandbox-deployment.json",
+      "inputLocator": "routes[routeId=indonesia-bpom-dpia-gate]",
+      "findingIds": [
+        "F1",
+        "F7"
+      ],
+      "ideaIds": [
+        "I7"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "malaysia-commercial-ai-dpia",
+      "assessment": "qualified",
+      "headline": "Existing ADMP guidance is more specific than generic DPIA thresholds; a real consultation submission exposes supplier-bargaining and human-oversight gaps",
+      "decisionTest": "First obtain an authorised applicability determination addressing section6.1’s broad DPIA trigger, section7.1’s legal/significant-effects threshold and section10.1’s AI-used-for-ADMP scope together; preserve section10.2 best-practices wording. Neither universal coverage nor cancellation of every section6.1 duty follows. Then select the qualifying workflow and test actual override, settings-change review and completed correction; reject rubber-stamping or inability to restrict the feature.",
+      "unknowns": [
+        "NOT LOCATED: named commercial controller with executed AI-specific acceptance terms, dated DPIA and failed-test hold.",
+        "UNDISCLOSED IN READ DOCUMENTS: observed enforcement of section 10.2.6, reviewer capacity, provider acceptance of Annex C.",
+        "FUTURE: final AI framework text and any new implementation transition; the submitted 12-month transition is not adopted law."
+      ],
+      "inputFile": "sandbox-deployment.json",
+      "inputLocator": "routes[routeId=malaysia-commercial-ai-dpia]",
+      "postCheckRetentionReason": "Route retained as qualified, with SC-01 scope correction propagated to F7/I8 and the normalized-view errata. Original shard and all lens points remain unchanged; no rerun or score update.",
+      "findingIds": [
+        "F1",
+        "F7"
+      ],
+      "ideaIds": [
+        "I8"
+      ],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "thailand-aigpc-sandbox-gate",
+      "assessment": "qualified",
+      "headline": "AIGPC has an actual contracted operator, but the recovered contract purchases capacity-building rather than operational AI safety gates",
+      "decisionTest": "Retrieve the FY2027 work order and one participant/service-owner agreement. Require a paid deliverable consisting of a witnessed failure, owner-imposed restriction, repair and fresh test. Falsified if all acceptance evidence can be satisfied by reports, training attendance and demonstrations while the failing service remains unrestricted.",
+      "unknowns": [
+        "NOT LOCATED: acceptance certificate/payment for this contract, amended expiry or FY2027 work order, and live AI sandbox participant contract.",
+        "UNDISCLOSED IN READ INSTRUMENT: evaluator conflict rules and operational hold authority.",
+        "UNSEARCHED: complete contract register for every 2026 month; no claim that no successor exists.",
+        "FUTURE: 2027 admissions, completed tests and user outcomes."
+      ],
+      "inputFile": "sandbox-deployment.json",
+      "inputLocator": "routes[routeId=thailand-aigpc-sandbox-gate]",
+      "findingIds": [
+        "F1",
+        "F7"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    },
+    {
+      "routeId": "vietnam-public-ai-impact-gate",
+      "assessment": "unresolved",
+      "headline": "The legal route remains plausible, but the kiosk candidate may be assistance rather than a qualifying decisional system",
+      "decisionTest": "First trace one AI output into an actual administrative decision and establish the statutory scope and signatory. If it is only assistance, honestly run a voluntary service-owner quality/safety test instead of claiming a statutory AI02 gate. Falsifier for the statutory route: no qualifying decision link, no applicable assessment duty, or no authorised restriction.",
+      "unknowns": [
+        "NOT RECOVERED AFTER BOUNDED SEARCH: underlying Thanh Hoa plan 129/KH-UBND; no new signed local instrument recovered in this pass.",
+        "NOT LOCATED: completed AI02, kiosk acceptance contract, delegation, changed decisions and measured affected users.",
+        "UNSEARCHED: individual mineral-site procurement/inspection files; alternative lead only.",
+        "INHERITED, NOT NEWLY VERIFIED HERE: Decree 142 Article 20 and Decision 33 transition dates from prior evidence ledger; these still require case-specific applicability.",
+        "FUTURE: proposed restriction, service continuity and corrective retest before Geneva."
+      ],
+      "inputFile": "sandbox-deployment.json",
+      "inputLocator": "routes[routeId=vietnam-public-ai-impact-gate]",
+      "findingIds": [
+        "F1",
+        "F7"
+      ],
+      "ideaIds": [],
+      "scopeWarning": "Evidence assessment only; narrower variants and adjacent precedents do not validate the original route scope. No numerical update."
+    }
+  ],
+  "counts": {
+    "points": 61,
+    "routes": 32,
+    "pointStatuses": {
+      "retained": 28,
+      "merged": 31,
+      "not-in-summary": 2
+    },
+    "routeAssessments": {
+      "qualified": 22,
+      "unresolved": 4,
+      "strengthened": 6
+    }
+  }
+}

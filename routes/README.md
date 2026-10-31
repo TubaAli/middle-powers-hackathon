@@ -45,6 +45,41 @@ and round-trip navigation from the detailed calculations.
 
 ## Earlier estimates
 
+## Research stress tests
+
+The [stress-test view](stress-tests.html) joins all 32 original routes to the new factual reviews,
+supporting and challenging evidence, source reading/check status and next tests.
+It preserves the baseline/four-lens disagreement and eight selected hypotheses.
+The separate sensitivity plot uses only the original six-factor inputs across
+five analyst weight scenarios and three missing-factor priors; new findings do
+not change the original plot. Proxy weights are not measured outcome dimensions.
+Ranks, where expanded, use the audit-only preference U = 0.5x + 0.5y.
+
+Run `python3 scripts/build-stress-test-data.py`, then
+`node scripts/check-stress-tests.mjs`. Share selections with
+`stress-tests.html?route=indiaai-subsidy-evaluation-gate&scenario=baseline&prior=0.25`.
+The deterministic public JSON retains source locators, frozen-input hashes and
+download links, but omits the full audit's large probe arrays. Optional
+`research_notes/Safeguard proposal stress tests/errata.json` is applied only to
+the public projection, never to the frozen research or model files.
+
+Browser acceptance uses the existing authorized CDP endpoint on port 9222:
+`/path/to/existing/playwright/python scripts/check-stress-tests-browser.py`.
+Alternatively, opt into an isolated ephemeral headless test using the already
+installed Google Chrome (no installation, accounts, user profile or CDP access):
+
+```sh
+/path/to/existing/playwright/python scripts/check-stress-tests-browser.py --headless --screenshot-dir /path/to/screenshots
+```
+
+Headless mode launches Playwright's `channel='chrome'` with its own context and
+closes only that test-owned browser. At 1440px and 390px it checks all 32 keyboard
+and selector selections, all 15 scenario/prior combinations against both visible
+numbers and URL state, source links opening collapsed sections, source filters,
+query reload, expanded layout, and rendered report/download targets. Optional
+`--screenshot-dir` saves six overview/sensitivity/source screenshots;
+`--screenshot /path/to/output.png` retains the final-viewport capture option.
+
 ## Retrieved coordinate evidence
 
 `coordinate-evidence.html` is a separate, mobile-friendly evidence browser for

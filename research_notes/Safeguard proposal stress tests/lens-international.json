@@ -1,0 +1,167 @@
+{
+  "id": "international",
+  "executor": {"provider": "openai", "model": "gpt-6-astra-ultrafast", "sameFamily": true},
+  "observedDate": "2026-10-31",
+  "checkpoint": ["2027-06-21", "2027-06-22"],
+  "packetHashes": {
+    "data/route-placement-model.json": "b7c93011ec16f6ac6b30c7588ba1a0685c9052a46f1040ef043a93a896bc8ba1",
+    "data/routes-quantitative.json": "8461105a9aae97b1d2b875d0a346ffbeeed57581e9bf0998099d5756dfb8b865",
+    "data/coordinate-evidence.json": "ac289a7dfe25b5d31822087081624a03bca7ac514e5f9827da7ffb3432931db4",
+    "reports/Route coordinate evidence.md": "46ccfc2aa4dda738a88fa5c4376209ec2e0b953bababb0bd302dc80df0ef87a1",
+    "research_notes/Safeguard proposal stress tests/compute.md": "66ddf5e83300853a03282bffd1de672cfd8a1d5fd3d5f687632bd22b1f86c918",
+    "research_notes/Safeguard proposal stress tests/compute.json": "34ca14019885898a27ddc8dda0f0ba3e334afcc80bd55067fc2800313f3b45df",
+    "research_notes/Safeguard proposal stress tests/japan-asia.md": "5af39bd0a93ea72ecb9c3763058048b887cc7e6a9647f3e21256cca2fc98e509",
+    "research_notes/Safeguard proposal stress tests/japan-asia.json": "ec7b4dc46939fca07c38abb9f2be31dea8ce5c01334173c33d6f8bd3a1945395",
+    "research_notes/Safeguard proposal stress tests/europe-finance.md": "a4e4f5deb2e553a505b06720a5f3acff4def52870f4d32c7a3f1d810db72f9fb",
+    "research_notes/Safeguard proposal stress tests/europe-finance.json": "bf8fd9d46d00d13e8ff2fa65aae023908270d46275cff5cabc8e3851eb251d52",
+    "research_notes/Safeguard proposal stress tests/rights-enforcement.md": "77e0df372fa7fb8f585162a711dd1bebba622bad4e00f58686ad4186f4b1f9fc",
+    "research_notes/Safeguard proposal stress tests/rights-enforcement.json": "b2c53f892ef1c4c0caac044113a3cc02e64f41b644f484ee9ec54a4eecc4d8f3",
+    "research_notes/Safeguard proposal stress tests/sandbox-deployment.md": "bed85fad8582ddb4a72c9acd17ffa73323cb75867097a34774fd6a2c6c88ae13",
+    "research_notes/Safeguard proposal stress tests/sandbox-deployment.json": "cbb446c7a779477f8e84a4e1d3862789b963e9507eb48edc5c716029290503c2"
+  },
+  "recommendation": {
+    "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"],
+    "choice": "Next validation test: compare the Belgian appendix with the same safeguard carried through a lawfully delegated common LUMI host condition to one additional national channel.",
+    "reason": "An existing shared contractual surface makes the authority-and-additionality uncertainty tractable; this is a value-of-information choice, not a measured safety ranking.",
+    "constraint": "Do not wait for eleven-country consensus or delay a feasible national safeguard. A two-channel test does not implement the whole national allocation envelope.",
+    "pointIds": ["international-1", "international-2", "international-3", "international-8", "international-10"]
+  },
+  "points": [
+    {
+      "id": "international-1", "type": "inference",
+      "claim": "The Belgian/LUMI national pair deserves the next validation test because common host implementation may avoid repeated policy rewrites, subject to proving delegation and equal protection; neither scope nor benefit is yet demonstrated.",
+      "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"],
+      "sourceIds": ["euro-lumi-terms", "euro-lumi-access"],
+      "sourceLocators": ["research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt: preamble lines 24–32; sections 10–12 lines 185–229", "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-access.html: introductory common-terms requirement and Resource Allocator table", "data/route-placement-model.json: corresponding route factors are editorial judgments, not measured effects"]
+    },
+    {
+      "id": "international-2", "type": "fact",
+      "claim": "LUMI Terms v2.0 names CSC as representative host, permits supplementary service terms, provides terms-breach suspension, applies a shared utilisation cut-off policy and specifies at least two weeks' amendment notice. It does not identify internal authority for the proposed safety annex.",
+      "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"],
+      "sourceIds": ["euro-lumi-terms"],
+      "sourceLocators": ["research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt: page 1 preamble; page 6 section 10; page 7 sections 11–12; last-change date 10.02.2026"]
+    },
+    {
+      "id": "international-3", "type": "fact",
+      "claim": "LUMI content-access rights are purpose-limited to service accessibility, quality and security, with confidentiality and retained user IP; personal-data processing has its own responsibilities. Unrestricted external model evaluation is not granted by these passages.",
+      "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol", "lumi-eurohpc-evaluation-access"],
+      "sourceIds": ["euro-lumi-terms"],
+      "sourceLocators": ["research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt: pages 4–5 sections 6–7, lines 127–165"]
+    },
+    {
+      "id": "international-4", "type": "fact",
+      "claim": "Belgium's 7.4% allocation is inside the national 50% envelope; preparatory applications are continuously accepted with monthly review. These are not current protected AI use. The coordinate packet reports missing joined usage and incompatible raw GPU accounting definitions.",
+      "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"],
+      "sourceIds": ["euro-belgium-access", "eu-be-instructions", "eu-caar"],
+      "sourceLocators": ["research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/belgium-access.html: Getting compute time on LUMI; allocation split, 2026 dates and preparatory paragraph (directly checked)", "data/coordinate-evidence.json: routes[lumi-belgium-safety-appendix].facts eu-be-prep, eu-be-billing and gaps; routes[lumi-national-evidence-protocol].gaps; routes[lumi-eurohpc-evaluation-access].facts eu-ju-strategic (packet-level reliance)"]
+    },
+    {
+      "id": "international-5", "type": "fact",
+      "claim": "The 2024 international pilot reports resolving parsing/token-limit discrepancies through shared code/logs and explicitly frames itself as methodological. The 2025 agent exercise reports distributed translation/annotation and judge/environment limitations. Neither is a binding acceptance regime or demonstrated deployment benefit.",
+      "routeIds": ["sg-agent-data-leakage-deployment-gate", "sg-kr-jp-shared-eval-evidence-protocol", "lumi-national-evidence-protocol"],
+      "sourceIds": ["euro-joint-pilot", "euro-joint-agents"],
+      "sourceLocators": ["research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/joint-pilot.html: Testing Overview, Methodology and Finding 1; published 2024-11-20, exercise October–November 2024", "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/joint-agent-testing.html: participant translation/annotation, judge-LLM and cybersecurity environment limitations; published 2025-07-17, exercise dates not inferred"]
+    },
+    {
+      "id": "international-6", "type": "fact",
+      "claim": "Graffer/Rakuten's Japanese submissions identify upstream disclosure limits, while the government preserves negotiated reasonable disclosure and retains stronger change-checking language despite an upstream retirement objection. This records a substantive acceptance trade-off, not a universal supplier position.",
+      "routeIds": ["jp-procurement-safety-evidence", "jp-kr-sg-procurement-profile"],
+      "sourceIds": ["asia-jp-comments"],
+      "sourceLocators": ["research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-comments.txt: PHYSICAL PAGE 38 upstream changes/retirement; PHYSICAL PAGE 69 item 8, Graffer/Rakuten and government reply; physical pages 46–47 supporting-information examples"]
+    },
+    {
+      "id": "international-7", "type": "fact",
+      "claim": "Gen-nai specifies authorised production-change approval, another developer's review, modular migration preparation and restricted logging. These requirements support a credible national alternative, but do not prove independent certification, exercised enforcement or successful failover.",
+      "routeIds": ["jp-procurement-safety-evidence", "jp-kr-sg-procurement-profile"],
+      "sourceIds": ["asia-jp-standard"],
+      "sourceLocators": ["research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-standard.txt: PHYSICAL PAGES 8–9 and 36–37, section 4-3; source record published 2026-10-20"]
+    },
+    {
+      "id": "international-8", "type": "value_judgment",
+      "claim": "Prioritise learning whether shared implementation adds distinct governed activity at unchanged protection and acceptable burden. Country count and consensus have no independent safety value, and national protections should not wait for harmonisation.",
+      "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"],
+      "sourceIds": [], "sourceLocators": ["Explicit analytical value assumption; not an institutional position or empirical result"]
+    },
+    {
+      "id": "international-9", "type": "inference",
+      "claim": "Fragmented gates may duplicate effort and encourage channel shopping; shared administration may reduce that inside one host but cannot stop external substitution. Harmonisation can also delay protection, dilute standards or propagate common measurement error. These effects and coalition incentives are unmeasured hypotheses.",
+      "routeIds": ["lumi-national-evidence-protocol", "sg-kr-jp-shared-eval-evidence-protocol", "jp-kr-sg-procurement-profile"],
+      "sourceIds": ["euro-lumi-terms", "euro-joint-pilot", "euro-joint-agents", "asia-jp-comments"],
+      "sourceLocators": ["research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt: sections 6 and 10–12 establish the bounded service perimeter, not external control", "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/joint-pilot.html: Finding 1", "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/joint-agent-testing.html: judge/environment limitations", "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-comments.txt: PHYSICAL PAGES 38,69"]
+    },
+    {
+      "id": "international-10", "type": "proposal",
+      "claim": "Run one two-channel equal-safeguard crossover test: establish lawful delegation by 15 January 2027; exercise scoped hold/cure/retest, measure complete burden and deduplicated useful activity, and issue a decision receipt by 31 May. Reverse the shared preference on missing rights, dilution, excessive delay, duplicate-only scope or channel bypass.",
+      "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"],
+      "sourceIds": ["euro-lumi-terms", "euro-belgium-access", "euro-joint-pilot"],
+      "sourceLocators": ["Design basis only: saved lumi-terms.pdf.txt sections 6–7,10–12; belgium-access.html preparatory paragraph; joint-pilot.html Finding 1, all under research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/", "Proposed dates and pass/reversal criteria are analytical choices, not official commitments"]
+    },
+    {
+      "id": "international-11", "type": "proposal",
+      "claim": "Use a common containment annex with separate allocator acceptance records: one version-bound manifest, purpose-limited examiner permissions, explicit local additions, and scoped pause/cure/restart checks across participating channels.",
+      "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"],
+      "sourceIds": ["euro-lumi-terms", "euro-lumi-access"],
+      "sourceLocators": ["Design basis: research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt preamble, sections 6–7,10–12; lumi-access.html Resource Allocator table"]
+    },
+    {
+      "id": "international-12", "type": "proposal",
+      "claim": "Use a portable technical receipt plus a visible non-recognition register, preserving each buyer's decision, stronger tests, version/language/permission binding, upstream-change fallback and aggregate exception/burden reporting.",
+      "routeIds": ["sg-agent-data-leakage-deployment-gate", "sg-kr-jp-shared-eval-evidence-protocol", "jp-procurement-safety-evidence", "jp-kr-sg-procurement-profile"],
+      "sourceIds": ["euro-joint-pilot", "euro-joint-agents", "asia-jp-comments", "asia-jp-standard"],
+      "sourceLocators": ["Design basis: saved joint-pilot.html Finding 1 and joint-agent-testing.html translation/judge limitations in europe-finance-source-extracts", "Design basis: saved jp-comments.txt physical pp38,69 and jp-standard.txt physical pp8–9,36–37 in japan-asia-source-extracts; both directories under research_notes/Safeguard proposal stress tests/"]
+    }
+  ],
+  "candidates": [
+    {"routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"], "rationale": "First: common contractual host permits a bounded authority/additionality test; new delegation, rights, costs and exercised remedy are unresolved."},
+    {"routeIds": ["sg-agent-data-leakage-deployment-gate", "sg-kr-jp-shared-eval-evidence-protocol"], "rationale": "Second: direct leakage mechanism and collaboration precedent; actual national gates, third-country acceptance and distinct production coverage remain absent from the recovered evidence."},
+    {"routeIds": ["jp-procurement-safety-evidence", "jp-kr-sg-procurement-profile"], "rationale": "Third: documented Japanese approval/migration requirements and concrete supplier objections; no recovered trilateral acceptance instrument, common schedule or purchasing denominator."}
+  ],
+  "assumptions": [
+    "Value additional deduplicated governed activity, not flags, quotas or agreement counts.",
+    "Preserve the national minimum protection, rights and useful service even if this reduces apparent harmonisation.",
+    "Prioritise resolving a tractable shared-authority uncertainty over immediately selecting the largest hypothetical reach.",
+    "A plausible comparable second national project is a test recruitment assumption, not recovered consent.",
+    "Acceptable cost/delay and benign-service tolerances must be set by responsible owners before results; the packet supplies no defensible universal threshold."
+  ],
+  "objections": [
+    {"claim": "Strongest contrary evidence: LUMI section 6 has narrow access purposes and no revealed internal safety-amendment delegation. Utilisation cut-offs are not safety sanctions.", "pointIds": ["international-2", "international-3"]},
+    {"claim": "A narrow preparatory pilot could add little consequential activity while delaying a more direct Japanese or Singaporean deployment gate.", "pointIds": ["international-4", "international-7", "international-10"]},
+    {"claim": "Reusable evidence can conceal unavailable upstream information or spread shared judge/harness defects; identical decisions can be identically wrong.", "pointIds": ["international-5", "international-6"]},
+    {"claim": "Strict common conditions may cause supplier/recipient exit or encourage external-host substitution; softer conditions may merely ratify the weakest standard.", "pointIds": ["international-9"]}
+  ],
+  "unknowns": [
+    {"dimension": "authority/enforcement", "status": "not_recovered", "detail": "Exact CSC/consortium delegation, allocator permissions, signed recipient/supplier terms, adopted safety threshold and exercised proposed pause/cure/retest."},
+    {"dimension": "timing/staffing-cost", "status": "not_measured", "detail": "Negotiation duration, available reviewers, legal/translation hours, full setup and recurring costs, queue and service disruption; amendment notice and award cadence do not supply these."},
+    {"dimension": "coverage/outcome", "status": "not_measured", "detail": "Current joined accepted-annex and metered-job ledger; distinct second-channel activity; held-out improvement or causal harm reduction."},
+    {"dimension": "substitution/spillovers", "status": "not_measured", "detail": "Channel bypass, out-of-host migration, exported weights, smaller-recipient exclusion and benign co-tenant disruption."},
+    {"dimension": "rights", "status": "not_recovered", "detail": "Purpose-specific external evaluator permissions, third-party confidentiality/IP rights, cross-border evidence permissions and challenge process for the proposed annex."},
+    {"dimension": "source_access", "status": "inherited_gap", "detail": "SG/KR study refresh returned HTTP403. Counts in the coordinate dossier are not independently source-checked here. Korean final notice and BSA submission remain unresolved; no legal-compliance conclusion is drawn.", "sourceIds": ["asia-sgkr-refresh-gap", "asia-kr-bsa"]},
+    {"dimension": "coalition_consent", "status": "future_unobserved", "detail": "Willing second-channel project, institutional adoption and supplier acceptance are not established. Incentive descriptions are hypotheses."}
+  ],
+  "validationTest": {
+    "id": "international-10",
+    "name": "Two-channel equal-safeguard crossover",
+    "question": "Can shared administration add a genuinely bound second-channel workload with unchanged minimum protection and acceptable total burden, without delaying the national gate?",
+    "ownersRequired": ["Competent CSC service authority", "Belgian allocator decision owner", "One additional national allocator decision owner", "Two consenting recipient institutions", "Rights reviewer", "Operational controller", "Technically competent non-developing reviewer"],
+    "authorityDeadline": "2027-01-15",
+    "receiptDeadline": "2027-05-31",
+    "datesAre": "Proposed checkpoints, not official commitments",
+    "method": "Review comparable scoped dossiers through both national-specific and reusable workflows with counterbalanced equivalent variants. Only lawfully authorised decisions control service. Freeze configuration, tasks and severity criteria; seed a prohibited action and benign control in isolated staging; witness hold, evidence preservation, cure, held-out retest and restart; replay a participating-channel transfer attempt.",
+    "measurements": {
+      "authority": "Signed/delegated instrument, exact scope and actor who actually exercises the remedy",
+      "timingCost": "All actors' hours, supplier preparation, translation/legal effort, one-off setup, recurring retest, queue, compute and reservation/disruption cost",
+      "coverage": "Join recipient/project/channel/configuration/job/annex version to fixed-window metered node-hours; deduplicate physical work; separate additional second-channel activity, overlap, unused awards and external substitution",
+      "outcome": "Seeded failure detection, held-out unsafe actions, clean-task completion, false holds, containment time and successful cure/restart; staging results are not population harm estimates",
+      "rightsSpillovers": "Scoped data access, recorded evidence refusals, stricter local tests, challenge/correction path, small-recipient exclusion and benign co-tenant effects"
+    },
+    "retainIf": ["Both channels lawfully accept and exercise an equal minimum safeguard", "Additional activity is genuinely distinct and bound", "Material local tests and rights survive", "Measured complete burden and delay meet an owner-set ceiling fixed before results"],
+    "reverseIf": ["Delegation or necessary evidence rights cannot be obtained", "Added scope is duplicate-only or configuration can bypass through another participating channel", "National protection is delayed beyond the predeclared ceiling", "Efficiency relies on removing a critical safeguard or inaccessible evidence being treated as a pass"],
+    "fallback": "Continue the viable national arm; elevate the Singapore national/evidence pair if it first obtains an actual gate and costed held-out test. Do not make eleven-country agreement a dependency.",
+    "interpretation": "An exercised shared remedy plus distinct bound activity supports expansion of validation, not a claim of proven real-world harm reduction. Agreement alone fails the test."
+  },
+  "ideas": [
+    {"id": "international-11", "name": "Common containment annex with local acceptance records", "design": "Reusable configuration/permission/retention/incident manifest; allocator-specific authority, additional tests and exceptions; purpose-limited examiner access; host-side scoped pause/cure/restart and cross-channel held-configuration check.", "dependency": "Lawful host delegation and accepted recipient/third-party evidence rights", "failureCondition": "Common terms dilute a local critical test or cannot actually bind the additional channel"},
+    {"id": "international-12", "name": "Portable receipt with visible non-recognition register", "design": "Separate technical findings from each national buyer's accept/hold decision; record reuse/supplement/refusal reasons; bind version, language, tools, permissions, judge calibration and change triggers; rehearse upstream-change fallback; report aggregate burden and exceptions.", "dependency": "A national release owner and lawful evidence-sharing arrangement", "failureCondition": "Portability adds net burden without protection or distinct bound activity, or conceals missing evidence behind common scoring"}
+  ],
+  "dissent": "Do not require international consensus before a lawful national owner protects its users, and do not dismiss common LUMI implementation merely because a design names many countries. Test delegated shared implementation with a national exit. Preserve disagreements when harmonisation weakens protection, rights or useful additional scope. Agreement is neither effectiveness nor permission."
+}

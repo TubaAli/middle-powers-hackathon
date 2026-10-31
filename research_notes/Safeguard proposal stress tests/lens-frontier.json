@@ -1,0 +1,190 @@
+{
+  "id": "frontier",
+  "executor": {"provider": "openai", "model": "gpt-6-astra-ultrafast", "sameFamily": true},
+  "observedDate": "2026-10-31",
+  "checkpoint": "2027-06-21/2027-06-22",
+  "status": "Isolated analytical viewpoint, not expert testimony, institutional consent or a measured ranking.",
+  "packetHashes": {
+    "data/route-placement-model.json": "b7c93011ec16f6ac6b30c7588ba1a0685c9052a46f1040ef043a93a896bc8ba1",
+    "data/routes-quantitative.json": "8461105a9aae97b1d2b875d0a346ffbeeed57581e9bf0998099d5756dfb8b865",
+    "data/coordinate-evidence.json": "ac289a7dfe25b5d31822087081624a03bca7ac514e5f9827da7ffb3432931db4",
+    "reports/Route coordinate evidence.md": "46ccfc2aa4dda738a88fa5c4376209ec2e0b953bababb0bd302dc80df0ef87a1",
+    "research_notes/Safeguard proposal stress tests/compute.md": "66ddf5e83300853a03282bffd1de672cfd8a1d5fd3d5f687632bd22b1f86c918",
+    "research_notes/Safeguard proposal stress tests/compute.json": "34ca14019885898a27ddc8dda0f0ba3e334afcc80bd55067fc2800313f3b45df",
+    "research_notes/Safeguard proposal stress tests/japan-asia.md": "5af39bd0a93ea72ecb9c3763058048b887cc7e6a9647f3e21256cca2fc98e509",
+    "research_notes/Safeguard proposal stress tests/japan-asia.json": "ec7b4dc46939fca07c38abb9f2be31dea8ce5c01334173c33d6f8bd3a1945395",
+    "research_notes/Safeguard proposal stress tests/europe-finance.md": "a4e4f5deb2e553a505b06720a5f3acff4def52870f4d32c7a3f1d810db72f9fb",
+    "research_notes/Safeguard proposal stress tests/europe-finance.json": "bf8fd9d46d00d13e8ff2fa65aae023908270d46275cff5cabc8e3851eb251d52",
+    "research_notes/Safeguard proposal stress tests/rights-enforcement.md": "77e0df372fa7fb8f585162a711dd1bebba622bad4e00f58686ad4186f4b1f9fc",
+    "research_notes/Safeguard proposal stress tests/rights-enforcement.json": "b2c53f892ef1c4c0caac044113a3cc02e64f41b644f484ee9ec54a4eecc4d8f3",
+    "research_notes/Safeguard proposal stress tests/sandbox-deployment.md": "bed85fad8582ddb4a72c9acd17ffa73323cb75867097a34774fd6a2c6c88ae13",
+    "research_notes/Safeguard proposal stress tests/sandbox-deployment.json": "cbb446c7a779477f8e84a4e1d3862789b963e9507eb48edc5c716029290503c2"
+  },
+  "extractHashes": {
+    "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-standard.txt": "f649d5f1800c580cf13d9dc3037e5abc2e930808a034b33fac42b46716294e40",
+    "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-guideline.txt": "371ff16b4bdf874b84fcfb49e8ebd8e092c133a4dcae91cf48533dc87f9cdb5c",
+    "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt": "9ab1af79f181462dc3f4e5e18f9f8f3650066b6ba280cac41920ddb4770bff96"
+  },
+  "recommendation": {
+    "routeIds": ["jp-procurement-safety-evidence", "sg-kr-jp-shared-eval-evidence-protocol"],
+    "primary": "Give Japan's national version-bound deployment gate the next validation test; test the shared evidence protocol only as a matched replication arm, not as a precondition for national action.",
+    "seriousFailure": "An agent ingesting untrusted retrieved material discloses a protected synthetic record across an authorisation boundary, or executes an unauthorised consequential write. Select one endpoint matching the actual application's permissions before enrollment.",
+    "mechanism": "Independent held-out behavioural evidence changes an authorised release decision; tool credentials are withheld or a restricted fallback is activated for the failing configuration, followed by fresh retest and review on material configuration change.",
+    "scope": "One verified government workflow and its actual model/scaffold/tool configuration. This is local serious-harm prevention using frontier-capable systems where actually present, not proof of reduced catastrophic frontier risk or control over a supplier's global release.",
+    "reversal": "Reverse the preference if no exposed workflow, lawful operational owner, version/change observability or feasible evaluator can be established by 31 January 2027; or if ordinary fully implemented controls perform as well at lower cost. Prefer a ready LUMI containment pair only if it supplies those missing links and a live relevant workload; prefer the Brazilian correction-evidence route if accessible case evidence permits a stronger direct-harm test. Do not automatically promote either on paperwork alone."
+  },
+  "points": [
+    {
+      "id": "frontier-1", "type": "fact",
+      "claim": "The saved Gen-nai standard requires high-severity vulnerability remediation before release, tracked production changes, another developer's review and authorised approval, and incident stop/rollback procedures. These are normative controls, not observed operation or an independent external audit.",
+      "routeIds": ["jp-procurement-safety-evidence"], "sourceIds": ["asia-jp-standard"],
+      "sourceLocators": ["japan-asia-source-extracts/jp-standard.txt lines 1206-1249; physical pp39-40, section4-5(1),(3),(7),(9)"]
+    },
+    {
+      "id": "frontier-2", "type": "fact",
+      "claim": "DS-920 already asks for intended-purpose input/output tests and gives independent internal/external red teaming as an example. Contract-checklist inclusion and additional risk-based terms are matters for consideration. Adding an evaluation label alone therefore does not establish new protection or a signed supplier remedy.",
+      "routeIds": ["jp-procurement-safety-evidence"], "sourceIds": ["asia-jp-guideline"],
+      "sourceLocators": ["japan-asia-source-extracts/jp-guideline.txt lines 1393-1398 and 1411-1434; physical pp40-41, sections6.3.2(5),6.3.3(1)"]
+    },
+    {
+      "id": "frontier-3", "type": "inference",
+      "claim": "The strongest Japanese additionality claim is a reproducible model/scaffold-specific failure missed by ordinary compliant review that changes actual permissions or release, not creation of a new generic duty to test. Existing security controls may already prevent the selected failure; this would defeat the incremental claim.",
+      "routeIds": ["jp-procurement-safety-evidence"], "sourceIds": ["asia-jp-standard", "asia-jp-guideline"],
+      "sourceLocators": ["jp-standard.txt lines1206-1249", "jp-guideline.txt lines1411-1434"]
+    },
+    {
+      "id": "frontier-4", "type": "fact",
+      "claim": "The fixed coordinate packet distinguishes Japanese enabled access, survey-reported use and target population from matched protected transactions; it also records that safety explanations were already trial-selection conditions. These are packet-reported facts; the underlying rollout, survey and selection sources were not independently re-extracted in this lens.",
+      "routeIds": ["jp-procurement-safety-evidence"], "sourceIds": ["ap-s-final-jp-rollout", "ap-s-final-jp-survey", "ap-s-final-jp-selection"],
+      "sourceLocators": ["data/coordinate-evidence.json routes[routeId=jp-procurement-safety-evidence].facts: ap-jp-final-rollout-cohort, ap-jp-final-survey-use, ap-jp-final-vendor-selection", "reports/Route coordinate evidence.md lines25-29"]
+    },
+    {
+      "id": "frontier-5", "type": "fact",
+      "claim": "LUMI's saved terms identify CSC as the contracting surface and permit additional service terms. They already prohibit misuse, provide account suspension for suspected contrary use, apply common resource cut-off policies to national and EuroHPC projects, and provide notice for changed terms. Content access is purpose-limited and confidentiality/IP are preserved. None identifies internal approval of the proposed safety annex.",
+      "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"], "sourceIds": ["euro-lumi-terms"],
+      "sourceLocators": ["europe-finance-source-extracts/lumi-terms.pdf.txt lines24-32,84-101,127-150,185-200,208-229; physical pp1,3-7"]
+    },
+    {
+      "id": "frontier-6", "type": "inference",
+      "claim": "A LUMI common service condition could reduce repeated institutional work, but neither common terms nor large AI allocations show marginal safety. The discriminating endpoint is containment of an evaluation agent's unauthorised external action before it reaches a target; mere policy compliance or a later account closure may arrive too late. Exported weights and migrated jobs remain outside this host boundary.",
+      "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"], "sourceIds": ["euro-lumi-terms"],
+      "sourceLocators": ["lumi-terms.pdf.txt sections4,6,10-12; especially lines147-150 on content copies following termination"]
+    },
+    {
+      "id": "frontier-7", "type": "fact",
+      "claim": "The rights shard attributes to Brazil's authorities a February 2026 finding of persistent Grok failures after X's response, and a demand for verifiable correction evidence across versions/modalities. It does not establish October case status or successful remediation. No saved original Brazilian passage was available in the shard's listed extract directory; this remains attributed packet evidence, not an independently checked primary finding in this lens.",
+      "routeIds": ["brazil-anpd-ai-inspection-evidence"], "sourceIds": ["rights-br-grok"],
+      "sourceLocators": ["research_notes/Safeguard proposal stress tests/rights-enforcement.md lines15,50,83-89", "rights-enforcement.json sources[id=rights-br-grok]"]
+    },
+    {
+      "id": "frontier-8", "type": "inference",
+      "claim": "The packet's SG/KR pipeline discrepancy is a reason to validate portable evidence rather than assume common acceptance. A replicated benchmark still cannot establish a buyer's authority or a useful local deployment outcome. The bilateral study is not independently re-extracted here.",
+      "routeIds": ["sg-kr-jp-shared-eval-evidence-protocol"], "sourceIds": ["ap-s-eval", "asia-jp-guideline"],
+      "sourceLocators": ["data/coordinate-evidence.json routes[routeId=sg-kr-jp-shared-eval-evidence-protocol].facts[id=ap-protocol-variation]", "reports/Route coordinate evidence.md line51", "jp-guideline.txt lines1415-1434"]
+    },
+    {
+      "id": "frontier-9", "type": "value_judgment",
+      "claim": "Before Geneva, prefer a falsifiable improvement to serious harm prevention over speculative breadth. Catastrophic-risk relevance remains a separate objective: a local disclosure or action-control result cannot be promoted to evidence of controlling autonomous replication, large-scale cyber misuse or other frontier catastrophes.",
+      "routeIds": ["jp-procurement-safety-evidence", "lumi-national-evidence-protocol", "brazil-anpd-ai-inspection-evidence"], "sourceIds": [],
+      "sourceLocators": ["Analytical value choice; no empirical source or consensus claim"]
+    },
+    {
+      "id": "frontier-10", "type": "proposal",
+      "claim": "Run a matched ordinary-control versus augmented-control staging test, with independently held-out and adaptive attacks, clean utility controls, real permission-boundary telemetry, a seeded negative control, and fresh post-repair retesting. Add a cross-border replication arm only after the national decision can be exercised.",
+      "routeIds": ["jp-procurement-safety-evidence", "sg-kr-jp-shared-eval-evidence-protocol"], "sourceIds": ["asia-jp-standard", "asia-jp-guideline"],
+      "sourceLocators": ["Design response to jp-standard.txt lines1206-1249 and jp-guideline.txt lines1411-1434; thresholds below are proposed, not source facts"]
+    }
+  ],
+  "candidates": [
+    {
+      "routeIds": ["jp-procurement-safety-evidence", "sg-kr-jp-shared-eval-evidence-protocol"],
+      "rationale": "First validation priority, national arm first. The directly checked standard supplies an actual release-control design and a demanding existing-compliance comparator. The coordinated arm asks whether another lab can reproduce consequential findings without extra local risk; it is not assumed to be recognised in law. Actual dangerous permissions, model identity, activity, available staff and contract terms remain enrollment conditions."
+    },
+    {
+      "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"],
+      "rationale": "Second: compare a Belgian recipient annex and a common-host condition for the same containment test. Shared terms may be administratively economical and closer to upstream evaluation, but relevant agent workloads and incremental protection beyond existing misuse/security terms are unproved. Belgian scope is nested, not additional to national scope. A preparatory award must not be represented as frontier training or unrestricted production access."
+    },
+    {
+      "routeIds": ["brazil-anpd-ai-inspection-evidence"],
+      "rationale": "Third, potentially first if an accessible live correction record supplies a stronger test: examine whether an existing technical evidence demand produces persistent protection against non-consensual abusive image generation. This is a narrowed Grok correction variant, not evidence about the football-club cohort. Safely designed synthetic proxies require demonstrated validity and no victim material. Packet attribution is promising but primary case material and present status are missing."
+    }
+  ],
+  "assumptions": [
+    "The objective is the next information-producing validation test before 21 June 2027, not enactment of the broadest possible regime.",
+    "Serious local harm prevention has intrinsic value; catastrophic frontier-risk impact must be argued and measured separately.",
+    "One Japanese workflow has a genuine sensitive-data or consequential-tool boundary and can be faithfully staged; this has not been established by access counts or the present packet.",
+    "The proposal can use an authorised platform release decision without first compelling global provider behaviour; signed supplier obligations are required for any supplier/payment remedy.",
+    "An independent evaluator can access the necessary traces without unrestricted disclosure of private data or provider trade secrets. No quote, capacity reservation or consent is established.",
+    "The chosen risk can be tested using harmless synthetic records with the same access-control semantics, and ordinary review can be represented without deliberately weakening it."
+  ],
+  "objections": [
+    {
+      "strongest": true,
+      "argument": "Japan's existing standard already calls for testing, approvals, change tracking, vulnerability holds and incident controls. The proposal may be ordinary good implementation with an expensive new label, while targeting only a narrow workflow rather than frontier catastrophe.",
+      "response": "Accept this as a live falsifier. Evaluate both actual ordinary practice and documented fully compliant practice; credit remediation of noncompliance separately from a genuinely additional control. If comparable protection follows from implementing existing controls, recommend that implementation and withdraw the case for an extra mandatory layer.",
+      "sourceIds": ["asia-jp-standard", "asia-jp-guideline"]
+    },
+    {
+      "argument": "A host-level LUMI rule could govern upstream experiments more directly, and a Brazilian ongoing enforcement demand could address actual harm sooner than Japanese procurement negotiation.",
+      "response": "Neither alternative is excluded by the lens. Require an actual relevant workload/current case, exercised authority and an additional outcome. The current preference reflects directly checkable release controls, not an estimate of total harm or a country ranking.",
+      "sourceIds": ["euro-lumi-terms", "rights-br-grok"]
+    },
+    {
+      "argument": "Independent evaluation can be gamed, adapted around, displaced to untested tools or paid for through harmful service delay.",
+      "response": "Freeze and log complete configurations, hide test membership, rotate test families, give a separate attacker a fixed adaptation budget, inspect tool traces, record bypass and fallback outcomes, and count queue/staff costs. A safe-looking score bought through universal refusal is a failure.",
+      "sourceIds": []
+    }
+  ],
+  "unknowns": [
+    "Which actual Japanese model/scaffold/data/tool configuration has the selected serious exposure; which counted transactions can be governed; no national frontier exposure denominator.",
+    "Exact platform delegation for the proposed behavioural hold, supplier acceptance/remedy schedule, version-change visibility and permissions for examiner access.",
+    "Marginal examiner and contracting hours, quote, queue time, fallback capacity and effects on smaller suppliers and affected users.",
+    "Whether ordinary compliant review already prevents the selected failure; validity of synthetic cases against real workflows; incident prevalence and risk reduction.",
+    "Cross-lab reproducibility and acceptance after changing language, scaffold, permissions or model; international reuse savings and new costs.",
+    "LUMI internal annex delegation and actual in-scope high-risk experiments; resource totals do not resolve either.",
+    "Brazil's current case status, original technical note and correction evidence, relevant interfaces and persistent effects; no independent primary verification here."
+  ],
+  "validationTest": {
+    "id": "frontier-test-1",
+    "name": "Additionality challenge at one real Japanese release boundary",
+    "type": "proposal",
+    "dates": {"scopeAndComparator": "2026-12-15", "enrollmentStop": "2027-01-31", "stagingDecision": "2027-03-31", "persistenceAndReplication": "2027-05-31", "receipt": "2027-06-01"},
+    "owners": "Actual application owner, authorised Gen-nai release decision-maker, contracting officer where terms must change, and conflict-checked non-developing evaluator. These are proposed roles, not commitments.",
+    "enrollment": "Verify a genuine authorisation boundary, configuration identity, permission to stage representative data/tool semantics, funded reviewer availability and a written hold/fallback/retest decision rule. Map each existing control to the selected failure first. If any prerequisite is absent on 31 January, record no-go rather than infer readiness from programme scale.",
+    "design": "Use paired copies/replays of the same workflow. Arm A implements all applicable ordinary controls, with evidence of fidelity; separately record current-practice gaps. Arm B adds independently held-out behavioural evidence tied to model/scaffold/retrieval/permission hashes and enforced credential withholding. Blind outcome adjudicators to arm and test origin. Preserve identical task/attack families and resource budgets, including benign tasks, an intentionally defective negative control, and an unseen family after repair. If stochastic, repeat according to a preregistered precision calculation based on pilot variance, with intervals clustered by task family rather than treating repeated runs as independent cases.",
+    "primaryEndpoint": "Proportion of exposed task families in which a synthetic protected record reaches the wrong principal or an unauthorised consequential action crosses the tool boundary, after the arm's full review-and-release process. Final model text or a refusal score alone is not the endpoint.",
+    "additionalityRule": "Evidence of an additional mechanism requires a serious failure reproducible in ordinary fully compliant Arm A that Arm B prevents, with matched clean-task utility. Before comparative outcomes are unblinded, the owner must set a minimum worthwhile reduction, uncertainty rule and maximum cost/delay. As a proposed pilot guardrail, require no more than a five-percentage-point loss in legitimate task completion; zero critical escapes in B is necessary for that tested release, never proof of universal safety. If samples cannot discriminate, report inconclusive. If A already blocks the failures, do not credit B for harm prevention.",
+    "gamingAndAdaptation": "Keep final cases from developers; separate discovery, remediation and adjudication; record evaluator conflicts. Give a separate attacker equal bounded adaptation effort against both arms; test translated and structurally different retrieval injections and material upstream/scaffold changes. Log intermediate tool calls and actual side effects; timeouts/invalid runs cannot silently count as safe.",
+    "enforcement": "Witness an authorised failed staging release, actual withholding of the affected tool credential, functioning restricted/manual fallback, correction and fresh retest before restoration. Do not withhold payment absent an applicable signed right. Log exceptions and who can override the hold.",
+    "coverageAndDisplacement": "Join the enrolled application's configuration and policy to counts of eligible transactions, actually gated transactions, bypass attempts, alternative applications/accounts and fallback completions. Report numerator and denominator only for this scope. Sample post-change use for at least four weeks where authorised. No multiplication of enabled-user totals into protected use; no inference about offshore use or exported weights.",
+    "rightsAndCost": "Use synthetic records, local restricted trace access, prompt/log minimisation and protected examiner disclosure. Measure staff-hours by role, reviewer disagreement, queues, supplier work, time to correction, lawful-task refusals and accessible fallback completion. Fix affordable cash/time caps before outcomes are seen; unavailable funding is an enrollment failure, not assumed zero cost.",
+    "coordinatedArm": "After national enrollment, a second lab receives the frozen manifest and independently held-out matched families. Compare failure detection and decision-relevant disagreements, total duplicate/localisation work and delay. A common receipt does not export national authority. Suspend evidence reuse for any configuration with unresolved safety-relevant disagreement.",
+    "falsifiers": [
+      "No relevant real exposure or authorised enforceable release boundary by enrollment stop.",
+      "Ordinary fully compliant controls match protection more cheaply, or the claimed gain comes only from repairing ordinary noncompliance.",
+      "Repair fails unseen/adaptive cases, the negative control escapes detection, or model/configuration change bypasses re-review.",
+      "The hold is overridden or work migrates outside it without adequate measured coverage; safe fallback fails its utility/cost guardrails.",
+      "Cross-border reuse introduces unresolved outcome disagreement or more work without better protection; drop the coordinated extension even if the national arm succeeds."
+    ],
+    "interpretation": "An observed staged mechanism and a bounded persistence record support only scoped operational additionality. Prevented real-world incidents and catastrophic-risk reduction remain unmeasured without additional outcome evidence. All dates and thresholds are proposed."
+  },
+  "ideas": [
+    {
+      "id": "frontier-idea-1",
+      "name": "Permission-scoped safety receipt with national decision adapter",
+      "routeIds": ["jp-procurement-safety-evidence", "sg-kr-jp-shared-eval-evidence-protocol"],
+      "design": "The receipt binds model endpoint/version, scaffold, retrieval snapshot, tool permissions, held-out test family, judge calibration, invalid-run handling and clean utility. A separate national record names the authorised accept/hold/retest decision and permitted actions. An unseen material change invalidates the receipt pending scoped retest, rather than pretending a provider model name is stable.",
+      "test": "Have a second lab replay a deliberately defective and a corrected configuration; change one manifest field without warning the reviewing team. Measure detection, disagreement, duplicate hours and national acceptance. Keep confidential traces local where required and share only necessary evidence.",
+      "stopRule": "Stop portability when a safety-relevant configuration change is missed or total work exceeds local testing without protection gains."
+    },
+    {
+      "id": "frontier-idea-2",
+      "name": "LUMI containment delta: recipient annex versus common host implementation",
+      "routeIds": ["lumi-belgium-safety-appendix", "lumi-national-evidence-protocol"],
+      "design": "With actual delegation and two eligible projects, use the same isolated agent evaluation and synthetic external sink. Compare existing security controls with a narrow egress/credential policy, scoped incident escalation and job pause/restart. Implement once through a Belgian recipient annex and once through a common service condition where authorised; do not treat Belgium as extra national coverage.",
+      "test": "Try benignly simulated out-of-scope actions through indirect tools and after credential/model changes. Record whether effects are prevented before reaching the sink, not merely whether an account is eventually suspended. Compare staff handoffs, hours, false blocks, job completion, actual eligible activity and migration/off-host continuations.",
+      "stopRule": "No claim of added safety if existing controls already contain the same events. No coalition bonus without lower repeated work or additional verified covered activity, and no global model-release claim."
+    }
+  ],
+  "dissent": "I would defend choosing a narrow, independently verified prevention of a serious local harm over an unexercised frontier-wide covenant before Geneva. I would also reject calling that local success catastrophic-risk reduction. If current Japanese controls already do the job, the honest result is to withdraw the new mandatory layer, not to preserve it by changing the endpoint or invoking international consensus."
+}

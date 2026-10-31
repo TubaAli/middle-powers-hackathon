@@ -1,5 +1,45 @@
 # Discussion notes
 
+## Safeguard stress tests: locally checked, 31 October 2026
+
+The [stress-test view](routes/stress-tests.html) adds deeper evidence, retained
+disagreement and next tests for all 32 routes. The five factual shards contain
+73 source records; the public view includes inherited references for 89 total.
+These are records, not 89 independent primary confirmations. Reading status,
+original locators and unresolved evidence gaps remain visible.
+
+The pass compares a plain baseline with four isolated, same-family analytical
+lenses, not stakeholder interviews. It retains eight follow-up designs and
+15 weight/prior sensitivity scenarios. Original model scores remain unchanged;
+the scenarios reweight existing judgments, not new empirical measurements.
+Japan remains a conditional authority-and-cost validation candidate, with
+Brazil-first correction testing and matched-LUMI testing retained as dissent,
+not resolved by a vote or an overall policy ranking.
+
+The [report](reports/Safeguard%20proposal%20stress%20tests.md) and
+`research_notes/Safeguard proposal stress tests/` hold the factual shards,
+baseline/lenses, synthesis, coverage, full model audit, source check and
+execution receipt. Source checking covered 18 external records plus the local
+model; it was not exhaustive verification. Ten errata corrections apply only
+to the normalized `data/stress-tests.json`, preserving the frozen packet.
+The later SC-16 finding is carried into the affected route and source status.
+`scripts/build-stress-test-data.py` deterministically assembles the public view.
+
+Local verification passed: structural/reference/hash and point-math checks,
+15 negative cases, all 17 model regression tests, and isolated headless Chrome
+acceptance at 1440px and 390px. Both sizes passed all 32 keyboard/dropdown
+selections, 15 scenario combinations with displayed-number and URL checks,
+collapsed-source expansion, filters, report and 22 download links, with no
+page errors or horizontal overflow. Six screenshots were inspected; mobile
+heading spacing was corrected and acceptance rerun. See the
+[build and headless test commands](routes/README.md#research-stress-tests).
+Public acceptance is still pending; the parent will publish and check it.
+
+Next discriminating question: can a named owner supply current authority,
+amendable terms, meaningful exposed activity and an affordable test in which
+a failed build is actually held, corrected and retested against fully compliant
+ordinary controls without losing essential service?
+
 ## All 32 routes on the default plot, 31 October 2026
 
 Grisha approved evidence-informed coordinates, reasonable missing-data imputation

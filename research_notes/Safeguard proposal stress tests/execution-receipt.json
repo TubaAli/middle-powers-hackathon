@@ -1,0 +1,245 @@
+{
+  "observedDate": "2026-10-31",
+  "scope": "Writer synthesis, integration of supplied post-lens source review and local integrity checks; no agents launched by this writer.",
+  "postCheckInputFileHashes": {
+    "research_notes/Safeguard proposal stress tests/source-check.md": "f465a7ca555cf0b4812a650ddb86adf1cef922c5c537e8174f9d4831535d4cf3",
+    "research_notes/Safeguard proposal stress tests/source-check.json": "f4f12e478dea0ff6a64b01e822a8c93ff8775c0462cb0fde2e09c51d1315aeef"
+  },
+  "actualInputFileHashes": {
+    "data/coordinate-evidence.json": "ac289a7dfe25b5d31822087081624a03bca7ac514e5f9827da7ffb3432931db4",
+    "data/route-placement-model.json": "b7c93011ec16f6ac6b30c7588ba1a0685c9052a46f1040ef043a93a896bc8ba1",
+    "data/routes-quantitative.json": "8461105a9aae97b1d2b875d0a346ffbeeed57581e9bf0998099d5756dfb8b865",
+    "reports/Route coordinate evidence.md": "46ccfc2aa4dda738a88fa5c4376209ec2e0b953bababb0bd302dc80df0ef87a1",
+    "research_notes/Route coordinate evidence/africa.md": "0f06c10b989924eb75c532ec8ca6012d672bdf8e26ee02bac029ea66f827f505",
+    "research_notes/Route coordinate evidence/asia-pacific.md": "0892d5935f40723363e3aa0150ed3d8f15d048294d53194ad78a5361276ab15c",
+    "research_notes/Route coordinate evidence/europe.md": "97a97849c68f691d745613def1fbe854a01244ae5f53edaa4df611b82629cee6",
+    "research_notes/Route coordinate evidence/finance.md": "e9e4e6c5a9eecafb9859f0c0515e1a5b39b8dddba4d0cabbc88f774c1784fade",
+    "research_notes/Route coordinate evidence/latin-america.md": "4783470d863d48264ae7692035af98e4b18c797a0a004857755d770d0c74109a",
+    "research_notes/Route coordinate evidence/measurement.md": "ca034004b3dc12907d322d00b1695b90850924caea661c8c8216c0f8635a056e",
+    "research_notes/Route coordinate evidence/south-asia-gulf.md": "14f91c01da1be53fecc866c76da9ff9a3ea208cda93338bcf7a5bdb0dcacbab6",
+    "research_notes/Route coordinate evidence/southeast-asia.md": "4c7c288bbe22b6a1f10e05ad0aa9dc97eee31461321780d8d8bd34ab18721b8d",
+    "research_notes/Safeguard proposal stress tests/baseline.json": "2781a0da5847fba1112028d8d8e949879d1e8284f11def63c7d344c8fd5d39c7",
+    "research_notes/Safeguard proposal stress tests/baseline.md": "c217560c2098e8c48262aeaee48943937745e92e48c5fcce0ba46488a40e31d4",
+    "research_notes/Safeguard proposal stress tests/compute.json": "34ca14019885898a27ddc8dda0f0ba3e334afcc80bd55067fc2800313f3b45df",
+    "research_notes/Safeguard proposal stress tests/compute.md": "66ddf5e83300853a03282bffd1de672cfd8a1d5fd3d5f687632bd22b1f86c918",
+    "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt": "9ab1af79f181462dc3f4e5e18f9f8f3650066b6ba280cac41920ddb4770bff96",
+    "research_notes/Safeguard proposal stress tests/europe-finance.json": "bf8fd9d46d00d13e8ff2fa65aae023908270d46275cff5cabc8e3851eb251d52",
+    "research_notes/Safeguard proposal stress tests/europe-finance.md": "a4e4f5deb2e553a505b06720a5f3acff4def52870f4d32c7a3f1d810db72f9fb",
+    "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-comments.txt": "e28224e0308d096223879d1c6bd3a33f60410a461c2345f11ff0b2a4021670bb",
+    "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-guideline.txt": "371ff16b4bdf874b84fcfb49e8ebd8e092c133a4dcae91cf48533dc87f9cdb5c",
+    "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-standard.txt": "f649d5f1800c580cf13d9dc3037e5abc2e930808a034b33fac42b46716294e40",
+    "research_notes/Safeguard proposal stress tests/japan-asia.json": "ec7b4dc46939fca07c38abb9f2be31dea8ce5c01334173c33d6f8bd3a1945395",
+    "research_notes/Safeguard proposal stress tests/japan-asia.md": "5af39bd0a93ea72ecb9c3763058048b887cc7e6a9647f3e21256cca2fc98e509",
+    "research_notes/Safeguard proposal stress tests/lens-frontier.json": "5211b92d351bc9ff929ab05a0d10b6823107de9b39a8c01236ea1f741cec889a",
+    "research_notes/Safeguard proposal stress tests/lens-frontier.md": "c038d789ff185c6fa60c1e5db0ed2064c9ab3de8db1caee7977f815e7ec90d66",
+    "research_notes/Safeguard proposal stress tests/lens-implementation.json": "0c9e496edb4c8f8b9792771db525339c205b5e22e211e25a4492f8138b4df6ed",
+    "research_notes/Safeguard proposal stress tests/lens-implementation.md": "511ed25761806fa8d2d65cba7d9a4c25b811993b5ddc03004b0dc2a394819a24",
+    "research_notes/Safeguard proposal stress tests/lens-international.json": "9f2cb76b4060963028702077a65ac40b64ec4e549f993ca06bb181e0f55de11d",
+    "research_notes/Safeguard proposal stress tests/lens-international.md": "78468f9311b9fcb0f1530d9ec4a5d6b5fc68be06e45b45ff787903f578402aba",
+    "research_notes/Safeguard proposal stress tests/lens-rights.json": "3038cb2bdc4afd27bf25de52ea09167ad5276328a65d8524abbe2cae2373f732",
+    "research_notes/Safeguard proposal stress tests/lens-rights.md": "f5eef325ed38ae39166eeb06f58ae2db07732b62876336b20a67588e3be3bb30",
+    "research_notes/Safeguard proposal stress tests/model-audit.json": "5ae1606260739de59aea15d2a43894c9d9113832cc7f1d60db81f260801f5d78",
+    "research_notes/Safeguard proposal stress tests/model-audit.md": "81c7e432d281eeeb5a181963b98f171cce2e8daa7a1964ea90cb97a321cc2363",
+    "research_notes/Safeguard proposal stress tests/reproduce-model-audit.py": "5ab38b6a2867f9421d37d86bbb8a6806d52e4569f28cec86f86291b6fd09feee",
+    "research_notes/Safeguard proposal stress tests/rights-enforcement.json": "b2c53f892ef1c4c0caac044113a3cc02e64f41b644f484ee9ec54a4eecc4d8f3",
+    "research_notes/Safeguard proposal stress tests/rights-enforcement.md": "77e0df372fa7fb8f585162a711dd1bebba622bad4e00f58686ad4186f4b1f9fc",
+    "research_notes/Safeguard proposal stress tests/sandbox-deployment.json": "cbb446c7a779477f8e84a4e1d3862789b963e9507eb48edc5c716029290503c2",
+    "research_notes/Safeguard proposal stress tests/sandbox-deployment.md": "bed85fad8582ddb4a72c9acd17ffa73323cb75867097a34774fd6a2c6c88ae13",
+    "research_notes/Safeguard proposal stress tests/workflow-method.json": "4c52eb4142d7294551dec0379ecfe49c49154e63ec69327356312c56a41c9472",
+    "research_notes/Safeguard proposal stress tests/workflow-method.md": "cae3f1332b12b72c6b0ac463c4db686e8f424581e66e3a1e801faf7257c742ad",
+    "routes/placement.mjs": "cb3ed4e03370f43de0d6db88abcb6579d8f7167cdd1161fb63286e5540c54e24"
+  },
+  "commonPacket": {
+    "status": "Frozen pre-correction packet. Post-review synthesis and errata are separate derived outputs; baseline/lenses were not rerun or rewritten.",
+    "fileCount": 14,
+    "generatorCount": 5,
+    "declaredHashChecks": 70,
+    "allMatch": true,
+    "identicalDeclaredPackets": true,
+    "hashes": {
+      "data/route-placement-model.json": "b7c93011ec16f6ac6b30c7588ba1a0685c9052a46f1040ef043a93a896bc8ba1",
+      "data/routes-quantitative.json": "8461105a9aae97b1d2b875d0a346ffbeeed57581e9bf0998099d5756dfb8b865",
+      "data/coordinate-evidence.json": "ac289a7dfe25b5d31822087081624a03bca7ac514e5f9827da7ffb3432931db4",
+      "reports/Route coordinate evidence.md": "46ccfc2aa4dda738a88fa5c4376209ec2e0b953bababb0bd302dc80df0ef87a1",
+      "research_notes/Safeguard proposal stress tests/compute.md": "66ddf5e83300853a03282bffd1de672cfd8a1d5fd3d5f687632bd22b1f86c918",
+      "research_notes/Safeguard proposal stress tests/compute.json": "34ca14019885898a27ddc8dda0f0ba3e334afcc80bd55067fc2800313f3b45df",
+      "research_notes/Safeguard proposal stress tests/japan-asia.md": "5af39bd0a93ea72ecb9c3763058048b887cc7e6a9647f3e21256cca2fc98e509",
+      "research_notes/Safeguard proposal stress tests/japan-asia.json": "ec7b4dc46939fca07c38abb9f2be31dea8ce5c01334173c33d6f8bd3a1945395",
+      "research_notes/Safeguard proposal stress tests/europe-finance.md": "a4e4f5deb2e553a505b06720a5f3acff4def52870f4d32c7a3f1d810db72f9fb",
+      "research_notes/Safeguard proposal stress tests/europe-finance.json": "bf8fd9d46d00d13e8ff2fa65aae023908270d46275cff5cabc8e3851eb251d52",
+      "research_notes/Safeguard proposal stress tests/rights-enforcement.md": "77e0df372fa7fb8f585162a711dd1bebba622bad4e00f58686ad4186f4b1f9fc",
+      "research_notes/Safeguard proposal stress tests/rights-enforcement.json": "b2c53f892ef1c4c0caac044113a3cc02e64f41b644f484ee9ec54a4eecc4d8f3",
+      "research_notes/Safeguard proposal stress tests/sandbox-deployment.md": "bed85fad8582ddb4a72c9acd17ffa73323cb75867097a34774fd6a2c6c88ae13",
+      "research_notes/Safeguard proposal stress tests/sandbox-deployment.json": "cbb446c7a779477f8e84a4e1d3862789b963e9507eb48edc5c716029290503c2"
+    }
+  },
+  "extractHashChecks": {
+    "baseline": {
+      "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-standard.txt": true,
+      "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-comments.txt": true,
+      "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-guideline.txt": true,
+      "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt": true
+    },
+    "lens-implementation": {},
+    "lens-frontier": {
+      "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-standard.txt": true,
+      "research_notes/Safeguard proposal stress tests/japan-asia-source-extracts/jp-guideline.txt": true,
+      "research_notes/Safeguard proposal stress tests/europe-finance-source-extracts/lumi-terms.pdf.txt": true
+    },
+    "lens-rights": {},
+    "lens-international": {}
+  },
+  "isolatedCallMethod": {
+    "basis": "Five supplied briefs identify fresh isolated analytical calls, a shared fixed14-file packet and no peer-output/new-retrieval use. This writer did not observe or reconstruct process-level isolation.",
+    "executors": {
+      "baseline": {
+        "provider": "openai",
+        "model": "gpt-6-astra-ultrafast",
+        "sameFamily": true
+      },
+      "lens-implementation": {
+        "provider": "openai",
+        "model": "gpt-6-astra-ultrafast",
+        "sameFamily": true
+      },
+      "lens-frontier": {
+        "provider": "openai",
+        "model": "gpt-6-astra-ultrafast",
+        "sameFamily": true
+      },
+      "lens-rights": {
+        "provider": "openai",
+        "model": "gpt-6-astra-ultrafast",
+        "sameFamily": true
+      },
+      "lens-international": {
+        "provider": "openai",
+        "model": "gpt-6-astra-ultrafast",
+        "sameFamily": true
+      }
+    },
+    "sameModelFamily": true,
+    "promptIsolationIsFilesystemIsolation": false,
+    "referencedExtractUseVaried": true,
+    "independentCrossFamilyReview": false,
+    "stakeholderInterviews": 0,
+    "newRetrievalInLensRound": 0
+  },
+  "upstream": {
+    "pinnedMethodDocument": "workflow-method.md and workflow-method.json",
+    "agentStudioCommit": "6f6a37258e4e33401b7b0f10a2c9634adffebd60",
+    "deeperResearchCommit": "d49d27c75d94ee57c19cd062269e2d5f1c96cd67",
+    "executedAdaptedStages": [
+      "Prior five factual shards performed bounded retrieval and source ledger construction (inherited receipts)",
+      "Supplied plain baseline plus four isolated same-family lens briefs",
+      "Writer point-level comparison and dissent-preserving synthesis",
+      "Local hash, source-reference, route/point coverage and audit arithmetic checks"
+    ],
+    "notExecuted": [
+      "Full upstream pipelines or installation",
+      "Exa slices/PaperQA integration",
+      "Scholarly graph/citation chase",
+      "Upstream validators and semantic-embedding score",
+      "Blind human judge",
+      "Different-model-family refute review",
+      "Stakeholder interviews",
+      "Policy implementation or outcome experiment"
+    ],
+    "separateSourceChecker": "Supplied same-family source check integrated after the independent lens round: SC-01 Malaysia applicability, SC-02 LUMI last-change metadata and SC-16 confirmed source-level SEC mismatch with intended correction/legal effect unresolved. No universal source verification claimed."
+  },
+  "postLensSourceReview": {
+    "reviewerSessionId": "ses_e6e0570c7ffel1VCnT41kookXg",
+    "reviewType": "same-family independent source-fidelity and numerical check; not cross-family review",
+    "externalSourceRecordsChecked": 18,
+    "freshByteMatchedPdfs": 8,
+    "livePagesOrExhibits": 10,
+    "localModelSeparatelyChecked": ["rights-model"],
+    "sourceRecordsNotIndependentlyChecked": 54,
+    "exactRecordLists": "source-check.json#/checkedSourceRecords and #/notIndependentlyCheckedSourceIds",
+    "exclusions": ["baseline/lens recommendation review", "exhaustive legal-currentness verification", "institutional consent verification", "full Colombian dispositive orders and prior-release scope comparison", "Kenyan technical deletion/compliance records", "separate Canadian speech", "full AgentDojo tables or experimental replication"],
+    "reviewerNumericalChecks": {"attribution": "Reported by source checker, not newly rerun during writer integration", "productionValuesCompared": 192, "productionMismatches": 0, "baselineCornersEnumerated": 2048, "cornerExtremaMatch": true},
+    "integratedFindings": ["SC-01", "SC-02", "SC-16"],
+    "secCrossReference": "SC-16 confirms section2.22(b)/9.08(g) mismatch in filed HTML; intended correction, correcting instrument and legal effect remain unresolved. No agreement wording replaced.",
+    "originalPacketAndLensOutputsChanged": false
+  },
+  "retrieval": {
+    "writerSubstantiveRetrievals": 0,
+    "writerAdministrativeStatusRequests": 1,
+    "statusRequestResult": "share-sessions2026-10-29.1 guide listed; no user items; no guide change adopted",
+    "shardSourceRecords": 73,
+    "shardGroupedSearchRecords": 44,
+    "shardAccessStates": {
+      "read": 55,
+      "inaccessible": 8,
+      "partial": 10
+    },
+    "uniqueUrlCount": null,
+    "uniqueUrlCountReason": "Not computed; no independent-source count claimed.",
+    "readScope": "Writer reuses local reports/ledgers and supplied source-check findings. The separate reviewer checked18 external records plus the local model after the lens round;54 records remain unchecked. Writer did not perform fresh primary-source retrieval. Retained extract hashes establish byte identity, not correctness."
+  },
+  "checks": {
+    "fullAuditReproduction": {
+      "status": "passed",
+      "method": "runpy loaded existing script; Path.write_text intercepted in memory only for model-audit.json; captured full serialization byte-equal to existing file; stdout captured; no audit file rewritten",
+      "regimePriorCombinations": 15,
+      "alphaEvaluations": 45,
+      "oneAtATimeProbes": 5760,
+      "removalProbes": 3
+    },
+    "commonPacketHashes": "70/70 passed",
+    "declaredExtractHashes": "all supplied extract hashes checked and matched",
+    "allRouteCoverage": "32 exact unique IDs matched local published model",
+    "pointCoverage": "61 exact unique point IDs, every baseline/lens point mapped once",
+    "synthesisSourceReferences": "All sourceIds resolve to the five factual shard source records",
+    "synthesisRouteReferences": "All exact route IDs resolve to the model",
+    "coverageTargets": "All finding/idea IDs and report headings resolve",
+    "json": "Finite JSON serialized and parsed successfully",
+    "reportLinks": {
+      "status": "passed",
+       "localLinksChecked": 54,
+      "primaryReferenceDefinitionsMatched": 19,
+      "externalFreshFetchPerformed": false
+    },
+    "reportProseWordsExcludingTablesAndReferenceDefinitions": 2674,
+    "errata": {"correctionCount": 10, "originalValueGuardsMatched": 10, "application": "RFC6901 pointers applied to in-memory copies only; source/route identities checked; corrected source metadata matches synthesis", "frozenFilesWritten": false},
+    "allInputHashesStillMatch": true
+  },
+  "outputs": {
+    "count": 6,
+    "files": [
+      "reports/Safeguard proposal stress tests.md",
+      "research_notes/Safeguard proposal stress tests/synthesis.json",
+      "research_notes/Safeguard proposal stress tests/coverage.json",
+      "research_notes/Safeguard proposal stress tests/execution-receipt.json",
+      "research_notes/Safeguard proposal stress tests/errata.json",
+      "research_notes/Safeguard proposal stress tests/errata.md"
+    ],
+    "counts": {
+      "report": 1,
+      "structuredOutputs": 4,
+      "errataNotes": 1,
+      "findings": 10,
+      "selectedIdeas": 8,
+      "viewpoints": 5,
+      "coveredPoints": 61,
+      "coveredRoutes": 32
+    },
+    "modelScoresChanged": false,
+    "commitsMade": 0,
+    "installedTools": 0,
+    "contactsMade": 0,
+    "sha256ExceptSelf": {
+      "reports/Safeguard proposal stress tests.md": "a27a6c301291894ec2f757226b280e790168e12abdc7bea5650f6231de3d8656",
+      "research_notes/Safeguard proposal stress tests/synthesis.json": "ce7ea260bde36118757ac1a3ebc25a238ca2bb0bab774b85a6b9b4828c09248d",
+      "research_notes/Safeguard proposal stress tests/coverage.json": "4dc6871210f55e306d831aa8419b4835a8316ad27143eb19fdf19a8ea6e57702",
+      "research_notes/Safeguard proposal stress tests/errata.json": "15d9f933dd94be3386d776a1de88f15a23334b78d6dfbe424a2810a34b72dcbb",
+      "research_notes/Safeguard proposal stress tests/errata.md": "004cdfdfe93d6031a4571074096e8f8430aeb59f9dca8792cc3297e23b172c38"
+    }
+  },
+  "limitations": [
+    "Hash matching validates common available packet bytes, not equal attention or factual correctness.",
+    "Coverage counts measure retention rather than quality; no numeric panel-improvement score.",
+    "Source review is selected-record verification after the lenses, not exhaustive verification, institutional consent or demonstrated safety benefit.",
+    "SEC source-level mismatch confirmed; intended correction and legal effect remain unresolved."
+  ]
+}

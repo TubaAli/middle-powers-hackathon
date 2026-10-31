@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "observedDate": "2026-10-31",
+  "cutoffDate": "2026-10-31",
+  "reviewType": "same-family independent source-fidelity and numerical check; not cross-family review",
+  "reviewer": {"role": "sava-the-owl", "model": "openai/gpt-6-astra-ultrafast", "sessionId": "ses_e6e0570c7ffel1VCnT41kookXg"},
+  "scope": ["compute", "japan-asia", "sandbox-deployment", "rights-enforcement", "europe-finance", "model-audit"],
+  "excluded": ["baseline/lens recommendation review", "exhaustive legal-currentness verification", "institutional consent verification", "changes to models or shards"],
+  "conclusion": "One medium scope qualification and one low date-field correction; checked major distinctions otherwise upheld. Structural and arithmetic checks are not a readiness stamp.",
+  "findings": [
+    {
+      "id": "SC-01", "severity": "medium", "status": "correction_required",
+      "routeIds": ["malaysia-commercial-ai-dpia"], "sourceIds": ["sandbox-my-admp"],
+      "claim": "ADMP guideline section 6.1 triggers DPIA regardless of intended extent.",
+      "locations": ["sandbox-deployment.md:21", "sandbox-deployment.json:53, first newEvidence claim"],
+      "sourceUrl": "https://www.pdp.gov.my/wp-content/uploads/2026/04/Automated-Decision-Making-And-Profiling-Guideline-ADMP.pdf",
+      "sourceLocator": "PDF pp7,9,15; sections6.1,7.1,10.1; saved text lines149-153,192-198,376-379",
+      "finding": "Section6.1 is accurately summarised but sections7.1 and10.1 add applicability language: legal/significant effects and AI use in ADMP. Omitting that language can overgeneralise the whole guideline's scope. This does not establish that section7.1 cancels every section6.1 duty.",
+      "correction": "Preserve both scope qualifications and obtain an authorised interpretation of their relationship for the selected pilot. Keep the existing section10.2 best-practices caveat."
+    },
+    {
+      "id": "SC-02", "severity": "low", "status": "correction_required",
+      "routeIds": ["lumi-national-evidence-protocol", "lumi-belgium-safety-appendix", "lumi-eurohpc-evaluation-access"], "sourceIds": ["euro-lumi-terms"],
+      "claim": "published is 2026-02-10", "locations": ["europe-finance.json:185"],
+      "sourceUrl": "https://lumi-supercomputer.eu/wp-content/uploads/2026/03/LUMI-General-Terms-of-Use_2026.pdf",
+      "sourceLocator": "PDF p1, Date of last change; saved text lines3-7",
+      "finding": "The day is explicitly a last-change date, not an independently established publication day. The existing prose/locator is correctly qualified but the published field is not.",
+      "correction": "Use unknown publication or label it as revision date; preserve the event as last change and observation as2026-10-31. No route assessment change follows."
+    }
+  ],
+  "upheldChecks": [
+    {"id":"SC-03","severity":"informational","sourceIds":["compute-e2e"],"locations":["compute.md:11-16"],"locator":"Billing / Important Consideration; Platform Service; Multiple Projects","finding":"Commercial continuation and TIR transition after expiry are explicit; exhaustion stops subsidy, not necessarily service.","retainQualification":"One provider's ordinary documented operation; not observed safety evasion or an all-provider shutdown rule."},
+    {"id":"SC-04","severity":"informational","sourceIds":["asia-jp-standard","asia-jp-guideline"],"locations":["japan-asia.md:13-16"],"locator":"Standard section4-3 PDF pp36-37; DS-920 section6.3.3 PDF p41","finding":"Another Gen-nai developer reviews changes alongside authorised approval; independent internal/external tests are example methods.","retainQualification":"Internal review is not external assurance; workflow requirements are not observed exercise of the proposed hold."},
+    {"id":"SC-05","severity":"informational","sourceIds":["asia-jp-comments"],"locations":["japan-asia.md:14"],"locator":"PDF pp38,69","finding":"Graffer/Rakuten objections and government's differentiated responses match the source.","retainQualification":"Attributed positions, not measured burdens, representative consensus or accepted pilot terms."},
+    {"id":"SC-06","severity":"informational","sourceIds":["asia-sg-accreditation"],"locations":["japan-asia.md:38-48"],"locator":"Introduction; Technical Testing Competencies","finding":"Accreditation scoped to demonstrated methods/risks; independence and complete safety guarantees expressly excluded.","retainQualification":"No guarantee does not prove every accredited tester is conflicted."},
+    {"id":"SC-07","severity":"informational","sourceIds":["euro-lumi-terms"],"locations":["europe-finance.md:17-19,25-29"],"locator":"Preamble; sections6,11,12","finding":"Common administration, supplementary terms, cut-offs and amendment notification are present.","retainQualification":"Internal amendment delegation and external model-access authority for the proposed safety annex remain unestablished."},
+    {"id":"SC-08","severity":"informational","sourceIds":["rights-br-grok"],"locations":["rights-enforcement.md:15,50,68"],"locator":"Opening; ANPD; Next Steps","finding":"Official account reports continuing failures and preventive correction/verification requirements, all-version coverage and five-business-day evidence demand.","retainQualification":"Not independent replication, completed remediation, observed turnaround or a final merits judgment for every alleged violation."},
+    {"id":"SC-09","severity":"informational","sourceIds":["rights-co-final"],"locations":["rights-enforcement.md:18,24-26,68"],"locator":"Opening; technical section; conclusion","finding":"8July2026 account confirms18June appeal resolution and required external certification with technical evidence of suppression.","retainQualification":"Certificate required, not delivered/validated; administrative finality not immunity from judicial review. Prior release scope comparison not rechecked."},
+    {"id":"SC-10","severity":"informational","sourceIds":["rights-ke-katiba","rights-ke-reprint"],"locations":["rights-enforcement.md:20,28"],"locator":"Original opening/judgment paragraph; reprint January20 paragraph","finding":"Litigant reports full compliance; reprint attributes20January2026 confirmation to ODPC.","retainQualification":"No independently inspected technical corroboration, official compliance report or actual seven-day completion."},
+    {"id":"SC-11","severity":"informational","sourceIds":["sandbox-my-submission","sandbox-my-clauses"],"locations":["sandbox-deployment.md:23,67-71"],"locator":"Buying AI; AnnexC pp1-5","finding":"Checklist/negotiated-clause split and bracketed proposed periods are accurately described.","retainQualification":"Stakeholder proposal, not regulator adoption, representative survey or executed supplier terms."},
+    {"id":"SC-12","severity":"informational","sourceIds":["sandbox-th-contracts","sandbox-th-tender"],"locations":["sandbox-deployment.md:25-27"],"locator":"Register p15; TOR sections4.3-4.7,7-9; page29 image","finding":"Contract metadata, amount, date, scheduled delivery and acceptance-linked20/30/35/15 payments match. Learning/publication/meeting scope does not establish a deployment veto.","retainQualification":"No payment, completion, successor2027 scope or independent recheck of separate17December award notice."},
+    {"id":"SC-13","severity":"informational","sourceIds":["euro-credit"],"locations":["europe-finance.md:75-77,92,96"],"locator":"Exhibit10.10 sections2.21-2.23,4.02,5.04,9.08","finding":"Elective new credit, conditioned existing draws, amendment exceptions and proprietary-information carve-outs match.","retainQualification":"No unilateral safety discretion over compliant draws. More-restrictive new-class terms need specific clause/consent mapping. Fresh webfetch access does not erase previous raw403 observation."},
+    {"id":"SC-14","severity":"informational","sourceIds":["euro-canada-pm"],"locations":["europe-finance.md:73,92"],"locator":"Commitment; undertakings; staged reporting","finding":"Staged equity announcement and CAISI cooperation match.","retainQualification":"Not a disclosed executed agreement, settled investment, optional stage or independent-evaluation covenant. Separate speech not rechecked."},
+    {"id":"SC-15","severity":"informational","sourceIds":["asia-agentdojo"],"locations":["japan-asia.md:44","japan-asia.json:54,72,130"],"locator":"Abstract; version comments/history","finding":"Clean-task failures, adaptive attacks and Llama bug fix supported at abstract/version level.","retainQualification":"Historical research, not current production rates. Full-HTML locators should not imply this reviewer independently read tables or replicated experiments."}
+  ],
+  "structuralChecks": {
+    "expectedRouteCount":32,"actualRouteCount":32,"uniqueRouteCount":32,"missingRouteIds":[],"extraRouteIds":[],"duplicateRouteIds":[],
+    "sourceRecordCount":73,"sourceIdReferenceCount":329,"unresolvedSourceIdReferences":[],
+    "shardAccessLabels":{"read":55,"partial":10,"inaccessible":8},
+    "routeCoverage": {
+      "compute":["indiaai-subsidy-evaluation-gate","taiwan-public-compute-safety-conditions","turkiye-1711-safety-work-package"],
+      "japan-asia":["jp-procurement-safety-evidence","jp-kr-sg-procurement-profile","sg-agent-data-leakage-deployment-gate","sg-kr-jp-shared-eval-evidence-protocol","sg-purchaser-sandbox-release-gate","kr-safety-case-incident-rehearsal"],
+      "sandbox-deployment":["uae-dubai-agentic-assurance-gate","saudi-cst-ai-sandbox-stop-rule","indonesia-bpom-dpia-gate","malaysia-commercial-ai-dpia","thailand-aigpc-sandbox-gate","vietnam-public-ai-impact-gate"],
+      "rights-enforcement":["brazil-anpd-ai-inspection-evidence","mexico-public-sector-impact-assessment","chile-high-risk-data-impact-assessment","colombia-sic-ai-privacy-retest","south-africa-popia-ai-linkage-review","kenya-biometric-dpia-evidence-gate","nigeria-ai-compliance-audit-annex","rwanda-ai-dpia-security-retest"],
+      "europe-finance":["eurohpc-incident-protocol","lumi-belgium-safety-appendix","lumi-eurohpc-evaluation-access","lumi-national-evidence-protocol","ch-electricity-operator-fallback","uk-energy-staged-autonomy-assurance","uk-agent-accountability-evidence","canada-cohere-equity-safety-covenant","anthropic-new-credit-lender-safety-covenant"]
+    }
+  },
+  "checkedSourceRecords": {
+    "externalCount":18,
+    "livePageOrExhibit":["compute-e2e","asia-sg-accreditation","rights-br-grok","rights-co-final","rights-ke-katiba","rights-ke-reprint","sandbox-my-submission","euro-credit","euro-canada-pm","asia-agentdojo"],
+    "freshByteMatchedPdf":["asia-jp-standard","asia-jp-comments","asia-jp-guideline","euro-lumi-terms","sandbox-my-admp","sandbox-my-clauses","sandbox-th-contracts","sandbox-th-tender"],
+    "localModelSeparatelyChecked":["rights-model"],
+    "pdfSha256":{
+      "asia-jp-standard":"97c4ccd7eb5975849df6a888a7dd29a7841bdcbdd77eca75bfc5b57ed87fa1ff",
+      "asia-jp-comments":"9b4f8c288cd19e0ab6faa810719cc68e56767e3fa87794f9b9558ead49278e30",
+      "asia-jp-guideline":"5ec5ca32c913202bf4052674c73930b7b3486e5bfe77f55c9d28e342cf7205ad",
+      "euro-lumi-terms":"2c42641a4eb65ccf71d8948a5cc7fd6553504642dde57182cc640bcf3b81e833",
+      "sandbox-my-admp":"c666c73ca9d084f5b940e9ae44e992be471150b8c774fef0e1e6ed2a298c5bab",
+      "sandbox-my-clauses":"ad900be370cf5fdb41fe19fc732cc950c20301cbb7fadf51c2e36f6e73c3a35d",
+      "sandbox-th-contracts":"ce5e2620ae4ea97ad8f7531c1e0f75ca729413bc7da4d247c6894d60c410cd12",
+      "sandbox-th-tender":"d4883d0def89575439f36ff899cb908304224b17cb498e81afeb7b696f94d9aa"
+    },
+    "accessNote":"Malaysia ADMP Python TLS-chain failure recovered with normal validating curl; no TLS bypass. SEC fresh webfetch exposed text; no claim of raw-byte provenance match for that exhibit."
+  },
+  "notIndependentlyCheckedSourceIds": {
+    "compute":["compute-policy","compute-corrigendum","compute-portal","compute-print","compute-aisi-call","compute-aisi-faq","compute-qi","compute-tw-rules","compute-tr-call","compute-tr-programme","compute-deeper","compute-studio"],
+    "japan-asia":["asia-sg-pilot","asia-kr-bsa","asia-jftc-update","asia-sgkr-refresh-gap","asia-jftc-old-gap"],
+    "sandbox-deployment":["sandbox-ae-seal","sandbox-ae-programme","sandbox-sa-myriota","sandbox-sa-sdaia","sandbox-id-morada","sandbox-th-award","sandbox-vn-kiosk","sandbox-vn-plan-report"],
+    "rights-enforcement":["rights-mx-law","rights-cl-bill","rights-co-first","rights-za-notice","rights-za-index","rights-za-litigation","rights-ke-case","rights-ke-odpc","rights-ng-gaid","rights-ng-fine","rights-rw-law","rights-rw-tools","rights-rw-form"],
+    "europe-finance":["euro-fwc","euro-lumi-access","euro-belgium-access","euro-joint-pilot","euro-joint-agents","euro-aisi-incident","euro-swissgrid","euro-ofgem-decision","euro-ofgem-index","euro-energyuk","euro-startup","euro-ena","euro-ico-call","euro-canada-speech","euro-method-agent","euro-method-deeper"]
+  },
+  "temporalAndEvidenceChecks": {
+    "proposalDates":"Inspected pilot dates remain proposals with dependencies, not institutional commitments.",
+    "planningCheckpoint":"2027-06-21/2027-06-22 supplied by assignment; event independently unverified.",
+    "publicationEventDistinction":"Checked Brazil announcement, Colombia publication/resolution and Kenya judgment/secondary confirmation separately; SC-02 requires last-change/publication metadata correction.",
+    "allegationFindingDistinction":"Regulator conclusions attributed to regulators; company arguments attributed through regulatory accounts; Kenya compliance attributed to litigant/secondary report rather than independent technical verification.",
+    "accessGaps":"No unavailable Indian/Korean/Rwandan/ODPC document silently upgraded. Not every prior failed retrieval was repeated."
+  },
+  "modelAudit": {
+    "reproduction":"Original script loaded with runpy and unchanged main invoked. Sole Path.write_text intercepted in memory with destination assertion; generated object exactly equals saved JSON.",
+    "exactJsonObjectEquality":true,"otherArtifactsWritten":false,
+    "productionComparison":"Actual Node import of routes/placement.mjs placement() against audit baseline coordinates/bounds.",
+    "productionValuesCompared":192,"productionMismatches":0,"tolerance":1e-10,
+    "markdownBaselineRowsChecked":32,"baselineCornersEnumerated":2048,"cornerExtremaMatch":true,
+    "regimePriorCombinations":15,"alphaSweeps":45,"oneAtATimeProbes":5760,
+    "priorHalfRegimeReversals":[0,40,30,47,48],"ablationReversals":[60,42,46],
+    "baselineFirstPlace":["jp-procurement-safety-evidence","ch-electricity-operator-fallback"],
+    "baselineIndiaRank":4,"baselineNonDominatedCount":6,"nullFactorCount":23,
+    "allBaselineBoxBestRanks":1,"allBaselineBoxWorstRanks":32,"necessaryDominancePairs":0,
+    "inputHashes":{
+      "model":"b7c93011ec16f6ac6b30c7588ba1a0685c9052a46f1040ef043a93a896bc8ba1",
+      "metadata":"8461105a9aae97b1d2b875d0a346ffbeeed57581e9bf0998099d5756dfb8b865",
+      "evidence":"ac289a7dfe25b5d31822087081624a03bca7ac514e5f9827da7ffb3432931db4",
+      "productionModule":"cb3ed4e03370f43de0d6db88abcb6579d8f7167cdd1161fb63286e5540c54e24"
+    },
+    "limitation":"Audit utility/ranking absent from production chart. Reproduction validates arithmetic, not editorial factors, probabilities, causal effects, stakeholder weights or policy readiness."
+  },
+  "remainingLimitations":["54 source records not independently checked; one local model separately checked.","No exhaustive legal-currentness verification or full Colombian dispositive orders.","No Kenyan technical deletion report or court compliance record inspected.","No signed pilot consent, operational safety outcomes, payment settlement or lender allocations inspected.","No full AgentDojo experimental-table review or experimental replication.","Same-family independence does not provide cross-family methodological diversity."],
+  "statusEndpoint":{"guide":"share-sessions","version":"2026-10-29.1","userItems":[],"changeAdopted":false},
+  "delivery":"Done: only source-check.md and source-check.json authored; no other research/model edits, commits, helpers, installs, paid calls or contact.",
+  "followUpFindings":[
+    {
+      "id":"SC-16",
+      "severity":"low",
+      "status":"source_mismatch_confirmed_legal_effect_unresolved",
+      "observedDate":"2026-10-31",
+      "accessedDate":"2026-10-31",
+      "agreementDate":"2026-09-04",
+      "publicationDate":null,
+      "sourceIds":["euro-credit"],
+      "routeIds":["anthropic-new-credit-lender-safety-covenant"],
+      "claimLocation":"europe-finance.md:77; earlier source-check SC-13",
+      "sourceUrl":"https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/exhibit1010-sx1.htm",
+      "sourceLocator":"Section2.22(b), printed p82; section9.08(b), pp132-133; section9.08(f)-(g), p134",
+      "accessMethod":"Fresh webfetch format=html; inspected actual reference and explicit paragraph labels in returned HTML. Independent urllib attempt returned HTTP403.",
+      "shortQuotes":[
+        {"locator":"2.22(b), p82","text":"as provided for in Section 9.08(g)"},
+        {"locator":"9.08(g), p134","text":"change its fiscal year"}
+      ],
+      "finding":"The filed HTML itself sends the extension-integration sentence to9.08(g), whose subject is fiscal-year changes. Paragraph9.08(f) instead addresses integration consistent with2.21-2.23 and correction of inconsistencies. This confirms a source-level mismatch rather than a Markdown extraction error or unsupported earlier interpretation.",
+      "resolved":"Existence and source provenance of the textual cross-reference mismatch.",
+      "unresolved":"Whether9.08(f) was intended, whether an operative correcting amendment exists, and the legal effect in any specific extension. No correcting instrument or authorised interpretation inspected.",
+      "classification":"Apparent source cross-reference typo; intended repair not established.",
+      "correctionRequired":"Writer may state source-level mismatch confirmed in SEC HTML. Retain intended-correction/legal-effect uncertainty; do not silently replace(g) with(f) or infer amendment ineffectiveness from numbering alone.",
+      "relationToSC13":"Earlier broad amendment-exception verification alone did not resolve this issue. Follow-up removes extraction uncertainty only. Section9.08(b) separately excepts2.22; no unrestricted safety-covenant power is inferred.",
+      "toolReturnedHtmlSha256":"1125fc4cf9a13aef94b581be97fe8ce3c79834ae5bcbf042b59306b768946fda",
+      "hashScope":"Tool-returned HTML text, not independently authenticated raw server bytes.",
+      "broaderResearchPerformed":false,
+      "originalPacketFilesEdited":false
+    }
+  ],
+  "signature":"— sava-the-owl · openai/gpt-6-astra-ultrafast · ses_e6e0570c7ffel1VCnT41kookXg"
+}

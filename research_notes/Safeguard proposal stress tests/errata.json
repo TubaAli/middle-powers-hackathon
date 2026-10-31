@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "observedDate": "2026-10-31",
+  "application": "Post-check overlay only. scope is the repository-relative frozen JSON file; field is an RFC6901 JSON Pointer. Verify original equality and routeId/sourceId where present, then replace in memory. Never rewrite the frozen packet. Do not apply twice. Derived normalized views must propagate corrected fields and retain sourceCheckId provenance.",
+  "sourceReview": "research_notes/Safeguard proposal stress tests/source-check.json",
+  "corrections": [
+    {
+      "id": "ERR-SC01-claim",
+      "scope": "research_notes/Safeguard proposal stress tests/sandbox-deployment.json",
+      "routeId": "malaysia-commercial-ai-dpia",
+      "sourceId": "sandbox-my-admp",
+      "field": "/routes/3/newEvidence/0/claim",
+      "original": "FACT: ADMP guideline section 6.1 treats ADMP as a qualitative DPIA trigger regardless of intended extent. Section 1.3 calls for earliest-stage DPO engagement. Section 10.2.6 says AI must not be the sole factor, but it sits under 10.2's formulation that the controller may adopt the following best practices. Do not flatten this wording into a separately enforced statutory AI ban.",
+      "corrected": "FACT: Section 6.1 broadly treats ADMP as a qualitative DPIA trigger regardless of intended extent, but section 7.1 says the guideline may not apply to all ADMP and identifies a legal/significant-effects applicability threshold. Section 10.1 applies where AI is used for ADMP. Obtain an authorised determination of how sections 6.1/7.1/10.1 apply to the selected workflow; neither universal coverage nor cancellation of every section 6.1 duty follows. Section 1.3 calls for earliest-stage DPO engagement. Section 10.2.6 remains inside section 10.2's may-adopt best-practices formulation, not a separately established statutory AI ban.",
+      "reason": "The broad trigger cannot be presented without the same document's applicability qualifications.",
+      "sourceCheckId": "SC-01"
+    },
+    {
+      "id": "ERR-SC01-claim-locator",
+      "scope": "research_notes/Safeguard proposal stress tests/sandbox-deployment.json",
+      "routeId": "malaysia-commercial-ai-dpia",
+      "sourceId": "sandbox-my-admp",
+      "field": "/routes/3/newEvidence/0/locator",
+      "original": "PDF pp.4,7,15; printed pp.3,6,14; sections 1.3,6.1,10.2–10.2.6",
+      "corrected": "PDF pp.4,7,9,15; sections 1.3,6.1,7.1,10.1–10.2.6; saved text lines149–153,192–198,376–379 for the scope qualification",
+      "reason": "Add the controlling scope passages to the claim-level locator.",
+      "sourceCheckId": "SC-01"
+    },
+    {
+      "id": "ERR-SC01-support",
+      "scope": "research_notes/Safeguard proposal stress tests/sandbox-deployment.json",
+      "routeId": "malaysia-commercial-ai-dpia",
+      "sourceId": "sandbox-my-admp",
+      "field": "/routes/3/supports/0",
+      "original": "INFERENCE: A commercial ADMP deployment can be selected using functional risk rather than large data-subject thresholds alone.",
+      "corrected": "INFERENCE: Select a commercial AI-used-for-ADMP workflow only after an authorised determination addressing section6.1 alongside section7.1's legal/significant-effects threshold and section10.1 scope; neither large data-subject counts alone nor any AI feature establishes full guideline applicability.",
+      "reason": "Propagate the applicability qualification into case selection, not only the factual footnote.",
+      "sourceCheckId": "SC-01"
+    },
+    {
+      "id": "ERR-SC01-decision-test",
+      "scope": "research_notes/Safeguard proposal stress tests/sandbox-deployment.json",
+      "routeId": "malaysia-commercial-ai-dpia",
+      "sourceId": "sandbox-my-admp",
+      "field": "/routes/3/decisionTest",
+      "original": "Select an actual AI-assisted eligibility or claims workflow and show that a qualified reviewer can override it, a material settings change triggers review, and affected users obtain correction. Falsified if review merely rubber-stamps outputs or the controller cannot restrict data/tools after a supplier change.",
+      "corrected": "First obtain an authorised applicability determination addressing section6.1’s broad DPIA trigger, section7.1’s legal/significant-effects threshold and section10.1’s AI-used-for-ADMP scope together; preserve section10.2 best-practices wording. Neither universal coverage nor cancellation of every section6.1 duty follows. Then select the qualifying workflow and test actual override, settings-change review and completed correction; reject rubber-stamping or inability to restrict the feature.",
+      "reason": "The operational test must not assume a mandatory duty before resolving scope.",
+      "sourceCheckId": "SC-01"
+    },
+    {
+      "id": "ERR-SC01-design-dependency",
+      "scope": "research_notes/Safeguard proposal stress tests/sandbox-deployment.json",
+      "routeId": "malaysia-commercial-ai-dpia",
+      "sourceId": "sandbox-my-admp",
+      "field": "/routes/3/ideas/0/dependencies",
+      "original": "Actual controller selection; applicable legal scope; provider settings/log access; skilled reviewers; staffed correction channel; justified data retention.",
+      "corrected": "Actual controller selection; authorised determination of section6.1 DPIA duties alongside section7.1 legal/significant effects and section10.1 AI-used-for-ADMP applicability; section10.2 best-practices caveat; provider settings/log access; skilled reviewers; staffed correction channel; justified data retention.",
+      "reason": "Make the unresolved legal relationship an explicit design dependency.",
+      "sourceCheckId": "SC-01"
+    },
+    {
+      "id": "ERR-SC01-score-rationale",
+      "scope": "research_notes/Safeguard proposal stress tests/sandbox-deployment.json",
+      "routeId": "malaysia-commercial-ai-dpia",
+      "sourceId": "sandbox-my-admp",
+      "field": "/routes/3/scoreImplications/0/reason",
+      "original": "ADMP is an explicit qualitative trigger but no chosen controller has implemented the proposed gate.",
+      "corrected": "The broad section6.1 trigger is qualified by section7.1 legal/significant-effects applicability and section10.1 AI-used-for-ADMP scope; their relationship needs authorised determination. No chosen controller has implemented the proposed gate. No numerical score update follows.",
+      "reason": "Avoid inheriting overbroad applicability through a derived rationale; do not change model scores.",
+      "sourceCheckId": "SC-01"
+    },
+    {
+      "id": "ERR-SC01-source-locator",
+      "scope": "research_notes/Safeguard proposal stress tests/sandbox-deployment.json",
+      "sourceId": "sandbox-my-admp",
+      "field": "/sources/5/locator",
+      "original": "PDF pp.4,7–8,15; sections 1.1–1.4,2.1,6.1,10.1–10.2.6; media item 7194",
+      "corrected": "PDF pp.4,7–9,15; sections 1.1–1.4,2.1,6.1,7.1,10.1–10.2.6; media item 7194; source-check SC-01",
+      "reason": "Source metadata must expose the newly checked section7.1 passage.",
+      "sourceCheckId": "SC-01"
+    },
+    {
+      "id": "ERR-SC01-source-support",
+      "scope": "research_notes/Safeguard proposal stress tests/sandbox-deployment.json",
+      "sourceId": "sandbox-my-admp",
+      "field": "/sources/5/whatItSupports",
+      "original": "New primary guideline: qualitative assessment trigger, DPO role, contextual best-practice wording. PDF and text saved.",
+      "corrected": "Qualitative DPIA trigger in section6.1 with section7.1 legal/significant-effects applicability and section10.1 AI-used-for-ADMP scope; authorised determination needed to reconcile them. DPO role and section10.2 best-practices wording retained. PDF and text saved.",
+      "reason": "A normalized source summary should not omit applicability limits.",
+      "sourceCheckId": "SC-01"
+    },
+    {
+      "id": "ERR-SC02-publication",
+      "scope": "research_notes/Safeguard proposal stress tests/europe-finance.json",
+      "sourceId": "euro-lumi-terms",
+      "field": "/sources/1/published",
+      "original": "2026-02-10",
+      "corrected": null,
+      "reason": "The cover labels this last change. Neither it nor the March URL directory establishes a publication day; accessed remains2026-10-31.",
+      "sourceCheckId": "SC-02"
+    },
+    {
+      "id": "ERR-SC02-event-label",
+      "scope": "research_notes/Safeguard proposal stress tests/europe-finance.json",
+      "sourceId": "euro-lumi-terms",
+      "field": "/sources/1/eventDate",
+      "original": "2026-02-10",
+      "corrected": "2026-02-10 (last-change date, not publication)",
+      "reason": "Preserve the known day with its correct event type; no substantive LUMI assessment changes.",
+      "sourceCheckId": "SC-02"
+    }
+  ],
+  "unresolved": [
+    {
+      "sourceCheckId": "SC-16",
+      "sourceId": "euro-credit",
+      "field": "Exhibit10.10 section2.22(b) reference to section9.08(g)",
+      "status": "source_mismatch_confirmed_legal_effect_unresolved",
+      "text": "SC-16 confirms the section2.22(b)/9.08(g) mismatch in filed HTML (printed pp.82,134), removing extraction uncertainty only. Intended correction, any operative correcting amendment and legal effect remain unresolved. No replacement agreement text is authorised; do not silently substitute section9.08(f) or infer ineffective amendments or unrestricted safety-covenant authority."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "implementation",
+  "executor": {"provider": "openai", "model": "gpt-6-astra-ultrafast", "sameFamily": true},
+  "observedDate": "2026-10-31",
+  "checkpoint": "2027-06-21/2027-06-22",
+  "packetHashes": {
+    "data/route-placement-model.json": "b7c93011ec16f6ac6b30c7588ba1a0685c9052a46f1040ef043a93a896bc8ba1",
+    "data/routes-quantitative.json": "8461105a9aae97b1d2b875d0a346ffbeeed57581e9bf0998099d5756dfb8b865",
+    "data/coordinate-evidence.json": "ac289a7dfe25b5d31822087081624a03bca7ac514e5f9827da7ffb3432931db4",
+    "reports/Route coordinate evidence.md": "46ccfc2aa4dda738a88fa5c4376209ec2e0b953bababb0bd302dc80df0ef87a1",
+    "research_notes/Safeguard proposal stress tests/compute.md": "66ddf5e83300853a03282bffd1de672cfd8a1d5fd3d5f687632bd22b1f86c918",
+    "research_notes/Safeguard proposal stress tests/compute.json": "34ca14019885898a27ddc8dda0f0ba3e334afcc80bd55067fc2800313f3b45df",
+    "research_notes/Safeguard proposal stress tests/japan-asia.md": "5af39bd0a93ea72ecb9c3763058048b887cc7e6a9647f3e21256cca2fc98e509",
+    "research_notes/Safeguard proposal stress tests/japan-asia.json": "ec7b4dc46939fca07c38abb9f2be31dea8ce5c01334173c33d6f8bd3a1945395",
+    "research_notes/Safeguard proposal stress tests/europe-finance.md": "a4e4f5deb2e553a505b06720a5f3acff4def52870f4d32c7a3f1d810db72f9fb",
+    "research_notes/Safeguard proposal stress tests/europe-finance.json": "bf8fd9d46d00d13e8ff2fa65aae023908270d46275cff5cabc8e3851eb251d52",
+    "research_notes/Safeguard proposal stress tests/rights-enforcement.md": "77e0df372fa7fb8f585162a711dd1bebba622bad4e00f58686ad4186f4b1f9fc",
+    "research_notes/Safeguard proposal stress tests/rights-enforcement.json": "b2c53f892ef1c4c0caac044113a3cc02e64f41b644f484ee9ec54a4eecc4d8f3",
+    "research_notes/Safeguard proposal stress tests/sandbox-deployment.md": "bed85fad8582ddb4a72c9acd17ffa73323cb75867097a34774fd6a2c6c88ae13",
+    "research_notes/Safeguard proposal stress tests/sandbox-deployment.json": "cbb446c7a779477f8e84a4e1d3862789b963e9507eb48edc5c716029290503c2"
+  },
+  "recommendation": {
+    "routeIds": ["jp-procurement-safety-evidence"],
+    "decision": "Next validation test: authority/cost check and a version-change or withdrawal acceptance rehearsal for one consequential workflow.",
+    "decisionMaker": "Digital Agency responsible Gen-nai councillor or documented empowered delegate, with the contracting officer; incumbent identity and exact delegation not established.",
+    "instrument": "Lawfully still-open FY2027 tender/acceptance schedule paired with a platform release record; amendability must be confirmed.",
+    "rationale": "Documented production approval, purchased implementation work and prospective procurement timing provide a testable connection; no supplier-bound safety remedy or spare staff is inferred.",
+    "certainty": "Conditional analytical priority for information gain, not demonstrated superiority or institutional consent. Model agreement supplies no factual certainty."
+  },
+  "points": [
+    {"id":"implementation-1","claim":"Gen-nai specifies empowered prior approval, another-developer review and rollback/recovery; its high-severity vulnerability hold does not establish an independent external model-safety gate.","type":"fact","routeIds":["jp-procurement-safety-evidence"],"sourceIds":["asia-jp-standard"],"sourceLocators":["japan-asia.json sources[asia-jp-standard]; physical pp36-40, sections4-3/4-5","japan-asia-source-extracts/jp-standard.txt lines1099-1132,1206-1249, directly checked"]},
+    {"id":"implementation-2","claim":"KDDI's JPY499983000 and NTT Data's JPY390000000 awards identify rollout and verification work through March2027; these are not marginal safety costs, actual payments, completed delivery or a staffing roster.","type":"fact","routeIds":["jp-procurement-safety-evidence"],"sourceIds":["ap-s-jp-april","ap-s-jp-may","ap-s-final-jp-rollout","ap-s-jp-plan"],"sourceLocators":["coordinate-evidence.json route jp-procurement-safety-evidence facts ap-jp-final-award-delivery-scope,ap-jp-window","April sheet1 row108 columnI; May sheet1 row10 columnI; rollout p23; plan p2","Route coordinate evidence.md lines25-29"]},
+    {"id":"implementation-3","claim":"The consultation records downstream upstream-information/control objections and reasonable-scope official responses; important-system obligations were retained despite upstream-change objections. This is attributed evidence, not measured SME exclusion.","type":"fact","routeIds":["jp-procurement-safety-evidence"],"sourceIds":["asia-jp-comments"],"sourceLocators":["japan-asia.md lines14,21,29-31; japan-asia.json sources[asia-jp-comments]; physical pp38,46-47,69"]},
+    {"id":"implementation-4","claim":"DS-920 permits risk-specific procurement provisions and encourages startup access; independent/red-team testing examples are not a universal external certification mandate.","type":"fact","routeIds":["jp-procurement-safety-evidence"],"sourceIds":["asia-jp-guideline"],"sourceLocators":["japan-asia.md lines13,16; physical pp40-41 sections6.3.2-6.3.3"]},
+    {"id":"implementation-5","claim":"Singapore's three-month testing target is not a completion distribution or buyer veto; tester accreditation explicitly does not guarantee independence or complete safety.","type":"fact","routeIds":["sg-purchaser-sandbox-release-gate"],"sourceIds":["apac-sg-sandbox","asia-sg-accreditation"],"sourceLocators":["routes-quantitative.json route sg-purchaser-sandbox-release-gate sources[apac-sg-sandbox], journey/eligibility","japan-asia.json sources[asia-sg-accreditation], introductory disclaimer"]},
+    {"id":"implementation-6","claim":"CSC's common LUMI terms may permit lower-duplication implementation, but particular delegation and evaluator access must be established; existing cut-off rules are not exercised safety sanctions.","type":"inference","routeIds":["lumi-belgium-safety-appendix","lumi-national-evidence-protocol"],"sourceIds":["euro-lumi-terms","euro-belgium-access"],"sourceLocators":["europe-finance.md lines17-27,35; LUMI terms preamble,sections6,11-12; Belgian preparatory/monthly review paragraphs"]},
+    {"id":"implementation-7","claim":"ANPD reported persistent Grok failures after claimed safeguards and demanded verifiable correction evidence; this is neither current case status nor verified successful correction, nor an outcome for the separate football cohort.","type":"fact","routeIds":["brazil-anpd-ai-inspection-evidence"],"sourceIds":["rights-br-grok"],"sourceLocators":["rights-enforcement.md lines15,50,83-89; primary account opening and ANPD sections,11February2026"]},
+    {"id":"implementation-8","claim":"Prefer a reversible discriminating implementation test while valuing meaningful exposure, service continuity and supplier access; administrative convenience alone is insufficient.","type":"value_judgment","routeIds":["jp-procurement-safety-evidence","sg-purchaser-sandbox-release-gate"],"sourceIds":[],"sourceLocators":["This viewpoint's explicit value choice, not a sourced stakeholder consensus"]},
+    {"id":"implementation-9","claim":"Test one workflow with two eligible supplier paths, actual staff/cost commitments and a seeded version-change failure requiring hold, correction, fresh retest and usable fallback.","type":"proposal","routeIds":["jp-procurement-safety-evidence"],"sourceIds":["asia-jp-standard","asia-jp-comments","asia-jp-guideline"],"sourceLocators":["Design anchors: Gen-nai sections4-3/4-5; consultation pp38,46-47,69; DS-920 pp40-41","Detailed proposed protocol in companion lens-implementation.md"]},
+    {"id":"implementation-10","claim":"A proportionate costed acceptance pack and a common receipt with local decisions could reduce duplication; test savings and exclusion rather than assuming them.","type":"proposal","routeIds":["jp-procurement-safety-evidence","lumi-belgium-safety-appendix","lumi-national-evidence-protocol"],"sourceIds":["asia-jp-comments","asia-jp-guideline","euro-lumi-terms"],"sourceLocators":["consultation pp38,46-47,69; DS-920 pp40-41; LUMI preamble,sections6,11-12"]}
+  ],
+  "candidates": [
+    {"routeIds":["jp-procurement-safety-evidence"],"rationale":"First: concrete release office and prospective purchasing sequence; test missing exact remedy, actual staffing/cost and upstream fallback before priority survives."},
+    {"routeIds":["sg-purchaser-sandbox-release-gate"],"rationale":"Second: existing execution programme; becomes preferred on affirmative buyer delegation, quote and consequential workflow if Japan's test fails. Admission and accreditation do not create release authority."},
+    {"routeIds":["lumi-belgium-safety-appendix","lumi-national-evidence-protocol"],"rationale":"Matched national/common-service comparison: same safeguard may be cheaper through one competent shared host. Require delegation and rights; Belgian scope nests inside the wider envelope and must not be added."}
+  ],
+  "assumptions": [
+    "A meaningful workflow lies within the documented release office's authority; the incumbent and exact delegation remain unverified.",
+    "Prospective contract terms are still changeable; published schedule is a plan, not proof.",
+    "Configuration identity, sufficient evidence rights, a non-developing retester and usable fallback can be secured.",
+    "Reversibility, service continuity and fair supplier access are explicit values; they cannot excuse negligible consequential coverage."
+  ],
+  "objections": [
+    {"strength":"strongest factual","claim":"Platform vulnerability controls and procurement awards do not establish a signed supplier-bound model-safety remedy. Downstream suppliers may lack upstream evidence or retirement control."},
+    {"strength":"self-challenge","claim":"A tractable drafting pilot may cover too little serious activity. Require an actual sensitive-data/tool-action inventory and transaction denominator; reconsider rights-enforcement evidence if only demonstration tasks qualify."},
+    {"strength":"competition","claim":"Fixed external certification or blanket upstream disclosure can favour incumbents. The packet records mechanisms and stakeholder objections, not population-wide exclusion rates."}
+  ],
+  "unknowns": [
+    "Incumbent decision-maker, exact delegation, tender amendability, signed acceptance/cure terms and actual exercise of the proposed model-safety hold.",
+    "Named available staff, loaded rates, review queue, cloud/inference charges, supplier preparation burden, recurring retest cost and funded envelope.",
+    "Eligible smaller supplier participation and reasons for withdrawal; substantive evidence access and confidential handling rights.",
+    "Normal gated transaction volume, consequential actions, manual fallback quality, substitution/bypass and actual harm outcomes.",
+    "LUMI annex delegation and evaluator permissions; Singapore purchaser identity, quote and admission authority; cross-border evidence acceptance."
+  ],
+  "validationTest": {
+    "name":"Two-supplier, one-workflow version-change acceptance rehearsal",
+    "status":"Proposal only; no contact, consent or execution claimed",
+    "authorityDeadline":"2026-12-15",
+    "drillDeadline":"2027-03-31",
+    "reportDeadline":"2027-06-01",
+    "preconditions":["Actual approver and contracting officer; delegation and changeable lawful instrument","One consequential workflow; larger and smaller capable supplier paths within procurement eligibility","Named-person availability and itemised quote; buyer-funded maximum cost and staff-days fixed before results","Approved synthetic-data staging, disabled external actions, scoped evidence access and non-developing retester"],
+    "staffCost":"Record purchaser/contract review, workflow owner, integration, independent retest, privacy and fallback functions; functions are not assumed hires. Measure hours times loaded rates plus cloud and supplier costs, queue time and recurring update burden against ordinary acceptance. No defensible numeric budget or available staffing is in the packet.",
+    "method":"Randomised clean tasks, held-out leakage/action failures and seeded material version change or retirement in a staging copy exercising the actual release pipeline permission boundary. Record failed approval, technical hold, useful previous/manual fallback, correction and fresh independently scored retest.",
+    "proposedThresholds":{"criticalFailures":"Any seeded critical disclosure or unauthorised action blocks that build; no release while unresolved","utility":"At least90% of baseline successful clean-task completion and no loss of essential service; owner must validate suitability before execution","resources":"Within predeclared funded cost and available staff-day caps; both supplier paths can meet the same outcome standard"},
+    "metrics":["Detected/missed critical defects and fresh retest results","False holds, task completion, fallback delay and failures","Actual staff-days, loaded cost, queue and repeat-change cost","Supplier evidence gaps, preparation burden, withdrawals and eligibility constraints","Joined workflow/version/permission inventory, normal transaction denominator and excluded/bypassed activity"],
+    "falsifiers":["No authority or amendability by15December2026","Quote cannot be funded or staff cannot be assigned","Seeded failing version escapes hold or fresh retest fails","Fallback destroys essential service or utility misses the predeclared floor","Unnecessary fixed evidence burdens exclude a comparable capable smaller supplier","Only negligible-consequence demonstration activity is governable"],
+    "reversal":"On failure, prefer the equivalent Singapore purchaser test only with affirmative delegation, quote and consequential workflow. LUMI requires affirmative delegation/workload/cost evidence. Otherwise record no validated ready route.",
+    "scopeLimit":"A staging pass is not measured real-world harm reduction, whole-model safety, international consent or proof of production coverage."
+  },
+  "ideas": [
+    {"name":"Proportionate acceptance pack and cost ledger","design":"Buyer-funded reusable baseline harness where lawful; equivalent scoped evidence and separately priced application retests; necessary confidential examination without blanket training-data escrow. Record conflicts, supplier effort and abandoned bids; test savings and unchanged critical outcomes."},
+    {"name":"Common receipt, local decision","design":"Only after a working local hold, reuse matching version/tool/permission fields in the LUMI national/common pair or willing purchasers; retain local rights/acceptance decisions, measure duplicate hours and additional governed work, withdraw portability on unexplained disagreement."}
+  ],
+  "dissent": "Dissent I would defend: a certificate, procurement completion or staging demonstration is not a delivered safeguard. Demand an exercised authorised restriction, correction, fresh retest and useful service at known cost. Do not require inaccessible upstream information from small suppliers while rewarding incumbent paperwork; do not perpetuate low-impact pilots when an evidenced harmful operation offers the more consequential test."
+}
