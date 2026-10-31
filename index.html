@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Middle Powers Leverage Map</title>
+<meta name="description" content="Pick a group of middle powers, see what share of the AI supply chain they hold together, and which safety conditions that share could back.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Middle Powers Leverage Map</h1>
+    <p class="lede">Who holds the AI supply chain, from mines to models, and which safety conditions a group of middle powers could back with what it holds together.</p>
+    <label class="mix">
+      <span class="mix-ends"><span>Software only</span><b id="mix-val"></b><span>Chips, power and robots</span></span>
+      <input id="mix" type="range" min="0" max="1" step="0.01">
+      <span class="mix-help">How much of AI progress needs new physical things. Each stage counts more or less depending on this mix (<a href="https://gszep.com/en/blog/speed-limits-not-walls/" target="_blank" rel="noopener">model by gszep</a>).</span>
+    </label>
+    <p id="mix-read" class="read" aria-live="polite"></p>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-view="stack">Stack map</button>
+      <button role="tab" data-view="coalition">Coalition builder</button>
+      <button role="tab" data-view="about">Sources &amp; limits</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="view-stack" class="view" hidden>
+    <p class="hint">Each row is a stage of the supply chain. Shading shows a country's share, scaled by how much the stage matters at the mix above. ● marks a country that has already used this stage as leverage. Select a row for its source note.</p>
+    <div class="scroll"><table id="stack" class="grid"></table></div>
+    <aside id="stage-detail" class="detail" hidden></aside>
+  </section>
+
+  <section id="view-coalition" class="view" hidden>
+    <div class="pick">
+      <div class="presets" id="presets"></div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="cols">
+      <div>
+        <h2>What the bloc holds</h2>
+        <p class="hint">Combined share of each stage. Stages where the bloc holds half or more are its chokepoints; years show how long a determined rival might need to replace them (team estimate).</p>
+        <div id="bars"></div>
+      </div>
+      <div>
+        <h2>Safety conditions it could back</h2>
+        <p class="hint">The six conditions from <a href="https://gszep.com/en/blog/six-safety-conditions-for-upcoming-laws/" target="_blank" rel="noopener">gszep</a>. A label shows how strong a supply-chain basis the bloc has, <b>not</b> whether it can enforce the condition. Dates are when members' laws are open to change.</p>
+        <div id="cards"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-about" class="view prose" hidden>
+    <h2>What this does</h2>
+    <p>It asks one question: <i>if this group of countries acted together, how much of the AI supply chain would it hold, and which safety conditions could that holding back?</i></p>
+    <h2>Sources</h2>
+    <ul id="sources"></ul>
+    <h2>What this does not establish</h2>
+    <ul>
+      <li><b>Shares are rough.</b> Most rows are the source author's own averages over several products; the grid-equipment row is the least certain. Each cell's note says how it was made.</li>
+      <li><b>Share is not power.</b> A share only becomes leverage if members act together, the input is hard to replace, a body has the legal authority to attach a condition, and members accept the cost. None of that is modelled.</li>
+      <li><b>The labels are a scenario.</b> "Strong / some / weak supply-chain basis" uses thresholds we chose (50% and 25% of the strongest relevant stage). They are shown so readers can disagree.</li>
+      <li><b>Replacement times are our guesses.</b> They are not from the source and need checking.</li>
+      <li><b>Country groups are coarse.</b> Singapore, India, France and others sit in "Others"; the EU's windows are shown under Germany and the Netherlands.</li>
+      <li><b>Politics is missing.</b> Coalition incentives, retaliation (e.g., China on gallium) and US pressure on allies are not modelled.</li>
+    </ul>
+    <h2>Use of AI</h2>
+    <p>Built with help from Claude (Anthropic). Data values are copied from the cited sources; additions are marked in the data files.</p>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
