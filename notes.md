@@ -67,3 +67,14 @@ Source: organizer message pasted by Grisha on 31 October 2026. The year below fo
   - The dependence/"what if X withdraws" view and the timeline view.
   - The finance-rights layer.
   - A public link: the repo is private.
+
+## Oct 31: dependence view added
+- **New "Dependence" tab:** pick a supplier (e.g., China or the US) to see:
+  - its share of each stage, i.e. what's at risk if it withdraws or coerces;
+  - how much the bloc already makes itself;
+  - years to replace;
+  - "who needs whom more": China could withhold 18% of the weighted chain, while the chip trio (NL+JP+KR) could withhold 26%.
+- **Concentration table:** HHI per stage. Stages are marked fragile when the top supplier holds more than 60%: AI chip design (US), HBM (Korea), leading-edge chips (Taiwan), installed compute (US) and mineral refining (China).
+- **Honest limits:**
+  - World shares only, with no bilateral trade flows, so this shows exposure, not loss.
+  - HHI is a lower bound, because "Others" is treated as many small suppliers.
