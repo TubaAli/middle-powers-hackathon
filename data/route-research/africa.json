@@ -1,0 +1,210 @@
+{
+  "routes": [
+    {
+      "id": "south-africa-popia-ai-linkage-review",
+      "title": "Test AI data-linkage safeguards through POPIA prior authorisation",
+      "shortLabel": "South Africa linkage review",
+      "coordination": "national",
+      "countries": ["South Africa"],
+      "region": "Africa",
+      "mechanism": "Regulation",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "Information Regulator (South Africa), assessing a responsible party's qualifying application.",
+      "obligor": "A responsible party proposing AI-assisted linkage of unique identifiers for a different purpose with information processed by another responsible party; the actual applicant remains unselected.",
+      "instrument": "POPIA sections 57(1)(a) and 58, implemented through the Information Regulator's revised January 2024 Guidance Note and prior-authorisation application, Parts C and D. Both the changed-purpose and cross-responsible-party linkage conditions must be tested; applicable codes and exemptions matter.",
+      "safeguard": "Proposed evidence annex for a qualifying AI linkage project: test erroneous identity matches and unauthorised disclosure, document data provenance, access restrictions and correction pathways, and retain a model/version-specific mitigation record. This operationalises personal-information safeguards; it is not an existing general AI evaluation mandate.",
+      "verification": "Regulator reviews the application and supporting evidence. Proposed pilot: reproduce linkage-error and access-control tests against a frozen test set, record deficiencies and verify corrections before the applicant starts the qualifying processing. By 21–22 June 2027, seek a redacted decision, test record and evidence of changed processing; none has been obtained.",
+      "remedy": "The guidance describes a statutory processing standstill during the applicable review and an unlawful-processing finding treated as an enforcement notice. An AI-specific test threshold or blanket model-release veto is not established. Decisions can be reviewed in the High Court.",
+      "window": "Standing application-triggered route, available for investigation in late 2026–2027; no dated AI call or named pending application was found. The January 2024 guidance describes a four-week initial decision on detailed investigation and a detailed-investigation period not exceeding thirteen weeks. Proposed selection by December 2026 would leave time for a review and retest before 21–22 June 2027; these selection and validation dates are project targets, not official deadlines.",
+      "evidenceSummary": "ZA-1 supplies the qualifying processing category, application evidence fields and review consequences; ZA-2 confirms the regulator currently publishes that application route. The evidence establishes a narrow personal-information gate, not authority over every AI deployment.",
+      "gap": "No named qualifying late-2026 applicant, applicable sector-code determination, accepted AI annex, test threshold, consent or eligible-project denominator was located.",
+      "nextQuestion": "Which proposed AI linkage project actually satisfies section 57(1)(a), and will its responsible party and the regulator accept a testable evidence annex within the existing review?",
+      "incentives": ["Proposed: an applicant can reduce linkage errors and avoid rework during regulatory review.", "Proposed: the regulator receives reproducible evidence rather than general assurances."],
+      "constraints": ["An AI system alone does not trigger prior authorisation.", "An applicable code, exemption or different processing facts may change the route.", "Access to another responsible party's data and vendor evidence may require additional agreements.", "Privacy compliance is not demonstrated reduction in frontier-model systemic risk."],
+      "sources": [
+        {"id": "ZA-1", "title": "Information Regulator: Guidance Note on Application for Prior Authorisation (revised January 2024)", "url": "https://inforegulator.org.za/wp-content/uploads/2020/07/Revised-Guidance-Note-on-applications-for-Prior-Authorisation-adopted-by-Members-30-Jan14.pdf", "locator": "pp.5–7 qualifying processing; pp.13–16 application evidence; pp.17–19 timelines, enforcement and review. Cover gives January 2024, no exact publication day.", "claim": "Qualifying changed-purpose identifier linkage requires prior-authorisation handling; the form requests compliance and risk evidence, and the guidance describes a processing standstill, review periods and enforcement consequences.", "observed": "2026-10-31", "published": null, "access": "primary-read"},
+        {"id": "ZA-2", "title": "Information Regulator: Prior Authorisation", "url": "https://inforegulator.org.za/prior-authorisation/", "locator": "Introductory paragraph and links to revised guidance and application form; live page, publication date unstated.", "claim": "The regulator publishes the revised guidance and application route for responsible parties processing or intending to process information subject to prior authorisation.", "observed": "2026-10-31", "published": null, "access": "primary-read"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["Review AI data linkage", "Use an existing prior-authorisation process to test a qualifying project's privacy safeguards.", "Only specific processing qualifies; no applicant or AI test annex is agreed."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "Minimum institutional architecture for one qualifying application and a proposed evidence pilot; this is not a complete approval denominator.",
+          "actors": [
+            {"id": "za-information-regulator", "name": "Information Regulator (South Africa)", "role": "Statutory review and enforcement decision; must accept the proposed evidence approach for the pilot.", "consent": "unknown", "alignment": "unknown", "sourceIds": ["ZA-1", "ZA-2"], "note": "Existing application service is not approval of this proposal. No dated political support for this exact annex was located."},
+            {"id": "za-responsible-party", "name": "Qualifying responsible party (not yet selected)", "role": "Application, evidence access and implementation; can decline the voluntary pilot but cannot waive statutory duties.", "consent": "unknown", "alignment": "unknown", "sourceIds": ["ZA-1"], "note": "Institutional role is evidenced; its identity, other data holders and necessary supplier agreements remain unknown. Its information officer is an internal role, not another institution."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": 1,
+          "sourceIds": ["ZA-1", "ZA-2"],
+          "limitations": "One minimum applicant-to-regulator interface; not an empirical approval probability or a final count. Other responsible parties/vendors and potential litigation are unresolved. No route-level coverage denominator, agreements or political alignment were verified."
+        }
+      }
+    },
+    {
+      "id": "kenya-biometric-dpia-evidence-gate",
+      "title": "Investigate a Kenyan biometric-AI impact-assessment route",
+      "shortLabel": "Kenya DPIA — source gap",
+      "coordination": "national",
+      "countries": ["Kenya"],
+      "region": "Africa",
+      "mechanism": "Evaluation",
+      "status": "Proposed",
+      "confidence": "Low",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "Office of the Data Protection Commissioner (ODPC), with a selected biometric-system controller.",
+      "obligor": "Proposed target: a controller or processor planning biometric personal-data processing. Applicable statutory scope is unverified and no deployment partner has been selected.",
+      "instrument": "Provisional retrieval target: Data Protection Act 2019 section 31 and ODPC biometric-data guidance. The primary legal texts could not be read in this pass; authority, current scope and submission procedure require verification before this candidate can be treated as actionable.",
+      "safeguard": "Proposed DPIA annex for one biometric-AI deployment: record model version, false-match and false-non-match tests, spoof resistance, information-security checks, necessity of biometric collection and a usable reconsideration path. The reproducible test protocol and acceptance criteria are new proposals, not requirements already adopted by ODPC.",
+      "verification": "Submit the DPIA through the applicable process; proposed pilot reviewers inspect reproducible results and verify correction of material defects. Freeze the eligible deployment inventory before measurement. By 21–22 June 2027, seek a redacted assessment, recorded controller decision and retest of failures; do not substitute a filed DPIA for evidence that safeguards worked.",
+      "remedy": "Unverified: retrieve the Act's enforcement/penalty provisions and procedural safeguards before naming a statutory remedy. An unsatisfactory voluntary AI test does not itself establish a statutory violation or automatic deployment ban.",
+      "window": "Unknown: no open consultation or dated 2027 deployment was verified. A pre-processing DPIA trigger is a research lead whose current legal timing must be read and confirmed. Late-2026 partner selection and validation by 21–22 June 2027 are proposed project targets only.",
+      "evidenceSummary": "Partial country finding only. KE-1 and KE-2 are unread primary-source retrieval targets, not verified legal evidence. ODPC's homepage returned a maintenance notice. This candidate preserves a concrete investigation target but must not be presented as an evidenced implementation route.",
+      "gap": "Primary legal/guidance texts inaccessible in this pass; no named 2027 biometric procurement/deployment, accepted test protocol, project denominator or verified institutional consent.",
+      "nextQuestion": "Which controller has a genuinely planned 2027 biometric-AI deployment with enough lead time for section 31 submission and will provide test evidence plus a decision-and-remediation record?",
+      "incentives": ["Proposed: controllers can find rejection and identification errors before service rollout.", "Proposed: ODPC obtains auditable evidence tied to an existing obligation."],
+      "constraints": ["Privacy-law scope and exceptions must be checked for the chosen deployment.", "A DPIA submission is not automatic regulatory approval.", "Representative biometric testing and safe access to sensitive data may be difficult.", "No quantified connection to catastrophic AI risk has been demonstrated."],
+      "sources": [
+        {"id": "KE-1", "title": "Kenya Law: Data Protection Act (unread retrieval target)", "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng%402022-12-31/source.pdf", "locator": "Intended lookup: section 31 and enforcement provisions. Direct retrieval returned content that PDFKit could not read as a PDF; HTML yielded no useful text.", "claim": "No substantive legal claim verified from this inaccessible target. Retrieve authoritative current text before using the candidate.", "observed": "2026-10-31", "published": null, "access": "partial"},
+        {"id": "KE-2", "title": "ODPC: Biometric Data guidance (unread retrieval target)", "url": "https://www.odpc.go.ke/wp-content/uploads/2025/11/ODPC-%E2%80%93-Guidance-Note-on-Biometric-Data.pdf", "locator": "Direct PDF retrieval failed; ODPC homepage returned maintenance. Publication date and substantive provisions unverified.", "claim": "No legal or implementation claim verified. Intended target for checking biometric DPIA scope and current procedure.", "observed": "2026-10-31", "published": null, "access": "partial"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["Investigate biometric AI assessment", "Check whether a pre-processing DPIA can host reproducible biometric tests.", "Partial finding: primary texts and the 2027 opportunity remain unverified."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "Provisional controller-to-ODPC pilot architecture only; legal requirements not verified because primary texts were inaccessible.",
+          "actors": [
+            {"id": "ke-odpc", "name": "Office of the Data Protection Commissioner", "role": "Proposed regulatory counterpart; exact legal role requires source recovery.", "consent": "unknown", "alignment": "unknown", "sourceIds": ["KE-1", "KE-2"], "note": "Sources partial; no approval, legal authority for this protocol or political alignment verified."},
+            {"id": "ke-biometric-controller", "name": "Biometric-system controller (not yet selected)", "role": "Proposed evidence and implementation owner; legal duties require source recovery.", "consent": "unknown", "alignment": "unknown", "sourceIds": ["KE-1", "KE-2"], "note": "Institution and supplier unknown; statutory role not verified in this pass. Do not count internal DPO as another institution."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": null,
+          "sourceIds": ["KE-1", "KE-2"],
+          "limitations": "No evidenced connected institutional path yet: handoff bound is null. Recover the primary texts, identify the actual controller and resolve vendor evidence access before counting necessary institutions. No population or national biometric coverage estimate is used."
+        }
+      }
+    },
+    {
+      "id": "nigeria-ai-compliance-audit-annex",
+      "title": "Pilot AI privacy evidence in Nigeria's 2027 compliance audit returns",
+      "shortLabel": "Nigeria AI audit annex",
+      "coordination": "national",
+      "countries": ["Nigeria"],
+      "region": "Africa",
+      "mechanism": "Evaluation",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "Nigeria Data Protection Commission (NDPC), with a licensed Data Protection Compliance Organisation (DPCO) and an in-scope controller.",
+      "obligor": "A controller actually required to file Compliance Audit Returns under GAID 2025; not every registered controller and not every AI provider.",
+      "instrument": "Annual Compliance Audit Returns under the Nigeria Data Protection Act General Application and Implementation Directive (GAID) 2025, articles 10.7–10.8 as described in NDPC's current FAQ; filed through a licensed DPCO. Full directive text was not retrieved in this pass.",
+      "safeguard": "Proposed voluntary pilot annex inventories AI systems processing personal data, attaches model/version-specific data-leakage and access-control tests, records high-risk-processing assessments where applicable and tracks remediation. Ask NDPC whether the annex can inform compliance verification before considering a mandatory change. No new general AI mandate is claimed.",
+      "verification": "A licensed DPCO reviews underlying evidence rather than accepting a generic AI policy. Proposed pilot: compare the controller's independently checked AI inventory with assessed systems, retain findings and audit-trail timestamps, and retest defects after the filing. Seek a redacted verified annex and remediation record by 21–22 June 2027; no pilot filing or acceptance is observed.",
+      "remedy": "NDPC's FAQ describes remedies and sanctions for Data Protection Act violations, including orders to remedy violations. Failure of a proposed voluntary AI test does not itself create a statutory breach; first identify the relevant privacy obligation. Audit acceptance is not a model-release licence.",
+      "window": "NDPC's FAQ says annual returns are due before 31 March each year, citing GAID 2025 articles 10.7–10.8. Applying that recurring rule gives a next-cycle checkpoint before 31 March 2027, subject to confirming any new circular or extension; a separate 2027 notice was not located. Proposed late-2026 partner selection and January–March evidence collection would allow April–June remediation before 21–22 June 2027.",
+      "evidenceSummary": "NG-1 directly documents the recurring filing date, licensed-DPCO channel and exceptions. NG-2 is a dated 22 October 2026 NDPC account advocating algorithmic transparency and privacy-by-design for frontier AI. Its advocacy is adjacent institutional context, not approval of this audit annex or evidence that a sandbox is open.",
+      "gap": "Full GAID text, 2027-specific circular, a selected licensed DPCO/controller, AI inventory and regulator acceptance are missing. No denominator of obligated AI-using controllers is established.",
+      "nextQuestion": "Will NDPC confirm the 2027 filing scope and accept a licensed-DPCO pilot annex that verifies actual AI privacy controls and records their remediation?",
+      "incentives": ["Proposed: controllers can reuse an existing compliance workflow rather than establish a separate AI filing.", "Proposed: DPCOs gain a clearer method for checking AI-related evidence.", "Proposed: NDPC can distinguish documented controls from general statements of compliance."],
+      "constraints": ["Filing exemptions and the relevant controller category must be confirmed.", "The FAQ is authoritative operational guidance but is not a substitute for inspecting the full directive before implementation.", "Audit quality and DPCO independence are unmeasured.", "A privacy audit is not a general dangerous-capability evaluation."],
+      "sources": [
+        {"id": "NG-1", "title": "NDPC: Frequently Asked Questions", "url": "https://ftp.ndpc.gov.ng/faqs/", "locator": "Questions on annual CAR deadline, fewer than 200 data subjects, how to file CAR, non-compliance consequences, and licensed-DPCO verification. Undated live FAQ.", "claim": "The regulator says annual audit returns are expected before 31 March, cites GAID 2025 articles 10.7–10.8, specifies filing through licensed DPCOs, and describes exceptions and legal remedies.", "observed": "2026-10-31", "published": null, "access": "primary-read"},
+        {"id": "NG-2", "title": "NDPC: Governing Frontier AI — Algorithmic Transparency and Privacy-by-Design at NITHUB Consultation", "url": "https://ndpc.gov.ng/governing-frontier-ai-ndpc-mandates-algorithmic-transparency-and-privacy-by-design-at-nithub-consultation/", "locator": "Article dated 22 October 2026, 4:58 pm; keynote paragraphs. Event day not separately stated.", "claim": "NDPC reports its representative advocated data minimisation, algorithmic transparency and ISO/IEC 42001 integration in an upcoming AI sandbox; it does not announce adoption of this audit annex or an open sandbox intake.", "observed": "2026-10-31", "published": "2026-10-22", "access": "primary-read"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["Use the next audit cycle", "Test an AI privacy-evidence annex before the recurring March 2027 filing checkpoint.", "Filing scope and annex acceptance need confirmation; audit compliance is not model safety."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "Pilot through the existing controller-to-licensed-DPCO-to-NDPC audit-return chain; optional future mandatory adoption is outside this minimum architecture.",
+          "actors": [
+            {"id": "ng-ndpc", "name": "Nigeria Data Protection Commission", "role": "Regulatory interpretation and acceptance of pilot evidence within the filing process; enforcement decision.", "consent": "unknown", "alignment": "unknown", "sourceIds": ["NG-1", "NG-2"], "note": "22 October 2026 advocacy supports adjacent transparency/privacy objectives only. No exact-scope endorsement of this annex or verified political-leader alignment."},
+            {"id": "ng-licensed-dpco", "name": "Licensed Data Protection Compliance Organisation (not yet selected)", "role": "Independent institutional filing/verification intermediary required by the published CAR channel.", "consent": "unknown", "alignment": "unknown", "sourceIds": ["NG-1"], "note": "Do not conflate this external licensed organisation with an internal data protection officer. No DPCO has agreed to the pilot."},
+            {"id": "ng-ai-controller", "name": "CAR-obligated AI-using controller (not yet selected)", "role": "Produces inventory and evidence, commissions verification and implements fixes; can decline the voluntary annex.", "consent": "unknown", "alignment": "unknown", "sourceIds": ["NG-1"], "note": "Filing eligibility and actual AI use must be established; no specific controller consent or supplier access agreement."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": 2,
+          "sourceIds": ["NG-1", "NG-2"],
+          "limitations": "Two interfaces follow the three-institution filing chain, not three verified approvals. Scope exceptions, vendor evidence, additional decision authorities and a complete approval set remain unknown. Registered-controller totals would not measure AI annex coverage."
+        }
+      }
+    },
+    {
+      "id": "rwanda-ai-dpia-security-retest",
+      "title": "Use Rwanda's DPIA and security checks to retest high-risk AI processing",
+      "shortLabel": "Rwanda DPIA retest",
+      "coordination": "national",
+      "countries": ["Rwanda"],
+      "region": "Africa",
+      "mechanism": "Regulation",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "National Cyber Security Authority (NCSA), acting through its Data Protection Office (DPO), with an in-scope controller/processor.",
+      "obligor": "Controller or processor undertaking high-risk personal-data processing, including systematic automated evaluation/profiling within article 38; a pilot institution is not selected.",
+      "instrument": "Law No. 058/2021 of 13 October 2021 relating to protection of personal data and privacy: article 38 impact assessment; article 47 security safeguards, verification and inspection; articles 27–28 supervisory functions and powers.",
+      "safeguard": "Proposed evidence-and-retest protocol for one high-risk AI personal-data workflow: attach leakage, unauthorised access and profiling-error tests to its impact assessment; assign remediation owners; rerun security tests after mitigation and material changes. Existing duties are privacy-specific; the AI test suite, thresholds and project decision rule are proposed.",
+      "verification": "Article 47 supplies an existing requirement to verify security safeguards and update them for new risks, with supervisory inspection/assessment in the stated circumstances. Proposed pilot evidence includes versioned test inputs, a closed/open-finding register and a redacted supervisory response. Target one documented retest before 21–22 June 2027; no inspection or pilot is booked.",
+      "remedy": "Article 28 permits administrative sanctions in accordance with the law. The particular breach, sanction provision and procedure must be established for the selected case; a blanket power to stop any AI system is not inferred. Voluntary pilot deployment holds would need the controller's explicit agreement.",
+      "window": "Standing high-risk-processing and security-review duties, not an identified 2026–2027 consultation or grant call. A new AI workflow or a material security risk could provide a late-2026/2027 implementation opportunity, but no named project or official future date was verified. Proposed December 2026 selection, Q1 2027 baseline assessment and Q2 retest lead to the 21–22 June 2027 checkpoint only if a partner agrees.",
+      "evidenceSummary": "RW-1 documents DPIAs for high-risk processing and security verification/inspection; RW-2 documents supervisory powers; RW-3 identifies NCSA as the authority and DPO as its office. No general AI strategy is used as a source of legal power.",
+      "gap": "No named workflow, supervisory pilot acceptance, actual review deadline, applicable sanction analysis, complete vendor chain or matched coverage denominator.",
+      "nextQuestion": "Which institution will expose a high-risk AI workflow and remediation evidence to a joint article-38/article-47 pilot, and which legal deficiencies would the supervisor act on?",
+      "incentives": ["Proposed: controllers can combine impact-assessment and security-control evidence.", "Proposed: the supervisory authority gets a practical test of recurring safeguards rather than a one-off policy document."],
+      "constraints": ["NCSA and its DPO are one institution, not two independent approvals.", "Scope is personal-data protection, not universal advanced-AI regulation.", "A legal DPIA duty does not establish automatic prior authorisation of every deployment.", "Inspection capacity, safe evidence access and supplier cooperation are unverified."],
+      "sources": [
+        {"id": "RW-1", "title": "Rwanda DPO: Obligations of the data controller and the data processor", "url": "https://dpo.gov.rw/dpp-law/obligations-of-the-data-controller-and-the-data-processor", "locator": "Articles 38, 41 and 47; official online law text; webpage publication date unstated.", "claim": "High-risk processing triggers an impact assessment, including specified automated evaluation/profiling; security duties include verifying safeguards, updating them and supervisory inspection in the stated circumstances.", "observed": "2026-10-31", "published": null, "access": "primary-read"},
+        {"id": "RW-2", "title": "Rwanda DPO: Tasks and powers of the supervisory authority", "url": "https://dpo.gov.rw/dpp-law/tasks-and-powers-of-the-supervisory-authority-in-matters-relating-to-the-protection-of-personal-data-and-privacy", "locator": "Articles 27 and 28, particularly opinions/investigation, implementing regulations and administrative sanctions; webpage date unstated.", "claim": "The authority oversees implementation, handles legitimate opinion requests and investigations, and may impose administrative sanctions in accordance with the law.", "observed": "2026-10-31", "published": null, "access": "primary-read"},
+        {"id": "RW-3", "title": "Rwanda Data Protection Office: Who we are", "url": "https://dpo.gov.rw/about-us/who-we-are", "locator": "Institutional description: law of 13 October 2021 gazetted 15 October 2021; DPO launched 31 March 2022. Page publication date unstated.", "claim": "Law No. 058/2021 designates NCSA as supervisory authority; NCSA launched the Data Protection Office to carry out personal-data protection activities.", "observed": "2026-10-31", "published": null, "access": "primary-read"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["Retest high-risk AI processing", "Connect an existing impact assessment to repeatable privacy-security checks.", "A pilot partner and actual 2027 review window have not been secured."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "One in-scope controller/processor and the statutory supervisory authority for an evidence-and-retest pilot, not a complete national AI approval set.",
+          "actors": [
+            {"id": "rw-ncsa-dpo", "name": "National Cyber Security Authority, through its Data Protection Office", "role": "Supervisory interpretation, inspection/assessment and enforcement within the law; proposed pilot counterpart.", "consent": "unknown", "alignment": "unknown", "sourceIds": ["RW-1", "RW-2", "RW-3"], "note": "NCSA and DPO counted once. Neither an institutional agreement nor a dated political endorsement of this protocol was located."},
+            {"id": "rw-ai-controller", "name": "High-risk AI-processing institution (not yet selected)", "role": "Controls workflow, assessment evidence and remediation; approves voluntary test access and any agreed deployment hold.", "consent": "unknown", "alignment": "unknown", "sourceIds": ["RW-1"], "note": "Separate outsourced processors may add necessary parties. The institution's data protection officer is an internal role, not an independent institution."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": 1,
+          "sourceIds": ["RW-1", "RW-2", "RW-3"],
+          "limitations": "One minimum regulated-institution-to-supervisor interface; actual counterparties and complete decision authority are unknown. No coverage fraction or consent rate can be computed. A legal power is not evidence of willingness or capacity to exercise it in this pilot."
+        }
+      }
+    }
+  ]
+}

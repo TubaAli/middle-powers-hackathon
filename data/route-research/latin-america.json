@@ -1,0 +1,209 @@
+{
+  "routes": [
+    {
+      "id": "brazil-anpd-ai-inspection-evidence",
+      "title": "Add reproducible privacy tests to Brazil's AI inspection programme",
+      "shortLabel": "Brazil AI inspection evidence",
+      "coordination": "national",
+      "countries": ["Brazil"],
+      "region": "Latin America",
+      "mechanism": "Evaluation",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "Agência Nacional de Proteção de Dados (ANPD), using its existing inspection programme.",
+      "obligor": "AI personal-data controllers selected for inspection; no specific controller has agreed to this pilot.",
+      "instrument": "Resolução CD/ANPD nº 30 of 23 December 2025, Mapa de Temas Prioritários 2026–2027, Annex Theme 4; existing inspection procedures described by ANPD.",
+      "safeguard": "Proposed: request a reproducible privacy/security test dossier in a selected AI inspection, including personal-data extraction tests, a model/version record and evidence that identified failures were corrected. Establish relevance and lawful evidence scope case by case.",
+      "verification": "Proposed Geneva pilot: preserve an initial failing test, remediation decision and blinded retest by 21–22 June 2027. Count inspected in-scope deployments with complete evidence against all in-scope deployments in the selected inspection cohort; publish aggregate results only.",
+      "remedy": "ANPD describes preventive correction and administrative sanction proceedings. A failed proposed benchmark would not itself establish a legal violation; connect any corrective action to an identified data-protection obligation.",
+      "window": "The adopted 2026–2027 map schedules 20 AI/emerging-technology inspection activities, half by the first half of 2027. That semester ends after the Geneva checkpoint; no individual inspection date or pilot allocation is confirmed.",
+      "evidenceSummary": "A named, adopted inspection programme provides a real implementation opportunity. It does not establish acceptance of the proposed test protocol or coverage of frontier-model risks beyond personal-data processing.",
+      "gap": "Inspection cohort, remaining 2026–2027 capacity, case-specific evidence authority and controller cooperation are unknown. Twenty activities are not twenty models, companies or deployments.",
+      "nextQuestion": "Which scheduled Theme 4 inspection can produce a lawful, reproducible remediation-and-retest record before 21 June 2027?",
+      "incentives": ["Proposed benefit: comparable technical evidence could help ANPD distinguish a paper response from corrected behaviour.", "Proposed benefit: controllers obtain a bounded evidence request tied to an actual processing risk."],
+      "constraints": ["Personal-data jurisdiction does not confer a general model-release veto.", "Inspection and sanction decisions remain with ANPD; regulated parties have procedural rights.", "No matched deployment denominator or remaining-capacity figure was located."],
+      "sources": [
+        {"id": "br-anpd-map-30", "title": "Resolução CD/ANPD nº 30: Mapa de Temas Prioritários 2026–2027", "url": "https://dspace.mj.gov.br/bitstream/1/16470/2/RES_ANPD_2025_30.pdf", "locator": "DOU 24 December 2025, p.858; arts.1–4 and Annex Theme 4", "claim": "Adopted programme schedules 20 AI/emerging-technology personal-data inspection activities, 50% by each half of 2027; not a count of covered models.", "observed": "2026-10-31", "published": "2025-12-24", "access": "primary-read"},
+        {"id": "br-anpd-inspection", "title": "ANPD: Saiba como fiscalizamos", "url": "https://www.gov.br/anpd/pt-br/assuntos/fiscalizacao/saiba-como_fiscalizamos", "locator": "ATUAÇÃO: monitoring, guidance, prevention and repression; inspection regulation link", "claim": "ANPD describes collaborative correction and administrative sanction proceedings within data-protection supervision.", "observed": "2026-10-31", "published": null, "access": "primary-read"},
+        {"id": "br-anpd-announcement", "title": "ANPD publica Mapa de Temas Prioritários para o biênio 2026–2027", "url": "https://www.gov.br/anpd/pt-br/assuntos/noticias/anpd-publica-mapa-de-temas-prioritarios-para-o-bienio-2026-2027-e-atualiza-agenda-regulatoria-2025-2026", "locator": "Publication 24 December 2025; updated 6 January 2026; four inspection priorities and regulatory agenda", "claim": "Official announcement confirms AI personal-data processing as an inspection priority; an agenda item is not an open consultation.", "observed": "2026-10-31", "published": "2025-12-24", "access": "primary-read"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["Use scheduled AI inspections", "Pilot reproducible evidence of corrected privacy failures within ANPD's 2026–2027 programme.", "Inspection counts do not establish model coverage or approval of the new protocol."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "Selection and completion of one proposed ANPD inspection evidence pilot; not adoption of a national AI safety law.",
+          "actors": [
+            {"id": "br-anpd", "name": "Agência Nacional de Proteção de Dados", "role": "Select inspection and determine lawful evidence and corrective process", "consent": "unknown", "alignment": "unknown", "sourceIds": ["br-anpd-map-30", "br-anpd-inspection"], "note": "Adoption of the inspection programme is not consent to the proposed test protocol. No dated political endorsement of this exact safeguard was located."},
+            {"id": "br-pilot-controller", "name": "Selected AI personal-data controller (unidentified)", "role": "Supply lawful test evidence and implement remediation", "consent": "unknown", "alignment": "unknown", "sourceIds": ["br-anpd-inspection"], "note": "Necessary counterparty category, not a verified institutional identity; its cooperation is not a legal veto over lawful supervision."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": null,
+          "sourceIds": ["br-anpd-map-30", "br-anpd-inspection"],
+          "limitations": "The pilot controller and any indispensable processors are not identified. No independently verified institutional path or approval denominator; internal ANPD roles are not separate institutions. No political alignment inferred from the programme."
+        }
+      }
+    },
+    {
+      "id": "mexico-public-sector-impact-assessment",
+      "title": "Attach AI test evidence to Mexico's public-sector privacy assessment",
+      "shortLabel": "Mexico pre-deployment assessment",
+      "coordination": "national",
+      "countries": ["Mexico"],
+      "region": "Latin America",
+      "mechanism": "Evaluation",
+      "status": "Proposed",
+      "confidence": "Low",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "Secretaría Anticorrupción y Buen Gobierno for the proposed federal-executive scope, together with a deploying public body to be selected.",
+      "obligor": "A public-sector personal-data controller undertaking a qualifying new or modified AI deployment.",
+      "instrument": "Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados (2025), arts.68–73: impact assessment and advance submission.",
+      "safeguard": "Proposed: append reproducible personal-data leakage and unauthorized-access tests to one qualifying assessment. Have the deploying body's own release decision record unresolved failures and retest criteria; obtain its agreement rather than treating the regulator's advice as binding.",
+      "verification": "Proposed: retain the dated assessment, submission receipt, recommendations, release decision and a retest by 21–22 June 2027. Measure deployments with complete tests over all qualifying deployments in the chosen body's defined pilot period; record exemptions separately.",
+      "remedy": "Assessment recommendations are expressly nonbinding. A proposed internal decision to pause deployment requires the public body's own authority and adoption; the assessment process is not a statutory AI approval veto.",
+      "window": "Standing trigger: submit 30 business days before qualifying deployment or modification. No actual late-2026/2027 AI deployment or open consultation was located; a pre-Geneva pilot is conditional on selecting one in time.",
+      "evidenceSummary": "Arts.68–73 supply a concrete procedure, defined timing and exemptions. The official-hosted consolidation identifies its latest amendment as 14 November 2025. A booked 2027 decision is not evidenced.",
+      "gap": "Need the selected deployment, current competent receiving unit, applicable assessment guidance and an exemption determination. Later amendments beyond the retrieved consolidation have not been exhaustively excluded.",
+      "nextQuestion": "Which federal-executive AI deployment has an arts.68–73 assessment due before May 2027, and will its deploying body adopt a documented test-and-retest release condition?",
+      "incentives": ["Proposed benefit: integrate evidence into an existing assessment instead of creating a new approval institution.", "Proposed benefit: expose privacy failures before citizens' data enter a new system."],
+      "constraints": ["Nonbinding recommendations cannot be represented as mandatory model certification.", "Article 73 exemptions may remove the assessment trigger.", "Pilot and operational calendar remain unverified."],
+      "sources": [
+        {"id": "mx-public-data-law", "title": "Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados", "url": "https://ieeq.mx/contenido/normatividad/leyes/LGPDPPSO.pdf", "locator": "Official electoral-institute-hosted Chamber of Deputies consolidation; cover, art.3 definition of days, arts.68–73 p.17, institutional transition provisions", "claim": "Qualifying public-sector assessments are submitted 30 business days in advance; recommendations are nonbinding and art.73 provides exemptions. Consolidation: new law 20 March 2025, latest listed amendment 14 November 2025.", "observed": "2026-10-31", "published": "2025-11-14", "access": "primary-read"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["Test before public deployment", "Append reproducible AI privacy tests to a qualifying public-sector impact assessment.", "The advice is nonbinding and no dated deployment has yet been selected."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "One federal-executive deployment assessment and voluntary internal release condition; excludes state-level and autonomous-body procedures.",
+          "actors": [
+            {"id": "mx-sabg", "name": "Secretaría Anticorrupción y Buen Gobierno", "role": "Competent federal-executive assessment authority; receiving unit needs confirmation", "consent": "unknown", "alignment": "unknown", "sourceIds": ["mx-public-data-law"], "note": "The statutory role does not establish agreement to the pilot. Do not count an internal receiving unit as an additional institution."},
+            {"id": "mx-public-controller", "name": "Deploying federal public body (unidentified)", "role": "Prepare assessment and decide whether to adopt the proposed release condition", "consent": "unknown", "alignment": "unknown", "sourceIds": ["mx-public-data-law"], "note": "Its operational release decision is essential because assessment recommendations are nonbinding. No exact-scope leadership support was located."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": null,
+          "sourceIds": ["mx-public-data-law"],
+          "limitations": "Unknown deploying institution and vendor dependencies prevent a verified institutional count. Statutory timing is not a booked decision window or evidence of consent."
+        }
+      }
+    },
+    {
+      "id": "chile-high-risk-data-impact-assessment",
+      "title": "Pilot AI risk evidence for Chile's high-risk data assessment duty",
+      "shortLabel": "Chile assessment implementation",
+      "coordination": "national",
+      "countries": ["Chile"],
+      "region": "Latin America",
+      "mechanism": "Regulation",
+      "status": "Proposed",
+      "confidence": "Low",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "Agencia de Protección de Datos Personales for assessment guidance, with a participating controller; operational readiness must be verified.",
+      "obligor": "A controller planning qualifying high-risk AI personal-data processing once the amended law applies.",
+      "instrument": "Ley 21.719 amendments to Ley 19.628, art.15 ter (impact assessments), and transitional commencement provisions; implementation timing is challenged by bill 18.623-07.",
+      "safeguard": "Proposed: incorporate a reproducible AI privacy-risk test and mitigation/retest annex in assessment guidance, then pilot it with one controller. Use a voluntary readiness exercise if legal commencement is deferred beyond Geneva.",
+      "verification": "Proposed Geneva evidence: approved pilot scope, completed risk assessment, seeded personal-data leak detected and repaired, and a retest showing whether the repair works. Distinguish voluntary readiness from legally required compliance.",
+      "remedy": "Article 15 ter noncompliance is listed in the law's infringement provisions, subject to commencement and procedure. The proposed testing annex has not been adopted; it is not an existing mandatory certification or model-release veto.",
+      "window": "Published law is scheduled for 1 December 2026. Senate reporting on 20 October 2026 describes proposed deferral to December 2027; its 28 October session record says the bill was approved in general and particular and sent to the Chamber of Deputies. Final passage/promulgation and the final replacement date are unverified. Do not promise enforceable implementation before 21–22 June 2027.",
+      "evidenceSummary": "Article 15 ter names high-risk assessments and agency guidance. The late-October deferral process is direct contrary evidence to a confident December-2026 implementation route.",
+      "gap": "Final bill status, operational agency appointments, issued guidance and a willing controller remain unverified. No open public consultation with a deadline was established.",
+      "nextQuestion": "What is the final status of bill 18.623-07, and can the agency or a controller complete a voluntary assessment-and-retest pilot before Geneva if commencement moves?",
+      "incentives": ["Proposed benefit: a readiness pilot can reveal implementation costs before guidance becomes binding.", "Proposed benefit: controllers can test whether their mitigations address actual data leakage."],
+      "constraints": ["Deferral may put the enforcement window after Geneva.", "Agency readiness cannot be inferred from statutory creation.", "Support for delaying commencement is not support for this safeguard."],
+      "sources": [
+        {"id": "cl-law-21719", "title": "Ley 21.719, consolidated future-effective text", "url": "https://www.bcn.cl/leychile/navegar?f=2026-12-01&i=1209272", "locator": "Art.15 ter; infringement provision referencing art.15 ter; transitional arts.1 and 4 (including 2026 amendment annotations)", "claim": "Creates high-risk pre-processing assessment duty and agency guidance role; commencement and agency transition require separate checks.", "observed": "2026-10-31", "published": "2024-12-13", "access": "primary-read"},
+        {"id": "cl-senate-deferral", "title": "Protección de datos personales: avanza proyecto que busca postergar entrada en vigencia de la ley", "url": "https://www.senado.cl/comunicaciones/noticias/proteccion-de-datos-personales-avanza-proyecto-que-busca-postergar-entrada", "locator": "20 October 2026; committee approval in general and proposed December 2027 commencement", "claim": "Senate reports a proposal to defer commencement one year and increase the agency council; not a promulgated amendment.", "observed": "2026-10-31", "published": "2026-10-20", "access": "primary-read"},
+        {"id": "cl-senate-oct28", "title": "Senate session 68, 28 October 2026: Protección de Datos Personales", "url": "https://tramitacion.senado.cl/appsenado/index.php?ac=sesion_celebrada&id=10938&mo=sesionessala", "locator": "Resumen Legislativo, Protección de Datos Personales, bill 18.623-07", "claim": "Senate approved the bill in general and particular and sent it to the Chamber of Deputies for a second constitutional stage; this does not establish final enactment or a replacement commencement date.", "observed": "2026-10-31", "published": "2026-10-28", "access": "primary-read"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["Prepare Chile's assessment practice", "Pilot reproducible risk evidence under the named high-risk assessment provision.", "An active deferral bill could move legal implementation beyond Geneva."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "Agency-guidance and controller-readiness pilot under art.15 ter; excludes lobbying for passage or defeat of the deferral bill.",
+          "actors": [
+            {"id": "cl-data-agency", "name": "Agencia de Protección de Datos Personales", "role": "Set assessment guidance once legally and operationally able", "consent": "unknown", "alignment": "unknown", "sourceIds": ["cl-law-21719", "cl-senate-deferral"], "note": "Agency operational capacity and exact-scope endorsement unverified. Council members are internal roles, not additional institutions."},
+            {"id": "cl-controller", "name": "Participating high-risk processing controller (unidentified)", "role": "Select deployment, supply evidence and implement mitigation", "consent": "unknown", "alignment": "unknown", "sourceIds": ["cl-law-21719"], "note": "For a pre-commencement exercise, participation must be voluntary. No controller or exact-scope political support identified."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": null,
+          "sourceIds": ["cl-law-21719", "cl-senate-deferral", "cl-senate-oct28"],
+          "limitations": "No complete independent-institution path. Legislature and executive affect commencement, but are not counted as pilot agreement parties; changing the law would require a different approval scope."
+        }
+      }
+    },
+    {
+      "id": "colombia-sic-ai-privacy-retest",
+      "title": "Test remediation under Colombia's AI privacy-impact circular",
+      "shortLabel": "Colombia AI privacy retest",
+      "coordination": "national",
+      "countries": ["Colombia"],
+      "region": "Latin America",
+      "mechanism": "Evaluation",
+      "status": "Proposed",
+      "confidence": "Low",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "Superintendencia de Industria y Comercio (SIC), within its personal-data supervision jurisdiction.",
+      "obligor": "A supervised administrator of personal data developing or deploying an in-scope high-risk AI system; pilot entity unselected.",
+      "instrument": "SIC Circular Externa No.002 of 21 August 2024, instructions on personal-data processing in AI systems, especially high-risk impact studies and auditable security measures.",
+      "safeguard": "Proposed: turn one high-risk privacy-impact study into a testable evidence dossier, with model-versioned data-extraction tests, mitigation ownership and a documented retest. Seek a bounded pilot using the existing circular rather than assert a new general AI licensing power.",
+      "verification": "Proposed: retain initial risk finding, approved mitigation and repeatable retest before 21–22 June 2027. Measure the share of identified in-scope pilot systems with completed evidence, plus unresolved severe privacy failures.",
+      "remedy": "The circular calls for abstention or precautionary/preventive measures where uncertainty concerns serious irreversible harm from processing. Case-specific enforcement of legal duties requires the appropriate procedure; the new test threshold is not an existing automatic sanction trigger.",
+      "window": "Standing instrument can inform a late-2026/early-2027 supervised or voluntary pilot. No dated inspection, current consultation or selected deployment was verified. A purported annual work-programme lead could not be read and is not used as a decision window.",
+      "evidenceSummary": "The read circular specifically addresses AI, high-risk privacy studies and auditable security. It is stronger than an AI strategy as an instrument, but supplies no verified pre-Geneva pilot calendar.",
+      "gap": "Need a current SIC case or work-plan slot, named administrator, applicable procedural remedy and evidence-sharing agreement. Exact-scope leadership alignment is unknown.",
+      "nextQuestion": "Which current SIC-supervised high-risk AI project can expose an initial privacy failure and a verified repair before Geneva?",
+      "incentives": ["Proposed benefit: auditable tests make demonstrated accountability more concrete.", "Proposed benefit: bounded remediation evidence can distinguish implementation from paperwork."],
+      "constraints": ["Personal-data safeguards cover a narrower risk class than catastrophic AI safety.", "No confirmed 2027 operational slot or deployment denominator.", "Do not treat a draft circular or an inaccessible work plan as an adopted new obligation."],
+      "sources": [
+        {"id": "co-sic-circular-002", "title": "SIC Circular Externa No.002 de 2024", "url": "https://sedeelectronica.sic.gov.co/sites/default/files/normativa/Circular%20Externa%20No.%20002%20del%2021%20de%20agosto%20de%202024.pdf", "locator": "21 August 2024; instructions II–IV and VIII; extracted text around high-risk study and auditable measures", "claim": "AI-specific instructions address documented high-risk privacy-impact studies, precautions against serious irreversible processing harms and authority-auditable security measures.", "observed": "2026-10-31", "published": "2024-08-21", "access": "primary-read"},
+        {"id": "co-sic-contract-policy", "title": "SIC Política de Tratamiento de Datos Personales", "url": "https://sedeelectronica.sic.gov.co/politica-de-tratamiento-de-datos-personales", "locator": "Indexed text: contractual terms, Parágrafo Sexto and Cláusula Segunda; direct open returned 403", "claim": "Partial lead only: indexed SIC policy describes joint controller/processor impact assessment for emerging technology and references Circular 002. No executed contract or upcoming procurement verified.", "observed": "2026-10-31", "published": null, "access": "partial"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["Make privacy studies testable", "Pilot an evidence-and-retest dossier under SIC's AI-specific circular.", "The instrument exists, but a dated case and participating administrator are still missing."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "One SIC-supervised AI privacy evidence pilot, not national model certification or a SIC procurement award.",
+          "actors": [
+            {"id": "co-sic", "name": "Superintendencia de Industria y Comercio", "role": "Determine lawful supervision scope and review evidence", "consent": "unknown", "alignment": "unknown", "sourceIds": ["co-sic-circular-002"], "note": "The circular is not approval of the proposed pilot; its internal data-protection delegation is not a separate institution."},
+            {"id": "co-administrator", "name": "Selected personal-data administrator (unidentified)", "role": "Supply study and tests; implement and document mitigation", "consent": "unknown", "alignment": "unknown", "sourceIds": ["co-sic-circular-002"], "note": "Identity, processor dependencies and consent to additional experimental tests remain unknown; no veto over lawful supervision is implied."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": null,
+          "sourceIds": ["co-sic-circular-002"],
+          "limitations": "Unidentified administrator and possible indispensable processors prevent a verified institutional count. Neither a 2024 circular nor indexed contract-policy text establishes contemporary political support or agreement to this exact safeguard."
+        }
+      }
+    }
+  ]
+}
