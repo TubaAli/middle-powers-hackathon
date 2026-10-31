@@ -168,3 +168,8 @@ Sources: [signed-in hackathon page](https://try.mangrove.one/hackathons/92b5e028
 - **Click a move to see:** who acts → with what tool → which safeguard → how it's checked → what happens if it's broken.
 - **Key test:** is acting *together* actually better than acting alone?
 - **First examples:** EU computing tenders, Asia-Pacific buying and testing, Canada's investment terms, Taiwan's computing access, and conditions on new loans. These are mostly ideas, not proven powers yet.
+- **Tuba's read of the teammates' Routes page** (`/routes/`, 8 routes):
+  - The chart scores each route 1–5 on "how doable" and "how much safer". Colour shows who must agree. Confidence shows how solid the sources are.
+  - The EuroHPC route: when the EU rents out its new AI supercomputers, it uses the contract's existing "report security breaches" rule. It would add a clear plan: what counts as an AI incident, what evidence to keep, who reviews it, and termination as the last resort.
+  - The rule is in the draft contract, which is why confidence is high. It's unclear whether it covers incidents *caused by the AI model* rather than hacks.
+  - Deadlines: 3 Dec 2026 (Lot 2) and 4 Feb 2027 (Lot 1).
