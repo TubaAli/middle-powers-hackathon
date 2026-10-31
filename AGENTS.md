@@ -3,6 +3,7 @@
 ## Shared work
 - Three people are collaborating live. Read README.md, notes.md and DESIGN.md before changing direction.
 - Work in this repository and commit directly to `main`, as requested by the team. Push small, coherent changes frequently.
+- Commit and push useful work in progress too; label it WIP and state verification gaps so teammates can build on it immediately. Do not wait for a polished final report.
 - Fetch and inspect remote changes before each push. Rebase only your unpublished commits when safe; never force-push, reset away others' work, or overwrite unfamiliar edits.
 - Stage only files you own. Give parallel helpers separate files; one owner integrates their results. Avoid concurrent edits to shared summaries.
 - Use your agent role's commit identity and a `Session: <session id>` commit trailer. Preserve human authorship.
