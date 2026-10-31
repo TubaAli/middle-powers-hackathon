@@ -1,5 +1,19 @@
 # Leverage Map + Coalition Builder: design
 
+## Approved direction: routes to safeguards (31 October 2026)
+
+Grisha approved a route-level explorer: **help middle-power policymakers identify routes to safeguards, and compare what they can accomplish alone versus together.** The existing supply-chain views remain supporting context.
+
+- Plot **implementation feasibility** horizontally (right is more achievable), and **potential safety impact if implemented** vertically. Initial positions are transparent qualitative assessments, not calibrated probabilities or measured risk reduction. Difficulty, legal authority, cost, time and required consent stay inspectable.
+- Colour points by coordination requirement: **one jurisdiction**, **multiple middle powers**, or **broader coalition** (requiring additional actors/institutions). National action still needs counterparties; the colour concerns international coordination, not unilateral control.
+- Keep **evidence confidence separate** from both axes; show uncertainty and evidence maturity. Do not reward a route just because more articles repeat the same announcement.
+- A point represents an **actor → instrument → safeguard → verification → remedy** route. EuroHPC is one point, not the entire product. Include contrasting routes across countries and mechanisms.
+- Pair otherwise comparable national and coordinated proposals, with an arrow and explicit assumptions. Test whether coordination improves impact and feasibility; do not build a coordination bonus into the scoring or claim cluster separation from a hand-picked sample.
+- A future research engine should discover diverse routes, retrieve supporting and contradicting evidence, and propose traceable assessment changes. For this hackathon, build a curated set and a replayable, source-backed update demonstrating how a route changes. Do not label replay as a live literature search.
+- Build a usable plot, filters, accessible route list, evidence detail, comparison and change history. Show unknowns and implementation gaps, alongside the next evidence question. No autonomous background job is needed for this first version.
+
+The original supply-chain design below documents the supporting prototype. The route explorer is the newly approved primary policy question.
+
 **One line:** pick a group of middle powers and see what share of the AI supply chain they hold together, which of the six safety conditions they could credibly demand, and when each member's laws are open to change.
 
 **Track:** C (Diplomacy), with links to A (Regulation).

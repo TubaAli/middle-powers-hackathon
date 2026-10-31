@@ -1,5 +1,9 @@
 # Discussion notes
 
+## Approved: routes to safeguards explorer
+
+On 31 October, Grisha approved the route-level plot described in [DESIGN.md](DESIGN.md#approved-direction-routes-to-safeguards-31-october-2026), and asked us to build it. Compare potential safety impact against implementation feasibility; colour by national, middle-power coordination or broader-coalition requirements. Keep evidence confidence independent. Pair national/coordinated proposals to test the coordination hypothesis rather than assume it. EuroHPC is one worked route among a diverse set. The first build will demonstrate source-backed evidence updates; continuous literature discovery is a later capability, not a claim about the static demo.
+
 A summary of the brainstorm so far. The full idea list is in [ideas.md](ideas.md).
 
 ## Context
