@@ -4,6 +4,15 @@ Updated 2026-10-31. Owner: Grisha's agent, session `ses_e6faafd8dffePCltlwXtbrko
 
 All outputs are committed directly to main in small increments. This is a retrieval and synthesis pass, not a change to the chosen product design.
 
+## Active follow-up: transaction-level tests
+
+Grisha authorised proceeding with the three next tests. This session owns these files under `research_notes/Finance decision rights followup/`:
+- `anthropic-credit.md`: lender allocations, voting thresholds, amendment exceptions, draw conditions and incremental-credit discretion (GLM 5.3).
+- `cohere-stages.md`: investment vehicle/signatory, signed terms, remaining stages and enforceable safety deliverables (DeepSeek).
+- `eurohpc-tender.md`: tender pack, contracting authorities, existing assurance clauses and lawful scope for additions (GLM 5.3).
+
+Integration output will be `reports/Finance decision rights followup.md` and a small machine-readable evidence dataset under `data/finance-research/`. These research records will not overwrite the prototype owner's application data or UI. Each record must distinguish an evidenced existing right from a proposed safety use. If the controlling document is not public, record that as the test result rather than guessing its terms.
+
 ## Completed retrieval and synthesis
 
 1. Mapping AI map/insights: inspect sources, funding coverage, concentration methods and limits. Output: `research_notes/Financial leverage for safer AI/mapping-ai.md`.
