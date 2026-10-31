@@ -1,5 +1,7 @@
 # Routes to safeguards: procurement pair (Japan national / Japan–Korea–Singapore coordinated) — observed 2026-10-31
 
+> Later same-day update: the Geneva investigation retrieved the original vendor call and FY2027 plan. Safety explanations and benchmark submissions already exist. The current route instead asks what version-specific retesting and incident duties can be added to executed terms. See `data/route-research/procurement.json` and `research_notes/Safeguard validation by Geneva/apac.md`; retrieval gaps below describe the earlier pass.
+
 > Integration review: this is the original working investigation. The published JSON corrects unsupported regional absence claims, assumed remedies, legislative sufficiency and open-window inferences. “Not located” does not mean “does not exist.” Japan's confidence is Medium because operative tender terms were not retrieved. Use `data/route-research/procurement.json` for the integrated assessment; dates in this note are not verified negotiation opportunities.
 
 Researcher file for the routes-to-safeguards plot (DESIGN.md, approved 31 Oct 2026). I own exactly two files: `data/route-research/procurement.json` and this note. The parent session is building the UI concurrently; sibling files in `data/route-research/` (eurohpc, evaluation) are other agents' work.

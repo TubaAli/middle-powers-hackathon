@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ten safeguard proposals, the decisions they need, and evidence we could test before Geneva.">
+  <title>Before Geneva</title>
+  <link rel="stylesheet" href="research.css">
+  <script type="module" src="research.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to research</a>
+  <header><a href="./">← Routes to AI safeguards</a><span>Research brief</span></header>
+  <main id="main">
+    <div class="intro">
+      <h1>Before Geneva</h1>
+      <p class="lede">Which safeguards can we put into practice and test by 21–22 June 2027?</p>
+      <p class="small" id="snapshot">Loading source and observation date…</p>
+    </div>
+    <p id="load-status" role="status">Loading the research…</p>
+    <noscript><p>This view needs JavaScript. <a href="../reports/Safeguard%20validation%20by%20Geneva.md">Read the research report</a> instead.</p></noscript>
+    <div id="research" hidden>
+      <nav class="sections" aria-label="Research sections">
+        <button type="button" data-view="routes" aria-pressed="true">Routes to test</button>
+        <button type="button" data-view="agreement" aria-pressed="false">Who must agree</button>
+        <button type="button" data-view="numbers" aria-pressed="false">Numbers and dates</button>
+      </nav>
+      <div id="scenario-control"><label for="scenario">Choose a proposal <span class="small">· 10 routes</span></label><select id="scenario"></select></div>
+      <section id="routes-view" aria-label="Routes to test"></section>
+      <section id="agreement-view" aria-label="Who must agree" hidden></section>
+      <section id="numbers-view" aria-label="Numbers and dates" hidden></section>
+    </div>
+  </main>
+  <footer><a href="../reports/Safeguard%20validation%20by%20Geneva.md">Full research report</a><a href="../data/geneva-research.json">Source data</a><a href="./">Original 1–5 map</a></footer>
+</body>
+</html>

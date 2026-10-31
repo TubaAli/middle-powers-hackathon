@@ -29,6 +29,13 @@ the current editorial scores, not recommendations or measured superiority.
 
 ## Data and checks
 
+`research.html` presents the Geneva scenario follow-up. Its source snapshot is
+`data/geneva-research.json`: ten candidate scenarios, agreement dependencies,
+dated opportunities and empirical fractions. These fractions describe specified
+populations or existing tests; they do not replace the original map ratings.
+Run `node scripts/check-geneva-research.mjs` to check arithmetic, references,
+date precision and protection against treating unknown approvals as zero.
+
 `data/route-research/*.json` are the reviewed inputs. Build the static runtime
 snapshot with `python3 scripts/build-route-data.py`. The browser reads only
 `data/routes.json`. Source dates, locators and claim scope travel with each card.

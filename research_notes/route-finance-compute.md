@@ -1,5 +1,7 @@
 # Route research notes: finance & compute routes (Canada, Taiwan, Anthropic)
 
+> Later same-day update: the Geneva investigation retrieved Taiwan's ADI compute-award rules and draft 2027 budget. The programme, operator and baseline reporting/remedy provisions are now documented. Future accepted safety terms and approved 2027 resources remain unverified. See `data/route-research/finance-compute.json` and `research_notes/Safeguard validation by Geneva/finance.md`; programme-absence statements below describe the earlier evidence set.
+
 > Integration review: the published JSON qualifies Taiwan's assumed discretion over support programmes; authority, existing commitments and recipient agreements need checking. No executed Cohere investment instrument was located; this is not proof that none exists. All three safeguards remain proposed.
 
 **Observation date: 2026-10-31.** Companion data: [`data/route-research/finance-compute.json`](../data/route-research/finance-compute.json).
