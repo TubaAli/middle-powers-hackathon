@@ -1,0 +1,5 @@
+# Local research tooling, raw retrieval scratch, and credentials stay untracked.
+.local/
+.env
+deeper-research.toml
+**/__pycache__/
