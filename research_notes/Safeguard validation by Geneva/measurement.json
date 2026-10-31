@@ -1,0 +1,230 @@
+{
+  "method": {
+    "version": "proposal-2-agreement-graph",
+    "observed": "2026-10-31",
+    "targetDate": "2027-06-21",
+    "targetDateBasis": "Assignment planning target; Geneva event date not independently verified in this work.",
+    "status": "Measurement design and empirical proxy demonstrations; not a rescore of live routes.",
+    "axes": {
+      "vertical": {
+        "label": "Specified-population operational safeguard coverage",
+        "formula": "sum(observed_weight_i * covered_i) / sum(observed_weight_i)",
+        "coveredDefinition": "Named obligation in force for unit; evidence channel and usable remedy verified. Record adoption-only and potential coverage separately.",
+        "denominatorSelectors": ["attributable-gva", "eligible-ai-payments", "same-hardware-delivered-accelerator-hours", "unique-eligible-subjects", "single-supply-chain-stage-output"],
+        "comparisonRule": "Same unit, population, period, geography and enforcement state; otherwise separate panels.",
+        "zeroMeaning": "Complete eligible inventory with zero covered weight.",
+        "oneMeaning": "All eligible measured weight covered; not all AI risk removed."
+      },
+      "horizontal": {
+        "label": "Verified required-approval coverage (agreement readiness)",
+        "formula": "valid_scope_matched_approved_acts / complete_required_approval_acts_for_declared_variant",
+        "modes": ["approval-act-coverage", "required-signatory-slot-coverage", "eligible-legal-vote-share"],
+        "supersedes": "The earlier seven equally weighted administrative gates are not the readiness axis. Operational dependencies remain in the graph.",
+        "denominatorRule": "Publish a ratio only for a complete evidence-backed required set; explicit route variant, instrument version and counting unit. Incomplete sets have lower-bound counts only.",
+        "unknownBounds": "[verified_approved/N, (verified_approved+unknown_approval_states)/N]; evidence bounds, not forecasts. Confirmed pending or opposed states are not unknown.",
+        "weightedFormula": "sum(eligible_legal_weight_i * valid_approval_i) / sum(eligible_legal_weight_i)",
+        "weightRule": "Use only actual weights prescribed by the relevant instrument, with complete eligible roster, exclusions, quorum and class rules. Commitment support and actual approval are separate series.",
+        "criticalBlockersSeparate": true,
+        "resolution": "N approval acts give N+1 possible complete-data ratios. Legal weights may add granularity but remain finite; no invented interpolation, jitter or smooth probability.",
+        "zeroMeaning": "Verified nonapproval across the complete required set; no documented approvals with unknown states is only a lower bound.",
+        "oneMeaning": "All required approvals for the declared complete set are valid and evidenced; not operational delivery or safety."
+      },
+      "optionalForecast": {
+        "label": "Probability of operational safeguard by target date",
+        "value01": null,
+        "reason": "No eligible historical outcome cohort or calibrated model retrieved.",
+        "requirements": ["preregistered-reference-class", "entry-stages-and-dates", "success-failure-withdrawal-dates", "right-censoring", "competing-outcomes", "matched-horizon", "out-of-time-calibration", "uncertainty-and-sample-counts", "whole-route-outcome-model-with-dependent-actors"],
+        "candidatePredictors": ["necessary-decision-holder-count", "required-agreement-count", "cross-owner-handoff-count", "veto-structure", "exact-instrument-alignment", "source-supported-duration-and-slack"],
+        "prohibitions": ["Do not convert readiness to probability", "Do not divide legacy ordinal scores by five", "Do not use allocated-project share as acceptance or delivery base rate", "Do not multiply assumed independent actor probabilities", "Do not assume extra parties or general political support has a known numerical effect"]
+      }
+    },
+    "leverageDiagnostic": {
+      "formula": "max(0, Q_withholdable(H) - Q_deliverable_substitute(H)) / Q_required(H)",
+      "constraints": "0 <= Q_withholdable <= Q_required; positive denominator; same target input, units and horizon; verified legal decision right and physically deliverable substitutes.",
+      "currentValue01": null
+    },
+    "currentRouteMeasurements": {
+      "routeIds": ["eurohpc-incident-protocol", "jp-procurement-safety-evidence", "jp-kr-sg-procurement-profile", "sg-agent-data-leakage-deployment-gate", "sg-kr-jp-shared-eval-evidence-protocol", "canada-cohere-equity-safety-covenant", "taiwan-public-compute-safety-conditions", "anthropic-new-credit-lender-safety-covenant"],
+      "operationalCoverage01": null,
+      "readiness01": null,
+      "forecast01": null,
+      "reason": "No complete denominator linked to operative safeguards, complete exact-instrument required-approval register or eligible delivery-outcome cohort. Examples are contextual proxies only."
+    },
+    "agreementGraph": {
+      "status": "Proposed schema; regional inputs below are incomplete graph leads, not approved legal mappings.",
+      "graphRequiredFields": ["graphId", "version", "routeVariantId", "rootNodeId", "targetDate", "asOfDate", "actors", "nodes", "edges", "selectedSufficientSet", "completeness", "countingConvention", "sourceRefs"],
+      "completenessRequiredFields": ["status", "reviewer", "scope", "reviewedDate", "supportingInstrumentRefs", "unresolvedAuthorityQuestions"],
+      "actorRequiredFields": ["actorId", "institution", "decisionHolder", "delegatedSignatory", "delegationEvidenceRefs", "role", "alignmentEvidence"],
+      "actorRoles": ["necessary-legal-veto", "necessary-operational-provider", "eligible-threshold-voter", "alternative-provider", "advisory-supporter"],
+      "nodeRequiredFields": ["nodeId", "type", "decisionHolderIds", "instrumentId", "instrumentVersion", "exactScope", "requiredLegalCapacity", "status", "evidenceRefs", "validFrom", "validUntil", "conditions", "deadline", "deadlinePrecision", "durationBounds", "durationSourceRefs"],
+      "nodeTypes": ["AND", "OR", "THRESHOLD", "approval-act", "signature", "handoff-acceptance", "operational-milestone"],
+      "edgeRequiredFields": ["edgeId", "fromNodeId", "toNodeId", "senderActorId", "receiverActorId", "deliverable", "acceptanceEvidenceRefs", "releaseDate", "latestNeededDate", "crossOwner", "sourceRefs"],
+      "acyclicRule": "Versioned DAG; unroll negotiation loops and rework into dated states. Deduplicate shared leaves.",
+      "countingUnits": {
+        "necessaryParties": "Distinct empowered decision holders on declared sufficient path; distinguish institutions from signatory people.",
+        "approvalActs": "Distinct required decisions with exact instrument/version and scope, not advisory statements.",
+        "agreements": "Distinct instruments requiring execution; separate from approval-act and signatory counts.",
+        "signatorySlots": "Actor x instrument/version x required legal capacity, reconciled to actual signature rules.",
+        "handoffs": "Distinct required sender-receiver-deliverable acceptance edges; recurring technical tasks do not create more approvals.",
+        "incompleteSet": "Display at least N identified; ratio null."
+      },
+      "logicalRules": {
+        "AND": "min(child satisfaction states)",
+        "OR": "max(child satisfaction states), only legally supported alternatives",
+        "THRESHOLD": "1 if sum(v_i * approved_i) comparator q, else 0; comparator is the instrument's >= or >",
+        "thresholdRequiredFields": ["eligibleRoster", "weightUnit", "weightByActor", "threshold", "comparator", "quorum", "classConsents", "reservedMatters", "sourceRefs"],
+        "veto": "Approval leaf necessary in every legally sufficient path to the root; distinguish legal veto from operational exclusivity.",
+        "unknown": "Evaluate unresolved leaves as 0 and 1 for logical possibility bounds, never probabilities.",
+        "alternativeSets": "Use selectedSufficientSet for a ratio; enumerate source-supported alternative sets with paired impact populations. No branch averaging or retrospective easiest-denominator selection."
+      },
+      "approvalStates": ["valid-approved", "confirmed-pending", "opposed", "expired", "conditional-not-yet-effective", "unknown"],
+      "alignmentStates": ["exact-instrument-approved", "exact-instrument-support", "conditional-support", "general-goal-support", "opposed", "unknown"],
+      "alignmentRequiredFields": ["state", "instrumentScope", "speaker", "authorityToBind", "conditions", "evidenceRefs", "statementDate", "expiryOrRecheckDate"],
+      "alignmentRule": "Categorical evidence only, no numeric encoding. General goals or leaders' support do not substitute for an empowered signatory's approval.",
+      "timing": {
+        "AND": "finish_i = max(release_i, max(finish_p for p in predecessors_i)) + duration_i",
+        "OR": "Use earliest legally sufficient predecessor branch; recalculate paired coverage for chosen variant.",
+        "THRESHOLD": "Earliest time received valid votes meet comparator, quorum and class-consent rules.",
+        "slack": "targetDate - earliestFeasibleRootFinish, in days",
+        "resourceRule": "Shared staff or budget introduces scheduling constraints; unlimited parallel resources not assumed.",
+        "uncertainty": "Propagate consistent source-supported duration bounds and alternative paths; no unsupported numeric ranges. Missing critical duration gives null finish/slack. Contract maximum is not expected time.",
+        "meaning": "Scenario earliest completion, not forecast probability or promised finish."
+      },
+      "sensitivity": {
+        "dimensions": ["source-supported-required-consent-interpretations", "eligible-voting-weights", "approval-expiry", "documented-alternative-pathways", "source-supported-task-duration-bounds"],
+        "output": ["root-logical-bounds", "approval-share-by-sufficient-set", "veto-blockers", "critical-path-and-slack-by-scenario", "paired-coverage-change"],
+        "rule": "Preserve shared dependencies and internally consistent scenarios. Unbounded missing roster/weights means unknown, not a fabricated interval."
+      }
+    },
+    "regionalGraphInputs": [
+      {"id": "eu-graph-lead", "routeId": "eurohpc-incident-protocol", "file": "europe.json", "sourceRefs": ["europe:eu-fwc", "europe:eu-annex2"], "locator": "scenarios[eurohpc-security-evidence]", "candidateRoles": ["contracting-authority", "national-purchasers", "contractor", "tenant-evidence-provider"], "missing": ["exact-delegations", "required-signatures", "budget-approvals", "operative-tenant-evidence-terms"], "completeness": "incomplete", "agreementCoverage01": null},
+      {"id": "jp-graph-lead", "routeId": "jp-procurement-safety-evidence", "file": "apac.json", "sourceRefs": ["apac:jp-next", "apac:jp-plan"], "locator": "scenarios[jp-versioned-acceptance]", "candidateRoles": ["digital-agency-authorized-purchaser", "supplier", "ministry-budget-and-operations", "aisi-advisory-unless-delegation-proven"], "missing": ["final-instrument", "delegations", "complete-supplier-and-ministry-perimeter"], "completeness": "incomplete", "agreementCoverage01": null},
+      {"id": "sg-graph-lead", "routeId": null, "file": "apac.json", "sourceRefs": ["apac:sg-sandbox"], "locator": "scenarios[sg-sandbox-purchaser-gate]", "candidateRoles": ["empowered-purchaser", "supplier", "tester", "sandbox-admission-if-selected-branch"], "missing": ["named-delegated-signatory", "accepted-commercial-terms", "publication-consent", "admission-if-required"], "completeness": "incomplete", "agreementCoverage01": null},
+      {"id": "ca-graph-lead", "routeId": "canada-cohere-equity-safety-covenant", "file": "finance.json", "sourceRefs": ["finance:ca-pm"], "locator": "scenarios[ca-measurable-stage]", "candidateRoles": ["authorized-investing-signatory", "company", "evaluator"], "missing": ["identity-and-delegation", "retained-discretion", "subscription-approval-rules", "evaluator-agreement"], "completeness": "incomplete", "agreementCoverage01": null},
+      {"id": "credit-graph-lead", "routeId": "anthropic-new-credit-lender-safety-covenant", "file": "finance.json", "sourceRefs": ["finance:an-exhibit"], "locator": "scenarios[an-new-money-evidence]", "candidateRoles": ["borrower", "eligible-lenders", "applicable-agent-and-individual-consents"], "reportedThreshold": {"value": 0.5, "comparator": ">", "status": "Sibling research reports Required Lenders threshold; not an observed coalition share or a complete consent test"}, "missing": ["live-transaction", "eligible-commitment-roster", "current-amounts", "applicable-reserved-matter-consents"], "completeness": "incomplete", "agreementCoverage01": null}
+    ],
+    "regionalInputProvenance": "Read sibling research on 2026-10-31; sourceRefs are namespaced pointers into those files, not newly retrieved primary-source verification. Do not upgrade candidate roles into complete legal graphs.",
+    "suggestedUI": {
+      "title": "Safeguard reach x agreement readiness",
+      "coverageSelector": ["attributable-GVA-or-consistently-tax-adjusted-GDP", "single-supply-chain-stage", "eligible-policy-subjects", "same-period-ai-payments", "same-hardware-delivered-compute"],
+      "horizontalSelector": ["approval-act-coverage", "signature-slot-coverage", "eligible-legal-vote-share", "calibrated-delivery-forecast-if-available"],
+      "persistentFields": ["as-of-date", "target-date", "selected-route-variant", "raw-numerator-and-denominator", "counting-unit", "graph-completeness", "necessary-party-count", "outstanding-signatures", "cross-owner-handoffs", "veto-blockers", "alignment-evidence", "critical-path-status"],
+      "comparisonLock": "Same coverage family, population, geography, period, enforcement state and approval-counting convention. Changing an OR branch recalculates coverage; incomparable routes appear in separate panels.",
+      "unknownPlacement": "Unmeasured rail/list; never zero, midpoint, jitter or inferred score.",
+      "forecastPresentation": "Separate named mode with model/cohort/horizon/calibration and uncertainty; never combine forecast points and readiness fractions on an unlabeled common axis.",
+      "goLiveNow": ["four-existing-contextual-proxy-examples", "incomplete-actor-graph-leads", "sourced-roles-and-categorical-alignment", "lower-bound-counts-if-enumerated", "deadline-evidence-status"],
+      "unavailableNow": ["eight-route-operational-coverage-positions", "eight-route-agreement-readiness-ratios", "observed-coalition-voting-shares", "calibrated-delivery-probabilities", "unmeasured-critical-path-slack"],
+      "stages": [
+        "Publish evidence and unknowns now, not replacement scores",
+        "Verify complete required set and record exact approvals to compute discrete S/N",
+        "Reconcile actual legal voting weights and matched quantitative coverage for finer granularity",
+        "Collect whole-route outcomes and validate dependency-aware forecasts before probability mode"
+      ],
+      "implementationStatus": "Specification only; UI not changed by this task."
+    },
+    "dependenceRules": ["Union stable subject or transaction IDs before summing coalition weights", "Do not add EU and member GDP", "Never mix PPP and nominal GDP", "Never add serial supply-chain stage percentages", "Do not count the same hour under procurement, subsidy and lending separately", "Add allocation quotas only with evidence of disjointness", "Do not multiply joint delivery probabilities without a supported dependence model"],
+    "uncertaintyRules": ["Missing is null, never zero", "Empty denominator is null", "Separate measurement rounding, population incompleteness, stale evidence and sampling uncertainty", "Bound unresolved census weights; if denominator unknown, mark non-identifiable or justify denominator range", "Keep negative safety effects visible outside the coverage axes"],
+    "minimumDataset": ["metric-id-and-version", "route-actor-obligor-instrument-safeguard-remedy", "metric-kind-and-validation-level", "target-date", "stable-population-and-overlap-ids", "eligibility-exemptions-geography-period", "numerator-and-denominator-with-units-sources", "formula-and-nullable-value01", "current-versus-potential-coverage", "bounds-and-assumptions", "versioned-agreement-graph-and-completeness-evidence", "selected-sufficient-set-and-exact-approval-register", "legal-voting-weights-quorum-exclusions-and-vetoes", "alignment-scope-speaker-authority-date-and-conditions", "handoff-acceptance-and-source-supported-duration-bounds", "published-event-period-and-observed-dates", "source-url-locator-access-status", "baseline-control-sample-cluster-counts", "failure-definition-proposed-threshold-and-actual-outcome", "exclusions-missingness-and-analysis-provenance", "forecast-cohort-censoring-calibration-if-applicable"]
+  },
+  "workedExamples": [
+    {
+      "id": "lumi-finnish-extreme-scale-envelope-2026",
+      "label": "Finnish extreme-scale call envelope within annual LUMI-G quota",
+      "routeIds": ["eurohpc-incident-protocol"],
+      "routeRelationship": "Related historical access machinery only; not evidence this population is covered by the proposed 2026 gigafactory instrument.",
+      "kind": "proxy",
+      "numerator": {"value": 13100000, "unit": "GPU-hours", "population": "CSC allocation offered through the 2026 Finnish LUMI extreme-scale call", "period": "Annual call envelope: projects intended to start April 2026, each lasting 12 months", "sourceIds": ["S1"]},
+      "denominator": {"value": 26200000, "unit": "GPU-hours", "population": "CSC annual LUMI allocation referenced by that call", "period": "Same call's annual allocation basis; exact accounting-year dates not stated", "sourceIds": ["S1"], "derived": true, "derivation": "13100000 / 0.50; source explicitly says offered hours correspond to 50% of CSC annual allocation"},
+      "formula": "13100000 / 26200000",
+      "value01": 0.5,
+      "interpretation": "Share of referenced Finnish annual quota offered to this access mode.",
+      "notEstablished": ["Hours awarded", "Hours delivered", "Safeguard in force", "Guaranteed 2027 availability", "Delivery probability", "Safety effect"],
+      "uncertainty": {"lower01": null, "upper01": null, "type": "Administrative offer and rounded published quantity", "notes": "Denominator algebraically inferred from the same source percentage, not an independent measurement. Quota annualization basis is not further specified."},
+      "observed": "2026-10-31"
+    },
+    {
+      "id": "eurohpc-industrial-ai-large-scale-award-share-2025-2026",
+      "label": "Large Scale share of industrial-AI awards across three access modes",
+      "routeIds": ["eurohpc-incident-protocol"],
+      "routeRelationship": "Administrative proxy from related access programme; not the proposed safeguard's in-scope population.",
+      "kind": "proxy",
+      "numerator": {"value": 44, "unit": "awarded projects", "population": "AI for Industrial Innovation, Large Scale row in consolidated statistics", "period": "April 2025-April 2026", "sourceIds": ["S2"]},
+      "denominator": {"value": 388, "unit": "awarded projects", "population": "AI for Industrial Innovation: Playground, Fast Lane and Large Scale rows", "period": "April 2025-April 2026", "sourceIds": ["S2"], "derived": true, "components": {"playground": 186, "fastLane": 158, "largeScale": 44}},
+      "formula": "44 / (186 + 158 + 44)",
+      "value01": 0.1134020618556701,
+      "interpretation": "Large Scale mode fraction of project awards across the three matched-period industrial-AI access modes.",
+      "notEstablished": ["Share of all applications", "Acceptance rate", "Unique users or institutions", "GPU capacity share", "Safeguarded projects", "Full-year 2025 total", "2027 delivery probability"],
+      "uncertainty": {"lower01": null, "upper01": null, "type": "Exact arithmetic on administrative table, no sampling interval", "notes": "All three selected rows have matched reporting periods. Underlying project IDs not reviewed; count awards, not deduplicated beneficiaries or repeat-project progression."},
+      "observed": "2026-10-31"
+    },
+    {
+      "id": "lumi-eu-belgium-quota-union-2022",
+      "label": "Documented EU-plus-Belgium allocation quota envelope",
+      "routeIds": ["eurohpc-incident-protocol"],
+      "routeRelationship": "Historical allocation scheme; not evidence of current safeguard scope or authority to amend all allocations.",
+      "kind": "proxy",
+      "numerator": {"value": 57.4, "unit": "percentage points of total LUMI allocation quota", "population": "EU allocation channel plus Belgian national allocation channel", "period": "Historical scheme in notice with next deadline 2022-10-17; exact publication date unknown", "sourceIds": ["S3"], "derived": true, "components": {"euQuota": 50, "belgianQuota": 7.4}},
+      "denominator": {"value": 100, "unit": "percentage points of total LUMI allocation quota", "population": "EU channel 50% plus all national channels 50%", "period": "Historical scheme in notice with next deadline 2022-10-17; exact publication date unknown", "sourceIds": ["S3"]},
+      "formula": "(50 + 7.4) / 100",
+      "value01": 0.574,
+      "interpretation": "Union of disjoint quota channels in the published historical scheme; requires EU institutional participation.",
+      "notEstablished": ["Belgium unilateral authority over EU share", "Coalition agreement", "Legal ability to impose proposed safeguards", "Current delivered GPU-hours", "2026 continuation", "Safety effect"],
+      "uncertainty": {"lower01": null, "upper01": null, "type": "Historical published quota scheme", "notes": "Percentages reported to different precision; do not convert to GPU-hours using the 2026 Finnish source or extrapolate to current quotas."},
+      "observed": "2026-10-31"
+    },
+    {
+      "id": "asml-installed-base-sales-share-fy2025",
+      "label": "ASML service and field-option sales exposure",
+      "routeIds": [],
+      "routeRelationship": "Candidate supply-chain service lever diagnostic; no existing route assigned.",
+      "kind": "proxy",
+      "numerator": {"value": 8193, "unit": "EUR million net sales", "population": "ASML installed-base management: service and field-option sales", "period": "FY2025 ended 2025-12-31", "sourceIds": ["S4"]},
+      "denominator": {"value": 32667, "unit": "EUR million net sales", "population": "ASML total net sales", "period": "FY2025 ended 2025-12-31", "sourceIds": ["S4"]},
+      "formula": "8193 / 32667",
+      "value01": 0.25080356322894665,
+      "interpretation": "Fraction of issuer-reported sales associated with installed-base management, a possible recurring commercial channel to investigate.",
+      "notEstablished": ["EUV-only revenue", "Profit share", "Global AI compute share", "Dutch government withholding authority", "Covered sales under a safeguard", "2026 run rate", "Safety effect"],
+      "uncertainty": {"lower01": null, "upper01": null, "type": "Rounded company annual accounting figures", "notes": "Arithmetic precision exceeds source precision; display 25.08%, not all stored decimal places."},
+      "observed": "2026-10-31"
+    }
+  ],
+  "validationProtocol": {
+    "status": "Proposed; no trial performed, sample recruited or result observed",
+    "levels": ["adopted", "instrumented", "behavioural-outcome", "causal-safety-effect"],
+    "milestones": [
+      {"date": "2026-12-15", "proposal": "Freeze candidate definitions and baseline plans"},
+      {"date": "2027-01-31", "proposal": "Seek owner and adoption evidence"},
+      {"date": "2027-03-31", "proposal": "Verify instrumentation"},
+      {"date": "2027-06-07", "proposal": "Lock April-May outcome data"},
+      {"date": "2027-06-14", "proposal": "Independent reproduction before assignment target"}
+    ],
+    "tests": [
+      {"id": "incident-workflow", "routeIds": ["eurohpc-incident-protocol"], "population": "Participating operator teams and prespecified incident classes", "baseline": "Existing workflow", "design": "Randomized-order paired simulations with equivalent distinct incidents", "proposedTeamCount": 20, "proposedExerciseCount": 40, "actualSampleCount": null, "cluster": "team", "failures": ["missed seeded incident", "late notice under instrument deadline", "lost required evidence", "unusable remedy"], "proposedSuccess": "No lost critical evidence; paired reporting-time improvement interval excludes no improvement; no increased missed incidents", "limitations": "Pilot size not a power calculation; learning/order effects; drill success does not identify real-world harm reduction"},
+      {"id": "agent-leakage-gate", "routeIds": ["sg-agent-data-leakage-deployment-gate"], "population": "Specified eligible agent versions, data-access configurations and frozen held-out scenarios", "baseline": "Same configuration without proposed gate", "design": "Paired baseline/gated tests; cluster by attack family and model", "proposedDistinctScenarioCount": 300, "proposedMinimumRunCount": 600, "actualSampleCount": null, "failure": "Unauthorized planted-secret disclosure, including through tools; missing logs unresolved, not pass", "proposedSuccess": "One-sided 95% upper failure bound below 1%, paired improvement over baseline, no material task-utility regression", "iidZeroFailureIllustration": {"status": "Analytic sample-planning calculation only, not observed outcome", "formula": "1 - 0.05^(1/300)", "value": 0.00993608194445772, "assumption": "300 independent identically distributed Bernoulli trials; invalid population interpretation with correlated or selected attacks"}, "limitations": "Held-out benchmark result is not a causal catastrophic-risk estimate; correlated samples require clustered uncertainty"},
+      {"id": "procurement-evidence-flow", "routeIds": ["jp-procurement-safety-evidence", "jp-kr-sg-procurement-profile"], "population": "All eligible contracts in a preregistered pilot procurement cycle", "baseline": "Existing requirements and compliance", "design": "Randomized immediate/delayed agency or contract introduction if feasible; otherwise preregister matched comparison and pre-trends", "actualSampleCount": null, "requiredCounts": ["eligible", "invited", "signed", "operational", "tested", "withdrawn"], "failure": "Incomplete or unverifiable evidence at deadline, unavailable evaluation access, false reporting or unenforceable remedy", "proposedSuccess": "Prespecified improvement in independently verified timely evidence flow", "sampleRule": "Determine after baseline rate, minimum relevant effect and clustering measured", "limitations": "Adoption alone is not changed behaviour; supplier spillover may invalidate counterfactual"}
+    ],
+    "auditFalsifiers": ["No complete denominator", "Quota or ceiling presented as delivered safeguarded use", "Readiness task splitting", "Coalition or serial-stage double counting", "No operative legal authority or material exemptions", "Benchmark contamination", "Incident underreporting presented as safety", "Failed pilots excluded", "Risk shifted to uncovered workloads", "Expired evidence presented as current"]
+  },
+  "sources": [
+    {"id": "S1", "publisher": "CSC", "title": "Call for proposals for Finnish LUMI Extreme Scale Access projects", "url": "https://csc.fi/en/news/call-for-proposals-for-finnish-lumi-extreme-scale-access-projects/", "locator": "Resource-total paragraph after selection criteria: 13.1 million GPU hours, 50% of CSC annual allocation; following paragraph: ceilings not guaranteed", "published": "2026-01-22", "eventDates": {"applicationDeadline": "2026-02-26", "intendedStartMonth": "2026-04", "duration": "12 months"}, "observed": "2026-10-31", "access": "primary-full-page-read"},
+    {"id": "S2", "publisher": "EuroHPC Joint Undertaking", "title": "EuroHPC JU Access Opportunities — Klara Mestrovic", "url": "https://www.eurohpc-ju.europa.eu/document/download/9b924741-94a2-4811-b3c2-f8332ea61cee_en?filename=User+Forum+webinar+-+access+opportunities.pdf", "locator": "PDF page 12, Consolidated statistics, last three rows; page 1 presentation date", "published": null, "eventDates": {"presentation": "2026-05-13"}, "dataPeriod": "April 2025-April 2026 for all three selected industrial-AI rows", "observed": "2026-10-31", "access": "primary-pdf-text-and-page-screenshot-read"},
+    {"id": "S3", "publisher": "Belgian Science Policy Office (BELSPO)", "title": "Next cut-off for getting computing-time on LUMI", "url": "https://www.belspo.be/belspo/organisation/actua.asp?l=fr", "locator": "Archived item with deadline 17 October 2022, subsection Getting compute time on LUMI: EU 50%, national 50%, Belgium 7.4% of total", "published": null, "eventDates": {"nextApplicationDeadline": "2022-10-17"}, "dataPeriod": "Historical 2022 allocation scheme; not observed use", "observed": "2026-10-31", "access": "primary-full-page-read"},
+    {"id": "S4", "publisher": "ASML", "title": "ASML reports EUR32.7 billion total net sales and EUR9.6 billion net income in 2025", "url": "https://www.asml.com/en/news/press-releases/2026/q4-2025-financial-results", "resolvedUrl": "https://investor.asml.com/news-releases/news-release-details/q4-2025-financial-results", "locator": "Results table FY2025 column, first two rows: 32667 and 8193; EUR million; footnote 1; unaudited release", "published": "2026-01-28", "eventDates": {"financialYearEnd": "2025-12-31"}, "dataPeriod": "FY2025", "observed": "2026-10-31", "access": "primary-full-page-read"},
+    {"id": "S5", "publisher": "OECD", "title": "OECD Economic Surveys: Japan 2026", "url": "https://www.oecd.org/en/publications/oecd-economic-surveys-japan-2026_54cc833d-en/full-report/reigniting-productivity-growth_67b7a182.html", "metadataUrl": "https://www.oecd.org/en/publications/oecd-economic-surveys-japan-2026_54cc833d-en.html", "locator": "Section 2.2.4 Effectively leveraging public procurement, before Figure 2.11: general government excluding public corporations, 16.8% of GDP in 2024", "published": "2026-05-13", "eventDates": {}, "dataPeriod": "2024 procurement/GDP observation", "observed": "2026-10-31", "access": "primary-chapter-and-metadata-read", "use": "Rejected as a GDP-influenced fraction for an AI-specific safeguard"},
+    {"id": "X1", "publisher": "LUMI consortium", "title": "Candidate user-day URL, not used as evidence", "url": "https://lumi-supercomputer.eu/first-lumi-belgium-user-day/", "locator": null, "published": null, "eventDates": {}, "observed": "2026-10-31", "access": "unavailable-on-direct-open; replaced by BELSPO primary source", "use": "None"}
+  ],
+  "limitations": [
+    "All four worked values are proxies, not current safeguarded coverage, readiness measurements or forecasts.",
+    "Historical EuroHPC and LUMI access machinery is a different population/instrument from the proposed 2026 gigafactory contract.",
+    "No current operational safeguard denominator, complete exact-instrument approval register or reference-class delivery cohort was retrieved for any route.",
+    "Regional graph leads are partial. No empirical agreement-coverage or legal-voting-share fraction is added without a complete required set and actual approval evidence.",
+    "Finite approval counts produce discrete ratios on a 0-1 axis; actual legal weights can add granularity but do not justify calibrated probability or assumed actor independence.",
+    "No causal safety effects established; a high coverage fraction does not guarantee risk reduction.",
+    "Offered and allocated capacity are not delivered capacity; budget ceilings are not resources consumed.",
+    "OECD all-procurement/GDP ratio is not covered AI spend or attributable value added; gross spending/GDP is not intrinsically bounded by one.",
+    "Historical allocation percentages cannot be multiplied by capacities from different periods and quota definitions.",
+    "Source dates are separated from data periods; no historical quantity is silently projected into 2026/27.",
+    "No generic total-supply-chain fraction is identified without final-unit tracing and legal-to-output mapping.",
+    "Proposed sample sizes, thresholds and dates are planning choices, not institutional commitments or observed outcomes."
+  ]
+}
