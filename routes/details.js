@@ -9,7 +9,7 @@ try {
   const route = displayRoutes(data, stage).find(r => r.id === params.get('route'));
   if (!route) throw Error('Route not found. Return to the map to select a route.');
   document.title = `${route.shortLabel} · Evidence`;
-  document.querySelector('#back').href = `./#${new URLSearchParams({route:route.id, stage})}`;
+  document.querySelector('#back').href = `estimates.html#${new URLSearchParams({route:route.id, stage})}`;
   const section = (id, title, fields) => `<section id="${id}"><h2>${title}</h2>${fields.map(([label, text]) => `<h3>${label}</h3><p>${esc(text)}</p>`).join('')}</section>`;
   document.querySelector('#research').innerHTML = `<p class="eyebrow">RESEARCH RECORD · ${esc(data.observed)} · ${stage === 'before' ? 'RECONSTRUCTED INITIAL LEAD' : 'REVIEWED SNAPSHOT'}</p><h1>${esc(route.title)}</h1><p>${esc(route.status)} · ${esc(route.confidence)} evidence confidence</p>`
     + section('mechanism', 'Who acts, and how', [['Actor',route.actor],['Instrument',route.instrument],['Obligor',route.obligor],['Proposed safeguard',route.safeguard],['Verification',route.verification],['Remedy',route.remedy],['Decision window',route.window]])

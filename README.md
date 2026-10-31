@@ -5,7 +5,7 @@ This is our workspace for the [Middle Powers: AI Safety Hackathon](https://mangr
 - [ideas.md](ideas.md): the event summary, the landscape research and all ideas.
 - [notes.md](notes.md): discussion notes and the current shortlist.
 - **Live site: https://tubaali.github.io/middle-powers-hackathon/**
-- **[Routes to AI safeguards](https://tubaali.github.io/middle-powers-hackathon/routes/):** compare eight policy proposals by feasibility and potential safety impact; short route briefs link to full evidence and open questions. [Method and checks](routes/README.md).
+- **[Routes to AI safeguards](https://tubaali.github.io/middle-powers-hackathon/routes/):** browse country-specific policy proposals and compare sourced potential resource coverage and required agreements. Short briefs link to calculations, evidence and open questions. [Method and checks](routes/README.md) · [Earlier eight-route estimates](routes/estimates.html).
 - **[Before Geneva](https://tubaali.github.io/middle-powers-hackathon/routes/research.html):** ten scenarios, actual decision windows, required agreements and five sourced numerical examples. [Research brief](reports/Safeguard%20validation%20by%20Geneva.md) · [Source data](data/geneva-research.json).
 - **Game:** [Orbit Accord](https://tubaali.github.io/middle-powers-hackathon/game/) is the same data as a planetary negotiation game (source in `game/`, ongoing work on branch `orbit-accord`).
 - [index.html](index.html): the Leverage Map prototype. Run `python3 -m http.server` in this folder and open http://localhost:8000. Data is in [data/](data/).

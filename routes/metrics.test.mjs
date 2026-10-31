@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {agreementMetric, coverageMetric} from './metrics.mjs';
+import {agreementMetric, coverageMetric, validateQuantitative} from './metrics.mjs';
+import fs from 'node:fs';
 
 const path = (states, handoffs = states.length - 1, complete = true) => ({
   actors:states.map((consent,i) => ({id:`a${i}`, consent})), handoffsLowerBound:handoffs, complete
@@ -36,4 +37,20 @@ test('coverage is calculated from a matched subset, independent of legacy scores
   assert.equal(coverageMetric(null),null);
   assert.throws(()=>coverageMetric({...c,denominator:0}));
   assert.throws(()=>coverageMetric({...c,numerator:101}));
+});
+
+test('assembled inputs resolve sources, preserve denominators and omit legacy scores', () => {
+  const data=JSON.parse(fs.readFileSync(new URL('../data/routes-quantitative.json',import.meta.url)));
+  validateQuantitative(data);
+  for(const route of data.routes) {
+    for(const key of ['impact','feasibility','impactRange','feasibilityRange']) assert.equal(key in route,false);
+  }
+  const withCoverage=data.routes.find(r=>r.quantitative.coverage);
+  const broken=structuredClone(data);
+  broken.routes.find(r=>r.id===withCoverage.id).quantitative.coverage.sourceIds=['missing-source'];
+  assert.throws(()=>validateQuantitative(broken),/Unresolved metric source/);
+  const mismatch=structuredClone(withCoverage);
+  mismatch.id='mismatched-basis';
+  mismatch.quantitative.coverage.denominator*=2;
+  assert.throws(()=>validateQuantitative({...data,routes:[...data.routes,mismatch]}),/Incompatible coverage basis/);
 });

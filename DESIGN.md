@@ -1,5 +1,23 @@
 # Leverage Map + Coalition Builder: design
 
+## Implementing quantitative comparison
+
+The default route view now uses potential coverage within a named resource pool
+and an explicit agreement index on 0–1 axes. Coverage is a sourced numerator
+divided by its matching denominator; it is conditional scope, not measured harm
+prevention. Different pools are never plotted as interchangeable quantities.
+
+Agreement index = support share among the proposed path's required parties /
+(1 + minimum unresolved cross-organisation handoffs). The handoff penalty is an
+explicit modelling choice, not a fitted causal law. Unknown exact consent yields
+an interval; optional visitor assumptions produce scenario points. A required
+rejection blocks that path. Incomplete paths have a zero lower bound and may need
+additional parties. General political support is shown separately from consent.
+
+Missing coverage or authority data stays missing. Such candidates remain in the
+country list. Earlier 1–5 judgments are preserved in `routes/estimates.html`;
+newly sampled routes have no displayed legacy scores.
+
 ## Approved direction: routes to safeguards (31 October 2026)
 
 Grisha approved a route-level explorer: **help middle-power policymakers identify routes to safeguards, and compare what they can accomplish alone versus together.** The existing supply-chain views remain supporting context.

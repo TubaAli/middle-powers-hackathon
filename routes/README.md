@@ -6,6 +6,29 @@ server from the repository root (`python3 -m http.server 8765`) and open
 
 ## What it does
 
+The default map uses calculated 0–1 quantities: potential coverage within a
+named resource pool and an agreement index. Different resource denominators
+are separate views. Missing coverage stays unknown; all candidates remain
+browsable by country. Each selected route opens a short brief with links to
+`quantitative-details.html` for its calculations, decision path and evidence.
+
+Coverage is a matched numerator / denominator, conditional on adoption, not
+measured harm prevention. The agreement index is support share / (1 + minimum
+unresolved handoffs). This penalty is a modelling choice, not a calibrated
+probability. Unknown consent produces bounds; the optional slider supplies a
+visitor assumption. Incomplete agreement paths may need more parties.
+
+Build with `python3 scripts/build-quantitative-data.py`; the default page reads
+`data/routes-quantitative.json`. The builder strips legacy numeric scores.
+Run `node --test routes/metrics.test.mjs` and
+`python3 scripts/check-quantitative-browser.py --url http://127.0.0.1:8765/routes/`
+(the latter needs installed Playwright and an authorized CDP browser on 9222).
+
+## Earlier estimates
+
+The following describes `estimates.html`, which preserves the original eight
+routes, ordinal assessments, comparison arrows and reconstructed replay.
+
 The map leads with potential impact and feasibility. Each point opens a short
 decision brief; on mobile, selecting a point brings the brief into view. The
 brief links to `details.html` for the full mechanism, assessment, gaps and

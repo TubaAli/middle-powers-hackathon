@@ -1,5 +1,47 @@
 # Discussion notes
 
+## Expanded quantitative sample: integration checks
+
+The assembled sample contains 32 proposed routes spanning 33 named middle-power
+countries, including countries represented through the LUMI coalition. Four
+records have conditional resource coverage across two distinct denominators;
+28 remain unquantified. None supplies measured harm prevention or exact-safeguard
+consent. The Latin American, African, South Asian/Gulf and Southeast Asian
+shards add 16 country-specific candidates. Kenya remains a partial investigation
+target because its controlling primary sources were unreadable.
+
+Local browser checks exercised every route and evidence page, all country
+filters, both coverage pools, assumption persistence and empty states. The
+largest final brief was 589.38px at 390×844, with no horizontal overflow or page errors.
+The preserved eight-route estimates view also passed its original browser
+checks, including replay and paired comparisons. Public deployment acceptance
+is recorded separately once performed.
+
+Next discriminating question: which named owner can provide one upcoming
+decision, a complete approval set and a matched eligible-resource inventory,
+then permit observation of a failed-test hold and corrective retest before
+Geneva? More country labels alone cannot answer that question.
+
+The shard ledgers retain controlling URLs, source-reading records and access
+limitations. The integration session's administrative status request returned
+HTTP 403; no guide change was adopted.
+
+## Quantitative map implementation and broader sampling
+
+Grisha asked us to continue implementation and cover as many middle-power
+countries as practicable. The active pass adds Latin American, African, South
+Asian/Gulf and Southeast Asian instrument-level candidates, alongside three
+LUMI allocation routes and the existing Geneva scenarios. Helpers have separate
+shards; the owner integrates and checks the public result.
+
+Implementation replaces the default 1–5 plot with a resource-pool coverage ratio
+and a declared-path agreement index. Missing consent produces bounds; visitor
+cooperation assumptions are optional and explicit. The handoff penalty is a
+model choice, not a calibrated probability. Candidate routes lacking a matched
+coverage denominator stay browsable without manufactured points. Old estimates
+are preserved separately. WIP model and source records are being committed before
+the new default page is published.
+
 ## Next research pass: selected and tested by Geneva
 
 Grisha clarified the objective: by the Geneva 2027 AI summit, identify which safeguard routes have been selected and, where feasible, obtain evidence that they work. Continue sampling scenarios against real late-2026 and 2027 decision windows and the current political/economic context. Role-based analysis is a stress test, not testimony or institutional consent. Separate adoption, implementation, changed behaviour and risk reduction.

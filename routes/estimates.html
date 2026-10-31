@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Earlier estimates · Routes to safeguards</title>
+  <meta name="description" content="Explore evidence-backed routes to AI safeguards. Compare feasibility, potential impact and what coordination changes.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#explorer">Skip to explorer</a>
+  <header class="masthead">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">↗</span> MIDDLE POWERS <span class="brand-sub">/ SAFEGUARD ATLAS</span></a>
+    <nav aria-label="Project navigation"><a href="research.html">Before Geneva ↗</a><a href="../">Supply-chain map ↗</a><a href="#method">How to read this</a></nav>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">POLICY ROUTES · RESEARCH SNAPSHOT <span id="snapshot-date">31 OCT 2026</span></p>
+      <h1>Find a practical route to <em>safer AI.</em></h1>
+      <p class="lede">Look up and right for greater potential impact and feasibility. Select a route for the short version.</p></div>
+      <div class="snapshot"><span class="pulse" aria-hidden="true"></span> CURATED, NOT LIVE
+        <strong id="route-count">— routes</strong><span id="pair-count">Loading the evidence map…</span>
+        <a href="#updates">Replay an evidence update <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section id="explorer" aria-labelledby="map-title">
+      <div class="section-top"><div><p class="eyebrow">01 / EXPLORE THE POSSIBLE</p><h2 id="map-title">Routes to safeguards</h2></div>
+        <div class="view-switch" role="group" aria-label="Display"><button id="show-map" aria-pressed="true">Map</button><button id="show-list" aria-pressed="false">List</button></div>
+      </div>
+      <details class="filter-disclosure"><summary>Find or filter routes</summary><div class="filters">
+        <label class="search">Find a route<input id="search" type="search" placeholder="Country, safeguard or institution…"></label>
+        <label>Coordination<select id="coordination"><option value="">All routes</option><option value="national">One jurisdiction</option><option value="middle-power">Middle powers together</option><option value="broader">Broader coalition</option></select></label>
+        <label>Instrument<select id="mechanism"><option value="">All instruments</option><option>Procurement</option><option>Evaluation</option><option>Finance</option><option>Compute</option></select></label>
+        <label>Region<select id="region"><option value="">All regions</option><option>Asia-Pacific</option><option>Europe</option><option>Cross-regional</option></select></label>
+        <button id="reset" class="text-button">Reset</button>
+      </div></details>
+      <div class="legend"><span><i class="dot national"></i> One jurisdiction</span><span><i class="dot middle-power"></i> Middle powers together</span><span><i class="dot broader"></i> Broader coalition</span><span class="legend-note">Opacity = evidence confidence, not chance of success</span></div>
+      <div id="loading" role="status">Loading routes and source notes…</div>
+      <div class="workspace" id="workspace" hidden>
+        <div class="map-column">
+          <div class="chart-panel" id="map-panel">
+            <div class="chart-top"><span id="visible-count" aria-live="polite"></span><label class="check"><input type="checkbox" id="uncertainty"> Show judgment range</label></div>
+            <div id="plot" class="plot" role="group" aria-label="Route plot: feasibility increases rightward and potential impact upward"></div>
+            <div id="plot-index" class="plot-index" aria-label="Select a route"></div>
+            <p class="plot-foot"><strong>Dotted rings: strongest trade-offs in view.</strong> Editorial ratings, not measured risk reduction. <a href="#method">How to read the map ↓</a></p>
+          </div>
+          <div id="list-panel" hidden><div id="route-list" class="route-list"></div></div>
+          <div id="empty" class="empty" hidden>No routes match these filters. Try another country or reset the filters.</div>
+          <details class="comparison"><summary>What changes when countries act together?</summary>
+            <div class="section-top"><div><p class="eyebrow">TEST THE COORDINATION THESIS</p><h3 id="compare-title">What changes when we act together?</h3></div></div>
+            <div id="pair-buttons" class="pair-buttons"></div>
+            <div id="pair-detail"><p>Select a paired route to compare a national proposal with its coordinated version.</p></div>
+          </details>
+        </div>
+        <aside id="route-detail" class="route-detail" aria-label="Selected route evidence"></aside>
+      </div>
+    </section>
+
+    <section id="updates" class="updates" aria-labelledby="updates-title">
+      <div><p class="eyebrow">02 / FOLLOW THE EVIDENCE</p><h2 id="updates-title">A route moves when evidence changes.</h2>
+        <p>Replay the EuroHPC source review: an initial lead becomes a documented <strong>draft</strong> obligation. The coordinates illustrate an editorial reassessment—not a measured change in safety or a live search.</p>
+        <div class="replay-controls" role="group" aria-label="Evidence replay"><button id="replay-before">1. Initial lead</button><button id="replay-after" aria-pressed="true">2. Contract reviewed</button></div>
+        <p id="replay-status" class="small" aria-live="polite"></p>
+      </div>
+      <div id="update-card" class="update-card"></div>
+    </section>
+
+    <section id="method" class="method" aria-labelledby="method-title">
+      <div><h2 id="method-title">What the scores mean</h2>
+        <p>The current scores are estimates on a 1–5 scale. Click a score to read its reasoning and sources.</p>
+        <p><a href="research.html?view=numbers">Numbers we can measure</a> · <a href="research.html?view=agreement">Who must agree</a></p>
+        <a href="../data/routes.json" download>Download the route data ↗</a>
+      </div>
+      <div class="method-grid">
+        <article><h3>Feasibility</h3><p>How hard would this be to put into practice? A higher score means fewer unresolved approvals, legal barriers and delivery problems.</p></article>
+        <article><h3>Potential impact</h3><p>How much harm could it prevent if implemented? A higher score means a wider or more serious risk addressed. We have not measured that reduction.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><span>Middle Powers · AI Safety Hackathon 2026 · AI-assisted research and code</span><a href="../">Explore the supply-chain context ↗</a><a href="https://github.com/TubaAli/middle-powers-hackathon">Source & research ↗</a></footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

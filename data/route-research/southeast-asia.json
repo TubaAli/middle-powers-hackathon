@@ -1,0 +1,209 @@
+{
+  "routes": [
+    {
+      "id": "indonesia-bpom-dpia-gate",
+      "title": "Test an AI data-protection gate inside BPOM's compliance rollout",
+      "shortLabel": "Indonesia DPIA pilot",
+      "coordination": "national",
+      "countries": ["Indonesia"],
+      "region": "Southeast Asia",
+      "mechanism": "Regulation",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "Badan POM (BPOM), acting as public-body data controller; external enforcement institution remains to be verified.",
+      "obligor": "BPOM for an identified high-risk personal-data processing operation; no actual AI deployment or supplier has yet been identified.",
+      "instrument": "Law 27/2022 Article 34 requires impact assessment for high-risk processing, including significant automated decisions and new technology. BPOM's September 2026 compliance programme supplies a concrete implementation setting.",
+      "safeguard": "Proposed: select one AI-assisted complaints or clinical-data workflow; require a signed assessment, personal-data leakage tests, human review and documented mitigation before production access.",
+      "verification": "Proposed: retain versioned test cases, access logs, a signed go/no-go record and a retest after mitigation; demonstrate whether a failed case actually blocks deployment.",
+      "remedy": "Proposed internal hold on the selected deployment. Article 57 lists administrative sanctions, including suspension of processing; the competent operational enforcer and procedure need verification before claiming an external veto.",
+      "window": "Actual event: BPOM compliance workshop, 15 September 2026, following reported promulgation of PP 33/2026 on 16 July 2026. BPOM announced follow-up assessment and processing records. No dated tender, preparation-period end or 2027 pilot slot verified. Proposed validation by 21–22 June 2027 is a project target, not an official deadline.",
+      "evidenceSummary": "A statutory assessment instrument and a named public-body implementation programme are evidenced. Neither a completed BPOM AI assessment nor adoption of the proposed gate was found.",
+      "gap": "Full PP 33/2026 text and current establishment/delegation of the supervisory institution remain unverified; no system inventory, procurement contract or pilot approval.",
+      "nextQuestion": "Which BPOM processing operation is both AI-enabled and subject to Article 34, and who can sign and enforce its pre-production hold?",
+      "incentives": ["Proposed benefit: turn compliance preparation into a demonstrable operational control.", "Proposed benefit: reuse one assessment dossier across privacy and deployment decisions."],
+      "constraints": ["Privacy assessment does not establish a general frontier-model release power.", "A supplier may control evidence that BPOM cannot obtain under existing terms.", "External enforcement readiness cannot be inferred from a ministerial announcement."],
+      "sources": [
+        {"id": "id-pdp-law", "title": "Komdigi legal database: Law 27/2022 on Personal Data Protection", "url": "https://jdih.komdigi.go.id/produk_hukum/view/id/832/t/undangundang%2Bnomor%2B27%2Btahun%2B2022", "locator": "Articles 34, 57–58; primary HTML text", "claim": "High-risk processing requires assessment; sanctions and a presidentially established supervisory institution are specified.", "observed": "2026-10-31", "published": "2022-10-17", "access": "primary-read"},
+        {"id": "id-bpom-rollout", "title": "BPOM Perkuat Kesiapan Penerapan Pelindungan Data Pribadi", "url": "https://pusdatin.pom.go.id/berita/bpom-perkuat-kesiapan-penerapan-pelindungan-data-pribadi", "locator": "15 September 2026 workshop report; opening and final follow-up paragraphs", "claim": "BPOM reports PP 33/2026 promulgation, discusses AI processing and plans gap assessment, processing records and privacy governance.", "observed": "2026-10-31", "published": "2026-09-15", "access": "primary-read"},
+        {"id": "id-authority-status", "title": "Wamen Nezar Patria: Indonesia Siapkan Otoritas Pelindungan Data Pribadi yang Independen", "url": "https://portal.komdigi.go.id/kanal-publik/berita-kini/10412", "locator": "22 July 2026 press release describing 21 July remarks", "claim": "Deputy minister described formation of an independent authority as still being finalised; this is not proof of establishment by October.", "observed": "2026-10-31", "published": "2026-07-22", "access": "primary-read"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["An assessment before deployment", "Use BPOM's compliance rollout to test a documented AI deployment hold.", "The workflow, signatory and external enforcement route still need confirmation."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "One BPOM-controlled AI processing pilot, with external enforcement separately unresolved.",
+          "actors": [
+            {"id": "id-bpom", "name": "Badan POM (BPOM)", "role": "Controller and prospective internal deployment decision-maker", "consent": "unknown", "alignment": "support", "sourceIds": ["id-bpom-rollout"], "note": "15 September programme supports privacy implementation, not this pilot; internal units and privacy officers are not counted as separate institutions."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": null,
+          "sourceIds": ["id-pdp-law", "id-bpom-rollout", "id-authority-status"],
+          "limitations": "A connected pilot approval path is not verified. The unidentified external supervisory institution is not counted as a necessary party to the proposed internal hold. Do not substitute Komdigi automatically for the Article 58 institution. July ministerial support is not October institutional readiness or pilot consent. Suppliers are not counted before an actual dependency is identified."
+        }
+      }
+    },
+    {
+      "id": "malaysia-commercial-ai-dpia",
+      "title": "Attach evidence of AI risk mitigation to a Malaysian commercial DPIA",
+      "shortLabel": "Malaysia DPIA evidence",
+      "coordination": "national",
+      "countries": ["Malaysia"],
+      "region": "Southeast Asia",
+      "mechanism": "Evaluation",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "A participating Malaysian commercial data controller, using the Personal Data Protection Commissioner's assessment guideline.",
+      "obligor": "The selected commercial controller; a contracted processor only to the extent required by applicable terms. Federal and state governments are exempt from Act 709.",
+      "instrument": "2026 DPIA Guideline, sections 6–10 and Annex A: high-risk screening, assessment and senior-management consideration, including AI examples. This is not a general government AI procurement mandate.",
+      "safeguard": "Proposed: append reproducible privacy-leakage and harmful automated-decision tests to one AI assessment; contract for evidence access and make unresolved critical findings a production hold.",
+      "verification": "Proposed: freeze a synthetic test set and system version, record baseline failures and retest fixes; inspect the signed management decision and whether the hold was exercised.",
+      "remedy": "Proposed contractual/internal hold and corrective retest. The guideline permits management to accept residual risk; a regulator-imposed AI launch veto is not established here.",
+      "window": "Existing 2026 guideline provides an implementation route. Official consultation portal lists the separate AI/privacy framework consultation as 5–24 October 2026, closed. A specific 2027 adoption date or pilot intake was not verified. Seek a deployment-linked pilot before the project checkpoint of 21–22 June 2027, not a purported reopened consultation.",
+      "evidenceSummary": "Published guidance provides a practical assessment instrument; the separate AI framework is a consultation, not established adoption. No participating controller or executed gate has been identified.",
+      "gap": "Need the controller, system scope, processor evidence terms and written no-go criteria. Exact guideline release day and any final AI-framework publication remain unverified.",
+      "nextQuestion": "Will a commercial controller choose a 2027 AI rollout and give its assessment an enforceable, testable critical-failure hold?",
+      "incentives": ["Proposed benefit: use one evidence package for privacy assurance and vendor acceptance.", "Proposed benefit: discover costly deployment defects before real customer exposure."],
+      "constraints": ["Government exemption prevents treating the country's entire public sector as covered.", "Management risk acceptance can weaken the proposed gate.", "Privacy scope excludes many advanced-AI harms and does not control upstream model release."],
+      "sources": [
+        {"id": "my-dpia-guideline", "title": "Personal Data Protection Commissioner: Data Protection Impact Assessment Guideline", "url": "https://www.pdp.gov.my/wp-content/uploads/2026/04/Data-Protection-Impact-Assessment-Guideline-DPIA.pdf", "locator": "Sections 2, 6–10; AI examples p.10; Annex A; exact release day not established from PDF", "claim": "Controller-led assessment includes AI use cases, processor assistance and senior-management risk decisions; it does not establish an automatic external veto.", "observed": "2026-10-31", "published": null, "access": "primary-read"},
+        {"id": "my-pdp-scope", "title": "Personal Data Protection Department FAQ", "url": "https://www.pdp.gov.my/en/faq/", "locator": "General questions: purpose and who needs to comply; use only these scope statements", "claim": "Act 709 concerns commercial personal-data processing; federal and state governments are exempt. Other FAQ material is not relied on for amended duties.", "observed": "2026-10-31", "published": null, "access": "primary-read"},
+        {"id": "my-ai-consultation", "title": "Unified Public Consultation: AI and Personal Data Protection Framework, No. 01/2026", "url": "https://upc.mpc.gov.my/view-consultation/296", "locator": "Consultation Information and Purpose; portal period 05/10/2026–24/10/2026, Closed", "claim": "JPDP sought feedback for finalisation of a proposed AI/privacy framework; the portal shows a closed October consultation, not a future decision date.", "observed": "2026-10-31", "published": null, "access": "primary-read"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["Make an assessment change deployment", "Add reproducible AI tests and a critical-failure hold to a commercial DPIA.", "An assessment alone can end in risk acceptance; the binding hold still needs agreement."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "One commercial controller and its processor, where processor evidence is required; regulator pre-approval is not assumed.",
+          "actors": [
+            {"id": "my-controller", "name": "Participating commercial data controller (unselected)", "role": "Owns assessment and production decision", "consent": "unknown", "alignment": "unknown", "sourceIds": ["my-dpia-guideline"], "note": "Senior management, DPO and assessment lead are internal roles, not additional institutions; no company commitment identified."},
+            {"id": "my-processor", "name": "Selected AI data processor (unselected)", "role": "Contractual evidence and remediation counterparty in the proposed outsourced pilot", "consent": "unknown", "alignment": "unknown", "sourceIds": ["my-dpia-guideline"], "note": "Section 6.2 supports controller–processor assistance terms; no actual supplier or signed amendment found."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": 1,
+          "sourceIds": ["my-dpia-guideline", "my-ai-consultation"],
+          "limitations": "One institutional handoff is a structural lower bound for the specifically proposed outsourced pilot, not a completed approval count. JPDP's October consultation supports work on AI/privacy governance but proves neither leader support for this gate nor company consent."
+        }
+      }
+    },
+    {
+      "id": "thailand-aigpc-sandbox-gate",
+      "title": "Turn a Thai AI Governance Sandbox test into a deployment decision",
+      "shortLabel": "Thailand sandbox gate",
+      "coordination": "national",
+      "countries": ["Thailand"],
+      "region": "Southeast Asia",
+      "mechanism": "Evaluation",
+      "status": "Proposed",
+      "confidence": "Low",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "Electronic Transactions Development Agency (ETDA), through its internal AI Governance Practice Center, with a participating use-case owner.",
+      "obligor": "Prospective sandbox participant under pilot terms still to be agreed; no statutory deployment veto established.",
+      "instrument": "ETDA's announced 2027 AI Governance Sandbox: controlled evaluation of real use cases before wider deployment. A signed participant gate would be a new instrument, not an existing statutory condition.",
+      "safeguard": "Proposed: one domestic public-service chatbot pilot with a preregistered harmful-output/privacy evaluation and a critical-failure threshold linked to the owner's production decision.",
+      "verification": "Proposed: independent rerun of held-out Thai-language cases, versioned failure records, remediation and one observed go/no-go decision. Use synthetic scenarios and document scope limitations.",
+      "remedy": "Proposed participant agreement to withhold wider rollout until critical failures are fixed. ETDA authority to compel this outside the agreement is unverified.",
+      "window": "5 October 2026 announcement identifies 2027 programme direction. No application deadline, admitted cohort or pre-June completion slot verified. 21–22 June 2027 is the project's validation checkpoint; sandbox participation and scheduling must be confirmed first.",
+      "evidenceSummary": "An official operational sandbox proposal exists beyond a national strategy. ETDA describes prior ethical-LLM work, but no binding admission rules or participant-specific decision record was retrieved.",
+      "gap": "Missing intake rules, participant identity, committed evaluator time, evidence access and contractual deployment hold.",
+      "nextQuestion": "Can ETDA identify a 2027 domestic sandbox case whose owner will bind production deployment to a published critical-failure test before June?",
+      "incentives": ["Proposed benefit: give the sandbox an observable decision outcome rather than only a workshop output.", "Proposed benefit: let a participant discover local-language failures before expanding deployment."],
+      "constraints": ["Voluntary participation is not nationwide coverage.", "Evaluation capacity and developer cooperation may constrain timing.", "International prompt collaboration is separate from this national pilot and is not assumed necessary."],
+      "sources": [
+        {"id": "th-etda-sandbox", "title": "ETDA elevates AIGPC and announces AI Governance Sandbox direction", "url": "https://www.etda.or.th/th/pr-news/aigc/etda-aigpc-ai-governance-sandbox-2027.aspx?feed=590fb9ad-c550-4bc5-9a56-459ad4891d74", "locator": "Dated 05 ต.ค. 69 (5 October 2026); paragraphs on 2570 (2027) Action and 2569 (2026) prior work", "claim": "ETDA describes a controlled real-use-case evaluation mechanism connecting use-case owners and developers, and identifies its 2027 direction.", "observed": "2026-10-31", "published": "2026-10-05", "access": "primary-read"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["Give sandbox tests a consequence", "Agree a domestic pilot whose failed safety test can stop wider rollout.", "The 2027 programme is announced; intake and binding participant terms are unverified."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "ETDA-facilitated national pilot with a use-case owner and separate developer; no Singapore dependency assumed.",
+          "actors": [
+            {"id": "th-etda", "name": "ETDA", "role": "Sandbox convener and prospective evaluation coordinator", "consent": "unknown", "alignment": "support", "sourceIds": ["th-etda-sandbox"], "note": "5 October 2026 statement by AIGPC director Rojana Lamlerd supports practical predeployment risk assessment; it does not approve this gate. AIGPC is counted within ETDA."},
+            {"id": "th-usecase-owner", "name": "Participating use-case owner (unselected)", "role": "Controls wider deployment and must agree the hold", "consent": "unknown", "alignment": "unknown", "sourceIds": ["th-etda-sandbox"], "note": "No public body has been identified as having signed this proposed pilot."},
+            {"id": "th-developer", "name": "Participating developer (unselected)", "role": "Provides system access and fixes in the proposed externally developed case", "consent": "unknown", "alignment": "unknown", "sourceIds": ["th-etda-sandbox"], "note": "The source explicitly connects developers and owners through ETDA; experts are not counted as separate institutions without a required institutional approval."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": 2,
+          "sourceIds": ["th-etda-sandbox"],
+          "limitations": "Two handoffs represent the connected three-institution arrangement described for an externally developed case, not evidence of a signed participant path. No national political leader's endorsement of this exact safeguard or compulsory veto was found."
+        }
+      }
+    },
+    {
+      "id": "vietnam-public-ai-impact-gate",
+      "title": "Test a public-service AI impact assessment at the approval point",
+      "shortLabel": "Vietnam public AI gate",
+      "coordination": "national",
+      "countries": ["Vietnam"],
+      "region": "Southeast Asia",
+      "mechanism": "Evaluation",
+      "status": "Proposed",
+      "confidence": "Medium",
+      "impact": 2,
+      "feasibility": 2,
+      "impactRange": [1, 4],
+      "feasibilityRange": [1, 4],
+      "impactRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "feasibilityRationale": "Unscored new candidate; legacy numbers are compatibility placeholders and must not be shown.",
+      "actor": "Head of the deploying Vietnamese state agency; Ministry of Science and Technology (MOST) oversees assessment implementation.",
+      "obligor": "A selected state agency deploying AI within Article 20's scope; no particular agency or supplier has yet agreed a pilot.",
+      "instrument": "Decree 142/2026/ND-CP, Article 20 and Form AI02: assessment for high-risk state-agency systems or specified rights/public-interest systems whose results directly ground administrative decisions. Agency-head approval precedes use.",
+      "safeguard": "Proposed: attach reproducible harmful-decision, leakage and human-intervention tests to one public-service AI assessment, and use unresolved critical failures as explicit approval-withholding criteria.",
+      "verification": "Proposed: inspect the approved dossier and a versioned baseline/retest comparison; run an intervention exercise showing a human can override the system and prevent a harmful decision.",
+      "remedy": "Proposed exercise of the agency's pre-use approval point to withhold deployment pending mitigation. No general upstream-model ban or automatic penalty for this proposed test threshold is claimed.",
+      "window": "Decree issued 30 April 2026 and effective 1 May 2026. The opportunity is a qualifying deployment or material change, not an identified 2027 consultation. No agency rollout date verified. Select a qualifying case and test before the project checkpoint of 21–22 June 2027; this target is not prescribed by the decree.",
+      "evidenceSummary": "Article 20 assigns agency-head approval, assessment updating and MOST oversight. The legal assessment is established; the proposed critical-failure test and a participating implementation are not.",
+      "gap": "Need a named system, confirmation of scope, a deployment date, signatory and access to a publishable dossier. Supplier evidence rights and assessment practice are unknown.",
+      "nextQuestion": "Which agency has a qualifying AI deployment before June 2027 and will show that its assessment can actually withhold approval?",
+      "incentives": ["Proposed benefit: turn an assessment form into evidence that the approval control operates.", "Proposed benefit: reuse a documented human-intervention test for operational readiness."],
+      "constraints": ["The legal duty does not demonstrate implementation quality or actual refusal of approval.", "Disclosure exceptions may limit independent verification.", "Public-service scope cannot be extrapolated to national AI compute or GDP."],
+      "sources": [
+        {"id": "vn-decree142", "title": "Government Decree 142/2026/ND-CP implementing the Law on Artificial Intelligence", "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/142-2026-ndcp.signed.pdf", "locator": "Article 20, printed pp.18–19, OCR read from signed PDF; paragraph 3 references Form AI02", "claim": "Specifies public-sector AI impact assessments, agency-head approval, material-change reassessment, disclosure exceptions and MOST supervision.", "observed": "2026-10-31", "published": "2026-04-30", "access": "primary-read"},
+        {"id": "vn-decree-metadata", "title": "Government legal portal: Decree 142/2026/ND-CP", "url": "https://vanban.chinhphu.vn/?docid=218029&pageid=27160", "locator": "Issue date, effective date, issuing authority and signatory fields", "claim": "Government issued decree on 30 April 2026, effective 1 May 2026; signatory is Ho Quoc Dung.", "observed": "2026-10-31", "published": "2026-04-30", "access": "primary-read"}
+      ],
+      "pairId": null,
+      "pairRole": null,
+      "quantitativeOnly": true,
+      "brief": ["Use the public-service approval point", "Add reproducible tests to a qualifying state agency's AI impact assessment.", "The approval instrument exists; a real pre-June deployment and effective hold remain unverified."],
+      "quantitative": {
+        "coverage": null,
+        "agreements": {
+          "scope": "One deploying state agency and MOST oversight; agency leadership is an internal role, not a third institution.",
+          "actors": [
+            {"id": "vn-deploying-agency", "name": "Deploying state agency (unselected)", "role": "Agency head approves assessment before use", "consent": "unknown", "alignment": "unknown", "sourceIds": ["vn-decree142"], "note": "Statutory responsibility is not evidence that any specific agency supports the proposed test or has approved participation."},
+            {"id": "vn-most", "name": "Ministry of Science and Technology", "role": "Supervises implementation of public-sector assessments", "consent": "unknown", "alignment": "unknown", "sourceIds": ["vn-decree142", "vn-decree-metadata"], "note": "30 April 2026 government enactment establishes the assessment policy. It does not prove current ministerial endorsement of the proposed critical-failure threshold or require MOST to approve every deployment."}
+          ],
+          "complete": false,
+          "handoffsLowerBound": 1,
+          "sourceIds": ["vn-decree142"],
+          "limitations": "One handoff is a structural agency-to-supervisor lower bound under Article 20, not two necessary pre-launch signatures. Supplier and sector-specific dependencies must be investigated for the selected system. Leader alignment with this exact pilot remains unknown."
+        }
+      }
+    }
+  ]
+}

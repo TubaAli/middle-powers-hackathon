@@ -8,6 +8,7 @@ import argparse
 import asyncio
 import json
 from pathlib import Path
+from urllib.parse import urljoin
 
 from playwright.async_api import async_playwright
 
@@ -27,7 +28,7 @@ async def check(url, screenshot):
             assert count >= 8, count
             assert await page.locator('.plot-dot').count() == count
             evidence_url = await page.locator('.brief-links a').last.get_attribute('href')
-            await page.goto(url + evidence_url, wait_until='networkidle')
+            await page.goto(urljoin(url, evidence_url), wait_until='networkidle')
             assert await page.locator('.source-card').count() >= 1
             await page.locator('#back').click()
             await page.locator('#workspace').wait_for(state='visible')
