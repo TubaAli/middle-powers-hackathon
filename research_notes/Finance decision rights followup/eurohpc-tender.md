@@ -1,6 +1,6 @@
 # EuroHPC AI Gigafactory tender: path from procurement decision to an enforceable AI-safety obligation
 
-> Initial researcher note, superseded on access status: the coordinator subsequently retrieved the actual revised specifications, model framework contract, change history and Annex 2. See METHOD.md and the forthcoming raw-document verification. No missing clause may be labelled absent solely from this note's secondary-source coverage. A draft contract is not an executed contract.
+> Initial researcher note, superseded on access status and several conclusions: the coordinator subsequently retrieved the actual revised specifications, model framework contract, change history and Annex 2. Use [eurohpc-raw-verification.md](eurohpc-raw-verification.md) and the [integrated follow-up](../../reports/Finance%20decision%20rights%20followup.md). The draft does contain infrastructure security and incident duties; no missing clause may be labelled absent solely from this note's secondary-source coverage. A draft contract is not an executed contract.
 
 Research focus: follow-up on Test 3 (procurement feasibility) from *Financial leverage for safer AI*. All retrievals observed **31 October 2026**; publication and event dates are recorded separately per the working agreement's evidence rules. Reference: call **EUROHPC-2026-CEI-AIGF-01** / procedure **EUROHPC/2026/OP/0008**.
 

@@ -1,6 +1,6 @@
 # Cohere staged equity: can the Canadian decision right bear an enforceable safety term?
 
-> Provisional researcher note. See METHOD.md and subsequent verification before reuse. In particular, CDEV is not a confirmed investor; future-stage discretion is unknown, not open; CAISI's current powers and the legal/privacy inferences below require qualification. The candidate YAML is not approved application data.
+> Provisional researcher note. Use [authority-refutation.md](authority-refutation.md) and the [integrated follow-up](../../reports/Finance%20decision%20rights%20followup.md) before reuse. In particular, CDEV is not a confirmed investor; future-stage discretion is unknown, not open; CAISI's current powers and the legal/privacy inferences below require qualification. A single agreement can contain conditional draw rights, and the reporting examples are non-exhaustive. The candidate YAML is not approved application data.
 
 **Role:** independent follow-up research, owner-assigned. **Observation date:** 31 October 2026. **Cutoff for every claim:** 31 October 2026.
 **Scope:** trace one complete path — Government of Canada → Cohere stage funding → an enforceable AI-safety deliverable — from the 29 October 2026 announcement outward to the statute, the investing institution, the round, the safety body, and the merger.
