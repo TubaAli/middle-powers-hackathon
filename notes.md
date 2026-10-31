@@ -27,3 +27,7 @@ A summary of the brainstorm so far. The full idea list is in [ideas.md](ideas.md
 - **Shortlist:**
   - **Leverage Map + Coalition Builder:** the strongest fit with the "middle powers" theme.
   - **Multilingual Safety Eval Hub:** the most direct safety impact.
+
+## Working agreement
+- Everything we discuss from here on is committed and pushed to `main` in real time.
+- Collaborators: gszep and Drukboy.
