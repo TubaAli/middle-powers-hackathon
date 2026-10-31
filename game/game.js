@@ -197,7 +197,7 @@ function endMonth() {
   if (g.turn >= MONTHS.length) return finish();
   openCouncil();
 }
-// ---------- Meeting: anime envoys talk, you pick a leverage point, a letter answers (meeting.js) ----------
+// ---------- Meeting: mecha envoys talk, you pick a leverage point, the court answers by letter (meeting.js) ----------
 function openTalk(t) {
   g.phase = 'talk';
   const p = planet(t), me = planet(g.me), inAcc = g.coalition.includes(t), asked = g.asked.has(t);
@@ -230,7 +230,7 @@ function openTalk(t) {
     ask: `How do you persuade ${p.name}? Pick your leverage (1–${ds.length}).`,
     deals: ds.map((d) => ({ label: esc(d.label), sub: esc(d.sub), pct: odds(t, d) })),
     onChoose: (i) => rollDeal(t, ds[i]),
-    afterChoice: (i, res) => {
+    afterChoice: (i) => {
       const d = ds[i];
       const line = d.token ? `We'll send ${icon(d.token)} ${pname(d.token).toLowerCase()}. ${need.includes(d.token) ? 'You need it more than we do.' : 'Take it as goodwill.'}`
         : d.promise ? `We make ${Math.round(stage(d.promise).share[g.me])}% of the world's ${stage(d.promise).name}. Join us, and it stays open to you.`
@@ -238,8 +238,7 @@ function openTalk(t) {
       return [
         { who: 'me', mood: 'flat', text: line },
         { think: true },
-        res.ok ? { who: 'them', mood: 'happy', pop: '!', other: 'happy', text: `…Agreed. ${p.name} will join your accord. Our letter will follow.` }
-               : { who: 'them', mood: 'sad', pop: '…', other: 'sad', text: `I'm sorry, envoy. Not this time. Our letter will explain.` },
+        { who: 'them', mood: 'flat', pop: '✉', text: `Offer logged. The court of ${p.name} will deliberate. Its answer comes by letter, not from me.` },
       ];
     },
     get letter() {

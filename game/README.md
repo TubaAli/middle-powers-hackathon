@@ -16,7 +16,7 @@ A real-time negotiation game built on the Leverage Map data. Countries are plane
    - 🤝 **Summit tour** or 📣 **rally at home:** better odds this month.
    - 🔬 **Seed your own dependency:** tiny gain, and it shows how many years real replacement takes.
    - Trade season: +1 of your strongest token.
-3. **Fly** to planets and press Space to open a **meeting**: two anime-style envoys (yours and theirs) talk in a meeting room whose season follows the month. Space advances the dialogue. Pick one of up to three leverage points (a token they need, a promise of your chokepoint, or just asking; odds shown). They think, react, and send a **letter** stamped Approved or Declined. Envoys are original SVG drawings of fictional adults, animated in CSS (`meeting.js`, `meeting.css`); the art direction follows `concepts/`.
+3. **Fly** to planets and press Space to open a **meeting**: two anime mecha-alien envoys (yours and theirs; armour locks together as they arrive) talk in a meeting room whose season follows the month. Space advances the dialogue. Pick one of up to three leverage points (a token they need, a promise of your chokepoint, or just asking; odds shown). The envoy never answers in person: the court's verdict arrives only as a **letter** stamped Approved or Declined. Envoys are original SVG mecha drawings, animated in CSS (`meeting.js`, `meeting.css`); the art direction follows `concepts/`.
 4. **Events:**
    - Dec: China squeezes refined metals.
    - Feb: the US pressures your weakest ally.

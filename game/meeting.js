@@ -1,76 +1,81 @@
-// Meeting scene: anime-style envoys talk, you pick a leverage point, a letter brings the answer.
-// Characters are original SVG drawings (fictional adult envoys), animated with CSS.
+// Meeting scene: mecha-alien envoys talk, you pick a leverage point, and the court answers by letter.
+// Envoys are original SVG mecha drawings (anime robot style), animated with CSS.
 // game.js supplies all numbers; this file only stages them.
 
+// armor: main plate, trim: secondary plate, glow: eyes/core light.
+// eyes: twin | mono | tri; crest: vfin | horns | blade | antenna | crown | fins; head: angular | round | tall
 const CAST = {
-  US:   { name: 'Envoy Rowan Hale',     hair: '#8a8f99', back: 'short', bangs: 'part',  skin: '#efcfb4', eyes: '#3d6fb6', suit: '#1f2f52', neck: 'tie',    tie: '#a33b3b', glasses: false },
-  CN:   { name: 'Envoy Lian Voss',      hair: '#1d1a22', back: 'short', bangs: 'part',  skin: '#efd2b6', eyes: '#5a3a2c', suit: '#2a3f45', neck: 'tie',    tie: '#7a2f3a', glasses: true },
-  JP:   { name: 'Envoy Aya Kirisame',   hair: '#24202a', back: 'bob',   bangs: 'swept', skin: '#f6dcc8', eyes: '#4b3a5a', suit: '#efe9da', neck: 'blouse', tie: '#1f5a5f', glasses: false },
-  TW:   { name: 'Envoy Mei Tarrow',     hair: '#2b2230', back: 'ponytail', bangs: 'spiky', skin: '#f3d6bf', eyes: '#2f6b5c', suit: '#20463f', neck: 'blouse', tie: '#e6efe9', glasses: false },
-  KR:   { name: 'Envoy Jun Arden',      hair: '#2a2433', back: 'short', bangs: 'spiky', skin: '#f2d4bd', eyes: '#5b4a8a', suit: '#2e2a4a', neck: 'tie',    tie: '#9b7fe0', glasses: false },
-  NL:   { name: 'Envoy Sanne Vellum',   hair: '#d9a35a', back: 'long',  bangs: 'swept', skin: '#f4d9c6', eyes: '#3f7cb0', suit: '#31435a', neck: 'blouse', tie: '#f08a3c', glasses: false },
-  DE:   { name: 'Envoy Konrad Ferris',  hair: '#6b4a32', back: 'short', bangs: 'part',  skin: '#eccbb0', eyes: '#5d6b7a', suit: '#3d4450', neck: 'tie',    tie: '#9aa4b2', glasses: true },
-  UK:   { name: 'Envoy Imogen Ashby',   hair: '#7a3b28', back: 'bun',   bangs: 'swept', skin: '#f5dccb', eyes: '#3e7a52', suit: '#1e3550', neck: 'blouse', tie: '#6fa8dc', glasses: false },
-  GULF: { name: 'Envoy Samir Qadan',    hair: '#1f1814', back: 'short', bangs: 'part',  skin: '#c9946b', eyes: '#4a3020', suit: '#efe6d2', neck: 'tie',    tie: '#c9a646', glasses: false },
-  AUCA: { name: 'Envoy Tess Calloway',  hair: '#c98a3e', back: 'ponytail', bangs: 'spiky', skin: '#e9c2a0', eyes: '#3f8a5a', suit: '#35503a', neck: 'blouse', tie: '#e8efe0', glasses: false },
-  PROD: { name: 'Envoy Amara Okafor',   hair: '#15100e', back: 'bun',   bangs: 'none',  skin: '#8a5a3c', eyes: '#3a2418', suit: '#6b4a32', neck: 'blouse', tie: '#e0c48a', glasses: false },
+  US:   { name: 'Regent-Unit TITAN-01',   armor: '#e9edf5', trim: '#2a4f9a', glow: '#58e1ff', eyes: 'twin', crest: 'vfin',    head: 'angular' },
+  CN:   { name: 'Steward-Frame MAGNOR-K', armor: '#9e2f3c', trim: '#2b2b33', glow: '#ffd25a', eyes: 'mono', crest: 'blade',   head: 'round' },
+  JP:   { name: 'Envoy KAIGEN Mk-II',     armor: '#f3efe4', trim: '#c23a3a', glow: '#7cf7c8', eyes: 'twin', crest: 'crown',   head: 'tall' },
+  TW:   { name: 'Warden FABRION-7',       armor: '#2f8f78', trim: '#e6efe9', glow: '#a8fff0', eyes: 'tri',  crest: 'antenna', head: 'angular' },
+  KR:   { name: 'Archive-Unit MNEMOS',    armor: '#5b4aa8', trim: '#d9d2ff', glow: '#ff7ae0', eyes: 'twin', crest: 'fins',    head: 'round' },
+  NL:   { name: 'Lens-Frame LITHOS',      armor: '#f08a3c', trim: '#24324a', glow: '#8fd8ff', eyes: 'mono', crest: 'antenna', head: 'tall' },
+  DE:   { name: 'Forge-Unit FERRUM-9',    armor: '#7d8794', trim: '#2b2f36', glow: '#ffb347', eyes: 'twin', crest: 'horns',   head: 'angular' },
+  UK:   { name: 'Crown-Frame ALBION',     armor: '#1f3f6e', trim: '#e3c46b', glow: '#9cf0ff', eyes: 'tri',  crest: 'crown',   head: 'round' },
+  GULF: { name: 'Sun-Emir SOLARA',        armor: '#efe0b0', trim: '#b8862e', glow: '#ff9b3d', eyes: 'twin', crest: 'fins',    head: 'tall' },
+  AUCA: { name: 'Twin-Core BOREAL',       armor: '#4f8a52', trim: '#e8d9a8', glow: '#c6ff6a', eyes: 'mono', crest: 'horns',   head: 'round' },
+  PROD: { name: 'Belt-Council ORE-X',     armor: '#8a5a3c', trim: '#2f2620', glow: '#ff6a3d', eyes: 'tri',  crest: 'blade',   head: 'angular' },
 };
 
-const HAIR_BACK = {
-  short: 'M95 150 C92 82 122 58 150 58 C178 58 208 82 205 150 L206 182 L94 182 Z',
-  bob: 'M90 150 C85 80 120 55 150 55 C180 55 215 80 210 150 L213 246 C196 256 182 248 176 238 L124 238 C118 248 104 256 87 246 Z',
-  long: 'M88 140 C85 75 120 52 150 52 C180 52 215 75 212 140 L224 352 C204 366 184 356 172 330 L128 330 C116 356 96 366 76 352 Z',
-  bun: 'M95 150 C92 82 122 58 150 58 C178 58 208 82 205 150 L206 190 L94 190 Z M126 42 a24 22 0 1 1 48 0 a24 22 0 1 1 -48 0 Z',
-  ponytail: 'M95 150 C92 82 122 58 150 58 C178 58 208 82 205 150 L206 182 L94 182 Z M196 92 C236 110 240 190 222 262 C214 230 210 180 190 140 Z',
+const HEADS = {
+  angular: 'M150 62 L196 80 L214 138 L206 196 L184 232 L150 246 L116 232 L94 196 L86 138 L104 80 Z',
+  round: 'M150 64 C192 64 214 100 214 148 C214 198 192 236 150 246 C108 236 86 198 86 148 C86 100 108 64 150 64 Z',
+  tall: 'M150 48 L192 72 L208 148 L198 206 L176 238 L150 248 L124 238 L102 206 L92 148 L108 72 Z',
 };
-const BANGS = {
-  spiky: 'M98 152 C94 96 120 66 150 66 C182 66 206 96 202 152 C196 128 188 114 180 106 C176 126 164 134 152 136 C156 120 150 104 143 98 C134 120 120 134 104 142 Z',
-  swept: 'M98 156 C94 94 124 62 156 64 C186 66 206 94 202 146 C192 120 178 104 160 100 C150 118 128 132 98 156 Z',
-  part: 'M98 148 C95 92 125 62 155 64 C185 66 205 92 202 140 C190 112 170 98 140 100 C126 110 110 128 98 148 Z',
-  none: 'M100 128 C104 86 126 66 150 66 C174 66 196 86 200 128 C186 104 170 94 150 94 C130 94 114 104 100 128 Z',
+const CRESTS = {
+  vfin: (c) => `<path d="M150 112 L84 34 L98 30 L150 94 L202 30 L216 34 Z" fill="#f2c94c" stroke="#3a2a08" stroke-width="2"/><circle cx="150" cy="104" r="7" fill="${c.glow}" class="lamp"/>`,
+  horns: (c) => `<path d="M112 96 C86 74 80 44 90 18 C100 48 114 66 130 82 Z M188 96 C214 74 220 44 210 18 C200 48 186 66 170 82 Z" fill="${c.trim}" stroke="#14141a" stroke-width="2"/>`,
+  blade: (c) => `<path d="M144 70 L150 2 L156 70 Z M126 78 L112 40 L134 70 Z M174 78 L188 40 L166 70 Z" fill="${c.trim}" stroke="#14141a" stroke-width="2"/><path d="M150 14 L150 60" stroke="${c.glow}" stroke-width="2" class="lamp"/>`,
+  antenna: (c) => `<path d="M122 76 L96 18 M178 76 L204 18" stroke="${c.trim}" stroke-width="5" stroke-linecap="round"/><circle cx="96" cy="16" r="6" fill="${c.glow}" class="lamp"/><circle cx="204" cy="16" r="6" fill="${c.glow}" class="lamp b"/>`,
+  crown: (c) => `<path d="M112 80 L118 40 L134 64 L150 28 L166 64 L182 40 L188 80 Z" fill="#f2c94c" stroke="#3a2a08" stroke-width="2"/><circle cx="150" cy="58" r="6" fill="${c.glow}" class="lamp"/>`,
+  fins: (c) => `<path d="M100 120 L52 70 L60 120 L92 146 Z M200 120 L248 70 L240 120 L208 146 Z" fill="${c.trim}" stroke="#14141a" stroke-width="2"/><path d="M60 82 L88 120 M240 82 L212 120" stroke="${c.glow}" stroke-width="2" class="lamp"/>`,
 };
+
+function eyesSVG(c, id) {
+  const glow = `fill="${c.glow}" filter="url(#glow-${id})"`;
+  const arcs = (xs) => xs.map(([a, b]) => `<path d="M${a} 182 Q${(a + b) / 2} 164 ${b} 182" stroke="${c.glow}" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#glow-${id})"/>`).join('');
+  if (c.eyes === 'mono') return `
+    <rect x="106" y="166" width="88" height="14" rx="7" fill="#05070d"/>
+    <g class="eye mono"><circle cx="150" cy="173" r="10" ${glow}/><circle cx="147" cy="170" r="3" fill="#fff"/></g>
+    <g class="happy-eyes">${arcs([[138, 162]])}</g>`;
+  const twin = `<g class="eye l"><path d="M108 164 L144 172 L142 184 L112 180 Z" ${glow}/></g><g class="eye r"><path d="M192 164 L156 172 L158 184 L188 180 Z" ${glow}/></g>`;
+  const tri = c.eyes === 'tri' ? `<g class="eye t"><path d="M146 116 L154 116 L152 136 L148 136 Z" ${glow}/></g>` : '';
+  return `${twin}${tri}<g class="happy-eyes">${arcs([[110, 142], [158, 190]])}</g>`;
+}
 
 function envoySVG(k, side) {
-  const c = CAST[k];
-  const id = `${k}-${side}`;
-  const eye = (cx) => `
-    <g class="eye">
-      <ellipse cx="${cx}" cy="181" rx="15" ry="17" fill="#fff"/>
-      <ellipse cx="${cx}" cy="184" rx="11" ry="14" fill="url(#iris-${id})"/>
-      <ellipse cx="${cx}" cy="186" rx="5" ry="7" fill="#140d14"/>
-      <circle cx="${cx - 4}" cy="176" r="4" fill="#fff"/><circle cx="${cx + 5}" cy="191" r="2" fill="#fff" opacity=".85"/>
-      <path d="M${cx - 18} 173 Q${cx} 159 ${cx + 18} 171" stroke="#231520" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-    </g>`;
-  const neck = c.neck === 'tie'
-    ? `<path d="M133 292 L150 336 L167 292 Z" fill="#f4f1ea"/><path d="M146 302 L154 302 L158 362 L150 375 L142 362 Z" fill="${c.tie}"/>
-       <path d="M133 290 L118 302 L150 380 Z M167 290 L182 302 L150 380 Z" fill="#000" opacity=".22"/>`
-    : `<path d="M128 288 C135 300 165 300 172 288 L172 304 C165 314 135 314 128 304 Z" fill="${c.tie}"/>
-       <path d="M128 296 L112 306 L146 372 Z M172 296 L188 306 L154 372 Z" fill="#000" opacity=".16"/>`;
+  const c = CAST[k], id = `${k}-${side}`;
+  const ink = 'stroke="#10121a" stroke-width="2.2" stroke-linejoin="round"';
   return `<svg class="envoy ${side}" viewBox="0 0 300 400" aria-hidden="true">
-    <defs><radialGradient id="iris-${id}" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".35" stop-color="${c.eyes}"/><stop offset="1" stop-color="#140d14"/></radialGradient></defs>
+    <defs><filter id="glow-${id}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <linearGradient id="sh-${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient></defs>
     <g class="body">
-      <path d="${HAIR_BACK[c.back]}" fill="${c.hair}" stroke="#231520" stroke-width="2"/>
-      <path d="M134 236 L166 236 L168 296 L132 296 Z" fill="${c.skin}"/><path d="M134 250 C145 262 155 262 166 250 L166 236 L134 236 Z" fill="#000" opacity=".12"/>
-      <path d="M36 400 C42 334 88 302 132 290 L168 290 C212 302 258 334 264 400 Z" fill="${c.suit}" stroke="#231520" stroke-width="2"/>
-      ${neck}
-      <g class="head">
-        <ellipse cx="101" cy="182" rx="8" ry="14" fill="${c.skin}" stroke="#231520" stroke-width="1.5"/>
-        <ellipse cx="199" cy="182" rx="8" ry="14" fill="${c.skin}" stroke="#231520" stroke-width="1.5"/>
-        <path d="M102 140 C102 202 120 242 150 264 C180 242 198 202 198 140 C198 95 175 75 150 75 C125 75 102 95 102 140 Z" fill="${c.skin}" stroke="#231520" stroke-width="2"/>
-        <ellipse class="blush" cx="117" cy="210" rx="11" ry="4.5" fill="#ff8a9a"/><ellipse class="blush" cx="183" cy="210" rx="11" ry="4.5" fill="#ff8a9a"/>
-        <g class="eyes">${eye(127)}${eye(173)}</g>
-        ${c.glasses ? '<g fill="none" stroke="#2b2b33" stroke-width="2.5"><rect x="106" y="164" width="42" height="34" rx="9"/><rect x="152" y="164" width="42" height="34" rx="9"/><path d="M148 178 L152 178"/></g>' : ''}
-        <path class="brow l" d="M110 154 Q127 145 143 152" stroke="#231520" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path class="brow r" d="M157 152 Q173 145 190 154" stroke="#231520" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path d="M150 203 L147 214 L152 215" stroke="#b77d68" stroke-width="2" fill="none" stroke-linecap="round"/>
-        <path class="m m-flat" d="M142 230 Q150 233 158 230" stroke="#6b2a34" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path class="m m-smile" d="M137 226 Q150 241 163 226 Q150 232 137 226 Z" fill="#7a2f3a" stroke="#6b2a34" stroke-width="2"/>
-        <path class="m m-frown" d="M141 234 Q150 226 159 234" stroke="#6b2a34" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <ellipse class="m m-open" cx="150" cy="231" rx="7" ry="6.5" fill="#7a2f3a" stroke="#6b2a34" stroke-width="2"/>
-        <path d="${BANGS[c.bangs]}" fill="${c.hair}" stroke="#231520" stroke-width="2"/>
-        <path d="M116 96 Q150 80 184 96" stroke="#fff" stroke-width="5" fill="none" opacity=".22" stroke-linecap="round"/>
-        <path class="sweat" d="M206 128 C214 142 216 152 208 156 C200 152 202 142 206 128 Z" fill="#9fd8ff" stroke="#2a5a80" stroke-width="1.5"/>
+      <g class="part torso">
+        <path d="M128 236 L172 236 L176 296 L124 296 Z" fill="#2a2e38" ${ink}/>
+        <path d="M128 252 H172 M127 266 H173 M126 280 H174" stroke="#4a5060" stroke-width="3"/>
+        <path d="M66 400 L76 318 L118 288 L182 288 L224 318 L234 400 Z" fill="${c.armor}" ${ink}/>
+        <path d="M66 400 L76 318 L118 288 L182 288 L224 318 L234 400 Z" fill="url(#sh-${id})"/>
+        <path d="M116 290 L150 316 L184 290 L178 280 L150 300 L122 280 Z" fill="${c.trim}" ${ink}/>
+        <path d="M150 316 L150 400 M96 340 L130 360 M204 340 L170 360" stroke="#10121a" stroke-opacity=".35" stroke-width="2"/>
+        <path class="core" d="M150 326 L168 336 L168 356 L150 366 L132 356 L132 336 Z" fill="${c.glow}" filter="url(#glow-${id})" stroke="#10121a" stroke-width="2"/>
       </g>
+      <g class="part pl"><path d="M14 400 L12 328 L38 292 L104 286 L118 320 L100 400 Z" fill="${c.armor}" ${ink}/><path d="M14 400 L12 328 L38 292 L104 286 L118 320 L100 400 Z" fill="url(#sh-${id})"/><path d="M26 330 L104 322 L100 340 L24 348 Z" fill="${c.trim}" ${ink}/><circle cx="60" cy="372" r="5" fill="${c.glow}" class="lamp"/></g>
+      <g class="part pr"><path d="M286 400 L288 328 L262 292 L196 286 L182 320 L200 400 Z" fill="${c.armor}" ${ink}/><path d="M286 400 L288 328 L262 292 L196 286 L182 320 L200 400 Z" fill="url(#sh-${id})"/><path d="M274 330 L196 322 L200 340 L276 348 Z" fill="${c.trim}" ${ink}/><circle cx="240" cy="372" r="5" fill="${c.glow}" class="lamp b"/></g>
+      <g class="part hd"><g class="head">
+        ${CRESTS[c.crest](c)}
+        <circle cx="86" cy="160" r="17" fill="${c.trim}" ${ink}/><circle cx="86" cy="160" r="6" fill="${c.glow}" class="lamp"/>
+        <circle cx="214" cy="160" r="17" fill="${c.trim}" ${ink}/><circle cx="214" cy="160" r="6" fill="${c.glow}" class="lamp b"/>
+        <path d="${HEADS[c.head]}" fill="${c.armor}" ${ink}/><path d="${HEADS[c.head]}" fill="url(#sh-${id})"/>
+        <path d="M122 98 L178 98 L170 140 L130 140 Z" fill="${c.trim}" ${ink}/>
+        <path d="M98 152 L202 152 L196 194 L104 194 Z" fill="#070a12" ${ink}/>
+        <g class="eyes">${eyesSVG(c, id)}</g>
+        <path class="scan" d="M104 160 L196 160" stroke="${c.glow}" stroke-width="2" opacity="0"/>
+        <path d="M112 196 L188 196 L178 228 L150 242 L122 228 Z" fill="${c.trim}" ${ink}/>
+        <g class="grill" stroke="${c.glow}" stroke-width="3" stroke-linecap="round"><path d="M134 206 H166 M136 215 H164 M139 224 H161"/></g>
+        <path class="cheek" d="M104 204 L116 214 M100 212 L112 222 M196 204 L184 214 M200 212 L188 222" stroke="${c.glow}" stroke-width="3" stroke-linecap="round"/>
+        <g class="steam" fill="#dfe8f0"><circle cx="86" cy="134" r="7"/><circle cx="214" cy="134" r="7"/></g>
+      </g></g>
     </g>
   </svg>`;
 }
@@ -218,7 +223,6 @@ const Meeting = (() => {
     q('.m-box').classList.remove('mine');
     const t = q('.m-text'); t.innerHTML = '<span class="dots"><i>•</i><i>•</i><i>•</i></span>';
     setTimeout(() => {
-      el.classList.add(ctx.result.ok ? 'flash-good' : 'flash-bad');
       q('.m-flash').classList.remove('go'); void q('.m-flash').offsetWidth; q('.m-flash').classList.add('go');
       waiting = 'next'; advance();
     }, 1500);
