@@ -9,15 +9,34 @@ A summary of the brainstorm so far. The full idea list is in [ideas.md](ideas.md
 
 ## Organizer notice: team page and deadlines
 
-Source: organizer message pasted by Grisha on 31 October 2026. The year below follows this hackathon's context; the notice does not specify a timezone. Do not assume these clock times are JST from the context line above.
+Source: organizer message pasted by Grisha on 31 October 2026, subsequently checked against the [official event page](https://mangrove.one/hackathon/middle-powers-hackathon). Its timeline explicitly displays Tokyo time. The organizer's team email also explicitly uses GMT+9. **JST is confirmed, superseding the earlier timezone uncertainty.**
 
-- **Start:** 31 October 2026, 04:00.
-- **Submission deadline:** 1 November 2026, 16:00.
-- **Peer-review deadline:** 5 November 2026, 10:00.
+- **Start:** 31 October 2026, 04:00 JST.
+- **Submission deadline:** 1 November 2026, 16:00 JST.
+- **Peer-review deadline:** 5 November 2026, 10:00 JST.
 - **Team page:** https://try.mangrove.one/projects/a4eeba8d-acba-4336-a6f1-a55420644abb — the notice says it holds the Drive folder, submission portal and scheduler, with a help button for organizer support.
-- **Access check, 31 October 2026:** unauthenticated retrieval redirects to sign-in; page contents and deadline timezone have not been independently verified.
-- The notice's relative “starts in 21 hours” countdown is historical, not a current countdown. Confirm the timezone in the authenticated scheduler before using the clock times operationally.
+- **Access check, 31 October 2026:** the signed-in hackathon criteria page was read after Grisha provided browser access; the public event page and its FAQ were also read.
+- The notice's relative “starts in 21 hours” countdown is historical, not a current countdown.
 - **Kickoff follow-up:** Grisha shared an organizer message saying the hackathon “has begun” and kickoff emails would arrive shortly, received at **04:49 JST** (31 October 2026 inferred from the conversation). This records the message receipt time, not the exact event start. It does not establish the timezone of the earlier submission or peer-review deadlines.
+
+## Official judging criteria and submission requirements — checked 31 October
+
+Sources: [signed-in hackathon page](https://try.mangrove.one/hackathons/92b5e028-1fd7-4870-8a78-cdab39f4c418), Judging section; [public event page](https://mangrove.one/hackathon/middle-powers-hackathon), Judging and FAQ. The rubric matches across both pages. The implications below are our interpretation, not additional organizer requirements.
+
+| Official criterion | Weight | Meaning | Implication for our project |
+|---|---:|---|---|
+| Safety Impact | 50% | Reduction of a real advanced-AI risk, including its magnitude | Show a specific risk, the intervention, and the causal route to reducing it. A supply share or scenario score alone is not demonstrated safety impact. Be explicit about unmeasured effects. |
+| Feasibility | 40% | Whether it could be built or adopted, considering cost, effort and necessary agreement | Identify the decision-maker, instrument, timing, implementation effort and parties whose consent is needed. Separate draft rights and proposed demands from enforceable obligations. |
+| Clarity | 10% | Whether someone outside the team can follow the work and its rationale | Give a short, intelligible worked example and make assumptions and evidence inspectable. |
+
+**Official FAQ guidance:**
+- For this event, any country other than the US and China can count as a middle power.
+- Submit what a reviewer needs to experience the project, **plus a short video showing how it works**. A rough prototype is acceptable; whether the idea works matters more than polish.
+- A written submission might be **4–8 pages**, covering context, approach, preliminary findings and next steps. This is indicative guidance, not a universal page limit or a requirement to add a report to every prototype.
+- **Disclose AI-tool use.** The FAQ explicitly allows it and asks for disclosure to support informed feedback.
+- Tracks are Regulation (A), Investment (B) and Diplomacy (C). Our coalition focus fits C, with finance and procurement links to B and A.
+
+**Application to the current build:** lead with one evidence-backed decision and its limits. EuroHPC's draft incident-notification/remedy path is a useful worked example, but does not establish a frontier-model release veto. If the proposed game format is adopted, its debrief should expose the assumed causal effect, required consent and evidence gaps; winning a simulated mission is not measured real-world safety impact. The short video and AI-use disclosure need to be part of submission preparation.
 
 ## Idea 1: Procurement as regulation (Japan)
 - **Not a new law.** It proposes a new *practice*: government uses its buying power to put safety conditions into AI contracts. The legal basis is the 2025 AI Promotion Act and the AI Basic Plan.
