@@ -7,6 +7,17 @@ A summary of the brainstorm so far. The full idea list is in [ideas.md](ideas.md
 - **Judging:** Safety impact 50% · Feasibility 40% · Clarity 10%.
 - **What sparked it:** an earlier law → governance → tech → value conversation.
 
+## Organizer notice: team page and deadlines
+
+Source: organizer message pasted by Grisha on 31 October 2026. The year below follows this hackathon's context; the notice does not specify a timezone. Do not assume these clock times are JST from the context line above.
+
+- **Start:** 31 October 2026, 04:00.
+- **Submission deadline:** 1 November 2026, 16:00.
+- **Peer-review deadline:** 5 November 2026, 10:00.
+- **Team page:** https://try.mangrove.one/projects/a4eeba8d-acba-4336-a6f1-a55420644abb — the notice says it holds the Drive folder, submission portal and scheduler, with a help button for organizer support.
+- **Access check, 31 October 2026:** unauthenticated retrieval redirects to sign-in; page contents and deadline timezone have not been independently verified.
+- The notice's relative “starts in 21 hours” countdown is historical, not a current countdown. Confirm the timezone in the authenticated scheduler before using the clock times operationally.
+
 ## Idea 1: Procurement as regulation (Japan)
 - **Not a new law.** It proposes a new *practice*: government uses its buying power to put safety conditions into AI contracts. The legal basis is the 2025 AI Promotion Act and the AI Basic Plan.
 - **Output:** a 4–8 page memo and a web tool.
