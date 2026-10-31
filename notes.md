@@ -91,3 +91,16 @@ Source: organizer message pasted by Grisha on 31 October 2026. The year below fo
 - **The repo is now public.** The site is live on GitHub Pages from `main` at https://tubaali.github.io/middle-powers-hackathon/
 - **Before going public:** we scanned the full history. No tokens or keys were found. The only semi-private item is the Mangrove team-page link above, which needs a login to open.
 - **Every push to `main` now updates the live site.**
+
+## Oct 31: idea for the team: game format (ideation only, not built)
+- **Tuba's proposal:** turn the Leverage Map into a short mission game, so officials and private players (banks, investors, cloud operators) understand coalition leverage by playing.
+- **Draft game: "Coalition"**
+  - **Role:** you negotiate for one middle power. Each mission has a deadline taken from the Timeline, e.g. "Secure pre-release testing before Japan's review closes".
+  - **Recruit allies:** each country brings leverage cards from the Stack map, but also has a cost or fear, e.g. Korea's exposure to China (from the Dependence view).
+  - **Play levers:** hosting, chokepoint, or **finance cards from Grisha's research** (EuroHPC tender clauses, credit-syndicate amendments, the Canada–Cohere stages). Each card shows its status: documented, announced, or research lead.
+  - **Events:** US pressure on allies, China restricting gallium exports, substitution clocks counting down (years to replace).
+  - **Debrief:** after each mission, what worked, why, and "what this doesn't prove", which fits the judging criteria.
+  - **Private-player mode:** play as a lender or investor and see which conditions your contract can actually attach.
+- **Risk:** a game can oversimplify and hurt our rigour score. Mitigation: every card sourced, and an honest debrief.
+- **Scope if we build it:** 3 missions on top of the existing views. That fits before the Nov 1 16:00 deadline.
+- **Open to the team:** keep or cut? Which finance cards are solid enough to use?
