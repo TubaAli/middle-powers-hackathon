@@ -1,0 +1,1636 @@
+{
+  "topic": "Numerical evidence for four African safeguard routes",
+  "observed": "2026-10-31",
+  "routes": [
+    {
+      "routeId": "south-africa-popia-ai-linkage-review",
+      "facts": [
+        {
+          "id": "af-za-initial",
+          "axis": "x",
+          "input": "za-initial",
+          "claim": "Initial investigation decision period",
+          "value": 4,
+          "unit": "weeks",
+          "population": "Qualifying prior-authorisation notifications",
+          "period": "January 2024 guidance",
+          "evidenceType": "legal_requirement",
+          "sourceIds": [
+            "af-za-guide"
+          ],
+          "locator": "pp.17–18 section 7.1",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Legal clock, not observed average."
+        },
+        {
+          "id": "af-za-detailed",
+          "axis": "x",
+          "input": "za-detailed",
+          "claim": "Maximum detailed-investigation period",
+          "value": 13,
+          "unit": "weeks",
+          "population": "Notifications selected for detailed investigation",
+          "period": "January 2024 guidance",
+          "evidenceType": "legal_requirement",
+          "sourceIds": [
+            "af-za-guide"
+          ],
+          "locator": "p.18 section 6.2 (misnumbered)",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Not empirical duration; do not blindly add clocks."
+        },
+        {
+          "id": "af-za-signature",
+          "axis": "x",
+          "input": "za-signature",
+          "claim": "Information Officer signs; Regulator determines lawfulness",
+          "value": null,
+          "unit": "role mapping",
+          "population": "Responsible party and regulator",
+          "period": "January 2024 guidance",
+          "evidenceType": "legal_procedure",
+          "sourceIds": [
+            "af-za-guide",
+            "af-za-app"
+          ],
+          "locator": "Part E p.16, pp.17–19; APP p.42",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Internal officer is not another institution; applicant and delegated authority remain unselected."
+        },
+        {
+          "id": "af-za-processed-2021",
+          "axis": "x",
+          "input": "za-processed-2021",
+          "claim": "Prior-authorisation applications processed",
+          "value": 64,
+          "unit": "percent",
+          "population": "Received applications; absolute denominator unlocated",
+          "period": "FY 2021/2022",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-za-ar23",
+            "af-za-app"
+          ],
+          "locator": "Report p.25; APP p.42",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Not approvals granted, timely processing or AI-specific activity. No current-case extrapolation."
+        },
+        {
+          "id": "af-za-processed-2022",
+          "axis": "x",
+          "input": "za-processed-2022",
+          "claim": "Prior-authorisation applications processed",
+          "value": 100,
+          "unit": "percent",
+          "population": "Received applications; absolute denominator unlocated",
+          "period": "FY 2022/2023",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-za-ar23",
+            "af-za-app"
+          ],
+          "locator": "Report p.25; APP p.42",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Not approvals granted, timely processing or AI-specific activity. No current-case extrapolation."
+        },
+        {
+          "id": "af-za-code-timing",
+          "axis": "context",
+          "input": "za-code-timing",
+          "claim": "Codes of conduct finalised within thirteen weeks",
+          "value": 2,
+          "unit": "applications",
+          "population": "Sector codes, not prior authorisations",
+          "period": "FY 2022/2023",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-za-ar23"
+          ],
+          "locator": "p.25 adjacent codes row",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Timing evidence for a different procedure cannot calibrate this route."
+        },
+        {
+          "id": "af-za-assessments",
+          "axis": "context",
+          "input": "za-assessments",
+          "claim": "POPIA compliance assessments",
+          "value": 12,
+          "unit": "responsible parties",
+          "population": "POPIA assessed parties",
+          "period": "FY 2024/2025 ending 31 March 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-za-ar25"
+          ],
+          "locator": "p.33",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Workload/capacity, not impacted AI activity or committed pilot resources."
+        },
+        {
+          "id": "af-za-complaints",
+          "axis": "context",
+          "input": "za-complaints",
+          "claim": "POPIA complaints received",
+          "value": 1355,
+          "unit": "complaints",
+          "population": "All POPIA complaints",
+          "period": "FY 2024/2025 ending 31 March 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-za-ar25"
+          ],
+          "locator": "p.20",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Workload/capacity, not impacted AI activity or committed pilot resources."
+        },
+        {
+          "id": "af-za-resolved",
+          "axis": "context",
+          "input": "za-resolved",
+          "claim": "Received POPIA complaints resolved",
+          "value": 745,
+          "unit": "complaints",
+          "population": "Received POPIA complaints",
+          "period": "FY 2024/2025 ending 31 March 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-za-ar25"
+          ],
+          "locator": "p.20",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Workload/capacity, not impacted AI activity or committed pilot resources."
+        },
+        {
+          "id": "af-za-enforcements",
+          "axis": "context",
+          "input": "za-enforcements",
+          "claim": "POPIA enforcement notices",
+          "value": 5,
+          "unit": "notices",
+          "population": "POPIA investigations/assessments",
+          "period": "FY 2024/2025 ending 31 March 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-za-ar25"
+          ],
+          "locator": "p.20",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Workload/capacity, not impacted AI activity or committed pilot resources."
+        },
+        {
+          "id": "af-za-staff",
+          "axis": "context",
+          "input": "za-staff",
+          "claim": "POPIA filled posts",
+          "value": 20,
+          "unit": "posts",
+          "population": "POPIA programme",
+          "period": "31 March 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-za-ar25"
+          ],
+          "locator": "p.82 table 3.2.1",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Workload/capacity, not impacted AI activity or committed pilot resources."
+        },
+        {
+          "id": "af-za-funded",
+          "axis": "context",
+          "input": "za-funded",
+          "claim": "POPIA funded posts",
+          "value": 21,
+          "unit": "posts",
+          "population": "POPIA programme",
+          "period": "31 March 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-za-ar25"
+          ],
+          "locator": "p.82 table 3.2.1",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Workload/capacity, not impacted AI activity or committed pilot resources."
+        },
+        {
+          "id": "af-za-offices",
+          "axis": "y",
+          "input": "za-offices",
+          "claim": "KZN offices equipped for biometric enrolment",
+          "value": 82,
+          "unit": "offices",
+          "population": "SASSA KZN local offices",
+          "period": "14 October 2025 briefing; implementation 1 September 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-za-kzn"
+          ],
+          "locator": "BBE briefing paragraph",
+          "coordinateUse": "Candidate scope only; no matched implemented-safeguard numerator and eligible-AI denominator.",
+          "limits": "Offices are not systems/users/section 57-eligible operations; no agreed test annex."
+        },
+        {
+          "id": "af-za-dha-latency",
+          "axis": "context",
+          "input": "za-dha-latency",
+          "claim": "Earlier verification response reportedly took up to 24 hours",
+          "value": 24,
+          "unit": "hours; reported upper value",
+          "population": "DHA verification queries",
+          "period": "Before 24 March 2025 announcement",
+          "evidenceType": "reported_primary",
+          "sourceIds": [
+            "af-za-dha"
+          ],
+          "locator": "Opening operational paragraphs",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Not regulatory approval duration or mean latency."
+        },
+        {
+          "id": "af-za-dha-error",
+          "axis": "context",
+          "input": "za-dha-error",
+          "claim": "Upgrade test error reported below 1 percent",
+          "value": 1,
+          "unit": "percent; strict upper bound",
+          "population": "Unspecified DHA upgrade test sample",
+          "period": "24 March 2025 announcement",
+          "evidenceType": "reported_primary",
+          "sourceIds": [
+            "af-za-dha"
+          ],
+          "locator": "Test-result paragraph",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "No sample/protocol; not impact of proposed safeguard."
+        }
+      ],
+      "gaps": [
+        {
+          "field": "Current application count and turnaround",
+          "status": "found_partial",
+          "searchIds": [
+            "af-s-za-reports",
+            "af-s-za-history",
+            "af-s-za-procedure",
+            "af-s-za-cases"
+          ],
+          "reason": "Historical processing proportions, no absolute sample/current dates/AI subset.",
+          "nextRetrieval": "Redacted Executive:POPIA register: receipt, completeness, detailed investigation, decision, eligibility, outcome."
+        },
+        {
+          "field": "Eligible and safeguarded AI linkage activity",
+          "status": "found_partial",
+          "searchIds": [
+            "af-s-za-deploy",
+            "af-s-za-procedure",
+            "af-s-za-reports"
+          ],
+          "reason": "BBE offices/verification tests do not establish changed-purpose cross-controller section 57 qualification.",
+          "nextRetrieval": "SASSA/DHA purpose assessment, data-flow agreement, eligible-operation inventory and transaction counts."
+        },
+        {
+          "field": "Complete approvals and exact-safeguard consent",
+          "status": "found_partial",
+          "searchIds": [
+            "af-s-za-procedure",
+            "af-s-za-cases",
+            "af-s-za-deploy"
+          ],
+          "reason": "Procedural roles found, not selected pilot/exhaustive permission set/signed annex acceptance. Search absence is not refusal or impossibility.",
+          "nextRetrieval": "Select controller, identify indispensable corporate/vendor/data-holder signatories, obtain authorised agreement; no contacts made."
+        },
+        {
+          "field": "Geneva implementation and demonstrated safety effect",
+          "status": "future_unobserved",
+          "searchIds": [
+            "af-s-za-procedure",
+            "af-s-za-cases",
+            "af-s-za-deploy"
+          ],
+          "reason": "21–22 June 2027 is future relative to 31 October 2026. No future completion or causal harm reduction observed.",
+          "nextRetrieval": "Baseline, agreed decision rule, adverse findings, actual deployment change and independent retest."
+        }
+      ],
+      "coordinateReadiness": {
+        "x": "Partial operational/procedural inputs; complete approval denominator and exact consent unresolved. No numeric x assigned.",
+        "y": "Candidate/context counts only; no matched eligible-AI and implemented-safeguard population or causal effect. No numeric y assigned."
+      }
+    },
+    {
+      "routeId": "kenya-biometric-dpia-evidence-gate",
+      "facts": [
+        {
+          "id": "af-ke-lead",
+          "axis": "x",
+          "input": "ke-lead",
+          "claim": "DPIA submission lead time",
+          "value": 60,
+          "unit": "days before processing",
+          "population": "High-risk processing; biometric guidance applies to biometric processing",
+          "period": "Act 2019; guidance 2025",
+          "evidenceType": "legal_requirement",
+          "sourceIds": [
+            "af-ke-act",
+            "af-ke-bio"
+          ],
+          "locator": "s 31(5); section 10.7 pp.33–34",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Not sixty-day approval guarantee."
+        },
+        {
+          "id": "af-ke-signoffs",
+          "axis": "x",
+          "input": "ke-signoffs",
+          "claim": "Template records mitigation approval, residual-risk approval, DPO advice/override, consultation and review ownership",
+          "value": null,
+          "unit": "role mapping",
+          "population": "Controller/processor DPIA template",
+          "period": "Guidance read by cutoff; issue day unverified",
+          "evidenceType": "legal_procedure",
+          "sourceIds": [
+            "af-ke-guide"
+          ],
+          "locator": "Part 5 p.17",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Fields are internal roles, not necessarily institutions. Template residual-risk instruction has ODPP typo; use controlling Act."
+        },
+        {
+          "id": "af-ke-reviewed",
+          "axis": "context",
+          "input": "ke-reviewed",
+          "claim": "DPIAs reviewed",
+          "value": 76,
+          "unit": "reports",
+          "population": "Submitted DPIAs",
+          "period": "FY 2024/25 ending 30 June 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ke-ar25"
+          ],
+          "locator": "p.xix",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Not biometric-AI coverage. Table also labels DPIA performance 100% despite late pending requests; do not treat as 100% timely completion."
+        },
+        {
+          "id": "af-ke-pending",
+          "axis": "context",
+          "input": "ke-pending",
+          "claim": "Late DPIA requests pending",
+          "value": 7,
+          "unit": "requests",
+          "population": "Late submissions in period",
+          "period": "FY 2024/25 ending 30 June 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ke-ar25"
+          ],
+          "locator": "p.xix",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Not biometric-AI coverage. Table also labels DPIA performance 100% despite late pending requests; do not treat as 100% timely completion."
+        },
+        {
+          "id": "af-ke-audits",
+          "axis": "context",
+          "input": "ke-audits",
+          "claim": "Audits/inspections",
+          "value": 46,
+          "unit": "audits/inspections",
+          "population": "31 public and 15 private entities",
+          "period": "FY 2024/25 ending 30 June 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ke-ar25"
+          ],
+          "locator": "p.xix image checked",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "All personal-data processing categories; not a count of unique AI systems, biometric deployments or implemented safeguards."
+        },
+        {
+          "id": "af-ke-public",
+          "axis": "context",
+          "input": "ke-public",
+          "claim": "Public-sector audits/inspections",
+          "value": 31,
+          "unit": "audits/inspections",
+          "population": "Public-sector entities",
+          "period": "FY 2024/25 ending 30 June 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ke-ar25"
+          ],
+          "locator": "p.xix",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "All personal-data processing categories; not a count of unique AI systems, biometric deployments or implemented safeguards."
+        },
+        {
+          "id": "af-ke-private",
+          "axis": "context",
+          "input": "ke-private",
+          "claim": "Private-sector audits/inspections",
+          "value": 15,
+          "unit": "audits/inspections",
+          "population": "Private-sector entities",
+          "period": "FY 2024/25 ending 30 June 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ke-ar25"
+          ],
+          "locator": "p.xix",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "All personal-data processing categories; not a count of unique AI systems, biometric deployments or implemented safeguards."
+        },
+        {
+          "id": "af-ke-assessments",
+          "axis": "context",
+          "input": "ke-assessments",
+          "claim": "Data-handler assessments",
+          "value": 50,
+          "unit": "assessments",
+          "population": "Separate assessment programme row",
+          "period": "FY 2024/25 ending 30 June 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ke-ar25"
+          ],
+          "locator": "p.xix",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "All personal-data processing categories; not a count of unique AI systems, biometric deployments or implemented safeguards."
+        },
+        {
+          "id": "af-ke-registrants",
+          "axis": "context",
+          "input": "ke-registrants",
+          "claim": "Controllers/processors registered during year",
+          "value": 6965,
+          "unit": "registrations",
+          "population": "All controllers/processors",
+          "period": "FY 2024/25 ending 30 June 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ke-ar25"
+          ],
+          "locator": "p.xi",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "All personal-data processing categories; not a count of unique AI systems, biometric deployments or implemented safeguards."
+        },
+        {
+          "id": "af-ke-allocation",
+          "axis": "context",
+          "input": "ke-allocation",
+          "claim": "ODPC allocation",
+          "value": 860.3,
+          "unit": "million KES",
+          "population": "Whole regulator",
+          "period": "FY 2024/25 ending 30 June 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ke-ar25"
+          ],
+          "locator": "p.xi",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Whole-regulator allocation, not AI-audit expenditure, committed pilot funding or affected activity."
+        },
+        {
+          "id": "af-ke-world-response",
+          "axis": "x",
+          "input": "ke-world-response",
+          "claim": "Worldcoin submission to preliminary clarification",
+          "value": 6,
+          "unit": "calendar days",
+          "population": "Single TFH phase 1/1.5 DPIA",
+          "period": "2022-06-17 to 2022-06-23",
+          "evidenceType": "derived_primary_dates",
+          "sourceIds": [
+            "af-ke-world"
+          ],
+          "locator": "Attached report p.3 items 4–5",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Derived date difference, not average DPIA approval or representative service time."
+        },
+        {
+          "id": "af-ke-world-reg-gmbh",
+          "axis": "context",
+          "input": "ke-world-reg-gmbh",
+          "claim": "TFH GmbH application-to-registration interval using attachment/paragraph 16 date",
+          "value": 22,
+          "unit": "calendar days",
+          "population": "Single controller registration",
+          "period": "2022-08-24 to 2022-09-15",
+          "evidenceType": "derived_primary_dates",
+          "sourceIds": [
+            "af-ke-world"
+          ],
+          "locator": "Attachment pp.3–4 items 7–9",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Attachment and paragraph 16 give 15 September 2022; paragraph 36 gives 29 September 2022, implying 36 rather than 22 days. Unresolved source inconsistency; exclude from turnaround calibration."
+        },
+        {
+          "id": "af-ke-world-reg-corp",
+          "axis": "context",
+          "input": "ke-world-reg-corp",
+          "claim": "TFH Corporation application to registration",
+          "value": 201,
+          "unit": "calendar days",
+          "population": "Single controller registration",
+          "period": "2022-09-29 to 2023-04-18",
+          "evidenceType": "derived_primary_dates",
+          "sourceIds": [
+            "af-ke-world"
+          ],
+          "locator": "Attachment pp.3–4 items 8–9",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Derived date difference, not average DPIA approval or representative service time."
+        },
+        {
+          "id": "af-ke-world-enforcement",
+          "axis": "context",
+          "input": "ke-world-enforcement",
+          "claim": "Investigation instituted to determination",
+          "value": 35,
+          "unit": "calendar days",
+          "population": "ODPC 1394/2023",
+          "period": "2023-08-02 to 2023-09-06",
+          "evidenceType": "derived_primary_dates",
+          "sourceIds": [
+            "af-ke-world"
+          ],
+          "locator": "Determination paragraphs  4, 79",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Derived date difference, not average DPIA approval or representative service time."
+        },
+        {
+          "id": "af-ke-world-users",
+          "axis": "y",
+          "input": "ke-world-users",
+          "claim": "Verified Kenyan users reported by TFH",
+          "value": 508569,
+          "unit": "company-reported users",
+          "population": "Worldcoin Kenyan users",
+          "period": "Report 1 September 2023; measurement day unspecified",
+          "evidenceType": "reported_claim_in_primary",
+          "sourceIds": [
+            "af-ke-world"
+          ],
+          "locator": "Attached report p.12 section 4",
+          "coordinateUse": "Candidate scope only; no matched implemented-safeguard numerator and eligible-AI denominator.",
+          "limits": "Report says server access needed to verify. Not current national coverage or accepted pilot population."
+        },
+        {
+          "id": "af-ke-world-pause",
+          "axis": "context",
+          "input": "ke-world-pause",
+          "claim": "Collection suspension reported by TFH",
+          "value": 14,
+          "unit": "days",
+          "population": "Kenyan facial/iris collection",
+          "period": "TFH letter 16 June 2023",
+          "evidenceType": "reported_claim_in_primary",
+          "sourceIds": [
+            "af-ke-world"
+          ],
+          "locator": "Determination paragraph  18",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Company assertion, not independently verified durable cessation."
+        }
+      ],
+      "gaps": [
+        {
+          "field": "Current biometric-specific cohort and final-review time",
+          "status": "found_partial",
+          "searchIds": [
+            "af-s-ke-act",
+            "af-s-ke-guidance",
+            "af-s-ke-reports",
+            "af-s-ke-case",
+            "af-s-ke-charter"
+          ],
+          "reason": "General counts and single-case dates found, not biometric-only current population or final-review distribution.",
+          "nextRetrieval": "ODPC redacted DPIA register plus controller calendar; separate first response/final opinion/lawful start/retest."
+        },
+        {
+          "field": "Eligible systems and retest coverage",
+          "status": "found_partial",
+          "searchIds": [
+            "af-s-ke-guidance",
+            "af-s-ke-reports",
+            "af-s-ke-case",
+            "af-s-ke-budget"
+          ],
+          "reason": "Historical users/general reports not a matched 2027 pilot; one DPIA can cover similar operations.",
+          "nextRetrieval": "Controller inventory and DPIA Part 1(h) population; de-duplicate systems/sites and verify vendor evidence access."
+        },
+        {
+          "field": "Service-charter processing targets",
+          "status": "inaccessible",
+          "searchIds": [
+            "af-s-ke-charter",
+            "af-s-ke-guidance",
+            "af-s-ke-case"
+          ],
+          "reason": "Cover readable, service table timed out; statutory lead/case dates retained.",
+          "nextRetrieval": "Official HTML or repository copy of current charter and dated service performance."
+        },
+        {
+          "field": "Complete approvals and exact-safeguard consent",
+          "status": "found_partial",
+          "searchIds": [
+            "af-s-ke-guidance",
+            "af-s-ke-case",
+            "af-s-ke-reports"
+          ],
+          "reason": "Procedural roles found, not selected pilot/exhaustive permission set/signed annex acceptance. Search absence is not refusal or impossibility.",
+          "nextRetrieval": "Select controller, identify indispensable corporate/vendor/data-holder signatories, obtain authorised agreement; no contacts made."
+        },
+        {
+          "field": "Geneva implementation and demonstrated safety effect",
+          "status": "future_unobserved",
+          "searchIds": [
+            "af-s-ke-guidance",
+            "af-s-ke-case",
+            "af-s-ke-reports"
+          ],
+          "reason": "21–22 June 2027 is future relative to 31 October 2026. No future completion or causal harm reduction observed.",
+          "nextRetrieval": "Baseline, agreed decision rule, adverse findings, actual deployment change and independent retest."
+        }
+      ],
+      "coordinateReadiness": {
+        "x": "Partial operational/procedural inputs; complete approval denominator and exact consent unresolved. No numeric x assigned.",
+        "y": "Candidate/context counts only; no matched eligible-AI and implemented-safeguard population or causal effect. No numeric y assigned."
+      }
+    },
+    {
+      "routeId": "nigeria-ai-compliance-audit-annex",
+      "facts": [
+        {
+          "id": "af-ng-filing",
+          "axis": "x",
+          "input": "ng-filing",
+          "claim": "Legacy major entities file by 31 March annually",
+          "value": 31,
+          "unit": "day of March",
+          "population": "CAR-obligated entities established before 12 June 2023; OHL exception",
+          "period": "Next inferred checkpoint 31 March 2027",
+          "evidenceType": "legal_requirement",
+          "sourceIds": [
+            "af-ng-gaid"
+          ],
+          "locator": "Arts 9(3), 10(7)",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "No 2027-specific notice; not every registrant."
+        },
+        {
+          "id": "af-ng-first",
+          "axis": "x",
+          "input": "ng-first",
+          "claim": "Newer major entities first file within 15 months",
+          "value": 15,
+          "unit": "months",
+          "population": "Major entities established after 12 June 2023",
+          "period": "GAID 2025",
+          "evidenceType": "legal_requirement",
+          "sourceIds": [
+            "af-ng-gaid"
+          ],
+          "locator": "Art 10(8)",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Distinct from legacy March cohort."
+        },
+        {
+          "id": "af-ng-procedure",
+          "axis": "x",
+          "input": "ng-procedure",
+          "claim": "UHL/EHL CAR normally via licensed DPCO; included DPIA signed by accredited certified DPO",
+          "value": null,
+          "unit": "role mapping",
+          "population": "CAR-obligated entity, external DPCO, NDPC; DPO for DPIA",
+          "period": "GAID 2025",
+          "evidenceType": "legal_procedure",
+          "sourceIds": [
+            "af-ng-gaid"
+          ],
+          "locator": "Arts 9–10, 28(4)–(5),(12)",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "OHL renewal exempt; DPO/DPCO differ. Exact corporate signatory and consent unselected."
+        },
+        {
+          "id": "af-ng-semiannual",
+          "axis": "x",
+          "input": "ng-semiannual",
+          "claim": "Internal DPO report cadence",
+          "value": 2,
+          "unit": "reports per year",
+          "population": "Report to authorised management recipient",
+          "period": "GAID 2025",
+          "evidenceType": "legal_requirement",
+          "sourceIds": [
+            "af-ng-gaid"
+          ],
+          "locator": "Art 13",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Statutory cadence, not observed performance."
+        },
+        {
+          "id": "af-ng-car24",
+          "axis": "context",
+          "input": "ng-car24",
+          "claim": "CARs in prior bucket",
+          "value": 4691,
+          "unit": "returns",
+          "population": "Submitted CARs",
+          "period": "Source-labelled 2023–2024",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ng-ar25"
+          ],
+          "locator": "p.25",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "No AI-use/eligibility cross-tab. Registrant stock includes categories outside annual CAR; no coverage ratio."
+        },
+        {
+          "id": "af-ng-car25",
+          "axis": "context",
+          "input": "ng-car25",
+          "claim": "CARs in current bucket",
+          "value": 3296,
+          "unit": "returns",
+          "population": "Submitted CARs",
+          "period": "Source-labelled 2024–2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ng-ar25"
+          ],
+          "locator": "pp.25, 27",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "No AI-use/eligibility cross-tab. Registrant stock includes categories outside annual CAR; no coverage ratio."
+        },
+        {
+          "id": "af-ng-registered",
+          "axis": "context",
+          "input": "ng-registered",
+          "claim": "Registered DCPMIs",
+          "value": 38841,
+          "unit": "entities",
+          "population": "Registered major controllers/processors",
+          "period": "2025; year-end day unspecified",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ng-ar25"
+          ],
+          "locator": "p.26 itemi",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "No AI-use/eligibility cross-tab. Registrant stock includes categories outside annual CAR; no coverage ratio."
+        },
+        {
+          "id": "af-ng-dpcos",
+          "axis": "context",
+          "input": "ng-dpcos",
+          "claim": "Licensed DPCOs",
+          "value": 310,
+          "unit": "organisations",
+          "population": "DPCO ecosystem",
+          "period": "2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ng-ar25"
+          ],
+          "locator": "p.26 itemg",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "No AI-use/eligibility cross-tab. Registrant stock includes categories outside annual CAR; no coverage ratio."
+        },
+        {
+          "id": "af-ng-investigations",
+          "axis": "context",
+          "input": "ng-investigations",
+          "claim": "Investigations",
+          "value": 230,
+          "unit": "investigations",
+          "population": "NDPC investigations",
+          "period": "2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ng-ar25"
+          ],
+          "locator": "p.26 itemf",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "No AI-use/eligibility cross-tab. Registrant stock includes categories outside annual CAR; no coverage ratio."
+        },
+        {
+          "id": "af-ng-finance",
+          "axis": "context",
+          "input": "ng-finance",
+          "claim": "Finance-sector audit entries",
+          "value": 992,
+          "unit": "entries",
+          "population": "Finance CAR analysis",
+          "period": "2024–2025 table context",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ng-ar25"
+          ],
+          "locator": "pp.26–27",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "No AI-use/eligibility cross-tab. Registrant stock includes categories outside annual CAR; no coverage ratio."
+        },
+        {
+          "id": "af-ng-technology",
+          "axis": "context",
+          "input": "ng-technology",
+          "claim": "Technology-sector audit entries",
+          "value": 871,
+          "unit": "entries",
+          "population": "Technology CAR analysis",
+          "period": "2024–2025 table context",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ng-ar25"
+          ],
+          "locator": "p.27",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "No AI-use/eligibility cross-tab. Registrant stock includes categories outside annual CAR; no coverage ratio."
+        },
+        {
+          "id": "af-ng-health",
+          "axis": "context",
+          "input": "ng-health",
+          "claim": "Health-sector audit entries",
+          "value": 183,
+          "unit": "entries",
+          "population": "Health CAR analysis",
+          "period": "2024–2025 table context",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ng-ar25"
+          ],
+          "locator": "p.27",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "No AI-use/eligibility cross-tab. Registrant stock includes categories outside annual CAR; no coverage ratio."
+        },
+        {
+          "id": "af-ng-training",
+          "axis": "context",
+          "input": "ng-training",
+          "claim": "Survey respondents reporting no technical training",
+          "value": 13,
+          "unit": "percent of respondents",
+          "population": "DPCO survey, sample size unlocated",
+          "period": "AnnualReport 2025 survey",
+          "evidenceType": "survey_primary",
+          "sourceIds": [
+            "af-ng-ar25"
+          ],
+          "locator": "p.28 Q 1",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Unknown sampling; not national competence estimate."
+        },
+        {
+          "id": "af-ng-inventory",
+          "axis": "y",
+          "input": "ng-inventory",
+          "claim": "CAR template asks about new technology and DPIA; no populated national AI inventory",
+          "value": null,
+          "unit": "systems",
+          "population": "Eligible CAR filers processing personal data",
+          "period": "GAID 2025",
+          "evidenceType": "legal_procedure",
+          "sourceIds": [
+            "af-ng-gaid"
+          ],
+          "locator": "Schedule 2 pp.74–75; Art 28",
+          "coordinateUse": "Candidate scope only; no matched implemented-safeguard numerator and eligible-AI denominator.",
+          "limits": "Data-collection channel, not observed deployment count."
+        },
+        {
+          "id": "af-ng-cert-uba",
+          "axis": "x",
+          "input": "ng-cert-uba",
+          "claim": "UBA Pensions Custodian 2025 audit certificate approved 9 April 2026; named DPCO Data Analytics Privacy Technology Ltd",
+          "value": null,
+          "unit": "dated audit decision",
+          "population": "Single public audit record",
+          "period": "Audit year 2025; approval 2026-04-09",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ng-cert-uba"
+          ],
+          "locator": "Verified record NDPC/AUDIT/24701",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "No submission date, processing duration, AI scope, audit findings or proposed-pilot consent."
+        },
+        {
+          "id": "af-ng-cert-veriscore",
+          "axis": "x",
+          "input": "ng-cert-veriscore",
+          "claim": "Veriscore Technology Solutions 2025 audit certificate approved 27 May 2026; DPCO Lehi Attorneys",
+          "value": null,
+          "unit": "dated audit decision",
+          "population": "Single public audit record",
+          "period": "Audit year 2025; approval 2026-05-27",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-ng-cert-veriscore"
+          ],
+          "locator": "Verified record NDPC/AUDIT/25212",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Named technology-sector candidate, not verified AI user or consent. No filing date for turnaround calculation."
+        }
+      ],
+      "gaps": [
+        {
+          "field": "AI-using CAR-eligible denominator",
+          "status": "found_partial",
+          "searchIds": [
+            "af-s-ng-report",
+            "af-s-ng-procedure",
+            "af-s-ng-pilot",
+            "af-s-ng-channel"
+          ],
+          "reason": "Totals/sectors/eligibility found, but registrant stock includes OHL and no AI flag.",
+          "nextRetrieval": "Redacted CAR export with category, year, technology/DPIA fields, unique filer identifiers."
+        },
+        {
+          "field": "Audit/retest elapsed times and remediation",
+          "status": "found_partial",
+          "searchIds": [
+            "af-s-ng-report",
+            "af-s-ng-procedure",
+            "af-s-ng-pilot",
+            "af-s-ng-channel",
+            "af-s-ng-register"
+          ],
+          "reason": "Two public audit approval records found with named controller/DPCO and dates, but no matched submission timestamps or remediation findings.",
+          "nextRetrieval": "Anonymised selected DPCO engagement, evidence, filing, information-request and retest timestamps."
+        },
+        {
+          "field": "Complete approvals and exact-safeguard consent",
+          "status": "found_partial",
+          "searchIds": [
+            "af-s-ng-procedure",
+            "af-s-ng-pilot",
+            "af-s-ng-report"
+          ],
+          "reason": "Procedural roles found, not selected pilot/exhaustive permission set/signed annex acceptance. Search absence is not refusal or impossibility.",
+          "nextRetrieval": "Select controller, identify indispensable corporate/vendor/data-holder signatories, obtain authorised agreement; no contacts made."
+        },
+        {
+          "field": "Geneva implementation and demonstrated safety effect",
+          "status": "future_unobserved",
+          "searchIds": [
+            "af-s-ng-procedure",
+            "af-s-ng-pilot",
+            "af-s-ng-report"
+          ],
+          "reason": "21–22 June 2027 is future relative to 31 October 2026. No future completion or causal harm reduction observed.",
+          "nextRetrieval": "Baseline, agreed decision rule, adverse findings, actual deployment change and independent retest."
+        }
+      ],
+      "coordinateReadiness": {
+        "x": "Partial operational/procedural inputs; complete approval denominator and exact consent unresolved. No numeric x assigned.",
+        "y": "Candidate/context counts only; no matched eligible-AI and implemented-safeguard population or causal effect. No numeric y assigned."
+      }
+    },
+    {
+      "routeId": "rwanda-ai-dpia-security-retest",
+      "facts": [
+        {
+          "id": "af-rw-procedure",
+          "axis": "x",
+          "input": "rw-procedure",
+          "claim": "Controller/processor performs DPIA; DPO advises/monitors and contacts supervisor",
+          "value": null,
+          "unit": "role mapping",
+          "population": "High-risk personal-data operations",
+          "period": "Law 13 October 2021, read 31 October 2026",
+          "evidenceType": "legal_procedure",
+          "sourceIds": [
+            "af-rw-law"
+          ],
+          "locator": "Arts 38, 40–41",
+          "coordinateUse": "Operational/procedural feasibility input only; no calibrated probability or consent fraction.",
+          "limits": "Not universal pre-deployment licence; full form/signature guide unread."
+        },
+        {
+          "id": "af-rw-notice",
+          "axis": "context",
+          "input": "rw-notice",
+          "claim": "Breach notification interval",
+          "value": 48,
+          "unit": "hours",
+          "population": "Controller/supervisor or processor/controller incident reporting",
+          "period": "Law 13 October 2021",
+          "evidenceType": "legal_requirement",
+          "sourceIds": [
+            "af-rw-law"
+          ],
+          "locator": "Art 43",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Incident clock, not DPIA turnaround."
+        },
+        {
+          "id": "af-rw-report",
+          "axis": "context",
+          "input": "rw-report",
+          "claim": "Breach report interval",
+          "value": 72,
+          "unit": "hours",
+          "population": "Controller/supervisor or processor/controller incident reporting",
+          "period": "Law 13 October 2021",
+          "evidenceType": "legal_requirement",
+          "sourceIds": [
+            "af-rw-law"
+          ],
+          "locator": "Art 44",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Incident clock, not DPIA turnaround."
+        },
+        {
+          "id": "af-rw-registrants",
+          "axis": "context",
+          "input": "rw-registrants",
+          "claim": "Non-digital registrations",
+          "value": 2500,
+          "unit": "registrations",
+          "population": "Simplified controller/processor register",
+          "period": "Commentary 1 November 2025; repeated from 1 May 2025",
+          "evidenceType": "reported_primary",
+          "sourceIds": [
+            "af-rw-wb",
+            "af-rw-wb-jun"
+          ],
+          "locator": "Decemberp.11; Junep.9",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "May be carried forward; not observedOctober 2026 stock or high-risk-AI denominator."
+        },
+        {
+          "id": "af-rw-digital-zero",
+          "axis": "context",
+          "input": "rw-digital-zero",
+          "claim": "Digital DPO-register project indicator",
+          "value": 0,
+          "unit": "indicator count",
+          "population": "Specific project digital-register indicator",
+          "period": "1 November 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-rw-wb"
+          ],
+          "locator": "p.11",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Not zero registered organisations: same commentary reports 2500 non-digital registrations."
+        },
+        {
+          "id": "af-rw-id",
+          "axis": "y",
+          "input": "rw-id",
+          "claim": "New digital-ID enrolment",
+          "value": 1.67,
+          "unit": "percent of population",
+          "population": "New national digital-ID project indicator",
+          "period": "1 November 2025; mass enrolment beganOctober 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-rw-wb"
+          ],
+          "locator": "p.10",
+          "coordinateUse": "Candidate scope only; no matched implemented-safeguard numerator and eligible-AI denominator.",
+          "limits": "Indicator p.10 says 1 November 2025 and October 2025 enrolment. Narrative p.2 instead says 28 October 2026 despite report dated 24 December 2025. Retain indicator with explicit conflict, not a corrected national timeline or safety coverage."
+        },
+        {
+          "id": "af-rw-ai-startups",
+          "axis": "y",
+          "input": "rw-ai-startups",
+          "claim": "AI/ML startups in financed Hanga cohort",
+          "value": 4,
+          "unit": "startups",
+          "population": "First financed Hanga Venture Ignite cohort",
+          "period": "1 November 2025 reporting context",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-rw-wb"
+          ],
+          "locator": "pp.12–13",
+          "coordinateUse": "Candidate scope only; no matched implemented-safeguard numerator and eligible-AI denominator.",
+          "limits": "Startup not deployed high-risk operation; no selected controller agreement."
+        },
+        {
+          "id": "af-rw-cohort",
+          "axis": "context",
+          "input": "rw-cohort",
+          "claim": "First financed Hanga cohort",
+          "value": 22,
+          "unit": "companies",
+          "population": "All-sector Hanga cohort",
+          "period": "1 November 2025 reporting context",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-rw-wb"
+          ],
+          "locator": "pp.12–13",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "4/22 is not national AI share or safety reach."
+        },
+        {
+          "id": "af-rw-trained",
+          "axis": "context",
+          "input": "rw-trained",
+          "claim": "Officials trained in digital skills",
+          "value": 907,
+          "unit": "officials",
+          "population": "World Bank project training",
+          "period": "1 November 2025",
+          "evidenceType": "observed_primary",
+          "sourceIds": [
+            "af-rw-wb"
+          ],
+          "locator": "p.11",
+          "coordinateUse": "Context only; exclude from coordinate numerators and denominators.",
+          "limits": "Not inspector headcount or resources committed to pilot."
+        }
+      ],
+      "gaps": [
+        {
+          "field": "DPIA signatories/service levels",
+          "status": "inaccessible",
+          "searchIds": [
+            "af-s-rw-tools",
+            "af-s-rw-guide",
+            "af-s-rw-report",
+            "af-s-rw-regulator"
+          ],
+          "reason": "Law read, linked full form inaccessible; no actual review-time series.",
+          "nextRetrieval": "Official mirror of form; DPO intake/decision timestamps and controller delegation instrument."
+        },
+        {
+          "field": "Annual DPIA/inspection throughput",
+          "status": "not_found_after_search",
+          "searchIds": [
+            "af-s-rw-tools",
+            "af-s-rw-regulator",
+            "af-s-rw-report"
+          ],
+          "reason": "Portal/tools, regulator reporting searches and lender reporting yielded registration/context, not relevant inspections.",
+          "nextRetrieval": "NCSA/DPO performance annex or redacted register, separating cyber audits from article 47 inspections."
+        },
+        {
+          "field": "Matched high-risk-AI inventory",
+          "status": "found_partial",
+          "searchIds": [
+            "af-s-rw-tools",
+            "af-s-rw-report",
+            "af-s-rw-deploy"
+          ],
+          "reason": "ID/funded-AI context, no article 38-qualified system population with accepted retest.",
+          "nextRetrieval": "DPO inventory tool with selected NIDA/controller workflow and processor contracts; verify AI/high-risk scope."
+        },
+        {
+          "field": "Complete approvals and exact-safeguard consent",
+          "status": "found_partial",
+          "searchIds": [
+            "af-s-rw-tools",
+            "af-s-rw-report",
+            "af-s-rw-regulator"
+          ],
+          "reason": "Procedural roles found, not selected pilot/exhaustive permission set/signed annex acceptance. Search absence is not refusal or impossibility.",
+          "nextRetrieval": "Select controller, identify indispensable corporate/vendor/data-holder signatories, obtain authorised agreement; no contacts made."
+        },
+        {
+          "field": "Geneva implementation and demonstrated safety effect",
+          "status": "future_unobserved",
+          "searchIds": [
+            "af-s-rw-tools",
+            "af-s-rw-report",
+            "af-s-rw-regulator"
+          ],
+          "reason": "21–22 June 2027 is future relative to 31 October 2026. No future completion or causal harm reduction observed.",
+          "nextRetrieval": "Baseline, agreed decision rule, adverse findings, actual deployment change and independent retest."
+        }
+      ],
+      "coordinateReadiness": {
+        "x": "Partial operational/procedural inputs; complete approval denominator and exact consent unresolved. No numeric x assigned.",
+        "y": "Candidate/context counts only; no matched eligible-AI and implemented-safeguard population or causal effect. No numeric y assigned."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "af-za-guide",
+      "url": "https://inforegulator.org.za/wp-content/uploads/2020/07/Revised-Guidance-Note-on-applications-for-Prior-Authorisation-adopted-by-Members-30-Jan14.pdf",
+      "title": "Revised prior-authorisation guidance",
+      "publisher": "Information Regulator, South Africa",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "January 2024 cover; pp.16–19: Part E signature, section 6 submission, section 7 timelines. Full local PDFKit text read."
+    },
+    {
+      "id": "af-za-ar25",
+      "url": "https://inforegulator.org.za/wp-content/uploads/2025/11/Information-Regulator-Annual-Report-2025-210mm-x-260mm-1.pdf",
+      "title": "Annual Report: year ended 31 March 2025",
+      "publisher": "Information Regulator, South Africa",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Printed p.20 complaints/enforcement, pp.33–34 performance, p.82 table 3.2.1 staff. Full local text read; upload month is not publication date."
+    },
+    {
+      "id": "af-za-ar24",
+      "url": "https://inforegulator.org.za/wp-content/uploads/2025/05/Information-Regulator-Annual-Report-2024-Final-06-October-2024.pdf",
+      "title": "Annual Report 2023/2024",
+      "publisher": "Information Regulator, South Africa",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Full local text searched for prior authorisation and assessments; no application-level timestamp series located."
+    },
+    {
+      "id": "af-za-ar23",
+      "url": "https://inforegulator.org.za/wp-content/uploads/2020/07/Information-Regulator-Annual-Report-2023-Compressed.pdf",
+      "title": "Annual Report 2022/2023",
+      "publisher": "Information Regulator, South Africa",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Printed p.25 performance table, prior-authorisation and adjacent codes-of-conduct rows; prior-year column 2021/22."
+    },
+    {
+      "id": "af-za-app",
+      "url": "https://inforegulator.org.za/wp-content/uploads/2020/07/Annual-Performance-Plan-2022-2023.pdf",
+      "title": "Annual Performance Plan 2022/2023",
+      "publisher": "Information Regulator, South Africa",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "p.42 technical indicator: register, processed/received definition, Executive:POPIA responsibility."
+    },
+    {
+      "id": "af-za-kzn",
+      "url": "https://www.parliament.gov.za/index.php/press-releases/media-statement-committee-social-development-applaudes-sassa-kzns-progress-digital-verification-and-biometric-registration",
+      "title": "SASSA KZN digital verification and biometric registration",
+      "publisher": "Parliament of South Africa",
+      "published": "2025-10-14",
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Briefing: BBE implemented 1 September 2025; 82 offices; 901 trained and 748 migrated. Unrelated income-review percentage appears inconsistent and excluded."
+    },
+    {
+      "id": "af-za-dha",
+      "url": "https://www.gov.za/news/media-statements/home-affairs-upgrades-critical-digital-verification-system-24-mar-2025",
+      "title": "Home Affairs upgrades critical digital verification system",
+      "publisher": "Department of Home Affairs, South Africa",
+      "published": "2025-03-24",
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Opening paragraphs: former response up to 24 hours, test error below 1%; no protocol/sample size."
+    },
+    {
+      "id": "af-ke-act",
+      "url": "https://kentrade.go.ke/wp-content/uploads/2022/09/Data-Protection-Act-1.pdf",
+      "title": "Data Protection Act, No.24 of 2019",
+      "publisher": "Kenya Law text, official Kenya Trade Network Agency host",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Section 31; sections 56–64.37-page PDF downloaded and read locally.2019 is enactment year, not publication date of hosted copy."
+    },
+    {
+      "id": "af-ke-guide",
+      "url": "https://www.odpc.go.ke/wp-content/uploads/2024/02/ODPC-Guidance-Note-on-Data-Protection-Impact-Assessment-1.pdf",
+      "title": "Guidance Note on Data Protection Impact Assessment",
+      "publisher": "ODPC Kenya",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "partial",
+      "locator": "Sections 9 B–9 E; template Part 1 and Part 5, printed pp.12–17. Indexed primary text read; issue day unverified. Direct 404; Part 5 sign-off table recovered through indexed primary extraction."
+    },
+    {
+      "id": "af-ke-bio",
+      "url": "https://www.odpc.go.ke/wp-content/uploads/2025/11/ODPC-%E2%80%93-Guidance-Note-on-Biometric-Data.pdf",
+      "title": "Guidance Note on Biometric Data 2025",
+      "publisher": "ODPC Kenya",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "partial",
+      "locator": "Section 10.7, printed pp.33–34, annex checklist. Direct 403/timeout; indexed primary text recovered.2025 cover, issue day unverified. Full direct fetch timed out; section 10.7 recovered through indexed primary extraction."
+    },
+    {
+      "id": "af-ke-ar25",
+      "url": "https://libraryir.parliament.go.ke/server/api/core/bitstreams/c9415670-b27e-4794-b03b-3475ebcd48c3/content",
+      "title": "ODPC Annual Report and Financial Statements: year ended 30 June 2025",
+      "publisher": "ODPC, Parliament of Kenya repository",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Commissioner report printed p.xi/PDF 14; performance p.xix/PDF 22.102-page local PDF read; image of PDF 22 checked to correct OCR 45 to 46."
+    },
+    {
+      "id": "af-ke-world",
+      "url": "https://www.odpc.go.ke/wp-content/uploads/2024/02/ODPC-COMPLAINT-NO.-1394-OF-2023-DETERMINATION.pdf",
+      "title": "Worldcoin determination 1394/2023 with multiagency report",
+      "publisher": "ODPC Kenya",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Determination paras 4, 15–18, 71–79 signed 6 September 2023; attachment dated 1 September 2023, timeline 4–9 and section 4. Upload date differs from decision."
+    },
+    {
+      "id": "af-ke-charter",
+      "url": "https://www.odpc.go.ke/wp-content/uploads/2025/11/ODPC-Service-Charter-English-2025.pdf",
+      "title": "Service Charter 2024/2025",
+      "publisher": "ODPC Kenya",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "partial",
+      "locator": "Cover recovered; later text fetch timed out. No service-duration numbers used."
+    },
+    {
+      "id": "af-ng-gaid",
+      "url": "https://ndpc.gov.ng/wp-content/uploads/2025/07/NDP-ACT-GAID-2025-MARCH-20TH.pdf",
+      "title": "NDP Act General Application and Implementation Directive 2025",
+      "publisher": "Nigeria Data Protection Commission",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Arts 9–10, 13, 28; Schedule 2 pp.74–75.117-page PDF downloaded/read locally. Exact publication day not inferred from filename."
+    },
+    {
+      "id": "af-ng-ar25",
+      "url": "https://ndpc.gov.ng/wp-content/uploads/2026/02/Print_NDPC-Annual-Report-2025-1.pdf",
+      "title": "Annual Report 2025",
+      "publisher": "Nigeria Data Protection Commission",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "partial",
+      "locator": "Indexed primary pp.25–28 read in separate extracted sections; full direct fetch 403/404. Tables/CAR/sector figures and surveyQ 1 inspected, not all report pages."
+    },
+    {
+      "id": "af-ng-faq",
+      "url": "https://ftp.ndpc.gov.ng/faqs/",
+      "title": "Frequently Asked Questions",
+      "publisher": "Nigeria Data Protection Commission",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "partial",
+      "locator": "Earlier-read CAR filing channel retained; full GAID now used for controlling eligibility details."
+    },
+    {
+      "id": "af-rw-law",
+      "url": "https://dpo.gov.rw/dpp-law/obligations-of-the-data-controller-and-the-data-processor",
+      "title": "Controller and processor obligations",
+      "publisher": "Rwanda DPO/NCSA",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Official HTML arts 38, 40–44, 47 read. Underlying law 13 October 2021; page publication date unspecified."
+    },
+    {
+      "id": "af-rw-tools",
+      "url": "https://dpo.gov.rw/compliance-tools",
+      "title": "Compliance tools",
+      "publisher": "Rwanda DPO/NCSA",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Official HTML read: actual links for DPIA form, inventory/readiness checklist and designation guidance; not all linked documents read."
+    },
+    {
+      "id": "af-rw-guide",
+      "url": "https://dpo.gov.rw/fileadmin/DPO/ComplianceTools/-_dpia-guide-and-form.pdf",
+      "title": "DPIA guide and form",
+      "publisher": "Rwanda DPO/NCSA",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "inaccessible",
+      "locator": "Officially linked PDF; indexed fetch timeout, direct TLS error, alternate fetch unsupported PDF. No substantive contents recovered."
+    },
+    {
+      "id": "af-rw-wb",
+      "url": "https://documents1.worldbank.org/curated/en/099122425135531423/pdf/P173373-3127c5a5-6cbe-476d-9794-ea345dd9d6a4.pdf",
+      "title": "Digital Acceleration Project P 173373 implementation status/results",
+      "publisher": "World Bank",
+      "published": "2025-12-24",
+      "observed": "2026-10-31",
+      "access": "read",
+      "locator": "Archived 24 December 2025; indicators observed 1 November 2025. pp.10–11 digital ID/DPO register; pp.12–13 Hanga cohort. Indexed primary PDF text read."
+    },
+    {
+      "id": "af-rw-wb-jun",
+      "url": "https://documents1.worldbank.org/curated/en/099060625112536440/pdf/P173373-a1ed1d1c-a38b-4dca-a2d8-e07b33bdda86.pdf",
+      "title": "P 173373 June implementation status/results",
+      "publisher": "World Bank",
+      "published": "2025-06-06",
+      "observed": "2026-10-31",
+      "access": "partial",
+      "locator": "p.9 registration commentary; observation 1 May 2025. Search-index extract read, not full report."
+    },
+    {
+      "id": "af-ng-cert-uba",
+      "url": "https://services.ndpc.gov.ng/portal/?d=ang41797407376&id=34475&page=verify-c&sn=5f4782af93cae45530bc8ca753368257&t=audit_filing&tp=nwp_audit",
+      "title": "Public audit certificate: UBA Pensions Custodian Limited",
+      "publisher": "Nigeria Data Protection Commission",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "partial",
+      "locator": "Verified record NDPC/AUDIT/24701: audit year 2025; DPCO Data Analytics Privacy Technology Ltd; approval 9 April 2026. Indexed record read."
+    },
+    {
+      "id": "af-ng-cert-veriscore",
+      "url": "https://services.ndpc.gov.ng/portal/?d=ang42280706714&id=59510&page=verify-c&sn=3fc9a2e5023b7381bcf258281da6f654&t=audit_filing&tp=nwp_audit",
+      "title": "Public audit certificate: Veriscore Technology Solutions Limited",
+      "publisher": "Nigeria Data Protection Commission",
+      "published": null,
+      "observed": "2026-10-31",
+      "access": "partial",
+      "locator": "Verified record NDPC/AUDIT/25212: audit year 2025; DPCO Lehi Attorneys; approval 27 May 2026. Indexed record read."
+    }
+  ],
+  "searches": [
+    {
+      "id": "af-s-za-reports",
+      "queryOrUrl": "Official2023/24 and2024/25 report downloads; full-text prior authorisation/applications/assessments searches",
+      "outcome": "Workload/staff recovered, not case-timestamp series; nil assessment-on-request is not nil prior authorisation.",
+      "sourceIds": [
+        "af-za-ar24",
+        "af-za-ar25"
+      ]
+    },
+    {
+      "id": "af-s-za-history",
+      "queryOrUrl": "site:inforegulator.org.za \"2022/23\" \"prior authorisation\"; \"applications\" \"authorisation\" \"100%\"",
+      "outcome": "Historical64/100percent and register/custodian definition recovered; absolute count absent from located table.",
+      "sourceIds": [
+        "af-za-ar23",
+        "af-za-app"
+      ]
+    },
+    {
+      "id": "af-s-za-procedure",
+      "queryOrUrl": "Official revised prior-authorisation PDF download/PDFKit",
+      "outcome": "Signature and legal clocks, not observed mean processing.",
+      "sourceIds": [
+        "af-za-guide"
+      ]
+    },
+    {
+      "id": "af-s-za-cases",
+      "queryOrUrl": "site:inforegulator.org.za \"prior authorisation\" \"applications received\"; \"prior authorisation\" \"received\"",
+      "outcome": "Guidance/plans, no current individual case-timestamp dataset.",
+      "sourceIds": [
+        "af-za-guide",
+        "af-za-app"
+      ]
+    },
+    {
+      "id": "af-s-za-deploy",
+      "queryOrUrl": "site:gov.za SASSA biometric2025; Parliament KZN BBE briefing; DHA verification upgrade",
+      "outcome": "Named operational candidate and site count; no section57 eligibility/annex consent.",
+      "sourceIds": [
+        "af-za-kzn",
+        "af-za-dha"
+      ]
+    },
+    {
+      "id": "af-s-ke-act",
+      "queryOrUrl": "https://kentrade.go.ke/wp-content/uploads/2022/09/Data-Protection-Act-1.pdf",
+      "outcome": "Official alternate host recovered statute; earlier KenyaLaw access failure no longer blocks law reading.",
+      "sourceIds": [
+        "af-ke-act"
+      ]
+    },
+    {
+      "id": "af-s-ke-guidance",
+      "queryOrUrl": "site:odpc.go.ke \"DPIA\" \"Guidance\" filetype:pdf; biometric PDF direct and indexed",
+      "outcome": "Direct403/timeouts overcome with indexed primary text, including sign-off template.",
+      "sourceIds": [
+        "af-ke-guide",
+        "af-ke-bio"
+      ]
+    },
+    {
+      "id": "af-s-ke-reports",
+      "queryOrUrl": "\"ODPC\" \"2024/25\" \"DPIA\"; Parliament repository bitstream",
+      "outcome": "Annual76reviewed/7pending recovered; PDF22 image confirms46audits.",
+      "sourceIds": [
+        "af-ke-ar25"
+      ]
+    },
+    {
+      "id": "af-s-ke-charter",
+      "queryOrUrl": "Official2025 service-charter PDF; guessed2024/05 ODPC-Service-Delivery-Charter.pdf",
+      "outcome": "Guessed path404; official cover read, later table timed out. No target numbers used.",
+      "sourceIds": [
+        "af-ke-charter"
+      ]
+    },
+    {
+      "id": "af-s-ke-case",
+      "queryOrUrl": "site:odpc.go.ke \"Worldcoin\" \"DPIA\"; determination1394/2023 and attachment",
+      "outcome": "Named ML/biometric deployment and dated administrative steps; no current pilot.",
+      "sourceIds": [
+        "af-ke-world"
+      ]
+    },
+    {
+      "id": "af-s-ke-budget",
+      "queryOrUrl": "site:treasury.go.ke \"data protection\" \"impact assessments\"; Parliament financial statement",
+      "outcome": "Alternate institutional-report search. Final numbers sourced to readable parliamentary report, not snippets.",
+      "sourceIds": [
+        "af-ke-ar25"
+      ]
+    },
+    {
+      "id": "af-s-ng-report",
+      "queryOrUrl": "site:ndpc.gov.ng \"annual report\" \"2025\"; direct PDF and FTP-host alternate",
+      "outcome": "Indexed primary report read; local404/alternate failure retained; CAR/sector/registration counts found.",
+      "sourceIds": [
+        "af-ng-ar25"
+      ]
+    },
+    {
+      "id": "af-s-ng-procedure",
+      "queryOrUrl": "NDPC homepage href discovery; linked GAID PDF download/PDFKit",
+      "outcome": "Full117-page directive read; exceptions, first-filing rule and DPIA signatures found.",
+      "sourceIds": [
+        "af-ng-gaid"
+      ]
+    },
+    {
+      "id": "af-s-ng-pilot",
+      "queryOrUrl": "site:ndpc.gov.ng \"AI\" \"audit\" \"pilot\"; \"artificial intelligence\" \"pilot\"; \"AI\" \"inventory\"",
+      "outcome": "No matched populated AI-use/CAR-eligibility inventory or signed exact-annex pilot located. Not evidence records cannot be obtained.",
+      "sourceIds": [
+        "af-ng-gaid",
+        "af-ng-ar25"
+      ]
+    },
+    {
+      "id": "af-s-ng-channel",
+      "queryOrUrl": "https://ftp.ndpc.gov.ng/faqs/ compared with full GAID",
+      "outcome": "Earlier FAQ route corrected for OHL and establishment-date exceptions.",
+      "sourceIds": [
+        "af-ng-faq",
+        "af-ng-gaid"
+      ]
+    },
+    {
+      "id": "af-s-rw-tools",
+      "queryOrUrl": "Official DPO compliance-tools and obligations HTML",
+      "outcome": "Law and actual inventory/form links recovered, not case register.",
+      "sourceIds": [
+        "af-rw-law",
+        "af-rw-tools"
+      ]
+    },
+    {
+      "id": "af-s-rw-guide",
+      "queryOrUrl": "Officially linked DPIA PDF: indexed open, alternate fetch, HTTPS curl, HTTP alternate",
+      "outcome": "Timeout/TLS error/unsupported PDF; full form not recovered. Repeated failures stopped.",
+      "sourceIds": [
+        "af-rw-guide"
+      ]
+    },
+    {
+      "id": "af-s-rw-report",
+      "queryOrUrl": "site:worldbank.org Rwanda data protection inspection audit NCSA; \"P173373\" \"2026\" \"registered\" \"Controllers\"",
+      "outcome": "Lender reporting yields2500non-digital registrations, digital-indicator caveat, ID enrolment and funded-AI context; no current2026 register found.",
+      "sourceIds": [
+        "af-rw-wb",
+        "af-rw-wb-jun"
+      ]
+    },
+    {
+      "id": "af-s-rw-regulator",
+      "queryOrUrl": "site:dpo.gov.rw \"inspection\" \"annual\"; site:ncsa.gov.rw \"annual report\"; \"inspections\"; \"2025\" \"registered\"",
+      "outcome": "No annual DPIA/inspection count or turnaround series located; no non-publication claim.",
+      "sourceIds": [
+        "af-rw-tools",
+        "af-rw-law"
+      ]
+    },
+    {
+      "id": "af-s-rw-deploy",
+      "queryOrUrl": "site:moh.gov.rw \"AI\" \"patients\"; WB ID and Hanga result tables",
+      "outcome": "Health hit was training using external mammography data, excluded as Rwanda deployment. WB provides actual ID/funding context.",
+      "sourceIds": [
+        "af-rw-wb"
+      ]
+    },
+    {
+      "id": "af-s-ng-register",
+      "queryOrUrl": "NDPC public audit-certificate indexed records; named UBA Pensions Custodian and Veriscore Technology Solutions",
+      "outcome": "Actual2026 approval dates and DPCO/controller pairs recovered, but no receipt dates, AI inventory or findings. This is a third distinct approach beyond report and legal procedure.",
+      "sourceIds": [
+        "af-ng-cert-uba",
+        "af-ng-cert-veriscore"
+      ]
+    },
+    {
+      "id": "af-s-reconcile",
+      "queryOrUrl": "Re-read ODPC1394/2023 paras16/36 and appendix; WBDecember2025 pp.2/10–13; indexed NDPC reportpp.25–28",
+      "outcome": "Two date conflicts retained explicitly. Nigerian totals and871technology/183health sector counts verified;13percent training survey is Nigeria, not US namesake.",
+      "sourceIds": [
+        "af-ke-world",
+        "af-rw-wb",
+        "af-ng-ar25"
+      ]
+    }
+  ]
+}
