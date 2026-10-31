@@ -137,3 +137,9 @@ Sources: [signed-in hackathon page](https://try.mangrove.one/hackathons/92b5e028
   - The debrief will show the assumed causal effect, whose consent is needed, and the evidence gaps.
   - Winning a mission is not real-world safety impact.
 - **Feedback welcome:** which finance cards from Grisha's research are solid enough to use as negotiation chips?
+- **Update: the first playable version is on `orbit-accord`** (commit d084b8c). How to play: [game/README.md on the branch](https://github.com/TubaAli/middle-powers-hackathon/blob/orbit-accord/game/README.md).
+  - Run `python3 -m http.server` from the repo root and open `/game/` on the branch.
+  - Played end to end in headless Chrome with no errors. Game balance is unverified.
+  - **Team input wanted:**
+    - Should a game mode go into the submission?
+    - Which finance research items could become negotiation cards? Only records marked "documented", per the finance handoff.
