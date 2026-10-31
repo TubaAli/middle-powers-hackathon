@@ -21,6 +21,7 @@
     <nav class="tabs" role="tablist">
       <button role="tab" data-view="stack">Stack map</button>
       <button role="tab" data-view="coalition">Coalition builder</button>
+      <button role="tab" data-view="dependence">Dependence</button>
       <button role="tab" data-view="about">Sources &amp; limits</button>
     </nav>
   </div>
@@ -53,6 +54,27 @@
     </div>
   </section>
 
+  <section id="view-dependence" class="view" hidden>
+    <h2>What if one supplier withdraws?</h2>
+    <p class="hint">Pick a supplier. Each stage shows the share of world supply that supplier holds, which is what would be at risk if it stopped supplying or used it to coerce, and how much of that the bloc you picked in the Coalition builder already makes itself. This is exposure, not a forecast of loss: stocks, rerouting and substitutes are not modelled.</p>
+    <div class="chips" id="suppliers"></div>
+    <div class="kpis" id="dep-kpis"></div>
+    <div class="cols">
+      <div>
+        <h3 class="sub">Stages at risk</h3>
+        <div id="dep-bars"></div>
+      </div>
+      <div>
+        <h3 class="sub">Who needs whom more?</h3>
+        <div id="mutual"></div>
+      </div>
+    </div>
+
+    <h2>How concentrated is each stage?</h2>
+    <p class="hint">Concentration is the Herfindahl index (HHI, 0–10,000) over the country groups in the data; above 2,500 is usually called highly concentrated. "Others" and the producer group are treated as many small suppliers, so HHI here is a lower bound. A stage is marked <span class="flag">fragile</span> when its top supplier holds more than 60% (the threshold <a href="https://mapping-ai.org/insights#funding" target="_blank" rel="noopener">Mapping AI</a> uses for funding dependence).</p>
+    <div class="scroll"><table id="conc" class="grid"></table></div>
+  </section>
+
   <section id="view-about" class="view prose" hidden>
     <h2>What this does</h2>
     <p>It asks one question: <i>if this group of countries acted together, how much of the AI supply chain would it hold, and which safety conditions could that holding back?</i></p>
@@ -65,6 +87,7 @@
       <li><b>The labels are a scenario.</b> "Strong / some / weak supply-chain basis" uses thresholds we chose (50% and 25% of the strongest relevant stage). They are shown so readers can disagree.</li>
       <li><b>Replacement times are our guesses.</b> They are not from the source and need checking.</li>
       <li><b>Country groups are coarse.</b> Singapore, India, France and others sit in "Others"; the EU's windows are shown under Germany and the Netherlands.</li>
+      <li><b>Withdrawal is exposure, not loss.</b> The dependence view shows world shares, not who ships to whom: there is no bilateral trade data here, so it cannot say how much any one country would lose. Stockpiles, rerouting, smuggling and substitutes are not modelled.</li>
       <li><b>Politics is missing.</b> Coalition incentives, retaliation (e.g., China on gallium) and US pressure on allies are not modelled.</li>
     </ul>
     <h2>Use of AI</h2>

@@ -1,7 +1,10 @@
 // Middle Powers Leverage Map: stack map + coalition builder.
 // Stage weights and shares follow gszep's published leverage model (data/layers.json).
 
-const state = { s: 0.4, view: 'stack', bloc: ['NL', 'JP', 'KR'], stage: null };
+const state = { s: 0.4, view: 'stack', bloc: ['NL', 'JP', 'KR'], stage: null, withdraw: 'CN' };
+const VIEWS = ['stack', 'coalition', 'dependence', 'about'];
+// Groups that are many countries, not one supplier: left out of HHI squares and the supplier picker.
+const FRAGMENTED = ['OTH', 'PROD'];
 let L, C, W;
 
 const PRESETS = [
@@ -34,12 +37,13 @@ const sname = (k) => L.stages.find((s) => s.k === k)?.name ?? k;
 
 // URL hash keeps state shareable: #coalition&s=40&b=NL,JP,KR
 function readHash() {
-  const p = new URLSearchParams(location.hash.slice(1).replace(/^(stack|coalition|about)&?/, (m, v) => { state.view = v; return ''; }));
+  const p = new URLSearchParams(location.hash.slice(1).replace(new RegExp(`^(${VIEWS.join('|')})&?`), (m, v) => { state.view = v; return ''; }));
   if (p.has('s')) state.s = Math.min(1, Math.max(0, Number(p.get('s')) / 100 || 0));
+  if (p.has('w') && L.countries.some((c) => c.k === p.get('w') && !FRAGMENTED.includes(c.k))) state.withdraw = p.get('w');
   if (p.has('b')) state.bloc = p.get('b').split(',').filter((k) => L.countries.some((c) => c.k === k) && !NOT_SELECTABLE.includes(k));
 }
 function writeHash() {
-  history.replaceState(null, '', `#${state.view}&s=${Math.round(state.s * 100)}&b=${state.bloc.join(',')}`);
+  history.replaceState(null, '', `#${state.view}&s=${Math.round(state.s * 100)}&b=${state.bloc.join(',')}&w=${state.withdraw}`);
 }
 
 function renderMix() {
@@ -141,6 +145,73 @@ function renderCoalition() {
   }).join('');
 }
 
+// Herfindahl index over single-supplier groups; fragmented groups count as zero, so this is a lower bound.
+function hhi(stage) {
+  return Object.entries(stage.share).reduce((t, [k, v]) => t + (FRAGMENTED.includes(k) ? 0 : v * v), 0);
+}
+function topSupplier(stage) {
+  return Object.entries(stage.share).filter(([k]) => !FRAGMENTED.includes(k)).sort((a, b) => b[1] - a[1])[0] ?? [null, 0];
+}
+
+function renderDependence() {
+  const x = state.withdraw, xc = L.countries.find((c) => c.k === x);
+  const bloc = state.bloc.filter((k) => k !== x);
+  const blocName = bloc.length ? bloc.map(cname).join(' + ') : 'no bloc selected';
+  $('#suppliers').innerHTML = L.countries.filter((c) => !FRAGMENTED.includes(c.k))
+    .map((c) => `<button data-k="${c.k}" aria-pressed="${c.k === x}">${esc(c.name)}</button>`).join('');
+
+  const xW = weighted([x], state.s), bW = weighted(bloc, state.s);
+  const atRisk = L.stages.filter((st) => (st.share[x] ?? 0) >= 50);
+  const blind = L.stages.filter((st) => (st.share[x] ?? 0) >= 25 && blocShare(st, bloc) < 10);
+  $('#dep-kpis').innerHTML = `
+    <div class="kpi"><div class="n">${Math.round(xW)}%</div><div class="l">Weighted supply chain ${esc(xc.name)} holds, so at risk</div></div>
+    <div class="kpi"><div class="n">${atRisk.length}</div><div class="l">Stages where ${esc(xc.name)} holds ≥50%</div></div>
+    <div class="kpi bloc"><div class="n">${blind.length}</div><div class="l">Stages where ${esc(xc.name)} holds ≥25% and the bloc &lt;10%</div></div>`;
+
+  const rows = [...L.stages].sort((a, b) => (b.share[x] ?? 0) - (a.share[x] ?? 0));
+  $('#dep-bars').innerHTML = `<p class="legend"><span class="sw" style="background:rgb(${rgbFor(xc)})"></span>${esc(xc.name)}'s share <span class="sw" style="background:rgb(var(--accent))"></span>bloc's own share (${esc(blocName)})</p>` +
+    rows.map((st) => {
+      const v = st.share[x] ?? 0, b = blocShare(st, bloc);
+      const [lo, hi] = st.replicate_years;
+      return `<div class="bar dep${v >= 50 ? ' choke' : ''}" title="${esc(st.note)}">
+        <span class="name">${esc(st.name)}</span>
+        <span class="track"><span class="fill" style="width:${v}%;background:rgb(${rgbFor(xc)})"></span><span class="fill own" style="width:${Math.min(100, b)}%"></span><span class="half"></span></span>
+        <span class="v">${v ? Math.round(v) + '%' : '–'}${v >= 25 ? ` · ${lo}–${hi}y` : ''}</span></div>`;
+    }).join('');
+
+  if (!bloc.length) {
+    $('#mutual').innerHTML = '<p class="empty">Pick a bloc in the Coalition builder to compare.</p>';
+  } else {
+    // Stages one side holds that the other barely does, ranked by weighted importance at this mix.
+    const edge = (hasKeys, lacksKeys) => L.stages
+      .map((st) => ({ st, have: blocShare(st, hasKeys), lack: blocShare(st, lacksKeys), w: weight(st, state.s) }))
+      .filter((r) => r.have >= 25 && r.lack < 10)
+      .sort((a, b) => b.have * b.w - a.have * a.w).slice(0, 4);
+    const li = (r) => `<li><b>${esc(r.st.name)}</b>: ${Math.round(r.have)}% vs ${Math.round(r.lack)}%</li>`;
+    const theirs = edge([x], bloc), ours = edge(bloc, [x]);
+    const inBloc = state.bloc.includes(x) ? `<p class="hint">${esc(xc.name)} is in your bloc; it is left out of the bloc here.</p>` : '';
+    $('#mutual').innerHTML = `${inBloc}
+      <div class="vs">
+        <div><div class="n" style="color:rgb(${rgbFor(xc)})">${Math.round(xW)}%</div><div class="l">${esc(xc.name)} could withhold</div></div>
+        <div><div class="n" style="color:rgb(var(--accent))">${Math.round(bW)}%</div><div class="l">the bloc could withhold</div></div>
+      </div>
+      <p class="hint">Weighted shares of the supply chain at this mix. A bloc that holds stages the supplier lacks has something to bargain with; one that holds nothing it needs does not.</p>
+      <h4>${esc(xc.name)} holds, the bloc lacks</h4>${theirs.length ? `<ul>${theirs.map(li).join('')}</ul>` : '<p class="empty">Nothing large.</p>'}
+      <h4>The bloc holds, ${esc(xc.name)} lacks</h4>${ours.length ? `<ul>${ours.map(li).join('')}</ul>` : '<p class="empty">Nothing large.</p>'}`;
+  }
+
+  const conc = [...L.stages].sort((a, b) => hhi(b) - hhi(a));
+  $('#conc').innerHTML = `<thead><tr><th style="text-align:left">Stage</th><th>Top supplier</th><th>Share</th><th>HHI</th><th>Years to replace</th></tr></thead><tbody>` +
+    conc.map((st) => {
+      const [k, v] = topSupplier(st), h = hhi(st);
+      const c = L.countries.find((cc) => cc.k === k);
+      return `<tr><td class="stage">${esc(st.name)}${v > 60 ? ' <span class="flag">fragile</span>' : ''}</td>
+        <td>${esc(c?.name ?? '–')}</td><td>${Math.round(v)}%</td>
+        <td><span class="hhi" style="--h:${Math.min(100, h / 100)}%">${Math.round(h).toLocaleString()}</span></td>
+        <td>${st.replicate_years[0]}–${st.replicate_years[1]}</td></tr>`;
+    }).join('') + '</tbody>';
+}
+
 function renderAbout() {
   const srcs = [
     [L._meta.source, L._meta.source_url],
@@ -152,11 +223,12 @@ function renderAbout() {
 }
 
 function render() {
-  for (const v of ['stack', 'coalition', 'about']) $(`#view-${v}`).hidden = state.view !== v;
+  for (const v of VIEWS) $(`#view-${v}`).hidden = state.view !== v;
   document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', b.dataset.view === state.view));
   renderMix();
   if (state.view === 'stack') renderStack();
   if (state.view === 'coalition') { renderChips(); renderCoalition(); }
+  if (state.view === 'dependence') renderDependence();
   writeHash();
 }
 
@@ -174,6 +246,9 @@ function wire() {
     const k = e.target.dataset?.k; if (!k) return;
     state.bloc = state.bloc.includes(k) ? state.bloc.filter((x) => x !== k) : [...state.bloc, k];
     render();
+  });
+  $('#suppliers').addEventListener('click', (e) => {
+    const k = e.target.dataset?.k; if (k) { state.withdraw = k; render(); }
   });
   $('#presets').addEventListener('click', (e) => {
     const i = e.target.dataset?.preset; if (i == null) return;

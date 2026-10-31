@@ -93,7 +93,7 @@ table.grid { border-collapse: collapse; width: 100%; font-size: 13px; font-varia
 .bar.choke .name { font-weight: 600; }
 .bar.choke .v { color: var(--ink); }
 .bar .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-@media (max-width: 520px) { .bar { grid-template-columns: 110px 1fr 70px; } }
+@media (max-width: 520px) { .bar { grid-template-columns: 100px 1fr 92px; } .bar .v { white-space: nowrap; font-size: 12px; } }
 
 .card { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--weak); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
 .card.strong { border-left-color: var(--strong); }
@@ -106,6 +106,26 @@ table.grid { border-collapse: collapse; width: 100%; font-size: 13px; font-varia
 .card p { margin: 4px 0; font-size: 13px; }
 .card .why { color: var(--muted); }
 .card ul { margin: 4px 0 0; padding-left: 18px; font-size: 12px; color: var(--muted); }
+
+/* Dependence */
+#suppliers { margin-bottom: 4px; }
+#suppliers button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+h3.sub { font-size: 15px; margin: 20px 0 8px; }
+.legend { font-size: 12px; color: var(--muted); margin: 0 0 6px; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin: 0 4px 0 10px; vertical-align: -1px; }
+.sw:first-child { margin-left: 0; }
+.bar.dep .track { height: 16px; }
+.bar.dep .fill { position: absolute; left: 0; top: 0; }
+.bar.dep .fill.own { top: auto; bottom: 0; height: 5px; background: rgb(var(--accent)); }
+.vs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.vs > div { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+.vs .n { font-size: 26px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.vs .l { font-size: 12px; color: var(--muted); }
+#mutual h4 { font-size: 13px; margin: 14px 0 4px; }
+#mutual ul { margin: 0; padding-left: 18px; font-size: 13px; }
+.flag { display: inline-block; font-size: 11px; font-weight: 600; color: #fff; background: rgb(var(--cn)); border-radius: 3px; padding: 0 5px; }
+.hhi { display: inline-block; min-width: 64px; padding: 1px 6px; border-radius: 3px; background: linear-gradient(90deg, rgba(var(--cn), .25) var(--h), transparent var(--h)); }
+#conc td:nth-child(2) { text-align: left; }
 
 .prose { max-width: 75ch; }
 .prose li { margin: 6px 0; }
