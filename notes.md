@@ -17,6 +17,7 @@ Source: organizer message pasted by Grisha on 31 October 2026. The year below fo
 - **Team page:** https://try.mangrove.one/projects/a4eeba8d-acba-4336-a6f1-a55420644abb — the notice says it holds the Drive folder, submission portal and scheduler, with a help button for organizer support.
 - **Access check, 31 October 2026:** unauthenticated retrieval redirects to sign-in; page contents and deadline timezone have not been independently verified.
 - The notice's relative “starts in 21 hours” countdown is historical, not a current countdown. Confirm the timezone in the authenticated scheduler before using the clock times operationally.
+- **Kickoff follow-up:** Grisha shared an organizer message saying the hackathon “has begun” and kickoff emails would arrive shortly, received at **04:49 JST** (31 October 2026 inferred from the conversation). This records the message receipt time, not the exact event start. It does not establish the timezone of the earlier submission or peer-review deadlines.
 
 ## Idea 1: Procurement as regulation (Japan)
 - **Not a new law.** It proposes a new *practice*: government uses its buying power to put safety conditions into AI contracts. The legal basis is the 2025 AI Promotion Act and the AI Basic Plan.
