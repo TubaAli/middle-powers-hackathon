@@ -45,6 +45,7 @@ h2 { font-size: 17px; margin: 24px 0 6px; }
 .tabs { display: flex; gap: 4px; margin-top: 8px; overflow-x: auto; }
 .tabs button { border: 0; background: none; color: var(--muted); font: inherit; padding: 10px 12px; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; }
 .tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--focus); font-weight: 600; }
+.tabs .tab-link { margin-left: auto; padding: 10px 12px; white-space: nowrap; font-weight: 600; text-decoration: none; }
 .view { padding: 16px 0 48px; }
 
 /* Stack map */
