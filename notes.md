@@ -1,5 +1,11 @@
 # Discussion notes
 
+## Next research pass: selected and tested by Geneva
+
+Grisha clarified the objective: by the Geneva 2027 AI summit, identify which safeguard routes have been selected and, where feasible, obtain evidence that they work. Continue sampling scenarios against real late-2026 and 2027 decision windows and the current political/economic context. Role-based analysis is a stress test, not testimony or institutional consent. Separate adoption, implementation, changed behaviour and risk reduction.
+
+Grisha also requested more quantitative axes: continuous measures from 0 to 1 grounded in actual numbers rather than LLM-assigned 1–5 categories. This pass will investigate operational definitions, denominators, empirical inputs, uncertainty, comparability and validation. No division of the existing scores by five will be presented as measurement. Existing plot ratings remain unchanged until a defensible replacement is demonstrated. Research outputs will be collected under `research_notes/Safeguard validation by Geneva/`.
+
 ## Approved: routes to safeguards explorer
 
 Executive-first design WIP: Grisha asked for an at-a-glance map and a one-mobile-page route overview, with research behind text links. Implemented short editorial briefs, linked full research pages, optional filters/comparisons, a highlighted upper-right direction and mobile selection scrolling. All eight route investigations have now arrived; their unreviewed data remains local pending integration, including correction of categorical absence claims in the procurement draft.
