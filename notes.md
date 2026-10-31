@@ -2,6 +2,15 @@
 
 ## Retrieved coordinate evidence: local integration, 31 October 2026
 
+Public acceptance completed by the parent at implementation commit `7634a96`:
+https://tubaali.github.io/middle-powers-hackathon/routes/coordinate-evidence.html.
+The new public check at 390px passed all 32 route filters, the x filter,
+shareable query reload and horizontal-overflow checks, with no page errors.
+Public bytes matched the committed evidence HTML/JS/CSS, normalized data,
+quantitative snapshot and report. Counts remained 379 facts, 305 numeric scalar
+entries, 242 source records and 193 retrieval records. Desktop and local checks
+were completed earlier; this additional public acceptance was mobile-only.
+
 [The evidence browser](routes/coordinate-evidence.html) now joins all seven
 regional ledgers to the same 32 map route IDs. The deterministic snapshot has
 379 fact records: 305 numeric scalars, 38 structured values, three text values
