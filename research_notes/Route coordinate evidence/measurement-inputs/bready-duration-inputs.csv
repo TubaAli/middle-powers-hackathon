@@ -1,0 +1,96 @@
+country,variable,response,data_source,locator,numeric_days,parse_status
+Belgium,MCP_29_1,309,Expert Consultations,09_Market_Competition!B1729:E1729,309,plain numeric expert answer
+Belgium,MCP_29_2,Calculate median; 50% Skip Logic: 160,Expert Consultations,09_Market_Competition!B1730:E1730,,annotated/skip response retained verbatim; not coerced
+Belgium,MCP_29_3,Calculate median; 50% Skip Logic: 150,Expert Consultations,09_Market_Competition!B1731:E1731,,annotated/skip response retained verbatim; not coerced
+Belgium,MCP_29_4,Skip Logic,Expert Consultations,09_Market_Competition!B1732:E1732,,annotated/skip response retained verbatim; not coerced
+Belgium,MCP_29_5,Calculate median; 50% Skip Logic: 300,Expert Consultations,09_Market_Competition!B1733:E1733,,annotated/skip response retained verbatim; not coerced
+Canada,MCP_29_1,212.5,Expert Consultations,09_Market_Competition!B4429:E4429,212.5,plain numeric expert answer
+Canada,MCP_29_2,Calculate median; 50% Skip Logic: 15,Expert Consultations,09_Market_Competition!B4430:E4430,,annotated/skip response retained verbatim; not coerced
+Canada,MCP_29_3,75,Expert Consultations,09_Market_Competition!B4431:E4431,75,plain numeric expert answer
+Canada,MCP_29_4,Calculate median; 50% Skip Logic: 60,Expert Consultations,09_Market_Competition!B4432:E4432,,annotated/skip response retained verbatim; not coerced
+Canada,MCP_29_5,90,Expert Consultations,09_Market_Competition!B4433:E4433,90,plain numeric expert answer
+Colombia,MCP_29_1,Calculate median; 50% Skip Logic: 99.5,Expert Consultations,09_Market_Competition!B5239:E5239,,annotated/skip response retained verbatim; not coerced
+Colombia,MCP_29_2,27,Expert Consultations,09_Market_Competition!B5240:E5240,27,plain numeric expert answer
+Colombia,MCP_29_3,70,Expert Consultations,09_Market_Competition!B5241:E5241,70,plain numeric expert answer
+Colombia,MCP_29_4,45,Expert Consultations,09_Market_Competition!B5242:E5242,45,plain numeric expert answer
+Colombia,MCP_29_5,Calculate median; 50% Skip Logic: 90,Expert Consultations,09_Market_Competition!B5243:E5243,,annotated/skip response retained verbatim; not coerced
+Czech Republic,MCP_29_1,140,Expert Consultations,09_Market_Competition!B7129:E7129,140,plain numeric expert answer
+Czech Republic,MCP_29_2,120,Expert Consultations,09_Market_Competition!B7130:E7130,120,plain numeric expert answer
+Czech Republic,MCP_29_3,80,Expert Consultations,09_Market_Competition!B7131:E7131,80,plain numeric expert answer
+Czech Republic,MCP_29_4,27,Expert Consultations,09_Market_Competition!B7132:E7132,27,plain numeric expert answer
+Czech Republic,MCP_29_5,200,Expert Consultations,09_Market_Competition!B7133:E7133,200,plain numeric expert answer
+Estonia,MCP_29_1,80,Expert Consultations,09_Market_Competition!B8209:E8209,80,plain numeric expert answer
+Estonia,MCP_29_2,60,Expert Consultations,09_Market_Competition!B8210:E8210,60,plain numeric expert answer
+Estonia,MCP_29_3,40,Expert Consultations,09_Market_Competition!B8211:E8211,40,plain numeric expert answer
+Estonia,MCP_29_4,Calculate median; 50% Skip Logic: 15,Expert Consultations,09_Market_Competition!B8212:E8212,,annotated/skip response retained verbatim; not coerced
+Estonia,MCP_29_5,70,Expert Consultations,09_Market_Competition!B8213:E8213,70,plain numeric expert answer
+Iceland,MCP_29_1,Calculate median; 50% Skip Logic: 50,Expert Consultations,09_Market_Competition!B10369:E10369,,annotated/skip response retained verbatim; not coerced
+Iceland,MCP_29_2,Calculate median; 50% Skip Logic: 200,Expert Consultations,09_Market_Competition!B10370:E10370,,annotated/skip response retained verbatim; not coerced
+Iceland,MCP_29_3,90,Expert Consultations,09_Market_Competition!B10371:E10371,90,plain numeric expert answer
+Iceland,MCP_29_4,Skip Logic,Expert Consultations,09_Market_Competition!B10372:E10372,,annotated/skip response retained verbatim; not coerced
+Iceland,MCP_29_5,180,Expert Consultations,09_Market_Competition!B10373:E10373,180,plain numeric expert answer
+Indonesia,MCP_29_1,Calculate median; 50% Skip Logic: 32.5,Expert Consultations,09_Market_Competition!B10639:E10639,,annotated/skip response retained verbatim; not coerced
+Indonesia,MCP_29_2,150,Expert Consultations,09_Market_Competition!B10640:E10640,150,plain numeric expert answer
+Indonesia,MCP_29_3,17,Expert Consultations,09_Market_Competition!B10641:E10641,17,plain numeric expert answer
+Indonesia,MCP_29_4,30,Expert Consultations,09_Market_Competition!B10642:E10642,30,plain numeric expert answer
+Indonesia,MCP_29_5,60,Expert Consultations,09_Market_Competition!B10643:E10643,60,plain numeric expert answer
+South Korea,MCP_29_1,40,Expert Consultations,09_Market_Competition!B12529:E12529,40,plain numeric expert answer
+South Korea,MCP_29_2,15,Expert Consultations,09_Market_Competition!B12530:E12530,15,plain numeric expert answer
+South Korea,MCP_29_3,20,Expert Consultations,09_Market_Competition!B12531:E12531,20,plain numeric expert answer
+South Korea,MCP_29_4,Calculate median; 50% Skip Logic: 89,Expert Consultations,09_Market_Competition!B12532:E12532,,annotated/skip response retained verbatim; not coerced
+South Korea,MCP_29_5,54.5,Expert Consultations,09_Market_Competition!B12533:E12533,54.5,plain numeric expert answer
+Malaysia,MCP_29_1,Calculate median; 50% Skip Logic: 120,Expert Consultations,09_Market_Competition!B14149:E14149,,annotated/skip response retained verbatim; not coerced
+Malaysia,MCP_29_2,Skip Logic,Expert Consultations,09_Market_Competition!B14150:E14150,,annotated/skip response retained verbatim; not coerced
+Malaysia,MCP_29_3,Calculate median; 50% Skip Logic: 14,Expert Consultations,09_Market_Competition!B14151:E14151,,annotated/skip response retained verbatim; not coerced
+Malaysia,MCP_29_4,Skip Logic,Expert Consultations,09_Market_Competition!B14152:E14152,,annotated/skip response retained verbatim; not coerced
+Malaysia,MCP_29_5,Skip Logic,Expert Consultations,09_Market_Competition!B14153:E14153,,annotated/skip response retained verbatim; not coerced
+Mexico,MCP_29_1,120,Expert Consultations,09_Market_Competition!B15229:E15229,120,plain numeric expert answer
+Mexico,MCP_29_2,70,Expert Consultations,09_Market_Competition!B15230:E15230,70,plain numeric expert answer
+Mexico,MCP_29_3,Calculate median; 50% Skip Logic: 120,Expert Consultations,09_Market_Competition!B15231:E15231,,annotated/skip response retained verbatim; not coerced
+Mexico,MCP_29_4,40,Expert Consultations,09_Market_Competition!B15232:E15232,40,plain numeric expert answer
+Mexico,MCP_29_5,Calculate median; 50% Skip Logic: 82.5,Expert Consultations,09_Market_Competition!B15233:E15233,,annotated/skip response retained verbatim; not coerced
+Poland,MCP_29_1,150,Expert Consultations,09_Market_Competition!B18739:E18739,150,plain numeric expert answer
+Poland,MCP_29_2,Calculate median; 50% Skip Logic: 27,Expert Consultations,09_Market_Competition!B18740:E18740,,annotated/skip response retained verbatim; not coerced
+Poland,MCP_29_3,125,Expert Consultations,09_Market_Competition!B18741:E18741,125,plain numeric expert answer
+Poland,MCP_29_4,30,Expert Consultations,09_Market_Competition!B18742:E18742,30,plain numeric expert answer
+Poland,MCP_29_5,100,Expert Consultations,09_Market_Competition!B18743:E18743,100,plain numeric expert answer
+Rwanda,MCP_29_1,45,Expert Consultations,09_Market_Competition!B19549:E19549,45,plain numeric expert answer
+Rwanda,MCP_29_2,14,Expert Consultations,09_Market_Competition!B19550:E19550,14,plain numeric expert answer
+Rwanda,MCP_29_3,36,Expert Consultations,09_Market_Competition!B19551:E19551,36,plain numeric expert answer
+Rwanda,MCP_29_4,12,Expert Consultations,09_Market_Competition!B19552:E19552,12,plain numeric expert answer
+Rwanda,MCP_29_5,30,Expert Consultations,09_Market_Competition!B19553:E19553,30,plain numeric expert answer
+Singapore,MCP_29_1,90,Expert Consultations,09_Market_Competition!B21169:E21169,90,plain numeric expert answer
+Singapore,MCP_29_2,60,Expert Consultations,09_Market_Competition!B21170:E21170,60,plain numeric expert answer
+Singapore,MCP_29_3,50,Expert Consultations,09_Market_Competition!B21171:E21171,50,plain numeric expert answer
+Singapore,MCP_29_4,Calculate median; 50% Skip Logic: 14,Expert Consultations,09_Market_Competition!B21172:E21172,,annotated/skip response retained verbatim; not coerced
+Singapore,MCP_29_5,Skip Logic,Expert Consultations,09_Market_Competition!B21173:E21173,,annotated/skip response retained verbatim; not coerced
+Sweden,MCP_29_1,35,Expert Consultations,09_Market_Competition!B22519:E22519,35,plain numeric expert answer
+Sweden,MCP_29_2,30,Expert Consultations,09_Market_Competition!B22520:E22520,30,plain numeric expert answer
+Sweden,MCP_29_3,30,Expert Consultations,09_Market_Competition!B22521:E22521,30,plain numeric expert answer
+Sweden,MCP_29_4,Calculate median; 50% Skip Logic: 30,Expert Consultations,09_Market_Competition!B22522:E22522,,annotated/skip response retained verbatim; not coerced
+Sweden,MCP_29_5,45,Expert Consultations,09_Market_Competition!B22523:E22523,45,plain numeric expert answer
+Taiwan,MCP_29_1,67,Expert Consultations,09_Market_Competition!B22789:E22789,67,plain numeric expert answer
+Taiwan,MCP_29_2,40,Expert Consultations,09_Market_Competition!B22790:E22790,40,plain numeric expert answer
+Taiwan,MCP_29_3,Calculate median; 50% Skip Logic: 21,Expert Consultations,09_Market_Competition!B22791:E22791,,annotated/skip response retained verbatim; not coerced
+Taiwan,MCP_29_4,Calculate median; 50% Skip Logic: 5,Expert Consultations,09_Market_Competition!B22792:E22792,,annotated/skip response retained verbatim; not coerced
+Taiwan,MCP_29_5,Calculate median; 50% Skip Logic: 46,Expert Consultations,09_Market_Competition!B22793:E22793,,annotated/skip response retained verbatim; not coerced
+Türkiye,MCP_29_1,50,Expert Consultations,09_Market_Competition!B24949:E24949,50,plain numeric expert answer
+Türkiye,MCP_29_2,Calculate median; 50% Skip Logic: 45,Expert Consultations,09_Market_Competition!B24950:E24950,,annotated/skip response retained verbatim; not coerced
+Türkiye,MCP_29_3,Calculate median; 50% Skip Logic: 85,Expert Consultations,09_Market_Competition!B24951:E24951,,annotated/skip response retained verbatim; not coerced
+Türkiye,MCP_29_4,10,Expert Consultations,09_Market_Competition!B24952:E24952,10,plain numeric expert answer
+Türkiye,MCP_29_5,Skip Logic,Expert Consultations,09_Market_Competition!B24953:E24953,,annotated/skip response retained verbatim; not coerced
+United Kingdom,MCP_29_1,120,Expert Consultations,09_Market_Competition!B25489:E25489,120,plain numeric expert answer
+United Kingdom,MCP_29_2,460,Expert Consultations,09_Market_Competition!B25490:E25490,460,plain numeric expert answer
+United Kingdom,MCP_29_3,Calculate median; 50% Skip Logic: 90,Expert Consultations,09_Market_Competition!B25491:E25491,,annotated/skip response retained verbatim; not coerced
+United Kingdom,MCP_29_4,140,Expert Consultations,09_Market_Competition!B25492:E25492,140,plain numeric expert answer
+United Kingdom,MCP_29_5,542.5,Expert Consultations,09_Market_Competition!B25493:E25493,542.5,plain numeric expert answer
+United States,MCP_29_1,339,Expert Consultations,09_Market_Competition!B25759:E25759,339,plain numeric expert answer
+United States,MCP_29_2,270,Expert Consultations,09_Market_Competition!B25760:E25760,270,plain numeric expert answer
+United States,MCP_29_3,Calculate median; 50% Skip Logic: 30,Expert Consultations,09_Market_Competition!B25761:E25761,,annotated/skip response retained verbatim; not coerced
+United States,MCP_29_4,Calculate median; 50% Skip Logic: 60,Expert Consultations,09_Market_Competition!B25762:E25762,,annotated/skip response retained verbatim; not coerced
+United States,MCP_29_5,Calculate median; 50% Skip Logic: 180,Expert Consultations,09_Market_Competition!B25763:E25763,,annotated/skip response retained verbatim; not coerced
+Vietnam,MCP_29_1,135,Expert Consultations,09_Market_Competition!B26839:E26839,135,plain numeric expert answer
+Vietnam,MCP_29_2,135,Expert Consultations,09_Market_Competition!B26840:E26840,135,plain numeric expert answer
+Vietnam,MCP_29_3,60,Expert Consultations,09_Market_Competition!B26841:E26841,60,plain numeric expert answer
+Vietnam,MCP_29_4,Skip Logic,Expert Consultations,09_Market_Competition!B26842:E26842,,annotated/skip response retained verbatim; not coerced
+Vietnam,MCP_29_5,Skip Logic,Expert Consultations,09_Market_Competition!B26843:E26843,,annotated/skip response retained verbatim; not coerced

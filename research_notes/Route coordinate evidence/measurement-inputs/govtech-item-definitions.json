@@ -1,0 +1,224 @@
+[
+  {
+    "variable": "I-1",
+    "definition": "Is there a shared cloud platform available for all government entities?",
+    "coding": "0= No, 1= Only cloud strategy/policy (no platform yet), 2= Yes (platform in use)",
+    "locator": "Metadata!A3:C3"
+  },
+  {
+    "variable": "I-1.1",
+    "definition": "Name of the Government Cloud platform",
+    "coding": "Text",
+    "locator": "Metadata!A4:C4"
+  },
+  {
+    "variable": "I-1.2",
+    "definition": "Cloud platform / strategy URL",
+    "coding": "URL",
+    "locator": "Metadata!A5:C5"
+  },
+  {
+    "variable": "I-1.3",
+    "definition": "Government Cloud was launched / will be launched in (year)",
+    "coding": "YYYY",
+    "locator": "Metadata!A6:C6"
+  },
+  {
+    "variable": "I-1.4",
+    "definition": "Type of cloud platform established",
+    "coding": "0= Unknown, 1= Public (Commercial), 2= Private (Government), 3= Hybrid",
+    "locator": "Metadata!A7:C7"
+  },
+  {
+    "variable": "I-1.5",
+    "definition": "Official name of the entity operating the Government Cloud platform",
+    "coding": "Text",
+    "locator": "Metadata!A8:C8"
+  },
+  {
+    "variable": "I-1.6",
+    "definition": "Government Cloud data hosting policy?",
+    "coding": "0= No policy / Unknown, 1= Keeping data inside the country, 2= Keeping data outside the country, 3= Hybrid (inside + outside)",
+    "locator": "Metadata!A9:C9"
+  },
+  {
+    "variable": "I-1.6.1",
+    "definition": "If Yes (there is a cloud hosting policy) > Supporting document (report / URL)",
+    "coding": "Enter URL (public link) or Attach relevant report",
+    "locator": "Metadata!A10:C10"
+  },
+  {
+    "variable": "I-1.7",
+    "definition": "Cloud services provided",
+    "coding": "0= Unknown, 1= SaaS, 2= PaaS, 3= IaaS, 4= XaaS",
+    "locator": "Metadata!A11:C11"
+  },
+  {
+    "variable": "I-1.8",
+    "definition": "Is there one shared Government Cloud platform or several?",
+    "coding": "0= Unknown, 1= Several cloud platforms (Central/Local levels), 2= One shared cloud platform",
+    "locator": "Metadata!A12:C12"
+  },
+  {
+    "variable": "I-1.9",
+    "definition": "Are government agencies actively using the cloud platform?",
+    "coding": "0= No / Unknown, 1= Yes",
+    "locator": "Metadata!A13:C13"
+  },
+  {
+    "variable": "I-1.9.1",
+    "definition": "If Yes > How would you rate the extent of cloud platform utilization?",
+    "coding": "1= Minimal, 2= Moderate, 3= Significant, 4= Extensive",
+    "locator": "Metadata!A14:C14"
+  },
+  {
+    "variable": "I-12",
+    "definition": "Is there an e-Procurement portal?",
+    "coding": "0= No, 1= Implementation in progress, 2= Yes (in use)",
+    "locator": "Metadata!A139:C139"
+  },
+  {
+    "variable": "I-12.1",
+    "definition": "Name of eProcurement Portal",
+    "coding": "Text",
+    "locator": "Metadata!A140:C140"
+  },
+  {
+    "variable": "I-12.2",
+    "definition": "e-Procurement Portal URL",
+    "coding": "URL",
+    "locator": "Metadata!A141:C141"
+  },
+  {
+    "variable": "I-12.3",
+    "definition": "e-Procurement Portal was launched / will be launched in (year)",
+    "coding": "YYYY",
+    "locator": "Metadata!A142:C142"
+  },
+  {
+    "variable": "I-12.4",
+    "definition": "e-Procurement Portal capabilities",
+    "coding": "0= Unknown, 1= Tender notices + Contracts, 2= Online Tendering + Contracts, 3= OT + C + Interfaces with other systems",
+    "locator": "Metadata!A143:C143"
+  },
+  {
+    "variable": "I-12.5",
+    "definition": "e-Procurement data published in line with OCDS?",
+    "coding": "0= No, 1= Yes",
+    "locator": "Metadata!A144:C144"
+  },
+  {
+    "variable": "I-12.6",
+    "definition": "Does eProcurement Portal exchange data with other systems?",
+    "coding": "0= No, 1= Yes (via separate interfaces) 2= Yes (via Government Service Bus)",
+    "locator": "Metadata!A145:C145"
+  },
+  {
+    "variable": "I-12.7",
+    "definition": "Any innovative approach in e-Procurement?",
+    "coding": "Text ",
+    "locator": "Metadata!A146:C146"
+  },
+  {
+    "variable": "I-12.8",
+    "definition": "Are government procurement processes being supported through e-Procurement portal?",
+    "coding": "0= No / Unknown, 1= Yes",
+    "locator": "Metadata!A147:C147"
+  },
+  {
+    "variable": "I-12.8.1",
+    "definition": "If Yes > How would you rate the adoption and functionality of e-Procurement portal?\n",
+    "coding": "1= Limited, 2= Moderate, 3= Significant, 4= Extensive",
+    "locator": "Metadata!A148:C148"
+  },
+  {
+    "variable": "I-38",
+    "definition": "Is there a Data Protection / Privacy law?",
+    "coding": "0= No, 1= Draft / Consultations in progress, 2= Yes (Effective)",
+    "locator": "Metadata!A348:C348"
+  },
+  {
+    "variable": "I-38.1",
+    "definition": "Official title of the Data Protection / Privacy Law",
+    "coding": "Text",
+    "locator": "Metadata!A349:C349"
+  },
+  {
+    "variable": "I-38.2",
+    "definition": "Data Protection / Privacy Law URL",
+    "coding": "URL",
+    "locator": "Metadata!A350:C350"
+  },
+  {
+    "variable": "I-38.3",
+    "definition": "Data Protection / Privacy Law was approved / will be approved in (year)",
+    "coding": "YYYY",
+    "locator": "Metadata!A351:C351"
+  },
+  {
+    "variable": "I-38.5",
+    "definition": "Is the data protection/privacy law actively enforced to ensure compliance across public and private sectors?",
+    "coding": "0= No / Unknown, 1= Yes",
+    "locator": "Metadata!A353:C353"
+  },
+  {
+    "variable": "I-38.5.1",
+    "definition": "If Yes > How would you rate the scope and enforcement of the data protection/privacy law?",
+    "coding": "1= Limited, 2= Moderate, 3= Significant, 4= Extensive",
+    "locator": "Metadata!A354:C354"
+  },
+  {
+    "variable": "I-39",
+    "definition": "Is there a Data Protection Authority?",
+    "coding": "0= No, 1= Not established yet (visible in law), 2= Yes",
+    "locator": "Metadata!A356:C356"
+  },
+  {
+    "variable": "I-39.1",
+    "definition": "Name of the Data Protection Authority",
+    "coding": "Text",
+    "locator": "Metadata!A357:C357"
+  },
+  {
+    "variable": "I-39.2",
+    "definition": "Data Protection Authority URL",
+    "coding": "URL",
+    "locator": "Metadata!A358:C358"
+  },
+  {
+    "variable": "I-39.3",
+    "definition": "Data Protection Authority was established / will be established in (year)",
+    "coding": "YYYY",
+    "locator": "Metadata!A359:C359"
+  },
+  {
+    "variable": "I-39.4",
+    "definition": "Is the data protection authority operational and effectively overseeing data governance?",
+    "coding": "0= No / Unknown, 1= Yes",
+    "locator": "Metadata!A360:C360"
+  },
+  {
+    "variable": "I-39.4.1",
+    "definition": "If Yes > How would you rate the capacity and impact of the Data Protection authority?",
+    "coding": "1= Limited, 2= Moderate, 3= Significant, 4= Extensive",
+    "locator": "Metadata!A361:C361"
+  },
+  {
+    "variable": "I-41",
+    "definition": "Are there ethical guidelines in place for the adoption of Artificial Intelligence?",
+    "coding": "0= No, 1=  Planned/In draft, 2= Yes (Institutionalized)",
+    "locator": "Metadata!A367:C367"
+  },
+  {
+    "variable": "I-43",
+    "definition": "ITU Global Cybersecurity Index (GCI) ",
+    "coding": "0 to 100 (external indicator extracted from the ITU GCI)",
+    "locator": "Metadata!A380:C380"
+  },
+  {
+    "variable": "I-48.6",
+    "definition": "Is there a procurement policy aimed at prioritizing bids from startups/SMEs? (e.g., having a quota for SMEs)",
+    "coding": "0= No / Unknown, 1= Yes",
+    "locator": "Metadata!A422:C422"
+  }
+]

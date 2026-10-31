@@ -1,0 +1,88 @@
+{
+  "sourceURL": "https://compute.indiaai.gov.in/endusers",
+  "publicDataResponseURL": "https://compute.indiaai.gov.in/enduserDashboardData",
+  "retrievedAtUTC": "2026-10-31T10:35:38.291364+00:00",
+  "researchCutoff": "2026-10-31",
+  "chosenBasis": "displayed: reproduces the published table; raw retained separately for comparison",
+  "method": "Read existing browser's public response and DataTable; no login or credentials exported",
+  "moneyRepresentation": "decimal INR strings, commas and currency symbols removed; no rounding",
+  "privacy": "No applicant names, contact details, tokens or auth fields retained. Organisation strings retained only by conservative institutional/business allowlist; others null.",
+  "status": "null means source did not supply a status field, not inactive or rejected",
+  "scriptURL": "https://compute.indiaai.gov.in/js/common/endusers.js",
+  "scriptSHA256": "b4eb58d6c07e2697f05b8b659496f3e0403db8bc54be44706cf176447e86be53",
+  "files": {
+    "indiaai-raw-allocations.json": {
+      "sha256": "9aa7f1e86f64a0329ddaf1a9f2404162ff8aa295829e9e85fa22f12b586a539f",
+      "rows": 303
+    },
+    "indiaai-displayed-allocations.json": {
+      "sha256": "cd3af00fc866d8c38432c0b49bc8fe8cfc04ccf2511c5e311fbe234aa8337756",
+      "rows": 303
+    }
+  },
+  "summary": {
+    "raw": {
+      "rowCount": 303,
+      "uniqueProjectIDs": 303,
+      "allocatedSubsidyINR": "11899445537.63",
+      "billOfMaterialsINR": "13515604776.34",
+      "nullHours": 49,
+      "blankHours": 148
+    },
+    "displayed": {
+      "rowCount": 303,
+      "uniqueProjectIDs": 303,
+      "allocatedSubsidyINR": "11894482337.63",
+      "billOfMaterialsINR": "13515604776.34",
+      "nullHours": 49,
+      "blankHours": 148
+    }
+  },
+  "displayDifferences": [
+    {
+      "projectID": "P1-G2025111479",
+      "changes": {
+        "gpuCount": {
+          "raw": 4000,
+          "displayed": 2000
+        }
+      }
+    },
+    {
+      "projectID": "P1-ST2025090352",
+      "changes": {
+        "allocatedSubsidyINR": {
+          "raw": "1777614720.00",
+          "displayed": "1772651520.00"
+        },
+        "gpuCount": {
+          "raw": 18048,
+          "displayed": 1504
+        }
+      }
+    },
+    {
+      "projectID": "P2-G2025111479",
+      "changes": {
+        "gpuCount": {
+          "raw": 4000,
+          "displayed": 2000
+        }
+      }
+    },
+    {
+      "projectID": "P3-G2025111479",
+      "changes": {
+        "gpuCount": {
+          "raw": 192,
+          "displayed": 96
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Allocation records, not consumption or payments",
+    "No GPU-hour aggregate inferred from ambiguous hours field",
+    "Source can change; rerun creates a new snapshot"
+  ]
+}

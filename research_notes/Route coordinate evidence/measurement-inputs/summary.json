@@ -1,0 +1,55 @@
+{
+  "targetCountries": 33,
+  "USComparatorSeparate": true,
+  "countryCoverage": {
+    "DGI_2025": 22,
+    "DGI_2023": 19,
+    "GovTech_2025": 33,
+    "BREADY_2025": 18
+  },
+  "ES_latest_countries": 32,
+  "ES_numeric_payment_days_countries": 31,
+  "ES_numeric_tender_difficulty_countries": 31,
+  "fieldCounts": {
+    "DGI_edition_indices": 2,
+    "GovTech_composite_indices": 5,
+    "GovTech_mixed_coded_and_text_fields": 37,
+    "BREADY_selected_expert_questions": 29,
+    "BREADY_duration_questions": 5,
+    "ES_published_indicators": 13
+  },
+  "BREADY_duration_cells": {
+    "allIncludingUS": 95,
+    "plainNumericIncludingUS": 58,
+    "targets": 90,
+    "targetPlainNumeric": 56
+  },
+  "inventoryRowsIncludingUS": {
+    "pstw": 968,
+    "clusters": 225,
+    "models": 878
+  },
+  "inventoryTargetPresence": {
+    "pstw": 13,
+    "clusters": 23,
+    "models": 19
+  },
+  "ocds": {
+    "scanned": 372,
+    "contracts": 12,
+    "nonnegativeIntervals": 11,
+    "negativeIntervals": 1,
+    "implementationDatedMilestones": 8,
+    "nonnegativeSigningToMilestone": 5,
+    "negativeSigningToMilestone": 3,
+    "allDatedMilestonesEqualDueDate": true,
+    "datedTransactions": 0
+  },
+  "remainingGaps": [
+    "Raw per-question DGI questionnaire not recovered; workbook contains two composites only",
+    "BREADY per-item data collection dates not present in answer extract; annotated duration responses require methodology clarification",
+    "ES standard errors, respondent counts and detailed denominator definitions not supplied in fetched endpoints",
+    "OCDS populated completion dates require source verification: all eight equal dueDate, three precede signing; one award-sign chronology also negative",
+    "No calibrated implementation probability or cross-route causal safety effect established"
+  ]
+}

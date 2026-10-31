@@ -1,0 +1,106 @@
+[
+  {
+    "indicatorId": 134,
+    "indicator": "Average senior management time spent dealing with the requirements of government regulation (%)",
+    "queryFieldName": "reg1",
+    "unit": null,
+    "subtopicID": 29,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 130,
+    "indicator": "Average days to obtain an operating license",
+    "queryFieldName": "bus2",
+    "unit": "day",
+    "subtopicID": 29,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 235,
+    "indicator": "[B-READY] Days to obtain a construction-related permit [median]",
+    "queryFieldName": "bready_bus3_median",
+    "unit": "day",
+    "subtopicID": 29,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 131,
+    "indicator": "[B-READY] Days to obtain a construction-related permit",
+    "queryFieldName": "bus3",
+    "unit": "day",
+    "subtopicID": 29,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 132,
+    "indicator": "Average days to obtain an import license",
+    "queryFieldName": "bus1",
+    "unit": "day",
+    "subtopicID": 29,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 251,
+    "indicator": "[B-READY] Average days to receive payment under government contract",
+    "queryFieldName": "bready_reg9",
+    "unit": "day",
+    "subtopicID": 29,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 254,
+    "indicator": "[B-READY] Percent of firms visited or inspected for health or safety",
+    "queryFieldName": "bready_reg10",
+    "unit": "percentage",
+    "subtopicID": 30,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 264,
+    "indicator": "[B-READY] Percent of firms with a report issued for health or safety inspection",
+    "queryFieldName": "bready_reg11",
+    "unit": "percentage",
+    "subtopicID": 30,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 133,
+    "indicator": "Percent of firms identifying business licensing and permits as a major or very severe constraint",
+    "queryFieldName": "bus5",
+    "unit": "percentage",
+    "subtopicID": 31,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 276,
+    "indicator": "Percent of firms identifying access to land as a major or very severe constraint",
+    "queryFieldName": "reg8",
+    "unit": "percentage",
+    "subtopicID": 31,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 279,
+    "indicator": "[B-READY] Average perceptions index of access to land as a constraint",
+    "queryFieldName": "bready_reg12",
+    "unit": null,
+    "subtopicID": 31,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 340,
+    "indicator": "Average duration composite index to obtain five services",
+    "queryFieldName": "reg13",
+    "unit": null,
+    "subtopicID": 29,
+    "indicatorDefinition": "Definition for Indicator"
+  },
+  {
+    "indicatorId": 275,
+    "indicator": "[B-READY] Average perceptions of the degree of difficulty to comply with government contract tender requirements",
+    "queryFieldName": "bready_comp9",
+    "unit": null,
+    "subtopicID": 58,
+    "indicatorDefinition": "Definition for Indicator"
+  }
+]

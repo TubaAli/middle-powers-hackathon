@@ -2,6 +2,8 @@
 
 Observed **31 October 2026**; Geneva checkpoint **21–22 June 2027** (task-supplied). Machine-readable claims, dates, access grades, limits and retrieval outcomes are in `finance.json`. Only these two assigned files were edited. No git, installations, paid access, subagents or contacts were used.
 
+**Targeted follow-up:** the existing public browser recovered both previously blocked targets. Q-935's ISED response is now read, and the S-1's financial and credit sections are now read through full DOM text extraction. Historical access failures remain in the ledger as history, not current blockers.
+
 ## 1. Canada: what is the instrument and what can be quantified?
 
 ### Takeaway
@@ -21,9 +23,11 @@ The **33.10%** project financing ratio is a genuine sourced number worth showing
 
 ### Gaps
 
-No executed October subscription, public investor legal vehicle, shareholder reserved matters, tranche allocation, disbursement ledger or eligible-cost annex was retrieved. Three materially different channels were pursued: **government/company transaction announcements**, **administrative grants record plus actual amendments view and project assessment**, and **parliamentary disclosure**. Institutional web-search attempts also occurred but returned irrelevant results; they are not evidence of absence.
+No executed October subscription, public investor legal vehicle, shareholder reserved matters, tranche allocation, disbursement ledger or eligible-cost annex was retrieved. Three materially different channels were pursued: **government/company transaction announcements**, **administrative grants record plus actual amendments view and project assessment**, and **parliamentary disclosure**, now successfully rendered. Institutional web-search attempts also occurred but returned irrelevant results; they are not evidence of absence.
 
-**Best next retrieval:** Q-935 asks for all government–Cohere agreements since 2024, including value, terms, type, duration and file number. Its response was tabled **April 24, 2026**, Sessional Paper **8555-451-935**. Metadata is readable; ISED's answer body remains dynamically `Loading`. Inspecting the public site's JavaScript exposed the response endpoint, but it returned HTTP 400. This is **inaccessible answer content**, not no answer, and concerns historical arrangements rather than the later October agreement. [Filtered public response](https://www.ourcommons.ca/written-questions/45-1/q-935/14042537?section=ised).
+**Recovered Q-935:** ISED's response, tabled **April 24, 2026**, reports **one signed contribution agreement**, **$240 million** supporting a **$725 million** project. It separately reports an **August 19, 2025 MOU** to explore government AI deployment. The contribution row uses March 20, 2025—the announcement date—and gives duration/file number as “Not applicable”; the proactive record supplies a March 10 start and agreement 820219. Preserve that reporting distinction rather than erasing one source. The response covers **January 1, 2024–March 9, 2026**, so it cannot answer October equity-stage questions. No payment ledger or eligible-cost annex appears in the recovered ISED answer. [ISED response, agreement table and part (d)](https://www.ourcommons.ca/written-questions/45-1/q-935/14042537?section=ised).
+
+**Disclosure limits are now distinguishable:** the full-response scan found explicit nondisclosure language from CSE/CSIS/RCMP, and Indigenous Services says some requested arrangements were not systematically tracked and could not be comprehensively compiled in the allotted time. These are substantive withholding/compilation limits, unlike the resolved browser-access problem. They prevent treating ISED's one contribution as a complete government-wide relationship inventory; they do not establish additional financing. [Full Q-935, named departmental replies](https://www.ourcommons.ca/written-questions/45-1/q-935/14042537?section=all).
 
 ## 2. Anthropic: which numerical credit facts are actually available?
 
@@ -50,11 +54,29 @@ All table values derive from the [filed credit agreement](https://www.sec.gov/Ar
 
 Known aggregate commitments improve financial context but **do not turn existing commitments into safety-discretionary capital**. The relevant distinction remains elective new credit or an agreed amendment versus compliant committed draws. Schedule 2.01 remains redacted; named arrangers cannot be counted as confirmed lenders or assigned equal shares. No numerical approval coordinate follows from a >50% threshold without allocations and actual assent. [§§2.21–2.23, 4.02, 9.08 and Schedule 2.01](https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/exhibit1010-sx1.htm).
 
-### Gaps
+### Follow-up findings
 
-Current borrowing and LC utilization, remaining incremental headroom, holder allocations, borrower request date and accepted safety conditions remain unresolved. Three approaches were attempted: **operative exhibit definitions/schedules**, **whole S-1 financial-statement retrieval**, and **lender/company publication searches**. The full S-1 exceeded the webfetch 5 MiB limit and direct requests returned 403; institutional searches produced nonresponsive generic results; a guessed company announcement URL returned 404. These access/search failures are logged explicitly rather than called proof of nonpublication.
+**Recovered financial statements and amendment history:** S-1 MD&A “Revolving Credit Agreement” (pp.163–164) gives precise commitment totals; Note 9 (pp.F-44–F-45) gives rounded totals and further details. Together they support the following dated inputs. [S-1, MD&A and Note 9](https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm).
 
-**Correction to the interim progress message:** the S-1 financial-statement body was **not successfully retained/read in this pass**. The verified $15bn finding comes from the credit agreement itself. No historic utilization figure from the S-1 is used. Existing or confidential filing status is not disproved by any retrieval failure. [Attempted S-1 body](https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm).
+| Event/measurement date | Recovered observation |
+|---|---|
+| May 14, 2025 | Original **$2.5bn** revolving facility, **$400m** LC sublimit. |
+| September 2025 | Amendment increased commitments by **$250m**, to **$2.75bn**. Note 9 rounds this to $2.8bn. |
+| November 2025 | Amendment added **$500m**, to **$3.25bn**. Note 9 rounds this to $3.3bn. |
+| December 31, 2025 | **Zero cash borrowings**, **$4m outstanding standby LCs**. |
+| February 2026 | Third amendment increased the LC sublimit by **$600m**, to **$1bn**; not another $600m of total commitments. |
+| June 30, 2026 | **Zero cash borrowings**, **$78m outstanding standby LCs**, under the **$3.25bn** facility. June interim figures are unaudited. |
+| September 2026 | Restatement to **$15bn**, maturity September 2031; minimum-liquidity covenant increased from **$500m to $5bn**. |
+
+**Matched numerical result:** `(3,250m − 0m − 78m) / 3,250m = 0.976`, or **97.6% not utilized by disclosed cash borrowings and LCs at June 30**. The difference is **$3.172bn**, consistent with the separate MD&A statement of approximately **$3.2bn available**. This is a genuine dated financial-resource fraction. It is **not safety coverage, discretionary uncommitted lender capital, or October availability**. Do not combine June's numerator with September's $15bn denominator. [S-1, Liquidity and Capital Resources and Revolving Credit Agreement](https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm).
+
+The recovered balance-sheet data also gives **$147.358bn total assets** and **$131.651bn cash, equivalents and short-term investments** at June 30. These are useful context and potential starting inputs for further reconciliation. They are not automatically the agreement's defined asset base or liquidity: contract scope, adjustments, the latest test period and prior capacity usage still need reconciliation. [S-1, Summary Consolidated Financial Data, Actual June 30 column; consolidated balance sheet](https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm).
+
+### Remaining gaps
+
+**Remaining precise gap:** MD&A p.139 contains **blank placeholders for September 30 liquidity, cash, investments and availability under the restated facility**. This is now an observed absence of amounts in this public version, not a technical access failure and not a zero balance. No October utilization certificate, unredacted lender allocations or accepted safety covenant was found in the targeted sections. Earlier 5 MiB/403 failures are superseded by browser access for those sections; they remain valid historical retrieval receipts. The cover also directly confirms **October 26, 2026 filing**; neither listing completion nor a confidential-submission date is inferred. [S-1 cover, MD&A p.139 and Exhibit Index omission legend](https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm).
+
+**Method:** existing browser, public URLs only, no authentication/storage inspection. Initial `networkidle` timed out; an early `innerText` capture was incomplete. A subsequent `document.body.textContent` extraction returned approximately **1.566 million characters** from approximately **13.816 million characters of HTML**, enabling targeted section reads. A final correctly formed content-readiness check confirmed full text before rechecking balances and blank fields. Task-created tabs were closed and the existing browser left running. No need remains to classify the whole S-1 as inaccessible.
 
 ## 3. Coordinate readiness and the next discriminating test
 
@@ -72,4 +94,4 @@ For each route, first identify **one dated, genuinely negotiable stage or new-cr
 
 ### Gaps
 
-The highest-value next documents are **Canada's executed equity subscription and contribution payment/cost annexes**, and **Anthropic's readable S-1 financial statements plus an authoritative allocation schedule**. Retrieval exhaustion is not claimed: the parliamentary answer and large prospectus remain real access gaps. Session-start status returned guide `share-sessions` version `2026-10-29.1` and no user items; no guide change was adopted.
+The highest-value next documents are **Canada's executed equity subscription and contribution payment/cost annexes**, and **Anthropic's populated post-restatement utilization disclosure plus an authoritative allocation schedule**. The targeted public-browser follow-up resolved both named access gaps and recovered usable matched historical financial inputs; it did not recover those underlying documents or exact-safeguard consents. No exhaustive absence claim is made. Session-start status returned guide `share-sessions` version `2026-10-29.1` and no user items; no guide change was adopted.

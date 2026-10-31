@@ -1,0 +1,137 @@
+[
+  {
+    "file": "README.md",
+    "sha256": "23a2277261e4a10c8b2e6b7d7bebd2958397dc0c6987192bee16a1efeeb2d264",
+    "bytes": 5799
+  },
+  {
+    "file": "bready-country-coverage.json",
+    "sha256": "b1211d0747eb6ebcbf174fe3b3c19bb349d3b22cfd7656b3de50e2a38691ac1e",
+    "bytes": 1798
+  },
+  {
+    "file": "bready-duration-inputs.csv",
+    "sha256": "3d5320c241af503b758a27b3c62f43974f6047f89215dc3925a9c097ef36f252",
+    "bytes": 12514
+  },
+  {
+    "file": "bready-extraction-inspection.json",
+    "sha256": "1a357b097f76d9b1b7dc427204753cdbf4399e9ac414962bf3a20bf2aba077f6",
+    "bytes": 1217
+  },
+  {
+    "file": "bready-procurement-country.csv",
+    "sha256": "f0c4a5bce05487a121d5bd252acd9fddf7a56a012f78b7821371c5e55451f4b4",
+    "bytes": 53193
+  },
+  {
+    "file": "bready-selected-fields.json",
+    "sha256": "233774e5401f63b9470ea3b77c8512662c9063bdbcebe6cb0b8bbdfaf6df14ac",
+    "bytes": 4891
+  },
+  {
+    "file": "clusters-rows.csv",
+    "sha256": "45188510fce4a931577866a59a417c5df58200d2f732b6dd15cace044ebfd964",
+    "bytes": 53143
+  },
+  {
+    "file": "country-coverage.csv",
+    "sha256": "8aa2cd3db3ddb1d3fc02275398fc96e61514fc2a51f7e9fd2542a144bc6f0430",
+    "bytes": 4443
+  },
+  {
+    "file": "dgi-country.csv",
+    "sha256": "3a1b1e271f090385fa7264e3f144d376af3a8e0e0f45f89d740088e6ee4497ab",
+    "bytes": 1625
+  },
+  {
+    "file": "enterprise-surveys-country.csv",
+    "sha256": "39cc7da6442520f67e76984fc24484127c804b76f329ca4c78ec0321122a6921",
+    "bytes": 2312
+  },
+  {
+    "file": "enterprise-surveys-metadata.json",
+    "sha256": "f317b28c22d0e926567c20d6fdae4104daddf9e8ce3ed1b08bfe889164f72497",
+    "bytes": 3330
+  },
+  {
+    "file": "enterprise-surveys-regulations-country.csv",
+    "sha256": "ef04cfe30ecd0594ff0f3f6a98dcaf8e20b6d70750c74e4547636588d2f0e951",
+    "bytes": 2539
+  },
+  {
+    "file": "govtech-extraction-notes.json",
+    "sha256": "0eac6681dd890bfca95d1c0158510ee6b16dcf1794e625adfb827f3948342b95",
+    "bytes": 916
+  },
+  {
+    "file": "govtech-indices-country.csv",
+    "sha256": "ae987871ee8507c202a13b00ad1a46527cbb822451da192bc92bf3caac6e12e0",
+    "bytes": 4693
+  },
+  {
+    "file": "govtech-item-definitions.json",
+    "sha256": "136d359719919e7227338d7f0b2dacdd0b4983b15bcc7a2863d41ef79766d34e",
+    "bytes": 7463
+  },
+  {
+    "file": "govtech-items-country.csv",
+    "sha256": "9a46fb2e46a760ecdd04b6d13274440263492629756252814077e499337a576d",
+    "bytes": 26191
+  },
+  {
+    "file": "inventory-country-counts.csv",
+    "sha256": "afef071aff05cdafbe608776209841364d9c82431163bd23ed60415a4ecaa524",
+    "bytes": 9740
+  },
+  {
+    "file": "models-rows.csv",
+    "sha256": "5621aaa33c109b14a5da359a2bc35143e7fcc3ef15d8a429603f88df6d142ef6",
+    "bytes": 160042
+  },
+  {
+    "file": "ocds-duration-audit.csv",
+    "sha256": "b651781410b43a76fb5f8d451ab7d13afb1cc070e626136a23103ebd29eaa6c8",
+    "bytes": 2240
+  },
+  {
+    "file": "ocds-event-sample.json",
+    "sha256": "df2c3483a728d6a14dd9ee606e7e53521941f4db3c64bc17b822b720e685348d",
+    "bytes": 18861
+  },
+  {
+    "file": "ocds-milestone-duration-audit.csv",
+    "sha256": "ee39dbca1b3494b4b349fae4546823bbb53b5e4b92c4d031ae3d6abd15cf7f3b",
+    "bytes": 2159
+  },
+  {
+    "file": "pstw-rows.csv",
+    "sha256": "26eb32351ef6cb22bb127e5e80ee0bb49d6b5c5e694a78149222e1cf6ced6312",
+    "bytes": 251897
+  },
+  {
+    "file": "receipts.json",
+    "sha256": "242ebef4b6892905e21ff0262539b37384244749792e9be746c85d9b8881f6d4",
+    "bytes": 5628
+  },
+  {
+    "file": "retrieve.py",
+    "sha256": "08280ea1804e503381153b54f8c758de609a67d77e362d8b1976031e38e609f4",
+    "bytes": 14133
+  },
+  {
+    "file": "summarize.py",
+    "sha256": "6b4cdc2c3022412ed1d96047c14cb0672438c037f99639f2348cdec33b6d8bd6",
+    "bytes": 11031
+  },
+  {
+    "file": "summary.json",
+    "sha256": "eb4f1d49d0daf0043b94cd50e732612abc7f5df4407a4a44290fc0d38431d36d",
+    "bytes": 1803
+  },
+  {
+    "file": "variable-definitions.json",
+    "sha256": "d4eba76c5483ea37977265929a16073683992b80853d37c199a17ae1685eca1d",
+    "bytes": 3783
+  }
+]

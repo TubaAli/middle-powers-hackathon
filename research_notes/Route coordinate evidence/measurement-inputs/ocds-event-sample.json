@@ -1,0 +1,658 @@
+{
+  "scannedFirstLines": 372,
+  "sampling": "first 500 at most, stop after at least 12 award/contract records; not random",
+  "records": [
+    {
+      "ocid": "ocds-gyl66f-111006001-000004",
+      "release_date": "2025-02-06T16:39:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14704",
+      "award_date": "2019-10-23T00:00:00Z",
+      "contract_id": "14426",
+      "awardID": "14704",
+      "dateSigned": "2019-10-23T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": {
+        "endDate": "2019-11-06T00:00:00Z",
+        "startDate": "2019-10-23T00:00:00Z",
+        "durationInDays": 14
+      },
+      "implementation": {
+        "milestones": [
+          {
+            "id": "206301",
+            "title": "Approval milestones for SUPPLY OF 40000 LITRES OF DIESEL TO THE DIGITAL ECONOMY COMPLEX,MBORA",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          },
+          {
+            "id": "238038",
+            "title": "Assessment milestones for Procurement of One Operational Vehicle",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11271",
+            "date": null,
+            "value": {
+              "amount": 49400000.0,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14704",
+          "date": "2019-10-23T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ocid": "ocds-gyl66f-111006001-000005",
+      "release_date": "2025-02-06T16:39:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14703",
+      "award_date": "2019-10-23T00:00:00Z",
+      "contract_id": "14425",
+      "awardID": "14703",
+      "dateSigned": "2019-10-23T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": null,
+      "implementation": {
+        "milestones": [
+          {
+            "id": "206297",
+            "title": "Approval milestones for CONTRACT FOR THE SUPPLY OF TWO HUNDRED CARTON OF A4 PAPER ONE 80 GRAMS",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          },
+          {
+            "id": "238032",
+            "title": "Assessment milestones for Award of contract for the Procurement of Canteen and Kitchen equipment",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11270",
+            "date": null,
+            "value": {
+              "amount": 12897000.0,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14703",
+          "date": "2019-10-23T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ocid": "ocds-gyl66f-111006001-000015",
+      "release_date": "2025-02-10T09:39:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14705",
+      "award_date": "2022-08-26T00:00:00Z",
+      "contract_id": "14427",
+      "awardID": "14705",
+      "dateSigned": "2022-08-30T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": {
+        "endDate": "2022-09-13T00:00:00Z",
+        "startDate": "2022-08-30T00:00:00Z",
+        "durationInDays": 14
+      },
+      "implementation": {
+        "milestones": [
+          {
+            "id": "206306",
+            "title": "Approval milestones for study on employment creation through disruptive technologies",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          },
+          {
+            "id": "238096",
+            "title": "Assessment milestones for award of contract for the renovation of research chalet in the national institute. lot3.A",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11272",
+            "date": null,
+            "value": {
+              "amount": 29130950.0,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14705",
+          "date": "2022-08-26T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ocid": "ocds-gyl66f-111006001-000017",
+      "release_date": "2025-02-10T09:39:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14706",
+      "award_date": "2022-08-26T00:00:00Z",
+      "contract_id": "14428",
+      "awardID": "14706",
+      "dateSigned": "2022-08-26T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": null,
+      "implementation": {
+        "milestones": [
+          {
+            "id": "206310",
+            "title": "Approval milestones for CONTRACT FOR THE CONSULTANCY FOR BOARD AND MANAGEMENT RETREAT",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          },
+          {
+            "id": "238105",
+            "title": "Assessment milestones for award of contract for the renovation of research fellows chalets lot3B",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11273",
+            "date": null,
+            "value": {
+              "amount": 27963000.0,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14706",
+          "date": "2022-08-26T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ocid": "ocds-gyl66f-111006001-000018",
+      "release_date": "2025-02-10T09:39:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14707",
+      "award_date": "2022-08-26T00:00:00Z",
+      "contract_id": "14429",
+      "awardID": "14707",
+      "dateSigned": "2022-08-26T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": {
+        "endDate": "2022-09-09T00:00:00Z",
+        "startDate": "2022-08-26T00:00:00Z",
+        "durationInDays": 14
+      },
+      "implementation": {
+        "milestones": [
+          {
+            "id": "206486",
+            "title": "Approval milestones for Quarterly Maintenance of all Security Equipment",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": "2023-05-18T00:00:00Z",
+            "dateMet": "2023-05-18T00:00:00Z",
+            "dateModified": null
+          },
+          {
+            "id": "238112",
+            "title": "Assessment milestones for award of contract for the renovation of participant chalets lot2B",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11274",
+            "date": null,
+            "value": {
+              "amount": 29720000.0,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14707",
+          "date": "2022-08-26T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ocid": "ocds-gyl66f-111006001-000019",
+      "release_date": "2025-02-10T09:39:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14708",
+      "award_date": "2022-08-26T00:00:00Z",
+      "contract_id": "14430",
+      "awardID": "14708",
+      "dateSigned": "2022-08-26T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": {
+        "endDate": "2022-09-16T00:00:00Z",
+        "startDate": "2022-08-26T00:00:00Z",
+        "durationInDays": 21
+      },
+      "implementation": {
+        "milestones": [
+          {
+            "id": "206639",
+            "title": "Approval milestones for Renewal of contract for the ARCGIS Annual software Enhancement",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": "2022-10-15T00:00:00Z",
+            "dateMet": "2022-10-15T00:00:00Z",
+            "dateModified": null
+          },
+          {
+            "id": "238119",
+            "title": "Assessment milestones for award of contract for the renovation of participant chalet lot3A",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11275",
+            "date": null,
+            "value": {
+              "amount": 27053000.0,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14708",
+          "date": "2022-08-26T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ocid": "ocds-gyl66f-111006001-000020",
+      "release_date": "2025-02-10T09:39:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14709",
+      "award_date": "2022-02-22T00:00:00Z",
+      "contract_id": "14431",
+      "awardID": "14709",
+      "dateSigned": "2022-08-25T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": null,
+      "implementation": {
+        "milestones": [
+          {
+            "id": "206652",
+            "title": "Approval milestones for Maintenance of Sharepoint Server Infrastructure at the Commission's Head Office, Maitama",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": "2022-05-01T00:00:00Z",
+            "dateMet": "2022-05-01T00:00:00Z",
+            "dateModified": null
+          },
+          {
+            "id": "238126",
+            "title": "Assessment milestones for SUPPLY OF MEDICAL EQUIPMENT",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11276",
+            "date": null,
+            "value": {
+              "amount": 18000000.0,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14709",
+          "date": "2022-02-22T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ocid": "ocds-gyl66f-111006001-000026",
+      "release_date": "2025-02-10T09:39:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14710",
+      "award_date": "2022-10-05T00:00:00Z",
+      "contract_id": "14432",
+      "awardID": "14710",
+      "dateSigned": "2022-08-25T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": {
+        "endDate": "2023-03-27T00:00:00Z",
+        "startDate": "2022-10-05T00:00:00Z",
+        "durationInDays": 173
+      },
+      "implementation": {
+        "milestones": [
+          {
+            "id": "238143",
+            "title": "Assessment milestones for Construction of Boulder Round 3Km fence",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          },
+          {
+            "id": "206681",
+            "title": "Approval milestones for e-Admin Maintenance connection Annual Maintenance and Enhancement",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": "2022-09-28T00:00:00Z",
+            "dateMet": "2022-09-28T00:00:00Z",
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11277",
+            "date": null,
+            "value": {
+              "amount": 29461718.75,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14710",
+          "date": "2022-10-05T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ocid": "ocds-gyl66f-111006001-000028",
+      "release_date": "2025-02-10T09:39:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14711",
+      "award_date": "2022-08-25T00:00:00Z",
+      "contract_id": "14433",
+      "awardID": "14711",
+      "dateSigned": "2022-08-25T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": null,
+      "implementation": {
+        "milestones": [
+          {
+            "id": "206717",
+            "title": "Approval milestones for Renewal of contract for Microsoft Premier Support Advanced Service",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": "2022-07-01T00:00:00Z",
+            "dateMet": "2022-07-01T00:00:00Z",
+            "dateModified": null
+          },
+          {
+            "id": "238152",
+            "title": "Assessment milestones for Procurement of 2 Units of Operational Vehicles (30 seater coaster Bus)",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11278",
+            "date": null,
+            "value": {
+              "amount": 169000000.0,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14711",
+          "date": "2022-08-25T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ocid": "ocds-gyl66f-111006001-000037",
+      "release_date": "2025-02-10T09:39:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14712",
+      "award_date": "2022-08-26T00:00:00Z",
+      "contract_id": "14434",
+      "awardID": "14712",
+      "dateSigned": "2022-08-29T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": {
+        "endDate": "2022-09-07T00:00:00Z",
+        "startDate": "2022-08-26T00:00:00Z",
+        "durationInDays": 12
+      },
+      "implementation": {
+        "milestones": [
+          {
+            "id": "206729",
+            "title": "Approval milestones for End-to-End Support and Maintenance for NNP Software Project",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": "2022-08-17T00:00:00Z",
+            "dateMet": "2022-08-17T00:00:00Z",
+            "dateModified": null
+          },
+          {
+            "id": "238175",
+            "title": "Assessment milestones for Supply of 5tons of Cooking Gas to the National Institute",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11279",
+            "date": null,
+            "value": {
+              "amount": 5939375.0,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14712",
+          "date": "2022-08-26T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ocid": "ocds-gyl66f-111006001-000041",
+      "release_date": "2025-02-10T09:40:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14713",
+      "award_date": "2022-02-02T00:00:00Z",
+      "contract_id": "14435",
+      "awardID": "14713",
+      "dateSigned": "2022-02-03T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": null,
+      "implementation": {
+        "milestones": [
+          {
+            "id": "206755",
+            "title": "Approval milestones for Management of Tax Obligation ",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": "2022-11-07T00:00:00Z",
+            "dateMet": "2022-11-07T00:00:00Z",
+            "dateModified": null
+          },
+          {
+            "id": "238188",
+            "title": "Assessment milestones for Supply of Stationary to the National Institute",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11280",
+            "date": null,
+            "value": {
+              "amount": 5066937.25,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14713",
+          "date": "2022-02-02T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "ocid": "ocds-gyl66f-111006001-000051",
+      "release_date": "2025-02-10T09:40:00Z",
+      "buyer": "NIPSS, KURU",
+      "award_id": "14714",
+      "award_date": "2022-07-25T00:00:00Z",
+      "contract_id": "14436",
+      "awardID": "14714",
+      "dateSigned": "2022-07-26T00:00:00Z",
+      "contractStatus": "active",
+      "contractPeriod": {
+        "endDate": "2022-08-09T00:00:00Z",
+        "startDate": "2022-07-26T00:00:00Z",
+        "durationInDays": 14
+      },
+      "implementation": {
+        "milestones": [
+          {
+            "id": "206789",
+            "title": "Approval milestones for Regulatory Compliance and Impact Assessment of the Implementation of Sectoral CSIRT",
+            "code": "approval",
+            "type": null,
+            "status": "met",
+            "dueDate": "2023-08-29T00:00:00Z",
+            "dateMet": "2023-08-29T00:00:00Z",
+            "dateModified": null
+          },
+          {
+            "id": "238211",
+            "title": "Assessment milestones for Supply of 2000 copies Computer Studies Text Books for Senior Secondry Schools",
+            "code": "assessment",
+            "type": null,
+            "status": "met",
+            "dueDate": null,
+            "dateMet": null,
+            "dateModified": null
+          }
+        ],
+        "transactions": [
+          {
+            "id": "11281",
+            "date": null,
+            "value": {
+              "amount": 9450000.0,
+              "currency": "NGN"
+            }
+          }
+        ]
+      },
+      "all_award_dates": [
+        {
+          "id": "14714",
+          "date": "2022-07-25T00:00:00Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "raw2025Economies": 198,
+  "group2025Economies": 198,
+  "notes": [
+    {
+      "locator": "README!row5",
+      "text": "GTMI_Data  2025 GTMI Dataset including survey responses and remotely collected data (together with 2020 and 2022 data)  "
+    },
+    {
+      "locator": "README!row12",
+      "text": "Economies  Alphabetic list of 198 economies, together with the list of Fragility and Conflict-affected Situations (FCS)  "
+    },
+    {
+      "locator": "README!row14",
+      "text": "2025 GTMI Survey Data            "
+    },
+    {
+      "locator": "README!row15",
+      "text": "   2025 GTMI survey data is presented in the GTMI_Data sheet (together with 2020 and 2022 data covering 198 economies)    "
+    },
+    {
+      "locator": "README!row17",
+      "text": "   Total number of economies included in the 2025 dataset is 197 (Nicaragua didn't authorize the collection of their data)    "
+    }
+  ]
+}

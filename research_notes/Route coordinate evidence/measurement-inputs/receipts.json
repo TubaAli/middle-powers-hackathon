@@ -1,0 +1,120 @@
+[
+  {
+    "id": "method-input-dgi",
+    "url": "https://stat.link/32clen",
+    "retrieved": "2026-10-31",
+    "sha256": "764100c372f3fb2848c156184209b1b8d17977edf3b998ff5af3b89271f1eb66",
+    "byteLength": 35645,
+    "hashScope": "complete response bytes",
+    "finalUrl": "https://stat.link/files/0496b2bc-en/32clen.xlsx",
+    "method": "Python urllib public HTTP"
+  },
+  {
+    "id": "method-input-govtech",
+    "url": "https://datacatalogfiles.worldbank.org/ddh-published/0037889/DR0095721/WBG_GovTech_Dataset_Dec2025.xlsx",
+    "retrieved": "2026-10-31",
+    "sha256": "751fc8e567bcfcbe5002e47c8a84b8605c53b71ad188c7c1323b13ba886c1e25",
+    "byteLength": 5421341,
+    "hashScope": "complete response bytes",
+    "finalUrl": "https://datacatalogfiles.worldbank.org/ddh-published/0037889/DR0095721/WBG_GovTech_Dataset_Dec2025.xlsx",
+    "method": "Python urllib public HTTP"
+  },
+  {
+    "id": "method-input-pstw",
+    "url": "https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/2026-09/pstw_dataset.csv",
+    "retrieved": "2026-10-31",
+    "sha256": "e019e229b36428408b80ae127a46606e9def65b7ce432791b82eb2357172cc73",
+    "byteLength": 4685450,
+    "hashScope": "complete response bytes",
+    "finalUrl": "https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/2026-09/pstw_dataset.csv",
+    "method": "Python urllib public HTTP"
+  },
+  {
+    "id": "method-input-clusters",
+    "url": "https://epoch.ai/data/gpu_clusters.csv",
+    "retrieved": "2026-10-31",
+    "sha256": "4cfab6db793cb4d39868812797756a712d01f8b337ee35341e53fe3c826c650f",
+    "byteLength": 304311,
+    "hashScope": "complete response bytes",
+    "finalUrl": "https://epoch.ai/data/gpu_clusters.csv",
+    "method": "Python urllib public HTTP"
+  },
+  {
+    "id": "method-input-models",
+    "url": "https://epoch.ai/data/notable_ai_models.csv",
+    "retrieved": "2026-10-31",
+    "sha256": "46d6a53301c9b5214891902e9d4819d854f76f3e37135c470c4e20d2a4b9cd08",
+    "byteLength": 2278352,
+    "hashScope": "complete response bytes",
+    "finalUrl": "https://epoch.ai/data/notable_ai_models.csv",
+    "method": "Python urllib public HTTP"
+  },
+  {
+    "id": "method-input-bready-zip",
+    "url": "https://www.worldbank.org/content/dam/sites/b-ready/documents/excel/B-READY_ALL_DATA_2025.zip",
+    "retrieved": "2026-10-31",
+    "sha256": "59a8a83b5d91faf7f8d0ecd979b49ab44477b8db3b5f4849e93ca1217a95d109",
+    "byteLength": 5525642,
+    "hashScope": "complete response bytes",
+    "method": "public browser fetch via existing CDP context"
+  },
+  {
+    "id": "method-input-bready-answers",
+    "url": "https://www.worldbank.org/content/dam/sites/b-ready/documents/excel/B-READY_ALL_DATA_2025.zip",
+    "retrieved": "2026-10-31",
+    "sha256": "8b2c7035ece2ee48b5e1094a82a047583f76809e8604722a2dabaad0de4dc968",
+    "byteLength": 5211114,
+    "hashScope": "uncompressed ZIP member bytes",
+    "member": "02_B-READY-2025-EconomyAnswer.xlsx"
+  },
+  {
+    "id": "method-input-es-public-procurement",
+    "url": "https://extdataportal.worldbank.org/api/esapi/GetTopicIndicatorData/topicid/26/subtopicid/58/regionid/0/cutsId/-1/colstartindex/0?lang=en",
+    "retrieved": "2026-10-31",
+    "sha256": "67ce3d04a5b4c0e6b6c8a90711cfd70a29d72b1464938dae4cb15a5fc3b3a4a7",
+    "byteLength": 271287,
+    "hashScope": "complete response bytes",
+    "finalUrl": "https://extdataportal.worldbank.org/api/esapi/GetTopicIndicatorData/topicid/26/subtopicid/58/regionid/0/cutsId/-1/colstartindex/0?lang=en",
+    "method": "Python urllib public HTTP"
+  },
+  {
+    "id": "method-input-es-definitions-24",
+    "url": "https://extdataportal.worldbank.org/api/esapi/GetEconomyIndicatorData/economyid/20/topicid/24/year/2025?lang=en",
+    "retrieved": "2026-10-31",
+    "sha256": "3613642afde1aa543b880f7909a66c92650071e8e85635771b575e7928522fc9",
+    "byteLength": 4306,
+    "hashScope": "complete response bytes",
+    "finalUrl": "https://extdataportal.worldbank.org/api/esapi/GetEconomyIndicatorData/economyid/20/topicid/24/year/2025?lang=en",
+    "method": "Python urllib public HTTP"
+  },
+  {
+    "id": "method-input-es-definitions-26",
+    "url": "https://extdataportal.worldbank.org/api/esapi/GetEconomyIndicatorData/economyid/20/topicid/26/year/2025?lang=en",
+    "retrieved": "2026-10-31",
+    "sha256": "aa0ffb4625bf116f410504a75c61ba1584fa51ee5004a0196f4afc7c662121ac",
+    "byteLength": 4073,
+    "hashScope": "complete response bytes",
+    "finalUrl": "https://extdataportal.worldbank.org/api/esapi/GetEconomyIndicatorData/economyid/20/topicid/26/year/2025?lang=en",
+    "method": "Python urllib public HTTP"
+  },
+  {
+    "id": "method-input-es-regulations",
+    "url": "https://extdataportal.worldbank.org/api/esapi/GetTopicIndicatorData/topicid/24/subtopicid/0/regionid/0/cutsId/-1/colstartindex/0?lang=en",
+    "retrieved": "2026-10-31",
+    "sha256": "e5feb3ebe590292278d1341dec241a35fc7352365be24537f004adb268986271",
+    "byteLength": 961143,
+    "hashScope": "complete response bytes",
+    "finalUrl": "https://extdataportal.worldbank.org/api/esapi/GetTopicIndicatorData/topicid/24/subtopicid/0/regionid/0/cutsId/-1/colstartindex/0?lang=en",
+    "method": "Python urllib public HTTP"
+  },
+  {
+    "id": "method-input-ocds-sample",
+    "url": "https://data.open-contracting.org/en/publication/64/download?name=2025.jsonl.gz",
+    "retrieved": "2026-10-31",
+    "sha256": "7de8ae554914ece690709b3ce3e50c1f4120c11c0274dcf6087c490c760a4463",
+    "byteLength": 571445,
+    "hashScope": "concatenated first N decompressed JSONL lines, not complete gzip",
+    "lines": 372,
+    "method": "streamed public gzip"
+  }
+]

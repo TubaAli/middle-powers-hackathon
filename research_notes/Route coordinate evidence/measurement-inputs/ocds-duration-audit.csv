@@ -1,0 +1,13 @@
+ocid,award_id,contract_id,release_date,award_date,dateSigned,award_to_signing_days,chronology,milestones,milestones_with_dateMet,transactions,transactions_with_date
+ocds-gyl66f-111006001-000004,14704,14426,2025-02-06T16:39:00Z,2019-10-23T00:00:00Z,2019-10-23T00:00:00Z,0,chronologically nonnegative; unverified source semantics,2,0,1,0
+ocds-gyl66f-111006001-000005,14703,14425,2025-02-06T16:39:00Z,2019-10-23T00:00:00Z,2019-10-23T00:00:00Z,0,chronologically nonnegative; unverified source semantics,2,0,1,0
+ocds-gyl66f-111006001-000015,14705,14427,2025-02-10T09:39:00Z,2022-08-26T00:00:00Z,2022-08-30T00:00:00Z,4,chronologically nonnegative; unverified source semantics,2,0,1,0
+ocds-gyl66f-111006001-000017,14706,14428,2025-02-10T09:39:00Z,2022-08-26T00:00:00Z,2022-08-26T00:00:00Z,0,chronologically nonnegative; unverified source semantics,2,0,1,0
+ocds-gyl66f-111006001-000018,14707,14429,2025-02-10T09:39:00Z,2022-08-26T00:00:00Z,2022-08-26T00:00:00Z,0,chronologically nonnegative; unverified source semantics,2,1,1,0
+ocds-gyl66f-111006001-000019,14708,14430,2025-02-10T09:39:00Z,2022-08-26T00:00:00Z,2022-08-26T00:00:00Z,0,chronologically nonnegative; unverified source semantics,2,1,1,0
+ocds-gyl66f-111006001-000020,14709,14431,2025-02-10T09:39:00Z,2022-02-22T00:00:00Z,2022-08-25T00:00:00Z,184,chronologically nonnegative; unverified source semantics,2,1,1,0
+ocds-gyl66f-111006001-000026,14710,14432,2025-02-10T09:39:00Z,2022-10-05T00:00:00Z,2022-08-25T00:00:00Z,-41,negative interval: reject pending original-source verification,2,1,1,0
+ocds-gyl66f-111006001-000028,14711,14433,2025-02-10T09:39:00Z,2022-08-25T00:00:00Z,2022-08-25T00:00:00Z,0,chronologically nonnegative; unverified source semantics,2,1,1,0
+ocds-gyl66f-111006001-000037,14712,14434,2025-02-10T09:39:00Z,2022-08-26T00:00:00Z,2022-08-29T00:00:00Z,3,chronologically nonnegative; unverified source semantics,2,1,1,0
+ocds-gyl66f-111006001-000041,14713,14435,2025-02-10T09:40:00Z,2022-02-02T00:00:00Z,2022-02-03T00:00:00Z,1,chronologically nonnegative; unverified source semantics,2,1,1,0
+ocds-gyl66f-111006001-000051,14714,14436,2025-02-10T09:40:00Z,2022-07-25T00:00:00Z,2022-07-26T00:00:00Z,1,chronologically nonnegative; unverified source semantics,2,1,1,0

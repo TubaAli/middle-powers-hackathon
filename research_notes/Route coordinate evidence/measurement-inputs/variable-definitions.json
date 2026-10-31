@@ -1,0 +1,59 @@
+{
+  "DGI": {
+    "fields": [
+      "DGI_2023",
+      "DGI_2025"
+    ],
+    "type": "publisher composite index, not calibrated route score",
+    "unit": "publisher 0–1 index",
+    "referencePeriod": "2025 DGI: 2023-01-01 through 2024-12-31, except Indonesia and Thailand: 2022-01-01 through 2023-12-31",
+    "edition": "2025 DGI reported in OECD 2026 outlook; includes comparator 2023 edition",
+    "locator": "g1-2!A24:A25; row29 headers"
+  },
+  "GovTech": {
+    "indices": {
+      "GTMI": "GovTech Maturity Index",
+      "CGSI": "Core Government Systems Index",
+      "PSDI": "Public Service Delivery Index",
+      "DCEI": "Digital Citizen Engagement Index",
+      "GTEI": "GovTech Enablers Index"
+    },
+    "type": "publisher composite indices plus unrescaled coded survey/remote-review responses",
+    "unit": "indices 0–1; other fields use item-specific codes, years, names or URLs",
+    "edition": "December 2025 workbook; survey March–June 2025, validation July–October 2025",
+    "definitions": "govtech-item-definitions.json",
+    "coverageReconciliation": "198 country-code rows including Nicaragua placeholder with hyphens; 197 assessed economies. All 33 target countries plus US have rows.",
+    "sourceMethod": "158 participating economies surveyed; 39 remotely collected. Workbook reports use of generative AI for validation and remote collection; not independent audited operational efficacy."
+  },
+  "BREADY": {
+    "edition": "2025 interim edition, 101 economies",
+    "definitionFile": "bready-selected-fields.json",
+    "type": "expert answers (including binary regulatory provisions and durations), not transaction events",
+    "durationUnit": "calendar days except MCP_29_3 labelled days",
+    "numericRule": "Only plain numeric strings copied into numeric_days; annotations and Skip Logic retained without conversion",
+    "dates": "Publication edition established; specific item collection dates not included in extracted answer rows"
+  },
+  "EnterpriseSurveys": {
+    "edition": "Latest published economy wave in API at retrieval; year retained per row",
+    "definitions": "enterprise-surveys-metadata.json",
+    "type": "published aggregate survey indicators; not microdata",
+    "bready_reg9": "Average days to receive payment under government contract; current API code differs from older reg9",
+    "limits": "API definition field returns placeholder text for some indicators; detailed denominator/SE/sample counts not returned by these endpoints. Twelve regulation indicators and one tender-difficulty index retained.",
+    "missing": "n.a. is missing, never zero. UAE absent from inspected latest-economy API; this is not a claim no UAE surveys exist."
+  },
+  "Inventories": {
+    "type": "source-row extracts with country alias matching, no population weights",
+    "counts": "diagnostic record presence only",
+    "PSTW": "All technology/status rows retained for targets, not solely operational AI",
+    "Epoch": "Published inventory includes planned/existing and revisions; no deduplication or global-capacity denominator imposed",
+    "aliases": "retrieve.py ALIASES; US retained only as a separately labelled comparator"
+  },
+  "OCDS": {
+    "award_date": "awards.date for award linked through contract.awardID",
+    "dateSigned": "contracts.dateSigned",
+    "release_date": "compiled release update timestamp, not event occurrence",
+    "contractPeriod": "scheduled/contractual period, not proof of actual implementation completion",
+    "dateMet": "milestone actual completion field; eight inspected milestones populated, all identical to their dueDate; verify reported actuals against original evidence",
+    "durationRule": "ISO dateSigned minus matching awards.date; negative results flagged; no empirical probability inferred"
+  }
+}

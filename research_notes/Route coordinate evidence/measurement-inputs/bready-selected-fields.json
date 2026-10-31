@@ -1,0 +1,118 @@
+[
+  {
+    "variable": "MCP_20",
+    "definition": "20. Does the regulatory framework designate specific tendering procedures for innovation procurement?"
+  },
+  {
+    "variable": "MCP_22",
+    "definition": "22. Does the regulatory framework impose any participation or award restrictions on foreign firms?"
+  },
+  {
+    "variable": "MCP_264",
+    "definition": "26.7 Award decisions"
+  },
+  {
+    "variable": "MCP_27",
+    "definition": "27. Does the regulatory framework set a minimum timeframe between advertisement of a tender notice and a submission deadline?"
+  },
+  {
+    "variable": "MCP_29_1",
+    "definition": "29.2 Calendar days to complete a procurement of a works contract in an open procedure valued above the threshold for international procurement."
+  },
+  {
+    "variable": "MCP_29_2",
+    "definition": "29.4 Calendar days to complete the procurement of a services contract in a restricted procedure with limited competition, valued below the threshold for international procurement."
+  },
+  {
+    "variable": "MCP_29_3",
+    "definition": "29.6 Days to complete the prequalification of supplier"
+  },
+  {
+    "variable": "MCP_29_4",
+    "definition": "29.8 Calendar days to complete an electronic auction"
+  },
+  {
+    "variable": "MCP_29_5",
+    "definition": "29.10 Calendar days to complete a framework agreement with a competitive second stage"
+  },
+  {
+    "variable": "MCP_32_1_5",
+    "definition": "32.10 Does the regulatory framework include award criteria with a gender dimension?"
+  },
+  {
+    "variable": "MCP_33_1",
+    "definition": "33. Does the regulatory framework outline a designated procedure for awarding contracts based on a framework agreement?"
+  },
+  {
+    "variable": "MCP_33_3_R2",
+    "definition": "33.4 Are call-off contracts within a framework agreement awarded through a competitive second stage?"
+  },
+  {
+    "variable": "MCP_34_1",
+    "definition": "34. Does the regulatory framework include award quotas as a preferential treatment approach for small and medium-sized enterprises?"
+  },
+  {
+    "variable": "MCP_34_2",
+    "definition": "34.2 Does the regulatory framework provide shorter payment deadlines for small and medium-sized enterprises?"
+  },
+  {
+    "variable": "MCP_34_3",
+    "definition": "34.4 Does the regulatory framework include designation by threshold as a preferential treatment approach for small and medium-sized enterprises?"
+  },
+  {
+    "variable": "MCP_35",
+    "definition": "35. Does the regulatory framework mandate communication of an award decision?"
+  },
+  {
+    "variable": "MCP_35_1",
+    "definition": "35.2 Is the requirement to communicate an award decision applicable to all procurements conducted by the procuring entities?"
+  },
+  {
+    "variable": "MCP_36",
+    "definition": "36. Is there a mandatory standstill period between the public notice of award and contract signing to allow unsuccessful bidders to challenge the decision?"
+  },
+  {
+    "variable": "MCP_37",
+    "definition": "37. Does the regulatory framework establish a timeframe within which a procuring entity must process a payment once an invoice is received?"
+  },
+  {
+    "variable": "MCP_4",
+    "definition": "4. Is there an operational central electronic public procurement platform in the measured economy?"
+  },
+  {
+    "variable": "MCP_40",
+    "definition": "39. Does the regulatory framework designate a specialized and independent authority to receive procurement challenges filed by firms on decisions issued by the procuring entities?"
+  },
+  {
+    "variable": "MCP_42",
+    "definition": "41. Are there any legally binding time limits to resolve a procurement challenge?"
+  },
+  {
+    "variable": "MCP_7_10_r_a10",
+    "definition": "7.9 Is it possible to access award decisions, including their rationale, on the centralized e-procurement platform?"
+  },
+  {
+    "variable": "MCP_7_10_r_a11",
+    "definition": "7.10 Does the centralized e-procurement platform allow to submit performance guarantees online with electronic validation?"
+  },
+  {
+    "variable": "MCP_7_10_r_a12",
+    "definition": "7.11 Is it possible to conduct the contract signing procedure online on the centralized e-procurement platform?"
+  },
+  {
+    "variable": "MCP_7_10_r_a13",
+    "definition": "7.12 Is it possible to access contracts that have been awarded on the centralized e-procurement platform?"
+  },
+  {
+    "variable": "MCP_7_10_r_a20",
+    "definition": "7.19 Does the centralized e-procurement platform include an e-contract management and implementation module?"
+  },
+  {
+    "variable": "MCP_7_10_r_a21",
+    "definition": "7.20 Is it possible to receive payments from the procuring entity through the centralized e-procurement platform?"
+  },
+  {
+    "variable": "MCP_7_10_r_a6",
+    "definition": "7.5 Does the centralized e-procurement platform allow to submit bid security online with electronic validation?"
+  }
+]

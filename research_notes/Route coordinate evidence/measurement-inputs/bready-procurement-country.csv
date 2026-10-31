@@ -1,0 +1,552 @@
+country,variable,response,data_source,locator
+Belgium,MCP_4,Yes,Expert Consultations,09_Market_Competition!B1626:E1626
+Belgium,MCP_7_10_r_a10,No,Expert Consultations,09_Market_Competition!B1633:E1633
+Belgium,MCP_7_10_r_a11,No,Expert Consultations,09_Market_Competition!B1634:E1634
+Belgium,MCP_7_10_r_a12,No,Expert Consultations,09_Market_Competition!B1635:E1635
+Belgium,MCP_7_10_r_a13,No,Expert Consultations,09_Market_Competition!B1636:E1636
+Belgium,MCP_7_10_r_a20,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B1644:E1644
+Belgium,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B1645:E1645
+Belgium,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B1651:E1651
+Belgium,MCP_20,Yes,Expert Consultations,09_Market_Competition!B1693:E1693
+Belgium,MCP_22,No,Expert Consultations,09_Market_Competition!B1699:E1699
+Belgium,MCP_264,"Yes, except for low value contracts",Expert Consultations,09_Market_Competition!B1715:E1715
+Belgium,MCP_27,"Yes, but only in some procurement procedures",Expert Consultations,09_Market_Competition!B1720:E1720
+Belgium,MCP_29_1,309,Expert Consultations,09_Market_Competition!B1729:E1729
+Belgium,MCP_29_2,Calculate median; 50% Skip Logic: 160,Expert Consultations,09_Market_Competition!B1730:E1730
+Belgium,MCP_29_3,Calculate median; 50% Skip Logic: 150,Expert Consultations,09_Market_Competition!B1731:E1731
+Belgium,MCP_29_4,Skip Logic,Expert Consultations,09_Market_Competition!B1732:E1732
+Belgium,MCP_29_5,Calculate median; 50% Skip Logic: 300,Expert Consultations,09_Market_Competition!B1733:E1733
+Belgium,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B1748:E1748
+Belgium,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B1750:E1750
+Belgium,MCP_33_3_R2,"Multiple modes: No. Yes, but only for some types of procurements. Yes, for all types of procurement. ",Expert Consultations,09_Market_Competition!B1752:E1752
+Belgium,MCP_34_1,No,Expert Consultations,09_Market_Competition!B1754:E1754
+Belgium,MCP_34_2,No,Expert Consultations,09_Market_Competition!B1755:E1755
+Belgium,MCP_34_3,No,Expert Consultations,09_Market_Competition!B1756:E1756
+Belgium,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B1768:E1768
+Belgium,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B1769:E1769
+Belgium,MCP_36,"Yes, but only in some public procurement procedures",Expert Consultations,09_Market_Competition!B1773:E1773
+Belgium,MCP_37,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B1776:E1776
+Belgium,MCP_40,No,Expert Consultations,09_Market_Competition!B1781:E1781
+Belgium,MCP_42,No,Expert Consultations,09_Market_Competition!B1789:E1789
+Canada,MCP_4,Yes,Expert Consultations,09_Market_Competition!B4326:E4326
+Canada,MCP_7_10_r_a10,No,Expert Consultations,09_Market_Competition!B4333:E4333
+Canada,MCP_7_10_r_a11,No,Expert Consultations,09_Market_Competition!B4334:E4334
+Canada,MCP_7_10_r_a12,No,Expert Consultations,09_Market_Competition!B4335:E4335
+Canada,MCP_7_10_r_a13,"Multiple modes: No. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B4336:E4336
+Canada,MCP_7_10_r_a20,No,Expert Consultations,09_Market_Competition!B4344:E4344
+Canada,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B4345:E4345
+Canada,MCP_7_10_r_a6,"Yes, but hard copy documents must be submitted",Expert Consultations,09_Market_Competition!B4351:E4351
+Canada,MCP_20,No,Expert Consultations,09_Market_Competition!B4393:E4393
+Canada,MCP_22,"Multiple modes: No. Yes, in some public tenders. ",Expert Consultations,09_Market_Competition!B4399:E4399
+Canada,MCP_264,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B4415:E4415
+Canada,MCP_27,No,Expert Consultations,09_Market_Competition!B4420:E4420
+Canada,MCP_29_1,212.5,Expert Consultations,09_Market_Competition!B4429:E4429
+Canada,MCP_29_2,Calculate median; 50% Skip Logic: 15,Expert Consultations,09_Market_Competition!B4430:E4430
+Canada,MCP_29_3,75,Expert Consultations,09_Market_Competition!B4431:E4431
+Canada,MCP_29_4,Calculate median; 50% Skip Logic: 60,Expert Consultations,09_Market_Competition!B4432:E4432
+Canada,MCP_29_5,90,Expert Consultations,09_Market_Competition!B4433:E4433
+Canada,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B4448:E4448
+Canada,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B4450:E4450
+Canada,MCP_33_3_R2,"Yes, for all types of procurement",Expert Consultations,09_Market_Competition!B4452:E4452
+Canada,MCP_34_1,No,Expert Consultations,09_Market_Competition!B4454:E4454
+Canada,MCP_34_2,No,Expert Consultations,09_Market_Competition!B4455:E4455
+Canada,MCP_34_3,No,Expert Consultations,09_Market_Competition!B4456:E4456
+Canada,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B4468:E4468
+Canada,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B4469:E4469
+Canada,MCP_36,No,Expert Consultations,09_Market_Competition!B4473:E4473
+Canada,MCP_37,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B4476:E4476
+Canada,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B4481:E4481
+Canada,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B4489:E4489
+Colombia,MCP_4,Yes,Expert Consultations,09_Market_Competition!B5136:E5136
+Colombia,MCP_7_10_r_a10,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B5143:E5143
+Colombia,MCP_7_10_r_a11,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B5144:E5144
+Colombia,MCP_7_10_r_a12,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B5145:E5145
+Colombia,MCP_7_10_r_a13,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B5146:E5146
+Colombia,MCP_7_10_r_a20,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B5154:E5154
+Colombia,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B5155:E5155
+Colombia,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B5161:E5161
+Colombia,MCP_20,Yes,Expert Consultations,09_Market_Competition!B5203:E5203
+Colombia,MCP_22,No,Expert Consultations,09_Market_Competition!B5209:E5209
+Colombia,MCP_264,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B5225:E5225
+Colombia,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B5230:E5230
+Colombia,MCP_29_1,Calculate median; 50% Skip Logic: 99.5,Expert Consultations,09_Market_Competition!B5239:E5239
+Colombia,MCP_29_2,27,Expert Consultations,09_Market_Competition!B5240:E5240
+Colombia,MCP_29_3,70,Expert Consultations,09_Market_Competition!B5241:E5241
+Colombia,MCP_29_4,45,Expert Consultations,09_Market_Competition!B5242:E5242
+Colombia,MCP_29_5,Calculate median; 50% Skip Logic: 90,Expert Consultations,09_Market_Competition!B5243:E5243
+Colombia,MCP_32_1_5,Yes,Expert Consultations,09_Market_Competition!B5258:E5258
+Colombia,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B5260:E5260
+Colombia,MCP_33_3_R2,"Multiple modes: No. Yes, for all types of procurement. ",Expert Consultations,09_Market_Competition!B5262:E5262
+Colombia,MCP_34_1,No,Expert Consultations,09_Market_Competition!B5264:E5264
+Colombia,MCP_34_2,No,Expert Consultations,09_Market_Competition!B5265:E5265
+Colombia,MCP_34_3,Yes,Expert Consultations,09_Market_Competition!B5266:E5266
+Colombia,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B5278:E5278
+Colombia,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B5279:E5279
+Colombia,MCP_36,No,Expert Consultations,09_Market_Competition!B5283:E5283
+Colombia,MCP_37,"Multiple modes: Yes, but only in some contracts. Yes, for all contracts. ",Expert Consultations,09_Market_Competition!B5286:E5286
+Colombia,MCP_40,No,Expert Consultations,09_Market_Competition!B5291:E5291
+Colombia,MCP_42,"Multiple modes: No. Yes, for all types of challenges. ",Expert Consultations,09_Market_Competition!B5299:E5299
+Czech Republic,MCP_4,Yes,Expert Consultations,09_Market_Competition!B7026:E7026
+Czech Republic,MCP_7_10_r_a10,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B7033:E7033
+Czech Republic,MCP_7_10_r_a11,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B7034:E7034
+Czech Republic,MCP_7_10_r_a12,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B7035:E7035
+Czech Republic,MCP_7_10_r_a13,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B7036:E7036
+Czech Republic,MCP_7_10_r_a20,No,Expert Consultations,09_Market_Competition!B7044:E7044
+Czech Republic,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B7045:E7045
+Czech Republic,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B7051:E7051
+Czech Republic,MCP_20,Yes,Expert Consultations,09_Market_Competition!B7093:E7093
+Czech Republic,MCP_22,"Yes, in all public tenders",Expert Consultations,09_Market_Competition!B7099:E7099
+Czech Republic,MCP_264,"Yes, except for low value contracts",Expert Consultations,09_Market_Competition!B7115:E7115
+Czech Republic,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B7120:E7120
+Czech Republic,MCP_29_1,140,Expert Consultations,09_Market_Competition!B7129:E7129
+Czech Republic,MCP_29_2,120,Expert Consultations,09_Market_Competition!B7130:E7130
+Czech Republic,MCP_29_3,80,Expert Consultations,09_Market_Competition!B7131:E7131
+Czech Republic,MCP_29_4,27,Expert Consultations,09_Market_Competition!B7132:E7132
+Czech Republic,MCP_29_5,200,Expert Consultations,09_Market_Competition!B7133:E7133
+Czech Republic,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B7148:E7148
+Czech Republic,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B7150:E7150
+Czech Republic,MCP_33_3_R2,"Yes, for all types of procurement",Expert Consultations,09_Market_Competition!B7152:E7152
+Czech Republic,MCP_34_1,No,Expert Consultations,09_Market_Competition!B7154:E7154
+Czech Republic,MCP_34_2,No,Expert Consultations,09_Market_Competition!B7155:E7155
+Czech Republic,MCP_34_3,No,Expert Consultations,09_Market_Competition!B7156:E7156
+Czech Republic,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B7168:E7168
+Czech Republic,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B7169:E7169
+Czech Republic,MCP_36,"Yes, for all public procurement procedures",Expert Consultations,09_Market_Competition!B7173:E7173
+Czech Republic,MCP_37,No,Expert Consultations,09_Market_Competition!B7176:E7176
+Czech Republic,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B7181:E7181
+Czech Republic,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B7189:E7189
+Estonia,MCP_4,Yes,Expert Consultations,09_Market_Competition!B8106:E8106
+Estonia,MCP_7_10_r_a10,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B8113:E8113
+Estonia,MCP_7_10_r_a11,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B8114:E8114
+Estonia,MCP_7_10_r_a12,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B8115:E8115
+Estonia,MCP_7_10_r_a13,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B8116:E8116
+Estonia,MCP_7_10_r_a20,No,Expert Consultations,09_Market_Competition!B8124:E8124
+Estonia,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B8125:E8125
+Estonia,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B8131:E8131
+Estonia,MCP_20,Yes,Expert Consultations,09_Market_Competition!B8173:E8173
+Estonia,MCP_22,"Yes, in all public tenders",Expert Consultations,09_Market_Competition!B8179:E8179
+Estonia,MCP_264,No,Expert Consultations,09_Market_Competition!B8195:E8195
+Estonia,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B8200:E8200
+Estonia,MCP_29_1,80,Expert Consultations,09_Market_Competition!B8209:E8209
+Estonia,MCP_29_2,60,Expert Consultations,09_Market_Competition!B8210:E8210
+Estonia,MCP_29_3,40,Expert Consultations,09_Market_Competition!B8211:E8211
+Estonia,MCP_29_4,Calculate median; 50% Skip Logic: 15,Expert Consultations,09_Market_Competition!B8212:E8212
+Estonia,MCP_29_5,70,Expert Consultations,09_Market_Competition!B8213:E8213
+Estonia,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B8228:E8228
+Estonia,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B8230:E8230
+Estonia,MCP_33_3_R2,"Yes, but only for some types of procurements",Expert Consultations,09_Market_Competition!B8232:E8232
+Estonia,MCP_34_1,No,Expert Consultations,09_Market_Competition!B8234:E8234
+Estonia,MCP_34_2,No,Expert Consultations,09_Market_Competition!B8235:E8235
+Estonia,MCP_34_3,No,Expert Consultations,09_Market_Competition!B8236:E8236
+Estonia,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B8248:E8248
+Estonia,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B8249:E8249
+Estonia,MCP_36,"Yes, for all public procurement procedures",Expert Consultations,09_Market_Competition!B8253:E8253
+Estonia,MCP_37,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B8256:E8256
+Estonia,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B8261:E8261
+Estonia,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B8269:E8269
+Iceland,MCP_4,Yes,Expert Consultations,09_Market_Competition!B10266:E10266
+Iceland,MCP_7_10_r_a10,No,Expert Consultations,09_Market_Competition!B10273:E10273
+Iceland,MCP_7_10_r_a11,No,Expert Consultations,09_Market_Competition!B10274:E10274
+Iceland,MCP_7_10_r_a12,No,Expert Consultations,09_Market_Competition!B10275:E10275
+Iceland,MCP_7_10_r_a13,No,Expert Consultations,09_Market_Competition!B10276:E10276
+Iceland,MCP_7_10_r_a20,No,Expert Consultations,09_Market_Competition!B10284:E10284
+Iceland,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B10285:E10285
+Iceland,MCP_7_10_r_a6,No,Expert Consultations,09_Market_Competition!B10291:E10291
+Iceland,MCP_20,Yes,Expert Consultations,09_Market_Competition!B10333:E10333
+Iceland,MCP_22,"Multiple modes: No. Yes, in all public tenders. ",Expert Consultations,09_Market_Competition!B10339:E10339
+Iceland,MCP_264,"Yes, except for low value contracts",Expert Consultations,09_Market_Competition!B10355:E10355
+Iceland,MCP_27,"Yes, but only in some procurement procedures",Expert Consultations,09_Market_Competition!B10360:E10360
+Iceland,MCP_29_1,Calculate median; 50% Skip Logic: 50,Expert Consultations,09_Market_Competition!B10369:E10369
+Iceland,MCP_29_2,Calculate median; 50% Skip Logic: 200,Expert Consultations,09_Market_Competition!B10370:E10370
+Iceland,MCP_29_3,90,Expert Consultations,09_Market_Competition!B10371:E10371
+Iceland,MCP_29_4,Skip Logic,Expert Consultations,09_Market_Competition!B10372:E10372
+Iceland,MCP_29_5,180,Expert Consultations,09_Market_Competition!B10373:E10373
+Iceland,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B10388:E10388
+Iceland,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B10390:E10390
+Iceland,MCP_33_3_R2,"Yes, but only for some types of procurements",Expert Consultations,09_Market_Competition!B10392:E10392
+Iceland,MCP_34_1,No,Expert Consultations,09_Market_Competition!B10394:E10394
+Iceland,MCP_34_2,No,Expert Consultations,09_Market_Competition!B10395:E10395
+Iceland,MCP_34_3,No,Expert Consultations,09_Market_Competition!B10396:E10396
+Iceland,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B10408:E10408
+Iceland,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B10409:E10409
+Iceland,MCP_36,"Yes, but only in some public procurement procedures",Expert Consultations,09_Market_Competition!B10413:E10413
+Iceland,MCP_37,No,Expert Consultations,09_Market_Competition!B10416:E10416
+Iceland,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B10421:E10421
+Iceland,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B10429:E10429
+Indonesia,MCP_4,Yes,Expert Consultations,09_Market_Competition!B10536:E10536
+Indonesia,MCP_7_10_r_a10,No,Expert Consultations,09_Market_Competition!B10543:E10543
+Indonesia,MCP_7_10_r_a11,"Multiple modes: Yes, but hard copy documents must be submitted. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B10544:E10544
+Indonesia,MCP_7_10_r_a12,"Yes, but hard copy documents must be submitted",Expert Consultations,09_Market_Competition!B10545:E10545
+Indonesia,MCP_7_10_r_a13,No,Expert Consultations,09_Market_Competition!B10546:E10546
+Indonesia,MCP_7_10_r_a20,"Multiple modes: Yes, but hard copy documents must be submitted. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B10554:E10554
+Indonesia,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B10555:E10555
+Indonesia,MCP_7_10_r_a6,"Multiple modes: Yes, but hard copy documents must be submitted. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B10561:E10561
+Indonesia,MCP_20,No,Expert Consultations,09_Market_Competition!B10603:E10603
+Indonesia,MCP_22,"Yes, in some public tenders",Expert Consultations,09_Market_Competition!B10609:E10609
+Indonesia,MCP_264,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B10625:E10625
+Indonesia,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B10630:E10630
+Indonesia,MCP_29_1,Calculate median; 50% Skip Logic: 32.5,Expert Consultations,09_Market_Competition!B10639:E10639
+Indonesia,MCP_29_2,150,Expert Consultations,09_Market_Competition!B10640:E10640
+Indonesia,MCP_29_3,17,Expert Consultations,09_Market_Competition!B10641:E10641
+Indonesia,MCP_29_4,30,Expert Consultations,09_Market_Competition!B10642:E10642
+Indonesia,MCP_29_5,60,Expert Consultations,09_Market_Competition!B10643:E10643
+Indonesia,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B10658:E10658
+Indonesia,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B10660:E10660
+Indonesia,MCP_33_3_R2,"Yes, but only for some types of procurements",Expert Consultations,09_Market_Competition!B10662:E10662
+Indonesia,MCP_34_1,Yes,Expert Consultations,09_Market_Competition!B10664:E10664
+Indonesia,MCP_34_2,No,Expert Consultations,09_Market_Competition!B10665:E10665
+Indonesia,MCP_34_3,Yes,Expert Consultations,09_Market_Competition!B10666:E10666
+Indonesia,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B10678:E10678
+Indonesia,MCP_35_1,"Multiple modes: No, only for some procurement procedures. Yes, applicable to all procurement procedures. ",Expert Consultations,09_Market_Competition!B10679:E10679
+Indonesia,MCP_36,"Yes, but only in some public procurement procedures",Expert Consultations,09_Market_Competition!B10683:E10683
+Indonesia,MCP_37,No,Expert Consultations,09_Market_Competition!B10686:E10686
+Indonesia,MCP_40,"Multiple modes: No. Yes, specialized and independent. ",Expert Consultations,09_Market_Competition!B10691:E10691
+Indonesia,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B10699:E10699
+South Korea,MCP_4,Yes,Expert Consultations,09_Market_Competition!B12426:E12426
+South Korea,MCP_7_10_r_a10,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B12433:E12433
+South Korea,MCP_7_10_r_a11,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B12434:E12434
+South Korea,MCP_7_10_r_a12,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B12435:E12435
+South Korea,MCP_7_10_r_a13,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B12436:E12436
+South Korea,MCP_7_10_r_a20,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B12444:E12444
+South Korea,MCP_7_10_r_a21,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B12445:E12445
+South Korea,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B12451:E12451
+South Korea,MCP_20,Yes,Expert Consultations,09_Market_Competition!B12493:E12493
+South Korea,MCP_22,"Yes, in some public tenders",Expert Consultations,09_Market_Competition!B12499:E12499
+South Korea,MCP_264,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B12515:E12515
+South Korea,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B12520:E12520
+South Korea,MCP_29_1,40,Expert Consultations,09_Market_Competition!B12529:E12529
+South Korea,MCP_29_2,15,Expert Consultations,09_Market_Competition!B12530:E12530
+South Korea,MCP_29_3,20,Expert Consultations,09_Market_Competition!B12531:E12531
+South Korea,MCP_29_4,Calculate median; 50% Skip Logic: 89,Expert Consultations,09_Market_Competition!B12532:E12532
+South Korea,MCP_29_5,54.5,Expert Consultations,09_Market_Competition!B12533:E12533
+South Korea,MCP_32_1_5,Yes,Expert Consultations,09_Market_Competition!B12548:E12548
+South Korea,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B12550:E12550
+South Korea,MCP_33_3_R2,"Multiple modes: No. Yes, but only for some types of procurements. Yes, for all types of procurement. ",Expert Consultations,09_Market_Competition!B12552:E12552
+South Korea,MCP_34_1,Yes,Expert Consultations,09_Market_Competition!B12554:E12554
+South Korea,MCP_34_2,No,Expert Consultations,09_Market_Competition!B12555:E12555
+South Korea,MCP_34_3,Yes,Expert Consultations,09_Market_Competition!B12556:E12556
+South Korea,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B12568:E12568
+South Korea,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B12569:E12569
+South Korea,MCP_36,No,Expert Consultations,09_Market_Competition!B12573:E12573
+South Korea,MCP_37,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B12576:E12576
+South Korea,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B12581:E12581
+South Korea,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B12589:E12589
+Malaysia,MCP_4,Yes,Expert Consultations,09_Market_Competition!B14046:E14046
+Malaysia,MCP_7_10_r_a10,No,Expert Consultations,09_Market_Competition!B14053:E14053
+Malaysia,MCP_7_10_r_a11,No,Expert Consultations,09_Market_Competition!B14054:E14054
+Malaysia,MCP_7_10_r_a12,"Multiple modes: No. Yes, but hard copy documents must be submitted. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B14055:E14055
+Malaysia,MCP_7_10_r_a13,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B14056:E14056
+Malaysia,MCP_7_10_r_a20,"Multiple modes: No. Yes, but hard copy documents must be submitted. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B14064:E14064
+Malaysia,MCP_7_10_r_a21,"Multiple modes: No. Yes, but hard copy documents must be submitted. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B14065:E14065
+Malaysia,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B14071:E14071
+Malaysia,MCP_20,No,Expert Consultations,09_Market_Competition!B14113:E14113
+Malaysia,MCP_22,"Yes, in some public tenders",Expert Consultations,09_Market_Competition!B14119:E14119
+Malaysia,MCP_264,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B14135:E14135
+Malaysia,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B14140:E14140
+Malaysia,MCP_29_1,Calculate median; 50% Skip Logic: 120,Expert Consultations,09_Market_Competition!B14149:E14149
+Malaysia,MCP_29_2,Skip Logic,Expert Consultations,09_Market_Competition!B14150:E14150
+Malaysia,MCP_29_3,Calculate median; 50% Skip Logic: 14,Expert Consultations,09_Market_Competition!B14151:E14151
+Malaysia,MCP_29_4,Skip Logic,Expert Consultations,09_Market_Competition!B14152:E14152
+Malaysia,MCP_29_5,Skip Logic,Expert Consultations,09_Market_Competition!B14153:E14153
+Malaysia,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B14168:E14168
+Malaysia,MCP_33_1,"No, the regulatory framework does not regulate framework agreements",Expert Consultations,09_Market_Competition!B14170:E14170
+Malaysia,MCP_33_3_R2,No,Expert Consultations,09_Market_Competition!B14172:E14172
+Malaysia,MCP_34_1,Yes,Expert Consultations,09_Market_Competition!B14174:E14174
+Malaysia,MCP_34_2,Yes,Expert Consultations,09_Market_Competition!B14175:E14175
+Malaysia,MCP_34_3,Yes,Expert Consultations,09_Market_Competition!B14176:E14176
+Malaysia,MCP_35,"Multiple modes: The regulatory framework does not require communication. Yes, to the awarded bidder only. Yes, to all bidders. ",Expert Consultations,09_Market_Competition!B14188:E14188
+Malaysia,MCP_35_1,"Multiple modes: No, only for some procurement procedures. Yes, applicable to all procurement procedures. ",Expert Consultations,09_Market_Competition!B14189:E14189
+Malaysia,MCP_36,No,Expert Consultations,09_Market_Competition!B14193:E14193
+Malaysia,MCP_37,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B14196:E14196
+Malaysia,MCP_40,No,Expert Consultations,09_Market_Competition!B14201:E14201
+Malaysia,MCP_42,"Yes, but only in some types of challenges",Expert Consultations,09_Market_Competition!B14209:E14209
+Mexico,MCP_4,Yes,Expert Consultations,09_Market_Competition!B15126:E15126
+Mexico,MCP_7_10_r_a10,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B15133:E15133
+Mexico,MCP_7_10_r_a11,No,Expert Consultations,09_Market_Competition!B15134:E15134
+Mexico,MCP_7_10_r_a12,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B15135:E15135
+Mexico,MCP_7_10_r_a13,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B15136:E15136
+Mexico,MCP_7_10_r_a20,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B15144:E15144
+Mexico,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B15145:E15145
+Mexico,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B15151:E15151
+Mexico,MCP_20,No,Expert Consultations,09_Market_Competition!B15193:E15193
+Mexico,MCP_22,"Yes, in some public tenders",Expert Consultations,09_Market_Competition!B15199:E15199
+Mexico,MCP_264,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B15215:E15215
+Mexico,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B15220:E15220
+Mexico,MCP_29_1,120,Expert Consultations,09_Market_Competition!B15229:E15229
+Mexico,MCP_29_2,70,Expert Consultations,09_Market_Competition!B15230:E15230
+Mexico,MCP_29_3,Calculate median; 50% Skip Logic: 120,Expert Consultations,09_Market_Competition!B15231:E15231
+Mexico,MCP_29_4,40,Expert Consultations,09_Market_Competition!B15232:E15232
+Mexico,MCP_29_5,Calculate median; 50% Skip Logic: 82.5,Expert Consultations,09_Market_Competition!B15233:E15233
+Mexico,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B15248:E15248
+Mexico,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B15250:E15250
+Mexico,MCP_33_3_R2,No,Expert Consultations,09_Market_Competition!B15252:E15252
+Mexico,MCP_34_1,Yes,Expert Consultations,09_Market_Competition!B15254:E15254
+Mexico,MCP_34_2,No,Expert Consultations,09_Market_Competition!B15255:E15255
+Mexico,MCP_34_3,No,Expert Consultations,09_Market_Competition!B15256:E15256
+Mexico,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B15268:E15268
+Mexico,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B15269:E15269
+Mexico,MCP_36,No,Expert Consultations,09_Market_Competition!B15273:E15273
+Mexico,MCP_37,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B15276:E15276
+Mexico,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B15281:E15281
+Mexico,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B15289:E15289
+Poland,MCP_4,Yes,Expert Consultations,09_Market_Competition!B18636:E18636
+Poland,MCP_7_10_r_a10,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B18643:E18643
+Poland,MCP_7_10_r_a11,No,Expert Consultations,09_Market_Competition!B18644:E18644
+Poland,MCP_7_10_r_a12,No,Expert Consultations,09_Market_Competition!B18645:E18645
+Poland,MCP_7_10_r_a13,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B18646:E18646
+Poland,MCP_7_10_r_a20,No,Expert Consultations,09_Market_Competition!B18654:E18654
+Poland,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B18655:E18655
+Poland,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B18661:E18661
+Poland,MCP_20,Yes,Expert Consultations,09_Market_Competition!B18703:E18703
+Poland,MCP_22,"Yes, in some public tenders",Expert Consultations,09_Market_Competition!B18709:E18709
+Poland,MCP_264,"Yes, except for low value contracts",Expert Consultations,09_Market_Competition!B18725:E18725
+Poland,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B18730:E18730
+Poland,MCP_29_1,150,Expert Consultations,09_Market_Competition!B18739:E18739
+Poland,MCP_29_2,Calculate median; 50% Skip Logic: 27,Expert Consultations,09_Market_Competition!B18740:E18740
+Poland,MCP_29_3,125,Expert Consultations,09_Market_Competition!B18741:E18741
+Poland,MCP_29_4,30,Expert Consultations,09_Market_Competition!B18742:E18742
+Poland,MCP_29_5,100,Expert Consultations,09_Market_Competition!B18743:E18743
+Poland,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B18758:E18758
+Poland,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B18760:E18760
+Poland,MCP_33_3_R2,"Yes, but only for some types of procurements",Expert Consultations,09_Market_Competition!B18762:E18762
+Poland,MCP_34_1,No,Expert Consultations,09_Market_Competition!B18764:E18764
+Poland,MCP_34_2,No,Expert Consultations,09_Market_Competition!B18765:E18765
+Poland,MCP_34_3,No,Expert Consultations,09_Market_Competition!B18766:E18766
+Poland,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B18778:E18778
+Poland,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B18779:E18779
+Poland,MCP_36,"Yes, for all public procurement procedures",Expert Consultations,09_Market_Competition!B18783:E18783
+Poland,MCP_37,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B18786:E18786
+Poland,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B18791:E18791
+Poland,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B18799:E18799
+Rwanda,MCP_4,Yes,Expert Consultations,09_Market_Competition!B19446:E19446
+Rwanda,MCP_7_10_r_a10,No,Expert Consultations,09_Market_Competition!B19453:E19453
+Rwanda,MCP_7_10_r_a11,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B19454:E19454
+Rwanda,MCP_7_10_r_a12,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B19455:E19455
+Rwanda,MCP_7_10_r_a13,No,Expert Consultations,09_Market_Competition!B19456:E19456
+Rwanda,MCP_7_10_r_a20,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B19464:E19464
+Rwanda,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B19465:E19465
+Rwanda,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B19471:E19471
+Rwanda,MCP_20,No,Expert Consultations,09_Market_Competition!B19513:E19513
+Rwanda,MCP_22,No,Expert Consultations,09_Market_Competition!B19519:E19519
+Rwanda,MCP_264,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B19535:E19535
+Rwanda,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B19540:E19540
+Rwanda,MCP_29_1,45,Expert Consultations,09_Market_Competition!B19549:E19549
+Rwanda,MCP_29_2,14,Expert Consultations,09_Market_Competition!B19550:E19550
+Rwanda,MCP_29_3,36,Expert Consultations,09_Market_Competition!B19551:E19551
+Rwanda,MCP_29_4,12,Expert Consultations,09_Market_Competition!B19552:E19552
+Rwanda,MCP_29_5,30,Expert Consultations,09_Market_Competition!B19553:E19553
+Rwanda,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B19568:E19568
+Rwanda,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B19570:E19570
+Rwanda,MCP_33_3_R2,No,Expert Consultations,09_Market_Competition!B19572:E19572
+Rwanda,MCP_34_1,No,Expert Consultations,09_Market_Competition!B19574:E19574
+Rwanda,MCP_34_2,No,Expert Consultations,09_Market_Competition!B19575:E19575
+Rwanda,MCP_34_3,No,Expert Consultations,09_Market_Competition!B19576:E19576
+Rwanda,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B19588:E19588
+Rwanda,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B19589:E19589
+Rwanda,MCP_36,"Yes, for all public procurement procedures",Expert Consultations,09_Market_Competition!B19593:E19593
+Rwanda,MCP_37,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B19596:E19596
+Rwanda,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B19601:E19601
+Rwanda,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B19609:E19609
+Singapore,MCP_4,Yes,Expert Consultations,09_Market_Competition!B21066:E21066
+Singapore,MCP_7_10_r_a10,No,Expert Consultations,09_Market_Competition!B21073:E21073
+Singapore,MCP_7_10_r_a11,"Multiple modes: No. Yes, but hard copy documents must be submitted. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B21074:E21074
+Singapore,MCP_7_10_r_a12,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B21075:E21075
+Singapore,MCP_7_10_r_a13,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B21076:E21076
+Singapore,MCP_7_10_r_a20,No,Expert Consultations,09_Market_Competition!B21084:E21084
+Singapore,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B21085:E21085
+Singapore,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B21091:E21091
+Singapore,MCP_20,No,Expert Consultations,09_Market_Competition!B21133:E21133
+Singapore,MCP_22,No,Expert Consultations,09_Market_Competition!B21139:E21139
+Singapore,MCP_264,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B21155:E21155
+Singapore,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B21160:E21160
+Singapore,MCP_29_1,90,Expert Consultations,09_Market_Competition!B21169:E21169
+Singapore,MCP_29_2,60,Expert Consultations,09_Market_Competition!B21170:E21170
+Singapore,MCP_29_3,50,Expert Consultations,09_Market_Competition!B21171:E21171
+Singapore,MCP_29_4,Calculate median; 50% Skip Logic: 14,Expert Consultations,09_Market_Competition!B21172:E21172
+Singapore,MCP_29_5,Skip Logic,Expert Consultations,09_Market_Competition!B21173:E21173
+Singapore,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B21188:E21188
+Singapore,MCP_33_1,"No, the regulatory framework does not regulate framework agreements",Expert Consultations,09_Market_Competition!B21190:E21190
+Singapore,MCP_33_3_R2,No,Expert Consultations,09_Market_Competition!B21192:E21192
+Singapore,MCP_34_1,No,Expert Consultations,09_Market_Competition!B21194:E21194
+Singapore,MCP_34_2,No,Expert Consultations,09_Market_Competition!B21195:E21195
+Singapore,MCP_34_3,No,Expert Consultations,09_Market_Competition!B21196:E21196
+Singapore,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B21208:E21208
+Singapore,MCP_35_1,"Multiple modes: No, only for some procurement procedures. Yes, applicable to all procurement procedures. ",Expert Consultations,09_Market_Competition!B21209:E21209
+Singapore,MCP_36,No,Expert Consultations,09_Market_Competition!B21213:E21213
+Singapore,MCP_37,"Yes, but only in some contracts",Expert Consultations,09_Market_Competition!B21216:E21216
+Singapore,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B21221:E21221
+Singapore,MCP_42,"Multiple modes: No. Yes, but only in some types of challenges. Yes, for all types of challenges. ",Expert Consultations,09_Market_Competition!B21229:E21229
+Sweden,MCP_4,No,Expert Consultations,09_Market_Competition!B22416:E22416
+Sweden,MCP_7_10_r_a10,No,Expert Consultations,09_Market_Competition!B22423:E22423
+Sweden,MCP_7_10_r_a11,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B22424:E22424
+Sweden,MCP_7_10_r_a12,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B22425:E22425
+Sweden,MCP_7_10_r_a13,No,Expert Consultations,09_Market_Competition!B22426:E22426
+Sweden,MCP_7_10_r_a20,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B22434:E22434
+Sweden,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B22435:E22435
+Sweden,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B22441:E22441
+Sweden,MCP_20,No,Expert Consultations,09_Market_Competition!B22483:E22483
+Sweden,MCP_22,No,Expert Consultations,09_Market_Competition!B22489:E22489
+Sweden,MCP_264,"Yes, except for low value contracts",Expert Consultations,09_Market_Competition!B22505:E22505
+Sweden,MCP_27,"Yes, but only in some procurement procedures",Expert Consultations,09_Market_Competition!B22510:E22510
+Sweden,MCP_29_1,35,Expert Consultations,09_Market_Competition!B22519:E22519
+Sweden,MCP_29_2,30,Expert Consultations,09_Market_Competition!B22520:E22520
+Sweden,MCP_29_3,30,Expert Consultations,09_Market_Competition!B22521:E22521
+Sweden,MCP_29_4,Calculate median; 50% Skip Logic: 30,Expert Consultations,09_Market_Competition!B22522:E22522
+Sweden,MCP_29_5,45,Expert Consultations,09_Market_Competition!B22523:E22523
+Sweden,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B22538:E22538
+Sweden,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B22540:E22540
+Sweden,MCP_33_3_R2,"Yes, but only for some types of procurements",Expert Consultations,09_Market_Competition!B22542:E22542
+Sweden,MCP_34_1,No,Expert Consultations,09_Market_Competition!B22544:E22544
+Sweden,MCP_34_2,No,Expert Consultations,09_Market_Competition!B22545:E22545
+Sweden,MCP_34_3,No,Expert Consultations,09_Market_Competition!B22546:E22546
+Sweden,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B22558:E22558
+Sweden,MCP_35_1,"No, only for some procurement procedures",Expert Consultations,09_Market_Competition!B22559:E22559
+Sweden,MCP_36,"Yes, but only in some public procurement procedures",Expert Consultations,09_Market_Competition!B22563:E22563
+Sweden,MCP_37,No,Expert Consultations,09_Market_Competition!B22566:E22566
+Sweden,MCP_40,No,Expert Consultations,09_Market_Competition!B22571:E22571
+Sweden,MCP_42,No,Expert Consultations,09_Market_Competition!B22579:E22579
+Taiwan,MCP_4,Yes,Expert Consultations,09_Market_Competition!B22686:E22686
+Taiwan,MCP_7_10_r_a10,No,Expert Consultations,09_Market_Competition!B22693:E22693
+Taiwan,MCP_7_10_r_a11,"Multiple modes: No. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B22694:E22694
+Taiwan,MCP_7_10_r_a12,"Multiple modes: No. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B22695:E22695
+Taiwan,MCP_7_10_r_a13,No,Expert Consultations,09_Market_Competition!B22696:E22696
+Taiwan,MCP_7_10_r_a20,No,Expert Consultations,09_Market_Competition!B22704:E22704
+Taiwan,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B22705:E22705
+Taiwan,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B22711:E22711
+Taiwan,MCP_20,Yes,Expert Consultations,09_Market_Competition!B22753:E22753
+Taiwan,MCP_22,"Yes, in some public tenders",Expert Consultations,09_Market_Competition!B22759:E22759
+Taiwan,MCP_264,"Yes, except for low value contracts",Expert Consultations,09_Market_Competition!B22775:E22775
+Taiwan,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B22780:E22780
+Taiwan,MCP_29_1,67,Expert Consultations,09_Market_Competition!B22789:E22789
+Taiwan,MCP_29_2,40,Expert Consultations,09_Market_Competition!B22790:E22790
+Taiwan,MCP_29_3,Calculate median; 50% Skip Logic: 21,Expert Consultations,09_Market_Competition!B22791:E22791
+Taiwan,MCP_29_4,Calculate median; 50% Skip Logic: 5,Expert Consultations,09_Market_Competition!B22792:E22792
+Taiwan,MCP_29_5,Calculate median; 50% Skip Logic: 46,Expert Consultations,09_Market_Competition!B22793:E22793
+Taiwan,MCP_32_1_5,Yes,Expert Consultations,09_Market_Competition!B22808:E22808
+Taiwan,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B22810:E22810
+Taiwan,MCP_33_3_R2,No,Expert Consultations,09_Market_Competition!B22812:E22812
+Taiwan,MCP_34_1,Yes,Expert Consultations,09_Market_Competition!B22814:E22814
+Taiwan,MCP_34_2,No,Expert Consultations,09_Market_Competition!B22815:E22815
+Taiwan,MCP_34_3,Yes,Expert Consultations,09_Market_Competition!B22816:E22816
+Taiwan,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B22828:E22828
+Taiwan,MCP_35_1,"Multiple modes: No, only for some procurement procedures. Yes, applicable to all procurement procedures. ",Expert Consultations,09_Market_Competition!B22829:E22829
+Taiwan,MCP_36,No,Expert Consultations,09_Market_Competition!B22833:E22833
+Taiwan,MCP_37,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B22836:E22836
+Taiwan,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B22841:E22841
+Taiwan,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B22849:E22849
+Türkiye,MCP_4,Yes,Expert Consultations,09_Market_Competition!B24846:E24846
+Türkiye,MCP_7_10_r_a10,"Yes, but hard copy documents must be requested",Expert Consultations,09_Market_Competition!B24853:E24853
+Türkiye,MCP_7_10_r_a11,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B24854:E24854
+Türkiye,MCP_7_10_r_a12,No,Expert Consultations,09_Market_Competition!B24855:E24855
+Türkiye,MCP_7_10_r_a13,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B24856:E24856
+Türkiye,MCP_7_10_r_a20,No,Expert Consultations,09_Market_Competition!B24864:E24864
+Türkiye,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B24865:E24865
+Türkiye,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B24871:E24871
+Türkiye,MCP_20,Yes,Expert Consultations,09_Market_Competition!B24913:E24913
+Türkiye,MCP_22,"Yes, in some public tenders",Expert Consultations,09_Market_Competition!B24919:E24919
+Türkiye,MCP_264,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B24935:E24935
+Türkiye,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B24940:E24940
+Türkiye,MCP_29_1,50,Expert Consultations,09_Market_Competition!B24949:E24949
+Türkiye,MCP_29_2,Calculate median; 50% Skip Logic: 45,Expert Consultations,09_Market_Competition!B24950:E24950
+Türkiye,MCP_29_3,Calculate median; 50% Skip Logic: 85,Expert Consultations,09_Market_Competition!B24951:E24951
+Türkiye,MCP_29_4,10,Expert Consultations,09_Market_Competition!B24952:E24952
+Türkiye,MCP_29_5,Skip Logic,Expert Consultations,09_Market_Competition!B24953:E24953
+Türkiye,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B24968:E24968
+Türkiye,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B24970:E24970
+Türkiye,MCP_33_3_R2,No,Expert Consultations,09_Market_Competition!B24972:E24972
+Türkiye,MCP_34_1,No,Expert Consultations,09_Market_Competition!B24974:E24974
+Türkiye,MCP_34_2,No,Expert Consultations,09_Market_Competition!B24975:E24975
+Türkiye,MCP_34_3,No,Expert Consultations,09_Market_Competition!B24976:E24976
+Türkiye,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B24988:E24988
+Türkiye,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B24989:E24989
+Türkiye,MCP_36,"Yes, for all public procurement procedures",Expert Consultations,09_Market_Competition!B24993:E24993
+Türkiye,MCP_37,No,Expert Consultations,09_Market_Competition!B24996:E24996
+Türkiye,MCP_40,"Yes, specialized",Expert Consultations,09_Market_Competition!B25001:E25001
+Türkiye,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B25009:E25009
+United Kingdom,MCP_4,Yes,Expert Consultations,09_Market_Competition!B25386:E25386
+United Kingdom,MCP_7_10_r_a10,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B25393:E25393
+United Kingdom,MCP_7_10_r_a11,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B25394:E25394
+United Kingdom,MCP_7_10_r_a12,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B25395:E25395
+United Kingdom,MCP_7_10_r_a13,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B25396:E25396
+United Kingdom,MCP_7_10_r_a20,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B25404:E25404
+United Kingdom,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B25405:E25405
+United Kingdom,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B25411:E25411
+United Kingdom,MCP_20,Yes,Expert Consultations,09_Market_Competition!B25453:E25453
+United Kingdom,MCP_22,No,Expert Consultations,09_Market_Competition!B25459:E25459
+United Kingdom,MCP_264,"Yes, except for low value contracts",Expert Consultations,09_Market_Competition!B25475:E25475
+United Kingdom,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B25480:E25480
+United Kingdom,MCP_29_1,120,Expert Consultations,09_Market_Competition!B25489:E25489
+United Kingdom,MCP_29_2,460,Expert Consultations,09_Market_Competition!B25490:E25490
+United Kingdom,MCP_29_3,Calculate median; 50% Skip Logic: 90,Expert Consultations,09_Market_Competition!B25491:E25491
+United Kingdom,MCP_29_4,140,Expert Consultations,09_Market_Competition!B25492:E25492
+United Kingdom,MCP_29_5,542.5,Expert Consultations,09_Market_Competition!B25493:E25493
+United Kingdom,MCP_32_1_5,Yes,Expert Consultations,09_Market_Competition!B25508:E25508
+United Kingdom,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B25510:E25510
+United Kingdom,MCP_33_3_R2,"Yes, but only for some types of procurements",Expert Consultations,09_Market_Competition!B25512:E25512
+United Kingdom,MCP_34_1,No,Expert Consultations,09_Market_Competition!B25514:E25514
+United Kingdom,MCP_34_2,No,Expert Consultations,09_Market_Competition!B25515:E25515
+United Kingdom,MCP_34_3,No,Expert Consultations,09_Market_Competition!B25516:E25516
+United Kingdom,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B25528:E25528
+United Kingdom,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B25529:E25529
+United Kingdom,MCP_36,"Yes, for all public procurement procedures",Expert Consultations,09_Market_Competition!B25533:E25533
+United Kingdom,MCP_37,"Yes, but only in some contracts",Expert Consultations,09_Market_Competition!B25536:E25536
+United Kingdom,MCP_40,"Multiple modes: No. Yes, independent. Yes, specialized and independent. ",Expert Consultations,09_Market_Competition!B25541:E25541
+United Kingdom,MCP_42,No,Expert Consultations,09_Market_Competition!B25549:E25549
+United States,MCP_4,Yes,Expert Consultations,09_Market_Competition!B25656:E25656
+United States,MCP_7_10_r_a10,No,Expert Consultations,09_Market_Competition!B25663:E25663
+United States,MCP_7_10_r_a11,"Multiple modes: No. Yes, but hard copy documents must be submitted. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B25664:E25664
+United States,MCP_7_10_r_a12,No,Expert Consultations,09_Market_Competition!B25665:E25665
+United States,MCP_7_10_r_a13,No,Expert Consultations,09_Market_Competition!B25666:E25666
+United States,MCP_7_10_r_a20,No,Expert Consultations,09_Market_Competition!B25674:E25674
+United States,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B25675:E25675
+United States,MCP_7_10_r_a6,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B25681:E25681
+United States,MCP_20,No,Expert Consultations,09_Market_Competition!B25723:E25723
+United States,MCP_22,"Yes, in some public tenders",Expert Consultations,09_Market_Competition!B25729:E25729
+United States,MCP_264,"Yes, except for low value contracts",Expert Consultations,09_Market_Competition!B25745:E25745
+United States,MCP_27,"Yes, but only in some procurement procedures",Expert Consultations,09_Market_Competition!B25750:E25750
+United States,MCP_29_1,339,Expert Consultations,09_Market_Competition!B25759:E25759
+United States,MCP_29_2,270,Expert Consultations,09_Market_Competition!B25760:E25760
+United States,MCP_29_3,Calculate median; 50% Skip Logic: 30,Expert Consultations,09_Market_Competition!B25761:E25761
+United States,MCP_29_4,Calculate median; 50% Skip Logic: 60,Expert Consultations,09_Market_Competition!B25762:E25762
+United States,MCP_29_5,Calculate median; 50% Skip Logic: 180,Expert Consultations,09_Market_Competition!B25763:E25763
+United States,MCP_32_1_5,No,Expert Consultations,09_Market_Competition!B25778:E25778
+United States,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B25780:E25780
+United States,MCP_33_3_R2,"Yes, but only for some types of procurements",Expert Consultations,09_Market_Competition!B25782:E25782
+United States,MCP_34_1,Yes,Expert Consultations,09_Market_Competition!B25784:E25784
+United States,MCP_34_2,Yes,Expert Consultations,09_Market_Competition!B25785:E25785
+United States,MCP_34_3,Yes,Expert Consultations,09_Market_Competition!B25786:E25786
+United States,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B25798:E25798
+United States,MCP_35_1,"No, only for some procurement procedures",Expert Consultations,09_Market_Competition!B25799:E25799
+United States,MCP_36,No,Expert Consultations,09_Market_Competition!B25803:E25803
+United States,MCP_37,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B25806:E25806
+United States,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B25811:E25811
+United States,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B25819:E25819
+Vietnam,MCP_4,Yes,Expert Consultations,09_Market_Competition!B26736:E26736
+Vietnam,MCP_7_10_r_a10,No,Expert Consultations,09_Market_Competition!B26743:E26743
+Vietnam,MCP_7_10_r_a11,No,Expert Consultations,09_Market_Competition!B26744:E26744
+Vietnam,MCP_7_10_r_a12,"Yes, but hard copy documents must be submitted",Expert Consultations,09_Market_Competition!B26745:E26745
+Vietnam,MCP_7_10_r_a13,"Yes, fully digitized",Expert Consultations,09_Market_Competition!B26746:E26746
+Vietnam,MCP_7_10_r_a20,No,Expert Consultations,09_Market_Competition!B26754:E26754
+Vietnam,MCP_7_10_r_a21,No,Expert Consultations,09_Market_Competition!B26755:E26755
+Vietnam,MCP_7_10_r_a6,"Multiple modes: No. Yes, but hard copy documents must be submitted. Yes, fully digitized. ",Expert Consultations,09_Market_Competition!B26761:E26761
+Vietnam,MCP_20,No,Expert Consultations,09_Market_Competition!B26803:E26803
+Vietnam,MCP_22,"Yes, in some public tenders",Expert Consultations,09_Market_Competition!B26809:E26809
+Vietnam,MCP_264,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B26825:E26825
+Vietnam,MCP_27,"Yes, for all procurement procedures",Expert Consultations,09_Market_Competition!B26830:E26830
+Vietnam,MCP_29_1,135,Expert Consultations,09_Market_Competition!B26839:E26839
+Vietnam,MCP_29_2,135,Expert Consultations,09_Market_Competition!B26840:E26840
+Vietnam,MCP_29_3,60,Expert Consultations,09_Market_Competition!B26841:E26841
+Vietnam,MCP_29_4,Skip Logic,Expert Consultations,09_Market_Competition!B26842:E26842
+Vietnam,MCP_29_5,Skip Logic,Expert Consultations,09_Market_Competition!B26843:E26843
+Vietnam,MCP_32_1_5,Yes,Expert Consultations,09_Market_Competition!B26858:E26858
+Vietnam,MCP_33_1,Yes,Expert Consultations,09_Market_Competition!B26860:E26860
+Vietnam,MCP_33_3_R2,No,Expert Consultations,09_Market_Competition!B26862:E26862
+Vietnam,MCP_34_1,Yes,Expert Consultations,09_Market_Competition!B26864:E26864
+Vietnam,MCP_34_2,No,Expert Consultations,09_Market_Competition!B26865:E26865
+Vietnam,MCP_34_3,Yes,Expert Consultations,09_Market_Competition!B26866:E26866
+Vietnam,MCP_35,"Yes, to all bidders",Expert Consultations,09_Market_Competition!B26878:E26878
+Vietnam,MCP_35_1,"Yes, applicable to all procurement procedures",Expert Consultations,09_Market_Competition!B26879:E26879
+Vietnam,MCP_36,No,Expert Consultations,09_Market_Competition!B26883:E26883
+Vietnam,MCP_37,"Yes, for all contracts",Expert Consultations,09_Market_Competition!B26886:E26886
+Vietnam,MCP_40,"Yes, specialized and independent",Expert Consultations,09_Market_Competition!B26891:E26891
+Vietnam,MCP_42,"Yes, for all types of challenges",Expert Consultations,09_Market_Competition!B26899:E26899
