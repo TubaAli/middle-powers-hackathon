@@ -78,3 +78,11 @@ Source: organizer message pasted by Grisha on 31 October 2026. The year below fo
 - **Honest limits:**
   - World shares only, with no bilateral trade flows, so this shows exposure, not loss.
   - HHI is a lower bound, because "Others" is treated as many small suppliers.
+
+## Oct 31: timeline view added
+- **New "Timeline" tab:**
+  - When each jurisdiction's laws are open to change (Oct 2026 – Jul 2027), with your bloc's lanes highlighted.
+  - Rough dates (Japan, Australia) are drawn as hollow markers. You can filter by condition.
+- **Matrix:** each condition × jurisdiction, with the bloc's first chance to act.
+  - For the chip trio (NL+JP+KR): Japan's review (31 Oct, rough) for conditions 1–3, and EuroHPC Lot 2 (3 Dec) for conditions 4–6.
+- **Caveat:** dates are openings, not delivery plans. Only the EuroHPC dates are independently checked. Singapore sits under "Others" in the supply data, so it can't be picked as a bloc member yet.
