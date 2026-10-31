@@ -9,78 +9,320 @@
    "minerals": "Minerals",
    "capital": "Capital",
    "market": "Market access"
+  },
+  "icons": {
+   "food": "🌾",
+   "medicine": "💊",
+   "energy": "⚡",
+   "minerals": "⛏️",
+   "capital": "💰",
+   "market": "🛒"
   }
  },
  "planets": [
-  { "k": "US",   "name": "Titanis",  "title": "High Regent of Titanis",   "super": true,  "color": "#5b8fd6", "orbit": 1, "angle": 200,
-    "flavor": "A gas giant that designs nearly every thinking-engine in the system and hosts most of them.",
-    "powers": { "food": 3, "medicine": 3, "energy": 3, "minerals": 1, "capital": 3, "market": 3 } },
-  { "k": "CN",   "name": "Magnor",   "title": "Grand Steward of Magnor",  "super": true,  "color": "#d9606f", "orbit": 1, "angle": 20,
-    "flavor": "A heavy world of refineries and magnet forges; most of the system's rare metals pass through it.",
-    "powers": { "food": 1, "medicine": 2, "energy": 1, "minerals": 3, "capital": 3, "market": 3 } },
-  { "k": "JP",   "name": "Kaigen",   "title": "Sovereign of Kaigen",      "super": false, "color": "#e8c46a", "orbit": 2, "angle": 300,
-    "flavor": "An island world whose chemists make the films, wafers and resists every chip forge needs.",
-    "powers": { "food": 0, "medicine": 2, "energy": 0, "minerals": 0, "capital": 3, "market": 2 } },
-  { "k": "TW",   "name": "Fabrion", "title": "Warden of Fabrion",        "super": false, "color": "#4fc3a1", "orbit": 2, "angle": 350,
-    "flavor": "A small world with the system's finest chip forges. Everyone needs it; few can protect it.",
-    "powers": { "food": 0, "medicine": 0, "energy": 0, "minerals": 0, "capital": 2, "market": 1 } },
-  { "k": "KR",   "name": "Mnemos",   "title": "Sovereign of Mnemos",      "super": false, "color": "#9b7fe0", "orbit": 2, "angle": 40,
-    "flavor": "The memory world: four in five high-bandwidth memory stacks are grown here.",
-    "powers": { "food": 0, "medicine": 1, "energy": 0, "minerals": 0, "capital": 2, "market": 1 } },
-  { "k": "NL",   "name": "Lithos",   "title": "Steward of Lithos",        "super": false, "color": "#f08a3c", "orbit": 2, "angle": 100,
-    "flavor": "A low, flat world that alone builds the light-machines that print the finest chips.",
-    "powers": { "food": 3, "medicine": 2, "energy": 1, "minerals": 0, "capital": 2, "market": 1 } },
-  { "k": "DE",   "name": "Ferrum",   "title": "Chancellor of Ferrum",     "super": false, "color": "#9aa4b2", "orbit": 2, "angle": 150,
-    "flavor": "A machine-builder's world: grid equipment, precision tools and a large common market.",
-    "powers": { "food": 1, "medicine": 3, "energy": 0, "minerals": 0, "capital": 2, "market": 3 } },
-  { "k": "UK",   "name": "Albion",   "title": "Crown of Albion",          "super": false, "color": "#6fa8dc", "orbit": 2, "angle": 220,
-    "flavor": "A world of banks, labs and safety testers, with a strong voice and few factories.",
-    "powers": { "food": 0, "medicine": 2, "energy": 1, "minerals": 0, "capital": 3, "market": 2 } },
-  { "k": "GULF", "name": "Solara",   "title": "Emirs of Solara",          "super": false, "color": "#f2d16b", "orbit": 2, "angle": 260,
-    "flavor": "Desert worlds rich in energy and capital, buying their way into thinking-engines.",
-    "powers": { "food": 0, "medicine": 0, "energy": 3, "minerals": 1, "capital": 3, "market": 1 } },
-  { "k": "AUCA", "name": "Boreal",   "title": "Twin Sovereigns of Boreal", "super": false, "color": "#7fbf7f", "orbit": 3, "angle": 70,
-    "flavor": "Twin wide worlds of grain, gas and ore, far from the chip forges.",
-    "powers": { "food": 3, "medicine": 1, "energy": 3, "minerals": 3, "capital": 2, "market": 1 } },
-  { "k": "PROD", "name": "The Ore Belt", "title": "Council of the Ore Belt", "super": false, "color": "#b08968", "orbit": 3, "angle": 230,
-    "flavor": "A belt of mining worlds whose cobalt, nickel and copper feed every forge, though others own many of the mines.",
-    "powers": { "food": 2, "medicine": 0, "energy": 1, "minerals": 3, "capital": 0, "market": 2 } }
+  {
+   "k": "US",
+   "name": "Titanis",
+   "title": "High Regent of Titanis",
+   "super": true,
+   "color": "#5b8fd6",
+   "orbit": 1,
+   "angle": 200,
+   "flavor": "A gas giant that designs nearly every thinking-engine in the system and hosts most of them.",
+   "powers": {
+    "food": 3,
+    "medicine": 3,
+    "energy": 3,
+    "minerals": 1,
+    "capital": 3,
+    "market": 3
+   }
+  },
+  {
+   "k": "CN",
+   "name": "Magnor",
+   "title": "Grand Steward of Magnor",
+   "super": true,
+   "color": "#d9606f",
+   "orbit": 1,
+   "angle": 20,
+   "flavor": "A heavy world of refineries and magnet forges; most of the system's rare metals pass through it.",
+   "powers": {
+    "food": 1,
+    "medicine": 2,
+    "energy": 1,
+    "minerals": 3,
+    "capital": 3,
+    "market": 3
+   }
+  },
+  {
+   "k": "JP",
+   "name": "Kaigen",
+   "title": "Sovereign of Kaigen",
+   "super": false,
+   "color": "#e8c46a",
+   "orbit": 2,
+   "angle": 300,
+   "flavor": "An island world whose chemists make the films, wafers and resists every chip forge needs.",
+   "powers": {
+    "food": 0,
+    "medicine": 2,
+    "energy": 0,
+    "minerals": 0,
+    "capital": 3,
+    "market": 2
+   }
+  },
+  {
+   "k": "TW",
+   "name": "Fabrion",
+   "title": "Warden of Fabrion",
+   "super": false,
+   "color": "#4fc3a1",
+   "orbit": 2,
+   "angle": 350,
+   "flavor": "A small world with the system's finest chip forges. Everyone needs it; few can protect it.",
+   "powers": {
+    "food": 0,
+    "medicine": 0,
+    "energy": 0,
+    "minerals": 0,
+    "capital": 2,
+    "market": 1
+   }
+  },
+  {
+   "k": "KR",
+   "name": "Mnemos",
+   "title": "Sovereign of Mnemos",
+   "super": false,
+   "color": "#9b7fe0",
+   "orbit": 2,
+   "angle": 40,
+   "flavor": "The memory world: four in five high-bandwidth memory stacks are grown here.",
+   "powers": {
+    "food": 0,
+    "medicine": 1,
+    "energy": 0,
+    "minerals": 0,
+    "capital": 2,
+    "market": 1
+   }
+  },
+  {
+   "k": "NL",
+   "name": "Lithos",
+   "title": "Steward of Lithos",
+   "super": false,
+   "color": "#f08a3c",
+   "orbit": 2,
+   "angle": 100,
+   "flavor": "A low, flat world that alone builds the light-machines that print the finest chips.",
+   "powers": {
+    "food": 3,
+    "medicine": 2,
+    "energy": 1,
+    "minerals": 0,
+    "capital": 2,
+    "market": 1
+   }
+  },
+  {
+   "k": "DE",
+   "name": "Ferrum",
+   "title": "Chancellor of Ferrum",
+   "super": false,
+   "color": "#9aa4b2",
+   "orbit": 2,
+   "angle": 150,
+   "flavor": "A machine-builder's world: grid equipment, precision tools and a large common market.",
+   "powers": {
+    "food": 1,
+    "medicine": 3,
+    "energy": 0,
+    "minerals": 0,
+    "capital": 2,
+    "market": 3
+   }
+  },
+  {
+   "k": "UK",
+   "name": "Albion",
+   "title": "Crown of Albion",
+   "super": false,
+   "color": "#6fa8dc",
+   "orbit": 2,
+   "angle": 220,
+   "flavor": "A world of banks, labs and safety testers, with a strong voice and few factories.",
+   "powers": {
+    "food": 0,
+    "medicine": 2,
+    "energy": 1,
+    "minerals": 0,
+    "capital": 3,
+    "market": 2
+   }
+  },
+  {
+   "k": "GULF",
+   "name": "Solara",
+   "title": "Emirs of Solara",
+   "super": false,
+   "color": "#f2d16b",
+   "orbit": 2,
+   "angle": 260,
+   "flavor": "Desert worlds rich in energy and capital, buying their way into thinking-engines.",
+   "powers": {
+    "food": 0,
+    "medicine": 0,
+    "energy": 3,
+    "minerals": 1,
+    "capital": 3,
+    "market": 1
+   }
+  },
+  {
+   "k": "AUCA",
+   "name": "Boreal",
+   "title": "Twin Sovereigns of Boreal",
+   "super": false,
+   "color": "#7fbf7f",
+   "orbit": 3,
+   "angle": 70,
+   "flavor": "Twin wide worlds of grain, gas and ore, far from the chip forges.",
+   "powers": {
+    "food": 3,
+    "medicine": 1,
+    "energy": 3,
+    "minerals": 3,
+    "capital": 2,
+    "market": 1
+   }
+  },
+  {
+   "k": "PROD",
+   "name": "The Ore Belt",
+   "title": "Council of the Ore Belt",
+   "super": false,
+   "color": "#b08968",
+   "orbit": 3,
+   "angle": 230,
+   "flavor": "A belt of mining worlds whose cobalt, nickel and copper feed every forge, though others own many of the mines.",
+   "powers": {
+    "food": 2,
+    "medicine": 0,
+    "energy": 1,
+    "minerals": 3,
+    "capital": 0,
+    "market": 2
+   }
+  }
  ],
  "goals": [
-  { "id": "test", "cond": 1, "name": "Test frontier minds before release",
-    "risk": "Dangerous capabilities reaching the public before anyone outside the developer has checked them.",
-    "route": "Coalition members require pre-release access for their safety institutes as a condition of hosting or of buying chip inputs.",
-    "consent": "Frontier developers; each member's legislature or regulator; safety institutes with capacity to test.",
-    "gap": "No evidence yet that a developer would accept testing rather than move hosting elsewhere." },
-  { "id": "incident", "cond": 2, "name": "One alarm for serious incidents",
-    "risk": "Serious AI incidents seen in one country but not shared, so others repeat the failure.",
-    "route": "A shared incident definition, with reports sent to every member.",
-    "consent": "Regulators in each member; operators running systems on members' territory.",
-    "gap": "Korea, Singapore and Australia already define incidents differently; harmonising them is untested." },
-  { "id": "weights", "cond": 3, "name": "Guard the model weights",
-    "risk": "Model weights stolen from a host's data centre and misused.",
-    "route": "A common security standard for weights trained or stored on members' territory.",
-    "consent": "Data-centre operators and developers storing weights locally.",
-    "gap": "Covers only weights stored on members' soil; little frontier training happens there today." },
-  { "id": "continuity", "cond": 4, "name": "Keep essential services running in a crisis",
-    "risk": "Governments and hospitals losing AI access overnight if a foreign provider withdraws.",
-    "route": "Locally hosted models under contracts that survive withdrawal.",
-    "consent": "Model providers; hosting operators; government buyers.",
-    "gap": "A frozen copy ages; whether providers sign survivable contracts is unknown." },
-  { "id": "chips", "cond": 5, "name": "Know where the advanced chips are",
-    "risk": "Advanced chips diverted to uses agreements forbid, with no way to check.",
-    "route": "Export licences for chips and key inputs carry a location-reporting condition.",
-    "consent": "Export-control authorities in each member; chip and tool makers.",
-    "gap": "Location reporting helps verification but is not sufficient alone; enforcement after export is unproven." },
-  { "id": "offswitch", "cond": 6, "name": "A lawful off-switch",
-    "risk": "A dangerous workload running on a member's soil that no one can lawfully stop.",
-    "route": "Operators can isolate or stop a workload on a lawful order, with notice and review.",
-    "consent": "Host courts and regulators; operators; tenants.",
-    "gap": "Works only while computing is hosted locally; the host's leverage shrinks if computing moves away." }
+  {
+   "id": "test",
+   "cond": 1,
+   "name": "Test frontier minds before release",
+   "risk": "Dangerous capabilities reaching the public before anyone outside the developer has checked them.",
+   "route": "Coalition members require pre-release access for their safety institutes as a condition of hosting or of buying chip inputs.",
+   "consent": "Frontier developers; each member's legislature or regulator; safety institutes with capacity to test.",
+   "gap": "No evidence yet that a developer would accept testing rather than move hosting elsewhere.",
+   "short": "Pre-release tests",
+   "risk_s": "Unchecked dangerous models",
+   "route_s": "Testing as a condition of hosting or chip inputs",
+   "consent_s": "Labs, regulators, safety institutes",
+   "gap_s": "Labs may move hosting instead"
+  },
+  {
+   "id": "incident",
+   "cond": 2,
+   "name": "One alarm for serious incidents",
+   "risk": "Serious AI incidents seen in one country but not shared, so others repeat the failure.",
+   "route": "A shared incident definition, with reports sent to every member.",
+   "consent": "Regulators in each member; operators running systems on members' territory.",
+   "gap": "Korea, Singapore and Australia already define incidents differently; harmonising them is untested.",
+   "short": "Incident alarm",
+   "risk_s": "Failures not shared",
+   "route_s": "One incident definition, shared reports",
+   "consent_s": "Regulators, operators",
+   "gap_s": "Definitions differ across members today"
+  },
+  {
+   "id": "weights",
+   "cond": 3,
+   "name": "Guard the model weights",
+   "risk": "Model weights stolen from a host's data centre and misused.",
+   "route": "A common security standard for weights trained or stored on members' territory.",
+   "consent": "Data-centre operators and developers storing weights locally.",
+   "gap": "Covers only weights stored on members' soil; little frontier training happens there today.",
+   "short": "Guard weights",
+   "risk_s": "Stolen model weights",
+   "route_s": "Common security standard for local weights",
+   "consent_s": "Data-centre operators, developers",
+   "gap_s": "Little frontier training on members' soil"
+  },
+  {
+   "id": "continuity",
+   "cond": 4,
+   "name": "Keep essential services running in a crisis",
+   "risk": "Governments and hospitals losing AI access overnight if a foreign provider withdraws.",
+   "route": "Locally hosted models under contracts that survive withdrawal.",
+   "consent": "Model providers; hosting operators; government buyers.",
+   "gap": "A frozen copy ages; whether providers sign survivable contracts is unknown.",
+   "short": "Crisis access",
+   "risk_s": "Services lose AI overnight",
+   "route_s": "Local hosting with survivable contracts",
+   "consent_s": "Providers, hosts, government buyers",
+   "gap_s": "Frozen copies age; contracts untested"
+  },
+  {
+   "id": "chips",
+   "cond": 5,
+   "name": "Know where the advanced chips are",
+   "risk": "Advanced chips diverted to uses agreements forbid, with no way to check.",
+   "route": "Export licences for chips and key inputs carry a location-reporting condition.",
+   "consent": "Export-control authorities in each member; chip and tool makers.",
+   "gap": "Location reporting helps verification but is not sufficient alone; enforcement after export is unproven.",
+   "short": "Chip tracking",
+   "risk_s": "Diverted advanced chips",
+   "route_s": "Location reporting in export licences",
+   "consent_s": "Export authorities, chip makers",
+   "gap_s": "Enforcement after export unproven"
+  },
+  {
+   "id": "offswitch",
+   "cond": 6,
+   "name": "A lawful off-switch",
+   "risk": "A dangerous workload running on a member's soil that no one can lawfully stop.",
+   "route": "Operators can isolate or stop a workload on a lawful order, with notice and review.",
+   "consent": "Host courts and regulators; operators; tenants.",
+   "gap": "Works only while computing is hosted locally; the host's leverage shrinks if computing moves away.",
+   "short": "Off-switch",
+   "risk_s": "Unstoppable workloads",
+   "route_s": "Lawful stop orders with review",
+   "consent_s": "Courts, operators, tenants",
+   "gap_s": "Only works while compute is local"
+  }
  ],
  "eras": [
-  { "id": "software", "s": 0.15, "name": "Age of Code", "text": "Progress comes mostly from better ideas. Physical chokepoints matter less." },
-  { "id": "today", "s": 0.4, "name": "Present Age", "text": "Roughly today's mix, per gszep's model: about 40% of progress needs new physical things." },
-  { "id": "forge", "s": 0.88, "name": "Age of Forges", "text": "Progress depends on chips, power and robots. Physical chokepoints matter most." }
+  {
+   "id": "software",
+   "s": 0.15,
+   "name": "Age of Code",
+   "text": "Progress comes mostly from better ideas. Physical chokepoints matter less."
+  },
+  {
+   "id": "today",
+   "s": 0.4,
+   "name": "Present Age",
+   "text": "Roughly today's mix, per gszep's model: about 40% of progress needs new physical things."
+  },
+  {
+   "id": "forge",
+   "s": 0.88,
+   "name": "Age of Forges",
+   "text": "Progress depends on chips, power and robots. Physical chokepoints matter most."
+  }
  ]
 }

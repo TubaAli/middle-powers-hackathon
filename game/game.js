@@ -1,394 +1,424 @@
-// Orbit Accord: a negotiation game on top of the Leverage Map data.
+// Orbit Accord: fly your planet, meet the others, build an accord before the laws close.
 // AI shares and stage weights come unchanged from ../data/layers.json (gszep's model);
 // conditions and law windows from ../data/conditions.json and ../data/windows.json.
-// Non-AI powers and the acceptance formula are illustrative game mechanics, shown to the player.
+// Non-AI tokens, move effects and acceptance odds are illustrative game mechanics, shown to the player.
 
 const MONTHS = ['Nov 2026', 'Dec 2026', 'Jan 2027', 'Feb 2027', 'Mar 2027', 'Apr 2027', 'May 2027', 'Jun 2027'];
 const MONTH_KEYS = ['2026-11', '2026-12', '2027-01', '2027-02', '2027-03', '2027-04', '2027-05', '2027-06'];
 const GAME_END = '2027-06-30';
-const DECAY_FROM = 5; // April: short-lived chokepoints start to fade
-const DECAY = 0.8;
-const PRICE = { need: 12, other: 4, promise: 15 };
+const MONTH_SECONDS = 30;
+const DECAY_FROM = 5, DECAY = 0.8;           // April: short-lived chokepoints fade
+const CHOKE_BOOST = 1.25;                    // licensing your chokepoint makes it count more
+const BUILD = { power: 2, compute: 1 };      // share points a data-centre campus adds
+const PRICE = { need: 15, other: 5, promise: 15, tour: 10 };
 const MAX_GOALS = 3, GOAL_POINTS = 400;
+const ORBIT_R = { 1: 115, 2: 195, 3: 268 }, ORBIT_SPEED = { 1: 0.05, 2: 0.03, 3: 0.018 };
 
 let L, C, W, P;
 const g = {
-  me: null, goals: [], era: null,
-  turn: 0, coalition: [], tokens: {}, refused: {}, promised: {},
-  target: null, offer: {}, offerPromise: false,
-  log: [], penalty: 0, pendingEvent: null, eventsDone: {},
+  phase: 'setup', me: null, goals: [], era: null,
+  turn: 0, timeLeft: MONTH_SECONDS, coalition: [], tokens: {}, bonus: {}, tabled: [], choke: null,
+  shield: {}, tour: false, asked: new Set(), penalty: 0, near: null,
 };
+const keys = {};
+const world = { w: 0, h: 0, cx: 0, cy: 0, u: 1, dpr: 1, stars: [], ang: {}, pos: {}, player: { x: 0, y: 0, vx: 0, vy: 0, trail: [] }, aim: null };
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const planet = (k) => P.planets.find((p) => p.k === k);
 const country = (k) => L.countries.find((c) => c.k === k)?.name ?? k;
 const stage = (k) => L.stages.find((s) => s.k === k);
-const powerName = (k) => P._meta.powers[k];
 const goalOf = (id) => P.goals.find((x) => x.id === id);
 const condOf = (n) => C.conditions.find((c) => c.n === n);
+const icon = (p) => P._meta.icons[p];
+const pname = (p) => P._meta.powers[p];
+const pct = (x) => (x > 0 && x < 0.5 ? '<1%' : `${Math.round(x)}%`);
 
-// ---- Model (same maths as the Leverage Map) ----
-function weight(st, s) {
-  const [a, b, c] = st.w;
+// ---------- Model (same maths as the Leverage Map) ----------
+function weight(st) {
+  const [a, b, c] = st.w, s = g.era.s;
   return s <= 0.5 ? a + (b - a) * (s / 0.5) : b + (c - b) * ((s - 0.5) / 0.5);
 }
-const decays = (st) => g.turn >= DECAY_FROM && st.replicate_years[1] <= 3;
-function share(st, keys, withDecay = false) {
-  const v = keys.reduce((t, k) => t + (st.share[k] ?? 0), 0);
-  return withDecay && decays(st) ? v * DECAY : v;
+function share(st, keys2, live = true) {
+  let v = 0;
+  for (const k of keys2) {
+    let x = st.share[k] ?? 0;
+    if (live && k === g.me) { x += g.bonus[st.k] ?? 0; if (g.choke === st.k) x *= CHOKE_BOOST; }
+    v += x;
+  }
+  if (live && g.turn >= DECAY_FROM && st.replicate_years[1] <= 3) v *= DECAY;
+  return Math.min(100, v);
 }
-function weighted(keys, withDecay = false) {
+function weighted(keys2, live = true) {
   let n = 0, d = 0;
-  for (const st of L.stages) { const w = weight(st, g.era.s); d += w; n += w * share(st, keys, withDecay); }
+  for (const st of L.stages) { const w = weight(st); d += w; n += w * share(st, keys2, live); }
   return d ? n / d : 0;
 }
-
-function goalProgress(id, keys = g.coalition) {
+function goalProgress(id) {
   const cond = condOf(goalOf(id).cond);
   let best = { v: 0, stage: null };
   for (const lever of cond.levers) for (const k of lever.stages) {
-    const v = share(stage(k), keys, true);
+    const v = share(stage(k), g.coalition);
     if (v > best.v) best = { v, stage: k };
   }
-  const law = W.windows.filter((w) => w.who !== 'All participants' && w.date && w.date <= GAME_END &&
-    w.conditions.includes(cond.n) && w.countries.some((k) => keys.includes(k)));
+  const law = W.windows.filter((w, i) => w.who !== 'All participants' && w.date && w.date <= GAME_END && w.conditions.includes(cond.n) &&
+    (w.countries.some((k) => k !== g.me && g.coalition.includes(k)) || g.tabled.includes(i)));
   const raw = Math.min(1, best.v / C._meta.thresholds.strong);
   return { ...best, raw, law, achieved: law.length ? raw : raw * 0.75 };
-}
-
-// ---- Negotiation odds (illustrative; every term is shown to the player) ----
-function promiseStage(target) {
-  return L.stages
-    .filter((st) => (st.share[g.me] ?? 0) >= 25 && (st.share[target] ?? 0) < 10)
-    .sort((a, b) => (b.share[g.me] ?? 0) - (a.share[g.me] ?? 0))[0];
-}
-const needs = (k) => Object.entries(planet(k).powers).filter(([, v]) => v <= 1).map(([p]) => p);
-
-function odds(target) {
-  const tp = planet(target), conds = g.goals.map((id) => goalOf(id).cond);
-  const terms = [];
-  terms.push([tp.super ? 12 : 45, tp.super ? 'A superpower: hard to persuade' : 'A middle power: open to coalitions']);
-  const need = needs(target);
-  for (const [p, n] of Object.entries(g.offer)) if (n > 0) {
-    const each = need.includes(p) ? PRICE.need : PRICE.other;
-    terms.push([each * n, `${n} × ${powerName(p)} (${need.includes(p) ? 'they need it' : 'nice to have'})`]);
-  }
-  const ps = promiseStage(target);
-  if (g.offerPromise && ps) terms.push([PRICE.promise, `Promise of ${ps.name} supply (you hold ${Math.round(ps.share[g.me])}%, they hold ${Math.round(ps.share[target] ?? 0)}%)`]);
-  const lev = Math.round(weighted([g.me]) / 2);
-  if (lev) terms.push([lev, `Your weight: ${Math.round(weighted([g.me]))}% of the system's AI depends on you`]);
-  if (W.windows.some((w) => w.conditions.some((n) => conds.includes(n)) && w.countries.includes(target) && w.who !== 'All participants'))
-    terms.push([10, 'Shared interest: their own law is open on one of your goals']);
-  if (target === 'US' && conds.some((n) => [1, 5, 6].includes(n))) terms.push([-10, 'Titanis resists rules that bind its own engines']);
-  if (target === 'CN' && conds.some((n) => n !== 2)) terms.push([-20, 'Magnor distrusts a coalition it does not lead']);
-  if (g.refused[target]) terms.push([-10 * g.refused[target], `Already refused you ${g.refused[target]}×`]);
-  const total = Math.max(3, Math.min(92, terms.reduce((t, [v]) => t + v, 0)));
-  return { total, terms };
-}
-
-// ---- Setup ----
-function orb(p) { return `<span class="orb" style="background: radial-gradient(circle at 35% 35%, #fff8 0, ${p.color} 35%, #0008 100%)"></span>`; }
-
-function renderSetup() {
-  $('#pick-planet').innerHTML = P.planets.map((p) => `
-    <button class="pcard" data-k="${p.k}" aria-pressed="${g.me === p.k}">${orb(p)}
-      <div><b>${esc(p.name)}</b><span>${esc(country(p.k))}${p.super ? ' · superpower' : ''}</span></div></button>`).join('');
-  $('#pick-goal').innerHTML = P.goals.map((x) => `
-    <button class="gcard" data-id="${x.id}" aria-pressed="${g.goals.includes(x.id)}"><b>${esc(x.name)}</b>
-      <span>Condition ${x.cond}: ${esc(condOf(x.cond).name)}. Risk: ${esc(x.risk)}</span></button>`).join('');
-  $('#pick-era').innerHTML = P.eras.map((e) => `
-    <button class="gcard" data-era="${e.id}" aria-pressed="${g.era?.id === e.id}"><b>${esc(e.name)}</b><span>${esc(e.text)}</span></button>`).join('');
-  $('#start').disabled = !(g.me && g.goals.length);
-  $('#start-hint').textContent = g.me && g.goals.length ? `${planet(g.me).name} seeks: ${g.goals.map((id) => goalOf(id).name).join('; ')}.` : `Pick a planet and 1–${MAX_GOALS} goals. More goals, more points, harder accord.`;
-}
-
-function start() {
-  g.coalition = [g.me];
-  g.tokens = { ...planet(g.me).powers };
-  addLog(`${planet(g.me).title} takes the throne and sets ${g.goals.length > 1 ? 'goals' : 'a goal'}: ${g.goals.map((id) => goalOf(id).name).join('; ')}.`);
-  $('#setup').hidden = true; $('#play').hidden = false;
-  beginTurn();
-}
-
-// ---- Turns and events ----
-function beginTurn() {
-  if (g.turn >= MONTHS.length) return finish();
-  const mk = MONTH_KEYS[g.turn];
-  for (const w of W.windows.filter((w) => w.date?.startsWith(mk) || (g.turn === 0 && w.date && w.date < mk)))
-    addLog(`${w.who}: ${w.label}${w.approx ? ' (rough date)' : ''}.`);
-  if (g.turn === DECAY_FROM) addLog('Rivals finish new data centres and models. Leverage from short-lived chokepoints (≤3 years to replace) now counts 20% less.');
-  g.pendingEvent = makeEvent();
-  render();
-}
-
-function makeEvent() {
-  if (g.turn === 1 && !g.eventsDone.squeeze && !g.coalition.includes('CN')) {
-    const refining = share(stage('mine'), g.coalition);
-    if (refining < 10) return {
-      id: 'squeeze', title: 'Magnor squeezes refined metals',
-      text: `Magnor refines ~70% of the system's critical minerals and restricts exports. Your coalition refines only ${Math.round(refining)}%. Your forges stall unless you buy stockpiles.`,
-      choices: [{ label: 'Spend 1 token on stockpiles', cost: 1 }, { label: 'Absorb the shock (−40 points)', penalty: 40 }],
-    };
-    addLog(`Magnor squeezes refined metals, but your coalition refines ${Math.round(refining)}% and rides it out.`);
-  }
-  if (g.turn === 3 && !g.eventsDone.pressure && !g.coalition.includes('US')) {
-    const allies = g.coalition.filter((k) => k !== g.me && !planet(k).super);
-    if (allies.length) {
-      const ally = allies.sort((a, b) => (stage('design').share[a] ?? 0) - (stage('design').share[b] ?? 0) || weighted([a]) - weighted([b]))[0];
-      const want = needs(ally).find((p) => (g.tokens[p] ?? 0) > 0);
-      return {
-        id: 'pressure', title: 'Titanis leans on your allies',
-        text: `Titanis designs ~95% of AI chips and hosts most AI computing. It warns ${planet(ally).name} that joining your accord could cost it access. ${planet(ally).name} wavers.`,
-        choices: [
-          want ? { label: `Reassure them: give 1 ${powerName(want)}`, give: want, ally } : { label: 'You have nothing they need', disabled: true },
-          { label: `Let ${planet(ally).name} leave`, drop: ally },
-        ],
-      };
-    }
-  }
-  return null;
-}
-
-function resolveEvent(i) {
-  const ev = g.pendingEvent, ch = ev.choices[i];
-  if (ch.disabled) return;
-  if (ch.cost) { const p = Object.keys(g.tokens).filter((k) => g.tokens[k] > 0).sort((a, b) => g.tokens[b] - g.tokens[a])[0]; if (p) { g.tokens[p]--; addLog(`You spend 1 ${powerName(p)} on stockpiles.`); } else { g.penalty += 40; addLog('No tokens left: you absorb the shock (−40).'); } }
-  if (ch.penalty) { g.penalty += ch.penalty; addLog(`You absorb the shock (−${ch.penalty}).`); }
-  if (ch.give) { g.tokens[ch.give]--; addLog(`You give ${planet(ch.ally).name} 1 ${powerName(ch.give)}; it stays in the accord.`); }
-  if (ch.drop) { g.coalition = g.coalition.filter((k) => k !== ch.drop); addLog(`${planet(ch.drop).name} leaves the accord under pressure from Titanis.`); }
-  g.eventsDone[ev.id] = true; g.pendingEvent = null;
-  render();
-}
-
-function propose() {
-  const t = g.target, o = odds(t);
-  for (const [p, n] of Object.entries(g.offer)) if (n > 0 && (g.tokens[p] ?? 0) < n) return;
-  const roll = Math.random() * 100;
-  const offerText = Object.entries(g.offer).filter(([, n]) => n > 0).map(([p, n]) => `${n} ${powerName(p)}`).concat(g.offerPromise ? ['a supply promise'] : []).join(', ') || 'nothing but words';
-  if (roll < o.total) {
-    for (const [p, n] of Object.entries(g.offer)) g.tokens[p] -= n;
-    if (g.offerPromise) g.promised[t] = true;
-    g.coalition.push(t);
-    addLog(`<b class="ok">${esc(planet(t).name)} joins</b> the accord (chance ${o.total}%; you offered ${esc(offerText)}).`, true);
-  } else {
-    g.refused[t] = (g.refused[t] ?? 0) + 1;
-    addLog(`<b class="no">${esc(planet(t).name)} refuses</b> (chance ${o.total}%). Your offer was ${esc(offerText)}; you keep it.`, true);
-  }
-  g.target = null; g.offer = {}; g.offerPromise = false;
-  nextTurn();
-}
-
-function nextTurn() { g.turn++; beginTurn(); }
-
-function addLog(html, raw = false) { g.log.unshift({ m: MONTHS[Math.min(g.turn, MONTHS.length - 1)], html: raw ? html : esc(html) }); }
-
-// ---- Rendering ----
-function renderHud() {
-  $('#hud').innerHTML = `
-    <span class="chip">Month <b>${MONTHS[Math.min(g.turn, 7)]}</b> <span class="months">${MONTHS.map((_, i) => `<i class="${i < g.turn ? 'done' : i === g.turn ? 'now' : ''}"></i>`).join('')}</span></span>
-    <span class="chip">Age: <b>${esc(g.era.name)}</b></span>
-    ${g.goals.map((id) => `<span class="chip">${esc(goalOf(id).name)} · <b>${Math.round(goalProgress(id).achieved * 100)}%</b></span>`).join('')}
-    <span class="chip">Accord holds <b>${Math.round(weighted(g.coalition, true))}%</b> of AI supply</span>`;
-}
-
-function renderSystem() {
-  const R = { 1: 115, 2: 195, 3: 268 }, cx = 300, cy = 300;
-  const pos = {};
-  for (const p of P.planets) {
-    const a = (p.angle * Math.PI) / 180;
-    pos[p.k] = { x: cx + R[p.orbit] * Math.cos(a), y: cy + R[p.orbit] * Math.sin(a), r: 9 + Math.sqrt(weighted([p.k])) * 3.4 };
-  }
-  const asteroids = Array.from({ length: 70 }, (_, i) => {
-    const a = (i / 70) * Math.PI * 2 + (i % 3) * 0.03, rr = R[3] + ((i * 37) % 17) - 8;
-    return `<circle class="asteroid" cx="${(cx + rr * Math.cos(a)).toFixed(1)}" cy="${(cy + rr * Math.sin(a)).toFixed(1)}" r="${1 + (i % 3) * 0.5}"/>`;
-  }).join('');
-  const me = pos[g.me];
-  const bonds = g.coalition.filter((k) => k !== g.me).map((k) => `<line class="bond" x1="${me.x}" y1="${me.y}" x2="${pos[k].x}" y2="${pos[k].y}"/>`).join('');
-  const planets = P.planets.map((p) => {
-    const q = pos[p.k], ally = g.coalition.includes(p.k), isMe = p.k === g.me;
-    return `<g class="planet" data-k="${p.k}" tabindex="${isMe ? -1 : 0}" role="button" aria-label="${esc(p.name)} (${esc(country(p.k))})${ally ? ', in your accord' : ''}">
-      <circle class="body" cx="${q.x}" cy="${q.y}" r="${q.r}" fill="url(#g-${p.k})"/>
-      ${ally ? `<circle class="ally-ring" cx="${q.x}" cy="${q.y}" r="${q.r + 5}"/>` : ''}
-      ${g.target === p.k ? `<circle class="sel-ring" cx="${q.x}" cy="${q.y}" r="${q.r + 9}"/>` : ''}
-      ${isMe ? `<text class="you" x="${q.x}" y="${q.y - q.r - 8}">YOU</text>` : ''}
-      <text class="label" x="${q.x}" y="${q.y + q.r + 14}">${esc(p.name)}</text>
-      <text class="label country" x="${q.x}" y="${q.y + q.r + 26}">${esc(country(p.k))}</text></g>`;
-  }).join('');
-  const grads = P.planets.map((p) => `<radialGradient id="g-${p.k}" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#ffffff" stop-opacity=".7"/><stop offset=".3" stop-color="${p.color}"/><stop offset="1" stop-color="#05060c"/></radialGradient>`).join('');
-  $('#system').innerHTML = `<defs><radialGradient id="sunGrad"><stop offset="0" stop-color="#fff6d5"/><stop offset=".4" stop-color="#f2c96b"/><stop offset="1" stop-color="#f2c96b" stop-opacity="0"/></radialGradient>${grads}</defs>
-    ${[1, 2, 3].map((o) => `<circle class="orbit" cx="${cx}" cy="${cy}" r="${R[o]}"/>`).join('')}
-    ${asteroids}
-    <circle class="sun" cx="${cx}" cy="${cy}" r="58"/>
-    <text class="label" x="${cx}" y="${cy - 2}" style="fill:#2a1f05;font-weight:700">The Frontier</text>
-    <text class="label" x="${cx}" y="${cy + 12}" style="fill:#2a1f05;font-size:10px">thinking-engines</text>
-    ${bonds}${planets}`;
-}
-
-function topStages(k, min = 10) {
-  return L.stages.filter((st) => (st.share[k] ?? 0) >= min).sort((a, b) => (b.share[k] ?? 0) - (a.share[k] ?? 0));
 }
 function dependsOn(k) {
   return L.stages.filter((st) => (st.share[k] ?? 0) < 10).map((st) => {
     const [top, v] = Object.entries(st.share).filter(([c]) => c !== 'OTH').sort((a, b) => b[1] - a[1])[0];
     return { st, top, v };
-  }).filter((d) => d.top !== k).sort((a, b) => weight(b.st, g.era.s) - weight(a.st, g.era.s)).slice(0, 4);
+  }).filter((d) => d.top !== k).sort((a, b) => weight(b.st) * b.v - weight(a.st) * a.v);
 }
-const tokenList = (obj, k) => Object.entries(obj).map(([p, n]) => `<span class="tok${k && needs(k).includes(p) ? ' need' : ''}">${powerName(p)} <b>${n}</b></span>`).join('');
+const needs = (k) => Object.entries(planet(k).powers).filter(([, v]) => v <= 1).map(([p]) => p);
+const richest = () => Object.keys(g.tokens).filter((p) => g.tokens[p] > 0).sort((a, b) => g.tokens[b] - g.tokens[a])[0];
+const goalConds = () => g.goals.map((id) => goalOf(id).cond);
 
-function renderMe() {
-  const p = planet(g.me);
-  const goalRows = g.goals.map((id) => {
-    const goal = goalOf(id), pr = goalProgress(id);
-    return `<div class="label-s">Goal: ${esc(goal.name)} · ${Math.round(pr.achieved * 100)}%</div>
-    <div class="progress"><i style="width:${Math.round(pr.achieved * 100)}%"></i></div>
-    <div class="muted small">Best lever: ${pr.stage ? `${esc(stage(pr.stage).name)} at ${Math.round(pr.v)}%` : 'none yet'} (50% needed).
-      ${pr.law.length ? `<span class="ok">Law vehicle: ${esc(pr.law[0].who)}, ${esc(pr.law[0].date)}.</span>` : '<span class="no">No member has a law window for this before July: capped at 75%.</span>'}</div>`;
-  }).join('');
-  $('#me').innerHTML = `
-    <div class="head">${orb(p)}<div><h3>${esc(p.name)} <span class="muted small">(${esc(country(p.k))})</span></h3><div class="title">You are the ${esc(p.title)}</div></div></div>
-    <div class="label-s">World AI that depends on you</div>
-    <div class="big">${Math.round(weighted([g.me]))}%</div>
-    <div class="muted small">Your weighted share of the AI supply chain in the ${esc(g.era.name)}.</div>
-    <div class="label-s">Your AI powers</div>
-    <div class="kv">${topStages(g.me).map((st) => `<span>${esc(st.name)}</span><span>${Math.round(st.share[g.me])}%</span>`).join('') || '<span class="muted">No stage above 10%</span><span></span>'}</div>
-    <div class="label-s">You depend on</div>
-    <div class="kv">${dependsOn(g.me).map((d) => `<span>${esc(d.st.name)}</span><span>${esc(planet(d.top)?.name ?? country(d.top))} ${Math.round(d.v)}%</span>`).join('')}</div>
-    <div class="label-s">Other powers to trade (illustrative)</div>
-    <div class="tokens">${tokenList(g.tokens)}</div>
-    ${goalRows}
-    <div class="actions"><button class="btn ghost" id="pass">Let the month pass</button></div>`;
+// ---------- Negotiation ----------
+function promiseStage(t) {
+  return L.stages.filter((st) => (st.share[g.me] ?? 0) >= 25 && (st.share[t] ?? 0) < 10)
+    .sort((a, b) => (b.share[g.me] ?? 0) - (a.share[g.me] ?? 0))[0];
+}
+function odds(t, offer) {
+  const tp = planet(t), conds = goalConds();
+  let v = tp.super ? 10 : 40;
+  if (offer.token) v += needs(t).includes(offer.token) ? PRICE.need : PRICE.other;
+  if (offer.promise) v += PRICE.promise;
+  v += Math.round(weighted([g.me]) / 2);
+  if (W.windows.some((w) => w.who !== 'All participants' && w.countries.includes(t) && w.conditions.some((n) => conds.includes(n)))) v += 10;
+  if (g.tour && !tp.super) v += PRICE.tour;
+  if (g.rally) v += 5;
+  if (t === 'US' && conds.some((n) => [1, 5, 6].includes(n))) v -= 10;
+  if (t === 'CN' && conds.some((n) => n !== 2)) v -= 15;
+  return Math.max(3, Math.min(92, v));
+}
+function deals(t) {
+  const out = [];
+  for (const p of needs(t).filter((p) => (g.tokens[p] ?? 0) > 0).slice(0, 2)) out.push({ token: p, label: `Offer ${icon(p)} ${pname(p)}`, sub: 'They need it' });
+  const ps = promiseStage(t);
+  if (ps) out.push({ promise: ps.k, label: `Promise ${ps.name}`, sub: `You hold ${Math.round(ps.share[g.me])}%, they hold ${Math.round(ps.share[t] ?? 0)}%` });
+  if (!out.length && richest()) { const p = richest(); out.push({ token: p, label: `Offer ${icon(p)} ${pname(p)}`, sub: 'Nice to have' }); }
+  out.push({ label: 'Just ask', sub: 'Words only' });
+  return out.slice(0, 3);
+}
+function doDeal(t, offer) {
+  const pct = odds(t, offer);
+  g.asked.add(t);
+  if (Math.random() * 100 < pct) {
+    if (offer.token) g.tokens[offer.token]--;
+    g.coalition.push(t);
+    toast(`${planet(t).name} joins your accord! (${pct}%)`, 'good');
+  } else toast(`${planet(t).name} declines (${pct}%). Try next month.`, 'bad');
+  closeOverlay();
 }
 
-function renderTarget() {
-  const el = $('#target');
-  if (!g.target || g.pendingEvent) { el.hidden = true; return; }
-  const t = g.target, p = planet(t), inAcc = g.coalition.includes(t);
-  el.hidden = false;
-  if (inAcc) {
-    el.innerHTML = `<div class="head">${orb(p)}<div><h3>${esc(p.name)}</h3><div class="title">${esc(p.title)} · ${esc(country(t))}</div></div></div>
-      <p class="ok">Already in your accord.</p><p class="muted small">${esc(p.flavor)}</p>`;
-    return;
+// ---------- Monthly council: 3–4 moves built from the data ----------
+function councilMoves() {
+  const moves = [], mk = MONTH_KEYS[g.turn], conds = goalConds();
+  const wi = W.windows.findIndex((w, i) => !g.tabled.includes(i) && w.countries.includes(g.me) && w.who !== 'All participants' &&
+    w.date && w.date.slice(0, 7) <= mk && w.date <= GAME_END && w.conditions.some((n) => conds.includes(n)));
+  if (wi >= 0) {
+    const w = W.windows[wi];
+    moves.push({ id: 'law', ic: '⚖️', t: 'Table a bill', s: `${w.who}'s window is open. Your goals get a law vehicle.`, run: () => { g.tabled.push(wi); toast(`Bill tabled in ${w.who}.`, 'good'); } });
   }
-  const o = odds(t), ps = promiseStage(t);
-  const tokenInputs = Object.entries(g.tokens).filter(([, n]) => n > 0).map(([pw, n]) => `
-    <label><input type="number" min="0" max="${n}" value="${g.offer[pw] ?? 0}" data-p="${pw}" style="width:52px"> ${powerName(pw)} <span class="muted small">(you have ${n}${needs(t).includes(pw) ? ', they need it' : ''})</span></label>`).join('');
-  el.innerHTML = `
-    <div class="head">${orb(p)}<div><h3>${esc(p.name)} <span class="muted small">(${esc(country(t))})</span></h3><div class="title">${esc(p.title)}</div></div></div>
-    <p class="muted small">${esc(p.flavor)}</p>
-    <div class="kv"><span>World AI that depends on them</span><span>${Math.round(weighted([t]))}%</span>
-      ${topStages(t, 15).slice(0, 3).map((st) => `<span>${esc(st.name)}</span><span>${Math.round(st.share[t])}%</span>`).join('')}</div>
-    <div class="label-s">They need</div>
-    <div class="tokens">${needs(t).map((pw) => `<span class="tok need">${powerName(pw)}</span>`).join('') || '<span class="muted small">Little; they are self-sufficient.</span>'}</div>
-    <div class="label-s">Your offer: join your accord</div>
-    <div class="offer">${tokenInputs || '<span class="muted small">You have no tokens left to offer.</span>'}
-      ${ps ? `<label><input type="checkbox" id="promise" ${g.offerPromise ? 'checked' : ''}> Promise them ${esc(ps.name)} supply <span class="muted small">(use your AI leverage)</span></label>` : '<span class="muted small">You hold no stage they lack, so no supply promise to make.</span>'}
-    </div>
-    <div class="odds"><span class="big">${o.total}%</span><span class="muted">chance they accept</span></div>
-    <ul class="why">${o.terms.map(([v, t2]) => `<li class="${v >= 0 ? 'plus' : 'minus'}">${v >= 0 ? '+' : ''}${v} ${esc(t2)}</li>`).join('')}</ul>
-    <div class="actions"><button class="btn primary" id="send">Send envoy (uses this month)</button><button class="btn ghost" id="cancel">Cancel</button></div>`;
+  const top = L.stages.filter((st) => (st.share[g.me] ?? 0) >= 25).sort((a, b) => b.share[g.me] - a.share[g.me])[0];
+  if (top && g.choke !== top.k) {
+    const dep = dependsOn(g.me).find((d) => d.top === 'US' || d.top === 'CN');
+    const rival = dep?.top ?? 'CN', risk = Math.round(weighted([rival], false));
+    moves.push({ id: 'choke', ic: '🔒', t: `License your ${top.name}`, s: `${Math.round(top.share[g.me])}% counts 25% more. ${planet(rival).name} may retaliate (${risk}%).`,
+      run: () => { g.choke = top.k; if (Math.random() * 100 < risk) { const p = richest(); if (p) g.tokens[p]--; toast(`${planet(rival).name} retaliates: −1 ${icon(p ?? 'capital')}`, 'bad'); } else toast(`${top.name} licences now carry your conditions.`, 'good'); } });
+  }
+  const dep = dependsOn(g.me)[0];
+  if (dep && !g.shield[dep.top] && richest()) {
+    moves.push({ id: 'stock', ic: '📦', t: `Stockpile ${dep.st.name}`, s: `${planet(dep.top)?.name ?? country(dep.top)} supplies ${Math.round(dep.v)}%. Costs 1 token; shields you from their squeeze.`,
+      run: () => { const p = richest(); g.tokens[p]--; g.shield[dep.top] = true; toast(`Stockpiled against ${planet(dep.top)?.name ?? country(dep.top)}.`, 'good'); } });
+  }
+  const cost = ['energy', 'capital'].filter((p) => (g.tokens[p] ?? 0) > 0);
+  if (cost.length === 2) {
+    moves.push({ id: 'build', ic: '🏗️', t: 'Approve a data-centre campus', s: `−1 ⚡ −1 💰. Hosting is the one stage you can grow fast (1–3 yrs): +${BUILD.power} pts power, +${BUILD.compute} compute.`,
+      run: () => { g.tokens.energy--; g.tokens.capital--; for (const [k, v] of Object.entries(BUILD)) g.bonus[k] = (g.bonus[k] ?? 0) + v; toast('Campus approved: your hosting share grows.', 'good'); } });
+  }
+  if ((g.tokens.market ?? 0) > 0) {
+    moves.push({ id: 'tour', ic: '🤝', t: 'Summit tour', s: '−1 🛒. Middle powers +10% to accept this month.', run: () => { g.tokens.market--; g.tour = true; toast('Summit tour: middle powers are listening.', 'good'); } });
+  }
+  if (dep) {
+    const [lo, hi] = dep.st.replicate_years;
+    moves.push({ id: 'seed', ic: '🔬', t: `Seed your own ${dep.st.name}`, s: `Free. +1 pt now; real replacement takes ${lo}–${hi} years.`,
+      run: () => { g.bonus[dep.st.k] = (g.bonus[dep.st.k] ?? 0) + 1; toast(`A small ${dep.st.name} programme starts.`, 'good'); } });
+  }
+  moves.push({ id: 'rally', ic: '📣', t: 'Rally support at home', s: 'Free. Every planet +5% to accept this month.', run: () => { g.rally = true; toast('Your people back the accord.', 'good'); } });
+  const best = Object.entries(planet(g.me).powers).sort((a, b) => b[1] - a[1])[0][0];
+  moves.push({ id: 'trade', ic: icon(best), t: 'Trade season', s: `+1 ${icon(best)} ${pname(best)} to bargain with.`, run: () => { g.tokens[best] = (g.tokens[best] ?? 0) + 1; toast(`+1 ${icon(best)}`, 'good'); } });
+  // Law first when open, then costly moves (more interesting), then free fallbacks; trade always last.
+  const law = moves.filter((m) => m.id === 'law');
+  const rest = moves.filter((m) => !['law', 'trade', 'seed', 'rally'].includes(m.id)).sort(() => Math.random() - 0.5)
+    .concat(moves.filter((m) => ['seed', 'rally'].includes(m.id)).sort(() => Math.random() - 0.5));
+  return [...law, ...rest].slice(0, 3).concat(moves.find((m) => m.id === 'trade'));
 }
 
-function renderEvent() {
-  const el = $('#event'), ev = g.pendingEvent;
-  el.hidden = !ev;
-  if (!ev) return;
-  el.innerHTML = `<h3>${esc(ev.title)}</h3><p>${esc(ev.text)}</p>
-    <div class="actions">${ev.choices.map((c, i) => `<button class="btn" data-choice="${i}" ${c.disabled ? 'disabled' : ''}>${esc(c.label)}</button>`).join('')}</div>`;
+function monthEvents() {
+  const lines = [];
+  if (g.turn === 1 && !g.coalition.includes('CN')) {
+    const refining = share(stage('mine'), g.coalition);
+    if (g.shield.CN) lines.push('⛏️ Magnor squeezes refined metals. Your stockpiles hold.');
+    else if (refining >= 10) lines.push(`⛏️ Magnor squeezes refined metals. Your accord refines ${Math.round(refining)}% and copes.`);
+    else { const p = richest(); if (p) g.tokens[p]--; else g.penalty += 40; lines.push(`⛏️ Magnor (70% of refining) squeezes metals: ${p ? `−1 ${icon(p)}` : '−40 points'}.`); }
+  }
+  if (g.turn === 3 && !g.coalition.includes('US')) {
+    const allies = g.coalition.filter((k) => k !== g.me && !planet(k).super).sort((a, b) => weighted([a], false) - weighted([b], false));
+    if (allies.length) {
+      const a = allies[0], give = needs(a).find((p) => (g.tokens[p] ?? 0) > 0);
+      if (g.shield.US) lines.push(`🛰️ Titanis leans on ${planet(a).name}; your stockpiles reassure it.`);
+      else if (give) { g.tokens[give]--; lines.push(`🛰️ Titanis leans on ${planet(a).name}. You keep it with ${icon(give)}.`); }
+      else { g.coalition = g.coalition.filter((k) => k !== a); lines.push(`🛰️ Titanis leans on ${planet(a).name}. It leaves your accord.`); }
+    }
+  }
+  if (g.turn === DECAY_FROM) lines.push('⏳ Rivals catch up: hosting, compute and models (≤3 yrs to replace) now count 20% less.');
+  for (const w of W.windows.filter((w) => w.date?.slice(0, 7) === MONTH_KEYS[g.turn] && (w.countries.some((k) => g.coalition.includes(k)) || !w.countries.length)))
+    lines.push(`📜 ${w.who}: ${w.label}.`);
+  return lines;
 }
 
-function renderLog() {
-  $('#log').innerHTML = `<div class="label-s" style="margin-top:0">Chronicle</div>` + g.log.map((l) => `<p><span class="m">${l.m}</span>${l.html}</p>`).join('');
+// ---------- Flow ----------
+function openCouncil() {
+  g.phase = 'council'; g.tour = false; g.rally = false; g.asked = new Set();
+  const ev = monthEvents(), moves = councilMoves();
+  g.moves = moves;
+  showOverlay(`
+    <h2>${MONTHS[g.turn]} · Council of ${esc(planet(g.me).name)}</h2>
+    <p class="lede">Choose one move this month. Then fly out and meet other planets.</p>
+    ${ev.map((l) => `<div class="event">${esc(l)}</div>`).join('')}
+    <div class="moves">${moves.map((m, i) => `<button class="move" data-move="${i}"><span class="ic">${m.ic}</span><div><span class="k">${i + 1}</span><b>${esc(m.t)}</b><span>${esc(m.s)}</span></div></button>`).join('')}</div>`);
+}
+function pickMove(i) {
+  const m = g.moves?.[i]; if (!m) return;
+  m.run(); closeOverlay(); g.phase = 'fly'; g.timeLeft = MONTH_SECONDS;
+}
+function endMonth() {
+  g.turn++;
+  if (g.turn >= MONTHS.length) return finish();
+  openCouncil();
+}
+function openTalk(t) {
+  g.phase = 'talk';
+  const p = planet(t), inAcc = g.coalition.includes(t), asked = g.asked.has(t);
+  const tops = L.stages.filter((st) => (st.share[t] ?? 0) >= 15).sort((a, b) => b.share[t] - a.share[t]).slice(0, 2);
+  const ds = inAcc || asked ? [] : deals(t);
+  g.deals = ds; g.talkTo = t;
+  showOverlay(`
+    <div class="talk-head"><span class="orb" style="${orbBg(p)}"></span><div><h2>${esc(p.name)}</h2><div class="muted small">${esc(p.title)} · ${esc(country(t))}${p.super ? ' · superpower' : ''}</div></div></div>
+    <div class="stats"><span>AI on them <b>${pct(weighted([t], false))}</b></span>${tops.map((st) => `<span>${esc(st.name)} <b>${Math.round(st.share[t])}%</b></span>`).join('')}
+      <span>Needs ${needs(t).map(icon).join(' ') || '—'}</span></div>
+    ${inAcc ? '<p class="lede">Already in your accord. ✨</p>' : asked ? '<p class="lede">You already asked this month.</p>' :
+      `<div class="moves">${ds.map((d, i) => `<button class="move deal" data-deal="${i}"><span class="ic">${d.promise ? '🔗' : d.token ? icon(d.token) : '💬'}</span><div><span class="pct">${odds(t, d)}%</span><b>${esc(d.label)}</b><span>${esc(d.sub)}</span></div></button>`).join('')}</div>`}
+    <div class="foot"><span class="muted small">${ds.length ? 'Join my accord? Pick an offer (1–3).' : ''}</span><button class="btn ghost" id="leave">Leave (Esc)</button></div>`);
 }
 
-function render() {
-  renderHud(); renderSystem(); renderEvent(); renderMe(); renderTarget(); renderLog();
-}
-
-// ---- Debrief ----
 function finish() {
-  g.turn = MONTHS.length;
+  g.phase = 'end'; $('#toasts').innerHTML = '';
   const res = g.goals.map((id) => ({ goal: goalOf(id), pr: goalProgress(id) }));
-  const acc = weighted(g.coalition, true);
-  const tokensLeft = Object.values(g.tokens).reduce((t, n) => t + n, 0);
-  const parts = [
-    ...res.map((r) => [`Goal: ${r.goal.name}`, Math.round(r.pr.achieved * GOAL_POINTS)]),
-    ['Accord leverage (share of AI supply × 4)', Math.round(acc * 4)],
-    ['Tokens kept (× 10)', tokensLeft * 10],
-    ['Shocks absorbed', -g.penalty],
-  ];
+  const acc = weighted(g.coalition);
+  const kept = Object.values(g.tokens).reduce((t, n) => t + n, 0);
+  const parts = [...res.map((r) => [r.goal.short, Math.round(r.pr.achieved * GOAL_POINTS)]), ['Accord leverage', Math.round(acc * 4)], ['Tokens kept', kept * 10], ['Shocks', -g.penalty]];
   const score = parts.reduce((t, [, v]) => t + v, 0);
   const ratio = score / (GOAL_POINTS * res.length + 200);
   const rank = ratio >= 0.9 ? 'Architect of the Accord' : ratio >= 0.65 ? 'Trusted Broker' : ratio >= 0.4 ? 'Hopeful Envoy' : 'Lone Orbit';
-  $('#play').hidden = true;
-  const end = $('#end'); end.hidden = false;
-  end.innerHTML = `
-    <h2>The eight months are over</h2>
-    <div class="score">${score}</div><div class="rank">${rank}</div>
-    <div class="card">
-      <h3>Your result</h3>
-      <div class="kv">${parts.map(([k, v]) => `<span>${esc(k)}</span><span>${v}</span>`).join('')}</div>
-      <div class="label-s">Your accord</div>
-      <p>${g.coalition.map((k) => `${esc(planet(k).name)} (${esc(country(k))})`).join(', ')}</p>
-    </div>
-    <h2>What each goal would mean in the real world</h2>
-    <div class="cols">${res.map(({ goal, pr }) => `
-      <div class="card">
-        <h3>${esc(goal.name)} · ${Math.round(pr.achieved * 100)}%</h3>
-        <p class="muted small">Best lever ${pr.stage ? `${esc(stage(pr.stage).name)} at ${Math.round(pr.v)}%` : 'none'}${pr.law.length ? `; law vehicle: ${esc(pr.law[0].who)} (${esc(pr.law[0].label)})` : '; no member had a law window, so capped at 75%'}.</p>
-        <div class="label-s">Risk addressed</div><p>${esc(goal.risk)}</p>
-        <div class="label-s">Assumed causal route</div><p>${esc(goal.route)}</p>
-        <div class="label-s">Whose consent is needed</div><p>${esc(goal.consent)}</p>
-        <div class="label-s">Evidence gap</div><p>${esc(goal.gap)}</p>
-        <p class="muted small">Condition ${goal.cond} from <a href="${C._meta.source_url}" target="_blank" rel="noopener">gszep, Six safety conditions</a>.</p>
-      </div>`).join('')}
-    </div>
-    <div class="card">
-      <h3>What this game does not prove</h3>
-      <ul>
-        <li><b>Winning a mission is not real-world safety impact.</b> It shows how leverage could add up, not that any government would act.</li>
-        <li><b>AI shares are rough averages</b> from <a href="${L._meta.source_url}" target="_blank" rel="noopener">gszep's leverage model</a>; holding a share is not the legal authority to attach a condition.</li>
-        <li><b>Other powers (food, medicine, energy…) are illustrative tokens</b>, not measured trade data.</li>
-        <li><b>Acceptance chances are a teaching formula</b> (every term was shown to you), not a model of real diplomacy. Retaliation, domestic politics and treaty law are missing.</li>
-        <li><b>Law windows are openings, not delivery plans</b>; only the EuroHPC dates are independently checked.</li>
-      </ul>
-      <p class="muted small">Built with help from Claude (Anthropic). See the full <a href="../index.html#about">data and limits page</a>.</p>
-    </div>
-    <div class="actions"><button class="btn primary" id="again">Play again</button></div>`;
+  showOverlay(`
+    <div class="foot" style="margin-top:0"><div><h2>The eight months are over</h2><div class="muted">${rank}</div></div><div class="score">${score}</div></div>
+    <p class="small">${parts.map(([k, v]) => `${esc(k)} <b>${v}</b>`).join(' · ')}</p>
+    <p class="small muted">Accord: ${g.coalition.map((k) => `${esc(planet(k).name)} (${esc(country(k))})`).join(', ')}</p>
+    <div class="dgrid">${res.map(({ goal, pr }) => `<div class="dcard"><h3>${esc(goal.short)} · ${Math.round(pr.achieved * 100)}%</h3><dl>
+      <dt>Risk</dt><dd>${esc(goal.risk_s)}</dd><dt>Route</dt><dd>${esc(goal.route_s)}</dd><dt>Needs</dt><dd>${esc(goal.consent_s)}</dd><dt>Gap</dt><dd>${esc(goal.gap_s)}</dd>
+      <dt>Law</dt><dd>${pr.law.length ? esc(pr.law[0].who) : 'none (capped 75%)'}</dd></dl></div>`).join('')}</div>
+    <p class="limits">Not proof of real-world impact. AI shares: <a href="${L._meta.source_url}" target="_blank" rel="noopener">gszep's model</a> (rough). Tokens, odds and move effects are illustrative game rules. Law dates are openings, not plans. <a href="../index.html#about">Full limits</a> · Built with Claude.</p>
+    <div class="foot"><span></span><button class="btn" id="again">Play again</button></div>`);
 }
 
-// ---- Wiring ----
+// ---------- Setup screen ----------
+const orbBg = (p) => `background: radial-gradient(circle at 35% 35%, #fff9 0, ${p.color} 35%, #000a 100%)`;
+function renderSetup() {
+  showOverlay(`
+    <h1>Orbit Accord</h1>
+    <p class="lede">Planets are countries. Fly yours, win allies, and turn AI leverage into safety rules before the laws close.</p>
+    <div class="step">1 · Your planet</div>
+    <div class="grid g-planets">${P.planets.map((p) => `<button class="opt" data-k="${p.k}" aria-pressed="${g.me === p.k}"><b><span class="orb" style="${orbBg(p)}"></span>${esc(p.name)}</b><span>${esc(country(p.k))} · ${pct(weighted([p.k], false))}</span></button>`).join('')}</div>
+    <div class="step">2 · Goals (pick 1–3)</div>
+    <div class="grid g-goals">${P.goals.map((x) => `<button class="opt" data-id="${x.id}" aria-pressed="${g.goals.includes(x.id)}"><b>${esc(x.short)}</b><span>Stops: ${esc(x.risk_s)}</span></button>`).join('')}</div>
+    <div class="step">3 · Age</div>
+    <div class="grid g-eras">${P.eras.map((e) => `<button class="opt" data-era="${e.id}" aria-pressed="${g.era.id === e.id}"><b>${esc(e.name)}</b><span>${Math.round(e.s * 100)}% of progress needs chips &amp; power</span></button>`).join('')}</div>
+    <div class="foot"><span class="muted small">% = share of the world's AI supply chain that depends on that planet.</span><button class="btn" id="start" ${g.me && g.goals.length ? '' : 'disabled'}>Launch ▸</button></div>`);
+}
+function start() {
+  g.coalition = [g.me]; g.tokens = { ...planet(g.me).powers };
+  const pp = world.pos[g.me];
+  Object.assign(world.player, { x: pp.x, y: pp.y, vx: 0, vy: 0, trail: [] });
+  $('#hud').hidden = false;
+  openCouncil();
+}
+
+// ---------- Overlay, HUD, toasts ----------
+function showOverlay(html) { $('#panel').innerHTML = html; $('#overlay').hidden = false; }
+function closeOverlay() { $('#overlay').hidden = true; if (g.phase === 'talk') g.phase = 'fly'; }
+function toast(text, kind = '') {
+  const el = document.createElement('div'); el.className = `toast ${kind}`; el.textContent = text;
+  const box = $('#toasts'); box.appendChild(el); setTimeout(() => el.remove(), 4000);
+  while (box.children.length > 3) box.firstChild.remove();
+}
+let hudTick = 0;
+function renderHud() {
+  if (!g.me) return;
+  $('#h-month').textContent = MONTHS[Math.min(g.turn, 7)];
+  $('#h-timer').textContent = `${Math.min(g.turn + 1, 8)}/8 · ${Math.ceil(g.timeLeft)}s`;
+  $('#h-time').style.width = `${(g.timeLeft / MONTH_SECONDS) * 100}%`;
+  $('#h-goals').innerHTML = g.goals.map((id) => {
+    const pr = goalProgress(id);
+    return `<div class="goal"><div class="row"><span>${esc(goalOf(id).short)}</span><b>${Math.round(pr.achieved * 100)}%</b></div>
+      <div class="pb"><i style="width:${pr.achieved * 100}%"></i></div>
+      <div class="law ${pr.law.length ? 'ok' : ''}">${pr.law.length ? `⚖️ law via ${esc(pr.law[0].who)}` : 'no law vehicle yet (max 75%)'}</div></div>`;
+  }).join('');
+  $('#h-accord').textContent = `${Math.round(weighted(g.coalition))}%`;
+  const p = planet(g.me), dep = dependsOn(g.me).slice(0, 2);
+  $('#h-me').innerHTML = `<div class="nm">${esc(p.name)} <span class="sub">${esc(country(g.me))}</span></div>
+    <div class="sub">AI that depends on you</div><div class="big">${pct(weighted([g.me]))}</div>
+    <div class="sub">You depend on: ${dep.map((d) => `${esc(d.st.name)} ← ${esc(planet(d.top)?.name ?? country(d.top))} ${Math.round(d.v)}%`).join('; ')}</div>
+    <div class="toks">${Object.entries(g.tokens).map(([k, n]) => `<span class="tok" title="${pname(k)}">${icon(k)} ${n}</span>`).join('')}</div>`;
+}
+
+// ---------- World ----------
+function resize() {
+  const c = $('#world');
+  world.dpr = Math.min(2, window.devicePixelRatio || 1);
+  world.w = window.innerWidth; world.h = window.innerHeight;
+  c.width = world.w * world.dpr; c.height = world.h * world.dpr;
+  world.cx = world.w / 2; world.cy = world.h / 2 + 6;
+  world.u = Math.max(0.55, Math.min((world.w - 470) / 600, (world.h - 70) / 600, 1.4));
+  if (world.w < 760) world.u = Math.min((world.w - 20) / 600, (world.h - 140) / 600);
+  world.stars = Array.from({ length: 160 }, () => ({ x: Math.random() * world.w, y: Math.random() * world.h, r: Math.random() * 1.3, t: Math.random() * 6 }));
+}
+const pr = (k) => (9 + Math.sqrt(weighted([k], false)) * 3.4) * world.u;
+
+function step(dt) {
+  for (const p of P.planets) {
+    world.ang[p.k] = (world.ang[p.k] ?? (p.angle * Math.PI) / 180) + (g.phase === 'setup' || g.phase === 'fly' ? ORBIT_SPEED[p.orbit] * dt : 0);
+    world.pos[p.k] = { x: world.cx + ORBIT_R[p.orbit] * world.u * Math.cos(world.ang[p.k]), y: world.cy + ORBIT_R[p.orbit] * world.u * Math.sin(world.ang[p.k]) };
+  }
+  if (g.phase !== 'fly') return;
+  const pl = world.player, acc = 900 * world.u, max = 260 * world.u;
+  let ax = (keys.ArrowRight || keys.d ? 1 : 0) - (keys.ArrowLeft || keys.a ? 1 : 0);
+  let ay = (keys.ArrowDown || keys.s ? 1 : 0) - (keys.ArrowUp || keys.w ? 1 : 0);
+  if (!ax && !ay && world.aim) { const dx = world.aim.x - pl.x, dy = world.aim.y - pl.y, d = Math.hypot(dx, dy); if (d > 6) { ax = dx / d; ay = dy / d; } else world.aim = null; }
+  const n = Math.hypot(ax, ay) || 1;
+  pl.vx += (ax / n) * acc * dt; pl.vy += (ay / n) * acc * dt;
+  pl.vx *= 1 - Math.min(1, 2.6 * dt); pl.vy *= 1 - Math.min(1, 2.6 * dt);
+  const sp = Math.hypot(pl.vx, pl.vy); if (sp > max) { pl.vx *= max / sp; pl.vy *= max / sp; }
+  pl.x = Math.max(16, Math.min(world.w - 16, pl.x + pl.vx * dt)); pl.y = Math.max(16, Math.min(world.h - 16, pl.y + pl.vy * dt));
+  const sx = pl.x - world.cx, sy = pl.y - world.cy, sd = Math.hypot(sx, sy), minD = 62 * world.u + pr(g.me);
+  if (sd < minD) { pl.x = world.cx + (sx / (sd || 1)) * minD; pl.y = world.cy + (sy / (sd || 1)) * minD; }
+  pl.trail.push({ x: pl.x, y: pl.y }); if (pl.trail.length > 24) pl.trail.shift();
+  g.near = null; let best = Infinity;
+  for (const p of P.planets) {
+    if (p.k === g.me) continue;
+    const q = world.pos[p.k], d = Math.hypot(q.x - pl.x, q.y - pl.y);
+    if (d < pr(p.k) + pr(g.me) + 34 * world.u && d < best) { best = d; g.near = p.k; }
+  }
+  g.timeLeft -= dt;
+  if (g.timeLeft <= 0) { g.timeLeft = 0; endMonth(); }
+}
+
+function draw(t) {
+  const ctx = $('#world').getContext('2d'), u = world.u;
+  ctx.setTransform(world.dpr, 0, 0, world.dpr, 0, 0);
+  ctx.fillStyle = '#070a16'; ctx.fillRect(0, 0, world.w, world.h);
+  for (const s of world.stars) { ctx.globalAlpha = 0.4 + 0.4 * Math.sin(t / 900 + s.t); ctx.fillStyle = '#dfe6ff'; ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 7); ctx.fill(); }
+  ctx.globalAlpha = 1;
+  ctx.strokeStyle = '#26305a'; ctx.setLineDash([2, 6]);
+  for (const r of Object.values(ORBIT_R)) { ctx.beginPath(); ctx.arc(world.cx, world.cy, r * u, 0, 7); ctx.stroke(); }
+  ctx.setLineDash([]);
+  for (let i = 0; i < 90; i++) {
+    const a = (i / 90) * Math.PI * 2 + t / 60000, rr = (ORBIT_R[3] + ((i * 37) % 19) - 9) * u;
+    ctx.fillStyle = '#8a7560'; ctx.globalAlpha = 0.6; ctx.beginPath(); ctx.arc(world.cx + rr * Math.cos(a), world.cy + rr * Math.sin(a), (1 + (i % 3) * 0.5) * u, 0, 7); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  const sun = ctx.createRadialGradient(world.cx, world.cy, 0, world.cx, world.cy, 70 * u);
+  sun.addColorStop(0, '#fff6d5'); sun.addColorStop(0.45, '#f2c96b'); sun.addColorStop(1, 'rgba(242,201,107,0)');
+  ctx.fillStyle = sun; ctx.beginPath(); ctx.arc(world.cx, world.cy, 70 * u, 0, 7); ctx.fill();
+  ctx.fillStyle = '#2a1f05'; ctx.font = `700 ${Math.max(10, 12 * u)}px system-ui`; ctx.textAlign = 'center'; ctx.fillText('The Frontier', world.cx, world.cy + 4);
+
+  const meXY = g.me && g.phase !== 'setup' ? world.player : null;
+  if (meXY) {
+    ctx.strokeStyle = 'rgba(242,201,107,.7)'; ctx.setLineDash([5, 5]); ctx.lineWidth = 1.5;
+    for (const k of g.coalition) if (k !== g.me) { const q = world.pos[k]; ctx.beginPath(); ctx.moveTo(meXY.x, meXY.y); ctx.lineTo(q.x, q.y); ctx.stroke(); }
+    ctx.setLineDash([]); ctx.lineWidth = 1;
+  }
+  for (const p of P.planets) {
+    if (meXY && p.k === g.me) continue;
+    drawPlanet(ctx, p, world.pos[p.k], { ally: g.coalition.includes(p.k), near: g.near === p.k });
+  }
+  if (meXY) {
+    const pl = world.player, p = planet(g.me);
+    pl.trail.forEach((q, i) => { ctx.globalAlpha = i / pl.trail.length * 0.35; ctx.fillStyle = p.color; ctx.beginPath(); ctx.arc(q.x, q.y, pr(g.me) * (i / pl.trail.length) * 0.7, 0, 7); ctx.fill(); });
+    ctx.globalAlpha = 1;
+    const glow = ctx.createRadialGradient(pl.x, pl.y, 0, pl.x, pl.y, pr(g.me) * 2.2);
+    glow.addColorStop(0, 'rgba(242,201,107,.35)'); glow.addColorStop(1, 'rgba(242,201,107,0)');
+    ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(pl.x, pl.y, pr(g.me) * 2.2, 0, 7); ctx.fill();
+    drawPlanet(ctx, p, pl, { me: true });
+  }
+  const prm = $('#prompt');
+  if (g.phase === 'fly' && g.near) {
+    const q = world.pos[g.near]; prm.hidden = false;
+    prm.style.left = `${q.x}px`; prm.style.top = `${q.y - pr(g.near) - 8}px`;
+    prm.textContent = g.coalition.includes(g.near) ? `${planet(g.near).name} · ally` : g.asked.has(g.near) ? `${planet(g.near).name} · asked` : `Space · talk to ${planet(g.near).name}`;
+  } else prm.hidden = true;
+}
+function drawPlanet(ctx, p, q, o) {
+  const r = pr(p.k), u = world.u;
+  const grd = ctx.createRadialGradient(q.x - r * 0.35, q.y - r * 0.35, r * 0.1, q.x, q.y, r);
+  grd.addColorStop(0, 'rgba(255,255,255,.75)'); grd.addColorStop(0.3, p.color); grd.addColorStop(1, '#05060c');
+  ctx.fillStyle = grd; ctx.beginPath(); ctx.arc(q.x, q.y, r, 0, 7); ctx.fill();
+  if (o.ally || o.me) { ctx.strokeStyle = '#f2c96b'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(q.x, q.y, r + 4, 0, 7); ctx.stroke(); ctx.lineWidth = 1; }
+  if (o.near) { ctx.strokeStyle = '#8fc7ff'; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.arc(q.x, q.y, r + 8, 0, 7); ctx.stroke(); ctx.setLineDash([]); }
+  ctx.textAlign = 'center';
+  ctx.fillStyle = o.me ? '#f2c96b' : '#eef0fb'; ctx.font = `${o.me ? 700 : 600} ${Math.max(10, 12 * u)}px system-ui`;
+  ctx.fillText(o.me ? `${p.name} (you)` : p.name, q.x, q.y + r + 13 * Math.max(1, u));
+  ctx.fillStyle = '#9ea5c4'; ctx.font = `${Math.max(9, 10 * u)}px system-ui`;
+  ctx.fillText(country(p.k), q.x, q.y + r + 25 * Math.max(1, u));
+}
+
+let last = 0;
+function loop(t) {
+  const dt = Math.min(0.05, (t - last) / 1000 || 0); last = t;
+  step(dt); draw(t);
+  if (g.phase !== 'setup' && (hudTick++ % 6 === 0)) renderHud();
+  requestAnimationFrame(loop);
+}
+
+// ---------- Input ----------
 function wire() {
-  $('#pick-planet').addEventListener('click', (e) => { const b = e.target.closest('[data-k]'); if (b) { g.me = b.dataset.k; renderSetup(); } });
-  $('#pick-goal').addEventListener('click', (e) => {
-    const b = e.target.closest('[data-id]'); if (!b) return;
-    const id = b.dataset.id;
-    if (g.goals.includes(id)) g.goals = g.goals.filter((x) => x !== id);
-    else if (g.goals.length < MAX_GOALS) g.goals.push(id);
-    renderSetup();
+  window.addEventListener('resize', resize);
+  window.addEventListener('keydown', (e) => {
+    const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key)) e.preventDefault();
+    keys[k] = true;
+    if (g.phase === 'fly' && (k === ' ' || k === 'Enter') && g.near) openTalk(g.near);
+    else if (g.phase === 'fly' && k === 'n') { g.timeLeft = 0; }
+    else if (g.phase === 'council' && /^[1-4]$/.test(k)) pickMove(Number(k) - 1);
+    else if (g.phase === 'talk' && /^[1-3]$/.test(k) && g.deals?.[Number(k) - 1]) doDeal(g.talkTo, g.deals[Number(k) - 1]);
+    else if (g.phase === 'talk' && k === 'Escape') closeOverlay();
   });
-  $('#pick-era').addEventListener('click', (e) => { const b = e.target.closest('[data-era]'); if (b) { g.era = P.eras.find((x) => x.id === b.dataset.era); renderSetup(); } });
-  $('#start').addEventListener('click', start);
-  const pick = (e) => {
-    const pl = e.target.closest('.planet'); if (!pl || g.pendingEvent) return;
-    const k = pl.dataset.k; if (k === g.me) return;
-    g.target = k; g.offer = {}; g.offerPromise = false; render();
-  };
-  $('#system').addEventListener('click', pick);
-  $('#system').addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(e); } });
-  $('#event').addEventListener('click', (e) => { const b = e.target.closest('[data-choice]'); if (b) resolveEvent(Number(b.dataset.choice)); });
-  document.addEventListener('click', (e) => {
-    if (e.target.id === 'send') propose();
-    if (e.target.id === 'cancel') { g.target = null; render(); }
-    if (e.target.id === 'pass' && !g.pendingEvent) { addLog('The month passes quietly.'); g.target = null; nextTurn(); }
-    if (e.target.id === 'again') location.reload();
-  });
-  $('#target').addEventListener('input', (e) => {
-    if (e.target.dataset.p) { g.offer[e.target.dataset.p] = Math.max(0, Math.min(g.tokens[e.target.dataset.p], Number(e.target.value) || 0)); }
-    if (e.target.id === 'promise') g.offerPromise = e.target.checked;
-    const o = odds(g.target);
-    $('#target .odds .big').textContent = `${o.total}%`;
-    $('#target .why').innerHTML = o.terms.map(([v, t2]) => `<li class="${v >= 0 ? 'plus' : 'minus'}">${v >= 0 ? '+' : ''}${v} ${esc(t2)}</li>`).join('');
+  window.addEventListener('keyup', (e) => { keys[e.key.length === 1 ? e.key.toLowerCase() : e.key] = false; });
+  $('#world').addEventListener('pointerdown', (e) => { if (g.phase === 'fly') world.aim = { x: e.clientX, y: e.clientY }; });
+  $('#panel').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.k) { g.me = b.dataset.k; renderSetup(); }
+    else if (b.dataset.id) { const id = b.dataset.id; g.goals = g.goals.includes(id) ? g.goals.filter((x) => x !== id) : g.goals.length < MAX_GOALS ? [...g.goals, id] : g.goals; renderSetup(); }
+    else if (b.dataset.era) { g.era = P.eras.find((x) => x.id === b.dataset.era); renderSetup(); }
+    else if (b.id === 'start') start();
+    else if (b.dataset.move) pickMove(Number(b.dataset.move));
+    else if (b.dataset.deal) doDeal(g.talkTo, g.deals[Number(b.dataset.deal)]);
+    else if (b.id === 'leave') closeOverlay();
+    else if (b.id === 'again') location.reload();
   });
 }
 
@@ -396,6 +426,6 @@ Promise.all(['../data/layers.json', '../data/conditions.json', '../data/windows.
   .then(([l, c, w, p]) => {
     L = l; C = c; W = w; P = p;
     g.era = P.eras.find((e) => e.id === 'today');
-    wire(); renderSetup();
+    resize(); wire(); step(0); renderSetup(); requestAnimationFrame(loop);
   })
-  .catch((err) => { document.querySelector('main').innerHTML = `<p class="muted">Could not load game data: ${esc(err.message)}. Serve the repository folder over HTTP.</p>`; });
+  .catch((err) => { document.body.innerHTML = `<p style="padding:20px">Could not load game data: ${esc(err.message)}. Serve the repository folder over HTTP.</p>`; });

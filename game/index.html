@@ -4,58 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Orbit Accord</title>
-<meta name="description" content="A negotiation game: rule a planet, see how much of the system's AI depends on you, and build a coalition to win a safety goal before the laws close.">
+<meta name="description" content="Fly your planet, meet the others, and build an accord for AI safety before the laws close.">
 <link rel="stylesheet" href="game.css">
 </head>
 <body>
-<div class="stars" aria-hidden="true"></div>
+<canvas id="world" aria-label="Solar system. Arrow keys fly your planet; Space talks to a nearby planet."></canvas>
 
-<header class="top">
-  <div class="wrap row">
-    <div>
-      <h1>Orbit Accord</h1>
-      <p class="sub">Every planet is a country. Every sovereign is its government. The thinking-engines at the centre need parts from all of you.</p>
-    </div>
-    <a class="back" href="../index.html#about">Data &amp; limits ↗</a>
+<!-- HUD -->
+<div id="hud" hidden>
+  <div class="hud-left">
+    <div class="month"><b id="h-month"></b><span id="h-timer"></span></div>
+    <div class="bar"><i id="h-time"></i></div>
+    <div id="h-goals"></div>
+    <div class="accord">Accord: <b id="h-accord"></b> of AI supply</div>
   </div>
-</header>
+  <div class="hud-right" id="h-me"></div>
+  <div class="hint"><kbd>←↑↓→</kbd> fly · <kbd>Space</kbd> talk · <kbd>N</kbd> end month</div>
+  <div id="prompt" hidden></div>
+  <div id="toasts"></div>
+</div>
 
-<main class="wrap">
-  <!-- 1. Setup -->
-  <section id="setup">
-    <h2>1. Choose your planet</h2>
-    <div id="pick-planet" class="planet-grid"></div>
-    <h2>2. Choose 1–3 goals</h2>
-    <p class="muted small">More goals earn more points but need a wider accord. Goals that rely on hosting computing power are hard for middle powers: most of it sits on Titanis and Magnor.</p>
-    <div id="pick-goal" class="goal-grid"></div>
-    <h2>3. Choose the age</h2>
-    <div id="pick-era" class="era-row"></div>
-    <div class="start-row">
-      <button id="start" class="btn primary" disabled>Begin the eight months</button>
-      <span id="start-hint" class="muted">Pick a planet and a goal.</span>
-    </div>
-  </section>
-
-  <!-- 2. Play -->
-  <section id="play" hidden>
-    <div class="hud" id="hud"></div>
-    <div class="board">
-      <div class="system-wrap">
-        <svg id="system" viewBox="0 0 600 600" role="img" aria-label="Solar system of planets; select one to negotiate"></svg>
-        <p class="muted small">Planet size = share of the system's AI supply chain it holds, at this age. Select a planet to negotiate.</p>
-      </div>
-      <div class="side">
-        <div id="event" class="card event" hidden></div>
-        <div id="me" class="card"></div>
-        <div id="target" class="card" hidden></div>
-        <div id="log" class="card log"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. Debrief -->
-  <section id="end" hidden></section>
-</main>
+<!-- Overlays -->
+<div id="overlay" class="overlay"><div class="panel" id="panel"></div></div>
 
 <script src="game.js"></script>
 </body>

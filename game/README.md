@@ -1,25 +1,30 @@
 # Orbit Accord (game prototype)
 
-A negotiation game built on the Leverage Map data. Countries are planets, and each sovereign stands for its government. This is a work-in-progress branch (`orbit-accord`); `main` and the live site are unchanged.
+A real-time negotiation game built on the Leverage Map data. Countries are planets, and each sovereign stands for its government. This is a work-in-progress branch (`orbit-accord`); `main` and the live site are unchanged.
 
-**Play locally:** run `python3 -m http.server` from the repository root, then open http://localhost:8000/game/
+**Play:** run `python3 -m http.server` from the repository root, then open http://localhost:8000/game/. It fits one laptop screen (checked at 1280×720 and 1366×768).
+
+**Controls:** arrow keys or WASD to fly; Space to talk to a nearby planet; 1–4 to choose; N to end the month; Esc to leave. Clicking the map also steers.
 
 **How it plays:**
-- **Setup:** pick a planet, 1–3 goals (the six safety conditions) and an age, which sets the physical ↔ software mix.
-- **Your card shows:**
-  - how much of the world's AI depends on you (your weighted supply-chain share);
-  - your AI powers, and what you depend on;
-  - your other powers (food, medicine, energy, minerals, capital, market access).
-- **Turns:** eight months, Nov 2026 to Jun 2027, with one envoy per month.
-  - Select a planet, offer tokens it needs and/or a supply promise, and see the acceptance chance with every term explained.
-  - Superpowers are much harder to persuade.
-- **Events:**
-  - Magnor (China) squeezes refined metals (Dec).
-  - Titanis (US) pressures an ally (Feb).
-  - Short-lived chokepoints fade from April.
-- **Goals:** each goal needs the accord's best relevant stage to reach 50%, and a member with a law window before July. Without that window, progress is capped at 75%.
-- **Debrief:** for each goal, the risk addressed, the assumed causal route, whose consent is needed, and the evidence gap. Then what the game does not prove.
+1. **Setup:** pick a planet (the % shows how much of the world's AI supply chain depends on it), 1–3 safety goals, and an age (the physical ↔ software mix).
+2. **Each month** (8 months, Nov 2026 to Jun 2027, 30 s each) opens with a **council**: pick 1 of 3–4 moves built from the data.
+   - ⚖️ **Table a bill:** only when your country's law window is open (`windows.json`). It gives your goals a law vehicle.
+   - 🔒 **License your chokepoint:** your top stage ≥25% counts 25% more. The superpower you depend on may retaliate, with a chance equal to its weighted share.
+   - 📦 **Stockpile** your biggest dependency: shields you from that supplier's squeeze.
+   - 🏗️ **Data-centre campus:** costs ⚡ and 💰. Hosting is the only stage you can replace within 1–3 years.
+   - 🤝 **Summit tour** or 📣 **rally at home:** better odds this month.
+   - 🔬 **Seed your own dependency:** tiny gain, and it shows how many years real replacement takes.
+   - Trade season: +1 of your strongest token.
+3. **Fly** to planets and press Space. Pick one of up to three offers: a token they need, a promise of your chokepoint, or just asking. The odds are shown on each offer.
+4. **Events:**
+   - Dec: China squeezes refined metals.
+   - Feb: the US pressures your weakest ally.
+   - From April: stages that are quick to replace (≤3 years) fade by 20%.
+   - Law windows open on their real dates.
+5. **Score:** goal progress (needs the best lever stage ≥50% *and* a law vehicle, else capped at 75%), plus accord leverage, plus tokens kept. The debrief shows the risk, route, consent needed and evidence gap for each goal.
 
 **Data:**
-- AI shares and weights come from `../data/layers.json`, gszep's model, unchanged. The conditions and law windows also come from `../data/`.
-- `planets.json` holds the fantasy names, the goals, and the **illustrative** non-AI power tokens. Those tokens are not measured data.
+- AI shares, weights and years-to-replace come from `../data/layers.json`, unchanged. Conditions and law windows come from `../data/`.
+- `planets.json` holds the fantasy names, goals and **illustrative** non-AI tokens.
+- Move effects and odds are game rules, not measured effects.
