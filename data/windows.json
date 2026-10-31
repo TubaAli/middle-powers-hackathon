@@ -1,0 +1,17 @@
+{
+ "_meta": {
+  "source": "gszep, \"Six safety conditions for upcoming laws\", When the decisions are made",
+  "source_url": "https://gszep.com/en/blog/six-safety-conditions-for-upcoming-laws/#when-the-decisions-are-made",
+  "note": "Dates are openings, not delivery plans. 'countries' uses the country keys in layers.json; the EU maps to Germany and the Netherlands, and Singapore is not a separate column in the supply-chain table, so it sits under 'Others'."
+ },
+ "windows": [
+  { "who": "Singapore", "countries": ["OTH"], "date": "2026-10-07", "label": "Digital Infrastructure Bill passed; codes and licensing rules being drafted, commencement expected 2027", "conditions": [2, 3, 4, 5, 6] },
+  { "who": "Japan", "countries": ["JP"], "date": "2026-10-31", "label": "Working group starts reviewing the AI Promotion Act; no bill or timetable yet", "conditions": [1, 2, 3] },
+  { "who": "EU", "countries": ["DE", "NL"], "date": "2026-12-03", "label": "AI Gigafactory tender closes (17:00 CET)", "conditions": [1, 4, 5, 6] },
+  { "who": "EU", "countries": ["DE", "NL"], "date": "2026-12-09", "label": "Product Liability Directive transposition deadline", "conditions": [2, 3] },
+  { "who": "EU", "countries": ["DE", "NL"], "date": null, "label": "AI Act testing powers and expert list; Code of Practice review at least every two years", "conditions": [1] },
+  { "who": "South Korea", "countries": ["KR"], "date": "2027-01-22", "label": "Notices under the AI Basic Act before the fines grace period ends (may be extended)", "conditions": [2, 5] },
+  { "who": "Australia", "countries": ["AUCA"], "date": "2027-03-01", "label": "AI Standards legislation planned for early 2027 (date approximate)", "conditions": [1, 2, 3, 4, 5, 6] },
+  { "who": "All participants", "countries": [], "date": "2027-06-21", "label": "Geneva AI Summit, 21–22 June 2027", "conditions": [1, 2, 3, 4, 5, 6] }
+ ]
+}

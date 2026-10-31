@@ -1,0 +1,393 @@
+{
+ "_meta": {
+  "source": "gszep, \"Speed limits, not walls\" (2026), Who holds leverage, from mines to models",
+  "source_url": "https://gszep.com/en/blog/speed-limits-not-walls/#who-holds-leverage-from-mines-to-models",
+  "shares": "Percent of each stage, by country group. Values and notes are copied unchanged from the published model.",
+  "weights": "Stage weight at physical share s, linearly interpolated between w[0] (s=0), w[1] (s=0.5) and w[2] (s=1). Copied from the published model.",
+  "confidence": "Our reading of the source note: \"rough average\"/\"least certain\" -> low, otherwise medium.",
+  "replicate_years": "Team estimate, not from the source. Range of years a determined rival would need to build a substitute. Low confidence.",
+  "default_s": 0.4
+ },
+ "countries": [
+  {
+   "k": "US",
+   "name": "US",
+   "middle": false
+  },
+  {
+   "k": "CN",
+   "name": "China",
+   "middle": false
+  },
+  {
+   "k": "JP",
+   "name": "Japan",
+   "middle": true
+  },
+  {
+   "k": "TW",
+   "name": "Taiwan",
+   "middle": true
+  },
+  {
+   "k": "KR",
+   "name": "Korea",
+   "middle": true
+  },
+  {
+   "k": "NL",
+   "name": "Netherlands",
+   "middle": true
+  },
+  {
+   "k": "DE",
+   "name": "Germany",
+   "middle": true
+  },
+  {
+   "k": "UK",
+   "name": "UK",
+   "middle": true
+  },
+  {
+   "k": "GULF",
+   "name": "Gulf states",
+   "middle": true
+  },
+  {
+   "k": "AUCA",
+   "name": "Australia & Canada",
+   "middle": true
+  },
+  {
+   "k": "PROD",
+   "name": "DRC, Indonesia, Chile, Peru",
+   "middle": false
+  },
+  {
+   "k": "OTH",
+   "name": "Others",
+   "middle": false
+  }
+ ],
+ "stages": [
+  {
+   "k": "ore",
+   "name": "Mining",
+   "w": [
+    0.05,
+    0.4,
+    0.8
+   ],
+   "share": {
+    "PROD": 41,
+    "CN": 32,
+    "AUCA": 4,
+    "US": 4,
+    "OTH": 19
+   },
+   "used": [
+    "CN",
+    "PROD"
+   ],
+   "note": "My average of where ore is mined, 2025 (USGS), over rare earths, copper, cobalt, nickel and tungsten; gallium is not mined on its own. Congo mines 74% of cobalt, Indonesia 67% of nickel, Chile, the Congo and Peru together 49% of copper, and China 69% of rare earths and 79% of tungsten. Chinese firms own many of the mines in the Congo and Indonesia.",
+   "confidence": "medium",
+   "replicate_years": [
+    7,
+    15
+   ],
+   "replicate_note": "New mines take a decade or more from discovery to output."
+  },
+  {
+   "k": "mine",
+   "name": "Mineral refining",
+   "w": [
+    0.05,
+    0.5,
+    1
+   ],
+   "share": {
+    "CN": 70,
+    "PROD": 10,
+    "JP": 3,
+    "AUCA": 2,
+    "US": 2,
+    "OTH": 13
+   },
+   "used": [
+    "CN",
+    "PROD"
+   ],
+   "note": "My rough average of where minerals are refined (tungsten: mined), 2025, over magnet rare earths, copper, gallium, tungsten, cobalt and nickel. China refines about 90% of magnet rare earths, 47% of copper, 76% of cobalt and makes 99% of gallium; Indonesia refines 45% of nickel, much of it in Chinese-owned plants.",
+   "confidence": "medium",
+   "replicate_years": [
+    3,
+    7
+   ],
+   "replicate_note": "Refineries can be built in a few years, but skills and permits are slow outside China."
+  },
+  {
+   "k": "magnet",
+   "name": "Magnets & robot parts",
+   "w": [
+    0,
+    0.2,
+    1
+   ],
+   "share": {
+    "CN": 50,
+    "JP": 40,
+    "DE": 5,
+    "KR": 1,
+    "US": 1,
+    "OTH": 3
+   },
+   "used": [
+    "CN"
+   ],
+   "note": "My rough average of strong magnets (94% made in China), precision robot gears (mostly Japanese firms) and industrial robots (by maker nationality).",
+   "confidence": "low",
+   "replicate_years": [
+    3,
+    6
+   ],
+   "replicate_note": "Magnet plants are quicker to build than precision gear know-how is to copy."
+  },
+  {
+   "k": "power",
+   "name": "Power & data-centre hosting",
+   "w": [
+    0.1,
+    0.8,
+    1
+   ],
+   "share": {
+    "US": 45,
+    "CN": 25,
+    "JP": 5,
+    "DE": 3,
+    "UK": 2,
+    "NL": 1,
+    "KR": 2,
+    "GULF": 1,
+    "AUCA": 2,
+    "OTH": 14
+   },
+   "used": [],
+   "note": "Where data centres use electricity, 2024. Newly built AI capacity leans further towards the US.",
+   "confidence": "medium",
+   "replicate_years": [
+    1,
+    3
+   ],
+   "replicate_note": "Data-centre shells go up in 1–2 years; grid connection is the bottleneck."
+  },
+  {
+   "k": "grid",
+   "name": "Grid equipment",
+   "w": [
+    0.05,
+    0.6,
+    0.9
+   ],
+   "share": {
+    "CN": 40,
+    "US": 15,
+    "JP": 10,
+    "DE": 10,
+    "KR": 5,
+    "OTH": 20
+   },
+   "used": [],
+   "note": "My rough blend of transformers (where made; China about 60% by one industry estimate) and gas turbines (maker nationality). The least certain row.",
+   "confidence": "low",
+   "replicate_years": [
+    2,
+    4
+   ],
+   "replicate_note": "Transformers and gas turbines have multi-year order backlogs."
+  },
+  {
+   "k": "mat",
+   "name": "Chip materials",
+   "w": [
+    0.15,
+    0.9,
+    0.4
+   ],
+   "share": {
+    "JP": 60,
+    "US": 15,
+    "CN": 5,
+    "TW": 5,
+    "KR": 5,
+    "DE": 5,
+    "OTH": 5
+   },
+   "used": [
+    "JP"
+   ],
+   "note": "My rough average of silicon wafers (Japanese firms 44%), light-sensitive chemicals (about 60–75%), glass cloth (about 85–90%) and insulating film (over 95%) in chip packages, and high-purity quartz (mostly mined in North Carolina).",
+   "confidence": "low",
+   "replicate_years": [
+    3,
+    8
+   ],
+   "replicate_note": "Specialist chemicals and films depend on process know-how held by a few firms."
+  },
+  {
+   "k": "tools",
+   "name": "Lithography & chipmaking tools",
+   "w": [
+    0.1,
+    1,
+    0.4
+   ],
+   "share": {
+    "US": 40,
+    "NL": 25,
+    "JP": 20,
+    "CN": 5,
+    "DE": 3,
+    "KR": 2,
+    "OTH": 5
+   },
+   "used": [
+    "US",
+    "NL",
+    "JP"
+   ],
+   "note": "Chipmaking equipment sales by maker nationality, 2025, my estimate from analyst rankings. One Dutch company makes every machine for the finest printing step (EUV).",
+   "confidence": "medium",
+   "replicate_years": [
+    8,
+    15
+   ],
+   "replicate_note": "EUV took about two decades; no rival machine is close."
+  },
+  {
+   "k": "fab",
+   "name": "Leading-edge chips & packaging",
+   "w": [
+    0.15,
+    1,
+    0.5
+   ],
+   "share": {
+    "TW": 80,
+    "KR": 10,
+    "US": 5,
+    "CN": 3,
+    "JP": 1,
+    "OTH": 1
+   },
+   "used": [],
+   "note": "Where the most advanced chips are made and packaged, late 2025; my estimate from company capacity shares. Most is in Taiwan.",
+   "confidence": "medium",
+   "replicate_years": [
+    3,
+    6
+   ],
+   "replicate_note": "New leading-edge fabs abroad take 3–5 years to reach volume."
+  },
+  {
+   "k": "hbm",
+   "name": "AI memory (HBM)",
+   "w": [
+    0.15,
+    1,
+    0.4
+   ],
+   "share": {
+    "KR": 80,
+    "US": 20
+   },
+   "used": [
+    "US"
+   ],
+   "note": "Revenue by maker nationality, Q2 2026: two Korean firms and one American. US rules have limited sales to China since December 2024.",
+   "confidence": "medium",
+   "replicate_years": [
+    2,
+    5
+   ],
+   "replicate_note": "Memory makers outside Korea are ramping, but yields lag."
+  },
+  {
+   "k": "design",
+   "name": "AI chip design",
+   "w": [
+    0.3,
+    0.8,
+    0.3
+   ],
+   "share": {
+    "US": 95,
+    "CN": 4,
+    "OTH": 1
+   },
+   "used": [
+    "US"
+   ],
+   "note": "Share of AI computing power shipped, by designer nationality, late 2025.",
+   "confidence": "medium",
+   "replicate_years": [
+    2,
+    4
+   ],
+   "replicate_note": "Chip design talent moves fast; software ecosystems move slower."
+  },
+  {
+   "k": "compute",
+   "name": "Installed AI computing power",
+   "w": [
+    1,
+    0.6,
+    0.2
+   ],
+   "share": {
+    "US": 75,
+    "CN": 15,
+    "GULF": 2,
+    "UK": 1,
+    "JP": 1,
+    "KR": 1,
+    "DE": 1,
+    "OTH": 4
+   },
+   "used": [],
+   "note": "Where AI supercomputers are, in a large sample from early 2025. Five US companies own over 70% of the world's AI computing power.",
+   "confidence": "medium",
+   "replicate_years": [
+    1,
+    3
+   ],
+   "replicate_note": "Installed compute follows money and power within a few years."
+  },
+  {
+   "k": "model",
+   "name": "Notable AI models",
+   "w": [
+    1,
+    0.5,
+    0.1
+   ],
+   "share": {
+    "US": 55,
+    "CN": 35,
+    "KR": 5,
+    "UK": 1,
+    "AUCA": 1,
+    "OTH": 3
+   },
+   "used": [],
+   "note": "Notable AI models released in 2025, by developer nationality. In one ranking from March 2026, the top four developers were all American.",
+   "confidence": "medium",
+   "replicate_years": [
+    0.5,
+    2
+   ],
+   "replicate_note": "Model ideas diffuse in months."
+  }
+ ]
+}

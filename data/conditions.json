@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "source": "gszep, \"Six safety conditions for upcoming laws\" (2026)",
+  "source_url": "https://gszep.com/en/blog/six-safety-conditions-for-upcoming-laws/",
+  "scoring": "Team heuristic, not from the source. Each condition is backed by one or more levers. A 'host' lever means the law binds whatever is hosted on the bloc's territory: its strength is the bloc's combined share of that stage. A 'chokepoint' lever means the bloc can attach the condition to exports of an input the world needs: its strength is the bloc's share of the strongest such stage. A condition's score is the strongest of its levers.",
+  "thresholds": { "credible": 50, "partial": 25 },
+  "limits": "Market share is not leverage by itself: a share only bites if the bloc acts together, the input is hard to replace, and the bloc will accept the cost of using it. The thresholds are a judgement call, shown so readers can disagree."
+ },
+ "conditions": [
+  {
+   "n": 1,
+   "name": "Testing before release",
+   "text": "Evaluators from a recognised AI safety institute in any participating country may test a model trained or hosted there before release.",
+   "levers": [
+    { "mode": "host", "stages": ["power", "compute"], "why": "Models trained or served on the bloc's territory fall under its law." },
+    { "mode": "chokepoint", "stages": ["tools", "fab", "hbm", "mat"], "why": "Chip inputs can be licensed on condition that buyers accept testing." }
+   ]
+  },
+  {
+   "n": 2,
+   "name": "Shared serious-incident definition",
+   "text": "One definition of a serious incident, with reports going to every participant.",
+   "levers": [
+    { "mode": "host", "stages": ["power", "compute"], "why": "Reporting duties bind operators running systems on the bloc's territory." }
+   ]
+  },
+  {
+   "n": 3,
+   "name": "Protected model weights",
+   "text": "Weights trained or stored in the country meet a common security standard.",
+   "levers": [
+    { "mode": "host", "stages": ["power", "compute"], "why": "Only weights stored on the bloc's territory are covered." }
+   ]
+  },
+  {
+   "n": 4,
+   "name": "Continuity for essential users",
+   "text": "Government and critical-infrastructure users keep access to locally hosted models in a crisis.",
+   "levers": [
+    { "mode": "host", "stages": ["power", "compute"], "why": "Needs local hosting under a contract that survives withdrawal." }
+   ]
+  },
+  {
+   "n": 5,
+   "name": "Known chip locations",
+   "text": "Operators can show where their advanced chips are; export licences for chips and key inputs carry the same condition.",
+   "levers": [
+    { "mode": "chokepoint", "stages": ["tools", "fab", "hbm", "mat", "design"], "why": "Export licences on chips and their inputs can require location reporting." },
+    { "mode": "host", "stages": ["compute"], "why": "Chips installed on the bloc's territory can be required to report location." }
+   ]
+  },
+  {
+   "n": 6,
+   "name": "Local off-switch, with due process",
+   "text": "Operators can isolate or stop a workload on a lawful order of the host country, with notice and review.",
+   "levers": [
+    { "mode": "host", "stages": ["power", "compute"], "why": "A host can only switch off what runs on its territory." }
+   ]
+  }
+ ]
+}
