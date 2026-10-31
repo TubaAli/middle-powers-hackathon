@@ -127,6 +127,35 @@ h3.sub { font-size: 15px; margin: 20px 0 8px; }
 .hhi { display: inline-block; min-width: 64px; padding: 1px 6px; border-radius: 3px; background: linear-gradient(90deg, rgba(var(--cn), .25) var(--h), transparent var(--h)); }
 #conc td:nth-child(2) { text-align: left; }
 
+/* Timeline */
+#cond-filter { margin-bottom: 12px; }
+#cond-filter button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.tl-scroll { padding: 8px 0; }
+.tl { min-width: 760px; }
+.tl-row { display: grid; grid-template-columns: 150px 1fr 70px; align-items: center; min-height: 40px; border-bottom: 1px solid var(--line); }
+.tl-row:last-child { border-bottom: 0; }
+.tl-row.hit { background: rgba(var(--accent), .07); }
+.tl-lane { padding: 0 10px; font-size: 13px; font-weight: 600; }
+.tl-tag { display: block; font-size: 11px; font-weight: 500; color: rgb(var(--accent)); }
+.tl-track { position: relative; height: 40px; margin: 0 14px 0 4px; }
+.tl-nodate { position: relative; height: 40px; border-left: 1px dashed var(--line); text-align: center; font-size: 11px; color: var(--muted); display: flex; align-items: center; justify-content: center; }
+.tl-axis { min-height: 44px; }
+.tl-axis .tl-track, .tl-axis .tl-nodate { height: 44px; }
+@media (max-width: 520px) { .tl { min-width: 680px; } .tl-row { grid-template-columns: 96px 1fr 56px; } }
+.tl-month { position: absolute; top: 6px; font-size: 11px; color: var(--muted); transform: translateX(-2px); border-left: 1px solid var(--line); padding-left: 3px; white-space: nowrap; }
+.tl-today { position: absolute; top: 24px; font-size: 11px; font-weight: 600; color: var(--focus); transform: translateX(-50%); background: var(--panel); padding: 0 3px; }
+.tl-todayline { position: absolute; top: 0; bottom: 0; border-left: 2px solid var(--focus); opacity: .5; }
+.tl-mark { position: absolute; top: 50%; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; border: 2px solid rgb(var(--accent)); background: rgb(var(--accent)); cursor: pointer; padding: 0; z-index: 1; }
+.tl-nodate .tl-mark { position: static; margin: 0; }
+.tl-mark.approx { background: var(--panel); border-style: dashed; }
+.tl-mark.dim { opacity: .2; }
+.tl-mark.sel, .tl-mark:hover, .tl-mark:focus-visible { box-shadow: 0 0 0 3px rgba(var(--accent), .35); outline: none; }
+.tl-row:not(.hit) .tl-mark { border-color: var(--weak); background: var(--weak); }
+.tl-row:not(.hit) .tl-mark.approx { background: var(--panel); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+#tl-matrix td.hit { color: rgb(var(--accent)); font-weight: 600; }
+#tl-matrix tr.sel td { background: rgba(var(--accent), .07); }
+
 .prose { max-width: 75ch; }
 .prose li { margin: 6px 0; }
 .empty { color: var(--muted); font-style: italic; }

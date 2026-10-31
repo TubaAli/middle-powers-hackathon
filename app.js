@@ -1,8 +1,8 @@
 // Middle Powers Leverage Map: stack map + coalition builder.
 // Stage weights and shares follow gszep's published leverage model (data/layers.json).
 
-const state = { s: 0.4, view: 'stack', bloc: ['NL', 'JP', 'KR'], stage: null, withdraw: 'CN' };
-const VIEWS = ['stack', 'coalition', 'dependence', 'about'];
+const state = { s: 0.4, view: 'stack', bloc: ['NL', 'JP', 'KR'], stage: null, withdraw: 'CN', cond: 0, win: null };
+const VIEWS = ['stack', 'coalition', 'dependence', 'timeline', 'about'];
 // Groups that are many countries, not one supplier: left out of HHI squares and the supplier picker.
 const FRAGMENTED = ['OTH', 'PROD'];
 let L, C, W;
@@ -40,10 +40,11 @@ function readHash() {
   const p = new URLSearchParams(location.hash.slice(1).replace(new RegExp(`^(${VIEWS.join('|')})&?`), (m, v) => { state.view = v; return ''; }));
   if (p.has('s')) state.s = Math.min(1, Math.max(0, Number(p.get('s')) / 100 || 0));
   if (p.has('w') && L.countries.some((c) => c.k === p.get('w') && !FRAGMENTED.includes(c.k))) state.withdraw = p.get('w');
+  if (p.has('c')) state.cond = C.conditions.some((c) => c.n === Number(p.get('c'))) ? Number(p.get('c')) : 0;
   if (p.has('b')) state.bloc = p.get('b').split(',').filter((k) => L.countries.some((c) => c.k === k) && !NOT_SELECTABLE.includes(k));
 }
 function writeHash() {
-  history.replaceState(null, '', `#${state.view}&s=${Math.round(state.s * 100)}&b=${state.bloc.join(',')}&w=${state.withdraw}`);
+  history.replaceState(null, '', `#${state.view}&s=${Math.round(state.s * 100)}&b=${state.bloc.join(',')}&w=${state.withdraw}${state.cond ? `&c=${state.cond}` : ''}`);
 }
 
 function renderMix() {
@@ -212,6 +213,67 @@ function renderDependence() {
     }).join('') + '</tbody>';
 }
 
+// Timeline: one lane per jurisdiction, markers at each opening, plus a condition × jurisdiction matrix.
+const TL_START = new Date('2026-10-01'), TL_END = new Date('2027-07-31');
+const dayPos = (d) => ((new Date(d) - TL_START) / (TL_END - TL_START)) * 100;
+const fmtDate = (d) => new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+const inBloc = (w) => w.countries.length === 0 || w.countries.some((k) => state.bloc.includes(k));
+
+function renderTimeline() {
+  $('#cond-filter').innerHTML = `<button data-c="0" aria-pressed="${state.cond === 0}">All conditions</button>` +
+    C.conditions.map((c) => `<button data-c="${c.n}" aria-pressed="${state.cond === c.n}">${c.n}. ${esc(c.name)}</button>`).join('');
+
+  const wins = W.windows.map((w, i) => ({ ...w, i }));
+  const lanes = [...new Set(wins.map((w) => w.who))];
+  const months = [];
+  for (let d = new Date(TL_START); d <= TL_END; d.setMonth(d.getMonth() + 1)) months.push(new Date(d));
+  const today = new Date();
+
+  const axis = `<div class="tl-row tl-axis"><span class="tl-lane"></span><span class="tl-track">${months.map((m) =>
+    `<span class="tl-month" style="left:${dayPos(m)}%">${m.toLocaleDateString('en-GB', { month: 'short' })}${m.getMonth() === 0 ? ` ${m.getFullYear()}` : ''}</span>`).join('')}
+    ${today >= TL_START && today <= TL_END ? `<span class="tl-today" style="left:${dayPos(today)}%">today</span>` : ''}</span><span class="tl-nodate">No date</span></div>`;
+
+  const rows = lanes.map((who) => {
+    const ws = wins.filter((w) => w.who === who);
+    const hit = ws.some(inBloc);
+    const marks = (list) => list.map((w) => {
+      const match = !state.cond || w.conditions.includes(state.cond);
+      const cls = `tl-mark${w.approx ? ' approx' : ''}${match ? '' : ' dim'}${state.win === w.i ? ' sel' : ''}`;
+      const style = w.date ? `left:${dayPos(w.date)}%` : '';
+      return `<button class="${cls}" style="${style}" data-i="${w.i}" title="${esc((w.date ? fmtDate(w.date) + ': ' : '') + w.label)}"><span class="sr">${esc(w.label)}</span></button>`;
+    }).join('');
+    const tag = who === 'All participants' ? '' : hit ? '<span class="tl-tag">in bloc</span>' : '';
+    return `<div class="tl-row${hit ? ' hit' : ''}"><span class="tl-lane">${esc(who)}${tag}</span>
+      <span class="tl-track">${marks(ws.filter((w) => w.date))}${today >= TL_START ? `<span class="tl-todayline" style="left:${dayPos(today)}%"></span>` : ''}</span>
+      <span class="tl-nodate">${marks(ws.filter((w) => !w.date))}</span></div>`;
+  }).join('');
+  $('#tl').innerHTML = axis + rows;
+
+  const sel = wins.find((w) => w.i === state.win);
+  const det = $('#tl-detail');
+  det.hidden = !sel;
+  if (sel) {
+    det.innerHTML = `<h3>${esc(sel.who)} · ${sel.date ? fmtDate(sel.date) : 'No date'}${sel.approx ? ' (rough)' : ''}</h3>
+      <p>${esc(sel.label)}</p>
+      <p class="meta">Can carry: ${sel.conditions.map((n) => `${n}. ${esc(C.conditions.find((c) => c.n === n).name)}`).join(' · ')}</p>`;
+  }
+
+  // Matrix: earliest dated opening per condition and jurisdiction.
+  const first = (list) => list.filter((w) => w.date).sort((a, b) => a.date.localeCompare(b.date))[0];
+  const cell = (w, any) => (w ? `${fmtDate(w.date)}${w.approx ? '*' : ''}` : any ? 'No date' : '');
+  $('#tl-matrix').innerHTML = `<thead><tr><th style="text-align:left">Condition</th>${lanes.map((l) => `<th>${esc(l)}</th>`).join('')}<th>Bloc's first chance</th></tr></thead><tbody>` +
+    C.conditions.map((c) => {
+      const forC = wins.filter((w) => w.conditions.includes(c.n));
+      const cells = lanes.map((l) => {
+        const ws = forC.filter((w) => w.who === l);
+        const hit = ws.some(inBloc) && l !== 'All participants';
+        return `<td class="${hit ? 'hit' : ''}">${cell(first(ws), ws.length)}</td>`;
+      }).join('');
+      const b = first(forC.filter(inBloc));
+      return `<tr class="${state.cond === c.n ? 'sel' : ''}"><td class="stage">${c.n}. ${esc(c.name)}</td>${cells}<td><b>${b ? cell(b, true) : '–'}</b></td></tr>`;
+    }).join('') + `</tbody>`;
+}
+
 function renderAbout() {
   const srcs = [
     [L._meta.source, L._meta.source_url],
@@ -229,6 +291,7 @@ function render() {
   if (state.view === 'stack') renderStack();
   if (state.view === 'coalition') { renderChips(); renderCoalition(); }
   if (state.view === 'dependence') renderDependence();
+  if (state.view === 'timeline') renderTimeline();
   writeHash();
 }
 
@@ -246,6 +309,13 @@ function wire() {
     const k = e.target.dataset?.k; if (!k) return;
     state.bloc = state.bloc.includes(k) ? state.bloc.filter((x) => x !== k) : [...state.bloc, k];
     render();
+  });
+  $('#cond-filter').addEventListener('click', (e) => {
+    const c = e.target.dataset?.c; if (c != null) { state.cond = Number(c); render(); }
+  });
+  $('#tl').addEventListener('click', (e) => {
+    const m = e.target.closest('.tl-mark'); if (!m) return;
+    const i = Number(m.dataset.i); state.win = state.win === i ? null : i; renderTimeline();
   });
   $('#suppliers').addEventListener('click', (e) => {
     const k = e.target.dataset?.k; if (k) { state.withdraw = k; render(); }
