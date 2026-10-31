@@ -52,3 +52,18 @@ Source: organizer message pasted by Grisha on 31 October 2026. The year below fo
   - mapping-ai.org/map: the D3 network, with a sourced claim and confidence for every link.
   - mapping-ai.org/insights#funding: the concentration and "kingmaker" lens, applied to countries' supply dependence.
 - **Key gap we fill:** mapping-ai.org is US-centred and has no middle-power or supply-chain view.
+
+## Oct 31: prototype v0 (stack map + coalition builder)
+- **What's built:**
+  - `index.html` + `app.js` + `style.css`, reading `data/layers.json`, `data/conditions.json` and `data/windows.json`.
+  - To run it: `python3 -m http.server` in this folder.
+- **Data:**
+  - Shares and stage weights are copied from gszep's published model. Our numbers match the post: middle powers about 39% at a 40% mix, 19% at the software end.
+  - Confidence levels, years-to-replace and the condition scoring are our additions, and are marked as such.
+- **Applied from the finance handoff:**
+  - Two EuroHPC deadlines: Lot 2 on 3 Dec 2026, Lot 1 on 4 Feb 2027.
+  - Condition labels now read "strong / some / weak supply-chain basis", a scenario rather than enforceable power.
+- **Not yet:**
+  - The dependence/"what if X withdraws" view and the timeline view.
+  - The finance-rights layer.
+  - A public link: the repo is private.
