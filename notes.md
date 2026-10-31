@@ -31,3 +31,12 @@ A summary of the brainstorm so far. The full idea list is in [ideas.md](ideas.md
 ## Working agreement
 - Everything we discuss from here on is committed and pushed to `main` in real time.
 - Collaborators: gszep and Drukboy.
+
+## Oct 31: chosen: Leverage Map + Coalition Builder
+- The design is in [DESIGN.md](DESIGN.md).
+- **Inputs:**
+  - gszep's "Speed limits, not walls": supply-chain leverage from mines to models.
+  - gszep's "Six safety conditions": the demands and the legal windows.
+  - mapping-ai.org/map: the D3 network, with a sourced claim and confidence for every link.
+  - mapping-ai.org/insights#funding: the concentration and "kingmaker" lens, applied to countries' supply dependence.
+- **Key gap we fill:** mapping-ai.org is US-centred and has no middle-power or supply-chain view.
