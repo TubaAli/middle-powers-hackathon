@@ -22,8 +22,13 @@ Local acceptance: all 32 keyboard selections, every country filter, search/reset
 stable positions after reload/filter, mobile expanded factor tables, all three
 view modes and detail-page round trips passed without page errors. The existing
 coverage browser regression passed, as did all 11 metric/placement unit tests.
-Desktop and mobile screenshots were visually checked. Public acceptance follows
-publication; the browser checker supports the live URL.
+Desktop and mobile screenshots were visually checked. Public acceptance passed
+at implementation commit `9ca9af9`: all 32 model points, every keyboard selection,
+country filters, stable positions, mobile expanded factors, coverage modes and
+detail round trips passed with no page errors. All six published model/view
+files matched committed bytes. The next useful model refinement is replacing
+neutral priors with route-specific timing, scope and enforceable-remedy evidence;
+the current indices remain editorial assessments rather than measured outcomes.
 
 ## Retrieved coordinate evidence: local integration, 31 October 2026
 
