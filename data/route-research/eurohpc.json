@@ -1,0 +1,55 @@
+{
+  "routes": [
+    {
+      "id": "eurohpc-incident-protocol",
+      "title": "Turn compute procurement into an incident-response protocol",
+      "shortLabel": "EuroHPC incident protocol",
+      "coordination": "broader",
+      "countries": ["EU participating states", "EU institutions"],
+      "region": "Europe",
+      "mechanism": "Procurement",
+      "status": "Draft-backed",
+      "confidence": "High",
+      "impact": 3,
+      "feasibility": 3,
+      "impactRange": [2, 4],
+      "feasibilityRange": [2, 4],
+      "impactRationale": "Editorial judgment: timely security-incident evidence and mitigation could limit repeated or spreading compromise of shared AI infrastructure. Whether this reaches model-originated incidents needs interpretation; no model-release veto or quantified reduction in advanced-AI risk is established.",
+      "feasibilityRationale": "Editorial judgment: an explicit notification duty and termination procedure are already written in the draft. Making a working protocol still needs final contract terms, contracting-authority action, contractor accommodation and clarity on tenant reporting. Those dependencies prevent an easy-to-implement rating.",
+      "actor": "EuroHPC Joint Undertaking and the relevant national contracting authorities; EU institutional participation is required, not just a coalition of national governments.",
+      "obligor": "The AIGF contractor. Direct obligations on model developers or tenants require examination of user terms and any applicable flow-down.",
+      "instrument": "Published model Framework Contract, I.14.6; security-breach termination ground II.18.1(p); procedure II.18.3. Draft text, not an executed agreement located in this review.",
+      "safeguard": "Clarify coverage of model-originated security incidents, then agree a notification, retained-evidence and mitigation protocol using the draft infrastructure-security duty as the starting point.",
+      "verification": "Contracting authorities receive breach notifications and continuing information. Proposed protocol would name required evidence, an accountable reviewer and an escalation process. Whether tenant inference evidence is available remains unresolved.",
+      "remedy": "Draft II.18.1(p) permits termination for specified security breaches, subject to II.18.3 notice and observations. An additional-measures request is not automatically an enforceable new duty.",
+      "window": "Published extension announcement: Lot 2 deadline 3 December 2026; Lot 1 deadline 4 February 2027. Older Lot 1 metadata still says 3 December. Confirm the current clarification cut-off before acting; later steps depend on signature and agreed terms.",
+      "evidenceSummary": "The retained model contract expressly links infrastructure-security notification and mitigation to a breach remedy and procedure. I.14.7 and Specific Contract 11.5 are request/reasonable-effort provisions, not unconditional powers to impose new model-safety terms.",
+      "gap": "No executed agreement or explicit model-harm reporting taxonomy was located. The scope of model-originated incidents and tenant obligations needs an authoritative interpretation.",
+      "nextQuestion": "Will the contracting authority confirm how I.14.6 applies to a model-mediated data breach on anchor-customer capacity, and which agreed user terms supply the reporting evidence?",
+      "incentives": ["Public purchasers gain visibility into security incidents affecting purchased compute.", "Operators gain a common reporting protocol and clearer expectations rather than inconsistent requests."],
+      "constraints": ["Procurement amendments must not improperly change initial conditions or create unequal treatment.", "The contractor must be able to obtain the relevant tenant evidence.", "Reporting creates safety value only if findings prompt effective mitigation."],
+      "pairId": null,
+      "pairRole": null,
+      "sources": [
+        {
+          "title": "EuroHPC revised model Framework Contract",
+          "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/docs/bc712395-692d-41ab-aa25-8e254ae86eb2-CN/CfT%20AIGF%20-%20Annex%203%20-%20Model%20FWC%20v2_V2.pdf",
+          "locator": "I.14.6–7, p.20; II.11.2, p.45; II.18.1(p)/II.18.3, pp.54–55; SC 11.5, p.72. Retained-file hash in data/finance-research/sources.json.",
+          "claim": "The draft contains a security-notification obligation, mitigation duties and a termination procedure; additional requirements have qualified request routes.",
+          "observed": "2026-10-31",
+          "published": "2026-10-22",
+          "access": "primary-read"
+        },
+        {
+          "title": "Official procurement portal and extension announcement",
+          "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/bc712395-692d-41ab-aa25-8e254ae86eb2-CN",
+          "locator": "Announcement updated 26 October 2026; retained DOM capture in finance source ledger.",
+          "claim": "The announcement extends Lot 1 to 4 February 2027, while Lot 2 remains 3 December 2026; older Lot 1 milestone metadata conflicts.",
+          "observed": "2026-10-31",
+          "published": "2026-10-26",
+          "access": "primary-read"
+        }
+      ]
+    }
+  ]
+}

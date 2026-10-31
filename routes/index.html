@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Routes to safeguards · Middle Powers</title>
+  <meta name="description" content="Explore evidence-backed routes to AI safeguards. Compare feasibility, potential impact and what coordination changes.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#explorer">Skip to explorer</a>
+  <header class="masthead">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">↗</span> MIDDLE POWERS <span class="brand-sub">/ SAFEGUARD ATLAS</span></a>
+    <nav aria-label="Project navigation"><a href="../">Supply-chain map ↗</a><a href="#method">How to read this</a></nav>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">POLICY ROUTES · RESEARCH SNAPSHOT <span id="snapshot-date">31 OCT 2026</span></p>
+      <h1>What can we make safer,<br><em>together?</em></h1>
+      <p class="lede">Explore routes to AI safeguards. Find who can act, what needs to change, and whether coordination makes the route more achievable.</p></div>
+      <div class="snapshot"><span class="pulse" aria-hidden="true"></span> CURATED, NOT LIVE
+        <strong id="route-count">— routes</strong><span id="pair-count">Loading the evidence map…</span>
+        <a href="#updates">Replay an evidence update <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section id="explorer" aria-labelledby="map-title">
+      <div class="section-top"><div><p class="eyebrow">01 / EXPLORE THE POSSIBLE</p><h2 id="map-title">Routes to safeguards</h2></div>
+        <div class="view-switch" role="group" aria-label="Display"><button id="show-map" aria-pressed="true">Map</button><button id="show-list" aria-pressed="false">List</button></div>
+      </div>
+      <div class="filters">
+        <label class="search">Find a route<input id="search" type="search" placeholder="Country, safeguard or institution…"></label>
+        <label>Coordination<select id="coordination"><option value="">All routes</option><option value="national">One jurisdiction</option><option value="middle-power">Middle powers together</option><option value="broader">Broader coalition</option></select></label>
+        <label>Instrument<select id="mechanism"><option value="">All instruments</option><option>Procurement</option><option>Evaluation</option><option>Finance</option><option>Compute</option></select></label>
+        <label>Region<select id="region"><option value="">All regions</option><option>Asia-Pacific</option><option>Europe</option><option>Cross-regional</option></select></label>
+        <button id="reset" class="text-button">Reset</button>
+      </div>
+      <div class="legend"><span><i class="dot national"></i> One jurisdiction</span><span><i class="dot middle-power"></i> Middle powers together</span><span><i class="dot broader"></i> Broader coalition</span><span class="legend-note">Opacity = evidence confidence, not chance of success</span></div>
+      <div id="loading" role="status">Loading routes and source notes…</div>
+      <div class="workspace" id="workspace" hidden>
+        <div class="map-column">
+          <div class="chart-panel" id="map-panel">
+            <div class="chart-top"><span id="visible-count" aria-live="polite"></span><label class="check"><input type="checkbox" id="uncertainty" checked> Selected route’s judgment range</label></div>
+            <div id="plot" class="plot" role="group" aria-label="Route plot: feasibility increases rightward and potential impact upward"></div>
+            <div id="plot-index" class="plot-index" aria-label="Select a route"></div>
+            <p class="plot-foot">Ordinal assessments, not probabilities or measured risk reduction. Tied points are offset for visibility. <a href="#method">See the rubric ↓</a></p>
+          </div>
+          <div id="list-panel" hidden><div id="route-list" class="route-list"></div></div>
+          <div id="empty" class="empty" hidden>No routes match these filters. Try another country or reset the filters.</div>
+          <section class="comparison" aria-labelledby="compare-title">
+            <div class="section-top"><div><p class="eyebrow">TEST THE COORDINATION THESIS</p><h3 id="compare-title">What changes when we act together?</h3></div></div>
+            <div id="pair-buttons" class="pair-buttons"></div>
+            <div id="pair-detail"><p>Select a paired route to compare a national proposal with its coordinated version.</p></div>
+          </section>
+        </div>
+        <aside id="route-detail" class="route-detail" aria-label="Selected route evidence"></aside>
+      </div>
+    </section>
+
+    <section id="updates" class="updates" aria-labelledby="updates-title">
+      <div><p class="eyebrow">02 / FOLLOW THE EVIDENCE</p><h2 id="updates-title">A route moves when evidence changes.</h2>
+        <p>Replay the EuroHPC source review: an initial lead becomes a documented <strong>draft</strong> obligation. The coordinates illustrate an editorial reassessment—not a measured change in safety or a live search.</p>
+        <div class="replay-controls" role="group" aria-label="Evidence replay"><button id="replay-before">1. Initial lead</button><button id="replay-after" aria-pressed="true">2. Contract reviewed</button></div>
+        <p id="replay-status" class="small" aria-live="polite"></p>
+      </div>
+      <div id="update-card" class="update-card"></div>
+    </section>
+
+    <section id="method" class="method" aria-labelledby="method-title">
+      <div><p class="eyebrow">03 / OPEN THE BLACK BOX</p><h2 id="method-title">A map of hypotheses.<br>Evidence you can inspect.</h2>
+        <p>This sample is deliberately small and diverse. It is not representative, a league table, or proof that coalitions outperform national action.</p>
+        <a href="../data/routes.json" download>Download the route data ↗</a>
+      </div>
+      <div class="method-grid">
+        <article><h3>Implementation feasibility →</h3><p>1: major unresolved authority or consent barriers. 3: plausible instrument, material agreements still needed. 5: a narrow action using established machinery with few unresolved dependencies. Ratings concern the full described route, not just writing a proposal.</p></article>
+        <article><h3>Potential safety impact ↑</h3><p>1: indirect or narrowly scoped benefit. 3: a concrete failure mode addressed across several uses. 5: potentially broad prevention of severe advanced-AI harm. All ratings are conditional judgments. None is a measured effect size.</p></article>
+        <article><h3>Confidence ≠ feasibility</h3><p>Confidence concerns evidence for the mechanism. A signed instrument can be well documented but difficult to change. A draft is not an active safeguard. Ranges show reasonable editorial disagreement, not statistical confidence intervals.</p></article>
+        <article><h3>Colour describes dependencies</h3><p>National routes may still require suppliers’ agreement. Middle-power routes require coordination across jurisdictions. Broader routes need additional actors, such as EU institutions or a US borrower. Colours never automatically improve ratings.</p></article>
+        <article><h3>What would make this live?</h3><p>Monitor primary sources, discover underexplored routes, retrieve contradictory evidence, and propose traceable revisions. This version loads a dated, curated snapshot; it does not continuously scan literature.</p></article>
+        <article><h3>AI-assisted, human-accountable</h3><p>Research and implementation used OpenAI, Anthropic and GLM tools. Source claims, proposals and editorial assessments are separated. Inspect the sources and unresolved questions before relying on a route.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><span>Middle Powers · AI Safety Hackathon 2026</span><a href="../">Explore the supply-chain context ↗</a><a href="https://github.com/TubaAli/middle-powers-hackathon">Source & research ↗</a></footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
