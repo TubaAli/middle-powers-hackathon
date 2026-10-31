@@ -15,7 +15,14 @@ filters, both coverage pools, assumption persistence and empty states. The
 largest final brief was 589.38px at 390×844, with no horizontal overflow or page errors.
 The preserved eight-route estimates view also passed its original browser
 checks, including replay and paired comparisons. Public deployment acceptance
-is recorded separately once performed.
+passed for implementation commit `030f9e2`: all 32 routes and their evidence
+pages, country filters, both pools, keyboard selection and shareable assumption
+state worked at https://tubaali.github.io/middle-powers-hackathon/routes/.
+The largest public mobile brief was 589.375px; no page errors or overflow.
+Fresh public bytes matched the committed default HTML, quantitative JavaScript,
+detail JavaScript, metric engine, complete data snapshot and earlier-estimates
+page. All 13 model tests passed; the Geneva validator retained its ten-scenario,
+five-fraction, 68-source and 44-window checks plus 14 negative cases.
 
 Next discriminating question: which named owner can provide one upcoming
 decision, a complete approval set and a matched eligible-resource inventory,
