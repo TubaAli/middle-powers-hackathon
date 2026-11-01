@@ -1,0 +1,401 @@
+{
+  "schema": "realistic-diplomacy/candidate-rules-v1",
+  "observation_date": "2026-11-01",
+  "research_cutoff": "2026-11-01",
+  "latest_verified_evidence": "2026-10-30",
+  "game_baseline": "198d3ac",
+  "fiction_notice": "Proposed game rules. Reactions are bounded design choices, not measured probabilities. No government agreed to any of this. No acceptance odds are claimed anywhere in this file.",
+  "companion_note": "research_notes/Realistic diplomacy/east-asia.md",
+  "actors": [
+    {
+      "id": "JP",
+      "name": "Japan",
+      "game_token": "JP",
+      "mandate": "AI Strategic Headquarters (PM-chaired, Cabinet Office) sets AI policy; Digital Agency runs Gen-nai procurement; METI holds export licensing; AISI (est. Feb 2024) is the evaluation body being elevated to operational roles.",
+      "approval_chain": [
+        "Cabinet/AI Strategic Headquarters for AI Basic Plan and framework reviews",
+        "Digital Agency for Gen-nai tender terms (FY2027 call screening Nov-Dec 2026)",
+        "METI Security Trade Control Policy Division for export licences and the End User List",
+        "Diet for any amendment to the AI Promotion Act (currently penalty-free; review committee reported, unverified in primary)"
+      ],
+      "export_status": "FEFTA list-based controls; 23 SME categories controlled since Jul 2023 without presumption of denial; End User List 835 entities (WMD/missile/conventional-weapon scope only, no AI firms) as of 2025-10-09",
+      "dated_condition": "AI action plan due end-2026; five-year intensive investment window from 2027-04; second AI Basic Plan mandates continuous review incl. the AI Act",
+      "stated_goals": [
+        "AI sovereignty: strategic autonomy and strategic indispensability (second AI Basic Plan, 2026-07-14)",
+        "Operational AISI: model assessment, traceability, guardrails, crisis-time information sharing; AISI International Network leadership; convene an AI Summit in Japan",
+        "Vertical AI and Physical AI advantage; IP protection for content creators; data centres and semiconductors as AI infrastructure"
+      ],
+      "clocks": [
+        {"date": "2026-11", "event": "FY2027 Gen-nai domestic-model call opens; screening to Dec 2026 (team-verified window)"},
+        {"date": "2026-12", "event": "AI action plan due (Takaichi order of 2026-10-01)"},
+        {"date": "2027-01/02", "event": "Gen-nai evaluation, procurement notice and bids (team-verified)"},
+        {"date": "~2026-11", "event": "Reported one-year lapse of China's rare-earth control suspension (Nov 2025 truce); see X1"}
+      ],
+      "must_not_assume": [
+        "Not anti-China commercially: China is its second export market (US$125bn, 2024); the 2025-26 crisis was security-statement-driven",
+        "Not a US policy-copy machine: no presumption-of-denial licensing, no entity-list equivalent, no extraterritorial rules",
+        "The AI Promotion Act has no penalties today; binding-enforcement promises exceed the observed record",
+        "An AISI evaluation is not a release veto"
+      ],
+      "sources": ["S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "S8b", "S27"]
+    },
+    {
+      "id": "TW",
+      "name": "Taiwan",
+      "game_token": "TW",
+      "mandate": "NSTC is the AI Basic Act central competent authority; Executive Yuan to convene a National AI Strategy Special Committee; moda runs the AI risk-classification work and the ADI public-compute awards. The game card says 'Minister of Economic Affairs'; the actual AI authority is NSTC.",
+      "approval_chain": [
+        "NSTC as central competent authority under the AI Basic Act (effective 2026-01-14)",
+        "ADI/moda for compute awards (2026 round closed 2026-10-30; final review 2026-11-02; TWSC implementing operator)",
+        "Legislative Yuan for any amending statute",
+        "No government authority over TSMC production, pricing or locations"
+      ],
+      "export_status": "Partial exception among US allies: China-wide advanced-node end-use controls already exist; several non-export-control regulations restrict citizens/firms from supporting China's chip industry (CSIS)",
+      "dated_condition": "AI Basic Act in force 2026-01-14, 20 articles, no penalties; sub-instruments not yet written; local elections 2026-11-28",
+      "stated_goals": [
+        "Human-centric AI with seven governance principles; generous AI budget and industry subsidies (moda release, 2025-12-24)",
+        "Go beyond the semiconductor advantage to hardware-software integration",
+        "Survival and resilience: reject subordination; defence spending above 3% GDP this year, reported 5% target by 2030; whole-of-society resilience drills"
+      ],
+      "clocks": [
+        {"date": "2026-11-02", "event": "ADI final 2026 compute batch review (team-verified)"},
+        {"date": "2026-11-28", "event": "Local elections across 22 cities/counties (domestic-attention window)"},
+        {"date": "2027 (programme year)", "event": "ADI 2027 budget in draft; future application rounds (team-verified as openings, not confirmed dates)"}
+      ],
+      "must_not_assume": [
+        "The government cannot deliver TSMC: it publicly refused the US 50-50 production-split demand on 2025-10-01",
+        "Partner support has ceilings: Japan re-anchored to the 1972 framework within days; Korea explicitly stays out of cross-strait framing",
+        "Not anti-US and not anti-China in commercial terms; the silicon shield is the doctrine",
+        "The Basic Act has no penalties and its implementing instruments are mostly unwritten"
+      ],
+      "sources": ["S9", "S10", "S18", "S19", "S20", "S21", "S21b", "S22", "S25", "S26", "S27"]
+    },
+    {
+      "id": "KR",
+      "name": "South Korea",
+      "game_token": "KR",
+      "mandate": "MSIT leads AI policy (AI Basic Act regulator, AISI Korea, National AI Computing Center); MOTIE holds strategic-goods export licensing; the President's office drives the AI G3 agenda and both-club diplomacy; KOACC (Samsung SDS-led JV) builds the national compute centre.",
+      "approval_chain": [
+        "MSIT for AI Basic Act safety-duty notices (Feb 2026 consultation closed; 2027-01-22 grace clock is team-derived, not confirmed)",
+        "AISI Korea for evaluations (SG/KR joint agent-leakage study, June 2026, team-verified)",
+        "KOACC for National AI Computing Center terms (ground broken 2026-08-03, Haenam; 15k accelerators by 2028)",
+        "US BIS co-governs part of the memory chokepoint (VEU revocation effective 2025-12-31; reported annual licences)"
+      ],
+      "export_status": "Strategic-goods regime plus the Act on Prevention of Divulgence and Protection of Industrial Technology used against China tech transfer; Samsung/SK hynix China fabs lost VEU status (2025-12-31) and run on reported annual US licences",
+      "dated_condition": "AI Basic Act commenced 2026-01-22 with penalty-grace clock to 2027-01-22 (derived); US$950bn San Francisco cooperation projects and 4,000-trillion-won megaprojects are announcements, not state commitments",
+      "stated_goals": [
+        "AI G3: top-three AI nation (MSIT framing at AI Basic Act commencement)",
+        "Trustworthy AI chip production base and supply-chain partner (San Francisco AI Declaration, 2026-07-24/25)",
+        "Critical-mineral security via diversified partnerships (Brazil, Chile, Argentina, July 2026) and full restoration of China ties alongside US/Japan channels"
+      ],
+      "clocks": [
+        {"date": "2027-01-22", "event": "Earliest AI Basic Act penalty-grace anniversary; next notices possible (team-derived; game window already uses this)"},
+        {"date": "2026-08-03", "event": "National AI Computing Center groundbreaking; capacity toward 2028"},
+        {"date": "2026-10-28", "event": "FuriosaAI Series D (state National Growth Fund anchor) - evidence the state directly funds AI chips"}
+      ],
+      "must_not_assume": [
+        "US partnership is not obedience: first state visit to China in nine years (2026-01-05, 15 documents, one-China reaffirmation) weeks before meeting Japan's PM",
+        "China ties are not hostility to Japan: 'starting a new 60 years'; ACSA stays unresolved over the China gap, not over history alone",
+        "The US$950bn projects and megaproject totals are announcements; Seoul cannot attach conditions to SK/Samsung contracts",
+        "The national compute centre broke ground only in Aug 2026; do not code it as available compute"
+      ],
+      "sources": ["S6", "S7", "S9", "S10", "S11", "S12", "S13", "S13b", "S14", "S15", "S16", "S16b", "S27"]
+    }
+  ],
+  "candidate_rules": [
+    {
+      "id": "JP-1",
+      "actor": "JP",
+      "name": "Year-end action plan, not a new law",
+      "objective": "Put safety conditions inside Japan's growth-strategy frame: adopt AI, stay trusted, review the law on an annual cycle.",
+      "authority_instrument": "AI Strategic Headquarters and second AI Basic Plan (2026-07-14); Takaichi's year-end action plan order (2026-10-01); Gen-nai FY2027 call terms; reported AI Act review committee (penalties focus, unverified in primary).",
+      "trigger": "Player asks Japan to join conditions 1 (testing), 2 (incidents) or 3 (weights).",
+      "conditions": [
+        "Technical-cooperation and procurement framings are signable by ministers this month",
+        "Anything reading as statutory penalties is referred to the AI Act review with no published timetable",
+        "AISI joint-evaluation scope available under the Basic Plan's new AISI mandate"
+      ],
+      "decision_class": "signs_incident_refers_testing",
+      "time_cost_months": 1,
+      "time_cost_note": "0-1 months for AISI/procurement scope; statutory track has no clock.",
+      "plausible_response": "Signs condition 2 and an AISI joint-evaluation pilot; refers condition 1's binding version to the Act review and offers Gen-nai tender terms as the interim instrument; declines to promise penalties.",
+      "substitute": "Vendor safety-evidence requirements in the FY2027 domestic-model call (existing jp-procurement-safety-evidence route).",
+      "evidence_limit": "No retrieved document shows Japan accepting foreign safety duties in law; the late-October review committee is press-aggregator-level only.",
+      "sources": ["S1", "S2", "S8", "S8b"]
+    },
+    {
+      "id": "JP-2",
+      "actor": "JP",
+      "name": "The squeeze costs Tokyo more",
+      "objective": "Show asymmetric costs of chokepoint moves: Japan already paid this bill once.",
+      "authority_instrument": "Observed 2025-26 Chinese retaliation set (seafood suspension, travel caution, export restrictions, refused meetings) against Japan's rare-earth-magnet import reliance and US$125bn China market.",
+      "trigger": "Player licenses a chokepoint aimed at China, the accord is framed as a China-exclusion club, or the December 2026 scripted metal-squeeze event runs.",
+      "conditions": [
+        "With the US in the accord, Japan absorbs the hit and stays (alliance-first; refused China's retraction demand)",
+        "Alone, Japan asks for technical framing ('trustworthy AI co-creation', ASEAN/Global South language) before joining",
+        "Japan asks the player to stockpile or substitute rare-earth inputs first"
+      ],
+      "decision_class": "conditions",
+      "time_cost_months": 1,
+      "plausible_response": "Joins as 'AI safety technical cooperation, not a bloc' with a one-month reframing delay and a minerals ask.",
+      "substitute": "X1's truce-renewal move instead of eating the squeeze.",
+      "evidence_limit": "The one observed crisis followed a security statement, not a safety accord; Japan's reaction to a hypothetical AI-safety bloc with Taiwan is a design choice constrained by, not read off, the 2025 precedent.",
+      "sources": ["S4", "S5", "S6", "S27"]
+    },
+    {
+      "id": "JP-3",
+      "actor": "JP",
+      "name": "Licence conditions, not entity bans",
+      "objective": "Let Japan contribute supply-chain leverage only in the form its law allows.",
+      "authority_instrument": "FEFTA licence conditions on controlled chip materials and tools; End User List limited to WMD/military scope with no AI-firm entries (835 entities, 2025-10-09).",
+      "trigger": "Player asks Japan to attach condition 5 (chip-location reporting) or condition 1 to materials/tools exports.",
+      "conditions": [
+        "In scope: location reporting and end-use statements inside licences for listed items",
+        "Out of scope: entity-listing Chinese AI firms, presumption-of-denial policies, extraterritorial rules",
+        "Honest delay: Japan's 2023 controls took ~4 months announcement-to-enforcement, letting buyers stockpile"
+      ],
+      "decision_class": "conditions",
+      "time_cost_months": 2,
+      "plausible_response": "'We can write the reporting clause into licences for controlled items. We cannot blacklist firms; our list is WMD-only.'",
+      "substitute": "Location reporting via procurement and hosting contracts (the host lever).",
+      "evidence_limit": "No retrieved instance of Japan attaching safety or testing conditions to any export licence; this rule is proposed fiction grounded only in Japan's demonstrated instruments and must be labelled as such in-game.",
+      "sources": ["S3", "S27"]
+    },
+    {
+      "id": "TW-1",
+      "actor": "TW",
+      "name": "Survival first",
+      "objective": "Filter every offer through deterrence, continuity and recognition.",
+      "authority_instrument": "National-day security policy and defence-spending trajectory; Whole-of-Society Defense Resilience Committee; AI Basic Act machinery (NSTC central authority).",
+      "trigger": "Player makes any offer to Taiwan.",
+      "conditions": [
+        "Fast yes: conditions 4, 6, 2 (match its resilience posture and ADI programme remedies)",
+        "Conditional: condition 1 via ADI awards and the AI risk-classification framework",
+        "Red line: any accord text or framing that treats Taiwan as part of China; trading chip location for vague security talk"
+      ],
+      "decision_class": "signs_survival_scope",
+      "time_cost_months": 1,
+      "time_cost_note": "Programme-scope terms 0-1 month; campaign months (elections 2026-11-28) are slower and more partisan.",
+      "plausible_response": "Signs continuity/off-switch/incident scope; refers testing to the ADI/Basic Act track with the next application round as the date; declines with reason any China-framed joint statement.",
+      "substitute": "Existing taiwan-public-compute-safety-conditions route.",
+      "evidence_limit": "No retrieved Taiwan government statement about joining a hypothetical AI-safety coalition; the security filter is inference from defence and resilience behaviour.",
+      "sources": ["S18", "S19", "S22", "S25", "S26"]
+    },
+    {
+      "id": "TW-2",
+      "actor": "TW",
+      "name": "Government programmes, not TSMC",
+      "objective": "Stop the player converting the 80% fab share into a Taipei promise.",
+      "authority_instrument": "The refused 50-50 precedent (2025-10-01); ADI award rules and remedies (access rules 2026-08-14; TWSC operator); Basic Act committee and moda risk framework.",
+      "trigger": "Player picks the 'Promise {fab}' option or asks Taiwan to use TSMC as leverage.",
+      "conditions": [
+        "Bindable: its own compute awards, procurement, incident reporting, and (with care) its China-wide export-control end-use rules",
+        "Not bindable: any company's production, pricing or location"
+      ],
+      "decision_class": "declines_with_redirect",
+      "time_cost_months": 1,
+      "plausible_response": "'No government here can promise a foundry's output. We can put your conditions into our own compute awards - our 2026 review sits on 2 November.'",
+      "substitute": "Condition 5 via Taiwan's own China-wide export-control end-use rules - the one allied instrument CSIS documents as exceptional.",
+      "evidence_limit": "TSMC's own positions were not retrieved; the corporate-red-line reading rests on the government negotiator's statement.",
+      "sources": ["S9", "S20", "S26", "S27"]
+    },
+    {
+      "id": "TW-3",
+      "actor": "TW",
+      "name": "Watched and hedged partners",
+      "objective": "Make the player see that partners' support for Taiwan has three different ceilings.",
+      "authority_instrument": "Observed positions: Japan (supportive, re-anchored to the 1972 framework within days); Korea (explicitly staying out of cross-strait framing, one-China reaffirmation in Beijing); the US (demanding chips and defence spending while arming the island).",
+      "trigger": "Accord composition includes or omits Japan, Korea, US, or China.",
+      "conditions": [
+        "With Japan: warmer letter, asks for explicit security linkage, receives hedged language",
+        "With Korea: friendly but technical-cooperation-only on anything touching the strait",
+        "With the US: Taiwan asks who pays for the 5%-of-GDP defence pledge",
+        "With China in the accord: automatic, reasoned refusal"
+      ],
+      "decision_class": "composition_dependent_letters",
+      "time_cost_months": 1,
+      "plausible_response": "Distinct letters per coalition composition; never one averaged 'Taiwan replies'.",
+      "substitute": "One letter with a visible 'depends who else signs' line.",
+      "evidence_limit": "Scripted reactions constrained by three observed positions; none of the three governments was observed reacting to a real AI-safety coalition containing Taiwan.",
+      "sources": ["S4", "S6", "S10", "S20", "S21", "S22"]
+    },
+    {
+      "id": "KR-1",
+      "actor": "KR",
+      "name": "Both clubs at once",
+      "objective": "Join without being forced to choose between Washington and Beijing.",
+      "authority_instrument": "Observed dual-track record: US tech deal at APEC Gyeongju (2025-10-29) and Beijing state visit (2026-01-05) weeks apart; JUSK and JCK both invoked at the May 2026 summit; ACSA unresolved.",
+      "trigger": "Player asks Korea to join, or coalition membership shifts to include/exclude China or the US.",
+      "conditions": [
+        "Signs technical scope (conditions 2, 5 - its open window scope in game data) without entanglement language",
+        "Conditions any Taiwan-linked clause down to technical-only",
+        "Offers to host or revive a China-inclusive format alongside (the stalled JCK trilateral)"
+      ],
+      "decision_class": "signs_technical_conditions_strait",
+      "time_cost_months": 1,
+      "time_cost_note": "0-1 months technical; 2-3 months if text touches the strait or exclusivity.",
+      "plausible_response": "'We'll join the incident and chip-tracking work, co-sponsor it in both our formats, and won't co-sign anything that names the strait.'",
+      "substitute": "A Korea-proposed JCK technical annex, turning the hollowed-out trilateral into a player opportunity.",
+      "evidence_limit": "Hedging is an analyst reading of behaviour, not a government doctrine text; no observed Korean statement on joining AI-safety coalitions.",
+      "sources": ["S6", "S7", "S10", "S12", "S23", "S24"]
+    },
+    {
+      "id": "KR-2",
+      "actor": "KR",
+      "name": "The chokepoint is licensed in Washington",
+      "objective": "Be honest that Korea's strongest card is partly held by its ally.",
+      "authority_instrument": "BIS VEU revocation effective 2025-12-31 (Samsung/SK hynix China fabs removed; ~1,000 annual licence applications); US-Korea export-control-alignment deal (2025-10-29); Korea's own notices, AISI joint evaluations and KOACC compute-centre terms.",
+      "trigger": "Player asks Korea to license its AI-memory chokepoint with safety conditions attached.",
+      "conditions": [
+        "Attachable now: safety-duty notices, compute-award terms, AISI evaluation partnerships",
+        "Co-governed: memory exports partly decided under US licence conditions; Korea asks the player to bring the US along rather than promise unilaterally"
+      ],
+      "decision_class": "conditions",
+      "time_cost_months": 1,
+      "plausible_response": "'We can write evaluation and incident duties into our notices and our new compute centre's terms. For memory exports to third markets, part of the licence is decided in Washington; bring them and we'll match.'",
+      "substitute": "kr-safety-case-incident-rehearsal (existing route) as the signable piece.",
+      "evidence_limit": "No evidence Korea can lawfully attach novel safety conditions to HBM exports under its strategic-goods regime; the 'annual licences granted for 2026' detail is press-excerpt-level; the US$750bn Nvidia supply figure is an announcement.",
+      "sources": ["S9", "S11", "S12", "S13", "S14", "S15", "S16"]
+    },
+    {
+      "id": "KR-3",
+      "actor": "KR",
+      "name": "Announced is not disbursed",
+      "objective": "Keep the game from treating headlines as commitments.",
+      "authority_instrument": "US$950bn cooperation projects and SK's US$750bn supply deal (announced, corporate) vs state instruments: ~2.5-trillion-won National AI Computing Center (ground broken 2026-08-03) and the National Growth Fund's FuriosaAI round (2026-10-28).",
+      "trigger": "Player offers Korea a capital/build deal or cites the megaprojects as Korea's contribution.",
+      "conditions": [
+        "Korea matches genuine public spending and co-funding quickly",
+        "It cannot offer corporate numbers as its own commitment; no safety condition attaches to SK/Samsung contracts through Seoul",
+        "Letter must mark the offer announced, not granted"
+      ],
+      "decision_class": "signs_state_scope_only",
+      "time_cost_months": 0,
+      "plausible_response": "'Our sovereign fund and our new centre are ours to commit. The US$750bn you read about is between companies; we won't pretend to sign for them.'",
+      "substitute": "State-fund co-investment cards with delivery stages from process.md.",
+      "evidence_limit": "FuriosaAI's round is press-level; megaproject totals are government-announced figures, not budget lines I could read.",
+      "sources": ["S11", "S13", "S16b"]
+    }
+  ],
+  "cross_cutting_rules": [
+    {
+      "id": "X1",
+      "rule": "The December 2026 metal squeeze is the expiring November 2025 truce pause: China's 9 October 2025 rare-earth controls were suspended around 2025-11-01 with a one-year delay reported on the harshest parts. Show a reported clock and give the player a counter-move before it fires.",
+      "sources": ["S28", "S29"]
+    },
+    {
+      "id": "X2",
+      "rule": "Every letter carries a status word for what it promises: announced / committed / granted. Examples: US$950bn projects (announced); Japan's year-end action plan (committed to a date); Taiwan's 2 Nov 2026 ADI review (granted, dated programme action).",
+      "sources": ["S2", "S11", "S26"]
+    },
+    {
+      "id": "X3",
+      "rule": "Being the US's partner does not immunise a country from the US: VEU revocation hit Korea's firms; the 50-50 demand and a 20% tariff hit Taiwan; allies are pressed for naval deployments and defence spending. The February 2027 US-lean event can fire inside US-aligned coalitions too.",
+      "sources": ["S9", "S20", "S7", "S22"]
+    },
+    {
+      "id": "X4",
+      "rule": "Partnering with one rival is not automatic hostility from the other. Observed triggers for retaliation are specific acts (Taiwan security statements, chip-sourcing demands), not alignments. Never code affinity or enmity from coalition membership alone.",
+      "sources": ["S4", "S6", "S7", "S10"]
+    },
+    {
+      "id": "X5",
+      "rule": "These three governments' export-control tools are list-based, narrower and slower than America's (no Entity List equivalents; Japan's list is WMD/military-only; Taiwan is the partial China-wide exception). Chokepoint moves by JP/KR/TW should be slower, narrower, and occasionally routed around by their own companies.",
+      "sources": ["S3", "S27"]
+    }
+  ],
+  "windows_recommendation": {
+    "note": "Proposal only; no shared file edited.",
+    "taiwan_gap": "TW has no law window in data/windows.json despite a fresh framework law (in force 2026-01-14) and a dated domestic clock (local elections 2026-11-28). Recommended additions when the owner integrates: AI Basic Act implementation/sub-instrument drafting under NSTC (approximate date, post-promulgation), conditions 2, 4, 6; and a domestic-attention flag on 2026-11-28.",
+    "japan_note": "The JP window (approx 2026-10-31, conditions 1-3) is directionally grounded by the second AI Basic Plan's continuous-review mandate; the specific late-October review committee is press-aggregator-level only.",
+    "korea_note": "The KR window (2027-01-22, conditions 2, 5) is team-derived (commencement + minimum one-year grace), not a confirmed enforcement date; keep the existing caveat."
+  },
+  "contested_or_unresolved": [
+    {
+      "item": "Japan's late-October 2026 AI Act review committee (penalties focus)",
+      "status": "reported_not_primary",
+      "note": "Digital Minister Furukawa announcement reported 2026-10-06 by a news aggregator; Digital Agency confirms a 2026-10-30 press appearance but the transcript was unpublished at cutoff."
+    },
+    {
+      "item": "Whether China's retaliation against Japan included rare-earth export bans specifically",
+      "status": "unverified",
+      "note": "Foreign Policy confirms 'export restrictions' generically; the rare-earth-specific claim appeared only in an encyclopedia-style source and was not used."
+    },
+    {
+      "item": "Exact end date of the Nov 2025 rare-earth control suspension",
+      "status": "unresolved",
+      "note": "One-year delay is commentary-level on the 2025-11-01 US fact sheet; no primary text fixing the date was retrieved. Show a reported clock, not a certain one."
+    },
+    {
+      "item": "Korea's National AI Computing Center tender history (two failed bids, Ulsan-to-Haenam shift)",
+      "status": "partial",
+      "note": "Groundbreaking, site, KOACC JV and 2028/2030 targets corroborated by MSIT release title and multiple outlets; the failed-bids count and location politics are single-outlet."
+    },
+    {
+      "item": "US$950bn vs US$1.23 trillion totals for the July 2026 San Francisco announcements",
+      "status": "discrepant",
+      "note": "I use Yonhap's presidential-office figure (US$950bn; SK US$750bn); one outlet reported US$1.23tn for the same summit."
+    },
+    {
+      "item": "Taiwan's defence spending path (above 3% GDP in 2026; 5% by 2030)",
+      "status": "press_consistent",
+      "note": "Consistent across three press excerpts; no government budget document retrieved."
+    },
+    {
+      "item": "FuriosaAI Series D details",
+      "status": "press_level",
+      "note": "Startup announcement via tech press and a wire copy; National Growth Fund anchor reported, not registry-verified."
+    },
+    {
+      "item": "Late-October 2026 headlines (Korea October exports US$115.3bn; DMZ mine blast at G20; NK cluster-munition warhead test)",
+      "status": "headline_level",
+      "note": "Seen as Yonhap front-page headlines on 2026-11-01; do not build mechanics on them without verification."
+    }
+  ],
+  "sources": {
+    "S1": {"title": "Summary of Japan's Second AI Basic Plan (English, 6 pages)", "publisher": "Cabinet Office, Government of Japan", "published": "2026-07-14", "event": "2026-07-14", "url": "https://www8.cao.go.jp/cstp/ai/ai_plan/aiplan_g_eng_20260714.pdf", "access": "read_full_pdf_text"},
+    "S2": {"title": "Takaichi says government will compile action plan to spread the use of AI", "publisher": "The Japan Times (Jiji)", "published": "2026-10-01", "event": "2026-10-01", "url": "https://www.japantimes.co.jp/news/2026/10/01/japan/politics/takaichi-ai-promote/", "access": "read_full"},
+    "S3": {"title": "Review of the End User List (835 entities, +87, effective 2025-10-09)", "publisher": "METI, Government of Japan", "published": "2025-09-29", "event": "2025-10-09", "url": "https://www.meti.go.jp/english/press/2025/0929_003.html", "access": "read_full"},
+    "S4": {"title": "Japan, China Still at Odds Over Takaichi's Taiwan Remark Even After Diplomatic Talks in Beijing", "publisher": "The Japan News (Yomiuri Shimbun)", "published": "2025-11-19", "event": "2025-11-18", "url": "https://japannews.yomiuri.co.jp/politics/politics-government/20251119-293605/", "access": "read_full"},
+    "S5": {"title": "The Economic and Diplomatic Costs of Takaichi's Taiwan Remarks", "publisher": "Observer Research Foundation (research-intern author; figures indicative)", "published": "2025-12-18", "event": "2025-11-07", "url": "https://www.orfonline.org/expert-speak/the-economic-and-diplomatic-costs-of-takaichi-s-taiwan-remarks", "access": "read_full"},
+    "S6": {"title": "World Brief: Japan Courts South Korea Amid Rift With China", "publisher": "Foreign Policy", "published": "2026-01-13", "event": "2026-01-13", "url": "https://foreignpolicy.com/2026/01/13/japan-takaichi-south-korea-lee-china-xi-taiwan/", "access": "read_full"},
+    "S7": {"title": "Japan and South Korea Navigate a Turbulent World", "publisher": "The Diplomat (Kimiya Tadashi)", "published": "2026-06-12", "event": "2026-05-19", "url": "https://thediplomat.com/2026/06/japan-and-south-korea-navigate-a-turbulent-world/", "access": "read_full"},
+    "S8": {"title": "Sept-Oct 2026 Japan AI regulation news summary (aggregator) + Digital Agency press-appearance page", "publisher": "note.com aggregator / Digital Agency", "published": "2026-10-06", "event": "2026-10-30", "url": "https://www.digital.go.jp/speech/minister-261030-01", "access": "excerpt_only", "note": "Furukawa AI Act review committee reported by aggregator; Digital Agency confirms the 2026-10-30 appearance, transcript forthcoming."},
+    "S8b": {"title": "Digital Agency Gen-nai programme sources (programme page, FY2027 call plan, first staff survey)", "publisher": "Digital Agency, Government of Japan (team-verified)", "published": "2026-05-29", "event": "2026-10-30", "url": "https://www.digital.go.jp/policies/genai", "access": "team_verified_ledger_reuse"},
+    "S9": {"title": "Revocation of Validated End-User Authorizations in the People's Republic of China, 90 FR 42321", "publisher": "US Bureau of Industry and Security", "published": "2025-09-02", "event": "2025-12-31", "url": "https://www.federalregister.gov/documents/2025/09/02/2025-16735/revocation-of-validated-end-user-authorizations-in-the-peoples-republic-of-china", "access": "read_full"},
+    "S10": {"title": "President Xi Jinping Holds Talks With ROK President Lee Jae Myung", "publisher": "Ministry of Foreign Affairs of the People's Republic of China", "published": "2026-01-05", "event": "2026-01-05", "url": "https://www.fmprc.gov.cn/eng/xw/zyxw/202601/t20260105_11806810.html", "access": "read_full"},
+    "S11": {"title": "(News Focus) Lee advances S. Korea's AI chip hub vision with U.S. deals, S. America critical mineral cooperation", "publisher": "Yonhap News Agency", "published": "2026-08-02", "event": "2026-07-24", "url": "https://en.yna.co.kr/view/AEN20260801003100315", "access": "read_full"},
+    "S12": {"title": "S. Korea, US to sign deal to strengthen AI cooperation: report", "publisher": "The Korea Herald", "published": "2025-10-29", "event": "2025-10-29", "url": "https://www.koreaherald.com/article/10603735", "access": "read_full"},
+    "S13": {"title": "National AI Computing Center... Breaks Ground in Haenam (MSIT release) + corroborating press (Korea Times, etnews, Sedaily, Chosun Biz; May 2026 consortium finalisation)", "publisher": "MSIT and multiple outlets", "published": "2026-08-03", "event": "2026-08-03", "url": "https://www.msit.go.kr/eng/bbs/view.do?sCode=eng&mPid=2&mId=4&bbsSeqNo=42&nttSeqNo=1291", "access": "excerpt_multi_source"},
+    "S13b": {"title": "Ulsan bid launch for the National AI Computing Center (U-NEXT AI Forum)", "publisher": "Asia Economic Daily (asiae.co.kr)", "published": "2025-09-30", "event": "2025-09-30", "url": "https://www.asiae.co.kr/en/article/2025093008474597251", "access": "excerpt_via_search", "note": "Earlier bid-stage reporting; final site was Haenam."},
+    "S14": {"title": "The AI Basic Act Comes into Force... AI G3; Feb 2026 safety-duty notice consultation", "publisher": "MSIT (team-verified)", "published": "2026-01-22", "event": "2026-01-22", "url": "https://www.msit.go.kr/eng/bbs/view.do?bbsSeqNo=42&mId=4&nttSeqNo=1214&sCode=eng", "access": "team_verified_ledger_reuse"},
+    "S15": {"title": "SG/KR AISI joint evaluation of leakage risks in tool-using LLM agents", "publisher": "Singapore AISI / AISI Korea (team-verified)", "published": "2026-06-16", "event": "2026-06-16", "url": "https://sgaisi.sg/wp-api/wp-content/uploads/2026/06/SG_KR_AISI_Agent_Evaluation_Data_Leakage_2026.pdf", "access": "team_verified_ledger_reuse"},
+    "S16": {"title": "Samsung, SK hynix Escape Worst-Case as China VEU Ends: Annual Review Risks Loom", "publisher": "TrendForce News", "published": "2025-12-30", "event": null, "url": "https://www.trendforce.com/news/2025/12/30/news-samsung-sk-hynix-escape-worst-case-as-china-veu-ends-annual-review-risks-loom/", "access": "excerpt_via_search"},
+    "S16b": {"title": "FuriosaAI US$620m Series D anchored by Korea's National Growth Fund", "publisher": "TechWire Asia / Yahoo Finance wire", "published": "2026-10-28", "event": "2026-10-28", "url": "https://techwireasia.com/2026/10/furiosaai-series-d-korea-national-growth-fund-ai-chips/", "access": "excerpt_press"},
+    "S17": {"title": "Yonhap front-page headlines observed 2026-11-01 (October exports; DMZ mine blast at G20; NK cluster-munition test)", "publisher": "Yonhap News Agency", "published": "2026-11-01", "event": null, "url": "https://en.yna.co.kr", "access": "headline_level_only"},
+    "S18": {"title": "Legislative Yuan Passes Artificial Intelligence Fundamental Act in Third Reading...", "publisher": "Ministry of Digital Affairs (moda), Taiwan", "published": "2025-12-24", "event": "2025-12-23", "url": "https://moda.gov.tw/en/press/press-releases/18316", "access": "read_full"},
+    "S19": {"title": "Taiwan: New Law Establishing Basic Framework on AI (+ NSTC English law text)", "publisher": "US Law Library of Congress Global Legal Monitor / NSTC", "published": "2026-05-07", "event": "2026-01-14", "url": "https://www.loc.gov/item/global-legal-monitor/2026-05-07/taiwan-new-law-establishing-basic-framework-on-artificial-intelligence/", "access": "excerpt_official_law_page"},
+    "S20": {"title": "Taiwan says 'will not agree' to making 50% of its chips in US", "publisher": "Hong Kong Free Press (AFP)", "published": "2025-10-01", "event": "2025-10-01", "url": "https://hongkongfp.com/2025/10/01/taiwan-says-will-not-agree-to-making-50-of-its-chips-in-us/", "access": "read_full"},
+    "S21": {"title": "China should restrain itself, Lai says; Taiwan, China react sharply differently to Japan's Taiwan remarks", "publisher": "Taipei Times; UPI", "published": "2025-11-18", "event": "2025-11-15", "url": "https://www.taipeitimes.com/News/front/archives/2025/11/18/2003847383", "access": "excerpt_via_search"},
+    "S21b": {"title": "Reuters-observed Taiwan resilience drill reporting; bunker-drill photo report", "publisher": "politicstoday.org; Epoch Times", "published": "2026-08", "event": "2026-08-05", "url": "https://politicstoday.org/taiwan-tests-doomday-invasion-scenario-as-china-pressure-intensifies/", "access": "excerpt_via_search"},
+    "S22": {"title": "Lai National Day speech coverage (reject subordination; defence spending to deter war)", "publisher": "Al Jazeera; Seoul Economic Daily EN; Defense Post", "published": "2026-10-10", "event": "2026-10-10", "url": "https://www.aljazeera.com/news/2026/10/10/taiwan-president-says-defence-spending-boost-aims-to-deter-war", "access": "excerpt_multi_source"},
+    "S23": {"title": "Northeast Asia's trilateral framework has hollowed out", "publisher": "East Asia Forum", "published": "2026-08-13", "event": null, "url": "https://eastasiaforum.org/2026/08/13/northeast-asias-trilateral-framework-has-hollowed-out/", "access": "excerpt_via_search"},
+    "S24": {"title": "Japan-China Tensions Scuttle Trilateral Summit Plans", "publisher": "Chosun Ilbo (English)", "published": "2025-11-22", "event": "2025-11", "url": "https://www.chosun.com/english/world-en/2025/11/22/PGMUERUT6FBBPCDT3C7ZVNFH2M/", "access": "excerpt_via_search"},
+    "S25": {"title": "2026 Taiwan local elections (nine-in-one), 28 November 2026: CNA topic page, candidate roster checked against the CEC 2026-10-16 release, Wikipedia summary", "publisher": "CNA; taiwan.md; Wikipedia", "published": null, "event": "2026-11-28", "url": "https://taiwan.md/en/elections/2026/candidates/", "access": "excerpt_multi_source"},
+    "S26": {"title": "Taiwan ADI public-compute programme (2026 cutoff 2026-10-30; review 2026-11-02; access rules 2026-08-14; TWSC operator; 2027 draft budget)", "publisher": "ADI/moda (team-verified)", "published": "2026-10-30", "event": "2026-11-02", "url": "https://www-api.moda.gov.tw/File/Get/adi/zh-tw/szsgzAtSajkTt6G", "access": "team_verified_ledger_reuse"},
+    "S27": {"title": "Understanding U.S. Allies' Current Legal Authority to Implement AI and Semiconductor Export Controls", "publisher": "CSIS (Gregory C. Allen, Isaac Goldston)", "published": "2025-03-14", "event": null, "url": "https://www.csis.org/analysis/understanding-us-allies-current-legal-authority-implement-ai-and-semiconductor-export", "access": "read_most"},
+    "S28": {"title": "MOFCOM Notice 2025 No. 61 (rare earth export controls), CSET English translation", "publisher": "China MOFCOM via Georgetown CSET", "published": "2025-10-09", "event": "2025-10-09", "url": "https://cset.georgetown.edu/publication/mofcom-notice-2025-61/", "access": "excerpt_translation"},
+    "S29": {"title": "China Suspends Export Controls on Certain Critical Minerals (2025-11-01 US fact sheet commentary); FDD one-year-delay analysis", "publisher": "Pillsbury Winthrop; Foundation for Defense of Democracies", "published": "2025-11", "event": "2025-11-01", "url": "https://www.pillsburylaw.com/en/news-and-insights/china-suspends-export-controls-certain-critical-minerals-related-items.html", "access": "excerpt_via_search"}
+  },
+  "not_retrieved": [
+    "MOFA Japan country pages (HTTP 403)",
+    "Reuters article bodies (HTTP 401)",
+    "CNA article bodies (HTTP 404)",
+    "MOFCOM original Chinese notice text (used CSET translation only)",
+    "Taiwan Executive Yuan/NSTC Chinese pages; Korea Presidential Office English pages",
+    "Texts of the US-Korea and US-Japan technology-cooperation deals; the US-Taiwan tariff agreement",
+    "TSMC strategy statements; Japan's Rapidus status; any Japanese/Korean government read on the BIS VEU rule",
+    "The Digital Minister's 2026-10-30 press-conference transcript (forthcoming at cutoff)",
+    "Any confirmation that Japan's AI Act review committee actually convened in late October 2026"
+  ]
+}

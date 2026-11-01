@@ -1,5 +1,26 @@
 # Before Geneva
 
+## Submission game: Orbit Accord
+
+The selected communication game is [Orbit Accord](orbit.html): Tuba's map,
+plane, characters, style transfer, mission guide and core mechanics. The additive
+`orbit-research.js` layer links meetings to matching entries in the 32-route
+research snapshot, replaces generic scarcity pitches with country-specific
+interests, and adds a collapsible world outlook plus a fictional stress-test
+epilogue. It does not convert the plot's rankings into acceptance probabilities.
+
+The outlook extends Epoch's 5× annual training-compute trend (4–6× alternative
+rates) from November to Geneva. This is extrapolation, not a prediction interval.
+A separate fictional coalition-rollout curve slows with the existing safety-goal
+progress; its maximum 35% exponent reduction is an illustrative game parameter,
+not an estimated policy effect. The global trend is unchanged by that parameter.
+No measured trend is asserted for covert reasoning, agent collusion or synthetic
+web contamination. Endings are hypothetical stress tests, not predicted events.
+
+Release checks covered all 11 meeting groups at desktop and phone widths, research
+dialogs, cabinet outlooks, epilogues and numerical boundary cases, with no page
+errors. Tuba's core game and art files remain unchanged by this additive layer.
+
 A playable, research-informed diplomatic visual novel. Lead a small negotiating
 team from November 2026 to the Geneva session on 21 June 2027. The four original
 Gemini scene illustrations now sit behind live HTML dialogue, choices and UI.

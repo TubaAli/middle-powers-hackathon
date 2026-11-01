@@ -1,0 +1,238 @@
+{
+  "_meta": {
+    "note": "Machine-readable candidate rules for Game B (Orbit Accord) European actors. Companion to europe.md, which holds the full reasoning and source locators.",
+    "owner": "Europe researcher, Realistic diplomacy pass",
+    "observation_date": "2026-11-01",
+    "research_cutoff": "2026-11-01",
+    "game_baseline": "198d3ac on main",
+    "disclaimer": "Every rule and every numeric modifier is design inference (invented game knobs), not a measured acceptance probability or a prediction of the real government's decisions. Sources constrain the fiction; they do not establish consent.",
+    "date_note": "All sources observed 2026-11-01; publication and event dates recorded separately in europe.md's ledger."
+  },
+  "actors": [
+    {
+      "k": "NL",
+      "name": "Netherlands",
+      "game_title": "Minister of Foreign Trade",
+      "wants": [
+        "Security through controlled export of advanced chipmaking equipment (national licence requirement since 1 Sep 2023, expanded Sep 2024 and Apr 2025).",
+        "A live, undisturbed domestic chip industry; EUR 2.51bn Project Beethoven to keep ASML investing and headquartered in NL.",
+        "Trusted AI under the EU AI Act with national supervision still being legislated in 2026."
+      ],
+      "government_instruments": [
+        "National export-licence requirement for advanced semiconductor production equipment; cabinet decides per application; applies to exports outside the EU; not a ban.",
+        "Industrial-policy subsidies and infrastructure packages (Project Beethoven model); tax incentives need parliament.",
+        "AI Act national supervision once the implementation act passes (AP + RDI coordinating; consultation ran to 1 Jun 2026)."
+      ],
+      "corporate_assets_note": "The 25% tools stage share is ASML's, a listed private company. The state licenses exports and pays subsidies; it cannot promise machines, capacity or corporate R&D.",
+      "rules": [
+        {
+          "id": "R-NL-1",
+          "name": "Licence, case by case",
+          "goal_conds": [5, 1],
+          "trigger": "Player asks NL to join an accord that uses the tools stage.",
+          "conditions": "Full strength only if US or JP already in coalition; else half strength. Extra council month 'Coordinate licences' can replace the ally prerequisite.",
+          "modifier": "+10 if US or JP in coalition; half-strength contribution otherwise",
+          "time_cost": "1 extra month for licence coordination",
+          "response": "Joins with 'licence conditions only' letter; refuses supply guarantees.",
+          "substitute": "Notification-only clause (half credit toward cond 5, none for cond 1).",
+          "evidence_limit": "Real measures were incremental and allied-aligned, but no public decision rule conditions future licences on a coalition."
+        },
+        {
+          "id": "R-NL-2",
+          "name": "Keep the company, don't command it",
+          "goal_conds": [5, 1, 3],
+          "trigger": "Player offers a stage promise to NL or asks for tool-supply priority.",
+          "conditions": "Energy, minerals and market tokens count at full value (NL's needs). NL's letter always scopes the pledge to licences/subsidies, never corporate capacity.",
+          "modifier": "full PRICE.need for energy/minerals/market tokens",
+          "time_cost": 0,
+          "response": "Counters with capital co-investment (Brainport-style) instead of a chokepoint commitment.",
+          "substitute": "Co-investment adding NL power share (Beethoven logic).",
+          "evidence_limit": "Beethoven is regional infrastructure spend, not a control instrument; no evidence ASML accepts state-directed commercial conditions."
+        },
+        {
+          "id": "R-NL-3",
+          "name": "Don't go first",
+          "goal_conds": [5, 1],
+          "trigger": "NL asked to join before any other tool-state or superpower is in the accord.",
+          "conditions": "NL declines to be first mover; door reopens once US/JP join or after player's own costly move.",
+          "modifier": "-10 if no other tool-state/superpower in coalition; +10 once US or JP joins; +5 if player already licensed own chokepoint or tabled own bill",
+          "time_cost": "delays to next month at most",
+          "response": "'Not first' hold letter; proposes joint announcement at Geneva instead.",
+          "substitute": "Geneva joint declaration (delayed goal progress, not lost).",
+          "evidence_limit": "Inferred from official 'careful and targeted, minimal disruption' language; no documented no-first-mover policy."
+        }
+      ],
+      "memory_flags": [
+        { "flag": "coordinated", "meaning": "US/JP in coalition before the ask", "weight": "highest for NL" },
+        { "flag": "cost_shared", "meaning": "Player used a costly move (choke licence, tabled bill) before asking NL", "weight": "+5" }
+      ]
+    },
+    {
+      "k": "DE",
+      "name": "Germany",
+      "game_title": "Federal Minister for Digital Affairs",
+      "wants": [
+        "Innovation-friendly, low-bureaucracy implementation of the EU AI Act (KI-MIG; Bundesnetzagentur as lead market-surveillance authority plus sandbox).",
+        "Chip supply resilience paid with subsidies under the European Chips Act and EC state-aid approval (ESMC Dresden, up to EUR 5bn of >EUR 10bn).",
+        "EU-level timing discipline: high-risk AI rules from 2 Dec 2027 (after the game's June 2027 horizon)."
+      ],
+      "government_instruments": [
+        "National AI Act supervision and KI-Reallabor sandbox (Bundesnetzagentur).",
+        "Chip subsidies within EC state-aid approval; ESMC contract includes crisis prioritisation of EU/German orders and SME preferred access.",
+        "EuroHPC contracting-authority seat (JPA signatory; Lot 2 place of performance includes Germany)."
+      ],
+      "corporate_assets_note": "ESMC belongs to a TSMC/Bosch/Infineon/NXP joint venture; Germany's money buys contracts, not control of fabs.",
+      "rules": [
+        {
+          "id": "R-DE-1",
+          "name": "EU vehicle or nothing",
+          "goal_conds": [1, 2],
+          "trigger": "Player proposes conditions stricter than the EU AI Act baseline.",
+          "conditions": "DE joins only via an EU instrument: EuroHPC bill tabled by player, or NL (other in-game EU member) already in coalition.",
+          "modifier": "+10 with EU vehicle or NL in coalition; -10 for national-only asks",
+          "time_cost": "joins one month after the EU vehicle exists",
+          "response": "Joins via 'EuroHPC access-time conditions' wording; otherwise offers sandbox pilot.",
+          "substitute": "Bundesnetzagentur KI-Reallabor hosting for coalition evaluators (half credit toward cond 1).",
+          "evidence_limit": "KI-MIG's design supports the no-gold-plating reading; no documented German position on hypothetical coalition conditions."
+        },
+        {
+          "id": "R-DE-2",
+          "name": "Crisis-priority buyer",
+          "goal_conds": [4, 5],
+          "trigger": "Goals continuity or known chip locations.",
+          "conditions": "DE's contribution is a crisis-priority clause (ESMC wording); energy tokens are DE's full-value need.",
+          "modifier": "+10 on conds 4 and 5",
+          "time_cost": 0,
+          "response": "Offers co-funding or guaranteed industrial orders instead of enforcement powers.",
+          "substitute": "Subsidy-for-resilience swap (money for priority).",
+          "evidence_limit": "Crisis prioritisation is a single JV commitment for one fab, not a national policy."
+        },
+        {
+          "id": "R-DE-3",
+          "name": "No national choke move",
+          "goal_conds": [5, 1],
+          "trigger": "Player asks DE to license a chokepoint or lead a withholding accord.",
+          "conditions": "DE never offers national supply withholding; counters with subsidies or the EU path.",
+          "modifier": "no choke offer; honest letter notes EU rule path opens 2 Dec 2027, after the summit",
+          "time_cost": 0,
+          "response": "Offers to pay others to hold the line (capital token).",
+          "substitute": "Co-funding another member's enforcement instead of DE enforcement.",
+          "evidence_limit": "No German analogue of the Dutch national tool licence found in this pass; absence of evidence, not evidence of absence."
+        }
+      ],
+      "memory_flags": [
+        { "flag": "delivered", "meaning": "Player tabled the EU bill and the window exists", "weight": "+10 and referenced in DE's letter" },
+        { "flag": "abandoned_substitute", "meaning": "Player took DE's co-funding offer then left the accord", "weight": "sandbox-only offers for the rest of the campaign" }
+      ]
+    },
+    {
+      "k": "UK",
+      "name": "United Kingdom",
+      "game_title": "Secretary of State for Science",
+      "wants": [
+        "Growth-first AI superpower: 20x sovereign compute by 2030, AI Growth Zones (first at Culham), National Data Library, frontier national-champions function.",
+        "Security reframed: AI Safety Institute renamed AI Security Institute and moved to the Cabinet Office; incident and near-miss reporting considered through the Cyber Security and Resilience Bill regime; preparation for autonomous-agent incidents.",
+        "Institute-to-institute diplomacy (AISI MoU network, e.g. Australia May 2026) and a chips niche: compound chips, design and R&D (GBP 1bn strategy, UK Semiconductor Institute), not leading-edge fabs."
+      ],
+      "government_instruments": [
+        "AISI (Cabinet Office): evaluations, technical MoUs, shared definitions, staff exchanges.",
+        "AI Growth Zones and compute/data programmes (strategy, not enacted obligations).",
+        "Cyber Security and Resilience Bill regime as the live legislative vehicle for AI incident-type duties; no AI statute as of the cutoff; statutory AISI still pending.",
+        "UK Semiconductor Institute as partnership entry point; EuroHPC Participating State (observer-style), not a joint-procurement signatory."
+      ],
+      "corporate_assets_note": "Arm is a listed, foreign-owned company; UK state instruments are strategy funding, the institute and the cyber bill, not fab or tool control.",
+      "rules": [
+        {
+          "id": "R-UK-1",
+          "name": "Institute protocol fast lane",
+          "goal_conds": [1, 2],
+          "trigger": "Player proposes testing or incident accords to UK.",
+          "conditions": "UK joins at protocol level (AISI evaluation protocol). Extra ease if AUCA already in coalition (documented UK-Australia AISI MoU).",
+          "modifier": "+10 on conds 1-2; +5 more if AUCA in coalition",
+          "time_cost": 0,
+          "response": "Yes to protocol asks; no to statute-based or supply-guarantee asks.",
+          "substitute": "Shared incident definitions only (cond 2 credit, none for cond 1).",
+          "evidence_limit": "The Australia MoU is information sharing and best practice; it creates no enforcement rights or release veto."
+        },
+        {
+          "id": "R-UK-2",
+          "name": "Growth-for-security trade",
+          "goal_conds": [3, 4, 6],
+          "trigger": "Player proposes hosting-based conditions to UK.",
+          "conditions": "Energy tokens are UK's full-value need; UK accepts off-switch/continuity inside AI Growth Zone framing; refuses conditions that tax the compute build-out.",
+          "modifier": "full PRICE.need for energy tokens",
+          "time_cost": 0,
+          "response": "'Host with us and the rules come with the zone'; offers a pilot-zone clause instead of a national mandate.",
+          "substitute": "Pilot zone clause.",
+          "evidence_limit": "The Action Plan is strategy, not enacted obligation; specific developer deals were not re-verified in this pass."
+        },
+        {
+          "id": "R-UK-3",
+          "name": "Cyber Bill timing, honest lag",
+          "goal_conds": [2, 3, 6],
+          "trigger": "Player asks for statutory mandates before June 2027.",
+          "conditions": "UK routes incident/near-miss reporting through the Cyber Security and Resilience Bill regime; proposed in-game UK window ~Q2 2027 (approx) labelled 'Cyber Bill regime: AI incident and near-miss reporting (under consideration)'.",
+          "modifier": "odds drop for statute-based asks before the summit; protocol-level asks unaffected",
+          "time_cost": "statutory asks deferred past the Geneva summit",
+          "response": "Offers the cyber-bill route plus a Geneva declaration as the interim step.",
+          "substitute": "Voluntary developer commitments mirroring the AI Minister's public 'do not release the system' demand.",
+          "evidence_limit": "The Oct 2026 release says the government 'will explore strengthening' the cyber regime - consideration, not enacted rules; the Q2 2027 window date is invented for playability."
+        }
+      ],
+      "memory_flags": [
+        { "flag": "partnered", "meaning": "Accord already contains AUCA or US-linked institute work", "weight": "+5" },
+        { "flag": "accord_collapsed_under_us_pressure", "meaning": "Player's earlier coalition lost a member to the US-pressure event", "weight": "UK still joins protocol-level accords but asks for a no-surprise clause first" }
+      ]
+    }
+  ],
+  "sources": [
+    { "id": "S1", "publisher": "Rijksoverheid", "published": "2024-09-06", "observed": "2026-11-01", "status": "read", "url": "https://www.rijksoverheid.nl/actueel/nieuws/2024/09/06/nederland-uitbreiding-exportcontrolemaatregel-geavanceerde-productieapparatuur-halfgeleiders" },
+    { "id": "S2", "publisher": "Rijksoverheid", "published": "2025-01-15", "observed": "2026-11-01", "status": "read", "url": "https://www.rijksoverheid.nl/actueel/nieuws/2025/01/15/klever-aanscherping-exportcontrole-op-geavanceerde-productieapparatuur-voor-halfgeleiders" },
+    { "id": "S3", "publisher": "Government of the Netherlands", "published": "2024-03-28", "observed": "2026-11-01", "status": "read", "url": "https://www.government.nl/latest/news/2024/03/28/the-netherlands-to-invest--euro-2.5-billion-to-strengthen-business-climate-for-chip-industry-in-brainport-eindhoven" },
+    { "id": "S4", "publisher": "Rijksoverheid", "published": "2026-04-20", "observed": "2026-11-01", "status": "read", "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/04/20/kabinet-zet-stap-met-toezicht-op-europese-ai-regels" },
+    { "id": "S5", "publisher": "Bundesregierung", "published": "undated page (asset dated 2026-02-11)", "observed": "2026-11-01", "status": "read", "url": "https://www.bundesregierung.de/breg-de/aktuelles/umsetzung-ki-verordnung-2406638" },
+    { "id": "S6", "publisher": "BMWK", "published": "2024-12-13", "observed": "2026-11-01", "status": "read", "url": "https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Pressemitteilungen/2024/12/20241213-startschuss-fuer-die-chipfabrik-esmc-in-dresden.html" },
+    { "id": "S7", "publisher": "European Commission", "published": "2026-07-27 (page updated 2026-07-31)", "observed": "2026-11-01", "status": "read", "url": "https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force" },
+    { "id": "S8", "publisher": "GOV.UK (DSIT)", "published": "2025-01-13", "observed": "2026-11-01", "status": "read", "url": "https://www.gov.uk/government/publications/ai-opportunities-action-plan and https://www.gov.uk/government/publications/ai-opportunities-action-plan-government-response/ai-opportunities-action-plan-government-response" },
+    { "id": "S9", "publisher": "GOV.UK", "published": "live organisation page", "observed": "2026-11-01", "status": "read", "url": "https://www.gov.uk/government/organisations/ai-security-institute" },
+    { "id": "S10", "publisher": "GOV.UK (Cabinet Office, AISI, NCSC, DCMS)", "published": "2026-10-12", "observed": "2026-11-01", "status": "read", "url": "https://www.gov.uk/government/news/britain-steps-up-national-defences-against-growing-ai-risks" },
+    { "id": "S11", "publisher": "GOV.UK (DSIT)", "published": "2026-05-25", "observed": "2026-11-01", "status": "read", "url": "https://www.gov.uk/government/news/uk-and-australia-pact-on-fast-moving-ai-security-risks" },
+    { "id": "S12", "publisher": "GOV.UK (DSIT)", "published": "2024-05-20", "observed": "2026-11-01", "status": "read", "url": "https://www.gov.uk/government/news/new-independent-institute-to-steer-uk-semiconductor-innovation-and-support-semiconductor-strategy" },
+    { "id": "S13", "publisher": "GOV.UK (IPO, DSIT, DCMS)", "published": "2024-12-17 (last updated 2026-03-19)", "observed": "2026-11-01", "status": "read", "url": "https://www.gov.uk/government/consultations/copyright-and-artificial-intelligence" }
+  ],
+  "repo_evidence": [
+    "research_notes/Finance decision rights followup/eurohpc-tender.md (EuroHPC AI Gigafactory record, observed 2026-10-31)",
+    "data/layers.json, data/windows.json, game/planets.json, game/game.js (baseline 198d3ac)"
+  ],
+  "gaps_and_unverified": [
+    "L1 Dutch semiconductor regulation text and 20 Nov 2025 annex amendment (Staatscourant 2025/38653) located, not read.",
+    "L2 bmds.bund.de KI-MIG page and Bundestag Drucksache 21/4594 located, not read.",
+    "L3 ASML statements on export controls and US alignment not retrieved.",
+    "L4 German AI-infrastructure/compute budget (Hightech Agenda) located only as a related link, not read.",
+    "L5 UK March 2026 copyright/AI report and impact assessment linked, not read; status-quo reading is secondhand.",
+    "L6 UK Compute Strategy and 2025 Spending Review compute figures not located in this pass.",
+    "L7 EuroHPC tender pack unreadable without a rendered browser (per repo record).",
+    "No source shows any of the three governments attaching AI-safety conditions to a licence, subsidy or contract; all rules are design inference."
+  ],
+  "proposed_window_addition": [
+    {
+      "who": "United Kingdom",
+      "countries": ["UK"],
+      "date": "2027-04-01",
+      "approx": true,
+      "label": "Cyber Security and Resilience Bill regime: AI incident and near-miss reporting (under consideration)",
+      "conditions": [2, 3, 6],
+      "evidence": "S10 (12 Oct 2026 press release); date invented for playability; openings are not delivery plans per data/windows.json meta"
+    },
+    {
+      "who": "EU",
+      "countries": ["DE", "NL"],
+      "date": "2027-12-02",
+      "approx": false,
+      "label": "EU AI Act Annex III high-risk obligations begin applying (AI Omnibus, in force 27 Jul 2026) - after the game's 30 Jun 2027 horizon",
+      "conditions": [1, 2, 3, 6],
+      "evidence": "S7; propose showing this as an out-of-horizon note, not a playable window",
+      "out_of_game_horizon": true
+    }
+  ]
+}

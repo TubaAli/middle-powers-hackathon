@@ -1,0 +1,1356 @@
+{
+ "meta": {
+  "file": "research_notes/Realistic diplomacy/plot-game-audit.json",
+  "companion": "plot-game-audit.md",
+  "question": "Is the submitted game actually based on the research that produced the 2D feasibility-vs-impact plot?",
+  "auditDate": "2026-11-01",
+  "repoHead": "cbaa491",
+  "evidenceObserved": "2026-10-31",
+  "method": "File/line/ID audit of existing artefacts only. No new research, no implementation edits, no commits.",
+  "verdictShort": "Game A (Before Geneva, the submitted game) shares the exact 32-route ID set and the 31 Oct research snapshot with the plot, with demonstrable two-way per-route links; it consumes no plot coordinates and its outcomes are deterministic authored rules. Game B (Orbit Accord) uses the earlier aggregate supply-chain layer plus illustrative random odds and has no route-level link to the plot research."
+ },
+ "idAlignment": {
+  "plotRoutes": 32,
+  "stressTestRoutes": 32,
+  "campaignConversations": 32,
+  "dialogueAuthored": 32,
+  "learningNotes": 32,
+  "setsIdentical": true,
+  "campaignNodes": 224,
+  "plotFactorEntries": 192,
+  "nullPriorEntries": 23,
+  "routesWithImputation": 14,
+  "stressTestScenarios": 15,
+  "scoresUpdated": false
+ },
+ "bidirectionalLinks": {
+  "plotToGame": {
+   "pattern": "../game/?route=<routeId>",
+   "code": "routes/quantitative.js:78-80 (appended in renderDetail for the selected route; all 32 routes selectable in every view)",
+   "coverage": "32/32"
+  },
+  "gameToPlot": {
+   "patterns": [
+    "../routes/#basis=model&route=<routeId>",
+    "../routes/stress-tests.html?route=<routeId>"
+   ],
+   "code": "game/before-geneva.js:180 (research drawer per conversation)",
+   "coverage": "32/32"
+  },
+  "deepLinkHandling": "game/before-geneva.js:225-226 (?route= pins focusRoute; lounge sort game/before-geneva.js:105-110; featured 8 default with All-32 toggle game/before-geneva.js:12,117)",
+  "compilerGate": "scripts/build-before-geneva.py:14 (asserts authored dialogue set == stress-tests route IDs)"
+ },
+ "assets": {
+  "plot": {
+   "entry": "routes/#basis=model",
+   "model": "data/route-placement-model.json (32 routes, 6 factors, weights x: readiness .4/timing .3/coordination .3; y: reach .4/relevance .3/remedy .3)",
+   "selfDescription": "data/route-placement-model.json:4 'Factor scores are judgments, not measured quantities... No score is a probability or an estimate of harm prevented.'",
+   "evidencePinned": "data/route-placement-model.json:5-6 evidencePath data/coordinate-evidence.json + SHA256",
+   "renderer": "routes/quantitative.js:55-72 (model plot), placement.mjs (scores, +/-0.15 assessed / +/-0.30 imputed sensitivity, deterministic display noise)",
+   "methodPanel": "routes/index.html:30 'weighted editorial assessments... not measured impact, probabilities, or a new empirical dataset'"
+  },
+  "gameA_beforeGeneva": {
+   "entry": "game/ (game/index.html -> before-geneva.js)",
+   "campaign": "game/campaign.json (before-geneva-v1, researchObserved 2026-10-31, fictionNotice, 8 months, 32 routes x 7 nodes = 224)",
+   "compiler": "scripts/build-before-geneva.py (joins game/dialogue-authored.json + game/learning-notes.json to data/stress-tests.json; SHA256 input hashes written to campaign.json.inputs)",
+   "engine": "game/story-engine.mjs:1 'Deterministic fiction rules. Research scores never become acceptance probabilities.'",
+   "researchFieldsCarried": "headline/assessment/nextTest(=decisionTest)/unknowns/evidence(=newEvidence)/sources (scripts/build-before-geneva.py:42-43)",
+   "noCoordinates": "campaign.json route objects contain no factor scores, x/y or feasibility/impact values; game code never fetches route-placement-model.json",
+   "fictionLabels": "game/campaign.json fictionNotice; game/before-geneva.js:98,139,180 fineprint"
+  },
+  "gameB_orbitAccord": {
+   "entry": "game/orbit.html (game.js)",
+   "data": [
+    "data/layers.json (12 stages x 12 country groups, gszep 'Speed limits, not walls' shares copied unchanged)",
+    "data/conditions.json (six conditions; lever scoring 'Team heuristic', thresholds strong 50/some 25; 'a scenario, not a measure of enforceable bargaining power')",
+    "data/windows.json (9 law windows; 'openings, not delivery plans')",
+    "game/planets.json (11 country groups, 6 goals mapped to conditions, illustrative powers 'not measured data and should not be cited')"
+   ],
+   "mechanics": {
+    "aggregateShare": "game/game.js:52-56 weighted() and :57-68 goalProgress via condition thresholds",
+    "acceptanceOdds": "game/game.js:84-96 odds() (base 40, +/- token/promise/window/tour/rally/superpower adjustments)",
+    "randomRoll": "game/game.js:106-111 rollDeal Math.random()*100 < pct",
+    "honestyLabels": "game/game.js:253 'Chance was X%. Odds are illustrative game rules; AI shares from gszep's model.' and :279 'Not proof of real-world impact...'",
+    "fetchList": "game/game.js:557 loads layers/conditions/windows/planets/world only; no routes research"
+   },
+   "routeIds": "none; Game B has no 32-route linkage",
+   "characters": "game/meeting.js:1-20 fictional anime diplomats (CAST), answers only by official letter"
+  }
+ },
+ "unitTestCounts": {
+  "game_story_engine": "8 tests, 8 pass (node --test game/story-engine.test.mjs)",
+  "routes_model_metrics_placement": "17 tests total: 16 pass + 1 skipped ('all published route data satisfies the model contract' runs only with CHECK_ROUTE_SNAPSHOT=1; with it, model.test.mjs 6/6 pass)",
+  "notes": "submission-draft.md:90 says 'The game and model checks passed 17 automated unit tests' - the 17 matches the routes suite, not the game suite; scope is imprecise."
+ },
+ "submissionClaimChecks": [
+  {
+   "line": "submission-draft.md:10",
+   "claim": "combines an interactive map of 32 policy proposals, source-linked research and a playable diplomatic visual novel",
+   "status": "supported"
+  },
+  {
+   "line": "submission-draft.md:14",
+   "claim": "policy scores are transparent editorial judgments, negotiations are fictional",
+   "status": "supported"
+  },
+  {
+   "line": "submission-draft.md:42",
+   "claim": "32 policy conversations, 224 dialogue nodes, eight monthly councils; every conversation includes a dossier connected to the research",
+   "status": "supported (campaign.json: 32 routes x 7 nodes; 8 months; dossier per route)"
+  },
+  {
+   "line": "submission-draft.md:44",
+   "claim": "original Orbit Accord prototype with animated envoy meetings and verdict letters remains available",
+   "status": "supported but underspecified: does not state Orbit Accord's different evidence base (aggregate supply shares + illustrative random odds) vs the 32-route research"
+  },
+  {
+   "line": "submission-draft.md:48",
+   "claim": "weights 40/30/30; 23 of 192 factors missing across 14 routes at prior 0.5",
+   "status": "supported (verified: 23 nulls across 14 routes)"
+  },
+  {
+   "line": "submission-draft.md:50",
+   "claim": "small deterministic display offsets; separate matched-resource coverage views",
+   "status": "supported"
+  },
+  {
+   "line": "submission-draft.md:52",
+   "claim": "Game resources and endings are separate deterministic rules, not probabilities inferred from policy scores",
+   "status": "supported for Game A only; a reader who opens Orbit Accord (linked at :44) finds random acceptance rolls, so the claim needs an explicit Game A/B distinction"
+  },
+  {
+   "line": "submission-draft.md:58-66",
+   "claim": "IndiaAI worked example (funding stop != service stop)",
+   "status": "supported by data/stress-tests.json route record and summary finding"
+  },
+  {
+   "line": "submission-draft.md:90",
+   "claim": "The game and model checks passed 17 automated unit tests",
+   "status": "imprecise: game suite = 8; routes suite = 17 (one contract test skipped unless CHECK_ROUTE_SNAPSHOT=1); narrative-rewrite.md:95 says 19 engine/model tests. State suite-by-suite counts."
+  },
+  {
+   "line": "submission-draft.md:90",
+   "claim": "64 walkthroughs, two complete campaigns, eight live files byte-matched",
+   "status": "supported by notes.md:13-18"
+  },
+  {
+   "line": "submission-draft.md:94",
+   "claim": "No government consent, signed condition, field trial, cost-effectiveness or real-world harm reduction claimed",
+   "status": "supported"
+  }
+ ],
+ "notEstablished": [
+  "Plot coordinates are heuristic, imputed where missing (23/192 at 0.5) editorial judgments; not causal effects, success probabilities or measured feasibility/impact.",
+  "Game A consumes no coordinates; identical route IDs and shared snapshot do not mean plotted positions ground game outcomes.",
+  "Game A outcomes are authored deterministic fiction; a finished in-game test does not evidence real institutional consent.",
+  "Game B acceptance percentages and random rolls are illustrative rules over aggregate shares; not from the 32-route research or the placement model.",
+  "The planned Game A/B merge (research_notes/Realistic diplomacy/BRIEF.md:7-8) is not implemented; its research files are untracked WIP."
+ ],
+ "routeTrace": [
+  {
+   "id": "eurohpc-incident-protocol",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.475,
+     "y_potentialImpact": 0.795
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "EuroHPC incident protocol",
+    "sourceCount": 2,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Europe's supercomputers",
+    "lever": "compute",
+    "countries": [
+     "EU participating states",
+     "EU institutions"
+    ],
+    "coordination": "broader",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=eurohpc-incident-protocol",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=eurohpc-incident-protocol and ../routes/stress-tests.html?route=eurohpc-incident-protocol",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "jp-procurement-safety-evidence",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.8,
+     "y_potentialImpact": 0.665
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Japan procurement gate",
+    "sourceCount": 5,
+    "newEvidenceEntries": 4,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Japan buys AI",
+    "lever": "buy",
+    "countries": [
+     "Japan"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": true
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=jp-procurement-safety-evidence",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=jp-procurement-safety-evidence and ../routes/stress-tests.html?route=jp-procurement-safety-evidence",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "jp-kr-sg-procurement-profile",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "remedy"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.46,
+     "y_potentialImpact": 0.68
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "APAC procurement profile",
+    "sourceCount": 3,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Three buyers, one test",
+    "lever": "buy",
+    "countries": [
+     "Japan",
+     "South Korea",
+     "Singapore"
+    ],
+    "coordination": "middle-power",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=jp-kr-sg-procurement-profile",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=jp-kr-sg-procurement-profile and ../routes/stress-tests.html?route=jp-kr-sg-procurement-profile",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "sg-agent-data-leakage-deployment-gate",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.815,
+     "y_potentialImpact": 0.595
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "SG agent eval gate",
+    "sourceCount": 2,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Singapore's AI helper",
+    "lever": "buy",
+    "countries": [
+     "Singapore"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": true
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=sg-agent-data-leakage-deployment-gate",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=sg-agent-data-leakage-deployment-gate and ../routes/stress-tests.html?route=sg-agent-data-leakage-deployment-gate",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "sg-kr-jp-shared-eval-evidence-protocol",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.56,
+     "y_potentialImpact": 0.58
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "SG-KR-JP eval protocol",
+    "sourceCount": 4,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Same test, different setups",
+    "lever": "buy",
+    "countries": [
+     "Singapore",
+     "South Korea",
+     "Japan"
+    ],
+    "coordination": "middle-power",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=sg-kr-jp-shared-eval-evidence-protocol",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=sg-kr-jp-shared-eval-evidence-protocol and ../routes/stress-tests.html?route=sg-kr-jp-shared-eval-evidence-protocol",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "canada-cohere-equity-safety-covenant",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "timing",
+     "remedy"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.55,
+     "y_potentialImpact": 0.69
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "unresolved",
+    "shortLabel": "Canada Cohere covenant",
+    "sourceCount": 4,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Canada's AI investment",
+    "lever": "money",
+    "countries": [
+     "Canada"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": true
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=canada-cohere-equity-safety-covenant",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=canada-cohere-equity-safety-covenant and ../routes/stress-tests.html?route=canada-cohere-equity-safety-covenant",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "taiwan-public-compute-safety-conditions",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.64,
+     "y_potentialImpact": 0.61
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Taiwan public compute",
+    "sourceCount": 2,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Taiwan lends computers",
+    "lever": "compute",
+    "countries": [
+     "Taiwan"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": true
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=taiwan-public-compute-safety-conditions",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=taiwan-public-compute-safety-conditions and ../routes/stress-tests.html?route=taiwan-public-compute-safety-conditions",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "anthropic-new-credit-lender-safety-covenant",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "timing",
+     "remedy"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.37,
+     "y_potentialImpact": 0.8
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Lender safety covenant",
+    "sourceCount": 1,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "The lenders",
+    "lever": "money",
+    "countries": [
+     "United States"
+    ],
+    "coordination": "broader",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=anthropic-new-credit-lender-safety-covenant",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=anthropic-new-credit-lender-safety-covenant and ../routes/stress-tests.html?route=anthropic-new-credit-lender-safety-covenant",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "lumi-belgium-safety-appendix",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.665,
+     "y_potentialImpact": 0.53
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Belgian compute conditions",
+    "sourceCount": 3,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Belgium's computer time",
+    "lever": "compute",
+    "countries": [
+     "Belgium"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=lumi-belgium-safety-appendix",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=lumi-belgium-safety-appendix and ../routes/stress-tests.html?route=lumi-belgium-safety-appendix",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "lumi-eurohpc-evaluation-access",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.635,
+     "y_potentialImpact": 0.68
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "EuroHPC access conditions",
+    "sourceCount": 4,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Letting testers in",
+    "lever": "compute",
+    "countries": [
+     "EU institutions",
+     "EuroHPC participating states"
+    ],
+    "coordination": "broader",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=lumi-eurohpc-evaluation-access",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=lumi-eurohpc-evaluation-access and ../routes/stress-tests.html?route=lumi-eurohpc-evaluation-access",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "lumi-national-evidence-protocol",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.46,
+     "y_potentialImpact": 0.65
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "strengthened",
+    "shortLabel": "National compute coalition",
+    "sourceCount": 5,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "11 countries, 1 supercomputer",
+    "lever": "compute",
+    "countries": [
+     "Belgium",
+     "Czech Republic",
+     "Denmark",
+     "Estonia",
+     "Finland",
+     "Iceland",
+     "Netherlands",
+     "Norway",
+     "Poland",
+     "Sweden",
+     "Switzerland"
+    ],
+    "coordination": "middle-power",
+    "nodes": 7,
+    "featuredByDefault": true
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=lumi-national-evidence-protocol",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=lumi-national-evidence-protocol and ../routes/stress-tests.html?route=lumi-national-evidence-protocol",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "ch-electricity-operator-fallback",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.81,
+     "y_potentialImpact": 0.655
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Swiss operator fallback",
+    "sourceCount": 1,
+    "newEvidenceEntries": 1,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Switzerland's power grid",
+    "lever": "regulator",
+    "countries": [
+     "Switzerland"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=ch-electricity-operator-fallback",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=ch-electricity-operator-fallback and ../routes/stress-tests.html?route=ch-electricity-operator-fallback",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "uk-energy-staged-autonomy-assurance",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.54,
+     "y_potentialImpact": 0.64
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "UK energy assurance",
+    "sourceCount": 5,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "UK energy, step by step",
+    "lever": "regulator",
+    "countries": [
+     "United Kingdom"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=uk-energy-staged-autonomy-assurance",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=uk-energy-staged-autonomy-assurance and ../routes/stress-tests.html?route=uk-energy-staged-autonomy-assurance",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "uk-agent-accountability-evidence",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.68,
+     "y_potentialImpact": 0.605
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "strengthened",
+    "shortLabel": "UK agent accountability",
+    "sourceCount": 2,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "UK: who stops the AI?",
+    "lever": "regulator",
+    "countries": [
+     "United Kingdom"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=uk-agent-accountability-evidence",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=uk-agent-accountability-evidence and ../routes/stress-tests.html?route=uk-agent-accountability-evidence",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "sg-purchaser-sandbox-release-gate",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.685,
+     "y_potentialImpact": 0.6
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Singapore purchaser gate",
+    "sourceCount": 3,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Singapore: fail means stop?",
+    "lever": "buy",
+    "countries": [
+     "Singapore"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=sg-purchaser-sandbox-release-gate",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=sg-purchaser-sandbox-release-gate and ../routes/stress-tests.html?route=sg-purchaser-sandbox-release-gate",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "kr-safety-case-incident-rehearsal",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "timing"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.585,
+     "y_potentialImpact": 0.715
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "unresolved",
+    "shortLabel": "Korean safety-case rehearsal",
+    "sourceCount": 1,
+    "newEvidenceEntries": 1,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Korea's new AI law",
+    "lever": "regulator",
+    "countries": [
+     "South Korea"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=kr-safety-case-incident-rehearsal",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=kr-safety-case-incident-rehearsal and ../routes/stress-tests.html?route=kr-safety-case-incident-rehearsal",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "brazil-anpd-ai-inspection-evidence",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.645,
+     "y_potentialImpact": 0.62
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "strengthened",
+    "shortLabel": "Brazil AI inspection evidence",
+    "sourceCount": 2,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Brazil: prove it's fixed",
+    "lever": "regulator",
+    "countries": [
+     "Brazil"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": true
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=brazil-anpd-ai-inspection-evidence",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=brazil-anpd-ai-inspection-evidence and ../routes/stress-tests.html?route=brazil-anpd-ai-inspection-evidence",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "mexico-public-sector-impact-assessment",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "coordination",
+     "reach"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.525,
+     "y_potentialImpact": 0.44
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Mexico pre-deployment assessment",
+    "sourceCount": 1,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Mexico: a check with teeth",
+    "lever": "regulator",
+    "countries": [
+     "Mexico"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=mexico-public-sector-impact-assessment",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=mexico-public-sector-impact-assessment and ../routes/stress-tests.html?route=mexico-public-sector-impact-assessment",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "chile-high-risk-data-impact-assessment",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "remedy"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.41,
+     "y_potentialImpact": 0.53
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Chile assessment implementation",
+    "sourceCount": 1,
+    "newEvidenceEntries": 1,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Chile's data bill",
+    "lever": "regulator",
+    "countries": [
+     "Chile"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=chile-high-risk-data-impact-assessment",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=chile-high-risk-data-impact-assessment and ../routes/stress-tests.html?route=chile-high-risk-data-impact-assessment",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "colombia-sic-ai-privacy-retest",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "timing",
+     "reach"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.62,
+     "y_potentialImpact": 0.605
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "strengthened",
+    "shortLabel": "Colombia AI privacy retest",
+    "sourceCount": 4,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Colombia: really deleted?",
+    "lever": "regulator",
+    "countries": [
+     "Colombia"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=colombia-sic-ai-privacy-retest",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=colombia-sic-ai-privacy-retest and ../routes/stress-tests.html?route=colombia-sic-ai-privacy-retest",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "south-africa-popia-ai-linkage-review",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.63,
+     "y_potentialImpact": 0.585
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "South Africa linkage review",
+    "sourceCount": 2,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "South Africa: linked records",
+    "lever": "regulator",
+    "countries": [
+     "South Africa"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=south-africa-popia-ai-linkage-review",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=south-africa-popia-ai-linkage-review and ../routes/stress-tests.html?route=south-africa-popia-ai-linkage-review",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "kenya-biometric-dpia-evidence-gate",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "reach"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.635,
+     "y_potentialImpact": 0.59
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "strengthened",
+    "shortLabel": "Kenya biometric DPIA",
+    "sourceCount": 3,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Kenya: was it deleted?",
+    "lever": "regulator",
+    "countries": [
+     "Kenya"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": true
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=kenya-biometric-dpia-evidence-gate",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=kenya-biometric-dpia-evidence-gate and ../routes/stress-tests.html?route=kenya-biometric-dpia-evidence-gate",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "nigeria-ai-compliance-audit-annex",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.65,
+     "y_potentialImpact": 0.54
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Nigeria AI audit annex",
+    "sourceCount": 2,
+    "newEvidenceEntries": 4,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Nigeria's audit",
+    "lever": "regulator",
+    "countries": [
+     "Nigeria"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=nigeria-ai-compliance-audit-annex",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=nigeria-ai-compliance-audit-annex and ../routes/stress-tests.html?route=nigeria-ai-compliance-audit-annex",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "rwanda-ai-dpia-security-retest",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "timing",
+     "reach",
+     "remedy"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.525,
+     "y_potentialImpact": 0.53
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "unresolved",
+    "shortLabel": "Rwanda DPIA retest",
+    "sourceCount": 3,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Rwanda's data law",
+    "lever": "regulator",
+    "countries": [
+     "Rwanda"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=rwanda-ai-dpia-security-retest",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=rwanda-ai-dpia-security-retest and ../routes/stress-tests.html?route=rwanda-ai-dpia-security-retest",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "indiaai-subsidy-evaluation-gate",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.655,
+     "y_potentialImpact": 0.735
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "IndiaAI compute gate",
+    "sourceCount": 5,
+    "newEvidenceEntries": 6,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "India pays for computer time",
+    "lever": "money",
+    "countries": [
+     "India"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": true
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=indiaai-subsidy-evaluation-gate",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=indiaai-subsidy-evaluation-gate and ../routes/stress-tests.html?route=indiaai-subsidy-evaluation-gate",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "uae-dubai-agentic-assurance-gate",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "timing",
+     "remedy"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.555,
+     "y_potentialImpact": 0.595
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Dubai agent assurance",
+    "sourceCount": 2,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Dubai's AI helpers",
+    "lever": "buy",
+    "countries": [
+     "UAE"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=uae-dubai-agentic-assurance-gate",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=uae-dubai-agentic-assurance-gate and ../routes/stress-tests.html?route=uae-dubai-agentic-assurance-gate",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "saudi-cst-ai-sandbox-stop-rule",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.53,
+     "y_potentialImpact": 0.55
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Saudi sandbox stop-rule",
+    "sourceCount": 2,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Saudi Arabia's test zone",
+    "lever": "regulator",
+    "countries": [
+     "Saudi Arabia"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=saudi-cst-ai-sandbox-stop-rule",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=saudi-cst-ai-sandbox-stop-rule and ../routes/stress-tests.html?route=saudi-cst-ai-sandbox-stop-rule",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "turkiye-1711-safety-work-package",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [],
+    "editorialIndices": {
+     "x_feasibility": 0.54,
+     "y_potentialImpact": 0.515
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Türkiye grant evidence",
+    "sourceCount": 2,
+    "newEvidenceEntries": 4,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Türkiye's AI grants",
+    "lever": "money",
+    "countries": [
+     "Türkiye"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=turkiye-1711-safety-work-package",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=turkiye-1711-safety-work-package and ../routes/stress-tests.html?route=turkiye-1711-safety-work-package",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "indonesia-bpom-dpia-gate",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "timing",
+     "remedy"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.575,
+     "y_potentialImpact": 0.465
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "strengthened",
+    "shortLabel": "Indonesia DPIA pilot",
+    "sourceCount": 1,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Indonesia: did the AI change it?",
+    "lever": "buy",
+    "countries": [
+     "Indonesia"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=indonesia-bpom-dpia-gate",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=indonesia-bpom-dpia-gate and ../routes/stress-tests.html?route=indonesia-bpom-dpia-gate",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "malaysia-commercial-ai-dpia",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "timing",
+     "reach"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.565,
+     "y_potentialImpact": 0.5
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Malaysia DPIA evidence",
+    "sourceCount": 3,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Malaysia: can a buyer say no?",
+    "lever": "buy",
+    "countries": [
+     "Malaysia"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=malaysia-commercial-ai-dpia",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=malaysia-commercial-ai-dpia and ../routes/stress-tests.html?route=malaysia-commercial-ai-dpia",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "thailand-aigpc-sandbox-gate",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "remedy"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.475,
+     "y_potentialImpact": 0.485
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "qualified",
+    "shortLabel": "Thailand sandbox gate",
+    "sourceCount": 3,
+    "newEvidenceEntries": 3,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Thailand's AI contract",
+    "lever": "buy",
+    "countries": [
+     "Thailand"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=thailand-aigpc-sandbox-gate",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=thailand-aigpc-sandbox-gate and ../routes/stress-tests.html?route=thailand-aigpc-sandbox-gate",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  },
+  {
+   "id": "vietnam-public-ai-impact-gate",
+   "plot": {
+    "inModel": true,
+    "imputedFactors": [
+     "reach"
+    ],
+    "editorialIndices": {
+     "x_feasibility": 0.68,
+     "y_potentialImpact": 0.56
+    },
+    "imputationNote": "recomputed from data/route-placement-model.json weights for traceability only; editorial judgment, not measurement"
+   },
+   "stressTests": {
+    "present": true,
+    "assessment": "unresolved",
+    "shortLabel": "Vietnam public AI gate",
+    "sourceCount": 2,
+    "newEvidenceEntries": 2,
+    "carriesOriginalPlotReasoning": "original.factors/xBasis/yBasis"
+   },
+   "campaign": {
+    "present": true,
+    "title": "Vietnam: what does it decide?",
+    "lever": "regulator",
+    "countries": [
+     "Vietnam"
+    ],
+    "coordination": "national",
+    "nodes": 7,
+    "featuredByDefault": false
+   },
+   "links": {
+    "plotToGame": "routes/quantitative.js:80 -> ../game/?route=vietnam-public-ai-impact-gate",
+    "gameToPlot": "game/before-geneva.js:180 -> ../routes/#basis=model&route=vietnam-public-ai-impact-gate and ../routes/stress-tests.html?route=vietnam-public-ai-impact-gate",
+    "deepLinkSort": "game/before-geneva.js:12,107,225-226"
+   }
+  }
+ ]
+}

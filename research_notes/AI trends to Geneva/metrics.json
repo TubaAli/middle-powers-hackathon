@@ -1,0 +1,600 @@
+{
+  "meta": {
+    "title": "AI trends to Geneva: metrics for the Orbit Accord simulation",
+    "purpose": "Measured baselines (through scenario cutoff 2026-11-01) and explicitly labelled extrapolations to the Geneva horizon 2027-06-21, for the educational Orbit Accord / Before Geneva simulation. Research only; no game mechanics are defined here.",
+    "companion_document": "metrics.md",
+    "owner": "research_notes/AI trends to Geneva/",
+    "access_date": "2026-11-01",
+    "retrieval_method": "Direct URL fetches of primary sources (no search engine). Epoch pages embed 'Accessed 1 Nov 2026' in their own citation blocks.",
+    "scenario": {
+      "cutoff": "2026-11-01",
+      "horizon": "2027-06-21",
+      "campaign_window_days": 232,
+      "campaign_window_years": 0.6352,
+      "campaign_window_months": 7.6
+    },
+    "evidence_classes": {
+      "measured": "Observed value with a date, published by the named primary source. Quoted, not derived.",
+      "extrapolated": "Value computed by extending a published fitted trend past its last observed point; fit, interval and provenance stated.",
+      "judgement": "Modelling choice among defensible published alternatives (rate choice, anchor choice, composition).",
+      "fictional": "Simulation-only quantity with no data basis: policy-lever effect sizes, drift rates, or any 2026 value for a metric that has no 2026 observation."
+    },
+    "honesty_rules": [
+      "No invented 2026 values: every dated number is quoted from the sources below or derived from quoted numbers and labelled.",
+      "Trend-implied levels (e.g. frontier training compute ~3e27 FLOP) are inferences from published statements, not observed model estimates.",
+      "Sparse series (chip performance per dollar: ~12 quarters) must not be presented as a smooth exponential; steps are explicit.",
+      "Policy-lever effect sizes are fictional and must be labelled as such in any game UI."
+    ]
+  },
+  "sources": [
+    {
+      "id": "epoch_trends",
+      "title": "Trends in AI (dashboard)",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/trends",
+      "page_updated": "2026-02-05",
+      "accessed": "2026-11-01",
+      "access_status": "fetched in full",
+      "license": "CC-BY 4.0",
+      "carries": "Headline rates with 90% CIs: frontier training compute 5x/yr since 2020 (CI 4-6x); training cost 3.5x/yr since 2020 (CI 2.8-4.4x); compute stock 3.4x/yr since 2022 (CI 3.2-3.7x); chip performance per dollar +49%/yr since 2023 (CI 36-66%); ECI frontier +14/yr since reasoning models (CI +12 to +17); context windows 30x/yr since 2023 (CI 10-50x); data-center facts (1.1M H100e Colossus 2; Hyperion 3.7M H100e expected Jan 2028; 71% hyperscaler share; $38B/GW; ~2.1yr GW build time; >$370B raised; 30% of OpenAI 2024 compute spend was inference; OpenAI revenue 3.2x/yr since 2024 CI 3.0-3.4; SOTA on consumer hardware ~8 months)."
+    },
+    {
+      "id": "epoch_compute_report",
+      "title": "Training compute of frontier AI models grows by 4-5x per year",
+      "authors": "Jaime Sevilla, Edu Roldan",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/publications/training-compute-of-frontier-ai-models-grows-by-4-5x-per-year",
+      "published": "2024-05-28",
+      "accessed": "2026-11-01",
+      "access_status": "fetched in full",
+      "license": "CC-BY 4.0",
+      "carries": "Log-linear fits with bootstrap CIs on 333 notable-model compute estimates (2010-May 2024): notable 4.1x/yr (90% CI 3.7-4.6); frontier running top-10 5.3x/yr (4.9-5.7); post-2018 frontier 4.2x/yr (3.6-4.9, break 80% CI Oct 2016-Aug 2019, AlphaGo Master/Zero excluded); notable LMs 9.5x/yr (7.4-12.2, Jun 2017-May 2024), ~5.0x/yr (3.1-7.3) after mid-2020; robust to top-N (5.15-5.44 for N=5-20); anchors GPT-3 ~3e23 FLOP (May 2020), GPT-4 ~2e25 (Mar 2023), Gemini Ultra ~5e25 (Dec 2023)."
+    },
+    {
+      "id": "epoch_eci_insight",
+      "title": "The ECI frontier has advanced by 14 points per year since the introduction of reasoning models",
+      "authors": "Alexander Barry",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/data-insights/eci-frontier-trend",
+      "published": "2026-09-01",
+      "accessed": "2026-11-01",
+      "access_status": "fetched in full",
+      "license": "CC-BY 4.0",
+      "carries": "Reasoning-era ECI trend +14/yr (90% CI +12 to +17) vs +6/yr non-reasoning; trend break documented in 'Have AI capabilities accelerated?' (2026-04-16); prediction-interval downloads: points.csv (retrieved, 195 rows), band.csv, band_nonreasoning.csv, eci_bootstraps.json (documented, not retrieved)."
+    },
+    {
+      "id": "epoch_eci_points_csv",
+      "title": "Model ECI scores (points.csv)",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/data/charts/eci-frontier-trend/points.csv",
+      "data_updated": "2026-09-01",
+      "accessed": "2026-11-01",
+      "access_status": "retrieved in full (195 rows)",
+      "license": "CC-BY 4.0",
+      "carries": "Per-model ECI with 90% CIs, release dates, and Series labels (Reasoning SOTA / Non-reasoning SOTA / Other release)."
+    },
+    {
+      "id": "epoch_chip_perf",
+      "title": "The performance per dollar of AI chips purchased each quarter has grown by an average of 49% per year",
+      "authors": "Venkat Somala",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/data-insights/chip-performance-per-dollar",
+      "published": "2026-08-13",
+      "accessed": "2026-11-01",
+      "access_status": "fetched in full; quarterly CSV documented but not retrieved",
+      "csv_url": "https://epoch.ai/data/charts/chip-performance-per-dollar/chip_perf_per_dollar_quarterly_other_merged.csv",
+      "license": "CC-BY 4.0",
+      "carries": "Sales-weighted performance per dollar of chips purchased per quarter, constant 2025 USD: 5.6e11 bit-ops/s per dollar (Q1 2023) to 1.4e12 (end 2025); +49%/yr (90% CI 36-66%); flat through mid-2024 then roughly doubled with Blackwell majority; GB300 ~37x more cost-effective than P100; best chip TPU v6e at 3.6e12."
+    },
+    {
+      "id": "metr_th11",
+      "title": "Time Horizon 1.1",
+      "publisher": "METR",
+      "url": "https://metr.org/blog/2026-01-29-time-horizon-1-1/",
+      "published": "2026-01-29",
+      "accessed": "2026-11-01",
+      "access_status": "fetched in full (all doubling times and model tables)",
+      "data_repo": "https://github.com/METR/eval-analysis-public",
+      "carries": "TH1 doubling 195.8d [162,223] (2019-2025, 170 tasks, 33 models); TH1.1 hybrid 196.5d; since-2023 TH1.1 130.8d [107,161] vs TH1 165.3d [129,211]; since-2024 TH1.1 88.6d vs TH1 108.9d; suite 170 to 228 tasks (8h+ tasks 14 to 31, only 5 human-baselined); Vivaria to Inspect; 14 models re-estimated, within TH1 CIs; suite-composition sensitivity and ceiling caveats in METR's own words."
+    },
+    {
+      "id": "metr_th1_paper",
+      "title": "Measuring AI Ability to Complete Long Software Tasks",
+      "publisher": "METR",
+      "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+      "published": "2025-03-19",
+      "arxiv": "https://arxiv.org/abs/2503.14499",
+      "accessed": "2026-11-01",
+      "access_status": "URL located via metr.org/research index; page not fetched in this pass; headline numbers used as restated and tabulated by metr_th11",
+      "carries": "Definition of 50%-success time horizon; 'consistently exponentially increasing over the past 6 years, with a doubling time of around 7 months'; suites RE-Bench subset, HCAST subset, SWAA."
+    },
+    {
+      "id": "epoch_polling_hub",
+      "title": "Polling on AI usage (Epoch AI x Ipsos KnowledgePanel)",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/data/polling",
+      "page_updated": "2026-08-14",
+      "accessed": "2026-11-01",
+      "access_status": "hub fetched; wave CSVs/microdata/questionnaire documented but not retrieved",
+      "waves": [
+        { "fielded": "2025-11", "n": 5660, "sample": "US adults" },
+        { "fielded": "2026-03-03 to 2026-03-05", "n": 2021, "sample": "US adults" },
+        { "fielded": "2026-07-10 to 2026-07-19", "n": 1103, "sample": "employed US adults (1,106 surveyed, 3 invalid removed)" }
+      ],
+      "carries": "Probability-based panel, address-based sampling, weighted to US Census benchmarks; 90% Wilson score intervals on effective sample size; Taylor-series-linearization variance; respondent as primary sampling unit; O*NET v30.3 ten-task list weighted by BLS employment; wave CSVs, microdata (CSV/SPSS), questionnaire PDF, methodology DOCX."
+    },
+    {
+      "id": "epoch_delegation_report",
+      "title": "One in five US workers now delegates tasks to AI instead of other humans",
+      "authors": "Caroline Falkman Olsson, Yafah Edelman, Amreeta Das",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/publications/one-in-five-workers-delegate-work-to-ai",
+      "published": "2026-08-06",
+      "accessed": "2026-11-01",
+      "access_status": "fetched in full",
+      "carries": "July 2026 wave results: 20% delegate >=1 of 10 tasks to AI; per-task use 57% (software/system design), 46% (analyzing data), 39% (reading documents), 25% (maintaining records); time savings on 37% (part-assisted) / 53% (mostly-fully AI) tasks; ~1 in 6 AI-assisted tasks take more time; 66% of outputs used with at most minor edits; full reallocation <=10% per task; March 2026 comparison: 51% of employed AI users use AI at least as much for work as personal."
+    },
+    {
+      "id": "epoch_models_doc",
+      "title": "Data on AI models (dataset documentation)",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/data/ai-models-documentation",
+      "accessed": "2026-11-01",
+      "access_status": "documentation fetched; dataset CSV not retrieved (size)",
+      "csv_url": "https://epoch.ai/data/all_ai_models.csv",
+      "csv_update_cadence": "daily",
+      "carries": ">2,000 ML models; subsets: Notable (notability criteria: >1000 citations, SOTA result, historical importance, or significant product deployment), Frontier (top-5 training compute at release), Large-scale (>=1e23 FLOP), All."
+    },
+    {
+      "id": "epoch_algorithmic_progress",
+      "title": "Algorithmic progress in language models",
+      "authors": "Anson Ho, Tamay Besiroglu, Ege Erdil, David Owen, Robi Rahman, Zifan Carl Guo, David Atkinson, Neil Thompson, Jaime Sevilla",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/blog/algorithmic-progress-in-language-models",
+      "published": "2024-03-12",
+      "arxiv": "https://arxiv.org/abs/2403.05812",
+      "code": "https://github.com/epoch-research/lm-algorithmic-progress",
+      "accessed": "2026-11-01",
+      "access_status": "fetched (overview and limitations); code repo not fetched",
+      "carries": "Compute for fixed pre-training performance halves every ~8 months (95% CI 5-14 months); 231 language models; Shapley: 60-95% of gains from compute+data vs 5-40% from algorithms; transformer ~2 years of algorithmic progress; Chinchilla 8-16 months; pre-training only; relative importance of algorithms decreased as compute scaling accelerated around 2018."
+    },
+    {
+      "id": "epoch_scaling_2030",
+      "title": "Can AI scaling continue through 2030?",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/publications/can-ai-scaling-continue-through-2030",
+      "published": "2024-08-20",
+      "accessed": "2026-11-01",
+      "access_status": "fetched in full",
+      "carries": "2e29 FLOP training runs likely feasible by 2030; constraints bind in order: power (1-5 GW campuses -> 1e28-3e29 FLOP; distributed 2-45 GW -> 2e28-2e30), chip manufacturing (20M-400M H100e -> 1e29-5e30), data (400T-20Q tokens -> 6e28-2e32), latency wall (3e30-1e32 cap); Llama 3.1 405B = 4e25 FLOP, 16k H100, 27MW, 72 days; 4x/yr exceeds peak mobile adoption (2x/yr 1980-87), solar (1.5x/yr 2001-10), genome sequencing (3.3x/yr 2008-15)."
+    },
+    {
+      "id": "epoch_benchmarks_hub",
+      "title": "AI benchmarks & capabilities (hub)",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/benchmarks",
+      "page_updated": "2026-11-01",
+      "accessed": "2026-11-01",
+      "access_status": "fetched (hub overview and latest activity)",
+      "carries": "418 models, 95 benchmarks; hub header '169 top ECI: GPT-6 Astra' (displayed 2026-11-01); activity: Claude Opus 5.5 top ECI 167 on 2026-10-01 narrowly ahead of GPT-6 Astra; GPT-6 Astra pre-release evaluation 2026-09-03; FrontierMath Erdos: 68 unsolved problems in Lean, no prior model solved any, GPT-6 Astra solved 2/68 (3%)."
+    },
+    {
+      "id": "metr_research_index",
+      "title": "METR research index (summaries of dated 2025-2026 work)",
+      "publisher": "METR",
+      "url": "https://metr.org/research",
+      "accessed": "2026-11-01",
+      "access_status": "fetched (index with per-post summaries; individual posts not fetched)",
+      "carries": "Summaries and dates for: cross-domain time horizons (2025-07-14, 9 benchmarks, similar rates to 7-month doubling); MirrorCode weeks-long coding tasks (2026-04-10, with Epoch, incl. reimplementing a 16,000-line codebase); developer-productivity RCT (2025-07-10, experienced OSS developers 19% slower with AI tools); technical-worker survey (2026-05-11, 349 workers, median 1.4-2x self-reported value change, 'reasons to be skeptical'); productivity-experiment redesign for selection effects (2026-02-24); pre-deployment evaluations of GPT-5.6 Sol (2026-06-26) and Claude Opus 5.5 (2026-09-22); OpenAI/Hugging Face incident investigation (2026-08-26); Senate testimony on AI agent incidents (2026-09-30); 'AI systems could cover up misbehavior' (2026-10-06); monitorability evaluations (2026-01); $71M funding update (2026-08-14)."
+    }
+  ],
+  "campaign_multipliers": {
+    "note": "Growth factors over the 232-day campaign window (2026-11-01 to 2027-06-21), computed as rate^(232/365.25). All are extrapolated [X] except where noted. Per-month factors use 30.44-day months.",
+    "rows": [
+      { "metric": "eci_frontier", "unit": "ECI points added", "central": 8.9, "low": 7.6, "high": 10.8, "per_month": { "central": 1.17, "low": 1.0, "high": 1.42 }, "basis": "+14/yr [12,17] from epoch_eci_insight" },
+      { "metric": "frontier_training_compute", "unit": "x", "central": 2.78, "low": 2.41, "high": 3.12, "per_month": { "central": 1.144, "low": 1.122, "high": 1.161 }, "basis": "5x/yr [4,6] since 2020 from epoch_trends" },
+      { "metric": "time_horizon_slow", "unit": "x", "central": 2.27, "basis": "doubling 196.5 days (TH1.1 hybrid full-period) from metr_th11" },
+      { "metric": "time_horizon_central", "unit": "x", "central": 3.42, "low": 2.72, "high": 4.49, "per_month": { "central": 1.175 }, "basis": "doubling 130.8 days [107,161] (TH1.1 since-2023) from metr_th11" },
+      { "metric": "time_horizon_fast", "unit": "x", "central": 6.14, "per_month": { "central": 1.269 }, "basis": "doubling 88.6 days (TH1.1 since-2024) from metr_th11" },
+      { "metric": "chip_perf_per_dollar", "unit": "x", "central": 1.29, "low": 1.22, "high": 1.38, "per_month": { "central": 1.034, "low": 1.026, "high": 1.043 }, "basis": "1.49x/yr [1.36,1.66] since 2023 from epoch_chip_perf; stepped series, do not present as smooth" },
+      { "metric": "algorithmic_efficiency", "unit": "x effective compute", "central": 1.94, "low": 1.46, "high": 2.88, "basis": "halving 8 months [5,14] from epoch_algorithmic_progress; series predates reasoning era" },
+      { "metric": "compute_stock", "unit": "x", "central": 2.18, "low": 2.09, "high": 2.30, "basis": "3.4x/yr [3.2,3.7] since 2022 from epoch_trends" },
+      { "metric": "frontier_training_cost", "unit": "x", "central": 2.22, "low": 1.92, "high": 2.56, "basis": "3.5x/yr [2.8,4.4] since 2020 from epoch_trends" },
+      { "metric": "context_windows", "unit": "x", "central": 8.68, "low": 4.32, "high": 12.01, "basis": "30x/yr [10,50] since 2023 from epoch_trends" }
+    ]
+  },
+  "selected_metrics": [
+    {
+      "id": "eci_frontier",
+      "name": "Epoch Capabilities Index (ECI) frontier",
+      "role_in_simulation": "Master capability clock; monthly readout",
+      "definition": "ECI combines scores from many AI benchmarks into a single 'general capability' scale, allowing comparisons between models and model eras. Frontier = best score at a date (sources: epoch_eci_insight, epoch_eci_points_csv).",
+      "unit": "ECI points (index; linear scale)",
+      "observed": [
+        { "date": "2024-09-12", "model": "o1-mini", "eci": 136.64, "ci_90": [132.97, 138.02], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2024-12-17", "model": "o1", "eci": 142.67, "ci_90": [140.92, 143.72], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2025-03-31", "model": "Gemini 2.5 Pro (Mar 2025)", "eci": 144.63, "ci_90": [142.62, 147.29], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2025-04-16", "model": "o3", "eci": 147.06, "ci_90": [145.34, 148.51], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2025-06-10", "model": "o3-pro", "eci": 147.51, "ci_90": [145.97, 151.3], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2025-08-07", "model": "GPT-5", "eci": 150, "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2025-10-07", "model": "GPT-5 Pro", "eci": 150.29, "ci_90": [148.88, 152.47], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2025-11-18", "model": "Gemini 3 Pro", "eci": 153.06, "ci_90": [151.28, 155.05], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2025-12-11", "model": "GPT-5.2 Pro", "eci": 155.07, "ci_90": [153.04, 157.24], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2026-02-05", "model": "GPT-5.3 Codex", "eci": 156.22, "ci_90": [153.7, 159.65], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2026-03-05", "model": "GPT-5.4 Pro", "eci": 158.55, "ci_90": [156.1, 161.24], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2026-04-23", "model": "GPT-5.5 Pro", "eci": 161.71, "ci_90": [158.95, 164.88], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2026-06-09", "model": "Claude Fable 5", "eci": 162.48, "ci_90": [159.33, 165.76], "series": "Reasoning SOTA", "evidence": "measured" },
+        { "date": "2026-10-01", "model": "Claude Opus 5.5", "eci": 167, "series": "latest activity note", "evidence": "measured", "source": "epoch_benchmarks_hub" },
+        { "date": "2026-11-01", "model": "GPT-6 Astra", "eci": 169, "series": "hub header display", "evidence": "measured", "source": "epoch_benchmarks_hub", "note": "Oct 1 note reported Opus 5.5 (167) narrowly ahead of GPT-6 Astra; the Nov 1 hub header displays 169 for GPT-6 Astra. Both recorded; both lie on the fitted line." }
+      ],
+      "non_reasoning_reference": [
+        { "date": "2023-03-14", "model": "GPT-4 (Mar 2023)", "eci": 126.19 },
+        { "date": "2024-05-13", "model": "GPT-4o (May 2024)", "eci": 128.8 },
+        { "date": "2025-02-27", "model": "GPT-4.5", "eci": 137.63 }
+      ],
+      "trend": {
+        "form": "linear in time",
+        "slope_per_year": 14,
+        "ci_90": [12, 17],
+        "fit_interval": "2024-09 (o1-mini/o1-preview launch) to 2026-09 (insight publication)",
+        "comparison_era": "non-reasoning +6/yr",
+        "method": "Epoch fit with published 90% prediction interval (band.csv)",
+        "sanity_check_inference": "Raw endpoints o1-mini 136.64 (2024-09-12) to Claude Fable 5 162.48 (2026-06-09) give 14.9/yr over 635 days, inside the published interval [judgement-labelled arithmetic check on measured points]"
+      },
+      "projection_to_horizon": {
+        "anchor": { "date": "2026-11-01", "value": 169, "evidence": "measured", "alternative_anchor": { "date": "2026-10-01", "value": 167 } },
+        "central": 178,
+        "range": [176, 180],
+        "formula": "ECI(2027-06-21) = anchor + slope x (232/365.25)",
+        "from_alternative_anchor_167": { "central": 176, "range": [175, 178] },
+        "defensibility": "HIGH: extrapolation is ~31% of the ~25-month fit window; monthly-cadence data; published prediction interval; linear form. Defensible as a labelled scenario extrapolation, not a forecast.",
+        "evidence": "extrapolated"
+      },
+      "saturation_assessment": {
+        "observed_plateau": "none through 2026-10 (acceleration, not saturation, documented by Epoch's Apr 2026 trend-break report)",
+        "headroom": "FrontierMath Erdos: best model solves 2/68 (3%) of unsolved problems as of 2026-09",
+        "risks": "index redefinitions when benchmarks saturate or are added; not yet observed in retrieved data",
+        "censoring": "band.csv not retrieved; ECI scale construction (item selection/scaling) documented on /eci pages not fetched this pass"
+      },
+      "sim_parameter": {
+        "name": "frontier_eci(t)",
+        "default": "ECI(t) = 169 + 14 x days_since_2026-11-01 / 365.25",
+        "fan": "slope 12 to 17",
+        "basis": "measured slope + measured anchor",
+        "label": "extrapolated beyond last measured point"
+      }
+    },
+    {
+      "id": "frontier_training_compute",
+      "name": "Frontier training compute (top-5 language models)",
+      "role_in_simulation": "Capability pace driver; scale narrative",
+      "definition": "Training compute (FLOP) of models in the top 5 of training compute at release (frontier subset of Epoch's AI models dataset; current headline uses frontier language models since 2020).",
+      "unit": "FLOP (log scale)",
+      "observed_anchors": [
+        { "date": "2020-05", "model": "GPT-3 175B (davinci)", "flop": 3e23, "evidence": "measured (Epoch estimate)" },
+        { "date": "2023-03", "model": "GPT-4", "flop": 2e25, "evidence": "measured (Epoch estimate)" },
+        { "date": "2023-12", "model": "Gemini Ultra", "flop": 5e25, "evidence": "measured (Epoch estimate)" },
+        { "date": "2024-07", "model": "Llama 3.1 405B", "flop": 4e25, "hardware": "16,000 H100; 27 MW; 72 days", "evidence": "measured" }
+      ],
+      "trend": {
+        "headline": "5x/yr since 2020 among top-5 frontier models; ~10,000x total since 2020",
+        "ci_90": [4, 6],
+        "doubling_months": { "central": 5.2, "ci_90": [4.6, 6.0] },
+        "fit_interval": "2020 to 2026-02 (trends page update)",
+        "supporting_fits": {
+          "notable_models_2010_2024": "4.1x/yr (90% CI 3.7-4.6)",
+          "frontier_top10_2010_2024": "5.3x/yr (90% CI 4.9-5.7)",
+          "frontier_post_2018_slowdown": "4.2x/yr (90% CI 3.6-4.9; break 80% CI Oct 2016-Aug 2019)",
+          "notable_lms_2017_2024": "9.5x/yr (90% CI 7.4-12.2)",
+          "frontier_lms_post_mid_2020": "5.0x/yr (90% CI 3.1-7.3)",
+          "robustness": "top-N N=5-20 gives 5.15-5.44x/yr"
+        },
+        "method": "log-linear fit, bootstrap CIs (2024 report); current headline method not published on the trends page"
+      },
+      "projection_to_horizon": {
+        "campaign_multiplier": { "central": 2.78, "ci_90": [2.41, 3.12], "per_month": 1.144 },
+        "trend_implied_level_early_2026": {
+          "value_flop": 3e27,
+          "evidence": "inference: 3e23 (GPT-3, start of window) x 10,000 (published top-5 growth since 2020)",
+          "label": "extrapolated/derived, NOT an observed model estimate; no 2026 model compute value was retrieved and none may be quoted"
+        },
+        "trend_implied_level_geneva": { "value_flop": 8.4e27, "range_flop": [7.2e27, 9.3e27], "evidence": "extrapolated (trend-implied level x campaign multiplier)" },
+        "no_wall_check": "~8.4e27 FLOP sits well below Epoch's 2030 feasibility envelope (1e28-2e30 FLOP), so no physical constraint binds within the horizon; risks are economic (investment willingness) and definitional",
+        "defensibility": "MODERATE-HIGH as scenario input: six years of consistent frontier growth, retrodiction successes (GPT-4, Gemini Ultra), explicit constraint analysis; offset by definitional sensitivity (top-5 vs top-10; the documented post-2018 slowdown precedent shows rates can shift) and partly-inferred per-model estimates."
+      },
+      "saturation_assessment": {
+        "observed_plateau": "none at the headline rate through early 2026; one documented rate change (post-2018 slowdown) is the precedent that rates can shift",
+        "limits": "power binds first, then chip manufacturing, then data, then latency wall (2e29 FLOP feasible by 2030)",
+        "censoring": "no observed 2025-2026 frontier model compute estimate retrieved (all_ai_models.csv, updated daily, not fetched this pass)"
+      },
+      "sim_parameter": {
+        "name": "frontier_compute_multiplier(t)",
+        "default": "5^(days_since_2026-11-01/365.25)",
+        "fan": "4^dt to 6^dt",
+        "basis": "measured headline rate with CI from epoch_trends",
+        "label": "extrapolated; treat the rate itself as judgement-anchored to Epoch's headline"
+      }
+    },
+    {
+      "id": "task_time_horizon",
+      "name": "METR 50%-success task time horizon",
+      "role_in_simulation": "Agentic capability clock; the metric with the widest uncertainty",
+      "definition": "The human-equivalent task length (minutes) that an AI agent completes with 50% success, on METR's task suites (RE-Bench subset, HCAST subset, SWAA short tasks; TH1.1 = 228 tasks, 31 of them >=8h human time, 5 human-baselined).",
+      "unit": "minutes (log scale)",
+      "observed": [
+        { "model": "GPT-4 (0314)", "release": "2023-03", "th11_min": 3.5, "ci": [1.6, 6.9], "th1_min": 5.4, "evidence": "measured" },
+        { "model": "GPT-4 (1106)", "release": "2023-11", "th11_min": 3.6, "ci": [1.6, 7.5], "th1_min": 8.5, "evidence": "measured" },
+        { "model": "Claude Sonnet 3.7", "release": "2025-02", "th11_min": 60, "ci": [32, 106], "th1_min": 56, "evidence": "measured" },
+        { "model": "Claude Opus 4", "release": "2025-05", "th11_min": 101, "ci": [58, 170], "th1_min": 86, "evidence": "measured" },
+        { "model": "o3", "release": "2025-04", "th11_min": 121, "ci": [74, 201], "th1_min": 94, "evidence": "measured" },
+        { "model": "Claude Sonnet 4", "release": "2025-06", "th1_min": 75, "ci": [38, 132], "evidence": "measured (TH1 only)" },
+        { "model": "Grok 4", "release": "2025-07", "th1_min": 109, "ci": [48, 235], "evidence": "measured (TH1 only)" },
+        { "model": "Claude Opus 4.1", "release": "2025-08", "th1_min": 114, "ci": [56, 215], "evidence": "measured (TH1 only)" },
+        { "model": "GPT-5", "release": "2025-08", "th11_min": 214, "ci": [117, 480], "th1_min": 138, "evidence": "measured" },
+        { "model": "Claude Sonnet 4.5", "release": "2025-09", "th1_min": 122, "ci": [59, 252], "evidence": "measured (TH1 only)" },
+        { "model": "GPT-5.1-Codex-Max", "release": "2025-11-19", "th1_min": 173, "ci": [81, 411], "evidence": "measured (TH1 only)" },
+        { "model": "Claude Opus 4.5", "release": "2025-11-24", "th11_min": 320, "ci": [170, 729], "th1_min": 289, "note": "last measured frontier point in retrieved material", "evidence": "measured" }
+      ],
+      "trend": {
+        "form": "exponential in time (horizon doubles at fixed rate)",
+        "doubling_days": {
+          "th1_full_period_2019_2025": { "central": 195.8, "ci": [162, 223] },
+          "th11_hybrid_full_period": 196.5,
+          "th11_since_2023": { "central": 130.8, "ci": [107, 161] },
+          "th11_since_2024": 88.6,
+          "th1_since_2023": { "central": 165.3, "ci": [129, 211] },
+          "th1_since_2024": 108.9
+        },
+        "rate_choice_recommendation": { "central": 130.8, "conservative": 196.5, "fast": 88.6, "label": "judgement among published alternatives; rationale: most recent suite, covers all models the game simulates; METR states the new suite is the better measurement" },
+        "method": "logistic/IRT-style success-vs-duration fit per model (50% success point); bootstrap CIs over task families, tasks, runs; cross-checked on 9 external domains (similar rates, 2025-07-14)"
+      },
+      "projection_to_horizon": {
+        "campaign_multipliers": { "slow_196.5d": 2.27, "central_130.8d": { "central": 3.42, "ci": [2.72, 4.49] }, "fast_88.6d": 6.14 },
+        "per_month": { "slow": 1.113, "central": 1.175, "fast": 1.269 },
+        "cutoff_level_backcast": {
+          "note": "INFERRED: no published horizon estimate exists for any 2026 frontier model; on-trend backcast from Claude Opus 4.5 (320 min, 2025-11-24) to 2026-11-01",
+          "hours_at_cutoff": { "slow": 17.8, "central": 32.7, "fast": 77.3 },
+          "evidence": "extrapolated"
+        },
+        "geneva_level_backcast": {
+          "note": "INFERRED: same trend extended 232 more days",
+          "hours_at_geneva": { "slow": 40.4, "central": 111.7, "fast": 475 },
+          "plain_summary": "~1.7 days (conservative) to ~4.7 days (central) to ~20 days (fast)",
+          "evidence": "extrapolated"
+        },
+        "defensibility": "MODERATE: rate robust across suite versions (full-period doubling ~196 days both) and nine domains, but widest intervals of the selected set, task-composition sensitivity documented by METR, and a 2026 measurement gap at the cutoff. Use with a multi-rate fan, never a single line."
+      },
+      "saturation_assessment": {
+        "observed_plateau": "none; still doubling at sub-year scales",
+        "censoring": [
+          "METR's own words: the suite has 'relatively few tasks that the latest generation of models cannot perform successfully' - a measurement-ceiling problem METR is fixing",
+          "no 2026 frontier model estimates published in retrieved material (gap 2025-11 to cutoff)",
+          "only 5 of 31 long (>=8h) tasks are human-baselined",
+          "TH1 to TH1.1 changed the task mix; estimates of recent models shifted up, older models down"
+        ],
+        "adjacent_evidence": "MirrorCode (2026-04-10, with Epoch): AI agents can complete some weeks-long coding tasks (different suite; qualitative cross-check only)"
+      },
+      "sim_parameter": {
+        "name": "horizon_multiplier(t)",
+        "default": "2^(days_since_last_anchor/130.8)",
+        "fan": "doubling 196.5 (slow) to 88.6 (fast) days",
+        "basis": "measured doubling times; rate choice is judgement",
+        "label": "extrapolated with wide fan; the absolute minutes level after 2025-11 is inference, not measurement"
+      }
+    },
+    {
+      "id": "chip_performance_per_dollar",
+      "name": "Chip performance per dollar (purchased, sales-weighted)",
+      "role_in_simulation": "Cost-context gauge; NOT a clock",
+      "definition": "Combined computing performance of AI chips sold in a quarter divided by dollars spent on them, constant 2025 USD; widely sold chips weigh more (AI Chip Sales Hub: revenue data, financial disclosures, analyst reports).",
+      "unit": "bit-operations per second per 2025-dollar",
+      "observed": [
+        { "date": "2023-Q1", "value": 5.6e11, "evidence": "measured" },
+        { "date": "2025-Q4 (end of 2025)", "value": 1.4e12, "evidence": "measured" }
+      ],
+      "structure_note": {
+        "evidence": "measured",
+        "text": "Gains came in spurts: nearly flat through mid-2024, then roughly doubled as Blackwell-generation chips grew to a majority of new spending. GB300 costs ~5.5x P100's 2016 launch price, delivers ~200x performance (~37x more cost-effective). Best listed price-performance: Google TPU v6e at 3.6e12. Most spending goes to NVIDIA GPUs."
+      },
+      "trend": {
+        "form": "exponential drift fitted to a step function - do not present as smooth",
+        "growth_per_year": 1.49,
+        "ci_90": [1.36, 1.66],
+        "doubling_years": { "central": 1.7, "ci_90": [1.4, 2.3] },
+        "fit_interval": "2023-Q1 to 2025-Q4 (~12 quarters)",
+        "method": "exponential fit to quarterly sales-weighted values"
+      },
+      "projection_to_horizon": {
+        "campaign_multiplier": { "central": 1.29, "ci_90": [1.22, 1.38], "per_month": 1.034 },
+        "defensibility": "LOW-MODERATE for point extrapolation: ~12 spiky quarters, one generation transition dominates the signal; over 8 months the series may include zero or one chip generation. Treat as a stepped band (e.g., cost per effective FLOP falls ~20-40% by Geneva), not a compounding curve.",
+        "evidence": "extrapolated"
+      },
+      "saturation_assessment": {
+        "observed_plateau": "n/a; the series is too short and too step-shaped to support any smooth-law claim in either direction",
+        "longer_run_context": "47 ML accelerators: FLOP/s doubled every 2.3 years; memory bandwidth +28%/yr since 2008 (CI 24-33%); FLOP/s per watt +34%/yr since 2008 (CI 29-39%); numeric formats took 3-4 years per adoption cycle",
+        "censoring": "retrieved text quotes values only through end-2025; the CSV (updated 2026-08-13) may contain 2026 quarters - dashboard builder should read it"
+      },
+      "sim_parameter": {
+        "name": "hw_cost_index(t)",
+        "default": "piecewise/stepped: two steps within the campaign falling 20-40% total, or smooth 1.034/month as an approximation",
+        "basis": "measured drift with CI; step structure measured",
+        "label": "extrapolated; explicitly NOT a smooth exponential"
+      }
+    },
+    {
+      "id": "workplace_adoption",
+      "name": "Workplace adoption / deployment exposure (Epoch x Ipsos polling)",
+      "role_in_simulation": "Deployment-exposure starting state; no projection",
+      "definition": "Probability-based survey of US adults (KnowledgePanel, address-based sampling, weighted to Census benchmarks); 90% Wilson intervals on effective sample size; July 2026 wave restricted to employed adults, ten O*NET tasks.",
+      "unit": "percent of indicated population",
+      "observed": {
+        "wave_jul_2026": [
+          { "stat": "delegate >=1 of 10 tasks to AI instead of a coworker/contractor", "value_pct": 20, "evidence": "measured" },
+          { "stat": "use AI for designing computer systems or software (among workers doing the task)", "value_pct": 57, "evidence": "measured" },
+          { "stat": "use AI for analyzing data", "value_pct": 46, "evidence": "measured" },
+          { "stat": "use AI for reading work documents", "value_pct": 39, "evidence": "measured" },
+          { "stat": "use AI for maintaining records (lowest of ten)", "value_pct": 25, "evidence": "measured" },
+          { "stat": "time saved when AI assists part of the task", "value_pct": 37, "evidence": "measured" },
+          { "stat": "time saved when AI does most or all of the task", "value_pct": 53, "evidence": "measured" },
+          { "stat": "AI-assisted tasks that now take more time (~1 in 6)", "value_pct": 16.7, "evidence": "measured" },
+          { "stat": "outputs used unchanged or with minor edits", "value_pct": 66, "evidence": "measured" }
+        ],
+        "wave_mar_2026": [
+          { "stat": "employed AI users using AI at least as much for work as for personal tasks", "value_pct": 51, "evidence": "measured" }
+        ],
+        "wave_nov_2025": "values not retrieved this pass (CSV available at the polling hub)"
+      },
+      "counter_evidence_on_productivity": [
+        { "stat": "experienced open-source developers took 19% LONGER with AI tools (randomized controlled trial)", "date": "2025-07-10", "evidence": "measured", "source": "metr_research_index" },
+        { "stat": "349 technical workers: median 1.4-2x self-reported value change from early-2026 AI, with stated reasons to be skeptical of magnitude", "date": "2026-05-11", "evidence": "measured", "source": "metr_research_index" }
+      ],
+      "trend": {
+        "fit": "NONE DEFENSIBLE: three waves with different questionnaires; no repeated question series retrieved across waves; Nov 2025 values not retrieved",
+        "projection": "NOT DEFENSIBLE. Hold measured levels constant; any monthly drift must be labelled fictional."
+      },
+      "saturation_assessment": {
+        "observed_plateau": "n/a - levels are early and rising in qualitative terms, but no fitted trend exists to assess",
+        "censoring": [
+          "US-only, employed-adults-only (July 2026 wave): not representative of Geneva participants or middle powers",
+          "question-level comparability across waves not documented; changelog (2026-08-14) shows interval-method changes implying between-wave revisions",
+          "self-report bias on time savings; METR's RCT points the other way for experienced developers"
+        ]
+      },
+      "sim_parameter": {
+        "name": "deployment_exposure",
+        "default": "start at measured July 2026 levels (e.g., delegation 0.20; per-task 0.25-0.57)",
+        "drift": { "value": "0 to 1.5 percentage points per month", "label": "fictional - no data basis; choose in-game and display as illustrative" },
+        "basis": "measured levels (epoch_delegation_report, epoch_polling_hub)",
+        "label": "measured starting state + fictional drift"
+      }
+    }
+  ],
+  "alternate_metrics": [
+    {
+      "id": "algorithmic_efficiency",
+      "name": "Algorithmic progress in language models (compute for fixed performance)",
+      "summary": "Compute needed for fixed pre-training performance halves every ~8 months (95% CI 5-14); 231 models; Shapley: 60-95% of gains from compute+data vs 5-40% from algorithms; transformer ~2 years, Chinchilla 8-16 months of equivalent progress; pre-training only; relative importance of algorithms fell as compute scaling accelerated (~2018).",
+      "campaign_multiplier": { "central": 1.94, "ci_95": [1.46, 2.88] },
+      "why_not_selected": "Methodologically excellent but the series predates the reasoning era (paper Mar 2024, data through ~2023), so as a current Geneva clock it is censored; usable as an 'effective compute' multiplier only with Epoch's own confound warning (do not naively compose with the compute trend).",
+      "sources": ["epoch_algorithmic_progress"]
+    },
+    {
+      "id": "compute_stock",
+      "name": "Total compute stock of AI chips",
+      "summary": "3.4x/yr since 2022 (90% CI 3.2-3.7; doubling 6.8 months), from revenue data, financial disclosures and analyst reports; five hyperscalers own 71% of global AI compute; largest known data center ~1.1M H100e (Colossus 2), Meta Hyperion expected 3.7M H100e by Jan 2028.",
+      "campaign_multiplier": { "central": 2.18, "ci_90": [2.09, 2.3] },
+      "why_not_selected": "Strong series, but it measures industry capacity (useful for leverage/coalition arguments) rather than frontier capability pace; keep as context texture for middle-power compute-access arguments.",
+      "sources": ["epoch_trends"]
+    },
+    {
+      "id": "frontier_training_cost",
+      "name": "Dollar training cost of frontier language models",
+      "summary": "3.5x/yr since 2020 (90% CI 2.8-4.4; doubling ~7 months), per the Epoch trends dashboard.",
+      "campaign_multiplier": { "central": 2.22, "ci_90": [1.92, 2.56] },
+      "why_not_selected": "Redundant with the compute trend for simulation purposes (same driver, dollar-denominated); methodology page not retrieved this pass.",
+      "sources": ["epoch_trends"]
+    },
+    {
+      "id": "context_windows",
+      "name": "LLM context windows",
+      "summary": "30x/yr since 2023 (90% CI 10-50; doubling ~2.4 months).",
+      "campaign_multiplier": { "central": 8.68, "ci_90": [4.32, 12.01] },
+      "why_not_selected": "Fastest growth but partly a product decision (memory pricing/positioning), highly volatile, and less decision-relevant to the Geneva safeguards narrative.",
+      "sources": ["epoch_trends"]
+    }
+  ],
+  "policy_levers": {
+    "note": "Lever EFFECT SIZES are fictional [F] and must be labelled illustrative in any UI. No causal estimate of any real policy on any selected metric exists in the retrieved sources, and none is invented. Starting values and allowed ranges are anchored to measured data [M] where available. Levers are separable by design: exposure, verification, incident response and capability pace change independently.",
+    "levers": [
+      {
+        "id": "capability_pace",
+        "changes": "capability pace (compute/ECI growth)",
+        "anchor_measured": "Frontier compute 5x/yr (90% CI 4-6x) since 2020; ECI +14/yr (90% CI +12 to +17)",
+        "allowed_range": "exactly the measured CI: a fictional constraint regime moves the compute rate toward 4x/yr (and ECI slope toward +12); a fictional crash programme toward 6x/yr (+17)",
+        "effect_size": "fictional: any within-CI shift; suggested display as 'rate moves within the measured band'",
+        "sources": ["epoch_trends", "epoch_eci_insight"]
+      },
+      {
+        "id": "deployment_exposure",
+        "changes": "deployment exposure (share of measured capability actually exposed in real work)",
+        "anchor_measured": "July 2026 levels: 20% delegation; 25-57% per-task use; 66% outputs accepted with minor edits; SOTA-on-consumer-hardware within ~8 months",
+        "allowed_range": "start at measured levels; drift 0-1.5 pp/month is fictional",
+        "effect_size": "fictional: e.g., liability/procurement/licensing rules shift exposure by a small monthly delta; no causal coefficient exists",
+        "sources": ["epoch_delegation_report", "epoch_trends"]
+      },
+      {
+        "id": "verification",
+        "changes": "verification (probability/latency of detecting a capability milestone or deployment problem in-game)",
+        "anchor_measured": "Real practice exists and is dated: METR pre-deployment evaluations of GPT-5.6 Sol (2026-06-26) and Claude Opus 5.5 (2026-09-22); Epoch pre-release access to GPT-6 Astra (2026-09-03); ECI hub updates at least monthly (2026-10-01) with daily-weekly data refresh; monitorability evaluations published 2026-01",
+        "allowed_range": "detection lag of weeks is the realistic anchor; fictional treaty terms (shared evaluations, reporting windows) change it",
+        "effect_size": "fictional: e.g., joint evaluation regime reduces milestone-detection lag by an illustrative number of weeks",
+        "sources": ["metr_research_index", "epoch_benchmarks_hub"]
+      },
+      {
+        "id": "incident_response",
+        "changes": "incident response (detection-to-mitigation latency in days)",
+        "anchor_measured": "Real incidents and investigations exist and are dated: OpenAI agents' multi-day hack of Hugging Face investigated by METR + Redwood (2026-08-26); METR Senate testimony on the incident and industry-wide agent-risk patterns (2026-09-30); 'AI systems could cover up misbehavior' (2026-10-06); investigations in practice take weeks with external review",
+        "allowed_range": "weeks-to-months response times are the realistic anchor; fictional joint-response mechanisms shorten them",
+        "effect_size": "fictional: e.g., a shared incident protocol reduces mitigation latency by an illustrative number of days",
+        "sources": ["metr_research_index"]
+      }
+    ],
+    "separation_rule": "Game text must not collapse levers into a single 'slows AI' or 'makes AI safe' quantity; each lever touches a different measured axis (exposure vs verification vs response vs pace), matching the repo's discipline of separating capability, deployment and institutional response."
+  },
+  "dashboard": {
+    "recommendation": "One static, data-embedded panel ('AI trend dials to Geneva') with four tiles, a strict evidence legend, and per-tile source footers. Fits the existing game dossier/research-panel pattern; no runtime fetching; values embedded from this file at build time. No game mechanics, map plane or characters are affected.",
+    "tiles": [
+      {
+        "id": "tile_eci_clock",
+        "title": "Frontier capability (ECI) - master clock",
+        "chart": "line, linear axis",
+        "data": "measured: 13 Reasoning-SOTA points 2024-09 to 2026-06 (points.csv) + Claude Opus 5.5 = 167 (2026-10-01) + GPT-6 Astra = 169 (2026-11-01 hub display); fitted line +14/yr with 12-17 fan; dashed projection from cutoff to 2027-06-21 ending ~178 (band 176-180)",
+        "shading": "split at 2026-11-01: left 'measured', right 'projected'",
+        "game_integration": "monthly tick reads ECI(t) = 169 + 14 x days/365.25 for on-screen 'frontier ECI now' readout",
+        "sources": ["epoch_eci_insight", "epoch_eci_points_csv", "epoch_benchmarks_hub"]
+      },
+      {
+        "id": "tile_compute",
+        "title": "Frontier training compute (log axis)",
+        "chart": "scatter + fan, log axis",
+        "data": "measured anchors: GPT-3 3e23 (2020-05), GPT-4 2e25 (2023-03), Gemini Ultra 5e25 (2023-12), Llama 3.1 405B 4e25 (2024-07) as solid dots; inferred early-2026 level ~3e27 as an OPEN dot labelled 'inferred from published top-5 growth'; fan x2.4-x3.1 (central x2.8) drawn only after the cutoff line",
+        "caption_must_state": "no observed 2026 model estimate; trend-implied only",
+        "sources": ["epoch_compute_report", "epoch_trends", "epoch_scaling_2030"]
+      },
+      {
+        "id": "tile_horizon",
+        "title": "Task time horizon, METR 50%-success (log axis)",
+        "chart": "scatter with published CIs + three dashed rays",
+        "data": "measured: GPT-4 (0314) 3.5 min, Claude Sonnet 3.7 60, o3 121, GPT-5 214, Claude Opus 4.5 320 min (2025-11-24, last measured); rays at 196.5d / 130.8d / 88.6d doubling cross 2027-06-21 at ~40h / ~112h / ~476h",
+        "shading": "region between last measured point and cutoff labelled 'no published measurements for 2026 models - on-trend inference'",
+        "sources": ["metr_th11", "metr_th1_paper"]
+      },
+      {
+        "id": "tile_exposure",
+        "title": "Deployment exposure (measured levels, no projection)",
+        "chart": "horizontal bars",
+        "data": "20% delegate >=1 task to AI; 57/46/39/25% per-task use; caption 'measured levels, US employed adults, Jul 2026 (Epoch/Ipsos); no trend fitted'",
+        "sources": ["epoch_delegation_report", "epoch_polling_hub"]
+      }
+    ],
+    "legend_must_be_on_panel": {
+      "solid_dot": "measured",
+      "open_dot": "inferred from published trend",
+      "dashed_band": "extrapolated to 2027-06-21 with interval",
+      "fictional": "policy-lever deltas appear in-game as text deltas labelled [fictional]; NEVER on these charts"
+    },
+    "footer_per_tile": "source name + URL + 'data updated <date>' + 'accessed 2026-11-01' + 'CC-BY'",
+    "sizing": "two columns x two rows, ~360x260 per tile, total ~740x510 (matches repo SVG conventions); single column at 390px mobile",
+    "build_notes": [
+      "Download band.csv (ECI prediction interval), the chip quarterly CSV and the polling wave CSVs to draw exact bands instead of the interval-slope approximations recorded here.",
+      "All displayed numbers must carry their evidence class; the panel is the simulation's evidence base and must stay uncontaminated by fictional policy effects."
+    ]
+  },
+  "open_gaps_for_writer": [
+    "Fetch the Mar 19, 2025 METR page and arXiv:2503.14499 directly to quote the original time-horizon methodology.",
+    "Pull latest frontier rows from https://epoch.ai/data/all_ai_models.csv (updated daily) to replace the trend-implied ~3e27 FLOP level with observed 2026 compute estimates when the game ships.",
+    "Retrieve a non-US adoption baseline (Eurostat AI usage or World Bank Enterprise Survey items) before implying anything about middle-power exposure levels.",
+    "Retrieve the Nov 2025 polling wave CSV to check whether any question repeats across all three waves; only then could a cross-wave adoption trend be fitted.",
+    "ECI scale construction (item selection and scaling method) is documented on epoch.ai/eci pages not fetched this pass."
+  ]
+}

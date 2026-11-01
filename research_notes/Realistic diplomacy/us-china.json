@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "note": "Candidate reaction rules for the US and China as external counterparties in Orbit Accord (Game B). Proposed game mechanics, NOT calibrated probabilities and NOT observed reactions of either government to a middle-power AI-safety coalition (none exists to observe).",
+    "owner_file": "research_notes/Realistic diplomacy/us-china.md",
+    "research_cutoff": "2026-11-01",
+    "retrieval_observed": "2026-11-01",
+    "source_ids": "See the source ledger in us-china.md. Statuses there mark primary vs secondary and read vs located.",
+    "evidence_rule": "Every rule cites source IDs and carries an explicit limit. Facts and interpretation are separated in us-china.md sections 2-3; only rules are listed here."
+  },
+  "dated_events": [
+    {
+      "id": "EV-TRUCE-LAPSE-US",
+      "actor": "US",
+      "date": "2026-11-10",
+      "what": "BIS Affiliates Rule suspension ends; >=50%-owned affiliates of Entity List parties re-inherit restrictions unless extended.",
+      "status_at_cutoff": "No extension located in the Federal Register through 2026-11-01 (S10). Unresolved.",
+      "sources": ["S6", "S7", "S10"]
+    },
+    {
+      "id": "EV-TRUCE-LAPSE-CN",
+      "actor": "CN",
+      "date": "2026-11-10",
+      "what": "MOFCOM/GAC Announcement No. 70 suspension of the Oct 2025 export-control package (Announcements 55-58, 61, 62) ends.",
+      "status_at_cutoff": "Trade press reports a MOFCOM statement of 2026-09-28 extending the arrangement to 2027-01-10, but no amending notice was published as of 2026-10-27; a 2026-10-11 report said no extension was confirmed. Primary not located. Unresolved.",
+      "sources": ["S12", "S13", "S16"]
+    },
+    {
+      "id": "EV-SI-DIALOGUE",
+      "actor": "US+CN",
+      "date": "by 2026-11-30",
+      "what": "Next exchange of the US-China Super Intelligence (SI) Dialogue due 'by November 2026' per the joint state-visit fact sheet; a bilateral SI incident channel was agreed 2026-09-25.",
+      "status_at_cutoff": "Outcome unknown at cutoff.",
+      "sources": ["S9"]
+    }
+  ],
+  "candidate_rules": [
+    {
+      "id": "US-1-TESTING",
+      "replaces": "game.js:93 penalty on condition 1 (mandatory form only)",
+      "actor": "US",
+      "objective": "Keep model release free of foreign mandatory approval while obtaining early access voluntarily.",
+      "authority_instrument": "June 2026 EO: express clause against mandatory model licensing/pre-clearance/permitting; voluntary early-access framework with developers (S4); AI Action Plan deregulation pillar (S1).",
+      "trigger": "Coalition demands safety-institute testing as a licensing condition for hosted/served models.",
+      "conditions": {
+        "mandatory": ["decline-for-now", "counter: voluntary reciprocal early-access memorandum"],
+        "voluntary_reciprocal_security_framed": ["limited-deal possible"]
+      },
+      "time_cost": "1 month review",
+      "plausible_response": "Rejection letter citing the no-mandatory-preclearance policy, plus a counteroffer (voluntary access for cyber-defence tooling).",
+      "substitute": "Membership of the AI-cybersecurity clearinghouse and NIST/CAISI agentic-AI standards initiative (S3, S4).",
+      "sources": ["S1", "S4"],
+      "limits": "No documented US response to a middle-power coalition demand exists; the EO is domestic policy. Extrapolates a stated domestic principle."
+    },
+    {
+      "id": "US-2-CHIP-LOCATION",
+      "replaces": "game.js:93 penalty on condition 5 (remove; currently unsupported)",
+      "actor": "US",
+      "objective": "Visibility of where advanced chips are; enforcement against diversion.",
+      "authority_instrument": "Affiliates Rule diversion rationale (S6); Entity List enforcement; scheduled snapback 2026-11-10 (S7).",
+      "trigger": "Coalition export licences carry chip-location reporting conditions.",
+      "conditions": {
+        "compatible_reporting_shared_formats": ["support", "offer intelligence-sharing"],
+        "conflicting_scheme_restricting_us_lawful_trade": ["ask for mutual recognition of compliance", "review period 2 months"]
+      },
+      "time_cost": "Up to 2 months alignment review; scheduled around the 2026-11-10 snapback date.",
+      "plausible_response": "Support when compatible; friction only if the scheme duplicates or restricts lawful US trade.",
+      "substitute": "Joint end-use checking instead of parallel national schemes.",
+      "sources": ["S6", "S7", "S10"],
+      "limits": "US instruments target diversion to China; a middle-power scheme aimed at all suppliers including US ones has no observed precedent."
+    },
+    {
+      "id": "US-3-COMPETING-PACKAGE",
+      "replaces": "game.js:165-172 'leans on ally until it leaves' event (reframe as offer, not coercion)",
+      "actor": "US",
+      "objective": "Partners on the American stack rather than in rule-writing blocs.",
+      "authority_instrument": "American AI Exports Program; National Champions Initiative; U.S. Tech Prosperity Corps; Ex-Im/DFC financing (S2, S3); tariff relief for trade-and-security-framework partners (S10); US-Korea Technology Prosperity Deal precedent (S18, located not read).",
+      "trigger": "A coalition member is close to joining the player's accord.",
+      "conditions": {
+        "member_prioritises_capital_and_market": ["takes US bilateral package instead of the accord"],
+        "player_offer_competitive": ["stays; player can counter next month"]
+      },
+      "time_cost": "1 month (state-visit cadence, S9).",
+      "plausible_response": "A customised full-stack offer with financing, conditional on standards alignment and anti-diversion compliance; the member chooses.",
+      "substitute": "None needed; the game's existing needs() token pricing already models what the member wants.",
+      "sources": ["S2", "S3", "S9", "S10", "S18"],
+      "limits": "Instruments documented; using them to compete with a safety coalition is extrapolation. No coercion mechanism is documented in 2025-26."
+    },
+    {
+      "id": "US-4-SNAPBACK-CALENDAR",
+      "adds": "Calendar event in the opening month, independent of player action",
+      "actor": "US (BIS)",
+      "objective": "Reimpose affiliates-based Entity List coverage absent an extension.",
+      "authority_instrument": "90 FR 50857 second phase (S7).",
+      "trigger": "Date 2026-11-10 arrives.",
+      "conditions": {
+        "lapses": ["coalition members hosting/serving China-linked supply chains face Entity-List-affiliate compliance risk"],
+        "extended": ["letter: 'truce holds'; event passes"]
+      },
+      "time_cost": "Immediate; compliance review ongoing.",
+      "plausible_response": "Shown on the game board as a dated uncertainty; player stockpile/licence moves interact with it.",
+      "substitute": "N/A (calendar fact).",
+      "sources": ["S7", "S10", "S13"],
+      "limits": "The snapback is current law; whether it was extended before 2026-11-10 is unknown from this pass. The game must not pre-decide it."
+    },
+    {
+      "id": "CN-1-LICENSING-REACTION",
+      "replaces": "game.js:124-127 flat retaliation roll vs the licensing country",
+      "actor": "CN",
+      "objective": "Oppose US-aligned export controls targeting China; be seen defending openness.",
+      "authority_instrument": "Rare-earth/magnet licensing (slow, case-by-case); entity-specific designation precedent (Announcement No. 30, 2026-07-24, named German/French/Dutch firms) (S12-S15).",
+      "trigger": "Player licenses a chokepoint stage with conditions excluding Chinese end users.",
+      "conditions": {
+        "first_response": ["letter of objection citing bloc behaviour"],
+        "persist": ["licence backlog for the player's strategic industries: -1 token/month for N months", "possible visible designation of one defence-linked national champion"],
+        "de_escalation_reciprocity": ["flows restored (general-licence and Nexperia precedents)"]
+      },
+      "time_cost": "Months; matches the game's 8-turn length.",
+      "plausible_response": "Slow licensing and targeted designation, not instant embargo; reversible by removing exclusion language or offering reciprocal access.",
+      "substitute": "Offer China a role in the accord's standards/incident work (see CN-2) to avoid the trigger entirely.",
+      "sources": ["S8", "S12", "S13", "S14", "S15"],
+      "limits": "Backlog effects on middle powers specifically are inferred from global 2025 effects and European designations; Announcement No. 30 primary not retrieved (cited via S14)."
+    },
+    {
+      "id": "CN-2-SAFETY-NEGOTIABLE",
+      "replaces": "game.js:94 blanket -15 except condition 2",
+      "actor": "CN",
+      "objective": "Inclusive, UN-routed AI governance; reciprocity; capacity building for the Global South.",
+      "authority_instrument": "Global AI Governance Action Plan points 10-12 (risk testing/evaluation, incident information sharing and emergency response, mutual-recognition safety-assessment platforms) (S5); A/RES/78/311 (S17); bilateral SI incident channel (S9).",
+      "trigger": "Framing of the accord, not its safety content.",
+      "conditions": {
+        "un_routed_open_reciprocal": ["may join condition 2 via extending SI-incident-channel practice", "condition 1 as mutual-recognition assessment platform"],
+        "bloc_framed_or_bundled_with_export_alignment": ["refusal letter citing bloc behaviour", "counteroffer of UN-track cooperation"]
+      },
+      "time_cost": "1 month per re-ask (existing monthly rhythm).",
+      "plausible_response": "Acceptance stays hard-won (China's own processes are slow and case-by-case) but is not categorically anti-safety.",
+      "substitute": "Coalition can route work through UN mechanisms both powers endorse (Global Dialogue on AI Governance; Independent International Scientific Panel).",
+      "sources": ["S5", "S9", "S11", "S17"],
+      "limits": "China's positions are stated policy plus one bilateral channel with the US; its reaction to middle-power safety conditions is unobserved."
+    },
+    {
+      "id": "CN-3-TECHNOLOGY-PROVENANCE",
+      "adds": "Modifier on the game's 'seed your own programme' move",
+      "actor": "CN",
+      "objective": "Jurisdiction over foreign-made goods produced with Chinese rare-earth technology.",
+      "authority_instrument": "Oct 2025 package technology trigger (S13, S14; primary via CSET translation, not read).",
+      "trigger": "Player builds domestic refining/magnet capacity using Chinese technology.",
+      "conditions": {
+        "chinese_technology": ["new capacity keeps a technology-provenance dependency: exports still exposed to CN licensing if truce lapses"],
+        "non_chinese_technology": ["dependency avoided; higher build cost and time"]
+      },
+      "time_cost": "Affects the replicate-years clock rather than the month.",
+      "plausible_response": "Licensing exposure on future exports, not an immediate event.",
+      "substitute": "Pay more for non-Chinese kit (models the documented choice).",
+      "sources": ["S13", "S14"],
+      "limits": "Technology trigger described in legal analyses of the suspended Oct 2025 package; enforcement never observed (suspended before applying)."
+    }
+  ],
+  "unsupported_current_mechanics": [
+    {
+      "location": "game.js:159-163",
+      "mechanic": "Unconditional turn-1 (Dec 2026) China metals squeeze when CN not in coalition",
+      "verdict": "Contradicted at the margin: expansive controls suspended under the truce; general licences issued; Sept 2026 shows shipments still being worked (S8, S9, S12). A squeeze is contingent on the 2026-11-10 lapse (unresolved at cutoff)."
+    },
+    {
+      "location": "game.js:165-172",
+      "mechanic": "US 'leans on' weakest ally until it leaves the accord",
+      "verdict": "Unsupported in form. Documented US instruments are incentive-based (export packages, financing, market access). Reframed in US-3-COMPETING-PACKAGE."
+    },
+    {
+      "location": "game/opening.js:13",
+      "mechanic": "Ticker claim 'No shared safety rules'",
+      "verdict": "Contradicted: a US-China SI Dialogue plus a bilateral SI incident channel has existed since 2026-09-25 (S9), and both powers support UN AI mechanisms (S5, S17). Flagged for the owner; shared file not edited."
+    }
+  ]
+}

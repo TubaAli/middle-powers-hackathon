@@ -1,0 +1,244 @@
+{
+  "_meta": {
+    "title": "Orbit Accord negotiation process: candidate rules",
+    "owner_file": "research_notes/Realistic diplomacy/process.json",
+    "companion_note": "research_notes/Realistic diplomacy/process.md",
+    "research_cutoff": "2026-11-01",
+    "observation_date": "2026-11-01",
+    "game_baseline": "198d3ac",
+    "status": "proposed fictional mechanics; grounded in precedent, not measured probabilities",
+    "warning": "All numbers below are invented game weights for tuning. They are not acceptance probabilities and must not be displayed as such."
+  },
+  "diagnosis": {
+    "current_mechanics": [
+      {"name": "single acceptance roll", "where": "game/game.js odds() L84-96, rollDeal() L106-111", "problem": "one number mixes interest, authority, reciprocity and luck"},
+      {"name": "binary coalition", "where": "g.coalition", "problem": "a country joins all six conditions at once, instantly"},
+      {"name": "free promise", "where": "promiseStage() L80-83", "problem": "promises are labels; never stored, delivered or checked"},
+      {"name": "monthly amnesia", "where": "g.asked reset in openCouncil() L182", "problem": "refusals leave no reason and no consequence"}
+    ],
+    "integration_test": [
+      "what does the other government want",
+      "who decides",
+      "what does the offer actually commit",
+      "what still needs approval and when"
+    ]
+  },
+  "state_machine": {
+    "granularity": "one record per (partner, condition) pair",
+    "states": ["unknown", "talked", "decided", "in_force", "delivering", "verified"],
+    "terminal_or_side_states": ["declined", "lapsed", "paused"],
+    "fields": {
+      "interest": ["high", "medium", "low", "opposed"],
+      "authority": ["minister", "regulator", "legislature", "collective"],
+      "scope": "subset of conditions 1-6",
+      "record": {"kept": "integer", "late": "integer", "broken": "integer"},
+      "state": "one of states",
+      "next_date": "campaign month key",
+      "reason": "short player-facing text"
+    },
+    "decision_classes": [
+      {"label": "signs", "meaning": "can commit within current authority", "delay_months": 0},
+      {"label": "refers", "meaning": "requires approval by a named body", "delay_months": 1},
+      {"label": "conditions", "meaning": "will sign if a named element is added or removed", "delay_months": 0},
+      {"label": "declines", "meaning": "no, with a stated reason and reopen trigger", "delay_months": 0}
+    ]
+  },
+  "decision_function": {
+    "type": "deterministic threshold on visible inputs",
+    "score_terms": [
+      {"term": "interest_match", "value": 2, "rule": "offer answers the partner's stated need"},
+      {"term": "reciprocity", "value": 1, "rule": "benefit released only after a verified stage"},
+      {"term": "reliability", "value": 1, "rule": "kept >= 2 on this condition"},
+      {"term": "reliability", "value": -1, "rule": "broken >= 1 on this condition"},
+      {"term": "reliability", "value": -2, "rule": "broken >= 2 on this condition"},
+      {"term": "timing", "value": 1, "rule": "partner window open this month"},
+      {"term": "timing", "value": -1, "rule": "window closed and authority is legislative"},
+      {"term": "scope_cost", "value": -1, "rule": "ask covers more than two conditions"},
+      {"term": "scope_cost", "value": -2, "rule": "ask crosses a declared red line"}
+    ],
+    "thresholds": [
+      {"min": 3, "outcome": "signs"},
+      {"min": 1, "max": 2, "outcome": "refers_or_conditions"},
+      {"min": 0, "max": 0, "outcome": "declines_fixable"},
+      {"max": -1, "outcome": "declines"}
+    ],
+    "display": "no percentage; show the outcome class, the deciding body and the missing element"
+  },
+  "safeguard_ladder": [
+    {"record": "0 broken and kept >= 2", "next_ask": "normal terms", "cost": 0},
+    {"record": "1 broken or late >= 2", "next_ask": "independent check before signing", "cost": 1},
+    {"record": "2 broken", "next_ask": "phased release; benefit after first delivery", "cost": 1},
+    {"record": "3+ broken", "next_ask": "declines this condition for the campaign", "cost": 0}
+  ],
+  "rules": [
+    {
+      "id": "R1",
+      "name": "Two-step consent",
+      "actor": "partner government, through its envoy",
+      "objective": "keep the visible promise inside the official's actual authority",
+      "authority_instrument": "ministerial signature, cabinet/legislative referral, or regulator procedure",
+      "trigger": "player makes an offer in a meeting",
+      "conditions": "decision class from decision_function; refers requires named approver and date",
+      "time_cost_months": [0, 2],
+      "plausible_response": "I can sign the incident rule today; testing needs my minister.",
+      "substitute": "narrower offer that fits the envoy's authority",
+      "evidence": ["S1", "S4"],
+      "evidence_limit": "neither source is an AI-safety accord among middle powers; they show sequence, not likelihood",
+      "game_mapping": "add state 'refers', next_date, and an authority label on the meeting card"
+    },
+    {
+      "id": "R2",
+      "name": "Scope-limited participation",
+      "actor": "each partner",
+      "objective": "avoid rejecting a package because of one unacceptable element",
+      "authority_instrument": "schedule of commitments rather than one yes/no",
+      "trigger": "player invites a partner",
+      "conditions": "partner selects a subset of conditions; accord strength per condition counts only members of that condition",
+      "time_cost_months": [0, 0],
+      "plausible_response": "We will join the alarm and the off-switch. Not chip tracking.",
+      "substitute": "full package, which the partner may refuse",
+      "evidence": ["S7", "S9"],
+      "evidence_limit": "both are trade instruments; scope breadth is a design choice",
+      "game_mapping": "replace g.coalition with members[partner][condition]"
+    },
+    {
+      "id": "R3",
+      "name": "Approval clock",
+      "actor": "legislature, regulator or collective body",
+      "objective": "make domestic authority the binding constraint",
+      "authority_instrument": "legislative window, regulator rulemaking, joint decision",
+      "trigger": "partner state becomes refers",
+      "conditions": "decision at next_date; fails if window closed or reliability fell",
+      "time_cost_months": [1, 2],
+      "plausible_response": "My government will deliberate. Its answer comes by official letter.",
+      "substitute": "ask a partner with ministerial authority, or narrow the ask",
+      "evidence": ["S5", "S6", "S4"],
+      "evidence_limit": "shows approval bodies exist and timelines change; not how a cabinet would treat a fictional accord",
+      "game_mapping": "reuse the existing letter screen; add the deciding body and the date"
+    },
+    {
+      "id": "R4",
+      "name": "Phased delivery with verification gates",
+      "actor": "both sides",
+      "objective": "tie each benefit to an observed step",
+      "authority_instrument": "staged annex with dates and a named verifying body",
+      "trigger": "signature",
+      "conditions": "2-3 stages; benefit releases only after matching stage is verified",
+      "time_cost_months": [1, 3],
+      "plausible_response": "Relief only after the inspector confirms the steps.",
+      "substitute": "upfront release, usually refused after any breach",
+      "evidence": ["S3", "S10"],
+      "evidence_limit": "JCPOA has a dedicated inspectorate; an AI accord has none, so the verifier must be labelled fictional",
+      "game_mapping": "add stages[] with due month and status to each signed condition"
+    },
+    {
+      "id": "R5",
+      "name": "Reciprocity ledger",
+      "actor": "player government and each partner",
+      "objective": "make exchange legible and reversible without drama",
+      "authority_instrument": "ledger with one line per commitment and per benefit",
+      "trigger": "any offer including a token or market access",
+      "conditions": "benefit marked held, released or withheld, with a date",
+      "time_cost_months": [0, 0],
+      "plausible_response": "The payment is approved but not disbursed until the report arrives.",
+      "substitute": "unconditional gift, which raises expectations of more gifts",
+      "evidence": ["S5", "S6", "S9"],
+      "evidence_limit": "game benefit is a token, not money; sources show linkage between reporting and standing",
+      "game_mapping": "add benefit_status and benefit_date; show in HUD"
+    },
+    {
+      "id": "R6",
+      "name": "Issue-specific reliability record",
+      "actor": "each partner, about the player",
+      "objective": "let past behaviour change future terms visibly",
+      "authority_instrument": "per-condition record kept by the accord (fictional secretariat)",
+      "trigger": "every verified, late or missed stage",
+      "conditions": "counts per condition, shown before an offer",
+      "time_cost_months": [0, 0],
+      "plausible_response": "Last time your report was two months late. We want a monitor this time.",
+      "substitute": "new partner with no record; narrower ask",
+      "evidence": ["S5", "S7"],
+      "evidence_limit": "membership organisations with boards; the record is a simplification, not a trust score",
+      "game_mapping": "record[partner][condition] = {kept, late, broken}"
+    },
+    {
+      "id": "R7",
+      "name": "Record triggers safeguards, not just refusal",
+      "actor": "the partner demanding the safeguard",
+      "objective": "continue cooperating while managing observed risk",
+      "authority_instrument": "third-party check, escrow/staged release, named monitor",
+      "trigger": "record.broken >= 1 on that condition",
+      "conditions": "safeguard added to the deal card as a visible cost",
+      "time_cost_months": [1, 1],
+      "plausible_response": "We will join, but the benefit stays in escrow until the first inspection.",
+      "substitute": "decline, or accept lower scope with no benefit",
+      "evidence": ["S3", "S8"],
+      "evidence_limit": "snapback is unique and contested; it overstates how fast an AI accord could re-impose anything",
+      "game_mapping": "modify the deal card, never the hidden roll"
+    },
+    {
+      "id": "R8",
+      "name": "Windows create authority, not consent (optional)",
+      "actor": "player government and partner legislature",
+      "objective": "make the calendar matter without making it magic",
+      "authority_instrument": "bill, tender deadline, regulator consultation",
+      "trigger": "data/windows.json date reached for that country and condition",
+      "conditions": "open window lets refers decide this month; missed window delays 6-12 months",
+      "time_cost_months": [1, 1],
+      "plausible_response": "The bill is tabled; after that we wait for the next session.",
+      "substitute": "executive action where authority allows",
+      "evidence": ["S4", "S1"],
+      "evidence_limit": "window dates are research inputs owned by other notes and are not verified here",
+      "game_mapping": "windows.json already exists; only the effect changes"
+    }
+  ],
+  "player_facing_strings": {
+    "signs": "Can sign today. Their minister has the authority.",
+    "refers": "Signed, not yet in force. Their parliament votes by {month}.",
+    "conditions": "Will sign if {fix}. Nothing else needs to change.",
+    "declines_fixable": "No while the ask includes {condition}. Bring {narrower} alone.",
+    "declines": "No this year: {reason}. Revisit after {event}.",
+    "delivering": "In force, delivering: {k} of {n} stages done. Next: {stage}, {month}.",
+    "late": "Late. {partner} has not received the {stage}. Reliability on {condition} down.",
+    "safeguard": "{partner} asks for {safeguard} because of {past_event}.",
+    "exit": "{partner} paused {condition} for one month. Reason: {reason}."
+  },
+  "acceptance_checks": [
+    {"id": "A1", "test": "meeting card shows interest, authority, scope, dated next step", "target": "11/11 partners", "automatable": true},
+    {"id": "A2", "test": "no percentage shown as acceptance chance", "target": "zero matches", "automatable": true},
+    {"id": "A3", "test": "changing one visible input changes outcome in predicted direction", "target": "8/8 scripted cases", "automatable": true},
+    {"id": "A4", "test": "partner joining two conditions appears only for those two", "target": "visual + data assertion", "automatable": true},
+    {"id": "A5", "test": "every signed condition shows k/n stages and a date", "target": "all signed conditions", "automatable": true},
+    {"id": "A6", "test": "missed delivery produces a safeguard line naming it, on that condition only", "target": "1/1", "automatable": true},
+    {"id": "A7", "test": "pausing a condition removes its contribution, shows reason, is reversible", "target": "1/1", "automatable": true},
+    {"id": "A8", "test": "five cold players can say who decides and what happens next", "target": "4/5", "automatable": false}
+  ],
+  "sources": [
+    {"id": "S1", "publisher": "UNFCCC", "title": "Paris Agreement - Status of Ratification", "url": "https://unfccc.int/process/the-paris-agreement/status-of-ratification", "published": null, "event_date": "2016-11-04", "observed": "2026-11-01", "access": "read", "supports": "signature, ratification and entry into force are separate; 194 of 198 parties"},
+    {"id": "S2", "publisher": "EU Official Journal", "title": "Paris Agreement (CELEX 22016A1019(01))", "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:22016A1019(01)", "published": "2016-10-19", "event_date": "2015-12-12", "observed": "2026-11-01", "access": "read", "supports": "self-determined NDCs with review; transparency; withdrawal clause"},
+    {"id": "S3", "publisher": "UN Security Council", "title": "Resolution 2231 (2015) on Iran Nuclear Issue", "url": "https://www.un.org/securitycouncil/content/2231/background", "published": null, "event_date": "2015-10-18 / 2016-01-16 / 2025-09-27", "observed": "2026-11-01", "access": "read", "supports": "staged relief gated on IAEA verification; re-imposition after non-performance"},
+    {"id": "S4", "publisher": "European Commission", "title": "Regulatory framework for AI - AI Act", "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai", "published": null, "event_date": "2024-08-01 / 2026-08-02", "observed": "2026-11-01", "access": "read", "supports": "entry into force differs from application; staged and later extended deadlines"},
+    {"id": "S5", "publisher": "EITI", "title": "Azerbaijan country page", "url": "https://eiti.org/countries/azerbaijan", "published": null, "event_date": "2017-03-09 / 2017-03-10", "observed": "2026-11-01", "access": "read", "supports": "suspension for unmet corrective actions, then withdrawal"},
+    {"id": "S6", "publisher": "EITI", "title": "Countries - suspension and delisting", "url": "https://eiti.org/countries", "published": null, "event_date": null, "observed": "2026-11-01", "access": "read", "supports": "institutional suspension rules and enhanced scrutiny"},
+    {"id": "S7", "publisher": "Kimberley Process", "title": "What is the Kimberley Process?", "url": "https://www.kimberleyprocess.com/about/what-is-kp", "published": null, "event_date": "2003 / 2004-07-09", "observed": "2026-11-01", "access": "read", "supports": "scope-limited certification; trade only between compliant members; suspension"},
+    {"id": "S8", "publisher": "OPCW", "title": "Chemical Weapons Convention", "url": "https://www.opcw.org/chemical-weapons-convention", "published": null, "event_date": null, "observed": "2026-11-01", "access": "read", "supports": "challenge inspection with no right of refusal; national implementation"},
+    {"id": "S9", "publisher": "WTO", "title": "China accession; member information; Trade Policy Reviews", "url": "https://www.wto.org/english/thewto_e/acc_e/a1_chine_e.htm", "published": null, "event_date": "2001-12-11", "observed": "2026-11-01", "access": "read", "supports": "negotiated schedules and phased terms; universal peer review"},
+    {"id": "S10", "publisher": "UK DSIT", "title": "Frontier AI Safety Commitments, AI Seoul Summit 2024", "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024", "published": "2024-05-21", "event_date": "2024-05-21", "observed": "2026-11-01", "access": "read", "supports": "voluntary, organisation-level, dated deliverable"},
+    {"id": "S11", "publisher": "UK DSIT", "title": "The Bletchley Declaration", "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023", "published": null, "published_note": "retrieved page last updated 2025-02-13", "event_date": "2023-11-01", "observed": "2026-11-01", "access": "partial", "supports": "political declaration language with no operative commitment located"}
+  ],
+  "inaccessible_sources": [
+    {"source": "FATF black and grey lists", "url": "https://www.fatf-gafi.org/en/countries/black-and-grey-lists.html", "observed": "2026-11-01", "reason": "HTTP 403"},
+    {"source": "Council of Europe treaty office, CETS 225", "url": "https://www.coe.int/en/web/conventions/full-list?module=treaty-detail&treatynum=225", "observed": "2026-11-01", "reason": "HTTP 403"},
+    {"source": "IAEA safeguards pages", "url": "https://www.iaea.org/topics/safeguards", "observed": "2026-11-01", "reason": "HTTP 403"},
+    {"source": "UN document S/RES/2231(2015) PDF", "url": "https://documents.un.org/api/symbol/access?s=S/RES/2231(2015)&l=en&t=pdf", "observed": "2026-11-01", "reason": "binary PDF not readable by fetch tool; HTML background page used instead"},
+    {"source": "UNGA A/RES/78/265", "url": "https://www.un.org/en/ga/search/view_doc.asp?symbol=A/RES/78/265", "observed": "2026-11-01", "reason": "HTTP 403"}
+  ],
+  "limitations": [
+    "precedents are analogues from trade, arms control, climate and extractives, not AI-safety accords",
+    "eight-month campaign compresses approval that takes months to years in reality",
+    "Gulf states and Australia+Canada are grouped; collective authority is a placeholder",
+    "no real AI verification institution exists; the verifier in R4 is fictional and must be labelled so",
+    "data/windows.json dates are inputs owned by other research notes and are not verified here",
+    "no claim about the intentions of any real government"
+  ]
+}

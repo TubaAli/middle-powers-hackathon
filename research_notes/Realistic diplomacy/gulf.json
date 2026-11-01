@@ -1,0 +1,342 @@
+{
+  "schema": "realistic-diplomacy/candidate-rules-v1",
+  "observation_date": "2026-11-01",
+  "research_cutoff": "2026-11-01",
+  "latest_verified_evidence": "2026-10-19",
+  "fiction_notice": "Proposed game rules. Reactions are bounded design choices, not measured probabilities. No government agreed to any of this.",
+  "replaces": {
+    "token": "GULF",
+    "problem": "One envoy averages two governments with different legal status, approval chains and clocks.",
+    "recommendation": "Keep the token for the map; carry two named mandates and show which one answers."
+  },
+  "actors": [
+    {
+      "id": "AE",
+      "name": "United Arab Emirates",
+      "mandate": "Federal government; Dubai entities act separately on service deployment.",
+      "approval_chain": [
+        "UAE federal ministries and agencies (advanced computing: approved automatically as of 2026-07-10)",
+        "Named commercial entities in Supplement 8 to EAR part 740 (entity-level US approval)",
+        "US BIS with State Department and White House NSC for new entity approvals (30-day determination)",
+        "Dubai government entities for emirate-level service conditions"
+      ],
+      "export_status": "Country Group A:5, effective 2026-07-10",
+      "dated_condition": "G42 and Core42 authorisations auto-expire 2027-04-06 absent further BIS notice",
+      "stated_goals": [
+        "Be first in the field of AI investment (u.ae strategy page)",
+        "Dubai: AED 100bn annual economic contribution, 50% productivity gain, an AI chief executive in each government entity"
+      ]
+    },
+    {
+      "id": "SA",
+      "name": "Saudi Arabia",
+      "mandate": "Council of Ministers and the Crown Prince (chair of SDAIA's board); SDAIA implements; CST regulates AI services; MCIT builds infrastructure.",
+      "approval_chain": [
+        "Council of Ministers for national designations and major agreements",
+        "SDAIA for the National Strategy for Data and AI and national programmes",
+        "CST for AI service regulation and sandbox terms (scope from team route research)",
+        "US BIS/State/NSC for any US-origin advanced computing licence"
+      ],
+      "export_status": "No equivalent A:5-style rule located as of 2026-11-01",
+      "dated_condition": "US-Saudi 123 Agreement approved 2026-07-16 with two side letters and a separate additional-safeguards and verification agreement",
+      "stated_goals": [
+        "2026 designated the Year of Artificial Intelligence by the Council of Ministers on 2026-03-10",
+        "Global hub for data and AI within Vision 2030; access to US systems while protecting US technology from foreign influence"
+      ]
+    }
+  ],
+  "cross_cutting_rules": [
+    {
+      "id": "X1",
+      "rule": "Treat commitments, frameworks, MOUs and announced deals as distinct from signed contracts, licences, deliveries and disbursements.",
+      "sources": ["S2", "S4", "S5"]
+    },
+    {
+      "id": "X2",
+      "rule": "A corporate restructuring is not a government promise; an approved consignee is an entity, not a country.",
+      "sources": ["S1"]
+    },
+    {
+      "id": "X3",
+      "rule": "The binding clock for Gulf compute access is usually a US act (entity approval, licence, treaty entry into force).",
+      "sources": ["S1", "S9"]
+    },
+    {
+      "id": "X4",
+      "rule": "Favourable country status does not immunise a jurisdiction: UAE entities were added to the Entity List in September 2025.",
+      "sources": ["S10"]
+    },
+    {
+      "id": "X5",
+      "rule": "Do not derive hostility from partnership. The operative test is headquarters or ultimate-parent location (Country Group D:5 / Macau), not diplomatic friendliness.",
+      "sources": ["S3", "S1"]
+    }
+  ],
+  "candidate_rules": [
+    {
+      "id": "AE-U1",
+      "actor": "AE",
+      "name": "Approved entity, not a country",
+      "objective": "Preserve licence-free access and A:5 status; avoid a safeguards row that puts the status at risk.",
+      "authority_instrument": "EAR Supplement 8 to part 740; entity-specific scope and recordkeeping; 30-day US determination on new entities; Note 2 expiry for G42/Core42.",
+      "trigger": "Player asks the UAE to guarantee testing, incident reporting or an off-switch for a commercial data centre.",
+      "conditions": [
+        "Government-agency workloads can be answered by the UAE directly",
+        "Commercial workloads depend on the named entity and on a US approval the UAE does not issue",
+        "Diversion prevention and recordkeeping already attach to the access"
+      ],
+      "time_cost_months": 2,
+      "time_cost_note": "About 1 month for a government pilot; 2-3 months for a corporate one; hard cliff 2027-04-06.",
+      "response_model": "design_reaction",
+      "plausible_response": "Accept with a narrower scope: offer a government-hosted pilot and mark the commercial case 'subject to approvals'.",
+      "substitute": "Dubai government-service deployment where the buyer is the emirate.",
+      "evidence_limit": "No document read shows any specific safety term agreed with any UAE entity.",
+      "sources": ["S1", "S2", "S7"]
+    },
+    {
+      "id": "AE-U2",
+      "actor": "AE",
+      "name": "Matching investment is the receipt",
+      "objective": "Reciprocity: Emirati capital into US AI infrastructure in exchange for access to US systems.",
+      "authority_instrument": "May 2025 US-UAE AI agreement and the $1.4 trillion ten-year investment framework; BIS cites the UAE's reaffirmed matching commitment.",
+      "trigger": "Player asks the UAE to fund or host something expensive.",
+      "conditions": [
+        "Is the ask inside the announced framework?",
+        "Does it bring a US partner, purchaser or co-signer?",
+        "A new unilateral cost without a US counterpart waits"
+      ],
+      "time_cost_months": 1,
+      "response_model": "design_reaction",
+      "plausible_response": "Counter-offer pairing the safeguard with an investment or procurement line, or ask the player to bring Washington in first.",
+      "substitute": "A smaller joint announcement with a US company instead of a government-to-government commitment.",
+      "evidence_limit": "Announced, not disbursed: no executed contract schedule or disbursement ledger retrieved. World Bank FDI figures are inward flows and must not be used as a fulfilment rate.",
+      "sources": ["S5", "S2", "S11"]
+    },
+    {
+      "id": "AE-U3",
+      "actor": "AE",
+      "name": "Two levels of state",
+      "objective": "Dubai wants adoption speed and visible service leadership; the federal centre wants strategic standing and no export-control accident.",
+      "authority_instrument": "Dubai Universal Blueprint for AI (AI chief executive per entity; governance-hub ambition) versus federal control of chips, defence and security commitments.",
+      "trigger": "Player says 'I have a deal with the UAE'.",
+      "conditions": [
+        "Name the signing authority",
+        "A Dubai service gate can be agreed and verified on live deployments",
+        "A federal compute or security commitment cannot be delivered by Dubai"
+      ],
+      "time_cost_months": 1,
+      "response_model": "design_reaction",
+      "plausible_response": "The two levels may answer differently in the same month; the emirate may be the more ambitious answer.",
+      "substitute": "Treat the Dubai route as its own counterparty.",
+      "evidence_limit": "No UAE approval map retrieved; the specific signatory for a safeguards clause is unknown.",
+      "sources": ["S7", "S1", "S8"]
+    },
+    {
+      "id": "SA-S1",
+      "actor": "SA",
+      "name": "The prestige-and-capability bargain",
+      "objective": "Be seen as a global AI leader and obtain capability, not merely host other countries' models.",
+      "authority_instrument": "Council of Ministers decision of 2026-03-10 designating the Year of AI; SDAIA National Strategy for Data and AI; November 2025 AI MOU with the US.",
+      "trigger": "Player offers a named joint testing or incident-reporting regime.",
+      "conditions": [
+        "Shared credit and capability transfer (evaluation expertise, model access, a named institute)",
+        "Reporting and incident definitions are easier than a foreign-operated off-switch",
+        "A framework that reads as foreign policing of Saudi labs will be narrowed"
+      ],
+      "time_cost_months": 2,
+      "response_model": "design_reaction",
+      "plausible_response": "Accept the reporting half, negotiate the enforcement half, ask for joint branding.",
+      "substitute": "A sandbox stop-rule inside one service, with the national strategy as context rather than authority.",
+      "evidence_limit": "No retrieved leadership statement approves any specific safety requirement; SDAIA achievement statistics are self-reported.",
+      "sources": ["S6", "S4"]
+    },
+    {
+      "id": "SA-S2",
+      "actor": "SA",
+      "name": "No A:5, so every chip is a licence question",
+      "objective": "Obtain access without the appearance of second-tier status.",
+      "authority_instrument": "No located Saudi counterpart to the UAE A:5 rule; US guidance of 2026-05-31 requires a licence for advanced computing items to entities headquartered in, or ultimately parented in, Country Group D:5 or Macau, even when located elsewhere.",
+      "trigger": "Player asks Saudi Arabia to host compute for a third party, route chips, or host a Chinese-linked operator.",
+      "conditions": [
+        "Does the arrangement create a US licensing problem Riyadh cannot solve?",
+        "A verification annex modelled on the 123 Agreement's additional safeguards and side letters makes a deal signable",
+        "A US supplier must be named and licensed first"
+      ],
+      "time_cost_months": 2,
+      "response_model": "design_reaction",
+      "plausible_response": "Ask for the US supplier to be licensed first; decline arrangements requiring Saudi Arabia to guarantee another party's export status.",
+      "substitute": "A US-supplied, US-licensed facility with Saudi hosting and Saudi-funded evaluation.",
+      "evidence_limit": "Absence of a Saudi rule in the Federal Register is not proof no licences were granted; individual licences are not published.",
+      "sources": ["S3", "S9", "S1"]
+    },
+    {
+      "id": "SA-S3",
+      "actor": "SA",
+      "name": "Foreign-influence language, not a China flag",
+      "objective": "US systems and investment without a public exclusive alignment that closes other options.",
+      "authority_instrument": "AI MOU purpose clause on protecting US technology from 'foreign influence'; D:5 headquarters test in US licensing.",
+      "trigger": "Player demands Saudi Arabia drop China or sign an exclusivity clause.",
+      "conditions": [
+        "Acceptable: supplier screening, audit rights, end-use assurances, approved-supplier list",
+        "Difficult: publicly naming a third country, or making Saudi Arabia responsible for another state's conduct"
+      ],
+      "time_cost_months": 1,
+      "response_model": "design_reaction",
+      "plausible_response": "Rewrite the demand into a technical control and leave the strategic relationship unlabelled.",
+      "substitute": "Apply the headquarters test to the specific counterparty rather than to the country.",
+      "evidence_limit": "No Saudi statement on China policy retrieved; the argument rests on US-side wording and the licensing rule.",
+      "sources": ["S4", "S3"]
+    }
+  ],
+  "composite_token_risk": {
+    "summary": "A single GULF envoy with energy and capital power would let a player buy consent neither government gave, at a speed neither works at.",
+    "hidden_differences": [
+      "UAE access is contractual and dated; Saudi access is aspirational and undated",
+      "UAE approvals are entity-level and US-decided; Saudi decisions are centralised in the Council of Ministers and SDAIA",
+      "Dubai can bind its own services; Abu Dhabi compute cannot be bound by Dubai",
+      "Saudi Arabia has a new 123 agreement with extra verification; the UAE presents A:5 as the capstone of layered commitments",
+      "Qatar and Oman appear in the map group but were not researched here"
+    ]
+  },
+  "contested_or_unresolved": [
+    {
+      "item": "'Operation Epic Fury' cited by BIS as UAE support",
+      "status": "unverified",
+      "note": "No official description retrieved; do not characterise the operation."
+    },
+    {
+      "item": "Whether G42 or Core42 restructured to become US companies",
+      "status": "unknown"
+    },
+    {
+      "item": "Whether Saudi buyers received individual advanced-computing licences",
+      "status": "unknown"
+    },
+    {
+      "item": "Whether the ~$1 trillion Saudi commitment is new money",
+      "status": "unverified",
+      "note": "Described as an increase from $600bn; no schedule or disbursement data."
+    },
+    {
+      "item": "Sudan / RSF allegations involving the UAE",
+      "status": "contested",
+      "note": "OFAC sanctioned one UAE-resident facilitator in January 2025. That is not evidence of state policy; no UAE official response retrieved."
+    }
+  ],
+  "sources": {
+    "S1": {
+      "title": "Enhanced Favorable Treatment for the United Arab Emirates Under the Export Administration Regulations (final rule), 91 FR 43034",
+      "publisher": "US Bureau of Industry and Security",
+      "published": "2026-07-14",
+      "event": "2026-07-10",
+      "url": "https://www.federalregister.gov/documents/2026/07/14/2026-14132/enhanced-favorable-treatment-for-the-united-arab-emirates-under-the-export-administration",
+      "access": "read_full_text"
+    },
+    "S2": {
+      "title": "Department of Commerce Eases Export Controls for UAE",
+      "publisher": "US Bureau of Industry and Security",
+      "published": "2026-07-10",
+      "event": "2026-07-10",
+      "url": "https://www.bis.gov/press-release/department-commerce-eases-export-controls-uae",
+      "access": "read"
+    },
+    "S3": {
+      "title": "Guidance Regarding Enforcement of License Requirements for Advanced Computing Items for Entities Headquartered in Country Group D:5 and Macau",
+      "publisher": "US Bureau of Industry and Security",
+      "published": "2026-05-31",
+      "event": "2026-05-31",
+      "url": "https://www.bis.gov/media/documents/bis-guidance-may-31-2026.pdf",
+      "access": "read_pdf_text"
+    },
+    "S4": {
+      "title": "Fact Sheet: President Donald J. Trump Solidifies Economic and Defense Partnership with the Kingdom of Saudi Arabia",
+      "publisher": "The White House",
+      "published": "2025-11-18",
+      "event": "2025-11-18",
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/11/fact-sheet-president-donald-j-trump-solidifies-economic-and-defense-partnership-with-the-kingdom-of-saudi-arabia/",
+      "access": "read"
+    },
+    "S5": {
+      "title": "Fact Sheet: President Donald J. Trump Secures $200 Billion in New U.S.-UAE Deals and Accelerates Previously Committed $1.4 Trillion UAE Investment",
+      "publisher": "The White House",
+      "published": "2025-05-15",
+      "event": "2025-05-15",
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/05/fact-sheet-president-donald-j-trump-secures-200-billion-in-new-u-s-uae-deals-and-accelerates-previously-committed-1-4-trillion-uae-investment/",
+      "access": "read"
+    },
+    "S6": {
+      "title": "The Year of AI",
+      "publisher": "Saudi Data and Artificial Intelligence Authority (SDAIA)",
+      "published": null,
+      "event": "2026-03-10",
+      "url": "https://sdaia.gov.sa/en/MediaCenter/Pages/ai-year.aspx",
+      "access": "read",
+      "note": "Page undated; Council of Ministers session date stated in the text. Browser-only from this host: direct curl resets."
+    },
+    "S7": {
+      "title": "UAE Strategy for Artificial Intelligence; Dubai Universal Blueprint for Artificial Intelligence",
+      "publisher": "UAE Government platform (u.ae)",
+      "published": null,
+      "event": null,
+      "url": "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/Ai",
+      "access": "read",
+      "note": "Undated pages; no strategy adoption date displayed."
+    },
+    "S8": {
+      "title": "UAE and US Advance Technology Partnership Agenda in High-Level Washington Engagements",
+      "publisher": "Embassy of the United Arab Emirates, Washington DC",
+      "published": "2026-10-03",
+      "event": "week of 2026-09-28",
+      "url": "https://www.uae-embassy.org/news/uae-and-us-advance-technology-partnership-agenda-high-level-washington-engagements",
+      "access": "read"
+    },
+    "S9": {
+      "title": "Presidential Determination No. 2026-18 on the US-Saudi Agreement for Cooperation Concerning Peaceful Uses of Nuclear Energy, 91 FR 47715",
+      "publisher": "The White House / Federal Register",
+      "published": "2026-07-28",
+      "event": "2026-07-16",
+      "url": "https://www.federalregister.gov/documents/2026/07/28/2026-15273/presidential-determination-on-the-proposed-agreement-for-cooperation-between-the-government-of-the",
+      "access": "read"
+    },
+    "S10": {
+      "title": "Additions and Revisions to the Entity List (final rule)",
+      "publisher": "US Bureau of Industry and Security",
+      "published": "2025-09-16",
+      "event": "2025-09-16",
+      "url": "https://www.federalregister.gov/documents/2025/09/16/2025-17893/additions-and-revisions-to-the-entity-list",
+      "access": "read_excerpt_uae_entries"
+    },
+    "S11": {
+      "title": "Foreign direct investment, net inflows (BoP, current US$), SAU and ARE, 2019-2025",
+      "publisher": "World Bank Open Data",
+      "published": null,
+      "event": null,
+      "url": "https://api.worldbank.org/v2/country/SAU;ARE/indicator/BX.KLT.DINV.CD.WD",
+      "access": "read_api",
+      "note": "Inward FDI; not a fulfilment measure for outbound pledges."
+    },
+    "S12": {
+      "title": "Arms Sales Notification (Saudi Arabia: JDAM-ER; AGT-1500 engines)",
+      "publisher": "US Department of Defense / Federal Register",
+      "published": "2026-10-19",
+      "event": "2026-10-19",
+      "url": "https://www.federalregister.gov/documents/2026/10/19/2026-21340/arms-sales-notification",
+      "access": "read_excerpt"
+    },
+    "S13": {
+      "title": "Treasury Sanctions Sudanese Paramilitary Leader, Weapons Supplier, and Related Companies",
+      "publisher": "US Department of the Treasury, OFAC",
+      "published": "2025-01-07",
+      "event": "2025-01-07",
+      "url": "https://ofac.treasury.gov/recent-actions/20250107",
+      "access": "read_excerpt"
+    }
+  },
+  "not_retrieved": [
+    "Saudi Press Agency and WAM article text (JavaScript-only)",
+    "PIF, HUMAIN, Saudi Ministry of Investment pages (blocked)",
+    "Saudi MCIT AI pages (403)",
+    "Text of the US-Saudi AI MOU, Strategic Defense Agreement and the two 123 side letters",
+    "Any individual export licence, chip shipment volume or executed investment contract"
+  ]
+}

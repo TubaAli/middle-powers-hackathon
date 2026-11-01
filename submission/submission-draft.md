@@ -7,7 +7,7 @@ Suggested track: Diplomacy, with procurement, regulation and investment applicat
 
 ## Project summary
 
-Before Geneva helps people investigate what middle powers could do to make advanced AI safer, individually and together. It combines an interactive map of 32 policy proposals, source-linked research and a playable diplomatic visual novel. The central question is practical: who can require a safeguard, through which decision, and what happens when a system fails the test?
+Before Geneva helps people investigate what middle powers could do to make advanced AI safer, individually and together. The submission has two principal assets: an interactive feasibility-versus-potential-impact plot of 32 routes to AI safety, with the ranking method and evidence available inside the explorer; and a diplomatic game that communicates the research through understandable choices and consequences. The game direction combines Orbit Accord’s map, plane, characters and progression with Before Geneva’s visual style. The central question is practical: who can require a safeguard, through which decision, and what happens when a system fails the test?
 
 Our preliminary finding is that identifying a national asset or a funding programme is only the start. A useful intervention needs an authorised decision-maker, a changeable instrument, access to relevant evidence and an operational consequence. The explorer makes these assumptions inspectable. The game turns them into conversations about limited resources, consent, testing and follow-up.
 

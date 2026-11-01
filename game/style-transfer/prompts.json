@@ -1,0 +1,39 @@
+{
+  "provider": "Gemini web app through the user's existing Work Ultra subscription, driven by the installed subscription-backed `images` tool (see ../../tools/image-generation/README.md). The same tool and one conversation produced all three images, for style and character continuity; the private conversation URL is not published.",
+  "generated_utc": "2026-11-01 06:31-06:32 UTC (approximate, as recorded by the generating session; local download timestamps 06:33:23 UTC corroborate)",
+  "artDirection": "Original cinematic painted anime for Orbit Accord's diplomatic scenes: sophisticated adult faces and hands, restrained cel shading over painterly architectural backgrounds, rich teal-blue shadows, ivory and muted-gold light, professional contemporary civilians, landscape 16:9. No text, lettering, logos, watermark or game interface: Orbit Accord composes its existing portrait and interface layers separately at runtime.",
+  "handoff": "Orbit Accord (game B, ../orbit.html) keeps its world map, its delegation jet, its existing characters and their mechanics; only the look moves to Before Geneva's (game A, ../concepts/) painted-anime style. These are handoff reference assets for Tuba, not live-game files.",
+  "prompt_policy": "Each prompt below is an honest summary written for this record, not the verbatim prompt. Each prompt_sha256 hashes the verbatim prompt text as recorded by the generating session; the verbatim texts are not published here.",
+  "assets": [
+    {
+      "id": "01-mira-morning",
+      "file": "art/01-mira-morning-1-0a9b96d2d66c.jpg",
+      "sha256": "0a9b96d2d66c8055c0bb194f307e0e6b29ef8cf033f5fa4d2ea1dc278509c78d",
+      "prompt_sha256": "74623fb65a4c36fa1de518fc4016a3523f866eeafff8e9270782ff36ef0857e3",
+      "bytes": 2378148,
+      "pixels": "2752x1536",
+      "characters": "Mira, the player's chief of staff, with her exact Game B code appearance",
+      "prompt_summary": "Mira from Orbit Accord in a morning ministerial office. Her appearance follows the game's existing definition exactly: adult woman, blue eyes, plum-brown bob, navy blazer over a gold blouse. Morning light, an unmarked folder in hand, the delegation jet waiting outside the window. Cinematic painted anime: restrained cel shading, teal-blue shadows, ivory/gold light, professional civilian, no text, logos or UI. The only image in the set with a character; it checks that the style transfer preserves the game's existing character design."
+    },
+    {
+      "id": "02-bilateral-room",
+      "file": "art/02-bilateral-room-1-2a5cad5ee7e5.jpg",
+      "sha256": "2a5cad5ee7e555951071d483185711e24425aade96aaea6f99b055bc5e4c4bfc",
+      "prompt_sha256": "07193306818150dda9b0ee22dbda0dfa8b96738895cc48bebe6ea132c5200645",
+      "bytes": 2512386,
+      "pixels": "2752x1536",
+      "characters": "none, deliberately empty",
+      "prompt_summary": "An empty diplomatic bilateral meeting room in the same cinematic painted-anime direction: morning light through tall windows, long table and chairs, no people present, no text, logos or UI. Empty by design: Orbit Accord draws its existing animated portraits over the room background at runtime, so the cast overlay stays unchanged."
+    },
+    {
+      "id": "03-delegation-cabin",
+      "file": "art/03-delegation-cabin-1-cb72e17d2c98.jpg",
+      "sha256": "cb72e17d2c98de8a2e067e65c4d8894a31eb851f24b413ca8c9c84934fbc65bc",
+      "prompt_sha256": "d3912964de68609099309187e781a5839c3031d2324e62e19764202217b2fa32",
+      "bytes": 2509418,
+      "pixels": "2752x1536",
+      "characters": "none, deliberately empty",
+      "prompt_summary": "An empty delegation jet cabin interior, the player's plane from Orbit Accord's map screen: rows of seats and a corridor, sky light through the windows, no people present, no text, logos or UI. Same cinematic painted-anime direction. Empty by design so the existing animated portraits and interface overlay unchanged."
+    }
+  ]
+}

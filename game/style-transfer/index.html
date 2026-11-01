@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style transfer · Orbit Accord × Before Geneva</title>
+  <meta name="description" content="Three Gemini-generated painted-anime backgrounds handing Before Geneva's look to Orbit Accord: one Mira fidelity check and two deliberately empty sets for unchanged portrait overlays. Handoff assets, not live gameplay.">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#0b1822;color:#e3e8e1;font:16px/1.65 system-ui,sans-serif}
+    main{max-width:1240px;margin:auto;padding:38px 5vw 70px}
+    a{color:#b9d4ca;text-underline-offset:5px}
+    .eyebrow{font-size:11px;letter-spacing:.23em;color:#a7bdb8;text-transform:uppercase}
+    h1{font:clamp(34px,5.5vw,62px)/1.1 Georgia,serif;margin:18px 0;color:#f0ead9}
+    h2{font-size:19px;margin:6px 0 4px;font-weight:500;color:#f0ead9}
+    header{max-width:920px;margin-bottom:26px}
+    header p{max-width:780px;color:#adbec1;margin:12px 0}
+    .banner{border:1px solid #8a7a44;background:linear-gradient(135deg,rgba(217,194,122,.14),rgba(11,24,34,.4));border-radius:6px;padding:16px 18px;margin:0 0 34px;max-width:1030px}
+    .banner b{color:#e8d9a8}
+    .banner p{margin:0;color:#d6d2bd;font-size:14.5px}
+    .statement{border-left:3px solid #d9c27a;padding:2px 0 2px 16px;margin:0 0 40px;max-width:920px;color:#adbec1;font-size:15px}
+    .statement b{color:#e3e8e1}
+    nav.topnav{display:flex;gap:25px;flex-wrap:wrap;font-size:13px;margin-bottom:38px}
+    .swatches{margin:0 0 46px;max-width:1030px}
+    .swatches p{color:#9fb3b7;font-size:14px;max-width:780px;margin:10px 0 16px}
+    .chips{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{width:104px;border:1px solid #30434d;border-radius:6px;overflow:hidden;background:#102632}
+    .chip i{display:block;height:44px;border-bottom:1px solid #1d3340}
+    .chip code{display:block;padding:7px 9px;font-size:11.5px;color:#cfd8d2}
+    .chip span{display:block;padding:0 9px 8px;font-size:11px;color:#8ba0a6;letter-spacing:.06em;text-transform:uppercase}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:44px 30px}
+    figure{margin:0;min-width:0}
+    .stage{position:relative;background:#07131f;border:1px solid #39505b;border-radius:4px;overflow:hidden}
+    .stage img{display:block;width:100%;height:auto}
+    .ov{position:absolute;inset:0;display:none}
+    .ov.show{display:block}
+    .ov-portrait{position:absolute;right:4%;bottom:22%;width:30%;max-width:300px;aspect-ratio:3/4;border:2px dashed rgba(240,234,217,.75);border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;background:rgba(11,24,34,.32);color:#f0ead9;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+    .ov-cap{position:absolute;left:0;right:0;bottom:0;background:rgba(6,18,27,.86);border-left:4px solid #d9c27a;padding:12px 16px 14px}
+    .ov-cap .who{display:block;font-size:10.5px;letter-spacing:.22em;color:#cbb77e;margin-bottom:5px}
+    .ov-cap [contenteditable]{display:block;color:#edf0e8;font:17px/1.5 Georgia,serif;outline:none;border-bottom:1px dashed rgba(240,234,217,.4);min-height:1.6em;padding-bottom:3px}
+    .ov-cap [contenteditable]:focus{border-bottom-color:#d9c27a}
+    figcaption{padding:16px 0 0}
+    figcaption p{color:#9fb3b7;font-size:14px;margin:7px 0 14px;max-width:640px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border-radius:4px;border:1px solid #52696c;background:transparent;color:#b6c8c5;font:inherit;font-size:14px;cursor:pointer;text-decoration:none}
+    .btn:hover{border-color:#b4c5ad;color:#d8e6de}
+    .btn.primary{background:#c3cbb7;color:#17333b;border-color:#c3cbb7;font-weight:600}
+    .btn.primary:hover{background:#d4dcc2;color:#17333b}
+    .btn[aria-pressed=true]{background:#2e4a56;border-color:#d9c27a;color:#e8d9a8}
+    details.hash{margin-top:12px;font-size:12.5px;color:#8ba0a6}
+    details.hash summary{cursor:pointer;color:#9fb3b7}
+    details.hash code{display:block;margin-top:6px;word-break:break-all;color:#7fa3ad;font-size:11.5px}
+    .note{border-top:1px solid #30434d;padding-top:26px;margin-top:48px;color:#94aaaf;font-size:13px;max-width:1030px}
+    footer nav{display:flex;gap:8px 26px;flex-wrap:wrap;font-size:13px;margin-top:26px}
+    @media(max-width:700px){
+      main{padding-top:24px}
+      .gallery{grid-template-columns:1fr}
+      .ov-cap [contenteditable]{font-size:15px}
+      .ov-portrait{width:34%;bottom:24%;right:5%}
+      .banner{padding:13px 14px}
+    }
+  </style>
+</head>
+<body><main>
+  <nav class="topnav"><a href="../orbit.html">← Orbit Accord</a><a href="../">Before Geneva</a><a href="../concepts/">Concept stills</a><a href="../orbit-art/">In-game art</a></nav>
+  <header>
+    <div class="eyebrow">Style-transfer handoff · for Tuba · 1 November 2026</div>
+    <h1>Orbit Accord × Before Geneva</h1>
+    <p>Three Gemini originals handing the visual novel's painted-anime look to the jet-and-map game: one character fidelity check with Mira, and two deliberately empty sets.</p>
+  </header>
+
+  <div class="banner">
+    <p><b>Handoff assets — not live gameplay.</b> Orbit Accord keeps its world map, its delegation jet, its existing characters and their mechanics; only the look moves to Before Geneva's painted-anime style. Nothing on this page edits the live game at <a href="../orbit.html">../orbit.html</a>, the cast, or the game's current style implementation.</p>
+  </div>
+
+  <p class="statement"><b>Keep:</b> the map, the plane, the existing characters, the mechanics. <b>Change:</b> only the look — cinematic painted anime, restrained cel shading, teal-blue shadows, ivory/gold light. These pages hand over reference artwork for that change; they replace no cast, gameplay or implementation.</p>
+
+  <section class="swatches" aria-label="Mira source palette">
+    <div class="eyebrow">Character fidelity reference</div>
+    <h2>Mira, from the source</h2>
+    <p>Small swatches read from Mira's existing definition in <code>game/meeting.js</code> — shown for fidelity checking only, with no broader copying of game source. The first still must match her exactly.</p>
+    <div class="chips">
+      <div class="chip"><i style="background:#3a2f4a"></i><code>#3a2f4a</code><span>Hair · bob</span></div>
+      <div class="chip"><i style="background:#2b3a55"></i><code>#2b3a55</code><span>Blazer · navy</span></div>
+      <div class="chip"><i style="background:#f2c96b"></i><code>#f2c96b</code><span>Blouse · gold</span></div>
+      <div class="chip"><i style="background:#3f8fbf"></i><code>#3f8fbf</code><span>Eyes · blue</span></div>
+      <div class="chip"><i style="background:#f7dcc8"></i><code>#f7dcc8</code><span>Skin</span></div>
+    </div>
+  </section>
+
+  <section class="gallery" aria-label="Three style-transfer backgrounds">
+    <figure>
+      <div class="stage">
+        <img src="art/01-mira-morning-1-0a9b96d2d66c.jpg" width="2752" height="1536" alt="Mira, a woman with a plum-brown bob in a navy blazer, stands in a morning-lit ministerial office holding an unmarked folder; a delegation jet waits outside the window. Painted-anime style.">
+        <div class="ov" id="ov-01">
+          <div class="ov-cap"><span class="who">MIRA · CHIEF OF STAFF</span><span contenteditable="true" spellcheck="false">Editable example line — tap this text to rewrite it.</span></div>
+        </div>
+      </div>
+      <figcaption>
+        <div class="eyebrow">01 / Character check · morning ministerial office</div>
+        <h2>Mira, unchanged</h2>
+        <p>The only image with a character: Mira keeps her exact Orbit Accord appearance — plum-brown bob, navy blazer, gold blouse, blue eyes — so the transfer's fidelity to the existing cast can be checked against the swatches above.</p>
+        <div class="actions">
+          <a class="btn primary" href="art/01-mira-morning-1-0a9b96d2d66c.jpg" download>Download original</a>
+          <a class="btn" href="art/01-mira-morning-1-0a9b96d2d66c.jpg" target="_blank" rel="noopener">Open full size</a>
+          <button class="btn" type="button" data-ov="ov-01" aria-pressed="false">Overlay example</button>
+        </div>
+        <details class="hash"><summary>SHA-256</summary><code>0a9b96d2d66c8055c0bb194f307e0e6b29ef8cf033f5fa4d2ea1dc278509c78d</code></details>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <div class="stage">
+        <img src="art/02-bilateral-room-1-2a5cad5ee7e5.jpg" width="2752" height="1536" loading="lazy" alt="An empty diplomatic meeting room in morning light, long table and tall windows, painted-anime style.">
+        <div class="ov" id="ov-02">
+          <div class="ov-portrait">Existing animated portrait overlays here — unchanged</div>
+          <div class="ov-cap"><span class="who">EXAMPLE COMPOSITION</span><span contenteditable="true" spellcheck="false">Editable example line — tap this text to rewrite it.</span></div>
+        </div>
+      </div>
+      <figcaption>
+        <div class="eyebrow">02 / Empty set · bilateral meeting room</div>
+        <h2>A room that waits for the cast</h2>
+        <p>No people, by design. Orbit Accord draws its existing animated portraits over the room background at runtime, so the cast overlays this still unchanged.</p>
+        <div class="actions">
+          <a class="btn primary" href="art/02-bilateral-room-1-2a5cad5ee7e5.jpg" download>Download original</a>
+          <a class="btn" href="art/02-bilateral-room-1-2a5cad5ee7e5.jpg" target="_blank" rel="noopener">Open full size</a>
+          <button class="btn" type="button" data-ov="ov-02" aria-pressed="false">Overlay example</button>
+        </div>
+        <details class="hash"><summary>SHA-256</summary><code>2a5cad5ee7e555951071d483185711e24425aade96aaea6f99b055bc5e4c4bfc</code></details>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <div class="stage">
+        <img src="art/03-delegation-cabin-1-cb72e17d2c98.jpg" width="2752" height="1536" loading="lazy" alt="An empty delegation jet cabin with rows of seats and sky light through the windows, painted-anime style.">
+        <div class="ov" id="ov-03">
+          <div class="ov-portrait">Existing animated portrait overlays here — unchanged</div>
+          <div class="ov-cap"><span class="who">EXAMPLE COMPOSITION</span><span contenteditable="true" spellcheck="false">Editable example line — tap this text to rewrite it.</span></div>
+        </div>
+      </div>
+      <figcaption>
+        <div class="eyebrow">03 / Empty set · delegation jet cabin</div>
+        <h2>The jet, mid-flight</h2>
+        <p>The player's plane from the map screen, empty by design: the existing portraits and interface overlay it exactly as they are in the live game.</p>
+        <div class="actions">
+          <a class="btn primary" href="art/03-delegation-cabin-1-cb72e17d2c98.jpg" download>Download original</a>
+          <a class="btn" href="art/03-delegation-cabin-1-cb72e17d2c98.jpg" target="_blank" rel="noopener">Open full size</a>
+          <button class="btn" type="button" data-ov="ov-03" aria-pressed="false">Overlay example</button>
+        </div>
+        <details class="hash"><summary>SHA-256</summary><code>cb72e17d2c98de8a2e067e65c4d8894a31eb851f24b413ca8c9c84934fbc65bc</code></details>
+      </figcaption>
+    </figure>
+  </section>
+
+  <p class="note">Overlays are optional, editable example layers — tap a caption to rewrite it; they demonstrate where the game's unchanged portraits and dialogue sit on the new look. They are not live gameplay. Originals in <a href="art/">art/</a> are read-only (2752 × 1536 JPEG, hashes in <a href="prompts.json">prompts.json</a>); verify with <code>shasum -a 256</code>. Generated with the installed subscription-backed Gemini <a href="../../tools/image-generation/README.md">image tools</a> from one conversation, whose private URL is not published.</p>
+
+  <footer>
+    <nav>
+      <a href="../orbit.html">← Play Orbit Accord</a>
+      <a href="../concepts/">Before Geneva concept stills</a>
+      <a href="../orbit-art/">Current in-game art</a>
+      <a href="prompts.json">Prompt record</a>
+    </nav>
+  </footer>
+</main>
+<script>
+  document.querySelectorAll('[data-ov]').forEach(button=>button.addEventListener('click',()=>{
+    const ov=document.getElementById(button.dataset.ov);
+    const on=ov.classList.toggle('show');
+    button.setAttribute('aria-pressed',String(on));
+    button.textContent=on?'Hide overlay example':'Overlay example';
+  }));
+</script>
+</body></html>

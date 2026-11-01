@@ -1,0 +1,125 @@
+{
+  "topic": "Labs preparing for 'the day after' a severe AI incident: origin, wording and claim-by-claim status",
+  "observationDate": "2026-11-01",
+  "cutoff": "2026-11-01",
+  "owner": "day-after researcher (subagent)",
+  "scope": "Trace exact origin and wording of the claim that labs are preparing for 'the day after' an AI incident on the scale of Chernobyl. Distinguish risk contingency planning, policy advocacy, exercises, corporate incident preparedness, prediction and intent. Claim as heard is not assumed true; 'labs' is not assumed to mean all labs.",
+  "sources": [
+    {
+      "id": "S1",
+      "publisher": "Axios",
+      "author": "Maria Curi",
+      "title": "Scoop: AI companies plot 'the day after'",
+      "date": "2026-10-09",
+      "url": "https://www.axios.com/2026/10/09/ai-companies-day-after-major-attack",
+      "type": "primary news report (single outlet, unnamed sourcing; one on-record OpenAI statement)",
+      "retrieved": "full text retrieved 2026-11-01"
+    },
+    {
+      "id": "S2",
+      "publisher": "Political Wire",
+      "title": "AI Companies Plot 'Day After' Scenarios for Public Revolt",
+      "date": "2026-10-09T10:23-ET",
+      "url": "https://politicalwire.com/2026/10/09/ai-companies-plot-day-after-scenarios-for-public-revolt/",
+      "type": "secondary aggregation plus site opinion",
+      "retrieved": "full text retrieved 2026-11-01"
+    },
+    {
+      "id": "S3",
+      "publisher": "Gizmodo",
+      "author": "Bruce Gil",
+      "title": "AI Companies Are Preparing to Shape the Rules After Everything Goes Wrong",
+      "date": "2026-10-09T12:10-ET",
+      "url": "https://gizmodo.com/ai-companies-are-preparing-to-shape-the-rules-after-everything-goes-wrong-2000824187",
+      "type": "secondary reporting with added context (Altman/Politico; 2026-09-29 White House accord)",
+      "retrieved": "full text retrieved 2026-11-01"
+    },
+    {
+      "id": "S4",
+      "publisher": "Tom's Hardware",
+      "title": "Top AI labs reportedly planning for catastrophic AI event fallout",
+      "date": "not captured in retrieved text (after 2026-10-09, before retrieval 2026-11-01)",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/top-ai-labs-reportedly-planning-for-catastrophic-ai-event-fallout-anthropic-openai-and-others-reportedly-building-contingency-plans-and-running-scenarios-of-a-runaway-ai-wreaking-havoc",
+      "type": "secondary; shows retelling mutations",
+      "retrieved": "body text retrieved 2026-11-01"
+    },
+    {
+      "id": "S5",
+      "publisher": "Anthropic",
+      "title": "Introducing Anthropic's Responsible Scaling Policy",
+      "date": "2023-09-19",
+      "url": "https://www.anthropic.com/news/anthropics-responsible-scaling-policy",
+      "type": "primary corporate framework announcement (original version; later revisions not retrieved)",
+      "retrieved": "full text retrieved 2026-11-01"
+    },
+    {
+      "id": "S6",
+      "publisher": "explainx.ai",
+      "title": "AI Labs Wargame the 'Day After' a Catastrophe: What Axios Reported vs What Is Verified",
+      "date": "2026-10-09",
+      "url": "https://www.explainx.ai/blog/ai-labs-wargame-day-after-catastrophic-ai-event-axios-claimed-vs-verified-2026",
+      "type": "secondary aggregator with claimed-vs-verified table and product promotion; low authority; used only for corroboration checks and leads marked unverified; could not itself access the Axios article",
+      "retrieved": "full text retrieved 2026-11-01"
+    }
+  ],
+  "originFinding": {
+    "exactSource": "Axios, Maria Curi, 2026-10-09",
+    "exactHeadline": "Scoop: AI companies plot \"the day after\"",
+    "leadSentence": "Top executives at Anthropic, OpenAI and other AI companies are privately gaming out scenarios for a public and political revolt after a catastrophic AI event.",
+    "chernobylWordingInPrimary": false,
+    "chernobylWordingInRetrievedSecondary": false,
+    "chernobylStatus": "Unlocated as story wording; nuclear-metaphor accretion in retelling. 'AI Chernobyl' circulates separately in commentary (low-authority locators: medium.com/@ZombieCodeKill/claude-on-ai-chernobyl-542911cf5793; philarchive.org/archive/KIMMAC-2)."
+  },
+  "mutations": [
+    "Axios (2026-10-09): 'catastrophic AI event', 'most likely a cyberattack'",
+    "Political Wire (2026-10-09): restates Axios lead; adds own opinion that no prep would prevent breakup",
+    "Gizmodo (2026-10-09): adds Altman/Politico remark and 2026-09-29 White House accord",
+    "Tom's Hardware (date not captured): 'rogue AI wreaking havoc', 'The Day After Tomorrow of an AI apocalypse'; unverified Amodei botnet claim and Anthropic IPO risk-factor claim",
+    "Team-heard phrasing: 'the day after' + 'on scale of Chernobyl' (Chernobyl absent from all retrieved coverage of the story)"
+  ],
+  "claims": [
+    {"claim": "Executives at Anthropic, OpenAI and other AI companies are privately gaming out post-catastrophe scenarios", "verdict": "partial", "basis": "Reported by Axios 2026-10-09, unnamed sourcing; no second outlet with independent sources located", "sources": ["S1", "S6"]},
+    {"claim": "OpenAI conducts preparedness exercises", "verdict": "verified", "basis": "On-record OpenAI statement, 2026-10-09; scope, frequency and content unpublished", "sources": ["S1", "S3", "S4"]},
+    {"claim": "OpenAI treats such scenarios as inevitable", "verdict": "contradicted", "basis": "Unnamed characterization in Axios vs on-record 'not treated as inevitable'", "sources": ["S1"]},
+    {"claim": "Anthropic is doing this", "verdict": "unlocated", "basis": "Named in report; declined to comment; no on-record or documentary confirmation", "sources": ["S1", "S6"]},
+    {"claim": "'Labs' generally / all major labs are doing this", "verdict": "unlocated", "basis": "Only OpenAI on record; 'other AI companies' unnamed; no retrieved coverage of DeepMind, Meta, Microsoft or xAI in this story", "sources": ["S1", "S6"]},
+    {"claim": "The anticipated event is on the scale of Chernobyl", "verdict": "unlocated", "basis": "Word absent from primary and retrieved secondary coverage; Axios says 'catastrophic'/'large-scale' cyberattack", "sources": ["S1", "S2", "S3", "S4"]},
+    {"claim": "Many top researchers and executives believe a major incident is inevitable", "verdict": "partial", "basis": "Unnamed attribution; contested on the record by OpenAI", "sources": ["S1"]},
+    {"claim": "A major event is expected in the next 6-12 months / in 2027", "verdict": "partial", "basis": "Prediction by unnamed insiders per Axios; not a lab statement; '2027' circulated on social media per S6", "sources": ["S1", "S6"]},
+    {"claim": "Planning focuses on educating Congress and shaping post-incident legislation", "verdict": "partial", "basis": "Reported, unnamed sourcing", "sources": ["S1"]},
+    {"claim": "Likeliest trigger is an AI-enabled cyberattack on finance, internet, power or water", "verdict": "partial", "basis": "Planners' reported assumption, not a forecast; CrowdStrike South Korea example single-sourced within S1", "sources": ["S1"]},
+    {"claim": "Sam Altman said 'the world should accept some bad things happening'", "verdict": "partial", "basis": "Secondhand via Gizmodo citing Politico, week of 2026-10-09; original not retrieved", "sources": ["S3"]},
+    {"claim": "White House voluntary accord signed 2026-09-29 by Google, Meta, Anthropic, OpenAI, xAI, Nvidia", "verdict": "partial", "basis": "Two secondary outlets; primary text not retrieved", "sources": ["S3", "S6"]},
+    {"claim": "Public evidence of specific lab-run 'day after' drills", "verdict": "unlocated", "basis": "No exercise documentation located; OpenAI statement generic; published frameworks cover capability thresholds, not drills", "sources": ["S1", "S5"]},
+    {"claim": "Amodei warned of AI botnet 'swarm'; Anthropic IPO prospectus flags existential risks", "verdict": "partial", "basis": "Single secondary outlet (Tom's Hardware); not verified against originals", "sources": ["S4"]}
+  ],
+  "frameworks": {
+    "anthropicRSP": {
+      "document": "Responsible Scaling Policy announcement, 2023-09-19",
+      "covers": "AI Safety Levels modeled on biosafety levels; board-approved pause commitments; pre-deployment adversarial red-teaming",
+      "doesNotCover": "Post-incident drills, emergency response, 'day after' political/communications scenarios",
+      "note": "Page describes itself as 'an early iteration'; later revisions not retrieved"
+    },
+    "openai": {
+      "document": "Preparedness Framework (existence per secondary S6; document not retrievable this session; openai.com and cdn.openai.com URLs returned 404 on 2026-11-01)",
+      "covers": "Frontier-risk capability evaluation per secondary description; contents unverified here",
+      "onRecord": "Preparedness exercises confirmed by spokesperson; 'not treated as inevitable'"
+    }
+  },
+  "categoryAssessment": {
+    "riskContingencyPlanning": "reported (unnamed) at Anthropic, OpenAI, unnamed others",
+    "policyAdvocacy": "reported (unnamed): educating Congress, shaping post-event legislation; voluntary accord secondhand",
+    "exercises": "on-record existence at OpenAI only; scope unpublished",
+    "corporateIncidentPreparedness": "framed by sources as standard practice (Pentagon war games; business continuity exercises)",
+    "prediction": "unnamed 'inevitable' belief and '6-12 months' timing; contradicted on record by OpenAI; Altman remark secondhand",
+    "intent": "no retrieved evidence of intent beyond preparation and legislative positioning; no lab statement expecting or welcoming an incident"
+  },
+  "gaps": [
+    "First use of 'Chernobyl' attached to this story unlocated (search engines blocked during session)",
+    "Politico interview, White House accord text, CrowdStrike report, WEF 'The Day After AGI' session page, OpenAI Preparedness Framework document, Techstrong summary: located, not retrieved",
+    "Seniority of unnamed sources and whether 'gaming out' means formal exercises: unknown",
+    "Post-2023 Anthropic RSP revisions and government-side incident frameworks (AISIs, DHS board): open threads, not findings"
+  ],
+  "nextDiscriminatingQuestion": "Did any lab, AI Safety Institute or government body publish an exercise plan, after-action report or drill documentation for a severe-AI-incident exercise before 2026-11-01? A located primary document would upgrade the exercise-existence verdicts and date the practice precisely.",
+  "educationalUse": "Present 'the day after' only as a high-level educational response scenario (communication, coordination, continuity after a serious AI-related failure), consistent with ordinary incident-preparedness practice; assert no inevitability, extend to no unnamed labs, and keep observation, publication and event dates separate."
+}

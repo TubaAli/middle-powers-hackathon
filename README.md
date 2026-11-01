@@ -5,6 +5,8 @@ This is our workspace for the [Middle Powers: AI Safety Hackathon](https://mangr
 - [ideas.md](ideas.md): the event summary, the landscape research and all ideas.
 - [notes.md](notes.md): discussion notes and the current shortlist.
 - [Submission drafts](submission/README.md): written submission and demo-video script, with initial copies delivered to the shared team Drive.
+- **[Downloadable interactive plot](submission/policy-explorer.html):** the 32-route feasibility/impact explorer in one offline HTML file, including the ranking method. [Packaging and checks](submission/policy-explorer-README.md).
+- **[Play Orbit Accord](https://tubaali.github.io/middle-powers-hackathon/game/orbit.html):** the team's map-and-plane diplomacy game, with related route research, a labelled AI trend outlook and fictional safety-policy epilogues. [Diplomacy evidence](research_notes/Realistic%20diplomacy/) · [AI trend and scenario evidence](research_notes/AI%20trends%20to%20Geneva/).
 - **Live site: https://tubaali.github.io/middle-powers-hackathon/**
 - **[Routes to AI safeguards](https://tubaali.github.io/middle-powers-hackathon/routes/#basis=model):** all 32 routes on an evidence-informed feasibility/impact model, with explicit imputations and stable overlap separation. Select a route for its reasoning and sources; switch views for matched-pool coverage calculations. [Method and checks](routes/README.md) · [Earlier eight-route estimates](routes/estimates.html).
 - **[Before Geneva](https://tubaali.github.io/middle-powers-hackathon/routes/research.html):** ten scenarios, actual decision windows, required agreements and five sourced numerical examples. [Research brief](reports/Safeguard%20validation%20by%20Geneva.md) · [Source data](data/geneva-research.json).
