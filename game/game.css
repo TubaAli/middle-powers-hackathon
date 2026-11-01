@@ -134,3 +134,50 @@ button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .opt { padding: 6px 7px; }
 }
 @media (pointer: coarse) { .hint { display: none; } }
+
+/* Opening: breaking news, your chief of staff, then pick a middle power and a goal */
+#opening { position: fixed; inset: 0; z-index: 60; overflow: hidden; opacity: 0; transition: opacity .3s; user-select: none;
+  background: radial-gradient(ellipse at 30% 70%, #1b2a52 0, #070a16ee 55%, #04060ef5 100%); }
+#opening.in { opacity: 1; }
+.op-news { position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center; height: 38px; background: #120910; border-bottom: 2px solid #d9404f; overflow: hidden; z-index: 3; }
+.op-live { position: relative; z-index: 2; flex: none; height: 100%; display: grid; place-items: center; padding: 0 14px; background: #d9404f; color: #fff; font-weight: 800; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; animation: live 1s steps(2) infinite; }
+@keyframes live { 50% { background: #a32634; } }
+.op-ticker { display: flex; white-space: nowrap; animation: ticker 22s linear infinite; font-weight: 600; font-size: 14px; color: #ffe3e6; }
+.op-ticker span { padding-right: 40px; }
+@keyframes ticker { to { transform: translateX(-50%); } }
+.op-stage { position: absolute; inset: 38px 0 0 0; }
+.op-aide { position: absolute; left: 4vw; bottom: 150px; width: min(36vw, 58vh); aspect-ratio: 3 / 4; animation: aidein .8s .2s both cubic-bezier(.2, 1.3, .4, 1); transition: left .5s, width .5s; }
+@keyframes aidein { from { transform: translateX(-120%); } }
+#opening.picking .op-aide { width: min(26vw, 44vh); }
+.op-pick { position: absolute; right: 3vw; top: 7vh; bottom: 170px; width: min(62vw, 760px); display: grid; gap: 10px; align-content: center; overflow-y: auto; padding: 4px; }
+.op-pick[hidden] { display: none; }
+.op-pick.country { grid-template-columns: repeat(3, 1fr); }
+.op-pick.goal { grid-template-columns: repeat(3, 1fr); }
+.op-pick button { font: inherit; color: var(--ink); text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--panel);
+  animation: popin .35s var(--d) both cubic-bezier(.2, 1.4, .4, 1); transition: transform .15s, border-color .15s; }
+.op-pick button:hover, .op-pick button:focus-visible { transform: translateY(-3px); border-color: var(--gold); outline: none; }
+.op-pick b { font-size: 15px; }
+.op-pick small { color: var(--muted); font-size: 12px; line-height: 1.3; }
+.op-pick .flags img { height: 22px; width: 30px; }
+.op-ic { font-size: 26px; }
+@keyframes popin { from { opacity: 0; transform: translateY(16px) scale(.92); } }
+.op-box { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); width: min(980px, 94vw); min-height: 110px; padding: 22px 26px 16px; border-radius: 6px; z-index: 2; cursor: pointer;
+  background: linear-gradient(135deg, #102632f5, #0c1725f7); border: 1px solid #58747e; box-shadow: 0 10px 30px #000a; }
+.op-name { position: absolute; top: -15px; left: 22px; background: var(--gold); color: #1b1606; font-weight: 800; font-size: 13px; letter-spacing: .06em; padding: 4px 14px; border-radius: 3px; }
+.op-text { margin: 0; font: clamp(17px, 2.7vh, 23px)/1.45 Georgia, "Times New Roman", serif; color: #f1f2ea; min-height: 2.9em; }
+.op-next { position: absolute; right: 18px; bottom: 10px; color: var(--gold); animation: opbob .8s ease-in-out infinite alternate; }
+.op-next[hidden] { display: none; }
+@keyframes opbob { to { transform: translateY(4px); } }
+.op-skip { position: absolute; top: 48px; right: 12px; z-index: 3; font: inherit; font-size: 12px; color: var(--muted); background: #0008; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+@media (max-width: 760px) {
+  .op-aide { left: 50%; width: 64vw; bottom: 150px; transform: translateX(-50%); animation: none; }
+  #opening.picking .op-aide { opacity: 0; }
+  .op-pick { left: 8px; right: 8px; width: auto; top: 80px; bottom: 150px; align-content: start; }
+  .op-pick.country, .op-pick.goal { grid-template-columns: repeat(2, 1fr); }
+  .op-pick button { padding: 9px; }
+  .op-pick b { font-size: 14px; }
+  .op-text { font-size: 17px; }
+  .op-box { padding: 18px 16px 12px; min-height: 0; }
+  .op-skip { top: 46px; }
+}
+@media (prefers-reduced-motion: reduce) { #opening *, #opening { animation: none !important; transition: none !important; } }

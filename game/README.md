@@ -9,7 +9,9 @@ Gemini scene illustrations now sit behind live HTML dialogue, choices and UI.
 The original Orbit Accord prototype is at `orbit.html` (`game.js`, `game.css`,
 `planets.json`). You fly your delegation's jet across a real world map
 (`world.json`: Natural Earth 1:110m, public domain) and meet the 11 country
-groups, each shown by its flags (`flags/`, flag-icons, MIT). It works on phones:
+groups (you play a middle power; the US and China are rivals, not playable),
+each shown by its flags (`flags/`, flag-icons, MIT). It opens with a breaking-news scene: your chief of staff, Mira, calls you to act,
+then you pick your country and one goal (`opening.js`). It works on phones:
 tap to fly, then tap Meet or End month. Meetings use fictional anime-style diplomats, one per country, and the
 answer always comes by official letter (`meeting.js`, `meeting.css`). The concept
 gallery remains at `concepts/`.

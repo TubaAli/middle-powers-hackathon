@@ -15,6 +15,7 @@ const CAST = {
   UK:   { name: 'Envoy Eleanor Ashford',       skin: '#f8d8c4', shade: '#e8b69e', hair: '#a8452c', hairS: '#702a18', eye: '#2f8a6a', style: 'updo',     outfit: '#1f3f6e', neck: 'blouse',   tie: '#f6f2ea', acc: '#e3c46b' },
   GULF: { name: 'Minister Khalid Al-Mansoori', skin: '#d9a77f', shade: '#bb8660', hair: '#1f1712', hairS: '#0e0a08', eye: '#6a4426', style: 'ghutra',   outfit: '#2a2420', neck: 'thobe',    tie: '#f4f2ec', acc: '#d9a441' },
   AUCA: { name: 'Envoy Isla Brennan',          skin: '#efc6a6', shade: '#d9a582', hair: '#b07a4a', hairS: '#7a4e2a', eye: '#4f9a5a', style: 'waves',    outfit: '#2f5f3a', neck: 'scarf',    tie: '#d0343c', acc: '#d0343c', freckles: true },
+  AIDE: { name: 'Mira, your chief of staff',   skin: '#f7dcc8', shade: '#e6b99c', hair: '#3a2f4a', hairS: '#1c1626', eye: '#3f8fbf', style: 'bob',      outfit: '#2b3a55', neck: 'blouse',   tie: '#f2c96b', acc: '#f2c96b' },
   PROD: { name: 'Minister Amani Kabeya',       skin: '#8a5a3e', shade: '#6e452e', hair: '#17110e', hairS: '#050403', eye: '#b8742a', style: 'puffs',    outfit: '#8a4a2a', neck: 'blouse',   tie: '#e8b04a', acc: '#2f9a6a' },
 };
 
