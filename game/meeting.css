@@ -45,7 +45,7 @@
 .slot.right .body { animation-delay: -1.8s; }
 .envoy .head { transform-box: fill-box; transform-origin: 50% 95%; }
 .envoy .hair-back, .envoy .braid { transform-box: fill-box; transform-origin: 50% 0; animation: sway 4.5s ease-in-out infinite; }
-.slot.talking .head { animation: nod .7s ease-in-out infinite; }
+.talking .head { animation: nod .7s ease-in-out infinite; }
 #meeting.in .envoy .hd { transform-box: fill-box; transform-origin: 50% 100%; animation: bow 1.1s .45s both ease-in-out; }
 @keyframes breathe { 50% { transform: scaleY(1.008) translateY(-2px); } }
 @keyframes sway { 50% { transform: skewX(1.5deg); } }
@@ -62,23 +62,23 @@
 .envoy .cheek { opacity: .18; transition: opacity .3s; }
 .envoy .mouth > * { opacity: 0; }
 .envoy .mc { opacity: 1; }
-.slot[data-mood="happy"] .eye { opacity: 0; animation: none; }
-.slot[data-mood="happy"] .happy-eyes { opacity: 1; }
-.slot[data-mood="happy"] .cheek { opacity: .75; }
-.slot[data-mood="happy"] .mc { opacity: 0; } .slot[data-mood="happy"] .ms { opacity: 1; }
-.slot[data-mood="sad"] .brow.l { transform: rotate(-14deg) translateY(2px); }
-.slot[data-mood="sad"] .brow.r { transform: rotate(14deg) translateY(2px); }
-.slot[data-mood="sad"] .iris { transform: translateY(3px); }
-.slot[data-mood="sad"] .mc { opacity: 0; } .slot[data-mood="sad"] .mf { opacity: 1; }
-.slot[data-mood="sad"] .sweat { opacity: 1; animation: drip 1.6s ease-in infinite; }
-.slot[data-mood="think"] .brow.l { transform: translateY(-5px) rotate(-6deg); }
-.slot[data-mood="think"] .brow.r { transform: translateY(2px) rotate(6deg); }
-.slot[data-mood="think"] .iris { transform: translate(5px, -4px); }
-.slot[data-mood="think"] .sweat { opacity: .9; }
-.slot[data-mood="surprised"] .eye { transform: scale(1.12); animation: none; }
-.slot[data-mood="surprised"] .brow { transform: translateY(-6px); }
-.slot[data-mood="surprised"] .mc { opacity: 0; } .slot[data-mood="surprised"] .mO { opacity: 1; }
-.slot.talking .mo { animation: talk .16s steps(1) infinite alternate; }
+[data-mood="happy"] .eye { opacity: 0; animation: none; }
+[data-mood="happy"] .happy-eyes { opacity: 1; }
+[data-mood="happy"] .cheek { opacity: .75; }
+[data-mood="happy"] .mc { opacity: 0; } [data-mood="happy"] .ms { opacity: 1; }
+[data-mood="sad"] .brow.l { transform: rotate(-14deg) translateY(2px); }
+[data-mood="sad"] .brow.r { transform: rotate(14deg) translateY(2px); }
+[data-mood="sad"] .iris { transform: translateY(3px); }
+[data-mood="sad"] .mc { opacity: 0; } [data-mood="sad"] .mf { opacity: 1; }
+[data-mood="sad"] .sweat { opacity: 1; animation: drip 1.6s ease-in infinite; }
+[data-mood="think"] .brow.l { transform: translateY(-5px) rotate(-6deg); }
+[data-mood="think"] .brow.r { transform: translateY(2px) rotate(6deg); }
+[data-mood="think"] .iris { transform: translate(5px, -4px); }
+[data-mood="think"] .sweat { opacity: .9; }
+[data-mood="surprised"] .eye { transform: scale(1.12); animation: none; }
+[data-mood="surprised"] .brow { transform: translateY(-6px); }
+[data-mood="surprised"] .mc { opacity: 0; } [data-mood="surprised"] .mO { opacity: 1; }
+.talking .mo { animation: talk .16s steps(1) infinite alternate; }
 @keyframes talk { from { opacity: 0; } to { opacity: 1; } }
 @keyframes drip { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(14px); opacity: 0; } }
 

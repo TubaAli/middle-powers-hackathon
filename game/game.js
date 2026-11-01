@@ -11,7 +11,7 @@ const DECAY_FROM = 5, DECAY = 0.8;           // April: short-lived chokepoints f
 const CHOKE_BOOST = 1.25;                    // licensing your chokepoint makes it count more
 const BUILD = { power: 2, compute: 1 };      // share points a data-centre campus adds
 const PRICE = { need: 15, other: 5, promise: 15, tour: 10 };
-const MAX_GOALS = 3, GOAL_POINTS = 400;
+const GOAL_POINTS = 400;
 
 let L, C, W, P, W2;
 const g = {
@@ -280,25 +280,31 @@ function finish() {
     <div class="foot"><span></span><button class="btn" id="again">Play again</button></div>`);
 }
 
-// ---------- Setup screen ----------
 // Flags (flag-icons, MIT): a country group shows every member's flag; badges on the map show one per location.
 const allFlags = (p) => [...p.flags, ...(p.outpostFlags ?? []).flat()];
 const flagsHTML = (p, cls = 'flags') => `<span class="${cls}">${allFlags(p).map((c) => `<img src="flags/${c}.svg" alt="">`).join('')}</span>`;
 const FLAG = {};
 const flagImg = (c) => FLAG[c] ?? (FLAG[c] = Object.assign(new Image(), { src: `flags/${c}.svg` }));
-function renderSetup() {
-  showOverlay(`
-    <h1>Orbit Accord</h1>
-    <p class="lede">Fly your delegation around the world, win allies, and turn AI leverage into safety rules before the laws close.</p>
-    <div class="step">1 · Your country</div>
-    <div class="grid g-planets">${P.planets.map((p) => `<button class="opt" data-k="${p.k}" aria-pressed="${g.me === p.k}">${flagsHTML(p)}<b>${esc(p.name)}</b><span>${pct(weighted([p.k], false))} of AI supply</span></button>`).join('')}</div>
-    <div class="step">2 · Goals (pick 1–3)</div>
-    <div class="grid g-goals">${P.goals.map((x) => `<button class="opt" data-id="${x.id}" aria-pressed="${g.goals.includes(x.id)}"><b>${esc(x.short)}</b><span>Stops: ${esc(x.risk_s)}</span></button>`).join('')}</div>
-    <div class="step">3 · Age</div>
-    <div class="grid g-eras">${P.eras.map((e) => `<button class="opt" data-era="${e.id}" aria-pressed="${g.era.id === e.id}"><b>${esc(e.name)}</b><span>${Math.round(e.s * 100)}% of progress needs chips &amp; power</span></button>`).join('')}</div>
-    <div class="foot"><span class="muted small">% = share of the world's AI supply chain that depends on that country.</span><button class="btn" id="start" ${g.me && g.goals.length ? '' : 'disabled'}>Launch ▸</button></div>`);
+
+// ---------- Opening: a trigger event, then pick a middle power and one goal (opening.js) ----------
+const GOAL_ICON = { test: '🧪', incident: '🚨', weights: '🔐', continuity: '🏥', chips: '🔎', offswitch: '⏻' };
+const lowerFirst = (t) => t.replace(/^([A-Z])([a-z])/, (m, a, b) => a.toLowerCase() + b);
+function topFact(k) {
+  const st = L.stages.filter((x) => (x.share[k] ?? 0) > 0).sort((a, b) => b.share[k] - a.share[k])[0];
+  return st ? `We hold ${pct(st.share[k])} of the world's ${lowerFirst(st.name)}` : 'We hold a piece of the AI supply chain';
+}
+function openIntro() {
+  Opening.start({
+    countries: P.planets.filter((p) => !p.super).map((p) => ({ k: p.k, name: p.name, flags: flagsHTML(p), fact: topFact(p.k) })),
+    goals: P.goals.map((x) => ({ ...x, icon: GOAL_ICON[x.id] ?? '★' })),
+    onCountry: (k) => { g.me = k; },
+    onGoal: (id) => { g.goals = [id]; },
+    hasCountry: () => !!g.me, hasGoal: () => g.goals.length > 0,
+    onDone: start,
+  });
 }
 function start() {
+  if (!g.me || !g.goals.length) return;
   g.coalition = [g.me]; g.tokens = { ...planet(g.me).powers };
   const pp = world.real[g.me] ?? world.pos[g.me];
   Object.assign(world.player, { x: pp.x, y: pp.y + 14 * world.u, vx: 0, vy: 0, trail: [], hd: -Math.PI / 2 });
@@ -543,11 +549,7 @@ function wire() {
   $('#t-info').addEventListener('click', () => $('#hud').classList.toggle('details'));
   $('#panel').addEventListener('click', (e) => {
     const b = e.target.closest('button'); if (!b) return;
-    if (b.dataset.k) { g.me = b.dataset.k; renderSetup(); }
-    else if (b.dataset.id) { const id = b.dataset.id; g.goals = g.goals.includes(id) ? g.goals.filter((x) => x !== id) : g.goals.length < MAX_GOALS ? [...g.goals, id] : g.goals; renderSetup(); }
-    else if (b.dataset.era) { g.era = P.eras.find((x) => x.id === b.dataset.era); renderSetup(); }
-    else if (b.id === 'start') start();
-    else if (b.dataset.move) pickMove(Number(b.dataset.move));
+    if (b.dataset.move) pickMove(Number(b.dataset.move));
     else if (b.id === 'again') location.reload();
   });
 }
@@ -556,6 +558,6 @@ Promise.all(['../data/layers.json', '../data/conditions.json', '../data/windows.
   .then(([l, c, w, p, m]) => {
     L = l; C = c; W = w; P = p; W2 = m;
     g.era = P.eras.find((e) => e.id === 'today');
-    resize(); wire(); renderSetup(); requestAnimationFrame(loop);
+    resize(); wire(); $('#overlay').hidden = true; openIntro(); requestAnimationFrame(loop);
   })
   .catch((err) => { document.body.innerHTML = `<p style="padding:20px">Could not load game data: ${esc(err.message)}. Serve the repository folder over HTTP.</p>`; });
