@@ -384,8 +384,37 @@ function toast(text, kind = '') {
   while (box.children.length > 3) box.firstChild.remove();
 }
 let hudTick = 0;
+// ---------- Mission tracker: one next step at a time, with Mira's tip on who to meet ----------
+const goalScore = () => g.goals.reduce((t, id) => t + goalProgress(id).achieved, 0) / g.goals.length;
+function tipTarget() {
+  // Before the goal is met, aim at the biggest goal gain; after it, at the biggest accord gain (the rest of the score).
+  const done = goalScore() >= 0.999, measure = () => (done ? weighted(g.coalition) / 100 : goalScore()), base = measure();
+  let best = null;
+  for (const p of P.planets) {
+    if (p.k === g.me || g.coalition.includes(p.k) || g.asked.has(p.k)) continue;
+    g.coalition.push(p.k); const gain = measure() - base; g.coalition.pop();
+    const chance = Math.max(...deals(p.k).map((d) => odds(p.k, d))) / 100;   // expected gain: prize x the game's own odds
+    const score = gain * 100 * chance + chance;
+    if (!best || score > best.score) best = { k: p.k, gain, score };
+  }
+  return best;
+}
+function mission() {
+  const pr = goalProgress(g.goals[0]), left = 8 - g.turn, tip = tipTarget();
+  world.tip = g.phase === 'fly' && tip ? tip.k : null;
+  if (g.phase === 'council') return { step: '1', next: 'Pick one cabinet move' };
+  if (!pr.law.length && pr.raw >= 0.5 && (g.moves ?? []).some((m) => m.id === 'law')) return { step: '2', next: 'No law yet: table a bill next month' };
+  const gain = tip && tip.gain > 0.005 ? ` (+${Math.round(tip.gain * 100)}%${goalScore() >= 0.999 ? ' accord' : ''})` : '';
+  if (tip) return { step: '2', next: `${goalScore() >= 0.999 ? 'Goal secured ✓ · grow your accord: meet' : 'Meet'} ${say(planet(tip.k))}${gain}`, tip: tip.k };
+  return { step: '3', next: left > 1 ? 'Press N: end the month' : 'Final month: end it to reach Geneva' };
+}
+
 function renderHud() {
   if (!g.me) return;
+  const m = mission(), score = Math.round(goalScore() * 100), allies = g.coalition.length - 1, law = goalProgress(g.goals[0]).law.length > 0;
+  $('#h-mission').innerHTML = `<div class="mi-goal"><span>🎯 ${esc(goalOf(g.goals[0]).short)}</span><b>${score}%</b></div>
+    <div class="mi-checks"><span class="${allies ? 'ok' : ''}">🤝 ${allies} ${allies === 1 ? 'ally' : 'allies'}</span><span class="${law ? 'ok' : ''}">⚖️ ${law ? 'law ✓' : 'no law'}</span><span>📅 ${8 - g.turn} ${8 - g.turn === 1 ? 'month' : 'months'} to Geneva</span></div>
+    <div class="mi-next"><small>Next</small>${esc(m.next)}</div>`;
   $('#h-month').textContent = MONTHS[Math.min(g.turn, 7)];
   $('#h-timer').textContent = `${Math.min(g.turn + 1, 8)}/8 · ${Math.ceil(g.timeLeft)}s`;
   $('#h-time').style.width = `${(g.timeLeft / MONTH_SECONDS) * 100}%`;
@@ -517,6 +546,27 @@ function draw(t) {
     ctx.setLineDash([]); ctx.lineDashOffset = 0; ctx.lineWidth = 1;
   }
   for (const p of P.planets) drawBadge(ctx, p, { ally: g.coalition.includes(p.k), near: g.near === p.k, home: p.k === g.me && !!meXY });
+  if (world.tip && g.phase === 'fly') {   // Mira's tip: a pulsing ring on the country to meet next
+    const q = world.pos[world.tip], r = pr(world.tip) + 10 + 4 * Math.sin(t / 250);
+    ctx.strokeStyle = '#f2c96b'; ctx.lineWidth = 2.5; ctx.setLineDash([6, 4]); ctx.lineDashOffset = -t / 40;
+    ctx.beginPath(); ctx.arc(q.x, q.y, r, 0, 7); ctx.stroke(); ctx.setLineDash([]); ctx.lineDashOffset = 0; ctx.lineWidth = 1;
+    ctx.font = `700 ${Math.round(11 * world.u)}px system-ui`; ctx.textAlign = 'center'; ctx.lineWidth = 3; ctx.strokeStyle = '#070d1dd0'; ctx.fillStyle = '#f2c96b';
+    ctx.strokeText('★ Mira: meet here', q.x, q.y - r - 6); ctx.fillText('★ Mira: meet here', q.x, q.y - r - 6);
+  }
+  if (world.tip && g.phase === 'fly') {   // off-screen tip: an arrow on the screen edge points the way
+    const q = world.pos[world.tip], sx = q.x - world.cam.x, sy = q.y - world.cam.y, m = 46;
+    if (sx < 0 || sy < 0 || sx > world.w || sy > world.h) {
+      const cx = world.w / 2, cy = world.h / 2, a = Math.atan2(sy - cy, sx - cx);
+      const k = Math.min((cx - m) / Math.abs(Math.cos(a) || 1e-6), (cy - m) / Math.abs(Math.sin(a) || 1e-6));
+      const ex = cx + Math.cos(a) * k, ey = cy + Math.sin(a) * k;
+      ctx.save(); ctx.setTransform(world.dpr, 0, 0, world.dpr, 0, 0); ctx.translate(ex, ey);
+      ctx.fillStyle = '#f2c96b'; ctx.save(); ctx.rotate(a); ctx.beginPath(); ctx.moveTo(16, 0); ctx.lineTo(-8, -10); ctx.lineTo(-8, 10); ctx.closePath(); ctx.fill(); ctx.restore();
+      ctx.font = '700 12px system-ui'; ctx.textAlign = ex < 120 ? 'left' : ex > world.w - 120 ? 'right' : 'center'; ctx.lineWidth = 3; ctx.strokeStyle = '#070d1dd0';
+      const label = `★ ${planet(world.tip).name}`, ly = ey < cy ? 28 : -18;
+      const lx = ex < 120 ? -6 : ex > world.w - 120 ? 6 : 0;
+      ctx.strokeText(label, lx, ly); ctx.fillText(label, lx, ly); ctx.restore();
+    }
+  }
   if (meXY) drawJet(ctx, world.player, planet(g.me), t);
 
   const prm = $('#prompt');

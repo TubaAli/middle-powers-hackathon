@@ -77,7 +77,11 @@ const Opening = (() => {
   function pickGoal(id) {
     const x = ctx.goals.find((g) => g.id === id); if (!x) return;
     ctx.onGoal(id); hidePick();
-    queue = [{ mood: 'happy', text: `${x.short}. Good. Now fly out and win allies before the laws close.` }];
+    queue = [
+      { mood: 'happy', text: `${x.short}. Our goal: push it to 100% by Geneva, June 2027.` },
+      { mood: 'think', text: 'Each month: one cabinet move, then fly out and meet countries.' },
+      { mood: 'flat', text: 'Win allies who hold the key supply, and get a law passed. I will mark who to meet.' },
+    ];
     waiting = 'next'; advance();
   }
 
