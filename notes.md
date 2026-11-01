@@ -12,7 +12,11 @@ game, including its new mecha meetings and letters, remains at `/game/orbit.html
 
 Local checks passed 17 unit tests, 64 desktop/mobile route walkthroughs, two
 complete campaigns, source panels, keyboard navigation and save recovery.
-Public deployment acceptance is recorded after publication. Next design test:
+Public deployment of `3c49dd3` passed the same 64 route walkthroughs and two
+complete campaigns at 1440px and 390px, with no page errors. Eight live game,
+campaign and preserved Orbit meeting files matched committed bytes. Local
+checks also confirmed the requested-route entry and preserved Orbit setup.
+Next design test:
 do players understand why completing one tested route enables shared work,
 rather than interpreting a game outcome as actual institutional consent?
 
