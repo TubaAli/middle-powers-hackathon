@@ -40,7 +40,7 @@ kbd { font: inherit; font-size: 11px; border: 1px solid var(--line); border-bott
 .tok { border: 1px solid var(--line); border-radius: 6px; padding: 0 5px; font-size: 12px; background: #ffffff08; }
 .tok.need { border-color: var(--good); }
 .hint { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); color: var(--muted); font-size: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; white-space: nowrap; }
-#prompt { position: absolute; transform: translate(-50%, -100%); background: var(--gold); color: #1b1606; font-weight: 700; font-size: 12px; border-radius: 6px; padding: 2px 8px; white-space: nowrap; }
+#prompt { pointer-events: auto; cursor: pointer; position: absolute; transform: translate(-50%, -100%); background: var(--gold); color: #1b1606; font-weight: 700; font-size: 12px; border-radius: 6px; padding: 2px 8px; white-space: nowrap; }
 #toasts { position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; gap: 6px; align-items: center; }
 .toast { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; font-size: 13px; animation: fade 4s forwards; white-space: nowrap; }
 .toast.good { border-color: var(--good); }
@@ -59,7 +59,11 @@ kbd { font: inherit; font-size: 11px; border: 1px solid var(--line); border-bott
 .g-planets { grid-template-columns: repeat(6, 1fr); }
 .g-goals { grid-template-columns: repeat(3, 1fr); }
 .g-eras { grid-template-columns: repeat(3, 1fr); }
-@media (max-width: 760px) { .g-planets { grid-template-columns: repeat(4, 1fr); } .g-goals { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px) { .g-planets { grid-template-columns: repeat(3, 1fr); } .g-goals { grid-template-columns: repeat(2, 1fr); } }
+.flags { display: flex; gap: 3px; margin-bottom: 4px; flex-wrap: wrap; }
+.flags img { height: 15px; width: 20px; object-fit: cover; border-radius: 2px; box-shadow: 0 0 0 1px #ffffff30; }
+.flags.sm { display: inline-flex; vertical-align: -2px; margin: 0 4px 0 0; }
+.flags.sm img { height: 12px; width: 16px; }
 .opt { font: inherit; text-align: left; background: #ffffff06; border: 1px solid var(--line); color: var(--ink); border-radius: 10px; padding: 7px 9px; cursor: pointer; }
 .opt:hover:not(:disabled) { border-color: var(--focus); }
 .opt[aria-pressed="true"] { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
@@ -100,3 +104,33 @@ button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .dcard dt { color: var(--muted); }
 .dcard dd { margin: 0; }
 .limits { font-size: 11px; color: var(--muted); margin-top: 8px; }
+
+/* Touch and mouse controls (Space and N on keyboards) */
+.touch { position: absolute; right: 12px; bottom: 12px; display: flex; gap: 8px; }
+.touch button, .t-info { pointer-events: auto; font: inherit; font-weight: 700; cursor: pointer; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 8px 14px; }
+.touch #t-meet { background: var(--gold); color: #1b1606; border-color: var(--gold); }
+.touch [hidden] { display: none; }
+.t-info { display: none; }
+
+/* Phones: a slim top bar, details on demand, big thumb buttons */
+@media (max-width: 760px) {
+  .hud-left { left: 8px; right: 8px; top: 8px; width: auto; padding: 6px 44px 6px 10px; }
+  #h-goals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .goal { margin: 2px 0; font-size: 10px; }
+  .goal .row { gap: 3px; }
+  .goal .row span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .goal .law { display: none; }
+  .accord { margin-top: 4px; }
+  .hud-right { display: none; left: 8px; right: 8px; width: auto; top: auto; bottom: 76px; }
+  #hud.details .hud-right { display: block; }
+  .t-info { display: block; position: absolute; top: 12px; right: 14px; padding: 4px 9px; font-size: 16px; line-height: 1; }
+  .hint { display: none; }
+  .touch { left: 8px; right: 8px; bottom: 12px; }
+  .touch button { flex: 1; padding: 14px 10px; font-size: 15px; }
+  #toasts { bottom: 76px; width: 92vw; }
+  .toast { white-space: normal; text-align: center; }
+  .panel { overflow-y: auto; padding: 14px; }
+  .moves, .dgrid { grid-template-columns: 1fr; }
+  .opt { padding: 6px 7px; }
+}
+@media (pointer: coarse) { .hint { display: none; } }

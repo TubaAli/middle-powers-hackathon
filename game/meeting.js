@@ -130,6 +130,8 @@ function envoySVG(k, side) {
   </svg>`;
 }
 
+const flagRow = (codes = []) => `<span class="m-flags">${codes.map((c) => `<img src="flags/${c}.svg" alt="">`).join('')}</span>`;
+
 const Meeting = (() => {
   let ctx = null, queue = [], typing = null, waiting = null, el = null;
   const q = (s) => el.querySelector(s);
@@ -184,7 +186,7 @@ const Meeting = (() => {
         <rect y="262" width="1600" height="38" class="lake"/>
       </svg>
       <div class="m-window"></div>
-      <div class="m-table"><span class="m-plate l" style="--c:${c.me.color}">${c.me.name}</span><span class="m-plate r" style="--c:${c.them.color}">${c.them.name}</span></div>
+      <div class="m-table"><span class="m-plate l" style="--c:${c.me.color}">${flagRow(c.me.flags)}${c.me.name}</span><span class="m-plate r" style="--c:${c.them.color}">${flagRow(c.them.flags)}${c.them.name}</span></div>
       <div class="m-top"><b>${c.month}</b> · Bilateral meeting · ${c.me.name} × ${c.them.name}</div>
       <div class="m-facts">${c.facts.map((f) => `<span>${f}</span>`).join('')}</div>
       <div class="m-chars">
@@ -197,7 +199,7 @@ const Meeting = (() => {
         <p class="m-text"></p>
         <span class="m-next">▼</span>
       </div>
-      <button class="m-leave" id="m-leave" type="button">Leave · Esc</button>
+      <button class="m-leave" id="m-leave" type="button">Leave<span class="kb"> · Esc</span></button>
       <div class="m-flash"></div>
       <div class="m-letter" hidden></div>`;
     el.hidden = false;
@@ -262,6 +264,7 @@ const Meeting = (() => {
     const box = q('.m-choices');
     box.innerHTML = ctx.deals.map((d, i) => `<button type="button" data-choice="${i}" style="--d:${i * 80}ms"><kbd>${i + 1}</kbd><span><b>${d.label}</b><small>${d.sub}</small></span><em>${d.pct}%</em></button>`).join('');
     box.hidden = false;
+    box.style.bottom = `${q('.m-box').offsetHeight + 28}px`;
   }
   function choose(i) {
     if (waiting !== 'choice') return;
@@ -295,12 +298,12 @@ const Meeting = (() => {
     box.innerHTML = `
       <div class="env"><div class="flap"></div>
         <article class="paper">
-          <header><span class="seal" style="--seal:${ctx.them.color}">${ctx.them.name[0]}</span><div><b>Government of ${ctx.them.say}</b><small>Official reply · ${ctx.month}</small></div></header>
+          <header><span class="seal flag-seal">${flagRow(ctx.them.flags)}</span><div><b>Government of ${ctx.them.say}</b><small>Official reply · ${ctx.month}</small></div></header>
           <p>To the delegation of ${ctx.me.say},</p>
           ${L.body.map((p) => `<p>${p}</p>`).join('')}
           <p class="sign">On behalf of the ${ctx.them.title}<br><small>delivered via ${ctx.them.envoy}</small></p>
           <div class="stamp ${ok ? 'ok' : 'no'}">${ok ? 'Approved' : 'Declined'}</div>
-          <footer><small>${L.foot}</small><button type="button" class="btn" id="m-continue">Continue · Space</button></footer>
+          <footer><small>${L.foot}</small><button type="button" class="btn" id="m-continue">Continue<span class="kb"> · Space</span></button></footer>
         </article>
       </div>`;
     box.hidden = false;

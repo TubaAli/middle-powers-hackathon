@@ -205,7 +205,7 @@ function openTalk(t) {
   const ds = inAcc || asked ? [] : deals(t);
   const goal = goalOf(g.goals[0]), need = needs(t);
   const withThem = pct(weighted([...g.coalition, t])), now = pct(weighted(g.coalition));
-  const actor = (q) => ({ k: q.k, name: q.name, say: say(q), title: q.title, color: q.color, envoy: CAST[q.k].name });
+  const actor = (q) => ({ k: q.k, name: q.name, say: say(q), flags: allFlags(q), title: q.title, color: q.color, envoy: CAST[q.k].name });
   const facts = [`${esc(p.name)}: <b>${pct(weighted([t], false))}</b> of AI supply`,
     ...tops.map((st) => `${esc(st.name)} <b>${Math.round(st.share[t])}%</b>`),
     `Needs ${need.map(icon).join(' ') || '—'}`, `Your accord <b>${now}</b> → with them <b>${withThem}</b>`];
@@ -281,13 +281,17 @@ function finish() {
 }
 
 // ---------- Setup screen ----------
-const orbBg = (p) => `background: radial-gradient(circle at 35% 35%, #fff9 0, ${p.color} 35%, #000a 100%)`;
+// Flags (flag-icons, MIT): a country group shows every member's flag; badges on the map show one per location.
+const allFlags = (p) => [...p.flags, ...(p.outpostFlags ?? []).flat()];
+const flagsHTML = (p, cls = 'flags') => `<span class="${cls}">${allFlags(p).map((c) => `<img src="flags/${c}.svg" alt="">`).join('')}</span>`;
+const FLAG = {};
+const flagImg = (c) => FLAG[c] ?? (FLAG[c] = Object.assign(new Image(), { src: `flags/${c}.svg` }));
 function renderSetup() {
   showOverlay(`
     <h1>Orbit Accord</h1>
     <p class="lede">Fly your delegation around the world, win allies, and turn AI leverage into safety rules before the laws close.</p>
     <div class="step">1 · Your country</div>
-    <div class="grid g-planets">${P.planets.map((p) => `<button class="opt" data-k="${p.k}" aria-pressed="${g.me === p.k}"><b><span class="orb" style="${orbBg(p)}"></span>${esc(p.name)}</b><span>${pct(weighted([p.k], false))} of AI supply</span></button>`).join('')}</div>
+    <div class="grid g-planets">${P.planets.map((p) => `<button class="opt" data-k="${p.k}" aria-pressed="${g.me === p.k}">${flagsHTML(p)}<b>${esc(p.name)}</b><span>${pct(weighted([p.k], false))} of AI supply</span></button>`).join('')}</div>
     <div class="step">2 · Goals (pick 1–3)</div>
     <div class="grid g-goals">${P.goals.map((x) => `<button class="opt" data-id="${x.id}" aria-pressed="${g.goals.includes(x.id)}"><b>${esc(x.short)}</b><span>Stops: ${esc(x.risk_s)}</span></button>`).join('')}</div>
     <div class="step">3 · Age</div>
@@ -325,7 +329,7 @@ function renderHud() {
   }).join('');
   $('#h-accord').textContent = `${Math.round(weighted(g.coalition))}%`;
   const p = planet(g.me), dep = dependsOn(g.me).slice(0, 2);
-  $('#h-me').innerHTML = `<div class="nm">${esc(p.name)}</div>
+  $('#h-me').innerHTML = `<div class="nm">${flagsHTML(p, 'flags sm')} ${esc(p.name)}</div>
     <div class="sub">AI that depends on you</div><div class="big">${pct(weighted([g.me]))}</div>
     <div class="sub">You depend on: ${dep.map((d) => `${esc(d.st.name)} ← ${esc(planet(d.top)?.name ?? country(d.top))} ${Math.round(d.v)}%`).join('; ')}</div>
     <div class="toks">${Object.entries(g.tokens).map(([k, n]) => `<span class="tok" title="${pname(k)}">${icon(k)} ${n}</span>`).join('')}</div>`;
@@ -338,7 +342,9 @@ function resize() {
   world.dpr = Math.min(2, window.devicePixelRatio || 1);
   world.w = window.innerWidth; world.h = window.innerHeight;
   c.width = world.w * world.dpr; c.height = world.h * world.dpr;
-  world.k = Math.max(world.w / (LON1 - LON0) * 1.45, world.h / (LAT1 - LAT0) * 1.1, 3.2);
+  world.k = world.w < 760   // phones see more of the world at once
+    ? Math.max(world.w / (LON1 - LON0) * 2.2, world.h / (LAT1 - LAT0) * 0.8, 3.2)
+    : Math.max(world.w / (LON1 - LON0) * 1.45, world.h / (LAT1 - LAT0) * 1.1, 3.2);
   world.u = Math.max(0.75, Math.min(1.3, world.k / 6));
   world.mw = (LON1 - LON0) * world.k; world.mh = (LAT1 - LAT0) * world.k;
   for (const p of P.planets) {
@@ -350,7 +356,7 @@ function resize() {
   bakeMap();
 }
 const xy = ([lon, lat]) => ({ x: (lon - LON0) * world.k, y: (LAT1 - lat) * world.k });
-const pr = (k) => (5 + Math.sqrt(weighted([k], false)) * 2.1) * world.u;
+const pr = (k) => (11 + Math.sqrt(weighted([k], false)) * 1.5) * world.u;
 
 function bakeMap() {
   const k = world.k, s = world.dpr;
@@ -449,8 +455,10 @@ function draw(t) {
   if (g.phase === 'fly' && g.near) {
     const q = world.pos[g.near]; prm.hidden = false;
     prm.style.left = `${q.x - world.cam.x}px`; prm.style.top = `${q.y - world.cam.y - pr(g.near) - 8}px`;
-    prm.textContent = g.coalition.includes(g.near) ? `${planet(g.near).name} · ally` : g.asked.has(g.near) ? `${planet(g.near).name} · asked` : `Space · meet ${planet(g.near).name}`;
+    prm.textContent = g.coalition.includes(g.near) ? `${planet(g.near).name} · ally` : g.asked.has(g.near) ? `${planet(g.near).name} · asked` : `Meet ${planet(g.near).name}`;
   } else prm.hidden = true;
+  const mb = $('#t-meet'), label = g.phase === 'fly' && g.near ? `Meet ${planet(g.near).name}` : '';
+  if (mb.dataset.label !== label) { mb.dataset.label = label; mb.hidden = !label; mb.textContent = label; }
 }
 function arc(ctx, a, b) {
   const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2 - Math.hypot(b.x - a.x, b.y - a.y) * 0.18;
@@ -460,14 +468,8 @@ function drawBadge(ctx, p, o) {
   const r = pr(p.k), u = world.u, q = world.pos[p.k], real = world.real[p.k];
   ctx.strokeStyle = '#ffffff70'; ctx.lineWidth = 1;
   if (real) { ctx.beginPath(); ctx.moveTo(real.x, real.y); ctx.lineTo(q.x, q.y); ctx.stroke(); ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(real.x, real.y, 2.2, 0, 7); ctx.fill(); }
-  for (const s of world.out[p.k]) {
-    ctx.fillStyle = p.color; ctx.strokeStyle = o.ally ? '#f2c96b' : '#ffffffaa'; ctx.lineWidth = 1.5;
-    ctx.beginPath(); ctx.arc(s.x, s.y, r * 0.55, 0, 7); ctx.fill(); ctx.stroke();
-  }
-  const grd = ctx.createRadialGradient(q.x - r * 0.35, q.y - r * 0.35, r * 0.1, q.x, q.y, r);
-  grd.addColorStop(0, '#ffffffd0'); grd.addColorStop(0.35, p.color); grd.addColorStop(1, '#0a0e1c');
-  ctx.fillStyle = grd; ctx.beginPath(); ctx.arc(q.x, q.y, r, 0, 7); ctx.fill();
-  ctx.strokeStyle = o.ally || o.home ? '#f2c96b' : '#ffffffcc'; ctx.lineWidth = o.ally || o.home ? 2.4 : 1.2; ctx.stroke(); ctx.lineWidth = 1;
+  world.out[p.k].forEach((s, i) => flagDisc(ctx, p.outpostFlags?.[i] ?? p.flags, s.x, s.y, r * 0.7, o.ally ? '#f2c96b' : '#ffffffcc', o.ally ? 2 : 1.2));
+  flagDisc(ctx, p.flags, q.x, q.y, r, o.ally || o.home ? '#f2c96b' : '#ffffffdd', o.ally || o.home ? 2.6 : 1.4);
   if (o.near) { ctx.strokeStyle = '#8fc7ff'; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.arc(q.x, q.y, r + 6, 0, 7); ctx.stroke(); ctx.setLineDash([]); }
   ctx.textAlign = 'center'; ctx.lineWidth = 3; ctx.strokeStyle = '#070d1dd0';
   ctx.font = `${o.home ? 700 : 600} ${Math.round(12 * u)}px system-ui`; ctx.fillStyle = o.home ? '#f2c96b' : '#eef0fb';
@@ -476,6 +478,22 @@ function drawBadge(ctx, p, o) {
   ctx.font = `${Math.round(10 * u)}px system-ui`; ctx.fillStyle = '#b6bfdc';
   const sub = `${pct(weighted([p.k], false))} of AI supply`;
   ctx.strokeText(sub, q.x, ly + 12 * u); ctx.fillText(sub, q.x, ly + 12 * u);
+}
+// A flag clipped to a circle; two codes split it in half (e.g. the Gulf states).
+function flagDisc(ctx, codes, x, y, r, ring, lw) {
+  ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.clip();
+  ctx.fillStyle = '#0a0e1c'; ctx.fillRect(x - r, y - r, 2 * r, 2 * r);
+  codes.forEach((c, i) => {
+    const img = flagImg(c), w = 2 * r / codes.length, sx = x - r + i * w, fh = 2 * r, fw = fh * 4 / 3;
+    if (!img.complete || !img.naturalWidth) return;
+    ctx.save(); ctx.beginPath(); ctx.rect(sx, y - r, w, 2 * r); ctx.clip();
+    ctx.drawImage(img, sx + (w - fw) / 2, y - r, fw, fh); ctx.restore();
+  });
+  const shine = ctx.createRadialGradient(x - r * 0.4, y - r * 0.4, 0, x, y, r);
+  shine.addColorStop(0, '#ffffff55'); shine.addColorStop(0.6, '#ffffff00'); shine.addColorStop(1, '#00000055');
+  ctx.fillStyle = shine; ctx.fillRect(x - r, y - r, 2 * r, 2 * r);
+  ctx.restore();
+  ctx.strokeStyle = ring; ctx.lineWidth = lw; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.stroke(); ctx.lineWidth = 1;
 }
 function drawJet(ctx, pl, p, t) {
   pl.trail.forEach((q, i) => { ctx.globalAlpha = (i / pl.trail.length) * 0.5; ctx.fillStyle = '#e8f0ff'; ctx.beginPath(); ctx.arc(q.x, q.y, 1.6 * world.u, 0, 7); ctx.fill(); });
@@ -517,6 +535,12 @@ function wire() {
   });
   window.addEventListener('keyup', (e) => { keys[e.key.length === 1 ? e.key.toLowerCase() : e.key] = false; });
   $('#world').addEventListener('pointerdown', (e) => { if (g.phase === 'fly') world.aim = { x: e.clientX + world.cam.x, y: e.clientY + world.cam.y }; });
+  // Touch and mouse controls: the meet prompt and buttons do what Space and N do.
+  const meet = () => { if (g.phase === 'fly' && g.near) openTalk(g.near); };
+  $('#prompt').addEventListener('click', meet);
+  $('#t-meet').addEventListener('click', meet);
+  $('#t-end').addEventListener('click', () => { if (g.phase === 'fly') g.timeLeft = 0; });
+  $('#t-info').addEventListener('click', () => $('#hud').classList.toggle('details'));
   $('#panel').addEventListener('click', (e) => {
     const b = e.target.closest('button'); if (!b) return;
     if (b.dataset.k) { g.me = b.dataset.k; renderSetup(); }

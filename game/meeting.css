@@ -85,6 +85,11 @@
 /* Desk nameplates */
 .m-plate { position: absolute; top: 6px; z-index: 1; padding: 3px 12px; font: 700 clamp(10px, 1.6vh, 13px)/1.3 system-ui, sans-serif; letter-spacing: .06em; color: #fff; background: #10141c; border-top: 3px solid var(--c); border-radius: 2px; box-shadow: 0 4px 0 #0007; white-space: nowrap; }
 .m-plate.l { left: 3%; } .m-plate.r { right: 3%; }
+.m-flags { display: inline-flex; gap: 2px; margin-right: 6px; vertical-align: -1px; }
+.m-flags img { height: 11px; width: 15px; object-fit: cover; border-radius: 1px; }
+.seal.flag-seal { background: #fff; overflow: hidden; padding: 0; }
+.seal.flag-seal .m-flags { margin: 0; width: 100%; height: 100%; gap: 0; }
+.seal.flag-seal .m-flags img { flex: 1; height: 100%; width: auto; min-width: 0; border-radius: 0; }
 
 .pop { position: absolute; top: 4%; font: 800 clamp(30px, 6vh, 56px)/1 Georgia, serif; color: #fff; text-shadow: 0 0 2px #231520, 3px 3px 0 #231520; opacity: 0; pointer-events: none; }
 .slot.left .pop { right: 10%; } .slot.right .pop { left: 10%; }
@@ -164,12 +169,21 @@
 .paper footer .btn { white-space: nowrap; }
 
 @media (max-width: 760px) {
-  .slot { width: 46vw; }
-  .slot { bottom: 14vh; }
-  .slot.left { left: 0; } .slot.right { right: 0; }
+  .slot { width: 54vw; bottom: 30vh; }
+  .slot.left { left: -4vw; } .slot.right { right: -4vw; }
   .m-facts { display: none; }
-  .m-choices { bottom: 140px; }
+  .m-top { top: 44px; font-size: 11px; white-space: normal; text-align: center; width: max-content; max-width: 92vw; }
+  .m-box { padding: 18px 16px 12px; min-height: 0; }
+  .m-text { font-size: 16px; min-height: 0; }
+  .m-name { font-size: 11px; padding: 3px 10px; }
+  .m-plate { font-size: 10px; padding: 2px 8px; }
+  .m-choices button { padding: 8px 10px; }
+  .m-choices b { font-size: 14px; }
+  .m-choices em { font-size: 18px; }
+  .paper { padding: 16px 16px 12px; font-size: 14px; }
+  .stamp { font-size: 24px; bottom: 120px; }
 }
+@media (pointer: coarse) { #meeting .kb { display: none; } }
 @media (prefers-reduced-motion: reduce) {
   #meeting *, #meeting *::before, #meeting *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition: none !important; }
 }

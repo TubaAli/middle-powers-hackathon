@@ -39,7 +39,10 @@
     -98,
     39
    ],
-   "say": "the United States"
+   "say": "the United States",
+   "flags": [
+    "us"
+   ]
   },
   {
    "k": "CN",
@@ -59,6 +62,9 @@
    "at": [
     103,
     34
+   ],
+   "flags": [
+    "cn"
    ]
   },
   {
@@ -83,6 +89,9 @@
    "real": [
     138.5,
     36
+   ],
+   "flags": [
+    "jp"
    ]
   },
   {
@@ -107,6 +116,9 @@
    "real": [
     121,
     23.7
+   ],
+   "flags": [
+    "tw"
    ]
   },
   {
@@ -131,6 +143,9 @@
    "real": [
     127.8,
     36.4
+   ],
+   "flags": [
+    "kr"
    ]
   },
   {
@@ -156,7 +171,10 @@
     5.3,
     52.2
    ],
-   "say": "the Netherlands"
+   "say": "the Netherlands",
+   "flags": [
+    "nl"
+   ]
   },
   {
    "k": "DE",
@@ -180,6 +198,9 @@
    "real": [
     10.4,
     51.2
+   ],
+   "flags": [
+    "de"
    ]
   },
   {
@@ -205,7 +226,10 @@
     -2,
     54
    ],
-   "say": "the United Kingdom"
+   "say": "the United Kingdom",
+   "flags": [
+    "gb"
+   ]
   },
   {
    "k": "GULF",
@@ -226,7 +250,11 @@
     50,
     23
    ],
-   "say": "the Gulf states"
+   "say": "the Gulf states",
+   "flags": [
+    "sa",
+    "ae"
+   ]
   },
   {
    "k": "AUCA",
@@ -251,6 +279,14 @@
     [
      134,
      -25
+    ]
+   ],
+   "flags": [
+    "ca"
+   ],
+   "outpostFlags": [
+    [
+     "au"
     ]
    ]
   },
@@ -287,7 +323,21 @@
      -9
     ]
    ],
-   "say": "the producer states"
+   "say": "the producer states",
+   "flags": [
+    "cd"
+   ],
+   "outpostFlags": [
+    [
+     "id"
+    ],
+    [
+     "cl"
+    ],
+    [
+     "pe"
+    ]
+   ]
   }
  ],
  "goals": [
