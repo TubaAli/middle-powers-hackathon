@@ -1,4 +1,5 @@
 import {newGame, council, enterMeeting, choose, advance, summit, verified, routeStatus, meetingReason, choiceReason, costFor, validSave, leaveConversation, monthSummary} from './story-engine.mjs';
+import {mood} from './relations.mjs';
 
 // Presentation layer only: lever cards, rewards and the Geneva board are derived from engine state.
 const $=s=>document.querySelector(s);
@@ -99,7 +100,7 @@ function startScreen() {
 }
 function councilScreen() {
   const opts=[['funding','🪙','Raise money','+3 money'],['research','🔍','Gather proof','+2 proof'],['diplomacy','🤝','Win support','+2 support']];
-  return `<section class="council-screen"><p class="eyebrow">${esc(month().label)}</p><h1>${esc(month().title)}</h1><p class="scene-copy">${esc(month().event)}</p>${state.month?boardHTML():''}<div class="pick-row">${opts.map(([id,ic,t,s],i)=>`<button class="pick" data-council="${id}"><span class="pick-ic">${ic}</span><strong>${t}</strong><small>${s}</small><kbd>${i+1}</kbd></button>`).join('')}</div></section>`;
+  return `<section class="council-screen"><p class="eyebrow">${esc(month().label)}</p><h1>${esc(month().title)}</h1><p class="scene-copy">${esc(month().event)}</p>${newsLine()}${state.month?boardHTML():''}<div class="pick-row">${opts.map(([id,ic,t,s],i)=>`<button class="pick" data-council="${id}"><span class="pick-ic">${ic}</span><strong>${t}</strong><small>${s}</small><kbd>${i+1}</kbd></button>`).join('')}</div></section>`;
 }
 function contacts() {
   let rows=campaign.routes.filter(r=>(!lever||r.lever===lever)&&(!filter||[r.title,...r.countries].join(' ').toLowerCase().includes(filter.toLowerCase())));
@@ -109,8 +110,8 @@ function contacts() {
   });
   if(!all&&!filter&&!lever)rows=rows.slice(0,8);
   $('#contacts').innerHTML=rows.length?rows.map(r=>{
-    const reason=meetingReason(state,r.id),status=routeStatus(state,r.id),p=state.projects[r.id];
-    return `<article class="contact lv-${r.lever} ${status==='Results are back!'?'ready':''} ${p?.stage==='tested'?'gold':''}"><button class="contact-main" data-meet="${esc(r.id)}" ${reason?'disabled':''}>${flags(r)}<strong>${esc(r.title)}</strong>${leverChip(r.lever)}<span class="status">${esc(reason||status)}</span></button><button class="dossier-button" data-evidence="${esc(r.id)}" aria-label="Research: ${esc(r.title)}">Research</button></article>`;
+    const reason=meetingReason(state,r.id),status=routeStatus(state,r.id),p=state.projects[r.id],m=mood(state,campaign,r.id);
+    return `<article class="contact lv-${r.lever} ${status==='Results are back!'?'ready':''} ${p?.stage==='tested'?'gold':''}"><button class="contact-main" data-meet="${esc(r.id)}" ${reason?'disabled':''}>${flags(r)}<strong>${esc(r.title)}</strong>${leverChip(r.lever)}${m.score?`<span class="mood mood-${m.label}">${m.score>0?'😊 Warm':'🥶 Cold'}</span>`:''}<span class="status">${esc(reason||status)}</span></button><button class="dossier-button" data-evidence="${esc(r.id)}" aria-label="Research: ${esc(r.title)}">Research</button></article>`;
   }).join(''):'<p class="empty">No match.</p>';
 }
 function hubScreen() {
@@ -122,8 +123,8 @@ function dialogueScreen() {
   if(r.id==='indiaai-subsidy-evaluation-gate'&&state.projects['jp-procurement-safety-evidence']?.stage==='tested')memory='Bonus: your Japan test helps here.';
   if(r.id==='lumi-national-evidence-protocol'&&state.projects['lumi-belgium-safety-appendix']?.stage==='tested')memory='Bonus: your Belgium test helps here.';
   const line=nodeId==='receipt'?state.conversation.receipt:node.text;
-  return `<section class="dialogue-screen"><div class="dialogue-heading"><p class="eyebrow">${esc(month().label)}${nodeId==='report'?' · results are back':''}</p><div class="dlg-title">${flags(r)}<h1>${esc(r.title)}</h1></div>${leverChip(r.lever)}${r.about?`<p class="about-line">${esc(r.about)}</p>`:''}<button class="glass-button" data-evidence="${esc(r.id)}">Research ↗</button> <button class="glass-button" data-act="lounge">↩ Back</button></div>${memory?`<p class="memory dialogue-memory">${esc(memory)}</p>`:''}<div class="dialogue-bottom"><article class="dialogue-box ${nodeId==='report'?'catch':''}">${nodeId==='report'?'<p class="catch-banner">⚠ The catch</p>':''}<p class="speaker">${esc(r.speaker)}</p><p class="speech" aria-live="polite">${esc(line)}</p>${nodeId==='report'&&r.repair?`<details class="repair-plan"><summary>What would fixing it involve?</summary><p>${esc(r.repair)}</p></details>`:''}${nodeId==='receipt'?resultHtml(r):''}</article><div class="response-box"><div class="choices">${node.choices.map((c,i)=>{
-    const reason=choiceReason(state,c),cost=costText(costFor(state,c.action));
+  return `<section class="dialogue-screen"><div class="dialogue-heading"><p class="eyebrow">${esc(month().label)}${nodeId==='report'?' · results are back':''}</p><div class="dlg-title">${flags(r)}<h1>${esc(r.title)}</h1></div>${leverChip(r.lever)}${r.about?`<p class="about-line">${esc(r.about)}</p>`:''}<button class="glass-button" data-evidence="${esc(r.id)}">Research ↗</button> <button class="glass-button" data-act="lounge">↩ Back</button></div>${memory?`<p class="memory dialogue-memory">${esc(memory)}</p>`:''}${moodLine(r)}<div class="dialogue-bottom"><article class="dialogue-box ${nodeId==='report'?'catch':''}">${nodeId==='report'?'<p class="catch-banner">⚠ The catch</p>':''}<p class="speaker">${esc(r.speaker)}</p><p class="speech" aria-live="polite">${esc(line)}</p>${nodeId==='report'&&r.repair?`<details class="repair-plan"><summary>What would fixing it involve?</summary><p>${esc(r.repair)}</p></details>`:''}${nodeId==='receipt'?resultHtml(r):''}</article><div class="response-box"><div class="choices">${node.choices.map((c,i)=>{
+    const reason=choiceReason(state,c,campaign),cost=costText(costFor(state,c.action,campaign));
     return `<button data-choice="${esc(c.id)}" ${reason?'disabled':''}><span class="choice-number">${ICON[c.id]??'▶'}</span><span><strong>${esc(c.label)}</strong><small>${esc(reason||[cost,c.detail].filter(Boolean).join(' · '))}</small></span><kbd>${i+1}</kbd></button>`;
   }).join('')}</div>${state.projects[r.id]?.stage==='tested'?knowledgeCheck(r):''}</div></div></section>`;
 }
@@ -146,6 +147,22 @@ function render() {
   }
   $('#mute-button').textContent=muted?'🔇':'🔊';
 }
+// ---------- Geopolitics (data/geopolitics.json via campaign.relations) ----------
+function moodLine(r) {
+  const m=mood(state,campaign,r.id);
+  if(!m.score)return '';
+  const effect=m.score>0?'Shared deal: −1 🤝':'New tests cost more';
+  return `<p class="mood-line mood-${m.label}">${m.score>0?'😊 Warm welcome.':'🥶 Cold reception.'} ${esc(m.reason)} <small>${effect}${m.url?` · ${safeLink(m.url,'source')}`:''}</small></p>`;
+}
+// One real headline per month (dated, sourced), favouring countries you have worked with.
+function newsLine() {
+  const news=campaign.relations?.news??[];if(!news.length)return '';
+  const mine=new Set(cards().flatMap(c=>c.r.codes??[]));
+  const pool=news.filter(e=>e.countries.some(c=>mine.has(c)));
+  const e=(pool.length?pool:news)[state.month%(pool.length||news.length)];
+  return `<p class="news-line"><span>📰 Real news · ${esc(e.date)}</span> ${esc(e.headline)} ${safeLink(e.url,'source')}</p>`;
+}
+
 // ---------- Learning layer (learning-notes.json, from the team): results, month review, optional quiz ----------
 const deltaHtml=delta=>{const items=Object.entries(delta).filter(([,n])=>n!==0);return `<p class="resource-change">${items.length?items.map(([k,v])=>`<span>${RES[k][0]} ${v>0?'+':'−'}${Math.abs(v)} ${RES[k][1]}</span>`).join(''):'<span>No change</span>'}</p>`;};
 function goalProgress() {
