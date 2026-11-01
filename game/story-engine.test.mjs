@@ -32,7 +32,7 @@ test('all 32 conversations can prepare, commission and resolve a bounded pilot i
   for(const id of ids) {
     let s=council(newGame(),'funding');s=plan(s,id,'pilot',true);
     assert.equal(s.actions,2);assert.equal(s.resources.budget,7);assert.equal(s.resources.evidence,2);
-    assert.throws(()=>enterMeeting(s,campaign,id),/already used/);
+    assert.throws(()=>enterMeeting(s,campaign,id),/already met/);
     s=council(advance(s),'research');s=finish(s,id);
     assert.equal(s.projects[id].stage,'tested');assert.equal(s.resources.budget,6);assert.equal(s.resources.evidence,3);
     assert.equal(s.resources.mandate,3);assert(validSave(JSON.parse(JSON.stringify(s)),campaign));
@@ -42,13 +42,13 @@ test('all 32 conversations can prepare, commission and resolve a bounded pilot i
 test('resource limits, peer dependency and meeting limits cannot be bypassed by repeated choices',()=>{
   let s=council(newGame(),'funding');s=plan(s,lumi,'shared');
   s=council(advance(s),'research');s=enterMeeting(s,campaign,lumi);
-  assert.throws(()=>pick(s,'retest'),/other tested route/);
+  assert.throws(()=>pick(s,'retest'),/other finished test/);
   s=pick(s,'pause');assert.equal(s.projects[lumi].stage,'paused');assert.throws(()=>pick(s,'pause'),/Unknown/);
-  s=pick(s,'close');assert.throws(()=>enterMeeting(s,campaign,lumi),/already used/);
+  s=pick(s,'close');assert.throws(()=>enterMeeting(s,campaign,lumi),/already met/);
   s=council(advance(s),'research');s=plan(s,jp);s=plan(s,ind);s=enterMeeting(s,campaign,ids[0]);s=pick(s,'terms');s=pick(s,'defer');s=pick(s,'close');
   assert.equal(s.actions,0);assert(meetingReason(s,ids[3]));
   const insufficient=council(newGame(),'diplomacy');insufficient.resources.budget=0;
-  const n=pick(enterMeeting(insufficient,campaign,jp),'terms');assert.throws(()=>pick(n,'pilot'),/Need 2 budget/);assert.equal(n.resources.budget,0);
+  const n=pick(enterMeeting(insufficient,campaign,jp),'terms');assert.throws(()=>pick(n,'pilot'),/Need 2 money/);assert.equal(n.resources.budget,0);
 });
 test('a strong ending is reachable through multiple routes and a shared follow-up',()=>{
   let s=council(newGame(),'funding');s=plan(s,jp,'pilot',true);s=plan(s,ind);

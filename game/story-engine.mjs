@@ -1,5 +1,6 @@
 // Deterministic fiction rules. Research scores never become acceptance probabilities.
 export const RESOURCE_KEYS = ['budget', 'evidence', 'mandate'];
+export const RESOURCE_NAMES = {budget:'money', evidence:'proof', mandate:'support'};   // plain words shown to players
 export function newGame() {
   return {version:1, campaignId:'before-geneva-v1', month:0, phase:'council', resources:{budget:6,evidence:3,mandate:2}, actions:3, prepared:[], projects:{}, met:{}, conversation:null, journal:[], ending:null};
 }
@@ -8,16 +9,16 @@ const log = (s,title,text,routeId=null) => s.journal.push({month:s.month,title,t
 export const verified = s => Object.entries(s.projects).filter(([,p])=>p.stage==='tested');
 export function routeStatus(s,id) {
   const p=s.projects[id];
-  if(p?.stage==='tested') return 'Tested record';
-  if(s.met[id]===s.month) return 'Met this month';
-  if(p?.strategy && p.started<s.month) return 'Follow-up ready';
-  return p?.stage==='documented'?'Limits recorded':p?'Awaiting report':'New conversation';
+  if(p?.stage==='tested') return 'Tested ✓';
+  if(s.met[id]===s.month) return 'Already met this month';
+  if(p?.strategy && p.started<s.month) return 'Results are back!';
+  return p?.stage==='documented'?'Waiting for later':p?'Waiting for results':'New';
 }
 export function meetingReason(s,id) {
-  if(s.phase!=='hub') return 'Return to the lounge first.';
+  if(s.phase!=='hub') return 'Go back to the lounge first.';
   if(s.projects[id]?.stage==='tested') return '';
   if(s.actions<=0) return 'No meetings left this month.';
-  if(s.met[id]===s.month) return 'You already used a meeting here this month.';
+  if(s.met[id]===s.month) return 'You already met them this month.';
   return '';
 }
 export function enterMeeting(s,campaign,id) {
@@ -37,9 +38,9 @@ export function costFor(s,action) {
   return {};
 }
 export function choiceReason(s,choice) {
-  if(choice.action?.startsWith('commission-')&&s.month===7)return 'Too late for a new rehearsal before Geneva. Complete existing work or record this proposal for later.';
-  for(const [k,v] of Object.entries(costFor(s,choice.action))) if(s.resources[k]<v) return `Need ${v} ${k}; you have ${s.resources[k]}.`;
-  if(choice.action==='resolve' && s.projects[s.conversation.routeId]?.strategy==='shared' && !verified(s).some(([id])=>id!==s.conversation.routeId)) return 'A shared protocol needs one other tested route. Start with a bounded pilot elsewhere.';
+  if(choice.action?.startsWith('commission-')&&s.month===7)return 'Too late to start a new test before Geneva. Finish other work, or save this idea for later.';
+  for(const [k,v] of Object.entries(costFor(s,choice.action))) if(s.resources[k]<v) return `Need ${v} ${RESOURCE_NAMES[k]}; you have ${s.resources[k]}.`;
+  if(choice.action==='resolve' && s.projects[s.conversation.routeId]?.strategy==='shared' && !verified(s).some(([id])=>id!==s.conversation.routeId)) return 'A shared deal needs one other finished test first. Try a small test with another country.';
   return '';
 }
 export function leaveConversation(s) {
@@ -55,25 +56,25 @@ export function choose(s,campaign,choiceId) {
   const n=copy(s),id=route.id;
   for(const [k,v] of Object.entries(costFor(n,ch.action))) n.resources[k]-=v;
   if(ch.action==='leave') {n.phase='hub';n.conversation=null;return n;}
-  if(ch.action==='prepare'&&!n.prepared.includes(id)) {n.prepared.push(id);log(n,'Case brief commissioned',`${route.title}: one evidence resource invested before negotiations.`,id);}
+  if(ch.action==='prepare'&&!n.prepared.includes(id)) {n.prepared.push(id);log(n,'Team research done',`${route.title}: you spent 1 proof to learn more before the talks.`,id);}
   let receipt='';
   if(ch.action?.startsWith('commission-')) {
     const strategy=ch.action.split('-')[1];
     n.projects[id]={stage:'commissioned',strategy,started:n.month};
-    receipt=strategy==='shared'?'The fictional delegation agrees to explore a shared protocol. The report returns next month; completion also needs another tested route.':'The fictional delegation commissions a bounded rehearsal. Return next month to inspect the failure and decide how to repair it.';
-    log(n,strategy==='shared'?'Shared protocol commissioned':'Pilot commissioned',`${route.title}. ${receipt}`,id);
+    receipt=strategy==='shared'?'They agree to work on a shared deal with you. Results come back next month. To finish it, you also need one other finished test.':'They agree to a small test run. Come back next month to see what went wrong and how to fix it.';
+    log(n,strategy==='shared'?'Shared deal started':'Small test started',`${route.title}. ${receipt}`,id);
   } else if(ch.action==='resolve') {
     n.projects[id].stage='tested';n.projects[id].completed=n.month;n.resources.mandate=Math.min(20,n.resources.mandate+1);
-    receipt='The fictional team repairs the gap and completes a fresh rehearsal. You gain a tested record and 1 mandate. Its limited scope remains in the draft; this is not a claim of real-world effectiveness.';
-    log(n,'Repair and retest recorded',`${route.title}. ${receipt}`,id);
+    receipt='The team fixes the problem and tests it again. It works! You get a finished test and 1 support. Remember: it was a small, pretend test, not proof that it works in real life.';
+    log(n,'Fixed and tested again',`${route.title}. ${receipt}`,id);
   } else if(ch.action==='defer') {
     n.projects[id]={stage:'documented',started:n.month};
-    receipt='You record what is not yet established. No promise of adoption is made. The delegation will hear a revised proposal in a later month.';
-    log(n,'Limits recorded',`${route.title}. ${receipt}`,id);
+    receipt='You write down what is still unclear. Nobody promises anything yet. You can come back with a better idea in a later month.';
+    log(n,'Saved for later',`${route.title}. ${receipt}`,id);
   } else if(ch.action==='pause') {
     n.projects[id].stage='paused';
-    receipt='The limitation is published in the fictional journal. The work remains open for a later follow-up; it does not count as a tested safeguard.';
-    log(n,'Follow-up paused',`${route.title}. ${receipt}`,id);
+    receipt='You tell everyone about the problem. The work stays open so you can come back to it. It does not count as a finished test.';
+    log(n,'Paused',`${route.title}. ${receipt}`,id);
   }
   if(receipt) {n.actions--;n.met[id]=n.month;n.conversation.receipt=receipt;}
   n.conversation.node=ch.next;
@@ -81,11 +82,11 @@ export function choose(s,campaign,choiceId) {
 }
 export function council(s,move) {
   if(s.phase!=='council') throw Error('The council has already decided');
-  const moves={funding:['budget',3,'Fund the next rehearsal'],research:['evidence',2,'Commission independent briefs'],diplomacy:['mandate',2,'Listen and build negotiating support']};
+  const moves={funding:['budget',3,'Raise money for tests'],research:['evidence',2,'Gather proof'],diplomacy:['mandate',2,'Build support from other countries']};
   if(!moves[move]) throw Error('Unknown council choice');
   const n=copy(s),[k,v,title]=moves[move];
   n.resources[k]=Math.min(20,n.resources[k]+v);n.phase='hub';n.actions=3;
-  log(n,title,`Council decision: +${v} ${k}. These are game resources, not real funding or consent.`);
+  log(n,title,`Team choice: +${v} ${RESOURCE_NAMES[k]}. These are game points, not real money or real agreement.`);
   return n;
 }
 export function advance(s) {
@@ -101,7 +102,7 @@ export function summit(s,kind) {
   const strong=tested.length>=3&&shared&&n.resources.mandate>=2;
   const success=kind==='verification'?strong:kind==='phased'?tested.length>=1:true;
   n.ending={kind,success,tested:tested.length,shared};n.phase='ending';
-  log(n,'Geneva text settled',kind==='verification'?(success?'A bounded verification annex survives the fictional negotiations.':'The broad verification clause remains bracketed: its requirements were not met.'):kind==='phased'?(success?'A phased pilot programme is agreed in the fictional scenario.':'The proposed pilot programme lacks a tested foundation; the record preserves the gap.'):'An honest record of agreement and disagreement is published in the fictional scenario.');
+  log(n,'Geneva agreement decided',kind==='verification'?(success?'Countries agree to check each other’s safety tests.':'The checking plan is left out: you did not have enough finished tests.'):kind==='phased'?(success?'Countries agree to start small and grow step by step.':'The small plan fails: no test was finished to build on. The gap is written down.'):'Countries publish an honest list of what they agree on and what they do not.');
   return n;
 }
 export function validSave(s,campaign) {

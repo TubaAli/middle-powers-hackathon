@@ -119,11 +119,11 @@ async def check(url, screenshots):
                 assert (await state())['phase'] == 'summit'
                 await page.locator('[data-summit=verification]').click()
                 assert (await state())['ending']['success'] is True
-                assert await page.locator('.ending h1').inner_text() == 'A clause with consequences.'
+                assert await page.locator('.ending h1').inner_text() == 'A deal that can be checked.'
                 await bounds()
                 await picture('ending')
                 await page.locator('#journal-button').click()
-                assert 'Repair and retest recorded' in await page.locator('#drawer-body').inner_text()
+                assert 'Fixed and tested again' in await page.locator('#drawer-body').inner_text()
                 await page.keyboard.press('Escape')
                 await page.locator('[data-act=new]').click()
                 await page.locator('[data-act=close]').click()

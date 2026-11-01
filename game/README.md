@@ -13,6 +13,16 @@ groups. Meetings use fictional anime-style diplomats, one per country, and the
 answer always comes by official letter (`meeting.js`, `meeting.css`). The concept
 gallery remains at `concepts/`.
 
+## Plain language
+
+All player-facing text is written for a general audience, including young players:
+short sentences, everyday words (money, proof and support instead of budget,
+evidence and mandate), and a plain title plus a one-line "what this is about" for
+every country. The rewrite followed the Narrative Engine writing guides
+(https://github.com/nraford7/Narrative-Engine): general-public audience, plain
+voice, and the honest limits kept (a pretend test is not real-world proof).
+The research files keep the research team's own wording, marked as more technical.
+
 ## Play loop
 
 - Each month, choose one council priority: budget, case evidence or negotiating mandate.

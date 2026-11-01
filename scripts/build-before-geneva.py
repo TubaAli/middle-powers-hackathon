@@ -20,31 +20,31 @@ for r in research['routes']:
     sources = [{k: s.get(k) for k in ('id', 'title', 'href', 'access', 'locator', 'sourceCheck')}
                for sid in r['sourceIds'] if (s := research['sources'][sid])]
     nodes = {
-        'opening': {'text': a['opening'], 'choices': [choice('challenge', 'Ask what could go wrong', 'challenge'), choice('terms', 'Discuss the terms', 'terms'), choice('leave', 'Return to the lounge', action='leave')]},
-        'challenge': {'text': a['concern'], 'choices': [choice('brief', 'Commission a case-specific brief', 'prepared', 'prepare', 'Spend 1 evidence. Reduce the later retest cost.'), choice('provisional', 'Proceed with provisional evidence', 'terms'), choice('leave', 'Think it over in the lounge', action='leave')]},
-        'prepared': {'text': 'Then put the owner, the exact version and the missing evidence on one page. It will not settle the negotiation, but it will make our next test more useful.', 'choices': [choice('terms', 'Return to the proposal', 'terms')]},
-        'terms': {'text': a['question'], 'choices': [choice('pilot', a['pilot'], 'receipt', 'commission-pilot', 'Spend 2 budget. A bounded rehearsal returns next month.'), choice('shared', a['shared'], 'receipt', 'commission-shared', 'Spend 1 budget and 2 mandate. Completion needs another tested route.'), choice('defer', 'Record the limits and defer', 'receipt', 'defer', 'Use this meeting; keep resources for a different route.')]},
-        'report': {'text': a['complication'], 'choices': [choice('retest', 'Repair the terms and run a fresh test', 'receipt', 'resolve', 'Spend 1 budget and 1–2 evidence. Shared work also needs one other tested route.'), choice('pause', 'Publish the limitation and pause', 'receipt', 'pause', 'Use this meeting. Preserve the work for a later month.'), choice('leave', 'Consult another delegation first', action='leave')]},
-        'receipt': {'text': '', 'choices': [choice('close', 'Return to the lounge', action='leave')]},
-        'complete': {'text': 'Our fictional rehearsal and correction record are ready for the negotiating table. Keep their limited scope in the final text; a successful exercise is not proof of real-world impact.', 'choices': [choice('leave', 'Return to the lounge', action='leave')]}
+        'opening': {'text': a['opening'], 'choices': [choice('challenge', 'Ask what could go wrong', 'challenge'), choice('terms', 'Talk about the deal', 'terms'), choice('leave', 'Go back to the lounge', action='leave')]},
+        'challenge': {'text': a['concern'], 'choices': [choice('brief', 'Ask your team to research this case', 'prepared', 'prepare', 'Costs 1 proof. Makes the re-check cheaper later.'), choice('provisional', 'Go ahead with what you know', 'terms'), choice('leave', 'Think about it in the lounge', action='leave')]},
+        'prepared': {'text': 'Good. Put three things on one page: who is in charge, which exact version we are testing, and what proof is still missing. It will not end the talks, but it will make our next test better.', 'choices': [choice('terms', 'Back to the deal', 'terms')]},
+        'terms': {'text': a['question'], 'choices': [choice('pilot', a['pilot'], 'receipt', 'commission-pilot', 'Costs 2 money. A small test run. Results come back next month.'), choice('shared', a['shared'], 'receipt', 'commission-shared', 'Costs 1 money and 2 support. To finish it, you also need one other finished test.'), choice('defer', 'Write down what is unclear and wait', 'receipt', 'defer', 'Uses this meeting. Saves your points for another country.')]},
+        'report': {'text': a['complication'], 'choices': [choice('retest', 'Fix the problem and test again', 'receipt', 'resolve', 'Costs 1 money and 1–2 proof. A shared deal also needs one other finished test.'), choice('pause', 'Tell everyone about the problem and pause', 'receipt', 'pause', 'Uses this meeting. You can come back to it later.'), choice('leave', 'Talk to another country first', action='leave')]},
+        'receipt': {'text': '', 'choices': [choice('close', 'Back to the lounge', action='leave')]},
+        'complete': {'text': 'Our pretend test and the fix are ready to bring to the big meeting. Be honest that it was a small test. Passing a practice does not prove it works in real life.', 'choices': [choice('leave', 'Back to the lounge', action='leave')]}
     }
-    routes.append({'id': r['id'], 'title': r['shortLabel'], 'countries': r['countries'], 'coordination': r['coordination'],
-                   'speaker': ' / '.join(r['countries']) + ' · fictional delegate', 'nodes': nodes,
+    routes.append({'id': r['id'], 'title': a.get('title', r['shortLabel']), 'researchTitle': r['shortLabel'], 'about': a.get('about', ''), 'countries': r['countries'], 'coordination': r['coordination'],
+                   'speaker': ' / '.join(r['countries']) + ' · pretend delegate', 'nodes': nodes,
                    'research': {'headline': r['headline'], 'assessment': r['assessment'], 'nextTest': r['decisionTest'],
                                 'unknowns': r['unknowns'], 'evidence': r['newEvidence'], 'sources': sources}})
 
 campaign = {'version': 1, 'id': 'before-geneva-v1', 'title': 'Before Geneva', 'researchObserved': research['observed'],
-            'fictionNotice': 'All dialogue, negotiations, resources, decisions and outcomes are fictional. Linked research describes real proposals and evidence; no government has endorsed these scenes.',
+            'fictionNotice': 'This is a made-up story. The people, talks, points and endings are all pretend. The research links describe real ideas, but no real government agreed to these scenes.',
             'inputs': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in (research_path, authored_path)},
             'months': [
-                {'label': 'November 2026', 'short': 'NOV', 'title': 'A seat at the table', 'event': 'Thirty-two proposals are waiting. You have three meetings this month. Choose where a first test could teach you the most.'},
-                {'label': 'December 2026', 'short': 'DEC', 'title': 'The terms behind the promise', 'event': 'The first replies arrive. Every promising principle needs an owner, an instrument and a decision it can actually change.'},
-                {'label': 'January 2027', 'short': 'JAN', 'title': 'Who carries the cost?', 'event': 'Smaller teams ask whether your evidence requirements will price them out. There is time to revise the approach before anyone signs.'},
-                {'label': 'February 2027', 'short': 'FEB', 'title': 'Access has a price', 'event': 'Delegations want to reuse each other’s work. Confidentiality and separate acceptance decisions make that harder than sharing a score.'},
-                {'label': 'March 2027', 'short': 'MAR', 'title': 'A rehearsal is not a release', 'event': 'Your partners want a progress announcement. Distinguish a commissioned exercise from a repaired and retested safeguard.'},
-                {'label': 'April 2027', 'short': 'APR', 'title': 'The missing appendix', 'event': 'A disputed result exposes the difference between a report and reproducible evidence. Follow-up meetings can turn a flaw into a stronger agreement.'},
-                {'label': 'May 2027', 'short': 'MAY', 'title': 'What survives the deadline?', 'event': 'One month remains before Geneva. New projects may not return in time. Decide which unfinished promises deserve your last follow-up meetings.'},
-                {'label': 'June 2027', 'short': 'JUN', 'title': 'One clause left', 'event': 'Geneva, 21 June. Use your final three meetings, then choose what the joint text can honestly claim.'}
+                {'label': 'November 2026', 'short': 'NOV', 'title': 'A seat at the table', 'event': '32 countries and groups have ideas to make AI safer. You can have three meetings this month. Pick where a first test could teach you the most.'},
+                {'label': 'December 2026', 'short': 'DEC', 'title': 'Who will actually do it?', 'event': 'The first answers arrive. A good idea needs a person in charge, a written rule, and a real decision it can change.'},
+                {'label': 'January 2027', 'short': 'JAN', 'title': 'Who pays for it?', 'event': 'Small teams worry your safety checks will cost too much for them. There is still time to change the plan before anyone signs.'},
+                {'label': 'February 2027', 'short': 'FEB', 'title': 'Sharing is harder than it looks', 'event': 'Countries want to reuse each other’s tests. But secrets, and each country making its own choice, make that harder than sharing one score.'},
+                {'label': 'March 2027', 'short': 'MAR', 'title': 'A practice is not the real thing', 'event': 'Your partners want to announce good news. Be clear about the difference between a practice that was started and a safety fix that was tested again.'},
+                {'label': 'April 2027', 'short': 'APR', 'title': 'The missing page', 'event': 'People argue about one result. It shows that a report is not proof unless someone else can repeat it. Follow-up meetings can turn a mistake into a stronger deal.'},
+                {'label': 'May 2027', 'short': 'MAY', 'title': 'What can still be finished?', 'event': 'One month until Geneva. New tests may not come back in time. Choose which unfinished work gets your last meetings.'},
+                {'label': 'June 2027', 'short': 'JUN', 'title': 'The final meeting', 'event': 'Geneva, 21 June. Use your last three meetings. Then choose what the final agreement can honestly say.'}
             ], 'routes': routes}
 out = ROOT / 'game/campaign.json'
 out.write_text(json.dumps(campaign, ensure_ascii=False, indent=2) + '\n')
