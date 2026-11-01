@@ -145,7 +145,7 @@ async def check(url, screenshots):
                 assert (await state())['phase'] == 'summit'
                 await page.locator('[data-summit=verification]').click()
                 assert (await state())['ending']['success'] is True
-                assert await page.locator('.ending h1').inner_text() == 'A deal that can be checked.'
+                assert await page.locator('.ending h1').inner_text() == 'Your levers held.'
                 await bounds()
                 await picture('ending')
                 await page.locator('#journal-button').click()

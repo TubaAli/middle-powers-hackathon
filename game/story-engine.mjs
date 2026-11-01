@@ -40,9 +40,9 @@ export function costFor(s,action) {
 }
 export function choiceReason(s,choice) {
   if(choice.action==='prepare'&&s.prepared.includes(s.conversation?.routeId))return 'Your research notes are already ready. Choose a plan below.';
-  if(choice.action?.startsWith('commission-')&&s.month===7)return 'Too late to start a new test before Geneva. Finish other work, or save this idea for later.';
+  if(choice.action?.startsWith('commission-')&&s.month===7)return 'Too late for a new test. Finish what you started.';
   for(const [k,v] of Object.entries(costFor(s,choice.action))) if(s.resources[k]<v) return `Need ${v} ${RESOURCE_NAMES[k].toLowerCase()}; you have ${s.resources[k]}.`;
-  if(choice.action==='resolve' && s.projects[s.conversation.routeId]?.strategy==='shared' && !verified(s).some(([id])=>id!==s.conversation.routeId)) return 'A shared deal needs one other finished test first. Try a small test with another country.';
+  if(choice.action==='resolve' && s.projects[s.conversation.routeId]?.strategy==='shared' && !verified(s).some(([id])=>id!==s.conversation.routeId)) return 'A shared deal needs one other finished test first.';
   return '';
 }
 export function leaveConversation(s) {
@@ -66,16 +66,16 @@ export function choose(s,campaign,choiceId) {
   if(ch.action?.startsWith('commission-')) {
     const strategy=ch.action.split('-')[1];
     n.projects[id]={stage:'commissioned',strategy,started:n.month};
-    receipt=strategy==='shared'?'They agree to work on a shared deal with you. Results come back next month. To finish it, you also need one other finished test.':'They agree to a small test run. Come back next month to see what went wrong and how to fix it.';
+    receipt=strategy==='shared'?'Deal! Shared test starts. Results next month.':'Deal! Small test starts. Results next month.';
   } else if(ch.action==='resolve') {
     n.projects[id].stage='tested';n.projects[id].completed=n.month;n.resources.mandate=Math.min(20,n.resources.mandate+1);
-    receipt='The team fixes the problem and tests it again. It works! You get a finished test and 1 support. Remember: it was a small, pretend test, not proof that it works in real life.';
+    receipt='Fixed and tested again. It holds! +1 support.';
   } else if(ch.action==='defer') {
     n.projects[id]={stage:'documented',started:n.month};
-    receipt='You write down what is still unclear. Nobody promises anything yet. You can come back with a better idea in a later month.';
+    receipt='Noted. No promises yet. Try again later.';
   } else if(ch.action==='pause') {
     n.projects[id].stage='paused';
-    receipt='You tell everyone about the problem. The work stays open so you can come back to it. It does not count as a finished test.';
+    receipt='Problem made public. Paused for now.';
   }
   if(receipt) {
     n.actions--;n.met[id]=n.month;n.conversation.receipt=receipt;

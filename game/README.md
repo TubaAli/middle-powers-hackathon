@@ -14,15 +14,21 @@ tap to fly, then tap Meet or End month. Meetings use fictional anime-style diplo
 answer always comes by official letter (`meeting.js`, `meeting.css`). The concept
 gallery remains at `concepts/`.
 
-## Plain language
+## Story and rewards (Narrative Engine, Deep mode)
 
-All player-facing text is written for a general audience, including young players:
-short sentences, everyday words (money, proof and support instead of budget,
-evidence and mandate), and a plain title plus a one-line "what this is about" for
-every country. The rewrite followed the Narrative Engine writing guides
-(https://github.com/nraford7/Narrative-Engine): general-public audience, plain
-voice, and the honest limits kept (a pretend test is not real-world proof).
-The research files keep the research team's own wording, marked as more technical.
+The player text was reframed with the Narrative Engine Deep workflow
+(https://github.com/nraford7/Narrative-Engine), approved with Tuba on 1 Nov 2026:
+
+- Main point: middle powers already hold real levers over AI (buying power,
+  computers, investment, rules). Together, they're hard to ignore.
+- Audience: hackathon judges and team (AI-safety experts and policy generalists).
+- Shape: answer first, thriller tone, at most about 12 words per screen line.
+- Every route has a lever tag and a one-line summary traceable to its research.
+  A blind main-point judge and an evidence reviewer checked the text; their
+  fixes are applied.
+- Rewards are a display layer derived from engine state: a lever card per deal,
+  gold cards for passed retests, a combo when two countries share a lever (a game
+  bonus, not a research claim), and a Geneva lever board. Rules and tests are unchanged.
 
 ## Play loop
 
