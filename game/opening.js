@@ -1,5 +1,5 @@
 // Opening scene: a breaking-news trigger, your chief of staff calls you to act, then you pick a middle power and a first goal.
-// Uses the anime diplomat drawings from meeting.js; game.js supplies the countries, facts and goals.
+// Uses the painted stills from meeting.js (Before Geneva art style); game.js supplies the countries, facts and goals.
 
 const Opening = (() => {
   let el = null, ctx = null, queue = [], typing = null, waiting = null;
@@ -12,7 +12,7 @@ const Opening = (() => {
     el.innerHTML = `
       <div class="op-news"><span class="op-live">● Breaking</span><div class="op-ticker"><span>The US and China race to build ever-stronger AI · No shared safety rules · Laws close in eight months · </span><span>The US and China race to build ever-stronger AI · No shared safety rules · Laws close in eight months · </span></div></div>
       <div class="op-stage">
-        <div class="op-aide">${envoySVG('AIDE', 'left')}</div>
+        <div class="op-aide" data-art="envoy">${stillHTML('envoy', 'left')}</div>
         <div class="op-pick" hidden></div>
       </div>
       <div class="op-box"><div class="op-name">${CAST.AIDE.name}</div><p class="op-text"></p><span class="op-next">▼</span></div>
@@ -31,7 +31,7 @@ const Opening = (() => {
     setTimeout(advance, 900);
   }
 
-  function mood(m) { q('.op-aide').dataset.mood = m || 'flat'; }
+  function mood(m) { const a = q('.op-aide'); a.dataset.mood = m || 'flat'; a.querySelector('.still').src = stillSrc('envoy', m || 'flat'); }
   function say(line) {
     mood(line.mood);
     const t = q('.op-text'), full = line.text;

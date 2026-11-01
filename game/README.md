@@ -12,7 +12,7 @@ The original Orbit Accord prototype is at `orbit.html` (`game.js`, `game.css`,
 groups (you play a middle power; the US and China are rivals, not playable),
 each shown by its flags (`flags/`, flag-icons, MIT). It opens with a breaking-news scene: your chief of staff, Mira, calls you to act,
 then you pick your country and one goal (`opening.js`). It works on phones:
-tap to fly, then tap Meet or End month. Meetings use fictional anime-style diplomats, one per country, and the
+tap to fly, then tap Meet or End month. Meetings now use Before Geneva's look (painted rooms and delegates with four expressions each, see `orbit-art/README.md`); earlier SVG diplomats were replaced. Meetings use fictional diplomats, one per country, and the
 answer always comes by official letter (`meeting.js`, `meeting.css`). The concept
 gallery remains at `concepts/`.
 

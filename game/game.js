@@ -288,7 +288,7 @@ function openTalk(t) {
     script.push({ choice: true });
   }
   Meeting.open({
-    month: MONTHS[g.turn], me: actor(me), them: actor(p), facts, script,
+    month: MONTHS[g.turn], me: { ...actor(me), envoy: 'Mira · your envoy' }, them: actor(p), facts, script,
     ask: `How do you persuade ${say(p)}? Pick your leverage (1–${ds.length}).`,
     deals: ds.map((d) => ({ label: esc(d.label), sub: esc(d.sub), pct: odds(t, d) })),
     onChoose: (i) => rollDeal(t, ds[i]),
