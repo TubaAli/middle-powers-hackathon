@@ -1,30 +1,71 @@
-# Orbit Accord (game prototype)
+# Before Geneva
 
-A real-time negotiation game built on the Leverage Map data. Countries are planets, and each sovereign stands for its government. This is a work-in-progress branch (`orbit-accord`); `main` and the live site are unchanged.
+A playable, research-informed diplomatic visual novel. Lead a small negotiating
+team from November 2026 to the Geneva session on 21 June 2027. The four original
+Gemini scene illustrations now sit behind live HTML dialogue, choices and UI.
 
-**Play:** run `python3 -m http.server` from the repository root, then open http://localhost:8000/game/. It fits one laptop screen (checked at 1280×720 and 1366×768).
+**Play:** https://tubaali.github.io/middle-powers-hackathon/game/
 
-**Controls:** arrow keys or WASD to fly; Space to talk to a nearby planet; 1–4 to choose; N to end the month; Esc to leave. Clicking the map also steers.
+The original orbital game is preserved at `orbit.html`, using its existing
+`game.js`, `game.css` and `planets.json`, including the team's anime mecha-envoy
+meetings and verdict letters (`meeting.js`, `meeting.css`). The concept gallery
+remains at `concepts/`.
 
-**How it plays:**
-1. **Setup:** pick a planet (the % shows how much of the world's AI supply chain depends on it), 1–3 safety goals, and an age (the physical ↔ software mix).
-2. **Each month** (8 months, Nov 2026 to Jun 2027, 30 s each) opens with a **council**: pick 1 of 3–4 moves built from the data.
-   - ⚖️ **Table a bill:** only when your country's law window is open (`windows.json`). It gives your goals a law vehicle.
-   - 🔒 **License your chokepoint:** your top stage ≥25% counts 25% more. The superpower you depend on may retaliate, with a chance equal to its weighted share.
-   - 📦 **Stockpile** your biggest dependency: shields you from that supplier's squeeze.
-   - 🏗️ **Data-centre campus:** costs ⚡ and 💰. Hosting is the only stage you can replace within 1–3 years.
-   - 🤝 **Summit tour** or 📣 **rally at home:** better odds this month.
-   - 🔬 **Seed your own dependency:** tiny gain, and it shows how many years real replacement takes.
-   - Trade season: +1 of your strongest token.
-3. **Fly** to planets and press Space to open a **meeting**: two anime mecha-alien envoys (yours and theirs; armour locks together as they arrive) talk in a meeting room whose season follows the month. Space advances the dialogue. Pick one of up to three leverage points (a token they need, a promise of your chokepoint, or just asking; odds shown). The envoy never answers in person: the court's verdict arrives only as a **letter** stamped Approved or Declined. Envoys are original SVG mecha drawings, animated in CSS (`meeting.js`, `meeting.css`); the art direction follows `concepts/`.
-4. **Events:**
-   - Dec: China squeezes refined metals.
-   - Feb: the US pressures your weakest ally.
-   - From April: stages that are quick to replace (≤3 years) fade by 20%.
-   - Law windows open on their real dates.
-5. **Score:** goal progress (needs the best lever stage ≥50% *and* a law vehicle, else capped at 75%), plus accord leverage, plus tokens kept. The debrief shows the risk, route, consent needed and evidence gap for each goal.
+## Play loop
 
-**Data:**
-- AI shares, weights and years-to-replace come from `../data/layers.json`, unchanged. Conditions and law windows come from `../data/`.
-- `planets.json` holds the fantasy names, goals and **illustrative** non-AI tokens.
-- Move effects and odds are game rules, not measured effects.
+- Each month, choose one council priority: budget, case evidence or negotiating mandate.
+- Choose among 32 policy conversations. Highlights include Japan, India, Brazil,
+  national LUMI channels, Singapore, Kenya, Switzerland and Taiwan. Search or select
+  **All 32 routes** for the full sample.
+- Ask about weaknesses, optionally commission a case-specific brief, then fund a
+  bounded pilot, negotiate a shared protocol, or record the limits and defer.
+- Commissioned work returns with a route-specific complication the following month.
+  Spend resources to repair and retest it, or publish the limitation and pause.
+  Shared protocols additionally require a different tested route.
+- Three consequential meeting decisions are available per month. Reading dossiers,
+  asking questions and leaving conversations do not spend meetings. Briefs spend
+  evidence immediately and reduce the subsequent retest cost.
+- In June, choose a verification annex, phased pilot programme or honest record of
+  disagreement. The outcome depends on completed work rather than assumed consent.
+
+There is no timer or random acceptance roll. Click/tap choices or use **1–3**;
+Tab/Enter also work. Escape closes dossiers. Progress saves to this browser/device
+when local storage is available. The title button pauses to the opening screen;
+Continue resumes the same node. A new campaign requires confirmation before
+replacing an existing save. Dossiers and the journal are readable during dialogue.
+
+An explicit `?route=indiaai-subsidy-evaluation-gate` link puts that conversation
+first in the lounge. Every route on the model plot now links to its game entry.
+
+## Fiction and evidence
+
+All dialogue, scenarios, approvals, failures, resources and endings are authored
+fiction. These are not government statements or forecasts. The same ensemble
+art depicts recurring rooms and delegates, not a unique portrait for every route.
+The actual research remains in each dossier, with reading status, limitations,
+source locators and links to the original figure and stress tests. The current
+campaign uses the 31 October 2026 research snapshot, not a new legal-currentness review.
+
+`dialogue-authored.json` supplies distinctive opening, negotiating question,
+objection, fictional test complication and proposal labels for each policy.
+`scripts/build-before-geneva.py` joins these to `data/stress-tests.json`, checks
+complete route coverage and writes `campaign.json` (32 trees, 224 nodes). Its
+input hashes identify exactly which research and writing generated the game.
+`story-engine.mjs` holds deterministic resource, time, follow-up and ending rules;
+`before-geneva.js` renders the interface. Display and state transitions are separate.
+
+## Build and check
+
+```sh
+python3 scripts/build-before-geneva.py
+node --test game/story-engine.test.mjs
+```
+
+Use the existing Playwright Python environment for the browser acceptance script
+`scripts/check-before-geneva-browser.py`. It launches installed Chrome headlessly
+in an isolated test profile, not the user's signed-in browser. Supply `--url`
+to test a served local or public copy. Do not deliver a localhost URL as a preview;
+use the published site or a verified Tailscale Serve route.
+
+The unit checks cover source hashes, all 32 paths, resource constraints, no repeat
+rewards, shared-route prerequisites, save validation and distinct Geneva endings.

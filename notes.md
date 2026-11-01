@@ -1,5 +1,21 @@
 # Discussion notes
 
+## Before Geneva playable campaign — 1 November 2026
+
+The `/game/` entry now presents the approved Gemini anime art with editable HTML
+UI, 32 research-linked conversations (224 nodes), eight monthly councils,
+resource trade-offs, later repair/retest meetings, cross-route prerequisites,
+save/resume, and three outcome paths at Geneva. All dialogue and outcomes are
+explicitly fictional; dossiers preserve sources and unresolved evidence.
+The route plot links directly to each conversation. The team's Orbit Accord
+game, including its new mecha meetings and letters, remains at `/game/orbit.html`.
+
+Local checks passed 17 unit tests, 64 desktop/mobile route walkthroughs, two
+complete campaigns, source panels, keyboard navigation and save recovery.
+Public deployment acceptance is recorded after publication. Next design test:
+do players understand why completing one tested route enables shared work,
+rather than interpreting a game outcome as actual institutional consent?
+
 ## Safeguard stress tests: publicly checked, 31 October 2026
 
 The [stress-test view](routes/stress-tests.html) adds deeper evidence, retained

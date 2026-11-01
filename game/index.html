@@ -1,34 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Orbit Accord</title>
-<meta name="description" content="Fly your planet, meet the others, and build an accord for AI safety before the laws close.">
-<link rel="stylesheet" href="game.css">
-<link rel="stylesheet" href="meeting.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Before Geneva · a diplomatic visual novel</title>
+  <meta name="description" content="Eight months. Thirty-two policy conversations. Turn promises into testable safeguards in a research-informed diplomatic visual novel.">
+  <link rel="stylesheet" href="before-geneva.css">
 </head>
 <body>
-<canvas id="world" aria-label="Solar system. Arrow keys fly your planet; Space talks to a nearby planet."></canvas>
-
-<!-- HUD -->
-<div id="hud" hidden>
-  <div class="hud-left">
-    <div class="month"><b id="h-month"></b><span id="h-timer"></span></div>
-    <div class="bar"><i id="h-time"></i></div>
-    <div id="h-goals"></div>
-    <div class="accord">Accord: <b id="h-accord"></b> of AI supply</div>
-  </div>
-  <div class="hud-right" id="h-me"></div>
-  <div class="hint"><kbd>←↑↓→</kbd> fly · <kbd>Space</kbd> talk · <kbd>N</kbd> end month</div>
-  <div id="prompt" hidden></div>
-  <div id="toasts"></div>
-</div>
-
-<!-- Overlays -->
-<div id="overlay" class="overlay"><div class="panel" id="panel"></div></div>
-
-<script src="meeting.js"></script>
-<script src="game.js"></script>
+  <div id="art" aria-hidden="true"></div><div class="shade" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to the conversation</a>
+  <header id="hud"></header>
+  <main id="main" tabindex="-1"><p class="loading" role="status">Opening the delegation lounge…</p></main>
+  <footer><span>Fictional diplomacy · research-informed choices</span><nav><button id="journal-button" type="button">Journal</button><button id="guide-button" type="button">How to play</button><a href="../routes/#basis=model" target="_blank" rel="noopener">Policy map ↗</a><a href="concepts/">Art gallery</a></nav><span id="save-status" role="status"></span></footer>
+  <dialog id="drawer" aria-labelledby="drawer-title"><div class="drawer-header"><h2 id="drawer-title"></h2><button id="close-drawer" type="button" aria-label="Close panel">Close ×</button></div><div id="drawer-body"></div></dialog>
+  <script type="module" src="before-geneva.js"></script>
 </body>
 </html>

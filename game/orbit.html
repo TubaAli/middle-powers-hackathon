@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit Accord · original prototype</title>
+<meta name="description" content="Fly your planet, meet the others, and build an accord for AI safety before the laws close.">
+<link rel="stylesheet" href="game.css">
+<link rel="stylesheet" href="meeting.css">
+</head>
+<body>
+<canvas id="world" aria-label="Solar system. Arrow keys fly your planet; Space talks to a nearby planet."></canvas>
+
+<!-- HUD -->
+<div id="hud" hidden>
+  <div class="hud-left">
+    <div class="month"><b id="h-month"></b><span id="h-timer"></span></div>
+    <div class="bar"><i id="h-time"></i></div>
+    <div id="h-goals"></div>
+    <div class="accord">Accord: <b id="h-accord"></b> of AI supply</div>
+  </div>
+  <div class="hud-right" id="h-me"></div>
+  <div class="hint"><kbd>←↑↓→</kbd> fly · <kbd>Space</kbd> talk · <kbd>N</kbd> end month</div>
+  <div id="prompt" hidden></div>
+  <div id="toasts"></div>
+</div>
+
+<!-- Overlays -->
+<div id="overlay" class="overlay"><div class="panel" id="panel"></div></div>
+
+<script src="meeting.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
