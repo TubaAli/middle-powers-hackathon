@@ -98,3 +98,9 @@ source panels, keyboard controls and save recovery, with no page errors. Phone
 and desktop result/summary screenshots were inspected. Old saves do not invent
 missing resource history. Next user check: can a player explain what their last
 meeting achieved and name the next useful action without reading the guide?
+
+Public acceptance: deployment `2a91dff` passed the same 64 route walkthroughs
+and two complete campaigns on the live GitHub Pages site, with no page errors.
+Ten live game/data/Orbit files matched committed bytes. Tuba's subsequent
+`598ab47` phone layout and flags were incorporated before release; her primary
+dialogue, entry page and Orbit implementation were preserved unchanged.
