@@ -187,3 +187,77 @@
 @media (prefers-reduced-motion: reduce) {
   #meeting *, #meeting *::before, #meeting *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition: none !important; }
 }
+
+/* ---- Style transfer: Before Geneva's look (painted rooms and delegates, dark teal panels, serif titles) ---- */
+#meeting { font-family: 'DM Sans', system-ui, sans-serif; background: #091924; --bg-gold: #d9cba6; --bg-panel: #102733eb; --bg-line: #78979955; }
+.m-room { position: absolute; inset: 0; background-size: cover; background-position: center; animation: pan 40s ease-in-out infinite alternate; }
+@keyframes pan { from { transform: scale(1.04) translateX(-1%); } to { transform: scale(1.08) translateX(1%); } }
+.m-shade { position: absolute; inset: 0; background: linear-gradient(90deg, #061522e0 0%, #07172299 30%, #07172210 70%), linear-gradient(0deg, #061420f2 0%, #06142099 22%, transparent 48%); }
+.m-fx { z-index: 0; }
+.m-head { position: absolute; top: 0; left: 0; right: 0; height: 58px; z-index: 6; display: flex; align-items: center; justify-content: space-between; padding: 0 3vw 0 calc(3vw + 70px); background: #071722ee; border-bottom: 1px solid var(--bg-line); }
+.m-brand { letter-spacing: .17em; font-weight: 700; font-size: 14px; }
+.m-brand small { display: block; font-weight: 400; font-size: 9px; letter-spacing: .15em; color: #b3c6c5; margin-top: 3px; }
+.m-head b { color: var(--bg-gold); letter-spacing: .12em; text-transform: uppercase; font-size: 13px; }
+.m-title { position: absolute; top: 78px; left: 3vw; z-index: 4; max-width: 46vw; }
+.m-eyebrow { text-transform: uppercase; letter-spacing: .19em; color: var(--bg-gold); font-size: 10px; font-weight: 600; margin: 0 0 10px; display: flex; gap: 6px; align-items: center; }
+.m-title h2 { font: 400 clamp(28px, 4vw, 52px)/1.05 'Libre Caslon Display', Georgia, serif; margin: 0; color: #f6eddb; text-shadow: 0 3px 12px #0008; }
+#meeting .m-facts { position: absolute; top: auto; bottom: auto; left: 3vw; transform: none; top: calc(78px + clamp(28px, 4vw, 52px) * 2.3 + 30px); width: min(330px, 30vw); z-index: 4; display: flex; flex-direction: column; gap: 0; background: var(--bg-panel); border: 1px solid var(--bg-line); padding: 14px 16px; }
+#meeting .m-facts span { background: none; border: 0; border-top: 1px solid var(--bg-line); border-radius: 0; padding: 8px 0; font-size: 13px; color: #e8eee6; }
+#meeting .m-facts span:first-of-type { border-top: 0; }
+#meeting .m-facts b { color: var(--bg-gold); }
+/* Delegates */
+#meeting .slot { bottom: 0; width: auto; height: 84vh; aspect-ratio: 660 / 883; filter: brightness(.62) saturate(.85); }
+#meeting .slot.left { left: 34vw; right: auto; }
+#meeting .slot.right { right: 2vw; left: auto; }
+#meeting.in .slot.speaking { filter: none; transform: translateY(-1%); }
+.still { width: 100%; height: 100%; object-fit: contain; object-position: bottom; display: block; transition: opacity .18s; filter: drop-shadow(0 10px 30px #0009); }
+.still.flip { transform: scaleX(-1); }
+.slot.talking .still { animation: breathe 2.4s ease-in-out infinite; }
+#meeting .m-plate { position: absolute; top: auto; left: 8%; bottom: 44%; z-index: 2; background: #102733e6; border: 1px solid var(--bg-line); border-top: 0; border-left: 3px solid var(--bg-gold); color: #e8eee6; font: 600 13px/1.3 'DM Sans', sans-serif; letter-spacing: .08em; text-transform: uppercase; padding: 8px 14px; box-shadow: none; }
+#meeting .m-plate small { display: block; font-size: 9px; letter-spacing: .12em; color: #b3c6c5; font-weight: 500; }
+#meeting .m-plate .m-flags img { height: 12px; width: 16px; }
+/* Dialogue and choices like Before Geneva */
+#meeting .m-box { left: 3vw; transform: none; bottom: 18px; width: 60vw; min-height: 150px; padding: 26px 30px 20px; border-radius: 0; background: #102733f2; border: 1px solid var(--bg-line); border-left: 4px solid #b8be9d; box-shadow: none; }
+#meeting .m-box::before { display: none; }
+#meeting .m-name, #meeting .m-box.mine .m-name { top: -30px; left: 22px; right: auto; background: #c9d3be; color: #163542; border-radius: 0; text-shadow: none; box-shadow: none; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; padding: 7px 16px; }
+#meeting .m-text { font: clamp(17px, 2.5vh, 23px)/1.45 Georgia, 'Times New Roman', serif; color: #f1f2ea; }
+#meeting .m-next { color: var(--bg-gold); }
+#meeting .m-choices { left: auto; right: 3vw; transform: none; width: 33vw; bottom: 18px; gap: 8px; }
+#meeting .m-choices::before { content: 'Your response'; text-transform: uppercase; letter-spacing: .19em; color: var(--bg-gold); font-size: 10px; font-weight: 600; margin-bottom: 2px; }
+#meeting .m-choices button { border-radius: 0; background: #173441f0; border: 1px solid #78979977; padding: 13px 15px; min-height: 64px; grid-template-columns: 26px 1fr auto; }
+#meeting .m-choices button:hover, #meeting .m-choices button:focus-visible { background: #c9d3be; color: #163542; border-color: #e8dbaf; }
+#meeting .m-choices kbd { border: 0; font-size: 11px; color: var(--bg-gold); opacity: 1; }
+#meeting .m-choices b { font-weight: 500; font-size: 15px; }
+#meeting .m-choices em { font: 400 24px 'Libre Caslon Display', Georgia, serif; color: var(--bg-gold); }
+#meeting .m-leave { top: 17px; left: auto; right: calc(3vw + 120px); z-index: 7; color: #b3c6c5; border-color: var(--bg-line); }
+#meeting .pop { top: 10%; }
+#meeting .slot.left .pop { right: 6%; left: auto; } #meeting .slot.right .pop { left: 6%; right: auto; }
+@media (max-width: 760px) {
+  .m-brand small { display: none; } #meeting .m-leave { right: 110px; }
+  .m-title { top: 70px; max-width: 92vw; } .m-title h2 { font-size: 24px; }
+  #meeting .m-facts { display: none; }
+  #meeting .slot { height: 54vh; bottom: 24vh; }
+  #meeting .slot.left { left: -6vw; } #meeting .slot.right { right: -6vw; }
+  #meeting .m-plate { font-size: 10px; padding: 5px 8px; bottom: 30%; }
+  #meeting .m-box { left: 8px; right: 8px; width: auto; min-height: 0; padding: 22px 16px 14px; }
+  #meeting .m-choices { left: 8px; right: 8px; width: auto; bottom: var(--above, 160px); }
+}
+/* Opening: Mira briefs you in the Geneva hall */
+#opening { background: linear-gradient(90deg, #061522f2 0%, #071722cc 45%, #07172288 100%), url('orbit-art/room-geneva.webp') center / cover; font-family: 'DM Sans', system-ui, sans-serif; }
+.op-aide .still { filter: drop-shadow(0 10px 30px #000a); }
+.op-aide { width: min(40vw, 64vh); bottom: 0; }
+#opening.picking .op-aide { width: min(30vw, 50vh); }
+.op-box { border-radius: 0; background: #102733f2; border: 1px solid #78979955; border-left: 4px solid #b8be9d; }
+.op-name { background: #c9d3be; color: #163542; border-radius: 0; text-transform: uppercase; letter-spacing: .1em; font-size: 12px; }
+.op-pick button { border-radius: 0; background: #173441f0; border-color: #78979977; }
+@media (max-width: 760px) { .op-aide { width: 78vw; bottom: 120px; } }
+#meeting .paper footer .btn { background: #163542; border-color: #163542; color: #f6eddb; border-radius: 0; letter-spacing: .04em; }
+#meeting .paper { border-radius: 0; }
+@media (max-width: 760px) {
+  #meeting .m-brand { display: none; } #meeting .m-head { justify-content: flex-end; }
+  #meeting .m-leave { left: 12px; right: auto; }
+  #meeting .slot { height: 46vh; bottom: 26vh; }
+  #meeting .slot.left { left: -16vw; } #meeting .slot.right { right: -16vw; }
+  #meeting .slot.left .m-plate { left: 22%; } #meeting .slot.right .m-plate { left: auto; right: 22%; }
+  #meeting .m-plate { bottom: 6%; } #meeting .m-plate small { display: none; }
+}

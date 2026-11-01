@@ -6,11 +6,11 @@
 // outfit: suit colour; neck: tie | blouse | mandarin | scarf | thobe; acc: pin colour; glasses: true for spectacles.
 const CAST = {
   US:   { name: 'Ambassador Jake Mercer',      skin: '#f8dcc6', shade: '#e9b99c', hair: '#f4cf5a', hairS: '#c8952c', eye: '#3d7bd9', style: 'spiky',    outfit: '#1e2f57', neck: 'tie',      tie: '#c7303c', acc: '#c7303c' },
-  CN:   { name: 'Minister Lin Meihua',         skin: '#f8dfca', shade: '#e8bea2', hair: '#1d1a22', hairS: '#0b0a0e', eye: '#7a3b2a', style: 'ponytail', outfit: '#b3262f', neck: 'mandarin', tie: '#f2c94c', acc: '#f2c94c' },
+  CN:   { name: 'Minister Chen Wei',         skin: '#f8dfca', shade: '#e8bea2', hair: '#1d1a22', hairS: '#0b0a0e', eye: '#7a3b2a', style: 'ponytail', outfit: '#b3262f', neck: 'mandarin', tie: '#f2c94c', acc: '#f2c94c' },
   JP:   { name: 'Minister Kaito Shirane',      skin: '#f9e0cb', shade: '#ebc1a4', hair: '#22253a', hairS: '#101220', eye: '#5a4a8c', style: 'neat',     outfit: '#23283a', neck: 'tie',      tie: '#c23a3a', acc: '#e04848', glasses: true },
   TW:   { name: 'Envoy Chen Yuting',           skin: '#f6dbc2', shade: '#e5b99a', hair: '#3b2a24', hairS: '#1f1512', eye: '#2f7a66', style: 'bob',      outfit: '#2f8f78', neck: 'blouse',   tie: '#f2f4f0', acc: '#a8fff0' },
   KR:   { name: 'Minister Han Seojun',         skin: '#fae3d0', shade: '#ecc4a8', hair: '#2b2140', hairS: '#140e22', eye: '#6a46a8', style: 'swept',    outfit: '#4b3f86', neck: 'tie',      tie: '#d9d2ff', acc: '#ff7ae0' },
-  NL:   { name: 'Envoy Sanne de Vries',        skin: '#f9dfcd', shade: '#ebbfa6', hair: '#e8925a', hairS: '#b8602e', eye: '#3a9fd0', style: 'braid',    outfit: '#24324a', neck: 'scarf',    tie: '#f08a3c', acc: '#f08a3c' },
+  NL:   { name: 'Minister Pieter de Vries',        skin: '#f9dfcd', shade: '#ebbfa6', hair: '#e8925a', hairS: '#b8602e', eye: '#3a9fd0', style: 'braid',    outfit: '#24324a', neck: 'scarf',    tie: '#f08a3c', acc: '#f08a3c' },
   DE:   { name: 'Minister Lukas Brandt',       skin: '#f4d4bf', shade: '#e2b39a', hair: '#8c745e', hairS: '#5c4a3a', eye: '#4f8a4a', style: 'short',    outfit: '#5d6672', neck: 'tie',      tie: '#2b2f36', acc: '#ffcf3d', glasses: true },
   UK:   { name: 'Envoy Eleanor Ashford',       skin: '#f8d8c4', shade: '#e8b69e', hair: '#a8452c', hairS: '#702a18', eye: '#2f8a6a', style: 'updo',     outfit: '#1f3f6e', neck: 'blouse',   tie: '#f6f2ea', acc: '#e3c46b' },
   GULF: { name: 'Minister Khalid Al-Mansoori', skin: '#d9a77f', shade: '#bb8660', hair: '#1f1712', hairS: '#0e0a08', eye: '#6a4426', style: 'ghutra',   outfit: '#2a2420', neck: 'thobe',    tie: '#f4f2ec', acc: '#d9a441' },
@@ -133,6 +133,18 @@ function envoySVG(k, side) {
 
 const flagRow = (codes = []) => `<span class="m-flags">${codes.map((c) => `<img src="flags/${c}.svg" alt="">`).join('')}</span>`;
 
+// Painted stills in Before Geneva's art style (orbit-art/, made from that game's scenes; see orbit-art/README.md).
+// Each country uses one delegate in four expressions; your side is always Mira, your chief of staff and envoy.
+const ART = { US: 'us', CN: 'cn', JP: 'eam', KR: 'eam', TW: 'eaw', NL: 'eu', DE: 'eu', UK: 'uk', GULF: 'gulf', AUCA: 'auca', PROD: 'prod', AIDE: 'envoy', ME: 'envoy' };
+const FLIP = { cn: true };   // turn delegates to face the table
+const EXPR = { flat: 'neutral', happy: 'happy', sad: 'sad', think: 'think', surprised: 'think' };
+const stillSrc = (who, mood) => `orbit-art/${who}-${EXPR[mood] ?? 'neutral'}.webp`;
+function stillHTML(who, side) {
+  for (const m of ['neutral', 'happy', 'sad', 'think']) new Image().src = `orbit-art/${who}-${m}.webp`;   // preload expressions
+  return `<img class="still ${side}${FLIP[who] ? ' flip' : ''}" data-art="${who}" src="${stillSrc(who, 'flat')}" alt="" draggable="false">`;
+}
+const ROOM = { dusk: 'geneva', winter: 'snow', rain: 'rain', summer: 'geneva' };
+
 const Meeting = (() => {
   let ctx = null, queue = [], typing = null, waiting = null, el = null;
   const q = (s) => el.querySelector(s);
@@ -180,19 +192,13 @@ const Meeting = (() => {
     ctx = c; ctx.t0 = performance.now(); queue = []; waiting = null; clearInterval(typing);
     el.className = `season-${season(c.month)}`;
     el.innerHTML = `
-      <div class="m-sky"><div class="m-moon"></div><div class="m-fx"></div></div>
-      <svg class="m-land" viewBox="0 0 1600 300" preserveAspectRatio="none" aria-hidden="true">
-        <path d="${skyline()}" class="far"/>
-        <path d="M0 250 L220 190 L420 240 L700 200 L940 250 L1220 205 L1600 245 L1600 300 L0 300 Z" class="near"/>
-        <rect y="262" width="1600" height="38" class="lake"/>
-      </svg>
-      <div class="m-window"></div>
-      <div class="m-table"><span class="m-plate l" style="--c:${c.me.color}">${flagRow(c.me.flags)}${c.me.name}</span><span class="m-plate r" style="--c:${c.them.color}">${flagRow(c.them.flags)}${c.them.name}</span></div>
-      <div class="m-top"><b>${c.month}</b> · Bilateral meeting · ${c.me.name} × ${c.them.name}</div>
-      <div class="m-facts">${c.facts.map((f) => `<span>${f}</span>`).join('')}</div>
+      <div class="m-room" style="background-image:url('orbit-art/room-${ROOM[season(c.month)]}.webp')"></div><div class="m-shade"></div><div class="m-fx"></div>
+      <header class="m-head"><span class="m-brand">ORBIT ACCORD<small>Bilateral room</small></span><b>${c.month}</b></header>
+      <div class="m-title"><p class="m-eyebrow">Bilateral room · ${flagRow(c.them.flags)} ${c.them.name}</p><h2>${c.them.name} × ${c.me.name}</h2></div>
+      <aside class="m-facts"><p class="m-eyebrow">On the table</p>${c.facts.map((f) => `<span>${f}</span>`).join('')}</aside>
       <div class="m-chars">
-        <div class="slot left" data-who="me">${envoySVG(c.me.k, 'left')}<div class="pop"></div></div>
-        <div class="slot right" data-who="them">${envoySVG(c.them.k, 'right')}<div class="pop"></div></div>
+        <div class="slot left" data-who="them" data-art="${ART[c.them.k]}">${stillHTML(ART[c.them.k], 'left')}<span class="m-plate">${flagRow(c.them.flags)}${c.them.name}<small>${c.them.envoy}</small></span><div class="pop"></div></div>
+        <div class="slot right" data-who="me" data-art="envoy">${stillHTML('envoy', 'right')}<span class="m-plate">${flagRow(c.me.flags)}${c.me.name}<small>${c.me.envoy}</small></span><div class="pop"></div></div>
       </div>
       <div class="m-choices" hidden></div>
       <div class="m-box">
@@ -213,6 +219,8 @@ const Meeting = (() => {
   function face(who, mood) {
     const s = q(`.slot[data-who="${who}"]`);
     s.dataset.mood = mood;
+    const img = s.querySelector('.still');
+    if (img) img.src = stillSrc(s.dataset.art, mood);
   }
   function pop(who, sym) {
     const p = q(`.slot[data-who="${who}"] .pop`);
@@ -265,7 +273,7 @@ const Meeting = (() => {
     const box = q('.m-choices');
     box.innerHTML = ctx.deals.map((d, i) => `<button type="button" data-choice="${i}" style="--d:${i * 80}ms"><kbd>${i + 1}</kbd><span><b>${d.label}</b><small>${d.sub}</small></span><em>${d.pct}%</em></button>`).join('');
     box.hidden = false;
-    box.style.bottom = `${q('.m-box').offsetHeight + 28}px`;
+    box.style.setProperty("--above", `${q(".m-box").offsetHeight + 46}px`);
   }
   function choose(i) {
     if (waiting !== 'choice') return;
