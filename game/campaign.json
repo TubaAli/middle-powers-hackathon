@@ -7,7 +7,1387 @@
   "inputs": {
     "data/stress-tests.json": "f2b67e2d37948cab426942589984eac28596a3a514ee992074e7398c03b5b69f",
     "game/dialogue-authored.json": "8df4c408f7ea8797fc31643f64b0e064b91dcdd1907b953b9df3b356902b6a82",
-    "game/learning-notes.json": "305eefcf0750fb3588e77d7ab81df120aada9f2d400ba25d2a2d5158ac841ba9"
+    "game/learning-notes.json": "305eefcf0750fb3588e77d7ab81df120aada9f2d400ba25d2a2d5158ac841ba9",
+    "data/geopolitics.json": "ebcefd108284f7e9228e8d3bf8d66e481c05eb7d2710d06402d17fbcdc9122be"
+  },
+  "relations": {
+    "observed": "2026-11-01",
+    "countries": {
+      "US": {
+        "name": "United States",
+        "toUS": 2,
+        "toChina": -1,
+        "toEU": 0,
+        "summary": "Tariff-heavy unilateralism; managed truce with China while selectively loosening AI-chip sales; pressing allies for investment and export-control alignment."
+      },
+      "CN": {
+        "name": "China",
+        "toUS": -1,
+        "toChina": 2,
+        "toEU": -1,
+        "summary": "Uses rare-earth and dual-use export controls as leverage; truce with US, coercion of Japan, courts Korea, India, Canada and ASEAN."
+      },
+      "JP": {
+        "name": "Japan",
+        "toUS": 2,
+        "toChina": -2,
+        "toEU": 1,
+        "summary": "Firmly US-aligned under Takaichi; deep freeze with China over Taiwan remarks and export curbs; steady shuttle diplomacy with Korea."
+      },
+      "TW": {
+        "name": "Taiwan",
+        "toUS": 2,
+        "toChina": -2,
+        "toEU": 1,
+        "summary": "Locked into US tech alignment via $250bn chip investment deal and export-control alignment; under steady PRC military pressure."
+      },
+      "KR": {
+        "name": "South Korea",
+        "toUS": 1,
+        "toChina": 1,
+        "toEU": 1,
+        "summary": "Lee balances: US ally straining over $350bn investment terms and tariffs, while pursuing 'full restoration' with China and stable Japan ties."
+      },
+      "SG": {
+        "name": "Singapore",
+        "toUS": 1,
+        "toChina": 1,
+        "toEU": 1,
+        "summary": "Open-economy hedger: no retaliation against US tariffs, enforces US chip-smuggling cases, keeps close China economic ties."
+      },
+      "IN": {
+        "name": "India",
+        "toUS": 0,
+        "toChina": 0,
+        "toEU": 1,
+        "summary": "Multi-aligned: joined US Pax Silica tech pact but US trade deal unsigned and Russian-oil tariff threat; cautious thaw with China; EU FTA concluded."
+      },
+      "ID": {
+        "name": "Indonesia",
+        "toUS": 1,
+        "toChina": 1,
+        "toEU": 1,
+        "summary": "Prabowo hedges: signed US trade deal with mineral and third-country clauses, defence pact; nickel industry still China-built."
+      },
+      "MY": {
+        "name": "Malaysia",
+        "toUS": 1,
+        "toChina": 1,
+        "toEU": 0,
+        "summary": "Formally aligned with US export controls via 2025 trade pact, yet weighing Huawei Ascend chips for sovereign AI; classic hedger."
+      },
+      "TH": {
+        "name": "Thailand",
+        "toUS": 0,
+        "toChina": 1,
+        "toEU": 0,
+        "summary": "Anutin government near US tariff deal (~19%) but slow; closer to China; Cambodia border dispute strained US mediation."
+      },
+      "VN": {
+        "name": "Vietnam",
+        "toUS": 0,
+        "toChina": 1,
+        "toEU": 1,
+        "summary": "Bamboo diplomacy: warm party-to-party ties with Beijing, rail deals; US trade deal still unsigned over transshipment."
+      },
+      "AU": {
+        "name": "Australia",
+        "toUS": 2,
+        "toChina": 0,
+        "toEU": 1,
+        "summary": "Close US ally (AUKUS, minerals pact) while keeping a stabilised but tense trade relationship with China; Darwin Port dispute."
+      },
+      "CA": {
+        "name": "Canada",
+        "toUS": -2,
+        "toChina": 1,
+        "toEU": 1,
+        "summary": "Open trade war with US after talks collapsed; diversifying via China tariff reset and Europe."
+      },
+      "BR": {
+        "name": "Brazil",
+        "toUS": -1,
+        "toChina": 1,
+        "toEU": 1,
+        "summary": "Lula re-elected; tariff dispute with US easing but unresolved; minerals open to all incl. China; EU-Mercosur deal in force provisionally."
+      },
+      "MX": {
+        "name": "Mexico",
+        "toUS": 1,
+        "toChina": -1,
+        "toEU": 1,
+        "summary": "Sheinbaum cooperates with US on security and trade (tariffs on Chinese goods) but rejects US troops; USMCA under annual review."
+      },
+      "CL": {
+        "name": "Chile",
+        "toUS": 1,
+        "toChina": 0,
+        "toEU": 1,
+        "summary": "Kast government tilts to US on minerals and security while China remains top trade partner; joined Pax Silica."
+      },
+      "CO": {
+        "name": "Colombia",
+        "toUS": 1,
+        "toChina": 0,
+        "toEU": 0,
+        "summary": "Swung from Petro's clashes with Trump to pro-US de la Espriella government (from Aug 2026); still faces 12.5% US tariff."
+      },
+      "PE": {
+        "name": "Peru",
+        "toUS": 1,
+        "toChina": 0,
+        "toEU": 0,
+        "summary": "Fujimori government (from July 2026) courted by US on security; Chinese-owned Chancay port a live issue."
+      },
+      "EU": {
+        "name": "European Union",
+        "toUS": -1,
+        "toChina": -1,
+        "toEU": 2,
+        "summary": "Implemented the 15% tariff deal with the US despite Greenland threats; delayed parts of the AI Act; manages Chinese rare-earth leverage through a fast-track licence arrangement."
+      },
+      "UK": {
+        "name": "United Kingdom",
+        "toUS": 1,
+        "toChina": 0,
+        "toEU": 1,
+        "summary": "Close to the US but under trade pressure (Tech Prosperity Deal paused, digital-tax threats); pragmatic reset with China, including approval of the London mega-embassy."
+      },
+      "NL": {
+        "name": "Netherlands",
+        "toUS": 1,
+        "toChina": -1,
+        "toEU": 2,
+        "summary": "Squeezed between the US and China: seized control of Nexperia, faces US pressure to cut ASML's China sales further, and is now seeking to de-escalate with Beijing."
+      },
+      "DE": {
+        "name": "Germany",
+        "toUS": 1,
+        "toChina": 0,
+        "toEU": 2,
+        "summary": "Still US-aligned (joined Pax Silica) despite US troop cuts and higher car tariffs; Merz's pragmatic re-engagement with Beijing has dropped the 'systemic rival' language."
+      },
+      "BE": {
+        "name": "Belgium",
+        "toUS": 0,
+        "toChina": -1,
+        "toEU": 1,
+        "summary": "Hawkish on China's economic impact, cool toward Trump after Greenland ('not slaves'), and the main holdout in the EU on using frozen Russian assets at Euroclear."
+      },
+      "CH": {
+        "name": "Switzerland",
+        "toUS": 0,
+        "toChina": 0,
+        "toEU": 1,
+        "summary": "Neutral hedger moving closer to the EU (Bilaterals III signed) after a damaging US tariff saga: 39%, then 15%, then a Section 301 regime."
+      },
+      "DK": {
+        "name": "Denmark",
+        "toUS": -1,
+        "toChina": 0,
+        "toEU": 2,
+        "summary": "Hit hardest by Trump's Greenland push; defused it with a September 2026 trilateral security deal that expands US access without ceding sovereignty. Relations remain wary."
+      },
+      "FI": {
+        "name": "Finland",
+        "toUS": 1,
+        "toChina": 0,
+        "toEU": 2,
+        "summary": "Front-line NATO state focused on Russia (drone incursions, border restrictions); joined the US Pax Silica tech bloc; cautious toward China."
+      },
+      "IS": {
+        "name": "Iceland",
+        "toUS": 0,
+        "toChina": 0,
+        "toEU": 1,
+        "summary": "Voters narrowly rejected reopening EU accession talks; the government is still seeking closer security ties with the EU, under the shadow of Trump's Greenland threats."
+      },
+      "NO": {
+        "name": "Norway",
+        "toUS": 1,
+        "toChina": 0,
+        "toEU": 1,
+        "summary": "NATO ally that joined Pax Silica; keeps trade with China (new seafood protocol) open while calling China a growing security threat."
+      },
+      "SE": {
+        "name": "Sweden",
+        "toUS": 1,
+        "toChina": 0,
+        "toEU": 2,
+        "summary": "Joined Pax Silica and names China among its top security threats, but began a cautious diplomatic reset with Beijing in July 2026."
+      },
+      "EE": {
+        "name": "Estonia",
+        "toUS": 1,
+        "toChina": -1,
+        "toEU": 2,
+        "summary": "Russia hawk pushing tougher sanctions; presses China to stop supplying Russia's war economy; a drone was shot down over Estonia in May 2026."
+      },
+      "CZ": {
+        "name": "Czech Republic",
+        "toUS": 1,
+        "toChina": 0,
+        "toEU": 0,
+        "summary": "The Babiš government is sceptical of the EU and Ukraine aid (opted out of the Ukraine loan costs) and is making cautious, pragmatic moves toward China."
+      },
+      "PL": {
+        "name": "Poland",
+        "toUS": 2,
+        "toChina": 0,
+        "toEU": 1,
+        "summary": "Washington's favoured European ally: invited to the US-hosted 2026 G20, with the US pushing for permanent membership. Poland opposes Putin's G20 invitation."
+      },
+      "SA": {
+        "name": "Saudi Arabia",
+        "toUS": 2,
+        "toChina": 0,
+        "toEU": 0,
+        "summary": "Deep US security and AI alignment (Strategic Defense Agreement, F-35 sale, Nvidia chips for Humain) while using Chinese software, cloud and telecoms."
+      },
+      "AE": {
+        "name": "United Arab Emirates",
+        "toUS": 2,
+        "toChina": 0,
+        "toEU": 0,
+        "summary": "The closest US AI partner in the Gulf: moved into the A:5 export tier with licence-free advanced chips, a Pax Silica signatory, and hit by Iranian strikes during the Iran war."
+      },
+      "QA": {
+        "name": "Qatar",
+        "toUS": 2,
+        "toChina": 0,
+        "toEU": 0,
+        "summary": "Hosts Al Udeid and has pledged large US investments; a Pax Silica signatory; mediates DRC-M23 talks; came under Iranian fire during the 2026 Iran war."
+      },
+      "TR": {
+        "name": "Türkiye",
+        "toUS": 1,
+        "toChina": 0,
+        "toEU": 0,
+        "summary": "Balancing: warmer with Trump (sanctions relief and F-35 talk) while flirting with the SCO; its bid to join the EU SAFE defence fund is blocked by Greece."
+      },
+      "CD": {
+        "name": "DR Congo",
+        "toUS": 1,
+        "toChina": 0,
+        "toEU": 0,
+        "summary": "Trading minerals access for US security backing (Washington Accords, strategic minerals partnership); China still dominates its mining; war with Rwanda-backed M23 unresolved."
+      },
+      "KE": {
+        "name": "Kenya",
+        "toUS": 1,
+        "toChina": 1,
+        "toEU": 1,
+        "summary": "Openly multi-aligned: finalised a duty-free trade deal with China while negotiating US trade and critical-minerals deals. Ruto says Kenya won't choose sides."
+      },
+      "NG": {
+        "name": "Nigeria",
+        "toUS": 0,
+        "toChina": 1,
+        "toEU": 0,
+        "summary": "Turned Trump's threats over the killing of Christians into limited security cooperation, but faces US visa curbs and religious-freedom pressure; financial ties with China remain steady."
+      },
+      "RW": {
+        "name": "Rwanda",
+        "toUS": -2,
+        "toChina": 0,
+        "toEU": -1,
+        "summary": "Under escalating US sanctions (army in March, defence ministry in October 2026) for backing M23 in violation of the Washington Accords. Kagame is defiant."
+      },
+      "ZA": {
+        "name": "South Africa",
+        "toUS": -2,
+        "toChina": 1,
+        "toEU": 1,
+        "summary": "Frozen out of the US-hosted G20 and hit by aid cuts and visa curbs; deepening trade with China under Beijing's zero-tariff scheme."
+      }
+    },
+    "pairs": [
+      {
+        "a": "CN",
+        "b": "JP",
+        "score": -2,
+        "why": "Export bans, entity listings and diplomatic freeze over Takaichi Taiwan remarks.",
+        "date": "2026-02",
+        "url": "https://www.twobirds.com/en/insights/2026/china/chinese-export-controls-mofcom-targets-japanese-entities-with-new-dual-use-restrictions"
+      },
+      {
+        "a": "US",
+        "b": "CN",
+        "score": -1,
+        "why": "Managed rivalry: tariff truce extended to Jan 2027; chip controls and rare-earth leverage unresolved.",
+        "date": "2026-09",
+        "url": "https://www.cnbc.com/2026/09/25/trump-xi-summit-takeaways.html"
+      },
+      {
+        "a": "CN",
+        "b": "TW",
+        "score": -2,
+        "why": "Live-fire drills, pressure on Lai government.",
+        "date": "2026-10",
+        "url": "https://www.usnews.com/news/world/articles/2026-10-11/taiwan-says-it-is-closely-monitoring-series-of-chinese-live-fire-drills"
+      },
+      {
+        "a": "US",
+        "b": "TW",
+        "score": 2,
+        "why": "$250bn chip investment deal, export-control alignment, record arms sale.",
+        "date": "2026-01",
+        "url": "https://www.commerce.gov/news/fact-sheets/2026/01/fact-sheet-restoring-american-semiconductor-manufacturing-leadership"
+      },
+      {
+        "a": "US",
+        "b": "JP",
+        "score": 2,
+        "why": "Alliance and $550bn investment vehicle; Takaichi-Trump summits.",
+        "date": "2026-09",
+        "url": "https://en.sedaily.com/international/2026/09/21/takaichi-to-meet-trump-touting-550-billion-us-investment"
+      },
+      {
+        "a": "US",
+        "b": "CA",
+        "score": -2,
+        "why": "US 50% tariffs and Canadian counter-tariffs; talks collapsed.",
+        "date": "2026-09",
+        "url": "https://www.nbcnews.com/business/economy/canada-tariffs-trump-carney-rcna596573"
+      },
+      {
+        "a": "US",
+        "b": "MX",
+        "score": 0,
+        "why": "Security cooperation but USMCA not extended; tariff pressure.",
+        "date": "2026-07",
+        "url": "https://www.cnbc.com/2026/07/01/trump-usmca-canada-mexico-trade-treaty.html"
+      },
+      {
+        "a": "US",
+        "b": "KR",
+        "score": 1,
+        "why": "Allies, but friction over $350bn investment terms and tariff threats.",
+        "date": "2026-09",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-18/korea-s-lee-says-350-billion-us-deal-causing-sleepless-nights"
+      },
+      {
+        "a": "US",
+        "b": "IN",
+        "score": 0,
+        "why": "Pax Silica signed but trade deal unsigned; Russian-oil tariff threat.",
+        "date": "2026-09",
+        "url": "https://www.business-standard.com/amp/world-news/trump-signs-russia-sanctions-bill-opens-door-to-new-tariffs-on-oil-buyers-126091900107_1.html"
+      },
+      {
+        "a": "US",
+        "b": "BR",
+        "score": -1,
+        "why": "Lingering tariffs; Section 301 proposals; partial easing after May summit.",
+        "date": "2026-06",
+        "url": "https://www.aljazeera.com/economy/2026/6/3/lula-says-brazil-cannot-accept-treatment-after-new-us-tariffs-proposed"
+      },
+      {
+        "a": "US",
+        "b": "AU",
+        "score": 2,
+        "why": "AUKUS proceeding, minerals partnership.",
+        "date": "2026-04",
+        "url": "https://www.abc.net.au/news/2026-04-24/us-navy-awards-contract-for-aukus-submarine-deal/106601042"
+      },
+      {
+        "a": "US",
+        "b": "ID",
+        "score": 1,
+        "why": "Reciprocal trade deal with minerals and alignment clauses.",
+        "date": "2026-02",
+        "url": "https://www.whitehouse.gov/fact-sheets/2026/02/fact-sheet-trump-administration-finalizes-trade-deal-with-indonesia/"
+      },
+      {
+        "a": "US",
+        "b": "MY",
+        "score": 1,
+        "why": "Trade pact requires export-control alignment; Huawei chip question tests it.",
+        "date": "2026-07",
+        "url": "https://www.scmp.com/week-asia/politics/article/3366792/will-malaysias-potential-huawei-ai-deal-risk-clash-over-us-trade-pact"
+      },
+      {
+        "a": "US",
+        "b": "SG",
+        "score": 1,
+        "why": "Cooperation on Nvidia smuggling enforcement; tariff grievances muted.",
+        "date": "2026-07",
+        "url": "https://thediplomat.com/2026/07/singaporean-police-seize-42m-bungalow-in-nvidia-chip-smuggling-probe/"
+      },
+      {
+        "a": "US",
+        "b": "CL",
+        "score": 1,
+        "why": "Critical-minerals and security agreements under Kast.",
+        "date": "2026-04",
+        "url": "https://www.riotimesonline.com/chile-us-mining-security-agreements-kast-dinanno-april-2026/"
+      },
+      {
+        "a": "US",
+        "b": "CO",
+        "score": 1,
+        "why": "New de la Espriella government rebuilding ties after Petro sanctions.",
+        "date": "2026-08",
+        "url": "https://www.latintimes.com/colombia-de-la-espriella-petro-policies-us-ties-600704"
+      },
+      {
+        "a": "US",
+        "b": "PE",
+        "score": 1,
+        "why": "Fujimori seen as security partner against cartels and Chinese influence.",
+        "date": "2026-08",
+        "url": "https://www.washingtontimes.com/news/2026/aug/27/new-peruvian-president-could-key-us-ally-drug-cartels-chinese/"
+      },
+      {
+        "a": "US",
+        "b": "TH",
+        "score": 0,
+        "why": "Tariff deal agreed in principle, unsigned; Cambodia linkage friction.",
+        "date": "2026-10",
+        "url": "https://thediplomat.com/2026/10/trade-agreement-with-us-close-to-completion-thai-prime-minister-says/"
+      },
+      {
+        "a": "US",
+        "b": "VN",
+        "score": 0,
+        "why": "Trade deal 'very close' but transshipment dispute unresolved.",
+        "date": "2026-09",
+        "url": "https://ground.news/article/vietnam-leader-says-us-deal-close-denies-re-routing-china-goods"
+      },
+      {
+        "a": "CN",
+        "b": "KR",
+        "score": 1,
+        "why": "Lee state visit; aim of full restoration of ties.",
+        "date": "2026-01",
+        "url": "https://www.fmprc.gov.cn/eng/xw/zyxw/202601/t20260105_11806810.html"
+      },
+      {
+        "a": "CN",
+        "b": "IN",
+        "score": 0,
+        "why": "Cautious thaw: Xi visits Delhi, but border and trade gaps remain.",
+        "date": "2026-09",
+        "url": "https://www.washingtonpost.com/world/2026/09/12/india-china-brics/0d102066-aeb5-11f1-b498-8697f35a6743_story.html"
+      },
+      {
+        "a": "CN",
+        "b": "CA",
+        "score": 1,
+        "why": "EV-canola tariff reset deal.",
+        "date": "2026-01",
+        "url": "https://www.cbc.ca/news/politics/carney-meeting-xi-china-9.7047880"
+      },
+      {
+        "a": "CN",
+        "b": "AU",
+        "score": 0,
+        "why": "Stabilised trade; Darwin Port and security tensions.",
+        "date": "2026-01",
+        "url": "https://www.aljazeera.com/news/2026/1/29/china-warns-australia-against-taking-back-control-of-key-port-in-darwin"
+      },
+      {
+        "a": "CN",
+        "b": "MX",
+        "score": -1,
+        "why": "Mexico's 50% tariffs on Chinese goods; Beijing protests.",
+        "date": "2026-01",
+        "url": "https://mexiconewsdaily.com/news/china-mexico-50-tariffs/"
+      },
+      {
+        "a": "CN",
+        "b": "VN",
+        "score": 1,
+        "why": "Party ties, rail and infrastructure deals; sea dispute muted.",
+        "date": "2026-04",
+        "url": "https://thediplomat.com/2026/04/vietnams-top-leader-concludes-4-day-state-visit-to-china/"
+      },
+      {
+        "a": "CN",
+        "b": "MY",
+        "score": 1,
+        "why": "Malaysia weighing Huawei AI chips.",
+        "date": "2026-07",
+        "url": "https://www.scmp.com/week-asia/politics/article/3366792/will-malaysias-potential-huawei-ai-deal-risk-clash-over-us-trade-pact"
+      },
+      {
+        "a": "CN",
+        "b": "BR",
+        "score": 1,
+        "why": "Lula keeps minerals open to Chinese investment.",
+        "date": "2026-05",
+        "url": "https://www.globaltimes.cn/page/202605/1360552.shtml"
+      },
+      {
+        "a": "CN",
+        "b": "PE",
+        "score": 0,
+        "why": "Chancay port under scrutiny from new Peruvian government and US.",
+        "date": "2026-04",
+        "url": "https://www.csmonitor.com/World/Americas/2026/0421/peru-elections-china-chancay-fujimori"
+      },
+      {
+        "a": "CN",
+        "b": "ID",
+        "score": 1,
+        "why": "Chinese capital dominates nickel processing; partnership fragile.",
+        "date": "2026-04",
+        "url": "https://eastasiaforum.org/2026/04/28/indonesia-china-partnership-more-fragile-than-it-appears/"
+      },
+      {
+        "a": "JP",
+        "b": "KR",
+        "score": 1,
+        "why": "Regular shuttle summits; critical-minerals cooperation.",
+        "date": "2026-05",
+        "url": "https://thediplomat.com/2026/05/whats-on-the-agenda-for-the-3rd-lee-takaichi-summit/"
+      },
+      {
+        "a": "SG",
+        "b": "CN",
+        "score": 1,
+        "why": "Singapore keeps open trade, refuses bloc choice.",
+        "date": "2026-10",
+        "url": "https://www.forbes.com/sites/jonathanburgos/2026/10/08/forbes-global-ceo-conference-2026-singapore-aims-to-tap-ai-boom-to-build-new-capabilities-create-better-jobs-says-pm-wong/"
+      },
+      {
+        "a": "TH",
+        "b": "CN",
+        "score": 1,
+        "why": "Anutin government closer to Beijing amid Cambodia dispute.",
+        "date": "2025-11",
+        "url": "https://thediplomat.com/2025/11/thailand-says-us-trade-talks-still-on-track-despite-suspension-of-cambodia-peace-deal/"
+      },
+      {
+        "a": "RW",
+        "b": "US",
+        "score": -2,
+        "why": "US sanctioned Rwanda's army and defence ministry over M23 support",
+        "date": "2026-10",
+        "url": "https://www.hrw.org/news/2026/10/30/new-us-sanctions-target-rwandas-abusive-role-in-eastern-congo"
+      },
+      {
+        "a": "CD",
+        "b": "RW",
+        "score": -2,
+        "why": "Rwanda-backed M23 still holds eastern DRC; Washington Accords stalled",
+        "date": "2026-08",
+        "url": "https://www.cfr.org/global-conflict-tracker/conflict/violence-democratic-republic-congo"
+      },
+      {
+        "a": "ZA",
+        "b": "US",
+        "score": -2,
+        "why": "Excluded from US-hosted G20; aid cuts, tariffs, visa curbs",
+        "date": "2026-01",
+        "url": "https://allafrica.com/stories/202601270421.html"
+      },
+      {
+        "a": "DK",
+        "b": "US",
+        "score": -1,
+        "why": "Greenland annexation push; defused by Sept 2026 security deal",
+        "date": "2026-09",
+        "url": "https://www.washingtonpost.com/world/2026/09/22/greenland-flag-trump-denmark-us/8ed59402-b66f-11f1-94cb-d3d8f22a8c8b_story.html"
+      },
+      {
+        "a": "NL",
+        "b": "CN",
+        "score": -1,
+        "why": "Nexperia seizure, $8bn claim, Chinese court asset freezes; tentative de-escalation",
+        "date": "2026-07",
+        "url": "https://www.japantimes.co.jp/news/2026/07/08/world/politics/netherlands-nexperia-china/"
+      },
+      {
+        "a": "NL",
+        "b": "US",
+        "score": 1,
+        "why": "Pax Silica signatory, but US pressing for a tougher ASML China ban",
+        "date": "2026-08",
+        "url": "https://nltimes.nl/2026/08/20/us-preparing-force-netherlands-ban-asml-selling-china"
+      },
+      {
+        "a": "EU",
+        "b": "US",
+        "score": -1,
+        "why": "15% tariff deal in force but strained by Greenland and new tariffs",
+        "date": "2026-07",
+        "url": "https://commission.europa.eu/topics/trade/eu-us-trade-deal_en"
+      },
+      {
+        "a": "EU",
+        "b": "CN",
+        "score": -1,
+        "why": "Rare-earth leverage; 'managed access' arrangement, entity listings",
+        "date": "2026-10",
+        "url": "https://www.techtimes.com/articles/328903/20261013/chinas-october-industrial-doctrine-formalizes-rare-earth-leverage-eu-secured-managed-access.htm"
+      },
+      {
+        "a": "DE",
+        "b": "US",
+        "score": 0,
+        "why": "US troop cuts and 25% auto tariffs after Merz criticised Iran war",
+        "date": "2026-05",
+        "url": "https://www.cnn.com/2026/05/01/politics/us-troop-withdrawal-germany-trump-merz"
+      },
+      {
+        "a": "DE",
+        "b": "CN",
+        "score": 0,
+        "why": "Merz's pragmatic Beijing visit restored dialogue, modest outcomes",
+        "date": "2026-02",
+        "url": "https://www.china-briefing.com/news/germany-china-relations-under-merz-what-the-first-official-visit-to-beijing-means-for-business/"
+      },
+      {
+        "a": "UK",
+        "b": "US",
+        "score": 1,
+        "why": "Special relationship but tech deal paused and digital-tax tariff threats",
+        "date": "2026-04",
+        "url": "https://www.unilad.com/news/politics/trump-starmer-uk-tariffs-tech-359412-20260424"
+      },
+      {
+        "a": "UK",
+        "b": "CN",
+        "score": 0,
+        "why": "Starmer reset: embassy approved, Beijing visit, visa-free travel",
+        "date": "2026-01",
+        "url": "https://www.aljazeera.com/news/2026/1/29/why-is-the-uks-keir-starmer-in-china-and-what-does-he-want-to-achieve"
+      },
+      {
+        "a": "AE",
+        "b": "US",
+        "score": 2,
+        "why": "A:5 export tier, licence-free AI chips, Major Defense Partner",
+        "date": "2026-07",
+        "url": "https://www.bis.gov/press-release/department-commerce-eases-export-controls-uae"
+      },
+      {
+        "a": "SA",
+        "b": "US",
+        "score": 2,
+        "why": "Major Non-NATO Ally, defence pact, F-35 sale, Nvidia chips for Humain",
+        "date": "2026-09",
+        "url": "https://www.cnbc.com/2026/09/18/trump-saudi-arabia-f-35-houthis-iran-war.html"
+      },
+      {
+        "a": "SA",
+        "b": "CN",
+        "score": 0,
+        "why": "Chinese AI models, cloud and telecoms, but US chips for frontier compute",
+        "date": "2026-09",
+        "url": "https://www.semafor.com/article/09/04/2026/chinese-tech-firms-deepen-ties-in-saudi-arabia"
+      },
+      {
+        "a": "QA",
+        "b": "US",
+        "score": 2,
+        "why": "Hosts Al Udeid, Pax Silica signatory, big investment pledges",
+        "date": "2026-01",
+        "url": "https://en.wikipedia.org/wiki/Pax_Silica"
+      },
+      {
+        "a": "TR",
+        "b": "US",
+        "score": 1,
+        "why": "Trump pledged sanctions relief and to consider F-35 sales",
+        "date": "2026-07",
+        "url": "https://www.defensenews.com/global/europe/2026/07/07/us-will-lift-sanctions-on-turkey-possibly-sell-f-35-fighter-jets-trump-says/"
+      },
+      {
+        "a": "TR",
+        "b": "EU",
+        "score": 0,
+        "why": "SAFE defence-fund bid stalled by Greek veto threat",
+        "date": "2026-10",
+        "url": "https://greekcitytimes.com/2026/10/20/safe-defence-fund"
+      },
+      {
+        "a": "PL",
+        "b": "US",
+        "score": 2,
+        "why": "US invited Poland to G20 and is pushing for permanent membership",
+        "date": "2026-10",
+        "url": "https://www.polsatnews.pl/wiadomosc/2026-10-31/marco-rubio-z-waznymi-slowami-o-polsce-powolal-sie-na-donalda-trumpa/"
+      },
+      {
+        "a": "ZA",
+        "b": "CN",
+        "score": 1,
+        "why": "Zero-tariff access on all lines; trade up ~24%",
+        "date": "2026-10",
+        "url": "https://www.africanews.com/2026/10/23/south-africas-bilateral-trade-with-china-surges-after-zero-tariff-deal/"
+      },
+      {
+        "a": "KE",
+        "b": "CN",
+        "score": 1,
+        "why": "Finalised duty-free trade deal covering 98% of exports",
+        "date": "2026-03",
+        "url": "https://www.polity.org.za/article/kenya-finalises-trade-deal-with-china-president-says-2026-03-25"
+      },
+      {
+        "a": "KE",
+        "b": "US",
+        "score": 1,
+        "why": "Negotiating trade and critical-minerals deals; not yet signed",
+        "date": "2026-06",
+        "url": "https://www.cnbcafrica.com/2026/kenya-us-close-in-on-critical-minerals-deal-ruto-says"
+      },
+      {
+        "a": "CD",
+        "b": "US",
+        "score": 1,
+        "why": "Strategic minerals partnership; US-backed Orion bid for cobalt assets",
+        "date": "2026-02",
+        "url": "https://www.metaltechnews.com/story/2026/02/04/tech-metals/orion-eyes-stake-in-glencore-drc-mines/2636.html"
+      },
+      {
+        "a": "NG",
+        "b": "US",
+        "score": 0,
+        "why": "Religious-freedom pressure and visa curbs alongside counterterror cooperation",
+        "date": "2026-08",
+        "url": "https://www.riotimesonline.com/nigeria-united-states-relations-explained-2026/"
+      },
+      {
+        "a": "CH",
+        "b": "US",
+        "score": 0,
+        "why": "Tariff whiplash 39% to 15%; Section 301 duties since July",
+        "date": "2026-07",
+        "url": "https://www.seco.admin.ch/en/swiss-us-trade-relations"
+      },
+      {
+        "a": "CH",
+        "b": "EU",
+        "score": 1,
+        "why": "Bilaterals III package signed March 2026, ratification pending",
+        "date": "2026-03",
+        "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-greenlights-signing-of-package-of-agreements-with-switzerland/"
+      },
+      {
+        "a": "IS",
+        "b": "EU",
+        "score": 1,
+        "why": "Voters rejected accession talks, but close EEA and security partner",
+        "date": "2026-08",
+        "url": "https://www.cnbc.com/2026/08/30/iceland-eu-accession-referendum-result.html"
+      },
+      {
+        "a": "BE",
+        "b": "EU",
+        "score": 1,
+        "why": "Blocking use of Russian assets at Euroclear without full risk-sharing",
+        "date": "2026-10",
+        "url": "https://kyivindependent.com/belgian-pm-raises-stakes-on-kyiv-lifeline-renewing-opposition-to-russian-frozen-assets-reparations-loan/"
+      },
+      {
+        "a": "BE",
+        "b": "CN",
+        "score": -1,
+        "why": "De Wever says China is damaging Europe's economy",
+        "date": "2026-06",
+        "url": "https://www.globaltimes.cn/page/202606/1363277.shtml"
+      },
+      {
+        "a": "CZ",
+        "b": "EU",
+        "score": 0,
+        "why": "Babiš opted out of Ukraine loan costs, sceptical of aid",
+        "date": "2025-12",
+        "url": "https://www.marketscreener.com/news/czech-pm-babis-government-wins-confidence-vote-as-policies-on-budget-ukraine-shift-ce7e58ded88ef720"
+      },
+      {
+        "a": "EE",
+        "b": "CN",
+        "score": -1,
+        "why": "Presses China to stop supplying Russia; dual-use concerns",
+        "date": "2026-03",
+        "url": "https://www.eurointegration.com.ua/eng/news/2026/03/5/7232556/"
+      },
+      {
+        "a": "NO",
+        "b": "CN",
+        "score": 0,
+        "why": "Seafood deal signed while calling China a growing security threat",
+        "date": "2026-10",
+        "url": "https://www.globaltimes.cn/page/202610/1373344.shtml"
+      },
+      {
+        "a": "SE",
+        "b": "CN",
+        "score": 0,
+        "why": "Cautious reset after years of tension; China still on threat list",
+        "date": "2026-07",
+        "url": "https://www.nordiskpost.com/2026/07/04/chinas-wang-yi-visits-sweden/"
+      },
+      {
+        "a": "QA",
+        "b": "CD",
+        "score": 1,
+        "why": "Qatar mediates DRC-M23 Doha framework talks",
+        "date": "2026-08",
+        "url": "https://www.africanews.com/2026/08/24/drc-m23-agree-peace-roadmap-as-doha-talks-seek-to-regain-momentum/"
+      },
+      {
+        "a": "EU",
+        "b": "RW",
+        "score": -1,
+        "why": "European Parliament voted to suspend EU-Rwanda minerals MoU",
+        "date": "2026-02",
+        "url": "https://kwachanews.com/writing/drc-rwanda-washington-accords-minerals-zambia"
+      },
+      {
+        "a": "FI",
+        "b": "US",
+        "score": 1,
+        "why": "Pax Silica signatory and NATO front-line ally",
+        "date": "2026-04",
+        "url": "https://en.wikipedia.org/wiki/Pax_Silica"
+      },
+      {
+        "a": "JP",
+        "b": "TW",
+        "score": 1,
+        "why": "Takaichi said a Taiwan crisis could threaten Japan; she refused to retract.",
+        "date": "2025-11",
+        "url": "https://www.gmfus.org/news/japans-takaichi-stands-firm-taiwan"
+      }
+    ],
+    "euMembers": [
+      "BE",
+      "CZ",
+      "DK",
+      "EE",
+      "FI",
+      "DE",
+      "NL",
+      "PL",
+      "SE"
+    ],
+    "news": [
+      {
+        "date": "2026-10-28",
+        "headline": "US sanctions Rwanda's defence ministry over M23 rebel support",
+        "countries": [
+          "US",
+          "RW",
+          "CD"
+        ],
+        "kind": "tension",
+        "url": "https://www.hrw.org/news/2026/10/30/new-us-sanctions-target-rwandas-abusive-role-in-eastern-congo"
+      },
+      {
+        "date": "2026-10-16",
+        "headline": "China drafts export curbs on 23 AI and chip technologies",
+        "countries": [
+          "CN"
+        ],
+        "kind": "controls",
+        "url": "https://www.whitecase.com/insight-alert/china-proposes-new-export-controls-artificial-intelligence-biopharma-and-photovoltaic"
+      },
+      {
+        "date": "2026-10-09",
+        "headline": "EU and China agree fast-track rare-earth licences, controls stay",
+        "countries": [
+          "EU",
+          "CN"
+        ],
+        "kind": "controls",
+        "url": "https://www.techtimes.com/articles/328903/20261013/chinas-october-industrial-doctrine-formalizes-rare-earth-leverage-eu-secured-managed-access.htm"
+      },
+      {
+        "date": "2026-10-06",
+        "headline": "Takaichi seeks stable China ties but freeze persists",
+        "countries": [
+          "JP",
+          "CN"
+        ],
+        "kind": "tension",
+        "url": "https://www.taipeitimes.com/News/world/archives/2026/10/06/2003865487"
+      },
+      {
+        "date": "2026-09-25",
+        "headline": "Trump and Xi extend trade truce to January 2027",
+        "countries": [
+          "US",
+          "CN"
+        ],
+        "kind": "deal",
+        "url": "https://www.cnbc.com/2026/09/25/trump-xi-summit-takeaways.html"
+      },
+      {
+        "date": "2026-09-22",
+        "headline": "US, Denmark, Greenland sign deal expanding US Arctic military access",
+        "countries": [
+          "US",
+          "DK"
+        ],
+        "kind": "deal",
+        "url": "https://www.washingtonpost.com/world/2026/09/22/greenland-flag-trump-denmark-us/8ed59402-b66f-11f1-94cb-d3d8f22a8c8b_story.html"
+      },
+      {
+        "date": "2026-09-18",
+        "headline": "US law threatens 100% tariffs on Russian oil buyers",
+        "countries": [
+          "US",
+          "IN",
+          "CN"
+        ],
+        "kind": "tension",
+        "url": "https://www.business-standard.com/amp/world-news/trump-signs-russia-sanctions-bill-opens-door-to-new-tariffs-on-oil-buyers-126091900107_1.html"
+      },
+      {
+        "date": "2026-09-18",
+        "headline": "US advances $24bn F-35 sale to Saudi Arabia",
+        "countries": [
+          "US",
+          "SA"
+        ],
+        "kind": "deal",
+        "url": "https://www.cnbc.com/2026/09/18/trump-saudi-arabia-f-35-houthis-iran-war.html"
+      },
+      {
+        "date": "2026-09-12",
+        "headline": "Xi visits India, Modi calls for 'three mutuals'",
+        "countries": [
+          "CN",
+          "IN"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.washingtonpost.com/world/2026/09/12/india-china-brics/0d102066-aeb5-11f1-b498-8697f35a6743_story.html"
+      },
+      {
+        "date": "2026-09-08",
+        "headline": "Canada hits back with tariffs on US goods",
+        "countries": [
+          "CA",
+          "US"
+        ],
+        "kind": "tension",
+        "url": "https://www.nbcnews.com/business/economy/canada-tariffs-trump-carney-rcna596573"
+      },
+      {
+        "date": "2026-09-03",
+        "headline": "Saudi Humain launches AI model built on China's MiniMax",
+        "countries": [
+          "SA",
+          "CN"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-03/saudi-arabia-s-humain-unveils-ai-model-based-on-china-s-minimax"
+      },
+      {
+        "date": "2026-08-29",
+        "headline": "Iceland votes against reopening EU membership talks",
+        "countries": [
+          "IS",
+          "EU"
+        ],
+        "kind": "tension",
+        "url": "https://www.cnbc.com/2026/08/30/iceland-eu-accession-referendum-result.html"
+      },
+      {
+        "date": "2026-08-22",
+        "headline": "US 50% tariffs on Canada begin as talks collapse",
+        "countries": [
+          "US",
+          "CA"
+        ],
+        "kind": "tension",
+        "url": "https://www.washingtonpost.com/business/2026/08/22/new-50-percent-tariffs-canada-go-into-effect-after-deal-with-us-falls-through/"
+      },
+      {
+        "date": "2026-08-20",
+        "headline": "US presses Dutch for near-total ASML chip-tool ban on China",
+        "countries": [
+          "US",
+          "NL",
+          "CN"
+        ],
+        "kind": "controls",
+        "url": "https://nltimes.nl/2026/08/20/us-preparing-force-netherlands-ban-asml-selling-china"
+      },
+      {
+        "date": "2026-08-07",
+        "headline": "Colombia's new president pivots back toward Washington",
+        "countries": [
+          "CO",
+          "US"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.globalsecurity.org/military/library/news/2026/08/mil-260807-state02.htm"
+      },
+      {
+        "date": "2026-07-28",
+        "headline": "Fujimori sworn in as Peru weighs Chancay port pressure",
+        "countries": [
+          "PE",
+          "US",
+          "CN"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.washingtontimes.com/news/2026/aug/27/new-peruvian-president-could-key-us-ally-drug-cartels-chinese/"
+      },
+      {
+        "date": "2026-07-24",
+        "headline": "US slaps 10-12.5% forced-labor tariffs on 60 economies",
+        "countries": [
+          "US",
+          "CN",
+          "JP",
+          "KR",
+          "VN",
+          "TH",
+          "SG",
+          "AU",
+          "BR",
+          "CL",
+          "CO",
+          "PE",
+          "IN",
+          "ID",
+          "MY",
+          "CA",
+          "MX",
+          "TW"
+        ],
+        "kind": "tension",
+        "url": "https://taxnews.ey.com/news/2026-1607-ustr-finalizes-section-301-forced-labor-tariffs-on-60-economies-additional-tariffs-of-10-percent-or-125-percent-take-effect-24-july-2026"
+      },
+      {
+        "date": "2026-07-24",
+        "headline": "New US Section 301 tariffs replace expired emergency duties",
+        "countries": [
+          "US",
+          "CH",
+          "QA",
+          "NG",
+          "ZA"
+        ],
+        "kind": "tension",
+        "url": "https://www.americanbar.org/groups/public_contract_law/resources/procurement-lawyer/2026-fall/ieepa-tariffs-struck-down-replacement-tariffs-expired/"
+      },
+      {
+        "date": "2026-07-10",
+        "headline": "UAE joins US inner export tier, gets licence-free AI chips",
+        "countries": [
+          "US",
+          "AE"
+        ],
+        "kind": "controls",
+        "url": "https://www.bis.gov/press-release/department-commerce-eases-export-controls-uae"
+      },
+      {
+        "date": "2026-07-08",
+        "headline": "Dutch trade minister in Beijing to defuse Nexperia chip feud",
+        "countries": [
+          "NL",
+          "CN"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.japantimes.co.jp/news/2026/07/08/world/politics/netherlands-nexperia-china/"
+      },
+      {
+        "date": "2026-07-07",
+        "headline": "Trump vows to lift Türkiye sanctions, weighs F-35 sale",
+        "countries": [
+          "US",
+          "TR"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.defensenews.com/global/europe/2026/07/07/us-will-lift-sanctions-on-turkey-possibly-sell-f-35-fighter-jets-trump-says/"
+      },
+      {
+        "date": "2026-07-01",
+        "headline": "US refuses to extend USMCA, opts for annual reviews",
+        "countries": [
+          "US",
+          "CA",
+          "MX"
+        ],
+        "kind": "tension",
+        "url": "https://www.cnbc.com/2026/07/01/trump-usmca-canada-mexico-trade-treaty.html"
+      },
+      {
+        "date": "2026-07-01",
+        "headline": "EU-US 15% tariff deal enters into force",
+        "countries": [
+          "EU",
+          "US"
+        ],
+        "kind": "deal",
+        "url": "https://commission.europa.eu/topics/trade/eu-us-trade-deal_en"
+      },
+      {
+        "date": "2026-06-29",
+        "headline": "EU formally delays AI Act high-risk rules to late 2027",
+        "countries": [
+          "EU"
+        ],
+        "kind": "controls",
+        "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-omnibus-vii-deadline-delay-20260/"
+      },
+      {
+        "date": "2026-06-26",
+        "headline": "Chile joins US-led Pax Silica tech supply-chain pact",
+        "countries": [
+          "CL",
+          "US"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.bhfs.com/insight/state-department-expands-pax-silica-initiative-at-2026-summit/"
+      },
+      {
+        "date": "2026-06-22",
+        "headline": "China blacklists US rare-earth firms MP Materials, USA Rare Earth",
+        "countries": [
+          "CN",
+          "US"
+        ],
+        "kind": "controls",
+        "url": "https://www.miningweekly.com/article/china-places-two-us-rare-earths-producers-on-export-control-list-2026-06-22"
+      },
+      {
+        "date": "2026-06-15",
+        "headline": "Germany, Netherlands and EU sign US-led Pax Silica chip pact",
+        "countries": [
+          "US",
+          "DE",
+          "NL",
+          "EU"
+        ],
+        "kind": "deal",
+        "url": "https://www.bhfs.com/insight/state-department-expands-pax-silica-initiative-at-2026-summit/"
+      },
+      {
+        "date": "2026-05-15",
+        "headline": "Trump in Beijing; US clears Nvidia H200 sales to China",
+        "countries": [
+          "US",
+          "CN"
+        ],
+        "kind": "deal",
+        "url": "https://www.cnbc.com/2026/05/15/the-tech-download-trump-xi-talks-chips-rare-earths.html"
+      },
+      {
+        "date": "2026-05-07",
+        "headline": "Lula and Trump ease tariff feud at White House",
+        "countries": [
+          "BR",
+          "US"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.france24.com/en/americas/20260508-lula-says-white-house-talks-with-trump-helped-ease-tariff-tensions"
+      },
+      {
+        "date": "2026-05-01",
+        "headline": "US pulls 5,000 troops from Germany, hikes EU car tariffs",
+        "countries": [
+          "US",
+          "DE",
+          "EU"
+        ],
+        "kind": "tension",
+        "url": "https://www.cnn.com/2026/05/01/politics/us-troop-withdrawal-germany-trump-merz"
+      },
+      {
+        "date": "2026-04-24",
+        "headline": "First major AUKUS submarine contract awarded",
+        "countries": [
+          "AU",
+          "US"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.abc.net.au/news/2026-04-24/us-navy-awards-contract-for-aukus-submarine-deal/106601042"
+      },
+      {
+        "date": "2026-04-14",
+        "headline": "To Lam's Beijing visit yields 32 deals and rail plans",
+        "countries": [
+          "VN",
+          "CN"
+        ],
+        "kind": "deal",
+        "url": "https://thediplomat.com/2026/04/vietnams-top-leader-concludes-4-day-state-visit-to-china/"
+      },
+      {
+        "date": "2026-03-25",
+        "headline": "Kenya seals duty-free trade deal with China",
+        "countries": [
+          "KE",
+          "CN"
+        ],
+        "kind": "deal",
+        "url": "https://www.polity.org.za/article/kenya-finalises-trade-deal-with-china-president-says-2026-03-25"
+      },
+      {
+        "date": "2026-03-02",
+        "headline": "US sanctions Rwandan army for breaching Washington peace accords",
+        "countries": [
+          "US",
+          "RW",
+          "CD"
+        ],
+        "kind": "tension",
+        "url": "https://home.treasury.gov/news/press-releases/sb0411"
+      },
+      {
+        "date": "2026-03-02",
+        "headline": "Switzerland and EU sign new bilateral agreements package",
+        "countries": [
+          "CH",
+          "EU"
+        ],
+        "kind": "deal",
+        "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-greenlights-signing-of-package-of-agreements-with-switzerland/"
+      },
+      {
+        "date": "2026-02-28",
+        "headline": "US-Israeli strikes on Iran trigger missile attacks on Gulf states",
+        "countries": [
+          "US",
+          "AE",
+          "QA",
+          "SA"
+        ],
+        "kind": "tension",
+        "url": "https://www.aljazeera.com/news/2026/3/1/us-israel-attacks-on-iran-death-toll-and-injuries-live-tracker"
+      },
+      {
+        "date": "2026-02-25",
+        "headline": "Merz takes 30 CEOs to Beijing, seeks steadier China ties",
+        "countries": [
+          "DE",
+          "CN"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.aljazeera.com/news/2026/2/25/germany-merz-arrives-in-china-for-two-day-visit-with-focus-on-trade"
+      },
+      {
+        "date": "2026-02-20",
+        "headline": "Supreme Court strikes down Trump's emergency tariffs",
+        "countries": [
+          "US"
+        ],
+        "kind": "controls",
+        "url": "https://www.bradley.com/insights/publications/2026/02/supreme-court-strikes-down-ieepa-tariffs-key-takeaways-and-next-steps-for-businesses"
+      },
+      {
+        "date": "2026-02-20",
+        "headline": "US and Indonesia seal trade deal with minerals access",
+        "countries": [
+          "US",
+          "ID"
+        ],
+        "kind": "deal",
+        "url": "https://www.whitehouse.gov/fact-sheets/2026/02/fact-sheet-trump-administration-finalizes-trade-deal-with-indonesia/"
+      },
+      {
+        "date": "2026-02-14",
+        "headline": "China opens zero-tariff market to African partners",
+        "countries": [
+          "CN",
+          "ZA",
+          "KE",
+          "NG"
+        ],
+        "kind": "deal",
+        "url": "https://www.globaltimes.cn/page/202602/1354958.shtml"
+      },
+      {
+        "date": "2026-02-12",
+        "headline": "Taiwan agrees to align chip export controls with US",
+        "countries": [
+          "TW",
+          "US"
+        ],
+        "kind": "deal",
+        "url": "https://globaltaiwan.org/2026/02/whats-in-the-new-us-taiwan-agreement-on-reciprocal-trade/"
+      },
+      {
+        "date": "2026-01-28",
+        "headline": "Starmer visits Beijing after approving China's London mega-embassy",
+        "countries": [
+          "UK",
+          "CN"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.aljazeera.com/news/2026/1/29/why-is-the-uks-keir-starmer-in-china-and-what-does-he-want-to-achieve"
+      },
+      {
+        "date": "2026-01-27",
+        "headline": "EU and India conclude landmark free trade agreement",
+        "countries": [
+          "IN"
+        ],
+        "kind": "deal",
+        "url": "https://intellectual-property-helpdesk.ec.europa.eu/news-events/news/eu-india-free-trade-agreement-concluded-major-global-trade-milestone-2026-01-29_en"
+      },
+      {
+        "date": "2026-01-20",
+        "headline": "Denmark sends troops to Greenland as Trump threatens tariffs",
+        "countries": [
+          "DK",
+          "US",
+          "EU"
+        ],
+        "kind": "tension",
+        "url": "https://www.aljazeera.com/news/2026/1/20/denmark-sends-more-troops-to-greenland-amid-tensions-with-trump"
+      },
+      {
+        "date": "2026-01-16",
+        "headline": "Canada and China cut EV and canola tariffs",
+        "countries": [
+          "CA",
+          "CN"
+        ],
+        "kind": "deal",
+        "url": "https://www.cbc.ca/news/politics/carney-meeting-xi-china-9.7047880"
+      },
+      {
+        "date": "2026-01-15",
+        "headline": "Taiwan pledges $250bn chip investment for US tariff cut",
+        "countries": [
+          "TW",
+          "US"
+        ],
+        "kind": "deal",
+        "url": "https://www.commerce.gov/news/fact-sheets/2026/01/fact-sheet-restoring-american-semiconductor-manufacturing-leadership"
+      },
+      {
+        "date": "2026-01-14",
+        "headline": "Qatar and UAE join US Pax Silica tech-security bloc",
+        "countries": [
+          "US",
+          "QA",
+          "AE"
+        ],
+        "kind": "deal",
+        "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/01/the-united-states-welcomes-qatars-signing-of-pax-silica-declaration"
+      },
+      {
+        "date": "2026-01-06",
+        "headline": "China bans dual-use exports to Japan over Taiwan remarks",
+        "countries": [
+          "CN",
+          "JP"
+        ],
+        "kind": "controls",
+        "url": "https://www.aljazeera.com/news/2026/1/7/china-bans-export-of-dual-use-items-to-japan-amid-tensions-over-taiwan"
+      },
+      {
+        "date": "2026-01-05",
+        "headline": "Korea's Lee meets Xi in Beijing, seeks full reset",
+        "countries": [
+          "KR",
+          "CN"
+        ],
+        "kind": "cooperation",
+        "url": "https://www.fmprc.gov.cn/eng/xw/zyxw/202601/t20260105_11806810.html"
+      }
+    ]
   },
   "months": [
     {
@@ -66,6 +1446,9 @@
       "researchTitle": "EuroHPC incident protocol",
       "about": "Europe's shared AI computers need someone to answer the alarm.",
       "lever": "compute",
+      "codes": [
+        "EU"
+      ],
       "countries": [
         "EU participating states",
         "EU institutions"
@@ -279,6 +1662,9 @@
       "researchTitle": "Japan procurement gate",
       "about": "Japan checks AI before buying it. Make safety part of that check.",
       "lever": "buy",
+      "codes": [
+        "JP"
+      ],
       "countries": [
         "Japan"
       ],
@@ -523,6 +1909,11 @@
       "researchTitle": "APAC procurement profile",
       "about": "Japan, Korea and Singapore could share one safety test for what they buy.",
       "lever": "buy",
+      "codes": [
+        "JP",
+        "KR",
+        "SG"
+      ],
       "countries": [
         "Japan",
         "South Korea",
@@ -744,6 +2135,9 @@
       "researchTitle": "SG agent eval gate",
       "about": "Singapore buys AI helpers. Test whether one leaks private records.",
       "lever": "buy",
+      "codes": [
+        "SG"
+      ],
       "countries": [
         "Singapore"
       ],
@@ -948,6 +2342,11 @@
       "researchTitle": "SG-KR-JP eval protocol",
       "about": "Singapore and Korea tested AI together. Their setups differed.",
       "lever": "buy",
+      "codes": [
+        "JP",
+        "KR",
+        "SG"
+      ],
       "countries": [
         "Singapore",
         "South Korea",
@@ -1170,6 +2569,9 @@
       "researchTitle": "Canada Cohere covenant",
       "about": "Canada announced up to $1.6B in staged investment. Can terms add safety?",
       "lever": "money",
+      "codes": [
+        "CA"
+      ],
       "countries": [
         "Canada"
       ],
@@ -1392,6 +2794,9 @@
       "researchTitle": "Taiwan public compute",
       "about": "Taiwan lends powerful computers to AI builders. Add a safety check first.",
       "lever": "compute",
+      "codes": [
+        "TW"
+      ],
       "countries": [
         "Taiwan"
       ],
@@ -1605,6 +3010,9 @@
       "researchTitle": "Lender safety covenant",
       "about": "An AI firm's loan has rules. A new loan could add one.",
       "lever": "money",
+      "codes": [
+        "US"
+      ],
       "countries": [
         "United States"
       ],
@@ -1810,6 +3218,9 @@
       "researchTitle": "Belgian compute conditions",
       "about": "Belgium hands out time on a shared supercomputer. Attach a safety rule.",
       "lever": "compute",
+      "codes": [
+        "BE"
+      ],
       "countries": [
         "Belgium"
       ],
@@ -2024,6 +3435,9 @@
       "researchTitle": "EuroHPC access conditions",
       "about": "Safety testers need to see enough of an AI to check it.",
       "lever": "compute",
+      "codes": [
+        "EU"
+      ],
       "countries": [
         "EU institutions",
         "EuroHPC participating states"
@@ -2253,6 +3667,19 @@
       "researchTitle": "National compute coalition",
       "about": "Eleven countries share one giant computer. One rule could cover them all.",
       "lever": "compute",
+      "codes": [
+        "BE",
+        "CH",
+        "CZ",
+        "DK",
+        "EE",
+        "FI",
+        "IS",
+        "NL",
+        "NO",
+        "PL",
+        "SE"
+      ],
       "countries": [
         "Belgium",
         "Czech Republic",
@@ -2499,6 +3926,9 @@
       "researchTitle": "Swiss operator fallback",
       "about": "Swissgrid runs its own grid AI. Practise a human takeover.",
       "lever": "regulator",
+      "codes": [
+        "CH"
+      ],
       "countries": [
         "Switzerland"
       ],
@@ -2689,6 +4119,9 @@
       "researchTitle": "UK energy assurance",
       "about": "The UK energy regulator runs a sandbox. Companies lead the tests.",
       "lever": "regulator",
+      "codes": [
+        "UK"
+      ],
       "countries": [
         "United Kingdom"
       ],
@@ -2926,6 +4359,9 @@
       "researchTitle": "UK agent accountability",
       "about": "The UK data regulator asks: when an AI helper acts, who is responsible?",
       "lever": "regulator",
+      "codes": [
+        "UK"
+      ],
       "countries": [
         "United Kingdom"
       ],
@@ -3131,6 +4567,9 @@
       "researchTitle": "Singapore purchaser gate",
       "about": "Singapore's buyers get AI test reports. Make a failed test stop the sale.",
       "lever": "buy",
+      "codes": [
+        "SG"
+      ],
       "countries": [
         "Singapore"
       ],
@@ -3343,6 +4782,9 @@
       "researchTitle": "Korean safety-case rehearsal",
       "about": "Korea's AI law rules aren't final. Practise a voluntary emergency drill.",
       "lever": "regulator",
+      "codes": [
+        "KR"
+      ],
       "countries": [
         "South Korea"
       ],
@@ -3533,6 +4975,9 @@
       "researchTitle": "Brazil AI inspection evidence",
       "about": "Brazil's regulator ordered an AI fix. Ask for proof, not promises.",
       "lever": "regulator",
+      "codes": [
+        "BR"
+      ],
       "countries": [
         "Brazil"
       ],
@@ -3744,6 +5189,9 @@
       "researchTitle": "Mexico pre-deployment assessment",
       "about": "Mexico checks government data use first. The check only gives advice.",
       "lever": "regulator",
+      "codes": [
+        "MX"
+      ],
       "countries": [
         "Mexico"
       ],
@@ -3940,6 +5388,9 @@
       "researchTitle": "Chile assessment implementation",
       "about": "Chile's data-protection bill is still in Congress. No office yet.",
       "lever": "regulator",
+      "codes": [
+        "CL"
+      ],
       "countries": [
         "Chile"
       ],
@@ -4129,6 +5580,9 @@
       "researchTitle": "Colombia AI privacy retest",
       "about": "Colombia ordered eye-scan data deleted. Check every copy is gone.",
       "lever": "regulator",
+      "codes": [
+        "CO"
+      ],
       "countries": [
         "Colombia"
       ],
@@ -4357,6 +5811,9 @@
       "researchTitle": "South Africa linkage review",
       "about": "South Africa's privacy law needs permission for some record-linking.",
       "lever": "regulator",
+      "codes": [
+        "ZA"
+      ],
       "countries": [
         "South Africa"
       ],
@@ -4562,6 +6019,9 @@
       "researchTitle": "Kenya biometric DPIA",
       "about": "A court ordered Worldcoin data deleted. Check the proof.",
       "lever": "regulator",
+      "codes": [
+        "KE"
+      ],
       "countries": [
         "Kenya"
       ],
@@ -4782,6 +6242,9 @@
       "researchTitle": "Nigeria AI audit annex",
       "about": "Nigeria already audits data use. Would extra AI questions catch more?",
       "lever": "regulator",
+      "codes": [
+        "NG"
+      ],
       "countries": [
         "Nigeria"
       ],
@@ -5000,6 +6463,9 @@
       "researchTitle": "Rwanda DPIA retest",
       "about": "Rwanda's law names who is responsible. It needs a real case to test.",
       "lever": "regulator",
+      "codes": [
+        "RW"
+      ],
       "countries": [
         "Rwanda"
       ],
@@ -5212,6 +6678,9 @@
       "researchTitle": "IndiaAI compute gate",
       "about": "India subsidises AI computer time. Ask for a safety test first.",
       "lever": "money",
+      "codes": [
+        "IN"
+      ],
       "countries": [
         "India"
       ],
@@ -5474,6 +6943,9 @@
       "researchTitle": "Dubai agent assurance",
       "about": "Dubai buys AI helpers for public services. Who can pull one back?",
       "lever": "buy",
+      "codes": [
+        "AE"
+      ],
       "countries": [
         "UAE"
       ],
@@ -5680,6 +7152,9 @@
       "researchTitle": "Saudi sandbox stop-rule",
       "about": "Saudi Arabia has a safe test zone for new tech. Add an AI stop rule.",
       "lever": "regulator",
+      "codes": [
+        "SA"
+      ],
       "countries": [
         "Saudi Arabia"
       ],
@@ -5893,6 +7368,9 @@
       "researchTitle": "Türkiye grant evidence",
       "about": "Türkiye funds AI projects. Make sure the safety tester is truly separate.",
       "lever": "money",
+      "codes": [
+        "TR"
+      ],
       "countries": [
         "Türkiye"
       ],
@@ -6114,6 +7592,9 @@
       "researchTitle": "Indonesia DPIA pilot",
       "about": "Indonesia uses AI to write buying documents. Check it didn't change the plan.",
       "lever": "buy",
+      "codes": [
+        "ID"
+      ],
       "countries": [
         "Indonesia"
       ],
@@ -6312,6 +7793,9 @@
       "researchTitle": "Malaysia DPIA evidence",
       "about": "Malaysian businesses buy ready-made AI. Can a person overrule it?",
       "lever": "buy",
+      "codes": [
+        "MY"
+      ],
       "countries": [
         "Malaysia"
       ],
@@ -6532,6 +8016,9 @@
       "researchTitle": "Thailand sandbox gate",
       "about": "Thailand hired a firm for AI governance courses. Add a stop test.",
       "lever": "buy",
+      "codes": [
+        "TH"
+      ],
       "countries": [
         "Thailand"
       ],
@@ -6754,6 +8241,9 @@
       "researchTitle": "Vietnam public AI gate",
       "about": "Vietnam must check AI that makes big decisions. Trace what one really decides.",
       "lever": "regulator",
+      "codes": [
+        "VN"
+      ],
       "countries": [
         "Vietnam"
       ],

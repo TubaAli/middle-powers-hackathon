@@ -1,4 +1,5 @@
 // Deterministic fiction rules. Research scores never become acceptance probabilities.
+import {moodCost} from './relations.mjs';
 export const RESOURCE_KEYS = ['budget', 'evidence', 'mandate'];
 export const RESOURCE_NAMES = {budget:'Money', evidence:'Proof', mandate:'Support'};
 export function newGame() {
@@ -30,7 +31,7 @@ export function enterMeeting(s,campaign,id) {
   n.conversation={routeId:id,node:p?.stage==='tested'?'complete':p?.strategy&&p.started<n.month?'report':'opening',receipt:''};
   return n;
 }
-export function costFor(s,action) {
+function baseCost(s,action) {
   const id=s.conversation?.routeId;
   if(action==='prepare') return {evidence:s.prepared.includes(id)?0:1};
   if(action==='commission-pilot') return {budget:2};
@@ -38,10 +39,16 @@ export function costFor(s,action) {
   if(action==='resolve') return {budget:1,evidence:s.prepared.includes(id)?1:2};
   return {};
 }
-export function choiceReason(s,choice) {
+// With a campaign that carries relations, a delegation's mood (relations.mjs) adjusts the price of new work.
+export function costFor(s,action,campaign) {
+  const c=baseCost(s,action);
+  for(const [k,v] of Object.entries(moodCost(s,campaign,action))) c[k]=Math.max(k==='mandate'?1:0,(c[k]??0)+v);
+  return c;
+}
+export function choiceReason(s,choice,campaign) {
   if(choice.action==='prepare'&&s.prepared.includes(s.conversation?.routeId))return 'Your research notes are already ready. Choose a plan below.';
   if(choice.action?.startsWith('commission-')&&s.month===7)return 'Too late for a new test. Finish what you started.';
-  for(const [k,v] of Object.entries(costFor(s,choice.action))) if(s.resources[k]<v) return `Need ${v} ${RESOURCE_NAMES[k].toLowerCase()}; you have ${s.resources[k]}.`;
+  for(const [k,v] of Object.entries(costFor(s,choice.action,campaign))) if(s.resources[k]<v) return `Need ${v} ${RESOURCE_NAMES[k].toLowerCase()}; you have ${s.resources[k]}.`;
   if(choice.action==='resolve' && s.projects[s.conversation.routeId]?.strategy==='shared' && !verified(s).some(([id])=>id!==s.conversation.routeId)) return 'A shared deal needs one other finished test first.';
   return '';
 }
@@ -54,9 +61,9 @@ export function choose(s,campaign,choiceId) {
   const route=campaign.routes.find(r=>r.id===s.conversation.routeId);
   const node=route.nodes[s.conversation.node], ch=node.choices.find(c=>c.id===choiceId);
   if(!ch) throw Error('Unknown dialogue choice');
-  const reason=choiceReason(s,ch);if(reason) throw Error(reason);
+  const reason=choiceReason(s,ch,campaign);if(reason) throw Error(reason);
   const n=copy(s),id=route.id;
-  for(const [k,v] of Object.entries(costFor(n,ch.action))) n.resources[k]-=v;
+  for(const [k,v] of Object.entries(costFor(n,ch.action,campaign))) n.resources[k]-=v;
   if(ch.action==='leave') {n.phase='hub';n.conversation=null;return n;}
   if(ch.action==='prepare'&&!n.prepared.includes(id)) {
     n.prepared.push(id);

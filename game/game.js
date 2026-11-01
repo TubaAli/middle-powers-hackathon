@@ -13,11 +13,11 @@ const BUILD = { power: 2, compute: 1 };      // share points a data-centre campu
 const PRICE = { need: 15, other: 5, promise: 15, tour: 10 };
 const GOAL_POINTS = 400;
 
-let L, C, W, P, W2;
+let L, C, W, P, W2, G;   // G: data/geopolitics.json (sourced recent foreign policy)
 const g = {
   phase: 'setup', me: null, goals: [], era: null,
   turn: 0, timeLeft: MONTH_SECONDS, coalition: [], tokens: {}, bonus: {}, tabled: [], choke: null,
-  shield: {}, tour: false, asked: new Set(), penalty: 0, near: null,
+  shield: {}, tour: false, asked: new Set(), penalty: 0, near: null, history: [],
 };
 const keys = {};
 const world = { w: 0, h: 0, k: 1, u: 1, dpr: 1, mw: 0, mh: 0, pos: {}, real: {}, out: {}, paths: {}, map: null, cam: { x: 0, y: 0 }, player: { x: 0, y: 0, vx: 0, vy: 0, trail: [] }, aim: null };
@@ -76,6 +76,51 @@ const needs = (k) => Object.entries(planet(k).powers).filter(([, v]) => v <= 1).
 const richest = () => Object.keys(g.tokens).filter((p) => g.tokens[p] > 0).sort((a, b) => g.tokens[b] - g.tokens[a])[0];
 const goalConds = () => g.goals.map((id) => goalOf(id).cond);
 
+// ---------- Geopolitics: real relations shape how countries receive you ----------
+// Each game country group maps to the real governments in data/geopolitics.json.
+const MEMBERS = { US: ['US'], CN: ['CN'], JP: ['JP'], TW: ['TW'], KR: ['KR'], NL: ['NL'], DE: ['DE'], UK: ['UK'], GULF: ['SA', 'AE', 'QA'], AUCA: ['AU', 'CA'], PROD: ['CD', 'ID', 'CL', 'PE'] };
+const POLE = { US: 'toUS', CN: 'toChina', EU: 'toEU' };
+const pairOf = (a, b) => G.pairs.find((p) => (p.a === a && p.b === b) || (p.a === b && p.b === a));
+function aff(a, b) {
+  if (a === b) return 2;
+  const p = pairOf(a, b); if (p) return p.score;
+  const A = G.countries[a], B = G.countries[b];
+  if (POLE[b] && A) return A[POLE[b]];
+  if (POLE[a] && B) return B[POLE[a]];
+  if (G.euMembers?.includes(a) && G.euMembers.includes(b)) return 1;   // shared EU membership
+  return 0;   // no sourced relation: neutral, never guessed from similar stances
+}
+// Group-to-group affinity (-2..2) and the strongest real pair behind it, for the explanation.
+function gaff(x, y) {
+  let sum = 0, n = 0, best = null;
+  for (const a of MEMBERS[x]) for (const b of MEMBERS[y]) {
+    const v = aff(a, b); sum += v; n++;
+    const p = pairOf(a, b);
+    if (p && (!best || Math.abs(p.score) > Math.abs(best.score))) best = p;
+  }
+  return { v: n ? sum / n : 0, pair: best };
+}
+// Trust starts from real relations with you, then moves with who you allied with and gave to.
+function trust(t) {
+  const base = gaff(t, g.me);
+  let v = base.v, top = { w: base.v, kind: 'base', pair: base.pair };
+  for (const h of g.history) {
+    if (h.k === t) continue;
+    const r = gaff(t, h.k), w = r.v * (h.kind === 'ally' ? 0.6 : 0.3);
+    v += w;
+    if (Math.abs(w) > Math.abs(top.w) * 0.9 && Math.abs(w) >= 0.3) top = { w, kind: h.kind, k: h.k, pair: r.pair };
+  }
+  return { v: Math.max(-3, Math.min(3, v)), top };
+}
+const trustPts = (t) => Math.round(trust(t).v * 7);
+function moodText(t) {
+  const { v, top } = trust(t), p = planet(t);
+  const why = top.pair?.why ? ` ${top.pair.why}` : '';
+  if (top.kind === 'base') return v >= 0.5 ? `Our governments are close.${why}` : v <= -0.5 ? `Our governments are at odds.${why}` : '';
+  const other = planet(top.k);
+  return top.w > 0 ? `You stood with ${say(other)}. We are close to them.${why}` : `You sided with ${say(other)}. ${Say(p)} sees them as a rival.${why}`;
+}
+
 // ---------- Negotiation ----------
 function promiseStage(t) {
   return L.stages.filter((st) => (st.share[g.me] ?? 0) >= 25 && (st.share[t] ?? 0) < 10)
@@ -90,6 +135,7 @@ function odds(t, offer) {
   if (W.windows.some((w) => w.who !== 'All participants' && w.countries.includes(t) && w.conditions.some((n) => conds.includes(n)))) v += 10;
   if (g.tour && !tp.super) v += PRICE.tour;
   if (g.rally) v += 5;
+  v += trustPts(t);
   if (t === 'US' && conds.some((n) => [1, 5, 6].includes(n))) v -= 10;
   if (t === 'CN' && conds.some((n) => n !== 2)) v -= 15;
   return Math.max(3, Math.min(92, v));
@@ -106,7 +152,7 @@ function deals(t) {
 function rollDeal(t, offer) {
   const pct = odds(t, offer), ok = Math.random() * 100 < pct;
   g.asked.add(t);
-  if (ok) { if (offer.token) g.tokens[offer.token]--; g.coalition.push(t); }
+  if (ok) { if (offer.token) { g.tokens[offer.token]--; g.history.push({ k: t, kind: 'gift', turn: g.turn }); } g.coalition.push(t); g.history.push({ k: t, kind: 'ally', turn: g.turn }); }
   return { ok, pct };
 }
 
@@ -171,6 +217,19 @@ function monthEvents() {
       else { g.coalition = g.coalition.filter((k) => k !== a); lines.push(`🛰️ The United States leans on ${planet(a).name}. It leaves your accord.`); }
     }
   }
+  // Realistic reactions to last month's new allies, then one real dated headline involving you or your partners.
+  const fresh = g.history.filter((h) => h.kind === 'ally' && h.turn === g.turn - 1);
+  const reacts = [];
+  for (const h of fresh) for (const p of P.planets) {
+    if (p.k === g.me || g.coalition.includes(p.k)) continue;
+    const r = gaff(p.k, h.k);
+    if (r.v <= -1) reacts.push({ v: r.v, line: `🥶 ${Say(p)} cools on you: you allied with ${say(planet(h.k))}.${r.pair?.why ? ` (${r.pair.why})` : ''}` });
+    else if (r.v >= 1.5) reacts.push({ v: r.v, line: `😊 ${Say(p)} warms to you: you allied with ${say(planet(h.k))}.` });
+  }
+  reacts.sort((a, b) => Math.abs(b.v) - Math.abs(a.v)).slice(0, 2).forEach((x) => lines.push(x.line));
+  const mine = new Set([g.me, ...g.coalition].flatMap((k) => MEMBERS[k]));
+  const news = G.events.filter((e) => e.countries.some((c) => mine.has(c))).sort((a, b) => b.date.localeCompare(a.date));
+  if (news.length) { const e = news[g.turn % news.length]; lines.push({ news: e }); }
   if (g.turn === DECAY_FROM) lines.push('⏳ Rivals catch up: hosting, compute and models (≤3 yrs to replace) now count 20% less.');
   for (const w of W.windows.filter((w) => w.date?.slice(0, 7) === MONTH_KEYS[g.turn] && (w.countries.some((k) => g.coalition.includes(k)) || !w.countries.length)))
     lines.push(`📜 ${w.who}: ${w.label}.`);
@@ -185,7 +244,7 @@ function openCouncil() {
   showOverlay(`
     <h2>${MONTHS[g.turn]} · Cabinet of ${esc(planet(g.me).name)}</h2>
     <p class="lede">Choose one move this month. Then fly out and meet other countries.</p>
-    ${ev.map((l) => `<div class="event">${esc(l)}</div>`).join('')}
+    ${ev.map((l) => l.news ? `<div class="event news"><b>📰 Real news · ${esc(l.news.date)}</b> ${esc(l.news.headline)} ${/^https:\/\//.test(l.news.url) ? `<a href="${esc(l.news.url)}" target="_blank" rel="noopener">source ↗</a>` : ''}</div>` : `<div class="event">${esc(l)}</div>`).join('')}
     <div class="moves">${moves.map((m, i) => `<button class="move" data-move="${i}"><span class="ic">${m.ic}</span><div><span class="k">${i + 1}</span><b>${esc(m.t)}</b><span>${esc(m.s)}</span></div></button>`).join('')}</div>`);
 }
 function pickMove(i) {
@@ -209,6 +268,8 @@ function openTalk(t) {
   const facts = [`${esc(p.name)}: <b>${pct(weighted([t], false))}</b> of AI supply`,
     ...tops.map((st) => `${esc(st.name)} <b>${Math.round(st.share[t])}%</b>`),
     `Needs ${need.map(icon).join(' ') || '—'}`, `Your accord <b>${now}</b> → with them <b>${withThem}</b>`];
+  const tp = trustPts(t), mt = moodText(t);
+  if (tp) facts.push(`Mood ${tp > 0 ? '😊 warm' : '🥶 cold'} <b>${tp > 0 ? '+' : '−'}${Math.abs(tp)}%</b>`);
   const script = [];
   if (inAcc) script.push({ who: 'them', mood: 'happy', pop: '♪', text: `Partner! We stand with your accord. Go win the others.` });
   else if (asked) script.push({ who: 'them', mood: 'flat', pop: '…', text: 'We already gave you our answer this month. Come back next month, envoy.' });
@@ -216,6 +277,7 @@ function openTalk(t) {
     script.push({ who: 'them', mood: p.super ? 'flat' : 'happy', text: p.super
       ? `${Say(p)} carries ${pct(weighted([t], false))} of the world's AI. Speak quickly, envoy from ${me.name}.`
       : `Welcome to ${say(p)}.${tops[0] ? ` We make ${Math.round(tops[0].share[t])}% of the world's ${tops[0].name}.` : ''} What brings you here?` });
+    if (mt) script.push({ who: 'them', mood: tp >= 0 ? 'happy' : 'sad', pop: tp >= 0 ? '♪' : '…', text: mt });
     script.push({ who: 'me', mood: 'happy', text: `I'm building an accord for ${goal.short.toLowerCase()}. With you in it, we'd hold ${withThem} of AI supply, up from ${now}.` });
     const conds = goalConds();
     script.push({ who: 'them', mood: p.super ? 'think' : 'flat', pop: '?', text:
@@ -554,9 +616,9 @@ function wire() {
   });
 }
 
-Promise.all(['../data/layers.json', '../data/conditions.json', '../data/windows.json', 'planets.json', 'world.json'].map((u) => fetch(u).then((r) => r.json())))
-  .then(([l, c, w, p, m]) => {
-    L = l; C = c; W = w; P = p; W2 = m;
+Promise.all(['../data/layers.json', '../data/conditions.json', '../data/windows.json', 'planets.json', 'world.json', '../data/geopolitics.json'].map((u) => fetch(u).then((r) => r.json())))
+  .then(([l, c, w, p, m, geo]) => {
+    L = l; C = c; W = w; P = p; W2 = m; G = geo;
     g.era = P.eras.find((e) => e.id === 'today');
     resize(); wire(); $('#overlay').hidden = true; openIntro(); requestAnimationFrame(loop);
   })

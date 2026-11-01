@@ -11,6 +11,15 @@ learning_path = ROOT / 'game/learning-notes.json'
 research = json.loads(research_path.read_text())
 authored = json.loads(authored_path.read_text())
 learning = json.loads(learning_path.read_text())
+geo_path = ROOT / 'data/geopolitics.json'
+geo = json.loads(geo_path.read_text())
+# Route country names -> geopolitics codes (EU bodies share the EU code).
+CODE = {'Belgium': 'BE', 'Brazil': 'BR', 'Canada': 'CA', 'Chile': 'CL', 'Colombia': 'CO', 'Czech Republic': 'CZ', 'Denmark': 'DK',
+        'EU institutions': 'EU', 'EU participating states': 'EU', 'EuroHPC participating states': 'EU', 'Estonia': 'EE', 'Finland': 'FI',
+        'Iceland': 'IS', 'India': 'IN', 'Indonesia': 'ID', 'Japan': 'JP', 'Kenya': 'KE', 'Malaysia': 'MY', 'Mexico': 'MX', 'Netherlands': 'NL',
+        'Nigeria': 'NG', 'Norway': 'NO', 'Poland': 'PL', 'Rwanda': 'RW', 'Saudi Arabia': 'SA', 'Singapore': 'SG', 'South Africa': 'ZA',
+        'South Korea': 'KR', 'Sweden': 'SE', 'Switzerland': 'CH', 'Taiwan': 'TW', 'Thailand': 'TH', 'Türkiye': 'TR', 'UAE': 'AE',
+        'United Kingdom': 'UK', 'United States': 'US', 'Vietnam': 'VN'}
 assert set(authored) == {r['id'] for r in research['routes']}
 assert set(learning) == set(authored)
 
@@ -34,7 +43,7 @@ for r in research['routes']:
         'receipt': {'text': '', 'choices': [choice('close', 'Back to the map', action='leave')]},
         'complete': {'text': 'Test passed. Our lever is ready for Geneva.', 'choices': [choice('leave', 'Back to the map', action='leave')]}
     }
-    routes.append({'id': r['id'], 'title': a.get('title', r['shortLabel']), 'researchTitle': r['shortLabel'], 'about': a.get('about', ''), 'lever': a['lever'], 'countries': r['countries'], 'coordination': r['coordination'],
+    routes.append({'id': r['id'], 'title': a.get('title', r['shortLabel']), 'researchTitle': r['shortLabel'], 'about': a.get('about', ''), 'lever': a['lever'], 'codes': sorted({CODE[c] for c in r['countries'] if CODE.get(c) in geo['countries'] or CODE.get(c) == 'EU'}), 'countries': r['countries'], 'coordination': r['coordination'],
                    'speaker': ' / '.join(r['countries']), 'nodes': nodes,
                    'lesson': lesson['lesson'], 'repair': lesson['repair'], 'check': lesson['check'],
                    'researchContext': lesson.get('researchContext', ''),
@@ -44,7 +53,9 @@ for r in research['routes']:
 
 campaign = {'version': 1, 'id': 'before-geneva-v1', 'title': 'Before Geneva', 'researchObserved': research['observed'],
             'fictionNotice': 'A made-up story built on real research. No real government agreed to these scenes.',
-            'inputs': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in (research_path, authored_path, learning_path)},
+            'inputs': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in (research_path, authored_path, learning_path, geo_path)},
+            'relations': {'observed': geo['observed'], 'countries': {k: {f: v[f] for f in ('name', 'toUS', 'toChina', 'toEU', 'summary')} for k, v in geo['countries'].items()},
+                          'pairs': geo['pairs'], 'euMembers': geo.get('euMembers', []), 'news': sorted(geo['events'], key=lambda e: e['date'], reverse=True)},
             'months': [
                 {'label': 'November 2026', 'short': 'NOV', 'title': 'The job', 'event': 'Eight months to Geneva. Find the levers.'},
                 {'label': 'December 2026', 'short': 'DEC', 'title': 'First answers', 'event': 'Every lever needs someone who can pull it.'},
