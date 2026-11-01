@@ -52,6 +52,10 @@
     const chosen=endings[goal]||endings.test;return {title:chosen[0],text:chosen[1]};
   }
   const originalCouncil=openCouncil;
+  const originalOpening=Opening.start;
+  Opening.start=function(c){originalOpening.call(Opening,c);document.querySelectorAll('.op-ticker span').forEach(el=>{el.textContent='AI capabilities are growing · Countries debate safeguards · An eight-month fictional campaign to Geneva · ';});};
+  const originalEvents=monthEvents;
+  monthEvents=function(...args){return originalEvents(...args).map(event=>typeof event==='string'&&!event.startsWith('📜')?'Game scenario: '+event:event);};
   openCouncil=function(...args){originalCouncil(...args);document.querySelector('#panel').insertAdjacentHTML('beforeend',outlook());};
   const originalMeeting=Meeting.open;
   const dialog=document.createElement('dialog');dialog.className='or-dialog';document.body.append(dialog);

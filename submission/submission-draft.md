@@ -17,7 +17,7 @@ The prototype is live. Its policy scores are transparent editorial judgments, an
 
 Policy explorer: https://tubaali.github.io/middle-powers-hackathon/routes/#basis=model
 
-Playable Before Geneva: https://tubaali.github.io/middle-powers-hackathon/game/
+Selected game, Orbit Accord: https://tubaali.github.io/middle-powers-hackathon/game/orbit.html
 
 Evidence challenges and sensitivity tests: https://tubaali.github.io/middle-powers-hackathon/routes/stress-tests.html
 
@@ -39,9 +39,9 @@ The policy explorer places 32 proposals on feasibility and potential-impact axes
 
 The research layer links retrieved claims to their sources and retains reading limitations. The deeper review covers all 32 proposals, presents a baseline and four analytical viewpoints, and proposes eight follow-up test designs. Users can inspect 15 combinations of weights and missing-data priors without silently rewriting the original model.
 
-The game contains 32 policy conversations and 224 dialogue nodes, set across eight monthly councils from November 2026 to June 2027. Players allocate effort, prepare evidence, commission pilots and return to resolve problems. A shared protocol requires another tested route. The Geneva ending depends on completed fictional work. Every conversation includes a dossier connected to the research.
+The selected communication game is Orbit Accord. Players fly a delegation around the world, meet fictional envoys, choose safety goals and build a coalition before Geneva. Meetings now link to related entries in the same 32-route research snapshot, including their sources and the feasibility/impact method. The map-and-plane gameplay uses a separate, explicitly illustrative supply-chain and negotiation model; the plotted coordinates do not determine diplomatic acceptance.
 
-The interface uses four generated anime scenes with separately editable HTML controls. The original Orbit Accord prototype, including the team's animated envoy meetings and verdict letters, remains available at https://tubaali.github.io/middle-powers-hackathon/game/orbit.html.
+Orbit Accord uses the painted-anime visual style of Before Geneva with editable HTML controls: https://tubaali.github.io/middle-powers-hackathon/game/orbit.html. A separate 32-conversation Before Geneva prototype remains available at /game/; its route IDs and research dossiers match the plot directly. The final Orbit update adds a sourced AI-trend outlook and fictional stress-test epilogues. Extrapolated trends and invented policy-effect parameters are labelled separately.
 
 ## How to interpret the model
 
@@ -49,7 +49,7 @@ Feasibility combines readiness, timing and coordination at weights of 40%, 30% a
 
 Of 192 factor entries, 23 across 14 routes are missing and use an explicitly marked neutral prior of 0.5. Sensitivity views vary that prior and the weights. Small deterministic display offsets prevent overlapping points; they do not change scores. Separate matched-resource coverage views retain their own denominators and uncertainty.
 
-The deeper research preserves competing interpretations. It does not treat a majority of analytical viewpoints as validation. The sample is curated, national and coalition proposals are not matched experiments, and the plot cannot establish that international cooperation causes better or worse outcomes. Game resources and endings are separate deterministic rules, not probabilities inferred from policy scores.
+The deeper research preserves competing interpretations. It does not treat a majority of analytical viewpoints as validation. The sample is curated, national and coalition proposals are not matched experiments, and the plot cannot establish that international cooperation causes better or worse outcomes. Game resources and endings are separate authored rules. Orbit Accord's acceptance percentages are illustrative game probabilities, not estimates inferred from the plot or observed government behaviour.
 
 Model documentation: https://github.com/TubaAli/middle-powers-hackathon/blob/main/routes/README.md
 
@@ -59,7 +59,7 @@ India's public-compute proposal illustrates why deeper evidence matters. In the 
 
 The revised next test is to identify a future award, establish the authorised conditions, and separately verify what the provider would do after a failed safety test. A controlled rehearsal should observe actual service availability, commercial conversion and the associated funding records. If the workload continues, the proposal cannot be described as a workload-stop mechanism on the strength of subsidy withdrawal alone.
 
-The game presents an explicitly fictional version of that problem. The player must decide whether to repair the arrangement, collect more evidence or record the limitation. The lesson is the difference between an intended incentive and an enforceable operational consequence.
+The separate Before Geneva dialogue prototype presents an explicitly fictional version of that problem. The player must decide whether to repair the arrangement, collect more evidence or record the limitation. The lesson is the difference between an intended incentive and an enforceable operational consequence. Orbit Accord links to the researched proposals but does not reproduce all 32 dialogue trees.
 
 Research and underlying references: https://github.com/TubaAli/middle-powers-hackathon/blob/main/reports/Safeguard%20proposal%20stress%20tests.md
 
@@ -87,7 +87,7 @@ For the interface, we propose user testing with policy practitioners and newcome
 
 ## Validation and limitations
 
-The game and model checks passed 17 automated unit tests. Live browser acceptance covered all 32 conversations at desktop and phone widths, for 64 walkthroughs, and two complete campaigns. It checked keyboard choices, source panels, saving, resuming and recovery, with no page errors. Eight live game files were compared with committed bytes. These checks establish implementation behaviour, not substantive policy validity.
+The earlier Before Geneva release passed 17 automated game/model tests and live browser acceptance across 32 conversations at desktop and phone widths, for 64 walkthroughs and two complete campaigns. The later combined game, relations and model suites passed 22 tests. The final Orbit research layer passed live checks of all 11 meeting groups at desktop and phone widths, research links, outlooks and epilogues with no page errors. The standalone plot was checked offline for all 32 selections and score consistency. These checks establish implementation behaviour, not substantive policy validity.
 
 The evidence snapshot is dated 31 October 2026. Sources include incomplete reads and unresolved access gaps; source-record counts must not be interpreted as independent confirmations. The deeper source review checked 18 external records plus the local model, rather than independently rechecking the entire corpus. The dossiers and repository retain those limits and later errata.
 
@@ -95,7 +95,7 @@ No government consent, signed new safety condition, completed field trial, measu
 
 ## AI-use disclosure
 
-AI assistants were used extensively for coding, research retrieval and synthesis, model audits, dialogue drafting and document preparation. The recorded analytical viewpoints are same-family OpenAI model outputs, not independent stakeholder interviews or cross-family validation. Gemini generated the four scene artworks through an existing subscription. Game outcomes are authored rules, not AI-generated diplomatic predictions during play.
+AI assistants were used extensively for coding, research retrieval and synthesis, model audits, dialogue drafting and document preparation. The initial analytical viewpoints were same-family OpenAI outputs; later research and source checks used GLM and DeepSeek models through Lunaroute. These are model-assisted reviews, not stakeholder interviews or independent empirical validation. Gemini generated the original scene artworks and additional background assets; Tuba's Orbit style transfer used Canva AI. Game outcomes are authored rules, not AI-generated diplomatic predictions during play.
 
 The team set the project direction and requested revisions. Automated source and software checks provide partial verification; neither all factual claims nor all model judgments have received independent human review. The team should confirm the final tool inventory and individual contribution statement before submission.
 
