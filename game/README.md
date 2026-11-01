@@ -6,10 +6,12 @@ Gemini scene illustrations now sit behind live HTML dialogue, choices and UI.
 
 **Play:** https://tubaali.github.io/middle-powers-hackathon/game/
 
-The original orbital game is preserved at `orbit.html`, using its existing
-`game.js`, `game.css` and `planets.json`, including the team's anime mecha-envoy
-meetings and verdict letters (`meeting.js`, `meeting.css`). The concept gallery
-remains at `concepts/`.
+The original Orbit Accord prototype is at `orbit.html` (`game.js`, `game.css`,
+`planets.json`). You fly your delegation's jet across a real world map
+(`world.json`: Natural Earth 1:110m, public domain) and meet the 11 country
+groups. Meetings use fictional anime-style diplomats, one per country, and the
+answer always comes by official letter (`meeting.js`, `meeting.css`). The concept
+gallery remains at `concepts/`.
 
 ## Play loop
 

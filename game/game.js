@@ -1,4 +1,4 @@
-// Orbit Accord: fly your planet, meet the others, build an accord before the laws close.
+// Orbit Accord: fly your delegation around the world map, meet other countries, build an accord before the laws close.
 // AI shares and stage weights come unchanged from ../data/layers.json (gszep's model);
 // conditions and law windows from ../data/conditions.json and ../data/windows.json.
 // Non-AI tokens, move effects and acceptance odds are illustrative game mechanics, shown to the player.
@@ -12,21 +12,21 @@ const CHOKE_BOOST = 1.25;                    // licensing your chokepoint makes 
 const BUILD = { power: 2, compute: 1 };      // share points a data-centre campus adds
 const PRICE = { need: 15, other: 5, promise: 15, tour: 10 };
 const MAX_GOALS = 3, GOAL_POINTS = 400;
-const ORBIT_R = { 1: 115, 2: 195, 3: 268 }, ORBIT_SPEED = { 1: 0.05, 2: 0.03, 3: 0.018 };
 
-let L, C, W, P;
+let L, C, W, P, W2;
 const g = {
   phase: 'setup', me: null, goals: [], era: null,
   turn: 0, timeLeft: MONTH_SECONDS, coalition: [], tokens: {}, bonus: {}, tabled: [], choke: null,
   shield: {}, tour: false, asked: new Set(), penalty: 0, near: null,
 };
 const keys = {};
-const world = { w: 0, h: 0, cx: 0, cy: 0, u: 1, dpr: 1, stars: [], ang: {}, pos: {}, player: { x: 0, y: 0, vx: 0, vy: 0, trail: [] }, aim: null };
+const world = { w: 0, h: 0, k: 1, u: 1, dpr: 1, mw: 0, mh: 0, pos: {}, real: {}, out: {}, paths: {}, map: null, cam: { x: 0, y: 0 }, player: { x: 0, y: 0, vx: 0, vy: 0, trail: [] }, aim: null };
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const planet = (k) => P.planets.find((p) => p.k === k);
 const country = (k) => L.countries.find((c) => c.k === k)?.name ?? k;
+const say = (p) => p.say ?? p.name, Say = (p) => say(p)[0].toUpperCase() + say(p).slice(1);   // "the Netherlands" mid-sentence
 const stage = (k) => L.stages.find((s) => s.k === k);
 const goalOf = (id) => P.goals.find((x) => x.id === id);
 const condOf = (n) => C.conditions.find((c) => c.n === n);
@@ -144,7 +144,7 @@ function councilMoves() {
     moves.push({ id: 'seed', ic: '🔬', t: `Seed your own ${dep.st.name}`, s: `Free. +1 pt now; real replacement takes ${lo}–${hi} years.`,
       run: () => { g.bonus[dep.st.k] = (g.bonus[dep.st.k] ?? 0) + 1; toast(`A small ${dep.st.name} programme starts.`, 'good'); } });
   }
-  moves.push({ id: 'rally', ic: '📣', t: 'Rally support at home', s: 'Free. Every planet +5% to accept this month.', run: () => { g.rally = true; toast('Your people back the accord.', 'good'); } });
+  moves.push({ id: 'rally', ic: '📣', t: 'Rally support at home', s: 'Free. Every country +5% to accept this month.', run: () => { g.rally = true; toast('Your people back the accord.', 'good'); } });
   const best = Object.entries(planet(g.me).powers).sort((a, b) => b[1] - a[1])[0][0];
   moves.push({ id: 'trade', ic: icon(best), t: 'Trade season', s: `+1 ${icon(best)} ${pname(best)} to bargain with.`, run: () => { g.tokens[best] = (g.tokens[best] ?? 0) + 1; toast(`+1 ${icon(best)}`, 'good'); } });
   // Law first when open, then costly moves (more interesting), then free fallbacks; trade always last.
@@ -158,17 +158,17 @@ function monthEvents() {
   const lines = [];
   if (g.turn === 1 && !g.coalition.includes('CN')) {
     const refining = share(stage('mine'), g.coalition);
-    if (g.shield.CN) lines.push('⛏️ Magnor squeezes refined metals. Your stockpiles hold.');
-    else if (refining >= 10) lines.push(`⛏️ Magnor squeezes refined metals. Your accord refines ${Math.round(refining)}% and copes.`);
-    else { const p = richest(); if (p) g.tokens[p]--; else g.penalty += 40; lines.push(`⛏️ Magnor (70% of refining) squeezes metals: ${p ? `−1 ${icon(p)}` : '−40 points'}.`); }
+    if (g.shield.CN) lines.push('⛏️ China squeezes refined metals. Your stockpiles hold.');
+    else if (refining >= 10) lines.push(`⛏️ China squeezes refined metals. Your accord refines ${Math.round(refining)}% and copes.`);
+    else { const p = richest(); if (p) g.tokens[p]--; else g.penalty += 40; lines.push(`⛏️ China (70% of refining) squeezes metals: ${p ? `−1 ${icon(p)}` : '−40 points'}.`); }
   }
   if (g.turn === 3 && !g.coalition.includes('US')) {
     const allies = g.coalition.filter((k) => k !== g.me && !planet(k).super).sort((a, b) => weighted([a], false) - weighted([b], false));
     if (allies.length) {
       const a = allies[0], give = needs(a).find((p) => (g.tokens[p] ?? 0) > 0);
-      if (g.shield.US) lines.push(`🛰️ Titanis leans on ${planet(a).name}; your stockpiles reassure it.`);
-      else if (give) { g.tokens[give]--; lines.push(`🛰️ Titanis leans on ${planet(a).name}. You keep it with ${icon(give)}.`); }
-      else { g.coalition = g.coalition.filter((k) => k !== a); lines.push(`🛰️ Titanis leans on ${planet(a).name}. It leaves your accord.`); }
+      if (g.shield.US) lines.push(`🛰️ The United States leans on ${planet(a).name}; your stockpiles reassure it.`);
+      else if (give) { g.tokens[give]--; lines.push(`🛰️ The United States leans on ${planet(a).name}. You keep it with ${icon(give)}.`); }
+      else { g.coalition = g.coalition.filter((k) => k !== a); lines.push(`🛰️ The United States leans on ${planet(a).name}. It leaves your accord.`); }
     }
   }
   if (g.turn === DECAY_FROM) lines.push('⏳ Rivals catch up: hosting, compute and models (≤3 yrs to replace) now count 20% less.');
@@ -183,8 +183,8 @@ function openCouncil() {
   const ev = monthEvents(), moves = councilMoves();
   g.moves = moves;
   showOverlay(`
-    <h2>${MONTHS[g.turn]} · Council of ${esc(planet(g.me).name)}</h2>
-    <p class="lede">Choose one move this month. Then fly out and meet other planets.</p>
+    <h2>${MONTHS[g.turn]} · Cabinet of ${esc(planet(g.me).name)}</h2>
+    <p class="lede">Choose one move this month. Then fly out and meet other countries.</p>
     ${ev.map((l) => `<div class="event">${esc(l)}</div>`).join('')}
     <div class="moves">${moves.map((m, i) => `<button class="move" data-move="${i}"><span class="ic">${m.ic}</span><div><span class="k">${i + 1}</span><b>${esc(m.t)}</b><span>${esc(m.s)}</span></div></button>`).join('')}</div>`);
 }
@@ -197,7 +197,7 @@ function endMonth() {
   if (g.turn >= MONTHS.length) return finish();
   openCouncil();
 }
-// ---------- Meeting: mecha envoys talk, you pick a leverage point, the court answers by letter (meeting.js) ----------
+// ---------- Meeting: anime diplomats talk, you pick a leverage point, the government answers by letter (meeting.js) ----------
 function openTalk(t) {
   g.phase = 'talk';
   const p = planet(t), me = planet(g.me), inAcc = g.coalition.includes(t), asked = g.asked.has(t);
@@ -205,17 +205,17 @@ function openTalk(t) {
   const ds = inAcc || asked ? [] : deals(t);
   const goal = goalOf(g.goals[0]), need = needs(t);
   const withThem = pct(weighted([...g.coalition, t])), now = pct(weighted(g.coalition));
-  const actor = (q) => ({ k: q.k, name: q.name, title: q.title, color: q.color, envoy: CAST[q.k].name });
+  const actor = (q) => ({ k: q.k, name: q.name, say: say(q), title: q.title, color: q.color, envoy: CAST[q.k].name });
   const facts = [`${esc(p.name)}: <b>${pct(weighted([t], false))}</b> of AI supply`,
     ...tops.map((st) => `${esc(st.name)} <b>${Math.round(st.share[t])}%</b>`),
     `Needs ${need.map(icon).join(' ') || '—'}`, `Your accord <b>${now}</b> → with them <b>${withThem}</b>`];
   const script = [];
-  if (inAcc) script.push({ who: 'them', mood: 'happy', pop: '♪', text: `Partner! ${p.name} stands with your accord. Go win the others.` });
+  if (inAcc) script.push({ who: 'them', mood: 'happy', pop: '♪', text: `Partner! We stand with your accord. Go win the others.` });
   else if (asked) script.push({ who: 'them', mood: 'flat', pop: '…', text: 'We already gave you our answer this month. Come back next month, envoy.' });
   else {
     script.push({ who: 'them', mood: p.super ? 'flat' : 'happy', text: p.super
-      ? `${p.name} carries ${pct(weighted([t], false))} of the world's AI. Speak quickly, envoy of ${me.name}.`
-      : `Welcome to ${p.name}.${tops[0] ? ` We make ${Math.round(tops[0].share[t])}% of the world's ${tops[0].name}.` : ''} What brings you here?` });
+      ? `${Say(p)} carries ${pct(weighted([t], false))} of the world's AI. Speak quickly, envoy from ${me.name}.`
+      : `Welcome to ${say(p)}.${tops[0] ? ` We make ${Math.round(tops[0].share[t])}% of the world's ${tops[0].name}.` : ''} What brings you here?` });
     script.push({ who: 'me', mood: 'happy', text: `I'm building an accord for ${goal.short.toLowerCase()}. With you in it, we'd hold ${withThem} of AI supply, up from ${now}.` });
     const conds = goalConds();
     script.push({ who: 'them', mood: p.super ? 'think' : 'flat', pop: '?', text:
@@ -227,7 +227,7 @@ function openTalk(t) {
   }
   Meeting.open({
     month: MONTHS[g.turn], me: actor(me), them: actor(p), facts, script,
-    ask: `How do you persuade ${p.name}? Pick your leverage (1–${ds.length}).`,
+    ask: `How do you persuade ${say(p)}? Pick your leverage (1–${ds.length}).`,
     deals: ds.map((d) => ({ label: esc(d.label), sub: esc(d.sub), pct: odds(t, d) })),
     onChoose: (i) => rollDeal(t, ds[i]),
     afterChoice: (i) => {
@@ -238,7 +238,7 @@ function openTalk(t) {
       return [
         { who: 'me', mood: 'flat', text: line },
         { think: true },
-        { who: 'them', mood: 'flat', pop: '✉', text: `Offer logged. The court of ${p.name} will deliberate. Its answer comes by letter, not from me.` },
+        { who: 'them', mood: 'flat', pop: '✉', text: `Offer logged. My government will deliberate. Its answer comes by official letter, not from me.` },
       ];
     },
     get letter() {
@@ -246,16 +246,16 @@ function openTalk(t) {
       const d = this.chosen, ok = this.result.ok;
       return {
         body: ok
-          ? [`On your proposal for <b>${esc(goal.short.toLowerCase())}</b>: ${esc(p.name)} <b>joins your accord</b>.`,
-             `Together our worlds now hold <b>${pct(weighted(g.coalition))}</b> of the AI supply chain. ${d.label === 'Just ask' ? 'You asked plainly, and we respect that.' : `Your offer (${d.label.replace(/^(Offer|Promise) /, '')}) answered what we needed.`}`]
-          : [`On your proposal for <b>${esc(goal.short.toLowerCase())}</b>: ${esc(p.name)} <b>declines</b> for now.`,
+          ? [`On your proposal for <b>${esc(goal.short.toLowerCase())}</b>: ${esc(Say(p))} <b>will join your accord</b>.`,
+             `Together our countries now hold <b>${pct(weighted(g.coalition))}</b> of the AI supply chain. ${d.label === 'Just ask' ? 'You asked plainly, and we respect that.' : `Your offer (${d.label.replace(/^(Offer|Promise) /, '')}) answered what we needed.`}`]
+          : [`On your proposal for <b>${esc(goal.short.toLowerCase())}</b>: ${esc(Say(p))} <b>will not join</b> for now.`,
              p.super ? 'A superpower gives up freedom of action slowly. Bring a stronger accord, or stronger leverage.' : 'Your offer did not yet outweigh our own interests. Our door stays open next month.'],
         foot: `Chance was ${this.result.pct}%. Odds are illustrative game rules; AI shares from gszep's model.`,
       };
     },
     onClose: (res) => {
       g.phase = 'fly';
-      if (res) toast(res.ok ? `${p.name} joins your accord! (${res.pct}%)` : `${p.name} declines (${res.pct}%). Try next month.`, res.ok ? 'good' : 'bad');
+      if (res) toast(res.ok ? `${Say(p)} joined your accord! (${res.pct}%)` : `${Say(p)} said no (${res.pct}%). Try next month.`, res.ok ? 'good' : 'bad');
     },
   });
 }
@@ -268,11 +268,11 @@ function finish() {
   const parts = [...res.map((r) => [r.goal.short, Math.round(r.pr.achieved * GOAL_POINTS)]), ['Accord leverage', Math.round(acc * 4)], ['Tokens kept', kept * 10], ['Shocks', -g.penalty]];
   const score = parts.reduce((t, [, v]) => t + v, 0);
   const ratio = score / (GOAL_POINTS * res.length + 200);
-  const rank = ratio >= 0.9 ? 'Architect of the Accord' : ratio >= 0.65 ? 'Trusted Broker' : ratio >= 0.4 ? 'Hopeful Envoy' : 'Lone Orbit';
+  const rank = ratio >= 0.9 ? 'Architect of the Accord' : ratio >= 0.65 ? 'Trusted Broker' : ratio >= 0.4 ? 'Hopeful Envoy' : 'Lone Voice';
   showOverlay(`
     <div class="foot" style="margin-top:0"><div><h2>The eight months are over</h2><div class="muted">${rank}</div></div><div class="score">${score}</div></div>
     <p class="small">${parts.map(([k, v]) => `${esc(k)} <b>${v}</b>`).join(' · ')}</p>
-    <p class="small muted">Accord: ${g.coalition.map((k) => `${esc(planet(k).name)} (${esc(country(k))})`).join(', ')}</p>
+    <p class="small muted">Accord: ${g.coalition.map((k) => `${esc(planet(k).name)}`).join(', ')}</p>
     <div class="dgrid">${res.map(({ goal, pr }) => `<div class="dcard"><h3>${esc(goal.short)} · ${Math.round(pr.achieved * 100)}%</h3><dl>
       <dt>Risk</dt><dd>${esc(goal.risk_s)}</dd><dt>Route</dt><dd>${esc(goal.route_s)}</dd><dt>Needs</dt><dd>${esc(goal.consent_s)}</dd><dt>Gap</dt><dd>${esc(goal.gap_s)}</dd>
       <dt>Law</dt><dd>${pr.law.length ? esc(pr.law[0].who) : 'none (capped 75%)'}</dd></dl></div>`).join('')}</div>
@@ -285,19 +285,20 @@ const orbBg = (p) => `background: radial-gradient(circle at 35% 35%, #fff9 0, ${
 function renderSetup() {
   showOverlay(`
     <h1>Orbit Accord</h1>
-    <p class="lede">Planets are countries. Fly yours, win allies, and turn AI leverage into safety rules before the laws close.</p>
-    <div class="step">1 · Your planet</div>
-    <div class="grid g-planets">${P.planets.map((p) => `<button class="opt" data-k="${p.k}" aria-pressed="${g.me === p.k}"><b><span class="orb" style="${orbBg(p)}"></span>${esc(p.name)}</b><span>${esc(country(p.k))} · ${pct(weighted([p.k], false))}</span></button>`).join('')}</div>
+    <p class="lede">Fly your delegation around the world, win allies, and turn AI leverage into safety rules before the laws close.</p>
+    <div class="step">1 · Your country</div>
+    <div class="grid g-planets">${P.planets.map((p) => `<button class="opt" data-k="${p.k}" aria-pressed="${g.me === p.k}"><b><span class="orb" style="${orbBg(p)}"></span>${esc(p.name)}</b><span>${pct(weighted([p.k], false))} of AI supply</span></button>`).join('')}</div>
     <div class="step">2 · Goals (pick 1–3)</div>
     <div class="grid g-goals">${P.goals.map((x) => `<button class="opt" data-id="${x.id}" aria-pressed="${g.goals.includes(x.id)}"><b>${esc(x.short)}</b><span>Stops: ${esc(x.risk_s)}</span></button>`).join('')}</div>
     <div class="step">3 · Age</div>
     <div class="grid g-eras">${P.eras.map((e) => `<button class="opt" data-era="${e.id}" aria-pressed="${g.era.id === e.id}"><b>${esc(e.name)}</b><span>${Math.round(e.s * 100)}% of progress needs chips &amp; power</span></button>`).join('')}</div>
-    <div class="foot"><span class="muted small">% = share of the world's AI supply chain that depends on that planet.</span><button class="btn" id="start" ${g.me && g.goals.length ? '' : 'disabled'}>Launch ▸</button></div>`);
+    <div class="foot"><span class="muted small">% = share of the world's AI supply chain that depends on that country.</span><button class="btn" id="start" ${g.me && g.goals.length ? '' : 'disabled'}>Launch ▸</button></div>`);
 }
 function start() {
   g.coalition = [g.me]; g.tokens = { ...planet(g.me).powers };
-  const pp = world.pos[g.me];
-  Object.assign(world.player, { x: pp.x, y: pp.y, vx: 0, vy: 0, trail: [] });
+  const pp = world.real[g.me] ?? world.pos[g.me];
+  Object.assign(world.player, { x: pp.x, y: pp.y + 14 * world.u, vx: 0, vy: 0, trail: [], hd: -Math.PI / 2 });
+  world.player.lon = world.player.x / world.k + LON0; world.player.lat = LAT1 - world.player.y / world.k;
   $('#hud').hidden = false;
   openCouncil();
 }
@@ -324,32 +325,68 @@ function renderHud() {
   }).join('');
   $('#h-accord').textContent = `${Math.round(weighted(g.coalition))}%`;
   const p = planet(g.me), dep = dependsOn(g.me).slice(0, 2);
-  $('#h-me').innerHTML = `<div class="nm">${esc(p.name)} <span class="sub">${esc(country(g.me))}</span></div>
+  $('#h-me').innerHTML = `<div class="nm">${esc(p.name)}</div>
     <div class="sub">AI that depends on you</div><div class="big">${pct(weighted([g.me]))}</div>
     <div class="sub">You depend on: ${dep.map((d) => `${esc(d.st.name)} ← ${esc(planet(d.top)?.name ?? country(d.top))} ${Math.round(d.v)}%`).join('; ')}</div>
     <div class="toks">${Object.entries(g.tokens).map(([k, n]) => `<span class="tok" title="${pname(k)}">${icon(k)} ${n}</span>`).join('')}</div>`;
 }
 
-// ---------- World ----------
+// ---------- World map (Natural Earth 1:110m, equirectangular; the camera follows your delegation's jet) ----------
+const LON0 = -178, LON1 = 205, LAT0 = -56, LAT1 = 80;   // margins so the camera can centre on any country
 function resize() {
   const c = $('#world');
   world.dpr = Math.min(2, window.devicePixelRatio || 1);
   world.w = window.innerWidth; world.h = window.innerHeight;
   c.width = world.w * world.dpr; c.height = world.h * world.dpr;
-  world.cx = world.w / 2; world.cy = world.h / 2 + 6;
-  world.u = Math.max(0.55, Math.min((world.w - 470) / 600, (world.h - 70) / 600, 1.4));
-  if (world.w < 760) world.u = Math.min((world.w - 20) / 600, (world.h - 140) / 600);
-  world.stars = Array.from({ length: 160 }, () => ({ x: Math.random() * world.w, y: Math.random() * world.h, r: Math.random() * 1.3, t: Math.random() * 6 }));
+  world.k = Math.max(world.w / (LON1 - LON0) * 1.45, world.h / (LAT1 - LAT0) * 1.1, 3.2);
+  world.u = Math.max(0.75, Math.min(1.3, world.k / 6));
+  world.mw = (LON1 - LON0) * world.k; world.mh = (LAT1 - LAT0) * world.k;
+  for (const p of P.planets) {
+    world.pos[p.k] = xy(p.at);
+    world.real[p.k] = p.real ? xy(p.real) : null;
+    world.out[p.k] = (p.outposts ?? []).map(xy);
+  }
+  if (world.player.lon != null) Object.assign(world.player, xy([world.player.lon, world.player.lat]));
+  bakeMap();
 }
-const pr = (k) => (9 + Math.sqrt(weighted([k], false)) * 3.4) * world.u;
+const xy = ([lon, lat]) => ({ x: (lon - LON0) * world.k, y: (LAT1 - lat) * world.k });
+const pr = (k) => (5 + Math.sqrt(weighted([k], false)) * 2.1) * world.u;
+
+function bakeMap() {
+  const k = world.k, s = world.dpr;
+  const cv = document.createElement('canvas'); cv.width = world.mw * s; cv.height = world.mh * s;
+  const ctx = cv.getContext('2d'); ctx.scale(s, s);
+  const sea = ctx.createLinearGradient(0, 0, 0, world.mh);
+  sea.addColorStop(0, '#0b1a36'); sea.addColorStop(0.5, '#0f2547'); sea.addColorStop(1, '#0a1730');
+  ctx.fillStyle = sea; ctx.fillRect(0, 0, world.mw, world.mh);
+  ctx.strokeStyle = 'rgba(143,199,255,.08)'; ctx.lineWidth = 1;
+  for (let lon = -165; lon <= LON1; lon += 15) { const x = (lon - LON0) * k; ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, world.mh); ctx.stroke(); }
+  for (let lat = -45; lat <= LAT1; lat += 15) { const y = (LAT1 - lat) * k; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(world.mw, y); ctx.stroke(); }
+  world.paths = {};
+  for (const c of W2.countries) {
+    const path = new Path2D();
+    for (const r of c.r) {
+      let prev = null;
+      for (let i = 0; i < r.length; i += 2) {
+        let lon = r[i];
+        if (prev != null && Math.abs(lon - prev) > 180) lon += lon < prev ? 360 : -360;   // keep rings that cross the date line whole
+        prev = lon;
+        const x = (lon - LON0) * k, y = (LAT1 - r[i + 1]) * k;
+        i ? path.lineTo(x, y) : path.moveTo(x, y);
+      }
+      path.closePath();
+    }
+    const col = c.g ? planet(c.g).color : null;
+    ctx.fillStyle = col ? col + 'b0' : '#22304d'; ctx.fill(path);
+    ctx.strokeStyle = col ? '#ffffffaa' : '#33476d'; ctx.lineWidth = col ? 1.2 : 0.7; ctx.stroke(path);
+    if (c.g) { const gp = world.paths[c.g] ?? new Path2D(); gp.addPath(path); world.paths[c.g] = gp; }
+  }
+  world.map = cv;
+}
 
 function step(dt) {
-  for (const p of P.planets) {
-    world.ang[p.k] = (world.ang[p.k] ?? (p.angle * Math.PI) / 180) + (g.phase === 'setup' || g.phase === 'fly' ? ORBIT_SPEED[p.orbit] * dt : 0);
-    world.pos[p.k] = { x: world.cx + ORBIT_R[p.orbit] * world.u * Math.cos(world.ang[p.k]), y: world.cy + ORBIT_R[p.orbit] * world.u * Math.sin(world.ang[p.k]) };
-  }
   if (g.phase !== 'fly') return;
-  const pl = world.player, acc = 900 * world.u, max = 260 * world.u;
+  const pl = world.player, k = world.k, acc = 150 * k, max = 42 * k;
   let ax = (keys.ArrowRight || keys.d ? 1 : 0) - (keys.ArrowLeft || keys.a ? 1 : 0);
   let ay = (keys.ArrowDown || keys.s ? 1 : 0) - (keys.ArrowUp || keys.w ? 1 : 0);
   if (!ax && !ay && world.aim) { const dx = world.aim.x - pl.x, dy = world.aim.y - pl.y, d = Math.hypot(dx, dy); if (d > 6) { ax = dx / d; ay = dy / d; } else world.aim = null; }
@@ -357,77 +394,106 @@ function step(dt) {
   pl.vx += (ax / n) * acc * dt; pl.vy += (ay / n) * acc * dt;
   pl.vx *= 1 - Math.min(1, 2.6 * dt); pl.vy *= 1 - Math.min(1, 2.6 * dt);
   const sp = Math.hypot(pl.vx, pl.vy); if (sp > max) { pl.vx *= max / sp; pl.vy *= max / sp; }
-  pl.x = Math.max(16, Math.min(world.w - 16, pl.x + pl.vx * dt)); pl.y = Math.max(16, Math.min(world.h - 16, pl.y + pl.vy * dt));
-  const sx = pl.x - world.cx, sy = pl.y - world.cy, sd = Math.hypot(sx, sy), minD = 62 * world.u + pr(g.me);
-  if (sd < minD) { pl.x = world.cx + (sx / (sd || 1)) * minD; pl.y = world.cy + (sy / (sd || 1)) * minD; }
-  pl.trail.push({ x: pl.x, y: pl.y }); if (pl.trail.length > 24) pl.trail.shift();
+  if (sp > 8) pl.hd = Math.atan2(pl.vy, pl.vx);
+  pl.x = Math.max(10, Math.min(world.mw - 10, pl.x + pl.vx * dt)); pl.y = Math.max(10, Math.min(world.mh - 10, pl.y + pl.vy * dt));
+  pl.lon = pl.x / k + LON0; pl.lat = LAT1 - pl.y / k;
+  pl.trail.push({ x: pl.x, y: pl.y }); if (pl.trail.length > 40) pl.trail.shift();
   g.near = null; let best = Infinity;
   for (const p of P.planets) {
     if (p.k === g.me) continue;
-    const q = world.pos[p.k], d = Math.hypot(q.x - pl.x, q.y - pl.y);
-    if (d < pr(p.k) + pr(g.me) + 34 * world.u && d < best) { best = d; g.near = p.k; }
+    for (const q of [world.pos[p.k], ...world.out[p.k]]) {
+      const d = Math.hypot(q.x - pl.x, q.y - pl.y);
+      if (d < pr(p.k) + 40 * world.u && d < best) { best = d; g.near = p.k; }
+    }
   }
   g.timeLeft -= dt;
   if (g.timeLeft <= 0) { g.timeLeft = 0; endMonth(); }
 }
 
+function camera() {
+  const f = g.me && g.phase !== 'setup' ? world.player : xy([10, 25]);
+  const cx = world.mw <= world.w ? (world.mw - world.w) / 2 : Math.max(0, Math.min(world.mw - world.w, f.x - world.w / 2));
+  const cy = world.mh <= world.h ? (world.mh - world.h) / 2 : Math.max(0, Math.min(world.mh - world.h, f.y - world.h / 2));
+  world.cam.x += (cx - world.cam.x) * (world.camSet ? 0.12 : 1); world.cam.y += (cy - world.cam.y) * (world.camSet ? 0.12 : 1);
+  world.camSet = true;
+}
+
 function draw(t) {
   const ctx = $('#world').getContext('2d'), u = world.u;
+  camera();
   ctx.setTransform(world.dpr, 0, 0, world.dpr, 0, 0);
-  ctx.fillStyle = '#070a16'; ctx.fillRect(0, 0, world.w, world.h);
-  for (const s of world.stars) { ctx.globalAlpha = 0.4 + 0.4 * Math.sin(t / 900 + s.t); ctx.fillStyle = '#dfe6ff'; ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 7); ctx.fill(); }
-  ctx.globalAlpha = 1;
-  ctx.strokeStyle = '#26305a'; ctx.setLineDash([2, 6]);
-  for (const r of Object.values(ORBIT_R)) { ctx.beginPath(); ctx.arc(world.cx, world.cy, r * u, 0, 7); ctx.stroke(); }
-  ctx.setLineDash([]);
-  for (let i = 0; i < 90; i++) {
-    const a = (i / 90) * Math.PI * 2 + t / 60000, rr = (ORBIT_R[3] + ((i * 37) % 19) - 9) * u;
-    ctx.fillStyle = '#8a7560'; ctx.globalAlpha = 0.6; ctx.beginPath(); ctx.arc(world.cx + rr * Math.cos(a), world.cy + rr * Math.sin(a), (1 + (i % 3) * 0.5) * u, 0, 7); ctx.fill();
+  ctx.fillStyle = '#070d1d'; ctx.fillRect(0, 0, world.w, world.h);
+  ctx.translate(-world.cam.x, -world.cam.y);
+  ctx.drawImage(world.map, 0, 0, world.mw, world.mh);
+
+  // Accord members glow gold; the country in range pulses blue.
+  ctx.lineJoin = 'round';
+  for (const k of g.coalition) if (world.paths[k]) {
+    ctx.shadowColor = '#f2c96b'; ctx.shadowBlur = 12; ctx.strokeStyle = '#f2c96b'; ctx.lineWidth = 2.2; ctx.stroke(world.paths[k]);
   }
-  ctx.globalAlpha = 1;
-  const sun = ctx.createRadialGradient(world.cx, world.cy, 0, world.cx, world.cy, 70 * u);
-  sun.addColorStop(0, '#fff6d5'); sun.addColorStop(0.45, '#f2c96b'); sun.addColorStop(1, 'rgba(242,201,107,0)');
-  ctx.fillStyle = sun; ctx.beginPath(); ctx.arc(world.cx, world.cy, 70 * u, 0, 7); ctx.fill();
-  ctx.fillStyle = '#2a1f05'; ctx.font = `700 ${Math.max(10, 12 * u)}px system-ui`; ctx.textAlign = 'center'; ctx.fillText('The Frontier', world.cx, world.cy + 4);
+  ctx.shadowBlur = 0;
+  if (g.phase === 'fly' && g.near && world.paths[g.near]) {
+    ctx.strokeStyle = `rgba(143,199,255,${0.55 + 0.45 * Math.sin(t / 180)})`; ctx.lineWidth = 2; ctx.setLineDash([4, 4]); ctx.stroke(world.paths[g.near]); ctx.setLineDash([]);
+  }
 
   const meXY = g.me && g.phase !== 'setup' ? world.player : null;
   if (meXY) {
-    ctx.strokeStyle = 'rgba(242,201,107,.7)'; ctx.setLineDash([5, 5]); ctx.lineWidth = 1.5;
-    for (const k of g.coalition) if (k !== g.me) { const q = world.pos[k]; ctx.beginPath(); ctx.moveTo(meXY.x, meXY.y); ctx.lineTo(q.x, q.y); ctx.stroke(); }
-    ctx.setLineDash([]); ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(242,201,107,.75)'; ctx.setLineDash([6, 5]); ctx.lineWidth = 1.6; ctx.lineDashOffset = -t / 60;
+    for (const k of g.coalition) if (k !== g.me) arc(ctx, meXY, world.pos[k]);
+    ctx.setLineDash([]); ctx.lineDashOffset = 0; ctx.lineWidth = 1;
   }
-  for (const p of P.planets) {
-    if (meXY && p.k === g.me) continue;
-    drawPlanet(ctx, p, world.pos[p.k], { ally: g.coalition.includes(p.k), near: g.near === p.k });
-  }
-  if (meXY) {
-    const pl = world.player, p = planet(g.me);
-    pl.trail.forEach((q, i) => { ctx.globalAlpha = i / pl.trail.length * 0.35; ctx.fillStyle = p.color; ctx.beginPath(); ctx.arc(q.x, q.y, pr(g.me) * (i / pl.trail.length) * 0.7, 0, 7); ctx.fill(); });
-    ctx.globalAlpha = 1;
-    const glow = ctx.createRadialGradient(pl.x, pl.y, 0, pl.x, pl.y, pr(g.me) * 2.2);
-    glow.addColorStop(0, 'rgba(242,201,107,.35)'); glow.addColorStop(1, 'rgba(242,201,107,0)');
-    ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(pl.x, pl.y, pr(g.me) * 2.2, 0, 7); ctx.fill();
-    drawPlanet(ctx, p, pl, { me: true });
-  }
+  for (const p of P.planets) drawBadge(ctx, p, { ally: g.coalition.includes(p.k), near: g.near === p.k, home: p.k === g.me && !!meXY });
+  if (meXY) drawJet(ctx, world.player, planet(g.me), t);
+
   const prm = $('#prompt');
   if (g.phase === 'fly' && g.near) {
     const q = world.pos[g.near]; prm.hidden = false;
-    prm.style.left = `${q.x}px`; prm.style.top = `${q.y - pr(g.near) - 8}px`;
-    prm.textContent = g.coalition.includes(g.near) ? `${planet(g.near).name} · ally` : g.asked.has(g.near) ? `${planet(g.near).name} · asked` : `Space · talk to ${planet(g.near).name}`;
+    prm.style.left = `${q.x - world.cam.x}px`; prm.style.top = `${q.y - world.cam.y - pr(g.near) - 8}px`;
+    prm.textContent = g.coalition.includes(g.near) ? `${planet(g.near).name} · ally` : g.asked.has(g.near) ? `${planet(g.near).name} · asked` : `Space · meet ${planet(g.near).name}`;
   } else prm.hidden = true;
 }
-function drawPlanet(ctx, p, q, o) {
-  const r = pr(p.k), u = world.u;
+function arc(ctx, a, b) {
+  const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2 - Math.hypot(b.x - a.x, b.y - a.y) * 0.18;
+  ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.quadraticCurveTo(mx, my, b.x, b.y); ctx.stroke();
+}
+function drawBadge(ctx, p, o) {
+  const r = pr(p.k), u = world.u, q = world.pos[p.k], real = world.real[p.k];
+  ctx.strokeStyle = '#ffffff70'; ctx.lineWidth = 1;
+  if (real) { ctx.beginPath(); ctx.moveTo(real.x, real.y); ctx.lineTo(q.x, q.y); ctx.stroke(); ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(real.x, real.y, 2.2, 0, 7); ctx.fill(); }
+  for (const s of world.out[p.k]) {
+    ctx.fillStyle = p.color; ctx.strokeStyle = o.ally ? '#f2c96b' : '#ffffffaa'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(s.x, s.y, r * 0.55, 0, 7); ctx.fill(); ctx.stroke();
+  }
   const grd = ctx.createRadialGradient(q.x - r * 0.35, q.y - r * 0.35, r * 0.1, q.x, q.y, r);
-  grd.addColorStop(0, 'rgba(255,255,255,.75)'); grd.addColorStop(0.3, p.color); grd.addColorStop(1, '#05060c');
+  grd.addColorStop(0, '#ffffffd0'); grd.addColorStop(0.35, p.color); grd.addColorStop(1, '#0a0e1c');
   ctx.fillStyle = grd; ctx.beginPath(); ctx.arc(q.x, q.y, r, 0, 7); ctx.fill();
-  if (o.ally || o.me) { ctx.strokeStyle = '#f2c96b'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(q.x, q.y, r + 4, 0, 7); ctx.stroke(); ctx.lineWidth = 1; }
-  if (o.near) { ctx.strokeStyle = '#8fc7ff'; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.arc(q.x, q.y, r + 8, 0, 7); ctx.stroke(); ctx.setLineDash([]); }
-  ctx.textAlign = 'center';
-  ctx.fillStyle = o.me ? '#f2c96b' : '#eef0fb'; ctx.font = `${o.me ? 700 : 600} ${Math.max(10, 12 * u)}px system-ui`;
-  ctx.fillText(o.me ? `${p.name} (you)` : p.name, q.x, q.y + r + 13 * Math.max(1, u));
-  ctx.fillStyle = '#9ea5c4'; ctx.font = `${Math.max(9, 10 * u)}px system-ui`;
-  ctx.fillText(country(p.k), q.x, q.y + r + 25 * Math.max(1, u));
+  ctx.strokeStyle = o.ally || o.home ? '#f2c96b' : '#ffffffcc'; ctx.lineWidth = o.ally || o.home ? 2.4 : 1.2; ctx.stroke(); ctx.lineWidth = 1;
+  if (o.near) { ctx.strokeStyle = '#8fc7ff'; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.arc(q.x, q.y, r + 6, 0, 7); ctx.stroke(); ctx.setLineDash([]); }
+  ctx.textAlign = 'center'; ctx.lineWidth = 3; ctx.strokeStyle = '#070d1dd0';
+  ctx.font = `${o.home ? 700 : 600} ${Math.round(12 * u)}px system-ui`; ctx.fillStyle = o.home ? '#f2c96b' : '#eef0fb';
+  const label = o.home ? `${p.name} (home)` : p.name, ly = q.y + r + 13 * u;
+  ctx.strokeText(label, q.x, ly); ctx.fillText(label, q.x, ly);
+  ctx.font = `${Math.round(10 * u)}px system-ui`; ctx.fillStyle = '#b6bfdc';
+  const sub = `${pct(weighted([p.k], false))} of AI supply`;
+  ctx.strokeText(sub, q.x, ly + 12 * u); ctx.fillText(sub, q.x, ly + 12 * u);
+}
+function drawJet(ctx, pl, p, t) {
+  pl.trail.forEach((q, i) => { ctx.globalAlpha = (i / pl.trail.length) * 0.5; ctx.fillStyle = '#e8f0ff'; ctx.beginPath(); ctx.arc(q.x, q.y, 1.6 * world.u, 0, 7); ctx.fill(); });
+  ctx.globalAlpha = 1;
+  const s = 1.25 * world.u, bob = Math.sin(t / 300) * 1.5;
+  ctx.save(); ctx.translate(pl.x, pl.y + bob); ctx.rotate(pl.hd ?? -Math.PI / 2);
+  ctx.shadowColor = '#f2c96b'; ctx.shadowBlur = 14;
+  ctx.fillStyle = '#f7f4ea'; ctx.strokeStyle = '#1b1606'; ctx.lineWidth = 1.2;
+  ctx.beginPath();   // nose points along +x
+  ctx.moveTo(14 * s, 0); ctx.lineTo(6 * s, -2 * s); ctx.lineTo(1 * s, -12 * s); ctx.lineTo(-3 * s, -12 * s); ctx.lineTo(-1 * s, -2.5 * s);
+  ctx.lineTo(-9 * s, -2.5 * s); ctx.lineTo(-12 * s, -6 * s); ctx.lineTo(-14 * s, -6 * s); ctx.lineTo(-12 * s, 0);
+  ctx.lineTo(-14 * s, 6 * s); ctx.lineTo(-12 * s, 6 * s); ctx.lineTo(-9 * s, 2.5 * s); ctx.lineTo(-1 * s, 2.5 * s);
+  ctx.lineTo(-3 * s, 12 * s); ctx.lineTo(1 * s, 12 * s); ctx.lineTo(6 * s, 2 * s); ctx.closePath();
+  ctx.fill(); ctx.shadowBlur = 0; ctx.stroke();
+  ctx.fillStyle = p.color; ctx.fillRect(-12 * s, -1.2 * s, 18 * s, 2.4 * s);
+  ctx.restore();
+  ctx.textAlign = 'center'; ctx.font = `700 ${Math.round(11 * world.u)}px system-ui`; ctx.lineWidth = 3; ctx.strokeStyle = '#070d1dd0'; ctx.fillStyle = '#f2c96b';
+  ctx.strokeText('Your delegation', pl.x, pl.y - 20 * world.u); ctx.fillText('Your delegation', pl.x, pl.y - 20 * world.u);
 }
 
 let last = 0;
@@ -450,7 +516,7 @@ function wire() {
     else if (g.phase === 'council' && /^[1-4]$/.test(k)) pickMove(Number(k) - 1);
   });
   window.addEventListener('keyup', (e) => { keys[e.key.length === 1 ? e.key.toLowerCase() : e.key] = false; });
-  $('#world').addEventListener('pointerdown', (e) => { if (g.phase === 'fly') world.aim = { x: e.clientX, y: e.clientY }; });
+  $('#world').addEventListener('pointerdown', (e) => { if (g.phase === 'fly') world.aim = { x: e.clientX + world.cam.x, y: e.clientY + world.cam.y }; });
   $('#panel').addEventListener('click', (e) => {
     const b = e.target.closest('button'); if (!b) return;
     if (b.dataset.k) { g.me = b.dataset.k; renderSetup(); }
@@ -462,10 +528,10 @@ function wire() {
   });
 }
 
-Promise.all(['../data/layers.json', '../data/conditions.json', '../data/windows.json', 'planets.json'].map((u) => fetch(u).then((r) => r.json())))
-  .then(([l, c, w, p]) => {
-    L = l; C = c; W = w; P = p;
+Promise.all(['../data/layers.json', '../data/conditions.json', '../data/windows.json', 'planets.json', 'world.json'].map((u) => fetch(u).then((r) => r.json())))
+  .then(([l, c, w, p, m]) => {
+    L = l; C = c; W = w; P = p; W2 = m;
     g.era = P.eras.find((e) => e.id === 'today');
-    resize(); wire(); step(0); renderSetup(); requestAnimationFrame(loop);
+    resize(); wire(); renderSetup(); requestAnimationFrame(loop);
   })
   .catch((err) => { document.body.innerHTML = `<p style="padding:20px">Could not load game data: ${esc(err.message)}. Serve the repository folder over HTTP.</p>`; });

@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "note": "Fantasy layer for Orbit Accord. Each planet maps to a country group key in data/layers.json; AI shares come from there unchanged.",
+  "note": "Country layer for Orbit Accord. Each entry maps to a country group key in data/layers.json; AI shares come from there unchanged. at/real/outposts are map positions [lon, lat]; at is nudged off crowded spots.",
   "powers_note": "Non-AI powers (0-3) are ILLUSTRATIVE game tokens, set by team judgement from widely reported trade strengths (e.g., the Netherlands as a top food exporter, the Gulf in energy and sovereign capital). They are not measured data and should not be cited.",
   "powers": {
    "food": "Food",
@@ -22,13 +22,11 @@
  "planets": [
   {
    "k": "US",
-   "name": "Titanis",
-   "title": "High Regent of Titanis",
+   "name": "United States",
+   "title": "Secretary of State",
    "super": true,
    "color": "#5b8fd6",
-   "orbit": 1,
-   "angle": 200,
-   "flavor": "A gas giant that designs nearly every thinking-engine in the system and hosts most of them.",
+   "flavor": "Designs nearly every frontier AI chip and hosts most of the world's AI compute.",
    "powers": {
     "food": 3,
     "medicine": 3,
@@ -36,17 +34,20 @@
     "minerals": 1,
     "capital": 3,
     "market": 3
-   }
+   },
+   "at": [
+    -98,
+    39
+   ],
+   "say": "the United States"
   },
   {
    "k": "CN",
-   "name": "Magnor",
-   "title": "Grand Steward of Magnor",
+   "name": "China",
+   "title": "Minister of Foreign Affairs",
    "super": true,
    "color": "#d9606f",
-   "orbit": 1,
-   "angle": 20,
-   "flavor": "A heavy world of refineries and magnet forges; most of the system's rare metals pass through it.",
+   "flavor": "Refines most of the world's rare metals and builds its own AI stack fast.",
    "powers": {
     "food": 1,
     "medicine": 2,
@@ -54,17 +55,19 @@
     "minerals": 3,
     "capital": 3,
     "market": 3
-   }
+   },
+   "at": [
+    103,
+    34
+   ]
   },
   {
    "k": "JP",
-   "name": "Kaigen",
-   "title": "Sovereign of Kaigen",
+   "name": "Japan",
+   "title": "Minister of Economy, Trade and Industry",
    "super": false,
    "color": "#e8c46a",
-   "orbit": 2,
-   "angle": 300,
-   "flavor": "An island world whose chemists make the films, wafers and resists every chip forge needs.",
+   "flavor": "Its chemists make the films, wafers and resists every chip fab needs.",
    "powers": {
     "food": 0,
     "medicine": 2,
@@ -72,17 +75,23 @@
     "minerals": 0,
     "capital": 3,
     "market": 2
-   }
+   },
+   "at": [
+    150,
+    34
+   ],
+   "real": [
+    138.5,
+    36
+   ]
   },
   {
    "k": "TW",
-   "name": "Fabrion",
-   "title": "Warden of Fabrion",
+   "name": "Taiwan",
+   "title": "Minister of Economic Affairs",
    "super": false,
    "color": "#4fc3a1",
-   "orbit": 2,
-   "angle": 350,
-   "flavor": "A small world with the system's finest chip forges. Everyone needs it; few can protect it.",
+   "flavor": "Makes nearly all of the world's most advanced chips.",
    "powers": {
     "food": 0,
     "medicine": 0,
@@ -90,17 +99,23 @@
     "minerals": 0,
     "capital": 2,
     "market": 1
-   }
+   },
+   "at": [
+    127,
+    17
+   ],
+   "real": [
+    121,
+    23.7
+   ]
   },
   {
    "k": "KR",
-   "name": "Mnemos",
-   "title": "Sovereign of Mnemos",
+   "name": "South Korea",
+   "title": "Minister of Science and ICT",
    "super": false,
    "color": "#9b7fe0",
-   "orbit": 2,
-   "angle": 40,
-   "flavor": "The memory world: four in five high-bandwidth memory stacks are grown here.",
+   "flavor": "Makes most of the high-bandwidth memory that AI chips need.",
    "powers": {
     "food": 0,
     "medicine": 1,
@@ -108,17 +123,23 @@
     "minerals": 0,
     "capital": 2,
     "market": 1
-   }
+   },
+   "at": [
+    134,
+    46
+   ],
+   "real": [
+    127.8,
+    36.4
+   ]
   },
   {
    "k": "NL",
-   "name": "Lithos",
-   "title": "Steward of Lithos",
+   "name": "Netherlands",
+   "title": "Minister of Foreign Trade",
    "super": false,
    "color": "#f08a3c",
-   "orbit": 2,
-   "angle": 100,
-   "flavor": "A low, flat world that alone builds the light-machines that print the finest chips.",
+   "flavor": "Home of the only maker of EUV lithography machines.",
    "powers": {
     "food": 3,
     "medicine": 2,
@@ -126,17 +147,24 @@
     "minerals": 0,
     "capital": 2,
     "market": 1
-   }
+   },
+   "at": [
+    2,
+    64
+   ],
+   "real": [
+    5.3,
+    52.2
+   ],
+   "say": "the Netherlands"
   },
   {
    "k": "DE",
-   "name": "Ferrum",
-   "title": "Chancellor of Ferrum",
+   "name": "Germany",
+   "title": "Federal Minister for Digital Affairs",
    "super": false,
    "color": "#9aa4b2",
-   "orbit": 2,
-   "angle": 150,
-   "flavor": "A machine-builder's world: grid equipment, precision tools and a large common market.",
+   "flavor": "Builds the precision optics and industrial machines behind chip fabs.",
    "powers": {
     "food": 1,
     "medicine": 3,
@@ -144,17 +172,23 @@
     "minerals": 0,
     "capital": 2,
     "market": 3
-   }
+   },
+   "at": [
+    20,
+    44
+   ],
+   "real": [
+    10.4,
+    51.2
+   ]
   },
   {
    "k": "UK",
-   "name": "Albion",
-   "title": "Crown of Albion",
+   "name": "United Kingdom",
+   "title": "Secretary of State for Science",
    "super": false,
    "color": "#6fa8dc",
-   "orbit": 2,
-   "angle": 220,
-   "flavor": "A world of banks, labs and safety testers, with a strong voice and few factories.",
+   "flavor": "Strong AI research labs and chip design (Arm).",
    "powers": {
     "food": 0,
     "medicine": 2,
@@ -162,17 +196,24 @@
     "minerals": 0,
     "capital": 3,
     "market": 2
-   }
+   },
+   "at": [
+    -22,
+    57
+   ],
+   "real": [
+    -2,
+    54
+   ],
+   "say": "the United Kingdom"
   },
   {
    "k": "GULF",
-   "name": "Solara",
-   "title": "Emirs of Solara",
+   "name": "Gulf states",
+   "title": "Ministers of the Gulf delegation",
    "super": false,
    "color": "#f2d16b",
-   "orbit": 2,
-   "angle": 260,
-   "flavor": "Desert worlds rich in energy and capital, buying their way into thinking-engines.",
+   "flavor": "Cheap energy and sovereign capital, building data centres at scale.",
    "powers": {
     "food": 0,
     "medicine": 0,
@@ -180,17 +221,20 @@
     "minerals": 1,
     "capital": 3,
     "market": 1
-   }
+   },
+   "at": [
+    50,
+    23
+   ],
+   "say": "the Gulf states"
   },
   {
    "k": "AUCA",
-   "name": "Boreal",
-   "title": "Twin Sovereigns of Boreal",
+   "name": "Australia & Canada",
+   "title": "Joint ministers of Australia and Canada",
    "super": false,
    "color": "#7fbf7f",
-   "orbit": 3,
-   "angle": 70,
-   "flavor": "Twin wide worlds of grain, gas and ore, far from the chip forges.",
+   "flavor": "Critical minerals, clean power and strong AI research.",
    "powers": {
     "food": 3,
     "medicine": 1,
@@ -198,17 +242,25 @@
     "minerals": 3,
     "capital": 2,
     "market": 1
-   }
+   },
+   "at": [
+    -108,
+    58
+   ],
+   "outposts": [
+    [
+     134,
+     -25
+    ]
+   ]
   },
   {
    "k": "PROD",
-   "name": "The Ore Belt",
-   "title": "Council of the Ore Belt",
+   "name": "Producer states",
+   "title": "Ministers of DRC, Indonesia, Chile and Peru",
    "super": false,
    "color": "#b08968",
-   "orbit": 3,
-   "angle": 230,
-   "flavor": "A belt of mining worlds whose cobalt, nickel and copper feed every forge, though others own many of the mines.",
+   "flavor": "Mine the cobalt, nickel and copper every data centre needs.",
    "powers": {
     "food": 2,
     "medicine": 0,
@@ -216,7 +268,26 @@
     "minerals": 3,
     "capital": 0,
     "market": 2
-   }
+   },
+   "at": [
+    23,
+    -3
+   ],
+   "outposts": [
+    [
+     115,
+     -1
+    ],
+    [
+     -71,
+     -30
+    ],
+    [
+     -75,
+     -9
+    ]
+   ],
+   "say": "the producer states"
   }
  ],
  "goals": [
