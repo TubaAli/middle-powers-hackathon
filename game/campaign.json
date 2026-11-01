@@ -6,7 +6,8 @@
   "fictionNotice": "This is a made-up story. The people, talks, points and endings are all pretend. The research links describe real ideas, but no real government agreed to these scenes.",
   "inputs": {
     "data/stress-tests.json": "f2b67e2d37948cab426942589984eac28596a3a514ee992074e7398c03b5b69f",
-    "game/dialogue-authored.json": "a212811a9b8a368e376f14a93c7c5b4755d5b4b657e134d512ac8d648e20c306"
+    "game/dialogue-authored.json": "a212811a9b8a368e376f14a93c7c5b4755d5b4b657e134d512ac8d648e20c306",
+    "game/learning-notes.json": "305eefcf0750fb3588e77d7ab81df120aada9f2d400ba25d2a2d5158ac841ba9"
   },
   "months": [
     {
@@ -203,6 +204,22 @@
           ]
         }
       },
+      "lesson": "An incident response needs a working exchange between the operator and the customer, including permission to share the relevant records.",
+      "repair": "Propose named contacts and an agreed way to exchange the incident records. Rehearse the call and the reply while checking that unrelated jobs keep running.",
+      "check": {
+        "question": "What is still missing after the operator answers the call?",
+        "answers": [
+          "A way for the customer to return the needed records.",
+          "A reason to stop every customer's work."
+        ],
+        "correctIndex": 0,
+        "explanation": "Answering the call starts the response. The operator still needs the customer's evidence to investigate this incident."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask for a rehearsal report on one operator and customer's exchange of incident records. It will show where that exchange breaks down without setting rules for other customers.",
+        "shared": "Ask for a draft assigning incident-response responsibilities across the service, using a rehearsal to find gaps. The operator and affected customers still need to agree to the terms and test their own exchanges."
+      },
       "research": {
         "headline": "A delegated common contract is plausible, but governance votes and procurement-amendment limits constrain scope",
         "assessment": "qualified",
@@ -397,6 +414,22 @@
             }
           ]
         }
+      },
+      "lesson": "A test result describes a particular version and setup. A change can require fresh evidence before the buyer accepts the service.",
+      "repair": "Record the model version used in each test and ask the supplier to report changes. Rehearse a new review after a version change, including what the buyer can use while waiting.",
+      "check": {
+        "question": "The supplier changes the model after testing. What should the buyer check?",
+        "answers": [
+          "Whether the report still has the same title.",
+          "Whether the evidence covers the changed service."
+        ],
+        "correctIndex": 1,
+        "explanation": "The service has changed even if its name has not. The buyer needs evidence relevant to the version it will use."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask for a comparison of the existing review and an extra test for one release. This can start sooner than a common agreement, but its findings concern that version and setup.",
+        "shared": "Ask the team to draft common requests for version information and fresh tests that several buyers could reuse. Buyers and suppliers still need to agree what they can provide, and each changed service needs relevant evidence."
       },
       "research": {
         "headline": "A real platform approval gate exists, but independent assurance and supplier disclosure cannot be inferred from it.",
@@ -627,6 +660,22 @@
           ]
         }
       },
+      "lesson": "Sharing test evidence can reduce repeated work while leaving each buyer responsible for deciding whether it is enough.",
+      "repair": "Add a place for each buyer to list missing tests and record its own decision. Try the report again with the additional language test attached.",
+      "check": {
+        "question": "One buyer accepts the shared report. What follows for the others?",
+        "answers": [
+          "They still check whether it meets their own needs.",
+          "They must accept the service too."
+        ],
+        "correctIndex": 0,
+        "explanation": "A reusable report supplies evidence. It does not make the acceptance decision for every buyer."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange a trial of one reusable report, recording which evidence each buyer can use and which tests it still needs.",
+        "shared": "Ask for a common report format and a process for recording each buyer's separate decision. Each buyer still needs to accept the format and obtain any missing language or local-service tests."
+      },
       "research": {
         "headline": "Portable evidence is more defensible than a common approval or common contractual remedy.",
         "assessment": "qualified",
@@ -829,6 +878,22 @@
           ]
         }
       },
+      "lesson": "Passing familiar attacks leaves open how an assistant behaves on new tasks. Permission checks can limit where it sends records.",
+      "repair": "Tighten the assistant's permission to send records and try fresh attacks with made-up data. Include ordinary tasks to check that the restriction still allows useful work.",
+      "check": {
+        "question": "Why include new attacks in the next test?",
+        "answers": [
+          "Passing old attacks guarantees the new ones will fail.",
+          "New tactics may reveal a route for leaking records."
+        ],
+        "correctIndex": 1,
+        "explanation": "The first test covered the attacks used there. A different task can expose a failure that those attacks missed."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange new attack tests and ordinary-work checks for one assistant setup. The report will describe attempted leaks and which useful tasks still work.",
+        "shared": "Ask for a permission-check plan that several buyers could use, starting with the rehearsal's findings. Each buyer still needs to approve its service's limits and obtain evidence for its own tools, permissions, and tasks."
+      },
       "research": {
         "headline": "Test the whole agent and preserve utility; a safe-looking refusal or known-attack retest can mislead.",
         "assessment": "qualified",
@@ -1017,6 +1082,22 @@
             }
           ]
         }
+      },
+      "lesson": "Comparing scores requires enough detail to compare the experiments behind them. Matching model names alone is not enough.",
+      "repair": "Record the tool settings alongside the model version and the rest of the test setup. Repeat the comparison with matching settings, then let each team assess the evidence.",
+      "check": {
+        "question": "What should the teams do before treating the score gap as a model difference?",
+        "answers": [
+          "Compare the settings and repeat the test consistently.",
+          "Average the scores and discard the setup details."
+        ],
+        "correctIndex": 0,
+        "explanation": "The changed tool setting offers another explanation for the gap. A consistent repeat helps distinguish it from a model difference."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask a second team to repeat one experiment without showing it the first score. The comparison will record differences in results and setup.",
+        "shared": "Ask for a common format for recording test settings and results across teams. The teams still need to agree which details to record and demonstrate that another team can repeat the experiment from them."
       },
       "research": {
         "headline": "A shared negative-control and execution manifest can test interoperability without pretending to harmonise law.",
@@ -1220,6 +1301,22 @@
             }
           ]
         }
+      },
+      "lesson": "An investor's influence depends on the rights in the agreement and the decisions still open. The timing of a payment alone does not establish those rights.",
+      "repair": "List the activities covered by the proposed condition and identify whose approval is needed. Rehearse its use only for a funding decision the agreement leaves open to change.",
+      "check": {
+        "question": "A payment is scheduled for next month. Can the team assume it can add a new condition?",
+        "answers": [
+          "Yes, because the money has not arrived yet.",
+          "No, the existing agreement may already require payment."
+        ],
+        "correctIndex": 1,
+        "explanation": "The agreement determines whether the payment can be changed. A future date does not by itself create a new choice."
+      },
+      "researchContext": "The research records an announced investment agreement. It does not verify that the money was paid or that particular investor rights took effect.",
+      "plans": {
+        "pilot": "Ask for a review of one future funding decision, listing who controls it and whether its terms can still change. The review creates no right to withhold payment.",
+        "shared": "Ask for a proposed testing condition identifying the company activities it would cover. The necessary investors and company representatives still need to agree, supported by evidence that the relevant funding terms can lawfully change."
       },
       "research": {
         "headline": "Staged investment offers a hypothesis, but the PM's claim that terms are secured weakens the assumption that stages remain negotiable",
@@ -1426,6 +1523,22 @@
           ]
         }
       },
+      "lesson": "A testing condition can affect a release only if the result reaches an authorised decision-maker in time to change that release.",
+      "repair": "Propose a release schedule that allows time for the test and a decision on its result. Rehearse delaying publication when the required evidence is missing.",
+      "check": {
+        "question": "Why does the timing of the report matter?",
+        "answers": [
+          "The decision needs the evidence before publication.",
+          "Closing an account later removes every downloaded copy."
+        ],
+        "correctIndex": 0,
+        "explanation": "The proposed condition acts before publication. Stopping future computer access cannot recall copies already released."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange a rehearsal of one model's test and release decision, recording whether the evidence arrives before publication.",
+        "shared": "Ask for proposed testing and release conditions for future awards of computer time. The programme, operator, and participating teams still need to agree on responsibilities and test whether the schedule allows decisions before publication."
+      },
       "research": {
         "headline": "Existing origin restrictions and open-publication incentives require a narrowly scoped post-tuning gate",
         "assessment": "qualified",
@@ -1622,6 +1735,22 @@
           ]
         }
       },
+      "lesson": "New lending conditions need both a decision that remains open and approval from the parties who control it.",
+      "repair": "Map the required approvals for the proposed new commitment and check which members can provide them. Test the proposal against those rules without treating existing borrowing rights as changeable.",
+      "check": {
+        "question": "Why is the group's support insufficient on its own?",
+        "answers": [
+          "Every lender must control an equal share of the decision.",
+          "Its members may lack the approval rights the decision requires."
+        ],
+        "correctIndex": 1,
+        "explanation": "Support for a proposal and authority to approve it are different. The agreement determines the required approvals."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask for a map of one proposed new lending decision and its required approvals. It will distinguish open choices from money the borrower already has a right to draw.",
+        "shared": "Ask for a joint proposal specifying the testing condition lenders want in a new commitment. It still needs evidence of the decision-makers' rights and consent from the borrower and all parties required by that agreement."
+      },
       "research": {
         "headline": "New-facility consent may need fewer parties than a syndicate amendment, but proprietary-information exceptions and substitution constrain safety leverage",
         "assessment": "qualified",
@@ -1809,6 +1938,22 @@
             }
           ]
         }
+      },
+      "lesson": "A condition attached to one way of obtaining computer time may miss the same work submitted through another route.",
+      "repair": "Ask the operator and participating programmes to define how they identify the same job and handle an existing pause. Rehearse a second application and record any route the agreement still leaves open.",
+      "check": {
+        "question": "What should the next rehearsal follow?",
+        "answers": [
+          "The same job as it moves between programmes.",
+          "Only the number of applications the first programme rejects."
+        ],
+        "correctIndex": 0,
+        "explanation": "The question is whether the affected work continues elsewhere. A rejected application alone does not answer it."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask for a report on one programme's condition by following a test job, including whether it can continue through another programme.",
+        "shared": "Ask for a comparison of programme-specific conditions with one condition applied by the shared operator. The operator and relevant programmes still need to establish approval rights and test which alternative access routes remain open."
       },
       "research": {
         "headline": "A Belgian pilot remains useful, but is not demonstrably the fastest route to a common service condition",
@@ -2007,6 +2152,22 @@
             }
           ]
         }
+      },
+      "lesson": "A result is easier to check when an evaluator can inspect the relevant setup. That access can have clear limits to protect unrelated information.",
+      "repair": "Propose access to the settings needed for this test, with confidentiality limits agreed by the relevant teams. Ask the evaluator to repeat the result using that access.",
+      "check": {
+        "question": "What access would address the missing evidence?",
+        "answers": [
+          "Every file belonging to every computer user.",
+          "The relevant test settings under agreed confidentiality rules."
+        ],
+        "correctIndex": 1,
+        "explanation": "The evaluator needs the setup for this result. Unrestricted access to unrelated work does not follow from that need."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask one evaluator to try to repeat a result using the access offered. The report will identify missing settings and any access that was unnecessary.",
+        "shared": "Ask for common rules for sharing test evidence across awards of computer time. The operator and affected teams still need to agree on access and confidentiality, then check that evaluators can repeat the relevant tests."
       },
       "research": {
         "headline": "Common evaluation has empirical benefits, but independent access rights and evaluator containment are prerequisites",
@@ -2229,6 +2390,22 @@
           ]
         }
       },
+      "lesson": "Shared rules and shared reporting need separate checks: who can agree to the rules, and how much distinct work they cover.",
+      "repair": "Match the reports to individual jobs and count each job once. Keep a separate record of each country's decision and the operator's authority.",
+      "check": {
+        "question": "Two offices each report the same ten jobs. How many distinct jobs do those reports cover?",
+        "answers": [
+          "Ten.",
+          "Twenty."
+        ],
+        "correctIndex": 0,
+        "explanation": "The two reports overlap completely in this example. Counting offices would double-count the work."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask for a comparison of two programmes' activity reports and decision rights. The report will identify overlapping jobs rather than adding the totals without checking.",
+        "shared": "Ask for common operator terms and a method for counting distinct jobs across programmes. The relevant authorities still need to confirm who can approve the terms and supply records that reveal overlapping work."
+      },
       "research": {
         "headline": "The clearest undervaluation candidate: test a common host condition rather than assuming eleven national policy rewrites",
         "assessment": "strengthened",
@@ -2448,6 +2625,22 @@
           ]
         }
       },
+      "lesson": "A pause is useful only alongside a workable plan for the affected service. Testing the handover shows what happens after the model stops.",
+      "repair": "Revise the handover steps with the operators and practise them away from the live service. Measure the time needed to restore the affected task and record any remaining delay.",
+      "check": {
+        "question": "What does a successful pause still leave to test?",
+        "answers": [
+          "Whether every electricity system uses the same model.",
+          "Whether people can restore the affected service in time."
+        ],
+        "correctIndex": 1,
+        "explanation": "Stopping the model does not complete the handover. The service still needs a workable way to continue."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange an isolated rehearsal of people taking over one model-controlled task. Record the restoration time and the work required from the operators.",
+        "shared": "Ask for a reusable handover-test procedure for other participating operators. Each service owner still needs to approve the exercise and supply evidence that people can restore its particular task within an acceptable time."
+      },
       "research": {
         "headline": "Operational experience supports a drill, but in-house development did not remove human and organisational dependencies",
         "assessment": "qualified",
@@ -2620,6 +2813,22 @@
             }
           ]
         }
+      },
+      "lesson": "A planned drill, a completed drill, and evidence from wider operation support different claims. Progress reports need to keep them separate.",
+      "repair": "Correct the progress report to say which exercise is planned and what it can test. Run that exercise and list the further evidence needed before any wider use.",
+      "check": {
+        "question": "What can the team honestly say while the drill is being prepared?",
+        "answers": [
+          "A drill is planned; its results and wider testing are still pending.",
+          "The operating service has completed its safety checks."
+        ],
+        "correctIndex": 0,
+        "explanation": "Planning an exercise creates work to do. It does not supply the results of that exercise or of later testing."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange one isolated drill and a report limited to the task rehearsed before the summit. Wider operation remains outside that exercise.",
+        "shared": "Ask for a staged plan naming the evidence required after the first drill and who reviews each step. Participating owners still need to approve later exercises; wider operation remains untested until those exercises and decisions occur."
       },
       "research": {
         "headline": "Actual stakeholder disagreement supports short reusable trials, while the decision retains an accountable lead and no deployment approval",
@@ -2841,6 +3050,22 @@
           ]
         }
       },
+      "lesson": "Records support accountability when someone can use them to intervene. Logging an action does not itself prevent the next one.",
+      "repair": "Propose a named supervisor with permission to stop the next action and a way to correct the error. Rehearse the intervention and record whether it reaches the assistant in time.",
+      "check": {
+        "question": "What is missing even though the action record is complete?",
+        "answers": [
+          "A longer description of the same actions.",
+          "A person with authority and a working way to intervene."
+        ],
+        "correctIndex": 1,
+        "explanation": "The missing control concerns the next action. More detail about earlier actions cannot supply permission to stop it."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange a rehearsal tracing one assistant's action record to a supervisor's attempt to stop and correct it. Record any missing permission or failed intervention.",
+        "shared": "Ask for a common supervision record linking actions to permissions and correction responsibilities. Each service owner still needs to authorise its supervisors and test that they can intervene in that service."
+      },
       "research": {
         "headline": "A documented evaluation-origin incident supplies a concrete accountability test; ICO adoption remains a separate outcome",
         "assessment": "strengthened",
@@ -3028,6 +3253,22 @@
             }
           ]
         }
+      },
+      "lesson": "Testing affects release when the buyer has an agreed decision to make in response to the result. A report alone leaves that link uncertain.",
+      "repair": "Propose written acceptance conditions naming the buyer's decision-maker and the response to a failed test. Rehearse that response, with the tester's possible conflicts recorded.",
+      "check": {
+        "question": "What connects a failed test to a release delay?",
+        "answers": [
+          "An agreed acceptance rule and a buyer authorised to apply it.",
+          "The report being delivered to the buyer's inbox."
+        ],
+        "correctIndex": 0,
+        "explanation": "Delivery gives the buyer information. The agreed rule and decision authority determine what happens next."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange one buyer's rehearsal of a failed test reaching its release decision. Record the acceptance rule, decision-maker, and any uncertainty about the tester's independence.",
+        "shared": "Ask for a plan for several buyers to reuse test evidence while deciding separately on release. Each still needs agreed supplier terms, a review of tester conflicts, and evidence that a failure changes its own decision."
       },
       "research": {
         "headline": "Tester accreditation is a useful competence signal, explicitly not an independence or safety guarantee.",
@@ -3224,6 +3465,22 @@
           ]
         }
       },
+      "lesson": "An incident plan needs instructions for that incident and operator. Borrowing a deadline from a different process can give the team the wrong response plan.",
+      "repair": "Separate the classification process from incident response in the rehearsal notes. Check the applicable instructions with the responsible owner and label any voluntary steps separately before repeating the exercise.",
+      "check": {
+        "question": "What should the team do when two different processes have deadlines?",
+        "answers": [
+          "Use whichever deadline gives the team more time.",
+          "Check which process each deadline belongs to."
+        ],
+        "correctIndex": 1,
+        "explanation": "The deadline must match the task. Classifying a system and responding to an incident are different processes."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange one voluntary incident rehearsal and a record separating applicable duties from steps practised by agreement. It will identify instructions that remain unconfirmed.",
+        "shared": "Ask for a common format for recording incidents and responses across operators. Each operator still needs to confirm its applicable duties and approve voluntary steps; a shared form cannot settle missing legal instructions."
+      },
       "research": {
         "headline": "Final notice remains unresolved; a candidate supplier submission could not be independently read.",
         "assessment": "unresolved",
@@ -3396,6 +3653,22 @@
             }
           ]
         }
+      },
+      "lesson": "A fix can succeed on one path while leaving another open. Testing different ways to reach the same failure helps establish what was corrected.",
+      "repair": "Trace both ways into the service and revise the correction to address the uncovered path. Retest with new variations and keep the results available for challenge.",
+      "check": {
+        "question": "What does the second interface's failure show?",
+        "answers": [
+          "The first successful test did not cover every path to the problem.",
+          "The first test proves that the whole service is fixed."
+        ],
+        "correctIndex": 0,
+        "explanation": "The initial result applies to the path tested there. The second result reveals a remaining failure that needs its own correction."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange a check of one claimed correction, trying more than one way into the service. The report will preserve remaining failures and evidence people can challenge.",
+        "shared": "Ask for a reusable method for checking whether corrections persist across interfaces and later tests. Responsible reviewers still need to accept the method and obtain fresh evidence for each case rather than transfer one case's result."
       },
       "research": {
         "headline": "Grok supplies an actual failure-to-correction evidence demand, stronger than an inspection-programme promise",
@@ -3591,6 +3864,22 @@
           ]
         }
       },
+      "lesson": "Advice can persuade a team to change its plans. To make the review a required step before launch, agree who must respond to its findings.",
+      "repair": "Propose a step requiring the service owner to record a decision on unresolved findings before launch, including any valid exception. Rehearse a review that recommends a change and follow it through to that decision.",
+      "check": {
+        "question": "What should the next test follow after the review is delivered?",
+        "answers": [
+          "Whether the review has enough pages.",
+          "Who decides what to do about its unresolved finding."
+        ],
+        "correctIndex": 1,
+        "explanation": "The failure occurs between advice and action. Following the finding to a named decision tests that missing link."
+      },
+      "researchContext": "This research concerns personal-data assessments for qualifying projects, with exemptions. It is not a rule requiring a review before every government use of AI.",
+      "plans": {
+        "pilot": "Arrange a rehearsal following one risk finding to the service owner's launch decision. Record whether that owner can require a change or delay.",
+        "shared": "Ask for a common record connecting risk findings with launch decisions and any exceptions. Each participating body still needs to approve its internal process and demonstrate the decision-maker's authority in a relevant case."
+      },
       "research": {
         "headline": "An internal accountable owner is in the law, but recommendations remain nonbinding and exemptions are broad",
         "assessment": "qualified",
@@ -3770,6 +4059,22 @@
           ]
         }
       },
+      "lesson": "A usable review process needs people with the authority and capacity to handle cases. Finishing the paperwork does not establish that readiness.",
+      "repair": "Identify the lawful receiving office and check whether an authorised person can take the case. Rehearse the handover only when that role is confirmed; otherwise record the staffing gap and keep the form as preparation.",
+      "check": {
+        "question": "What can the finished form establish on its own?",
+        "answers": [
+          "The paperwork is prepared, but the receiving institution may still be unready.",
+          "An authorised person is now available to decide the case."
+        ],
+        "correctIndex": 0,
+        "explanation": "A form cannot appoint staff or give them authority. Those conditions need their own check."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask for a readiness report for one case, checking whether an authorised person can receive and decide it. Any missing staff or authority remains an explicit gap.",
+        "shared": "Ask for a review form that institutions could use once ready. Each institution still needs lawful authority, appointed staff, and a checked case handover before the form becomes an operating process."
+      },
       "research": {
         "headline": "Live legislative uncertainty still prevents a confident enforceable-by-Geneva claim",
         "assessment": "qualified",
@@ -3941,6 +4246,22 @@
             }
           ]
         }
+      },
+      "lesson": "Checking deletion requires an inventory of relevant originals, copies, and derived data. Evidence about originals alone can leave an important gap.",
+      "repair": "Add the matching code and relevant contractor copies to the inventory. Check what the correction requires for each item, then repeat the evidence review against the complete list.",
+      "check": {
+        "question": "Why does the matching code belong in the review?",
+        "answers": [
+          "Every new code proves that deletion failed.",
+          "It was derived from the records but left out of the evidence."
+        ],
+        "correctIndex": 1,
+        "explanation": "The missing item limits what the deletion claim establishes. Its treatment needs checking rather than assuming that evidence about the originals covers it."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask for a review matching one deletion claim to its originals, derived codes, and relevant contractor copies. Record any item the evidence leaves out.",
+        "shared": "Ask for a common method for checking deletion evidence against a full data inventory. Each responsible authority still needs to accept its use and check the actual certificate and correction requirements in each case."
       },
       "research": {
         "headline": "Final administrative Worldcoin decision demands externally certified deletion with technical evidence",
@@ -4153,6 +4474,22 @@
           ]
         }
       },
+      "lesson": "A review of data linking starts with the actual records and their use. Calling a service artificial intelligence does not settle which requirements apply.",
+      "repair": "Map where the linked records come from, who holds them, and how the service uses the link. Send that specific record of use to the responsible authority for its own decision.",
+      "check": {
+        "question": "Which evidence best helps define what the review covers?",
+        "answers": [
+          "A map of the linked records and the transactions using them.",
+          "A count of offices with artificial intelligence projects."
+        ],
+        "correctIndex": 0,
+        "explanation": "The map identifies the data use under review. An office count does not describe that use."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask for a map of one service's linked records and how it uses them. The map will support checking which requirements apply without deciding that question in advance.",
+        "shared": "Ask for a reusable technical record of data links that authorities can review separately. Sharing it still requires permission, and each authority needs case-specific evidence before making its own legal decision."
+      },
       "research": {
         "headline": "Signed WhatsApp notice demonstrates an evidence obligation, but is not a section-57 linkage precedent",
         "assessment": "qualified",
@@ -4340,6 +4677,22 @@
             }
           ]
         }
+      },
+      "lesson": "A claim of deletion is stronger when reviewers can inspect and repeat a check covering the relevant derived data as well as the originals.",
+      "repair": "List the retained derived data and request the steps and evidence needed to check each item. Repeat the review and clearly mark anything the available evidence still cannot verify.",
+      "check": {
+        "question": "What would address the weakness in the deletion claim?",
+        "answers": [
+          "A more confident account from the organisation.",
+          "A repeatable check that covers the relevant derived data."
+        ],
+        "correctIndex": 1,
+        "explanation": "The gap is in verification. A stronger statement does not supply the missing check."
+      },
+      "researchContext": "The source case concerns Worldcoin biometric data. This dossier does not establish fingerprint deletion; independent technical verification of deletion remains missing.",
+      "plans": {
+        "pilot": "Arrange an attempt to repeat one organisation's deletion check, including relevant derived data. The report will separate verified items from claims the evidence cannot establish.",
+        "shared": "Ask for a common record of correction steps, test methods, and unresolved items. The responsible reviewers still need to accept its use and examine repeatable evidence for each organisation's retained data."
       },
       "research": {
         "headline": "Litigant reports completed court-supervised deletion; this is stronger than a DPIA count but still needs technical corroboration",
@@ -4544,6 +4897,22 @@
           ]
         }
       },
+      "lesson": "An extra audit requirement needs a clear purpose beyond duplicating existing work. Comparing checks helps reveal whether it adds useful evidence.",
+      "repair": "Remove the repeated questions and identify a specific failure the existing audit does not test. Try a targeted check for that failure and record its added work as well as its findings.",
+      "check": {
+        "question": "What should justify keeping the extra check?",
+        "answers": [
+          "It tests a relevant gap rather than repeating the same work.",
+          "It makes the audit document longer."
+        ],
+        "correctIndex": 0,
+        "explanation": "The aim is useful additional evidence. More questions alone do not establish added value."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask for a comparison between one existing audit and the proposed extra check. Record additional failures found and the extra work required, including a finding of no added value.",
+        "shared": "Ask for a proposed audit addition for organisations where the missing check is relevant. Its adoption still needs approval from the responsible bodies and evidence that it adds useful findings without duplicating existing requirements."
+      },
       "research": {
         "headline": "GAID already contains concrete risk-based audit, rights and stop/modify assessments; the annex must prove additionality",
         "assessment": "qualified",
@@ -4745,6 +5114,22 @@
           ]
         }
       },
+      "lesson": "Reporting an incident and reviewing a planned use of data are different tasks. Preparing one does not complete the other.",
+      "repair": "Confirm the form and reviewer for this planned use of data. Rehearse submitting the review, receiving a requested correction, and returning evidence that the correction was checked.",
+      "check": {
+        "question": "What preparation is missing from the team's current plan?",
+        "answers": [
+          "A faster way to repeat the breach-reporting deadline.",
+          "The review and correction process for the planned data use."
+        ],
+        "correctIndex": 1,
+        "explanation": "The team prepared for incident reporting. The decision here needs evidence about the proposed use before deployment."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask for a record of one planned-use review, including who requests a correction and how that correction is checked. Keep incident-reporting duties separate.",
+        "shared": "Ask for an evidence form that could be reused for later planned-use reviews. Responsible reviewers still need to approve its use and check that it fits the applicable process and evidence needs in each case."
+      },
       "research": {
         "headline": "Rights-facing duties broaden the test target, but no implementation case was recovered",
         "assessment": "unresolved",
@@ -4939,6 +5324,22 @@
             }
           ]
         }
+      },
+      "lesson": "Stopping a subsidy changes who pays. Stopping the computer job depends on separate control over service access.",
+      "repair": "Propose explicit provider terms for the affected service access when a required test fails. Rehearse the funding pause and the access decision separately, including a switch to commercial billing.",
+      "check": {
+        "question": "The subsidy stops but the job keeps running. What did the pause control?",
+        "answers": [
+          "The public contribution to the bill.",
+          "The provider's ability to run the job."
+        ],
+        "correctIndex": 0,
+        "explanation": "The pause changed funding. Commercial billing let the work continue because service access was a separate decision."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange a test tracing one project's bill and computer job after public funding pauses. Record whether commercial payment lets the same work continue.",
+        "shared": "Ask for proposed future funding terms that separately state any intended restriction on service access. Funding authorities and participating providers still need to agree, and tests must show what happens when an account switches to commercial billing."
       },
       "research": {
         "headline": "A credible prospective subsidy condition, but stopping the subsidy is not stopping the workload",
@@ -5185,6 +5586,22 @@
           ]
         }
       },
+      "lesson": "A failed test needs a practical response shared by the supplier and service owner. Unclear responsibility can leave the affected service unchanged.",
+      "repair": "Propose a written division of responsibility for restricting the assistant and restoring the previous setup. Rehearse the handover between supplier and service owner after a failed test.",
+      "check": {
+        "question": "What should the repair settle first?",
+        "answers": [
+          "Which team gets its name on the testing badge.",
+          "Who can restrict the assistant and restore the service."
+        ],
+        "correctIndex": 1,
+        "explanation": "The test already found a problem. The missing agreement concerns who acts on it."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange a rehearsal of one failed test followed by an attempt to restrict the assistant and restore the previous service. Record who can perform each action.",
+        "shared": "Ask for common acceptance records that name supplier and service-owner responsibilities. Each pair still needs to agree who can act, assess the tester's independence, and demonstrate restoration in its own setup."
+      },
       "research": {
         "headline": "Supplier certification creates an entry point, but neither a seal nor independent assurance establishes a release veto",
         "assessment": "qualified",
@@ -5373,6 +5790,22 @@
             }
           ]
         }
+      },
+      "lesson": "Control over a supervised trial depends on the participant's actual agreement. Success in a demonstration does not establish that control.",
+      "repair": "Identify the required permission and propose an explicit stop rule for this participant's plan. Rehearse the rule only with the necessary agreement, keeping any wider use outside the test's conclusion.",
+      "check": {
+        "question": "What evidence would establish permission for the proposed stop?",
+        "answers": [
+          "The relevant term in this participant's agreed plan.",
+          "A list of successful participants in a different programme."
+        ],
+        "correctIndex": 0,
+        "explanation": "The permission must apply to this trial. Another programme's results cannot supply it."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange a check and rehearsal of one participant's agreed stop rule. If the necessary permission is missing, the report must record that limit rather than claim control.",
+        "shared": "Ask for a proposed stop rule for future participants in the same programme. The programme owner and each participant still need to agree to the relevant terms and rehearse how a stop would work."
       },
       "research": {
         "headline": "Real CST deployment history does not establish an AI stop-rule; SDAIA offers a stronger adjacent case-selection pool",
@@ -5569,6 +6002,22 @@
             }
           ]
         }
+      },
+      "lesson": "Independent review and a customer's response to failure are separate requirements. Delivering a report does not establish either one by itself.",
+      "repair": "Assess the reviewer's disclosed interests and funding before calling the review independent, and provide a way to challenge the result. Agree how a failed result affects customer acceptance, then rehearse that decision.",
+      "check": {
+        "question": "Why does delivering the report on time leave a gap?",
+        "answers": [
+          "A late report would automatically give the reviewer independence.",
+          "The customer has not agreed what a failed result changes."
+        ],
+        "correctIndex": 1,
+        "explanation": "The reporting deadline was met. The unresolved issue is the customer's decision after a failure."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange one project's review of tester independence and its rehearsal of customer acceptance after a failed result. Record any conflict or missing contract term that prevents the proposed arrangement.",
+        "shared": "Ask for proposed review and acceptance terms for several project groups and customers. Each still needs to approve lawful contract changes, assess reviewer independence, and test how a failed result reaches its acceptance decision."
       },
       "research": {
         "headline": "Useful conflict-of-interest restrictions, but a funded research partner is not automatically independent assurance",
@@ -5774,6 +6223,22 @@
           ]
         }
       },
+      "lesson": "A generated draft can change a requirement or repeat a false approval claim. Comparing it with the authorised source helps expose those changes.",
+      "repair": "Trace each changed requirement to the approved plan and ask the responsible owner to verify any claimed approval. Repeat the drafting test with an unapproved note and check that it cannot silently replace the agreed requirement.",
+      "check": {
+        "question": "What should the team trust when the draft claims a change was approved?",
+        "answers": [
+          "A check with the authorised record and responsible owner.",
+          "The draft's confident wording alone."
+        ],
+        "correctIndex": 0,
+        "explanation": "The claim appears in the material being checked. It needs confirmation from the actual source of approval."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Ask for a comparison of one generated draft with its approved source, including a test note that claims an unissued approval. Record altered requirements and whether the owner catches them.",
+        "shared": "Ask for a common record linking drafted requirements to their sources and verified approvals. Buying teams still need to agree how to use it, confirm their approval rights, and test it on their own documents."
+      },
       "research": {
         "headline": "MORADA supplies a concrete internal submission gate, but its automated rejection is a price check, not an AI safety hold",
         "assessment": "strengthened",
@@ -5954,6 +6419,22 @@
             }
           ]
         }
+      },
+      "lesson": "Human review changes an outcome only when the connected process receives and obeys the reviewer's decision.",
+      "repair": "Connect the override to the step that applies the recommendation, using controls available to the buyer. Repeat the test and inspect the final outcome rather than stopping at the review screen.",
+      "check": {
+        "question": "Where should the team check whether the override worked?",
+        "answers": [
+          "Only on the screen where the reviewer pressed reject.",
+          "At the final action taken by the connected system."
+        ],
+        "correctIndex": 1,
+        "explanation": "The failure occurred after the review. Checking the final action shows whether the rejection took effect."
+      },
+      "researchContext": "",
+      "plans": {
+        "pilot": "Arrange a test following one reviewer's rejection through to the connected system's final action. Record what the buyer can change under the current subscription.",
+        "shared": "Ask for a practical guide to checks and restrictions available to buyers on standard terms. Each buyer still needs to approve its local process and verify its own controls; any extra supplier obligation needs the supplier's agreement."
       },
       "research": {
         "headline": "Existing ADMP guidance is more specific than generic DPIA thresholds; a real consultation submission exposes supplier-bargaining and human-oversight gaps",
@@ -6157,6 +6638,22 @@
             }
           ]
         }
+      },
+      "lesson": "Training can prepare people to assess a service. Authority to accept or stop that service needs a separate basis.",
+      "repair": "Identify the service owner and the agreement that controls launch. Propose a follow-on exercise with that owner's approval, then test how a failed result reaches the launch decision.",
+      "check": {
+        "question": "What remains after the workshops are successfully delivered?",
+        "answers": [
+          "Establishing who can decide whether the service launches.",
+          "Assuming every participant can stop the service."
+        ],
+        "correctIndex": 0,
+        "explanation": "The training contract has been fulfilled. It does not automatically confer control over a different operational decision."
+      },
+      "researchContext": "The research found a contract for training and workshops. It did not verify payment or completed delivery. The completed workshops in the story are fictional.",
+      "plans": {
+        "pilot": "Ask for a report identifying one service's launch decision-maker and, with permission, testing the response to a failed result. Completed workshops alone cannot supply that permission.",
+        "shared": "Ask for a follow-on work plan requiring a witnessed failure, an owner-approved restriction, and a retest. The programme and service owners still need to approve those tasks and establish their authority over the affected services."
       },
       "research": {
         "headline": "AIGPC has an actual contracted operator, but the recovered contract purchases capacity-building rather than operational AI safety gates",
@@ -6362,6 +6859,22 @@
             }
           ]
         }
+      },
+      "lesson": "A service's consequences depend on how its output is used. A review that stops at the visible interface can miss the decision influenced by its recommendation.",
+      "repair": "Extend the review to the work process that uses the recommendation and identify its approving owner. Check the applicable requirements for that full use before rehearsing the agency's decision.",
+      "check": {
+        "question": "Why should the review follow the recommendation beyond the interface?",
+        "answers": [
+          "A simple-looking interface guarantees a low-impact service.",
+          "Another process may use the answer to make a consequential decision."
+        ],
+        "correctIndex": 1,
+        "explanation": "The interface shows only part of the service. Following its output reveals the decision the review needs to examine."
+      },
+      "researchContext": "Whether a legal review is required depends on the particular use and applicable rules. The legal provisions and transition dates in this dossier were inherited from earlier research, not newly verified; a voluntary test is the fallback if a duty is not established.",
+      "plans": {
+        "pilot": "Ask for a record tracing one service's recommendation into the decision it influences. Record the approving owner and any uncertainty about the requirements for that use.",
+        "shared": "Ask for a common review record linking services to their consequential decisions. Each agency still needs to approve its use, verify its own decision links and applicable requirements, and make its own acceptance decision."
       },
       "research": {
         "headline": "The legal route remains plausible, but the kiosk candidate may be assistance rather than a qualifying decisional system",

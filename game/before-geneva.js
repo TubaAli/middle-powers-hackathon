@@ -1,12 +1,13 @@
-import {newGame, council, enterMeeting, choose, advance, summit, verified, routeStatus, meetingReason, choiceReason, costFor, validSave, leaveConversation} from './story-engine.mjs';
+import {newGame, council, enterMeeting, choose, advance, summit, verified, routeStatus, meetingReason, choiceReason, costFor, validSave, leaveConversation, monthSummary, RESOURCE_NAMES} from './story-engine.mjs';
 
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const SAVE='before-geneva-save-v1';
 const ART=['01-november-council.jpg','02-february-negotiation-1-49f6789f062e.jpg','03-april-disputed-report-1-60badf629bae.jpg','04-geneva-final-clause-1-ddbbb378de0e.jpg'];
-const names={budget:'Money',evidence:'Proof',mandate:'Support'};
+const names=RESOURCE_NAMES;
 const featured=['jp-procurement-safety-evidence','indiaai-subsidy-evaluation-gate','brazil-anpd-ai-inspection-evidence','lumi-national-evidence-protocol','sg-agent-data-leakage-deployment-gate','kenya-biometric-dpia-evidence-gate','ch-electricity-operator-fallback','taiwan-public-compute-safety-conditions'];
 let campaign,state,started=false,saved=false,filter='',all=false,notice='',unreadableSave=false,focusRoute='';
+let quizAnswers={};
 const route=id=>campaign.routes.find(r=>r.id===id);
 const month=()=>campaign.months[state?.month??0];
 const costText=cost=>Object.entries(cost).filter(([,n])=>n>0).map(([k,v])=>`−${v} ${names[k].toLowerCase()}`).join(' · ');
@@ -81,8 +82,59 @@ function render() {
   backdrop();hud();
   $('#main').innerHTML=(notice?`<p class="notice" role="alert">${esc(notice)}</p>`:'')+(!started?startScreen():state.phase==='council'?councilScreen():state.phase==='hub'?hubScreen():state.phase==='conversation'?dialogueScreen():state.phase==='summit'?summitScreen():endingScreen());
   if(started&&state.phase==='hub') {
+    const latest=state.journal.filter(e=>e.routeId).at(-1);
+    const next=monthSummary(state).ready.find(id=>!meetingReason(state,id));
+    $('.contact-panel').insertAdjacentHTML('afterbegin',`${goalProgress()}${latest?`<div class="last-result"><strong>Last result: ${esc(latest.title)}</strong><p>${esc(route(latest.routeId).title)} — ${esc(latest.text)}</p>${latest.delta?deltaHtml(latest.delta):''}${latest.next?`<p><strong>Next step at the time:</strong> ${esc(latest.next)}</p>`:''}</div>`:''}${next?`<p class="next-meeting">Results are back! <button class="text-button" data-meet="${esc(next)}">Return to ${esc(route(next).title)} →</button></p>`:''}`);
     cards();$('#contact-search').addEventListener('input',e=>{filter=e.target.value;cards();});
   }
+  if(started&&state.phase==='conversation')enhanceDialogue();
+}
+function deltaHtml(delta) {
+  const items=Object.entries(delta).filter(([,n])=>n!==0);
+  return `<p class="resource-change">${items.length?items.map(([k,v])=>`${v>0?'+':'−'}${Math.abs(v)} ${esc(names[k])}`).join(' · '):'No net change to Money, Proof or Support.'}</p>`;
+}
+function goalProgress() {
+  const count=verified(state).length,shared=verified(state).some(([,p])=>p.strategy==='shared');
+  return `<details class="goal-progress"><summary>Your goal: bring a finished test to Geneva <b>${count?'✓':'0 / 1'}</b></summary><p>A finished test means you returned to the team, fixed the problem and tested again. You do not need to visit every country.</p><p>For the larger shared plan: <strong>${Math.min(count,3)} / 3</strong> finished tests, <strong>${shared?'1':'0'} / 1</strong> shared deal, and <strong>${Math.min(state.resources.mandate,2)} / 2</strong> Support.</p></details>`;
+}
+function resultHtml(r) {
+  const result=state.conversation.result,p=state.projects[r.id],done=p?.stage==='tested';
+  const next=result?.next||(done?'Take this finished test to Geneva, or work on another project.':p?.strategy?(state.month<7?`Return in ${campaign.months[state.month+1].label}.`:'Include the unfinished work in your Geneva report.'):'No test has started. Return to this idea when you are ready to start one.');
+  const plan=p?.strategy&&r.plans?.[p.strategy];
+  const planLabel=r.nodes.terms?.choices.find(c=>c.id===p?.strategy)?.label;
+  return `<p class="eyebrow">Meeting result · in this story</p><h2>${esc(result?.title||(done?'Test finished':'Your decision is recorded'))}</h2>${planLabel?`<p><strong>Your plan:</strong> ${esc(planLabel)}</p>`:''}${result?.delta?deltaHtml(result.delta):'<p class="fineprint">This older save has no resource breakdown for this decision.</p>'}${plan?`<details class="agreed-plan"><summary>What your team agreed to work on</summary><p>${esc(plan)}</p></details>`:''}<p><strong>Progress:</strong> ${done?'This test is finished and counts toward your Geneva plan.':p?.strategy?'This project has not completed its test.':'No test has started for this idea.'}</p><p class="next-step"><strong>Next step</strong><br>${esc(next)}</p>${done&&r.lesson?`<p class="learned"><strong>What this shows</strong><br>${esc(r.lesson)}</p><p class="fineprint">A pass here completes a fictional exercise. It does not prove that a real system is safe or give a team real legal powers.</p>`:''}${goalProgress()}`;
+}
+function knowledgeCheck(r) {
+  if(!r.check)return '';
+  const answer=quizAnswers[r.id];
+  return `<details class="knowledge-check" ${answer!==undefined?'open':''}><summary>Try a quick question (optional)</summary><p>${esc(r.check.question)}</p><div class="check-answers">${r.check.answers.map((text,i)=>`<button data-check="${i}" data-check-route="${esc(r.id)}" aria-pressed="${answer===i}">${esc(text)}</button>`).join('')}</div>${answer!==undefined?`<p role="status"><strong>${answer===r.check.correctIndex?'That’s right.':'Not quite.'}</strong> ${esc(r.check.explanation)}</p>`:''}<small>No points at stake. You can change your answer.</small></details>`;
+}
+function enhanceDialogue() {
+  const r=route(state.conversation.routeId),node=state.conversation.node,box=$('.dialogue-box');
+  if(r.researchContext) $('.dialogue-heading').insertAdjacentHTML('beforeend',`<p class="scene-context"><strong>Research context:</strong> ${esc(r.researchContext)}</p>`);
+  if(node==='receipt') {
+    $('.dialogue-screen').classList.add('show-result');
+    box.classList.add('meeting-result');
+    // Keep the original speaker, receipt and status, then add the decision breakdown.
+    box.insertAdjacentHTML('beforeend',resultHtml(r));
+  }
+  if(node==='report'&&r.repair)box.insertAdjacentHTML('beforeend',`<details class="repair-plan"><summary>What would fixing it involve?</summary><p>${esc(r.repair)}</p></details>`);
+  for(const c of r.nodes[node].choices) {
+    const button=[...$('.response-box').querySelectorAll('[data-choice]')].find(b=>b.dataset.choice===c.id);
+    const cost=costText(costFor(state,c.action));
+    if(choiceReason(state,c)&&cost)button?.lastElementChild.insertAdjacentHTML('beforeend',`<small>${esc(cost)}</small>`);
+    const plan=r.plans?.[c.id]||r.plans?.[c.action];
+    if(plan) {
+      button?.lastElementChild.insertAdjacentHTML('beforeend',`<small class="plan-scope">${esc(plan)}</small>`);
+    }
+  }
+  if(state.projects[r.id]?.stage==='tested')$('.response-box').insertAdjacentHTML('beforeend',knowledgeCheck(r));
+}
+function reviewMonth() {
+  const summary=monthSummary(state);
+  const list=ids=>ids.length?`<ul>${ids.map(id=>`<li>${esc(route(id).title)}</li>`).join('')}</ul>`:'<p>None this month.</p>';
+  const ready=summary.ready.filter(id=>!meetingReason(state,id));
+  drawer(`${month().label}: what you achieved`,`<section class="month-summary"><p><strong>${summary.meetingsUsed} of 3 meetings used.</strong> ${state.actions?`${state.actions} still available. Unused meetings are lost when you end the month.`:'You used all three meetings.'}</p><h3>Finished tests: ${summary.completed.length}</h3>${list(summary.completed)}<h3>Work started: ${summary.started.length}</h3>${list(summary.started)}${summary.started.length?'<p>Starting work is progress, but does not by itself finish a test.</p>':''}<h3>Your decisions</h3>${summary.entries.map(e=>`<article class="summary-entry"><strong>${esc(e.title)}</strong><p>${esc(e.text)}</p></article>`).join('')||'<p>No decisions yet.</p>'}<h3>Net resource change this month</h3>${summary.delta?deltaHtml(summary.delta):'<p>Earlier saves do not have a full resource breakdown. Your current totals are shown above.</p>'}<p class="fineprint">Includes team-choice gains and meeting costs. Preparing research uses Proof but does not use a meeting.</p><h3>${state.month===7?'Still unfinished at Geneva':'Unfinished follow-ups'}</h3>${summary.unfinished.length?`<ul>${summary.unfinished.map(id=>`<li><strong>${esc(route(id).title)}</strong> — ${state.projects[id].strategy?'return to check or finish the test':'idea saved; no test started'}</li>`).join('')}</ul>`:'<p>No unfinished projects.</p>'}${ready.length?'<p>There are results you can check now:</p>'+ready.map(id=>`<button class="text-button" data-return="${esc(id)}">Return to ${esc(route(id).title)} →</button>`).join(''):''}<div class="summary-actions"><button class="primary" data-act="confirm-advance">${state.month===7?'Go to the Geneva meeting':'End the month'} →</button><button class="text-button" data-act="close">Back to the lounge</button></div></section>`);
 }
 function drawer(title,body) {$('#drawer-title').textContent=title;$('#drawer-body').innerHTML=body;if(!$('#drawer').open)$('#drawer').showModal();}
 function guide() {
@@ -91,6 +143,21 @@ function guide() {
 function evidence(id) {
   const r=route(id);if(!r)return;
   drawer(r.title,`<p class="eyebrow">Real research · ${esc(r.researchTitle||r.title)} · ${esc(campaign.researchObserved)}</p>${r.about?`<p class="dossier-lead">${esc(r.about)}</p>`:''}<p class="fineprint">Below is the research team's own wording. It is more technical than the game.</p><p><strong>What the research found:</strong> ${esc(r.research.headline)}</p><p><strong>The next real test:</strong> ${esc(r.research.nextTest)}</p><details><summary>What we still don't know</summary><ul>${r.research.unknowns.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details><details><summary>Evidence found</summary>${r.research.evidence.map(e=>`<p>${esc(e.claim)}</p><small>${esc(e.locator)}</small>`).join('')}</details><h3>Sources</h3>${r.research.sources.map(s=>`<article class="source"><strong>${safeLink(s.href,s.title)}</strong><p>${esc(s.locator)}</p><small>${esc(s.access)} · ${esc(s.sourceCheck)}</small></article>`).join('')}<p>${safeLink('../routes/stress-tests.html?route='+encodeURIComponent(id),'Read the full research')} · ${safeLink('../routes/#basis=model&route='+encodeURIComponent(id),'Find this idea on the chart')}</p><p class="fineprint">The conversations in the game are made up, based on this research. Winning or losing in the game does not mean it happened in real life.</p>`);
+}
+function progressiveEvidence(r) {
+  const body=$('#drawer-body'),start=body.querySelector('.fineprint');
+  if(!start)return;
+  const details=document.createElement('details');
+  details.className='research-depth';
+  const summary=document.createElement('summary');
+  summary.textContent='Go deeper: evidence and open questions';
+  details.append(summary);
+  // Move, rather than rewrite, the original research wording and source links.
+  let node=start;
+  while(node){const next=node.nextSibling;details.append(node);node=next;}
+  if(r.lesson)body.insertAdjacentHTML('beforeend',`<p>${esc(r.lesson)}</p>`);
+  if(r.researchContext)body.insertAdjacentHTML('beforeend',`<p><strong>Research context:</strong> ${esc(r.researchContext)}</p>`);
+  body.append(details);
 }
 function journal() {
   if(!started)return;
@@ -107,10 +174,18 @@ document.addEventListener('click',e=>{
   if(b.dataset.meet){update(()=>enterMeeting(state,campaign,b.dataset.meet));return;}
   if(b.dataset.choice){update(()=>choose(state,campaign,b.dataset.choice));return;}
   if(b.dataset.summit){update(()=>summit(state,b.dataset.summit));return;}
-  if(b.dataset.evidence){evidence(b.dataset.evidence);return;}
+  if(b.dataset.evidence){evidence(b.dataset.evidence);const r=route(b.dataset.evidence);if(r)progressiveEvidence(r);return;}
+  if(b.dataset.return){$('#drawer').close();update(()=>enterMeeting(state,campaign,b.dataset.return));return;}
+  if(b.dataset.check!==undefined){
+    quizAnswers[b.dataset.checkRoute]=Number(b.dataset.check);
+    const check=b.closest('.knowledge-check'),r=route(b.dataset.checkRoute);
+    check.outerHTML=knowledgeCheck(r);
+    [...$('.response-box').querySelectorAll('[data-check]')].find(button=>button.dataset.check===b.dataset.check)?.focus();
+    return;
+  }
   const act=b.dataset.act;
   if(act==='new')fresh();
-  if(act==='confirm-new'){state=newGame();started=true;unreadableSave=false;filter='';all=false;$('#drawer').close();save();render();}
+  if(act==='confirm-new'){state=newGame();started=true;unreadableSave=false;filter='';all=false;quizAnswers={};$('#drawer').close();save();render();}
   if(act==='resume'){started=true;render();}
   if(act==='title'){started=false;render();}
   if(act==='lounge')update(()=>leaveConversation(state));
@@ -118,10 +193,7 @@ document.addEventListener('click',e=>{
   if(act==='guide'||b.id==='guide-button')guide();
   if(act==='journal'||b.id==='journal-button')journal();
   if(act==='close'||b.id==='close-drawer')$('#drawer').close();
-  if(act==='advance'){
-    if(state.actions>0)drawer('End this month?',`<p>You still have ${state.actions} meeting${state.actions===1?'':'s'} left. Unused meetings are lost.</p><button class="primary" data-act="confirm-advance">${state.month===7?'Go to the Geneva meeting':'End the month'}</button><button class="text-button" data-act="close">Back to the lounge</button>`);
-    else update(()=>advance(state));
-  }
+  if(act==='advance')reviewMonth();
   if(act==='confirm-advance'){$('#drawer').close();update(()=>advance(state));}
   if(act==='final-meetings')update(()=>({...state,phase:'hub'}));
 });

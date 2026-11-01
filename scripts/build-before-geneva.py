@@ -7,9 +7,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 research_path = ROOT / 'data/stress-tests.json'
 authored_path = ROOT / 'game/dialogue-authored.json'
+learning_path = ROOT / 'game/learning-notes.json'
 research = json.loads(research_path.read_text())
 authored = json.loads(authored_path.read_text())
+learning = json.loads(learning_path.read_text())
 assert set(authored) == {r['id'] for r in research['routes']}
+assert set(learning) == set(authored)
 
 def choice(id, label, next=None, action=None, detail=''):
     return {k: v for k, v in dict(id=id, label=label, next=next, action=action, detail=detail).items() if v is not None}
@@ -17,6 +20,9 @@ def choice(id, label, next=None, action=None, detail=''):
 routes = []
 for r in research['routes']:
     a = authored[r['id']]
+    lesson = learning[r['id']]
+    assert all(lesson.get(k) for k in ('lesson', 'repair', 'check', 'pilotDetail', 'sharedDetail')), r['id']
+    assert len(lesson['check']['answers']) == 2 and lesson['check']['correctIndex'] in (0, 1), r['id']
     sources = [{k: s.get(k) for k in ('id', 'title', 'href', 'access', 'locator', 'sourceCheck')}
                for sid in r['sourceIds'] if (s := research['sources'][sid])]
     nodes = {
@@ -30,12 +36,15 @@ for r in research['routes']:
     }
     routes.append({'id': r['id'], 'title': a.get('title', r['shortLabel']), 'researchTitle': r['shortLabel'], 'about': a.get('about', ''), 'countries': r['countries'], 'coordination': r['coordination'],
                    'speaker': ' / '.join(r['countries']) + ' · pretend delegate', 'nodes': nodes,
+                   'lesson': lesson['lesson'], 'repair': lesson['repair'], 'check': lesson['check'],
+                   'researchContext': lesson.get('researchContext', ''),
+                   'plans': {'pilot': lesson['pilotDetail'], 'shared': lesson['sharedDetail']},
                    'research': {'headline': r['headline'], 'assessment': r['assessment'], 'nextTest': r['decisionTest'],
                                 'unknowns': r['unknowns'], 'evidence': r['newEvidence'], 'sources': sources}})
 
 campaign = {'version': 1, 'id': 'before-geneva-v1', 'title': 'Before Geneva', 'researchObserved': research['observed'],
             'fictionNotice': 'This is a made-up story. The people, talks, points and endings are all pretend. The research links describe real ideas, but no real government agreed to these scenes.',
-            'inputs': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in (research_path, authored_path)},
+            'inputs': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in (research_path, authored_path, learning_path)},
             'months': [
                 {'label': 'November 2026', 'short': 'NOV', 'title': 'A seat at the table', 'event': '32 countries and groups have ideas to make AI safer. You can have three meetings this month. Pick where a first test could teach you the most.'},
                 {'label': 'December 2026', 'short': 'DEC', 'title': 'Who will actually do it?', 'event': 'The first answers arrive. A good idea needs a person in charge, a written rule, and a real decision it can change.'},
