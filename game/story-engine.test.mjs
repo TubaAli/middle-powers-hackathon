@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {newGame,council,enterMeeting,choose,advance,summit,validSave,verified,choiceReason,meetingReason} from './story-engine.mjs';
+import {newGame,council,enterMeeting,choose,advance,summit,validSave,verified,choiceReason,meetingReason,monthSummary} from './story-engine.mjs';
 const campaign=JSON.parse(readFileSync(new URL('./campaign.json',import.meta.url)));
 const ids=campaign.routes.map(r=>r.id);
 const jp='jp-procurement-safety-evidence',ind='indiaai-subsidy-evaluation-gate',lumi='lumi-national-evidence-protocol';
@@ -16,10 +16,16 @@ function finish(s,id) {s=enterMeeting(s,campaign,id);s=pick(s,'retest');return p
 
 test('32 research-linked trees have valid edges, distinct authored openings and current source hashes',()=>{
   const source=JSON.parse(readFileSync(new URL('../data/stress-tests.json',import.meta.url)));
+  const authored=JSON.parse(readFileSync(new URL('./dialogue-authored.json',import.meta.url)));
   assert.equal(ids.length,32);assert.deepEqual(new Set(ids),new Set(source.routes.map(r=>r.id)));
   assert.equal(new Set(campaign.routes.map(r=>r.nodes.opening.text)).size,32);
   for(const r of campaign.routes) {
     assert(r.research.sources.length);assert(r.research.headline);assert(r.research.nextTest);
+    assert(r.about&&r.lesson&&r.repair&&r.check.question&&r.check.explanation);
+    assert.equal(r.title,authored[r.id].title);assert.equal(r.about,authored[r.id].about);
+    for(const [node,key] of [['opening','opening'],['challenge','concern'],['terms','question'],['report','complication']])assert.equal(r.nodes[node].text,authored[r.id][key]);
+    for(const id of ['pilot','shared'])assert.equal(r.nodes.terms.choices.find(c=>c.id===id).label,authored[r.id][id]);
+    assert.equal(r.check.answers.length,2);assert([0,1].includes(r.check.correctIndex));
     for(const [id,node] of Object.entries(r.nodes)) {
       assert(node.choices.length>0,`${r.id}/${id} dead end`);
       assert.equal(new Set(node.choices.map(c=>c.id)).size,node.choices.length);
@@ -49,6 +55,37 @@ test('resource limits, peer dependency and meeting limits cannot be bypassed by 
   assert.equal(s.actions,0);assert(meetingReason(s,ids[3]));
   const insufficient=council(newGame(),'diplomacy');insufficient.resources.budget=0;
   const n=pick(enterMeeting(insufficient,campaign,jp),'terms');assert.throws(()=>pick(n,'pilot'),/Need 2 money/);assert.equal(n.resources.budget,0);
+});
+test('meeting results and monthly totals distinguish started, deferred, paused and finished work',()=>{
+  let s=council(newGame(),'funding');
+  s=plan(s,jp,'pilot',true);
+  s=pick(pick(enterMeeting(s,campaign,ind),'terms'),'defer');
+  assert.equal(s.conversation.result.title,'Saved for later');
+  assert.deepEqual(s.conversation.result.delta,{budget:0,evidence:0,mandate:0});
+  s=pick(s,'close');
+  let summary=monthSummary(s);
+  assert.equal(summary.meetingsUsed,2);assert.deepEqual(summary.completed,[]);assert.deepEqual(summary.started,[jp]);
+  assert.deepEqual(summary.delta,{budget:1,evidence:-1,mandate:0});
+  assert.deepEqual(summary.unfinished,[jp,ind]);assert.deepEqual(summary.ready,[]);
+  s=council(advance(s),'research');
+  assert.deepEqual(monthSummary(s).ready,[jp]);
+  s=pick(enterMeeting(s,campaign,jp),'pause');
+  assert.equal(s.conversation.result.title,'Paused');s=pick(s,'close');
+  assert.deepEqual(monthSummary(s).ready,[]);assert.deepEqual(monthSummary(s).completed,[]);
+  s=council(advance(s),'research');s=pick(enterMeeting(s,campaign,jp),'retest');
+  assert.deepEqual(s.conversation.result.delta,{budget:-1,evidence:-1,mandate:1});
+  assert.equal(s.conversation.result.title,'Fixed and tested again');
+  assert.deepEqual(monthSummary(s).completed,[jp]);
+  assert(validSave(JSON.parse(JSON.stringify(s)),campaign));
+});
+test('old saves still load and never invent a missing resource history; caps report actual gains',()=>{
+  let s=council(newGame(),'funding');s=plan(s,jp);
+  for(const e of s.journal){delete e.delta;delete e.next;delete e.action;}
+  assert(validSave(s,campaign));assert.equal(monthSummary(s).delta,null);
+  s=council(advance(s),'research');s.resources.budget=19;
+  s=council(advance(s),'funding');
+  assert.equal(s.resources.budget,20);assert.equal(s.journal.at(-1).delta.budget,1);
+  assert.equal(monthSummary(s).delta.budget,1);
 });
 test('a strong ending is reachable through multiple routes and a shared follow-up',()=>{
   let s=council(newGame(),'funding');s=plan(s,jp,'pilot',true);s=plan(s,ind);

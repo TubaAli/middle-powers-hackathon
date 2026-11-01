@@ -52,6 +52,8 @@ async def check(url, screenshots):
                     prior = await state()
                     await page.locator('.dialogue-heading [data-evidence]').click()
                     assert await page.locator('#drawer').is_visible()
+                    assert r['lesson'] in await page.locator('#drawer-body').inner_text()
+                    await page.locator('#drawer-body summary').first.click()
                     assert r['research']['headline'] in await page.locator('#drawer-body').inner_text()
                     await bounds()
                     await page.keyboard.press('Escape')
@@ -69,25 +71,49 @@ async def check(url, screenshots):
                 await page.locator('#contact-search').fill('')
 
                 async def plan(id, kind='pilot', prepared=False):
-                    await page.locator(f'[data-meet="{id}"]').click()
+                    await page.locator(f'.contact-main[data-meet="{id}"]').click()
                     if prepared:
                         await page.locator('[data-choice=challenge]').click()
                         await page.locator('[data-choice=brief]').click()
                     await page.locator('[data-choice=terms]').click()
                     await page.locator(f'[data-choice={kind}]').click()
+                    assert await page.locator('.meeting-result').is_visible()
+                    result_text = await page.locator('.meeting-result').inner_text()
+                    assert 'Next step' in result_text
+                    if (await state())['month'] == 0:
+                        assert 'December 2026' in result_text
+                    assert ('−2 Money' if kind == 'pilot' else '−2 Support') in result_text
+                    await bounds()
+                    await picture('meeting-result')
                     await page.locator('[data-choice=close]').click()
 
                 async def next_month(move='research'):
                     await page.locator('[data-act=advance]').click()
+                    assert await page.locator('.month-summary').is_visible()
+                    assert 'Finished tests:' in await page.locator('.month-summary').inner_text()
+                    await bounds()
+                    await picture('month-summary')
                     if await page.locator('[data-act=confirm-advance]').is_visible():
                         await page.locator('[data-act=confirm-advance]').click()
                     if (await state())['phase'] == 'council':
                         await page.locator(f'[data-council={move}]').click()
 
                 async def finish(id):
-                    await page.locator(f'[data-meet="{id}"]').click()
+                    await page.locator(f'.contact-main[data-meet="{id}"]').click()
                     assert (await state())['conversation']['node'] == 'report'
                     await page.locator('[data-choice=retest]').click()
+                    assert (await state())['conversation']['result']['title'] == 'Fixed and tested again'
+                    assert 'Next step' in await page.locator('.meeting-result').inner_text()
+                    await page.locator('.knowledge-check summary').click()
+                    before_question = await state()
+                    question = next(r for r in data['routes'] if r['id'] == id)['check']
+                    await page.locator(f'[data-check="{1-question["correctIndex"]}"]').click()
+                    assert 'Not quite.' in await page.locator('.knowledge-check').inner_text()
+                    await page.locator(f'[data-check="{question["correctIndex"]}"]').click()
+                    assert 'That’s right.' in await page.locator('.knowledge-check').inner_text()
+                    assert await state() == before_question
+                    await bounds()
+                    await picture('finished-test')
                     await page.locator('[data-choice=close]').click()
 
                 await plan(JP, prepared=True)

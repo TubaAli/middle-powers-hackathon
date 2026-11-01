@@ -34,20 +34,42 @@ The player text was reframed with the Narrative Engine Deep workflow
 
 ## Play loop
 
-- Each month, choose one council priority: budget, case evidence or negotiating mandate.
+- Each month, choose what the team needs: Money, Proof or Support.
 - Choose among 32 policy conversations. Highlights include Japan, India, Brazil,
   national LUMI channels, Singapore, Kenya, Switzerland and Taiwan. Search or select
-  **All 32 routes** for the full sample.
-- Ask about weaknesses, optionally commission a case-specific brief, then fund a
-  bounded pilot, negotiate a shared protocol, or record the limits and defer.
-- Commissioned work returns with a route-specific complication the following month.
-  Spend resources to repair and retest it, or publish the limitation and pause.
-  Shared protocols additionally require a different tested route.
-- Three consequential meeting decisions are available per month. Reading dossiers,
-  asking questions and leaving conversations do not spend meetings. Briefs spend
-  evidence immediately and reduce the subsequent retest cost.
-- In June, choose a verification annex, phased pilot programme or honest record of
-  disagreement. The outcome depends on completed work rather than assumed consent.
+  **Show all 32** for the full sample.
+- Ask about the problem, optionally prepare research notes, then start a small
+  test, work on a shared plan, or save the idea for later.
+- Return in a later month to see what went wrong. Fix the problem and test again,
+  or pause the work. Shared plans also need another finished test.
+- Each result card states what changed, its cost and the next step. At month end,
+  review finished tests, work started, resource changes and teams to revisit.
+- Three meeting decisions are available per month. Reading, asking questions and
+  leaving conversations are free. Research notes use Proof and lower the later
+  test cost. A new project cannot start in June because its results would arrive late.
+- In June, ask for a shared testing plan, a smaller programme, or publish what the
+  team learned without a joint project. The outcome depends on the work completed.
+
+## Educational rewrite
+
+The 1 November revision uses the approved [plain-language brief](narrative-rewrite.md)
+and Narrative Engine's reader-first writing and source-fidelity reviews. All 32
+routes have a concrete setup, explained alternatives, a learning note and an
+optional two-answer comprehension check. Questions do not grant game points.
+The research panel keeps the technical evidence available for deeper reading.
+
+Tuba's concurrent plain-language rewrite in `e784e4f` supplies the primary
+dialogue, titles, summaries, month text and existing UI copy. This pass keeps
+`dialogue-authored.json` intact and adds explanations in `learning-notes.json`.
+
+The internal save keys `evidence` and `mandate` still mean the same resources; only
+their visible names are Proof and Support. Existing saves remain usable.
+Old journal entries retain their original text; monthly resource totals are shown
+only when the save contains enough information to calculate them.
+
+This is an educational design, not evidence of measured learning outcomes. A next
+user test should ask players to explain the difference between starting and
+finishing a test, and identify one useful follow-up without opening this guide.
 
 There is no timer or random acceptance roll. Click/tap choices or use **1–3**;
 Tab/Enter also work. Escape closes dossiers. Progress saves to this browser/device
