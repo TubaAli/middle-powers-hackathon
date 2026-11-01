@@ -183,3 +183,16 @@ button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { #opening *, #opening { animation: none !important; transition: none !important; } }
 .event.news { border-color: #d9404f; font-size: 12px; }
 .event.news b { display: block; color: #ff9aa5; font-size: 11px; letter-spacing: .06em; }
+
+/* Mission tracker */
+#h-mission { margin: 2px 0 6px; }
+.mi-goal { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; }
+.mi-goal b { color: var(--gold); font-size: 16px; }
+.mi-checks { display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0; font-size: 11px; color: var(--muted); }
+.mi-checks .ok { color: var(--good); }
+.mi-next { border: 1px solid var(--gold); border-radius: 8px; padding: 5px 8px; font-weight: 700; font-size: 13px; color: var(--ink); background: #f2c96b18; animation: nextglow 1.6s ease-in-out infinite; }
+.mi-next small { display: block; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+@keyframes nextglow { 50% { box-shadow: 0 0 12px #f2c96b66; } }
+.h-detail { pointer-events: auto; margin-top: 4px; }
+.h-detail summary { cursor: pointer; font-size: 11px; color: var(--muted); }
+@media (max-width: 760px) { .mi-checks { font-size: 10px; } .mi-next { font-size: 12px; } .h-detail { display: none; } }
