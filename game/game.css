@@ -181,3 +181,5 @@ button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .op-skip { top: 46px; }
 }
 @media (prefers-reduced-motion: reduce) { #opening *, #opening { animation: none !important; transition: none !important; } }
+.event.news { border-color: #d9404f; font-size: 12px; }
+.event.news b { display: block; color: #ff9aa5; font-size: 11px; letter-spacing: .06em; }
